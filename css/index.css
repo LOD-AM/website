@@ -198,3 +198,239 @@ code[class*="language-"] {
 	white-space: nowrap;
 	border: 0;
 }
+
+/* ===== LOD-AM Bootstrap Button Overrides ===== */
+/* Must load AFTER bootstrap.min.css to take effect */
+
+/* Primary buttons - Terracotta (#E2725B) */
+.btn-primary {
+  --bs-btn-bg: #E2725B;
+  --bs-btn-border-color: #E2725B;
+  --bs-btn-hover-bg: #c85f4a;
+  --bs-btn-hover-border-color: #c15845;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.15);
+  --bs-btn-active-bg: #b14f3f;
+  --bs-btn-active-border-color: #a94a3a;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.15);
+  --bs-btn-disabled-bg: #E2725B;
+  --bs-btn-disabled-border-color: #E2725B;
+  color: #F5F0E6;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #E2725B;
+  --bs-btn-border-color: #E2725B;
+  --bs-btn-hover-bg: #E2725B;
+  --bs-btn-hover-border-color: #E2725B;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.15);
+  color: #E2725B;
+}
+
+.btn-outline-primary:hover {
+  color: #F5F0E6;
+}
+
+/* Secondary buttons - Ochre (#CC8B32) */
+.btn-secondary {
+  --bs-btn-bg: #CC8B32;
+  --bs-btn-border-color: #CC8B32;
+  --bs-btn-hover-bg: #b37a2b;
+  --bs-btn-hover-border-color: #a97228;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.15);
+  --bs-btn-active-bg: #9e6c26;
+  --bs-btn-active-border-color: #946523;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.15);
+  --bs-btn-disabled-bg: #CC8B32;
+  --bs-btn-disabled-border-color: #CC8B32;
+  color: #F5F0E6;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #CC8B32;
+  --bs-btn-border-color: #CC8B32;
+  --bs-btn-hover-bg: #CC8B32;
+  --bs-btn-hover-border-color: #CC8B32;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.15);
+  color: #CC8B32;
+}
+
+.btn-outline-secondary:hover {
+  color: #F5F0E6;
+}
+
+/* Success buttons - Sage (#8A9B68) */
+.btn-success {
+  --bs-btn-bg: #8A9B68;
+  --bs-btn-border-color: #8A9B68;
+  --bs-btn-hover-bg: #758658;
+  --bs-btn-hover-border-color: #6d7e52;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.15);
+  --bs-btn-active-bg: #63744b;
+  --bs-btn-active-border-color: #5c6d45;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.15);
+  --bs-btn-disabled-bg: #8A9B68;
+  --bs-btn-disabled-border-color: #8A9B68;
+  color: #F5F0E6;
+}
+
+.btn-outline-success {
+  --bs-btn-color: #8A9B68;
+  --bs-btn-border-color: #8A9B68;
+  --bs-btn-hover-bg: #8A9B68;
+  --bs-btn-hover-border-color: #8A9B68;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.15);
+  color: #8A9B68;
+}
+
+.btn-outline-success:hover {
+  color: #F5F0E6;
+}
+
+/* Info buttons - Malachite (#3D9970) */
+.btn-info {
+  --bs-btn-bg: #3D9970;
+  --bs-btn-border-color: #3D9970;
+  --bs-btn-hover-bg: #32825d;
+  --bs-btn-hover-border-color: #2e7855;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.15);
+  --bs-btn-active-bg: #296e48;
+  --bs-btn-active-border-color: #266542;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.15);
+  --bs-btn-disabled-bg: #3D9970;
+  --bs-btn-disabled-border-color: #3D9970;
+  color: #F5F0E6;
+}
+
+.btn-outline-info {
+  --bs-btn-color: #3D9970;
+  --bs-btn-border-color: #3D9970;
+  --bs-btn-hover-bg: #3D9970;
+  --bs-btn-hover-border-color: #3D9970;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.15);
+  color: #3D9970;
+}
+
+.btn-outline-info:hover {
+  color: #F5F0E6;
+}
+
+/* Warning buttons - Sunset Orange (#F28C28) */
+.btn-warning {
+  --bs-btn-bg: #F28C28;
+  --bs-btn-border-color: #F28C28;
+  --bs-btn-hover-bg: #e07d24;
+  --bs-btn-hover-border-color: #d47321;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.15);
+  --bs-btn-active-bg: #ca6f20;
+  --bs-btn-active-border-color: #be661d;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.15);
+  --bs-btn-disabled-bg: #F28C28;
+  --bs-btn-disabled-border-color: #F28C28;
+  color: #3A2E22;
+}
+
+.btn-outline-warning {
+  --bs-btn-color: #F28C28;
+  --bs-btn-border-color: #F28C28;
+  --bs-btn-hover-bg: #F28C28;
+  --bs-btn-hover-border-color: #F28C28;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.15);
+  color: #F28C28;
+}
+
+.btn-outline-warning:hover {
+  color: #3A2E22;
+}
+
+/* Danger buttons - Burnt Sienna (#D45D3D) */
+.btn-danger {
+  --bs-btn-bg: #D45D3D;
+  --bs-btn-border-color: #D45D3D;
+  --bs-btn-hover-bg: #b84f34;
+  --bs-btn-hover-border-color: #a84830;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.15);
+  --bs-btn-active-bg: #9f432c;
+  --bs-btn-active-border-color: #933e28;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.15);
+  --bs-btn-disabled-bg: #D45D3D;
+  --bs-btn-disabled-border-color: #D45D3D;
+  color: #F5F0E6;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #D45D3D;
+  --bs-btn-border-color: #D45D3D;
+  --bs-btn-hover-bg: #D45D3D;
+  --bs-btn-hover-border-color: #D45D3D;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.15);
+  color: #D45D3D;
+}
+
+.btn-outline-danger:hover {
+  color: #F5F0E6;
+}
+
+/* Light buttons - Chalk White (#F5F0E6) with Deep Umber text */
+.btn-light {
+  --bs-btn-bg: #F5F0E6;
+  --bs-btn-border-color: #F5F0E6;
+  --bs-btn-hover-bg: #e0dace;
+  --bs-btn-hover-border-color: #d5c7b8;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(245, 240, 230, 0.15);
+  --bs-btn-active-bg: #cbc0a8;
+  --bs-btn-active-border-color: #bfb69e;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(245, 240, 230, 0.15);
+  --bs-btn-disabled-bg: #F5F0E6;
+  --bs-btn-disabled-border-color: #F5F0E6;
+  color: #3A2E22;
+}
+
+.btn-outline-light {
+  --bs-btn-color: #F5F0E6;
+  --bs-btn-border-color: #F5F0E6;
+  --bs-btn-hover-bg: #F5F0E6;
+  --bs-btn-hover-border-color: #F5F0E6;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(245, 240, 230, 0.15);
+  color: #F5F0E6;
+}
+
+.btn-outline-light:hover {
+  color: #3A2E22;
+}
+
+/* Dark buttons - Deep Umber (#3A2E22) */
+.btn-dark {
+  --bs-btn-bg: #3A2E22;
+  --bs-btn-border-color: #3A2E22;
+  --bs-btn-hover-bg: #2f251b;
+  --bs-btn-hover-border-color: #2a2218;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(58, 46, 34, 0.15);
+  --bs-btn-active-bg: #261f16;
+  --bs-btn-active-border-color: #221c14;
+  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(58, 46, 34, 0.15);
+  --bs-btn-disabled-bg: #3A2E22;
+  --bs-btn-disabled-border-color: #3A2E22;
+  color: #F5F0E6;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #3A2E22;
+  --bs-btn-border-color: #3A2E22;
+  --bs-btn-hover-bg: #3A2E22;
+  --bs-btn-hover-border-color: #3A2E22;
+  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(58, 46, 34, 0.15);
+  color: #3A2E22;
+}
+
+.btn-outline-dark:hover {
+  color: #F5F0E6;
+}
+
+/* Link buttons */
+.btn-link {
+  color: #E2725B;
+}
+
+.btn-link:hover {
+  color: #c85f4a;
+}
