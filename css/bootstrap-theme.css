@@ -1,9 +1,9 @@
-/* LOD-AM Bootstrap Theme Overrides */
+/* LOD-AM Bootstrap Theme Overrides - DARK THEME */
 /* Load this BEFORE bootstrap.min.css so Bootstrap uses these variables */
 
 :root {
   /* ============================================
-     LOD-AM Color Definitions
+     LOD-AM Color Definitions - Dark Theme
      ============================================ */
   --lodam-terracotta: #E2725B;
   --lodam-ochre: #CC8B32;
@@ -17,79 +17,79 @@
   --lodam-muted-teal: #4A7C7E;
   
   /* ============================================
-     Bootstrap Theme Variables - LOD-AM Colors
+     Bootstrap Theme Variables - Dark Theme
      ============================================ */
   
   /* Primary Theme Color = Terracotta */
   --bs-primary: var(--lodam-terracotta);
-  --bs-primary-bg-subtle: rgba(226, 114, 91, 0.1);
-  --bs-primary-border-subtle: rgba(226, 114, 91, 0.2);
+  --bs-primary-bg-subtle: rgba(226, 114, 91, 0.15);
+  --bs-primary-border-subtle: rgba(226, 114, 91, 0.3);
   --bs-primary-rgb: 226, 114, 91;
   
   /* Secondary Theme Color = Malachite */
   --bs-secondary: var(--lodam-malachite);
-  --bs-secondary-bg-subtle: rgba(61, 153, 112, 0.1);
-  --bs-secondary-border-subtle: rgba(61, 153, 112, 0.2);
+  --bs-secondary-bg-subtle: rgba(61, 153, 112, 0.15);
+  --bs-secondary-border-subtle: rgba(61, 153, 112, 0.3);
   --bs-secondary-rgb: 61, 153, 112;
   
   /* Success = Sage Green */
   --bs-success: var(--lodam-sage);
-  --bs-success-bg-subtle: rgba(138, 155, 104, 0.1);
-  --bs-success-border-subtle: rgba(138, 155, 104, 0.2);
+  --bs-success-bg-subtle: rgba(138, 155, 104, 0.15);
+  --bs-success-border-subtle: rgba(138, 155, 104, 0.3);
   --bs-success-rgb: 138, 155, 104;
   
   /* Info = Ochre */
   --bs-info: var(--lodam-ochre);
-  --bs-info-bg-subtle: rgba(204, 139, 50, 0.1);
-  --bs-info-border-subtle: rgba(204, 139, 50, 0.2);
+  --bs-info-bg-subtle: rgba(204, 139, 50, 0.15);
+  --bs-info-border-subtle: rgba(204, 139, 50, 0.3);
   --bs-info-rgb: 204, 139, 50;
   
   /* Warning = Sunset Orange */
   --bs-warning: var(--lodam-sunset-orange);
-  --bs-warning-bg-subtle: rgba(242, 140, 40, 0.1);
-  --bs-warning-border-subtle: rgba(242, 140, 40, 0.2);
+  --bs-warning-bg-subtle: rgba(242, 140, 40, 0.15);
+  --bs-warning-border-subtle: rgba(242, 140, 40, 0.3);
   --bs-warning-rgb: 242, 140, 40;
   
   /* Danger = Burnt Sienna */
   --bs-danger: var(--lodam-burnt-sienna);
-  --bs-danger-bg-subtle: rgba(212, 93, 61, 0.1);
-  --bs-danger-border-subtle: rgba(212, 93, 61, 0.2);
+  --bs-danger-bg-subtle: rgba(212, 93, 61, 0.15);
+  --bs-danger-border-subtle: rgba(212, 93, 61, 0.3);
   --bs-danger-rgb: 212, 93, 61;
   
-  /* Light = Chalk White */
-  --bs-light: var(--lodam-chalk-white);
-  --bs-light-rgb: 245, 240, 230;
+  /* Light = Deep Umber (darker) */
+  --bs-light: var(--lodam-deep-umber);
+  --bs-light-rgb: 58, 46, 34;
   
-  /* Dark = Deep Umber */
-  --bs-dark: var(--lodam-deep-umber);
-  --bs-dark-rgb: 58, 46, 34;
+  /* Dark = Charcoal (darkest) */
+  --bs-dark: var(--lodam-charcoal);
+  --bs-dark-rgb: 42, 36, 29;
   
-  /* Body colors */
-  --bs-body-color: var(--lodam-deep-umber);
-  --bs-body-color-rgb: 58, 46, 34;
-  --bs-body-bg: var(--lodam-chalk-white);
-  --bs-body-bg-rgb: 245, 240, 230;
+  /* Body colors - DARK background */
+  --bs-body-color: var(--lodam-chalk-white);
+  --bs-body-color-rgb: 245, 240, 230;
+  --bs-body-bg: var(--lodam-deep-umber);
+  --bs-body-bg-rgb: 58, 46, 34;
   
   /* Link colors */
   --bs-link-color: var(--lodam-terracotta);
   --bs-link-color-rgb: 226, 114, 91;
-  --bs-link-hover-color: var(--lodam-burnt-sienna);
-  --bs-link-hover-color-rgb: 212, 93, 61;
+  --bs-link-hover-color: #F09B86;
+  --bs-link-hover-color-rgb: 240, 155, 134;
   
   /* Border and focus */
-  --bs-border-color: rgba(58, 46, 34, 0.2);
-  --bs-border-color-translucent: rgba(58, 46, 34, 0.175);
+  --bs-border-color: rgba(245, 240, 230, 0.15);
+  --bs-border-color-translucent: rgba(245, 240, 230, 0.1);
   --bs-focus-ring-opacity: 0.25;
-  --bs-focus-ring-color: rgba(226, 114, 91, 0.25);
+  --bs-focus-ring-color: rgba(226, 114, 91, 0.4);
   
   /* Font */
   --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
-  /* Button colors - these override Bootstrap's hardcoded values */
+  /* Button colors - adjusted for dark theme */
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
-  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   --bs-btn-disabled-opacity: 0.65;
   
   /* Primary Button */
@@ -103,7 +103,7 @@
   --bs-secondary-btn-border-color: var(--lodam-malachite);
   
   /* Success Button */
-  --bs-success-btn-color: var(--lodam-chalk-white);
+  --bs-success-btn-color: var(--lodam-deep-umber);
   --bs-success-btn-bg: var(--lodam-sage);
   --bs-success-btn-border-color: var(--lodam-sage);
   
@@ -123,25 +123,25 @@
   --bs-danger-btn-border-color: var(--lodam-burnt-sienna);
   
   /* Form colors */
-  --bs-form-control-color: var(--lodam-deep-umber);
-  --bs-form-control-bg: var(--lodam-chalk-white);
-  --bs-form-control-border-color: rgba(58, 46, 34, 0.2);
+  --bs-form-control-color: var(--lodam-chalk-white);
+  --bs-form-control-bg: var(--lodam-charcoal);
+  --bs-form-control-border-color: rgba(245, 240, 230, 0.15);
   --bs-form-control-focus-border-color: var(--lodam-terracotta);
-  --bs-form-control-focus-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.25);
+  --bs-form-control-focus-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.35);
   
   /* Card colors */
-  --bs-card-bg: var(--lodam-chalk-white);
-  --bs-card-border-color: rgba(58, 46, 34, 0.1);
-  --bs-card-title-color: var(--lodam-deep-umber);
+  --bs-card-bg: var(--lodam-charcoal);
+  --bs-card-border-color: rgba(245, 240, 230, 0.08);
+  --bs-card-title-color: var(--lodam-chalk-white);
   
   /* Navbar colors */
-  --bs-navbar-color: rgba(255, 255, 255, 0.9);
+  --bs-navbar-color: rgba(245, 240, 230, 0.9);
   --bs-navbar-hover-color: var(--lodam-chalk-white);
   --bs-navbar-active-color: var(--lodam-chalk-white);
   --bs-navbar-brand-color: var(--lodam-chalk-white);
-  --bs-navbar-brand-hover-color: rgba(255, 255, 255, 0.9);
+  --bs-navbar-brand-hover-color: rgba(245, 240, 230, 0.95);
   
   /* Footer colors */
-  --bs-footer-bg: var(--lodam-deep-umber);
-  --bs-footer-color: rgba(255, 255, 255, 0.8);
+  --bs-footer-bg: var(--lodam-charcoal);
+  --bs-footer-color: rgba(245, 240, 230, 0.7);
 }
