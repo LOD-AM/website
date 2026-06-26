@@ -440,3 +440,14 @@ code[class*="language-"] {
 .btn-link:hover {
   color: #F09B86;
 }
+
+/* Background utility classes */
+.bg-terracotta { background-color: var(--lodam-terracotta); }
+.bg-ochre { background-color: var(--lodam-ochre); }
+.bg-malachite { background-color: var(--lodam-malachite); }
+.bg-sage { background-color: var(--lodam-sage); }
+.bg-chalk-white { background-color: var(--lodam-chalk-white); color: var(--lodam-deep-umber); }
+.bg-deep-umber { background-color: var(--lodam-deep-umber); color: var(--lodam-chalk-white); }
+.bg-charcoal { background-color: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
+.bg-burnt-sienna { background-color: var(--lodam-burnt-sienna); color: var(--lodam-chalk-white); }
+.bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
