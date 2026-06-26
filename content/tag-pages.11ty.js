@@ -1,0 +1,30 @@
+---
+const pagination = {
+	data: "collections",
+	size: 1,
+	alias: "tag",
+	filter: ["all", "posts"],
+};
+
+const eleventyExcludeFromCollections = true;
+
+const eleventyComputed = {
+	title: "Tagged '" + tag + "'",
+	permalink: function(data) {
+		return "/tags/" + this.slugify(data.tag) + "/";
+	}
+};
+---
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-8">
+			<h1 class="display-4 mb-4">Tagged <span class="badge bg-primary">"{{ tag }}"</span></h1>
+			<p class="lead mb-4">{{ collections[tag] | length }} post{% if collections[tag] | length != 1 %}s{% endif %} with this tag</p>
+			
+			{% set postslist = collections[ tag ] %}
+			{% include "postslist.njk" %}
+			
+			<p class="mt-4"><a href="tags.njk" class="btn btn-outline-secondary">All tags</a></p>
+		</div>
+	</div>
+</div>
