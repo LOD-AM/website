@@ -7,6 +7,10 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
 		<!-- LOD-AM Theme Variables - MUST load BEFORE Bootstrap -->
 		<link rel="stylesheet" href="/css/bootstrap-theme.css">
 		
@@ -26,7 +30,9 @@
 		<!-- Bootstrap Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
 			<div class="container">
-				<a class="navbar-brand" href="/">{{ metadata.title }}</a>
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="{{ metadata.title }}" height="30" class="d-inline-block align-top">
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
 					<span class="navbar-toggler-icon"></span>
 				</button>
