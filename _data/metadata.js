@@ -1,11 +1,11 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
+	title: "Linked Open Data for Ancient Metallurgy",
+	url: "https://lod-am.net/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "A research project dedicated to studying ancient metallurgical practices through open data methodologies.",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
+		name: "LOD-AM Project Team",
+		email: "info@lod-am.net",
+		url: "https://lod-am.net/about/"
 	}
 }
