@@ -27,6 +27,9 @@ export default async function(eleventyConfig) {
 		})
 		.addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
+	// Copy CSS files to output
+	eleventyConfig.addPassthroughCopy("./css/**/*.css");
+
 	// Copy Bootstrap CSS and JS to clean paths
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/bootstrap/dist/css/bootstrap.min.css": "/css/bootstrap.min.css",
