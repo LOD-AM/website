@@ -4,25 +4,54 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
 <style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
 <style>{% include "css/prism-diff.css" %}</style>
-<h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4">{{ title }}</h1>
+    
+    <div class="text-muted mb-3">
+      <small>
+        Posted on <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        {% if author %} by {{ author }}{% endif %}
+      </small>
+    </div>
+    
+    {% if tags.length %}
+    <div class="mb-3">
+      {% for tag in tags | filterTagList %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <a href="{{ tagUrl }}" class="badge bg-secondary me-2">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
 
-{{ content | safe }}
+  <div class="content">
+    {{ content | safe }}
+  </div>
 
-{%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
-{%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
-{%- endif %}
+  {% if collections.posts %}
+  {% set previousPost = collections.posts | getPreviousCollectionItem %}
+  {% set nextPost = collections.posts | getNextCollectionItem %}
+  {% if nextPost or previousPost %}
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+      {% if previousPost %}
+      <li class="page-item">
+        <a class="page-link" href="{{ previousPost.url }}">
+          <i class="bi bi-arrow-left"></i> Previous: {{ previousPost.data.title }}
+        </a>
+      </li>
+      {% endif %}
+      {% if nextPost %}
+      <li class="page-item">
+        <a class="page-link" href="{{ nextPost.url }}">
+          Next: {{ nextPost.data.title }} <i class="bi bi-arrow-right"></i>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+  {% endif %}
+</article>
