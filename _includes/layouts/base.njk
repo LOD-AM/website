@@ -7,8 +7,8 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
-		<!-- Bootstrap CSS from node_modules -->
-		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		
 		<!-- Custom CSS -->
 		<style>{% include "css/index.css" %}</style>
@@ -62,7 +62,7 @@
 		</footer>
 
 		<!-- Bootstrap JS Bundle with Popper -->
-		<script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/bootstrap.bundle.min.js"></script>
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>
