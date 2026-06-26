@@ -1,4 +1,4 @@
----js
+---
 const eleventyNavigation = {
 	key: "Home",
 	order: 1
@@ -8,22 +8,53 @@ const numberOfLatestPostsToShow = 3;
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
-{% endif %}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+<div class="container">
+	<div class="row mb-5">
+		<div class="col-lg-8">
+			<h1 class="display-4 mb-4">Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+			
+			{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+			{% set postslistCounter = postsCount %}
+			{% include "postslist.njk" %}
+			
+			{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+			{% if morePosts > 0 %}
+			<p class="mt-4">{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk" class="btn btn-outline-primary">the archive</a>.</p>
+			{% endif %}
+		</div>
+		
+		<div class="col-lg-4">
+			<div class="card mb-4">
+				<div class="card-header">
+					<h4 class="mb-0">About</h4>
+				</div>
+				<div class="card-body">
+					<p>{{ metadata.description or metadata.subtitle }}</p>
+					<a href="/about/" class="btn btn-primary">Learn More</a>
+				</div>
+			</div>
+			
+			{% if collections.posts | length > 0 %}
+			<div class="card">
+				<div class="card-header">
+					<h4 class="mb-0">Recent Posts</h4>
+				</div>
+				<div class="card-body">
+					<div class="list-group">
+						{% for post in collections.posts | reverse | slice(0, 5) %}
+						<a href="{{ post.url }}" class="list-group-item list-group-item-action">
+							<div class="d-flex w-100 justify-content-between">
+								<h6 class="mb-1">{{ post.data.title }}</h6>
+								<small class="text-muted">{{ post.date | date("MMM d") }}</small>
+							</div>
+							<p class="mb-1 small text-muted">{{ post.data.excerpt or post.data.description | truncate(100) }}</p>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
