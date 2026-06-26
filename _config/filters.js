@@ -61,4 +61,10 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("sortAlphabetically", strings =>
 		(strings || []).sort((b, a) => b.localeCompare(a))
 	);
-};
+
+	// Get tag color for individual tag badges
+	import { getTagColor, getTagStyle } from '../_data/tagColors.js';
+	
+	eleventyConfig.addFilter("getTagColor", (tag) => getTagColor(tag));
+	eleventyConfig.addFilter("getTagStyle", (tag) => getTagStyle(tag).style);
+}
