@@ -1,8 +1,24 @@
-<ol reversed class="postlist" style="--postlist-index: {{ (postslistCounter or postslist.length) + 1 }}">
 {%- for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
+<div class="card mb-3 {% if post.url == url %}border-primary{% endif %}">
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href="{{ post.url }}" class="text-decoration-none">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+    </h3>
+    <p class="card-text text-muted mb-0">
+      <small>
+        <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+      </small>
+    </p>
+    {% if post.data.excerpt or post.data.description %}
+    <p class="card-text mt-2">{{ post.data.excerpt or post.data.description | truncate(200) }}</p>
+    {% endif %}
+  </div>
+  {% if post.data.tags.length %}
+  <div class="card-footer bg-transparent">
+    {% for tag in post.data.tags %}
+    <span class="badge bg-secondary me-2">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
 {%- endfor %}
-</ol>
