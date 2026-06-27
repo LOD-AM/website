@@ -33,27 +33,6 @@ numberOfLatestPostsToShow: 3
 					<a href="/about/" class="btn btn-primary">Learn More</a>
 				</div>
 			</div>
-			
-			{% if collections.blog | length > 0 %}
-			<div class="card">
-				<div class="card-header">
-					<h4 class="mb-0">Recent Posts</h4>
-				</div>
-				<div class="card-body">
-					<div class="list-group">
-						{% for post in collections.blog | reverse | slice(0, 5) %}
-						<a href="{{ post.url }}" class="list-group-item list-group-item-action">
-							<div class="d-flex w-100 justify-content-between">
-								<h6 class="mb-1">{{ post.data.title }}</h6>
-								<small class="text-muted">{{ post.date | date("MMM d") }}</small>
-							</div>
-							<p class="mb-1 small text-muted">{{ post.data.excerpt or post.data.description | truncate(100) }}</p>
-						</a>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-			{% endif %}
 		</div>
 	</div>
 </div>
