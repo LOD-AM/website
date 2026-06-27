@@ -1,6 +1,6 @@
 export default {
 	tags: [
-		"blog"
+		"posts"
 	],
 	"layout": "layouts/post.njk",
 };
