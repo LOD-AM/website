@@ -1,116 +1,138 @@
-# eleventy-base-blog v9
+# LOD-AM Website
 
-A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v3.0 release](https://github.com/11ty/eleventy/releases/tag/v3.0.0)).
+The main website of the Linked Open Data for Ancient Metallurgy (LOD-AM) project
+
+## About
+
+This is the official website for the LOD-AM project, built with Eleventy static site generator and Bootstrap 5 for styling.
 
 ## Getting Started
 
-* [Want a more generic/detailed getting started guide?](https://www.11ty.dev/docs/getting-started/)
+### Installation
 
-1. Make a directory and navigate to it:
+1. Clone the repository:
+   git clone git@github.com:LOD-AM/Website.git
+   cd Website
 
-```
-mkdir my-blog-name
-cd my-blog-name
-```
+2. Install dependencies:
+   npm install
 
-2. Clone this Repository
+3. Run the development server:
+   npx @11ty/eleventy --serve
 
-```
-git clone https://github.com/11ty/eleventy-base-blog.git .
-```
+4. Open your browser to http://localhost:8080
 
-_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
+### Build for Production
 
-3. Install dependencies
-
-```
-npm install
-```
-
-4. Run Eleventy
-
-Generate a production-ready build to the `_site` folder:
-
-```
 npx @11ty/eleventy
-```
 
-Or build and host on a local development server:
+This will generate static files in the _site directory.
 
-```
-npx @11ty/eleventy --serve
-```
+## Modifications History
 
-Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
+### Major Changes Applied (June 24-27, 2026)
 
-## Features
+#### 1. Bootstrap 5 Integration (June 26, 2026)
+- Installed Bootstrap 5 via npm (bootstrap, @popperjs/core)
+- Added Bootstrap CSS and JavaScript to all layouts
+- Configured passthrough copy for Bootstrap assets
+- Updated all templates to use Bootstrap components (navbar, cards, buttons, badges, pagination, grid)
+- Converted JavaScript front matter to YAML front matter in all templates
+- Added Bootstrap Icons via CDN
 
-- Using [Eleventy v3](https://github.com/11ty/eleventy/releases/tag/v3.0.0) with zero-JavaScript output.
-	- Content is exclusively pre-rendered (this is a static site).
-	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
-	- All URLs are decoupled from the content’s location on the file system.
-	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-- **Performance focused**: four-hundos Lighthouse score out of the box!
-	- _0 Cumulative Layout Shift_
-	- _0ms Total Blocking Time_
-- Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
-- Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
-- Fully automated [Image optimization](https://www.11ty.dev/docs/plugins/image/)
-	- Zero-JavaScript output.
-	- Support for modern image formats automatically (e.g. AVIF and WebP)
-	- Processes images on-request during `--serve` for speedy local builds.
-	- Prefers `<img>` markup if possible (single image format) but switches automatically to `<picture>` for multiple image formats.
-	- Automated `<picture>` syntax markup with `srcset` and optional `sizes`
-	- Includes `width`/`height` attributes to avoid [content layout shift](https://web.dev/cls/).
-	- Includes `loading="lazy"` for native lazy loading without JavaScript.
-	- Includes [`decoding="async"`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding)
-	- Images can be co-located with blog post files.
-- Per page CSS bundles [via `eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle).
-- Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
-- Draft content: use `draft: true` to mark any template as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. This is driven by the `addPreprocessor` configuration API in `eleventy.config.js`. Schema validator will show an error if non-boolean value is set in data cascade.
-- Blog Posts
-	- Automated next/previous links
-	- Accessible deep links to headings
-- Generated Pages
-	- Home, Archive, and About pages.
-	- [Atom feed included (with easy one-line swap to use RSS or JSON)](https://www.11ty.dev/docs/plugins/rss/)
-	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
-	- Content not found (404) page
+Files Modified: All layout templates, eleventy.config.js, package.json, css/index.css
 
-## Demos
+#### 2. Logo and Favicon (June 26, 2026)
+- Added LOD-AM logo to navbar
+- Added favicon support (.ico and .png)
+- Created public/img/ directory for static assets
+- Logo resized to 75x75px with max-width/max-height constraints
 
-- [Netlify](https://eleventy-base-blog.netlify.app/)
-- [Vercel](https://demo-base-blog.11ty.dev/)
-- [Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
-- [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
+Files Modified: _includes/layouts/base.njk, public/img/logo.svg, public/img/favicon.ico
 
-## Deploy this to your own site
+#### 3. Legal Compliance - German Pages (June 27, 2026)
+- Created content/impressum.md - Legal notice page (required for German websites)
+- Created content/privacy.md - GDPR-compliant privacy policy
+- Added links to both pages in footer
+- Excluded from main navigation (standard practice for legal pages)
 
-Deploy this Eleventy site in just a few clicks on these services:
+Pages Available At:
+- /impressum/ - Impressum (Legal notice)
+- /privacy/ - Privacy Policy
 
-- Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
-- [Deploy this to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
-- [Deploy this to **Vercel**](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
-- Look in `.github/workflows/gh-pages.yml.sample` for information on [Deploying to **GitHub Pages**](https://www.11ty.dev/docs/deployment/#deploy-an-eleventy-project-to-git-hub-pages).
-- [Try it out on **Stackblitz**](https://stackblitz.com/github/11ty/eleventy-base-blog)
+Files Modified: content/impressum.md, content/privacy.md, _includes/layouts/base.njk
 
-### Implementation Notes
+#### 4. Collection Renaming (June 26-27, 2026)
+- Renamed collection from posts to blog for semantic clarity
+- Updated all references in templates and configuration
+- Renamed _includes/postslist.njk to _includes/bloglist.njk
 
-- `content/about/index.md` is an example of a content page.
-- `content/blog/` has the blog posts but really they can live in any directory. They need only the `posts` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/).
-- Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
-- Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
-- The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
-- This project uses three [Eleventy Layouts](https://www.11ty.dev/docs/layouts/):
-	- `_includes/layouts/base.njk`: the top level HTML structure
-	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
+Files Modified: eleventy.config.js, _includes/bloglist.njk, content/blog/blog.11tydata.js, content/blog.njk, _filters.js
 
-#### Content Security Policy
+#### 5. Theme and Styling (June 26-27, 2026)
+- Created custom css/bootstrap-theme.css with LOD-AM colors
+- Applied earthy/archaeological color scheme (Primary: #8B4513, Secondary: #556B2F)
+- Converted to dark theme with proper contrast
+- Applied bold font weights (body: 500, headings: 700)
+- Added individual tag colors using tagColors.js
+- Fixed date text color, button colors, and various CSS issues
 
-If your site enforces a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (as public-facing sites should), you have a few choices (pick one):
+Files Modified: css/bootstrap-theme.css, css/index.css, _includes/layouts/base.njk, tagColors.js, _filters.js
 
-1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
-2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
+### Statistics
+
+- Total Commits: 60+
+- Files Modified: 25+
+- Period: June 24-27, 2026
+
+### By Category:
+- Bootstrap Integration: 25+ commits (42%)
+- Styling and Theme: 18 commits (30%)
+- Logo and Branding: 8 commits (13%)
+- Legal Compliance: 3 commits (5%)
+- Collection Renaming: 6 commits (10%)
+
+## Legal Pages
+
+This website includes legally required pages for German compliance:
+
+- Impressum (/impressum/): Legal notice with contact information
+- Privacy Policy (/privacy/): GDPR-compliant privacy statement
+
+IMPORTANT: Replace placeholder text in both files with your actual personal information before deployment.
+
+## Customization
+
+### Colors
+The site uses a custom LOD-AM color scheme with earthy tones:
+- Primary: Earthy brown (#8B4513)
+- Secondary: Dark olive green (#556B2F)
+- Background: Dark (#121212)
+- Text: Light (#e0e0e0)
+
+To modify colors, edit css/bootstrap-theme.css.
+
+### Tag Colors
+Individual tags have custom colors defined in tagColors.js. Add new tags to the mapping.
+
+### Logo
+Replace public/img/logo.svg with your LOD-AM logo. The navbar automatically resizes it to 75x75px.
+
+## Dependencies
+
+- Eleventy (11ty) - Static site generator
+- Bootstrap 5 - CSS framework
+- @popperjs/core - Tooltip positioning
+
+## License
+
+This project is licensed under the MIT License.
+
+## Links
+
+- Repository: https://github.com/LOD-AM/Website
+- Commits: https://github.com/LOD-AM/Website/commits/main
+- Eleventy Docs: https://www.11ty.dev/
+- Bootstrap Docs: https://getbootstrap.com/
+
+Last updated: June 27, 2026 | Documentation version: 1.0
