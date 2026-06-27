@@ -452,6 +452,10 @@ code[class*="language-"] {
   color: #F09B86;
 }
 
+.btn-sm {
+  --bs-btn-font-weight: 550;
+}
+
 /* Background utility classes */
 .bg-terracotta { background-color: var(--lodam-terracotta); }
 .bg-ochre { background-color: var(--lodam-ochre); }
