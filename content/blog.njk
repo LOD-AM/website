@@ -7,9 +7,9 @@ eleventyNavigation:
 	<div class="row">
 		<div class="col-lg-8">
 			<h1 class="display-4 mb-4">Blogs</h1>
-			<p class="lead mb-4">All {{ collections.posts | length }} blog posts</p>
+			<p class="lead mb-4">All {{ collections.blog | length }} blog posts</p>
 			
-			{% set postslist = collections.posts %}
+			{% set postslist = collections.blog %}
 			{% include "postslist.njk" %}
 		</div>
 		
@@ -33,7 +33,7 @@ eleventyNavigation:
 				</div>
 				<div class="card-body">
 					<div class="list-group">
-						{% for post in collections.posts | reverse | slice(0, 5) %}
+						{% for post in collections.blog | reverse | slice(0, 5) %}
 						<a href="{{ post.url }}" class="list-group-item list-group-item-action">
 							<div class="d-flex w-100 justify-content-between">
 								<h6 class="mb-1">{{ post.data.title }}</h6>
