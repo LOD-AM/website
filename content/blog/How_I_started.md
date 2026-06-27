@@ -2,7 +2,7 @@
 title: How I started
 description: So, how we got to the point to see this website? I'll tell you.
 date: 2026-06-23
-tags: ["blog", "concept"]
+tags: ["concept"]
 ---
 
 Hi again, it’s me—Fabian. In the About-Post, I introduced LOD-AM as my personal sandbox for experimenting with Linked Open Data in archaeometallurgy. Today, I want to share how this sandbox actually became a website you can visit. The short answer: **Eleventy, Bootstrap 5, and JavaScript**—with a little help from an AI assistant.
