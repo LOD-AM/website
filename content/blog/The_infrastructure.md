@@ -13,7 +13,7 @@ I’m a firm believer in doing more with less. The two mini PCs powering LOD-AM 
 
 ### Free Software All the Way
 
-I’m a strong supporter of the Free Software Movement, so it should come as no surprise that **FOSS is at the heart of everything I do**. My notebook runs **Garuda Linux**—a distro I can wholeheartedly recommend. I code in **VS Codium**, the open-source counterpart to VS Code. Even the AI assistant helping me build this? **Mistral**, open-source and running wherever I need it. And for virtualization, I rely on **Proxmox**, the rock-solid foundation of my homelab. One compromise I made from those principles, is the usage of **GitHub**. I have to admit, that was a decision out of convenience. I am used to **GitHub** and the integration with **Mistral** is so easy to use. 
+I’m a strong supporter of the Free Software Movement, so it should come as no surprise that **FOSS is at the heart of everything I do**. My notebook runs **Garuda Linux**—a distro I can wholeheartedly recommend. I code in **VS Codium**, the open-source counterpart to VS Code. Even the AI assistant helping me build this? **Mistral**, open-source and running wherever I need it. And for virtualization, I rely on **Proxmox**, the rock-solid foundation of my homelab. One compromise I made from those principles, is the usage of **GitHub**. I have to admit, that was a decision out of convenience. I am used to **GitHub** and the integration with **Mistral** is so easy to use. But as always I am happy to learn of better, more **FOSS** alternatives to switch to.
 
 ### The Backbone: Two LXC Containers
 
