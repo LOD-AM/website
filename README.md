@@ -118,6 +118,50 @@ Individual tags have custom colors defined in tagColors.js. Add new tags to the 
 ### Logo
 Replace public/img/logo.svg with your LOD-AM logo. The navbar automatically resizes it to 75x75px.
 
+
+## Comments (Giscus)
+
+This website uses **[Giscus](https://giscus.app/)** for blog post comments, powered by GitHub Discussions.
+
+### Setup
+
+1. **Install the Giscus GitHub App** on this repository:
+   - Go to: [https://github.com/apps/giscus](https://github.com/apps/giscus)
+   - Click "Install" and select the **LOD-AM/Website** repository
+
+2. **Create a "Comments" category** in Discussions (optional but recommended):
+   - Go to: [https://github.com/LOD-AM/Website/discussions/categories](https://github.com/LOD-AM/Website/discussions/categories)
+   - Create a new category named "Comments"
+
+### How It Works
+
+- Each blog post automatically creates a linked GitHub Discussion thread
+- Users can comment using their GitHub accounts
+- Comments are stored in your repository's Discussions
+- No tracking, privacy-friendly, and free
+
+### Configuration
+
+The Giscus script is configured in _includes/layouts/post.njk with:
+- Repository: LOD-AM/Website
+- Category: Comments
+- Theme: Dark (matches the site's color scheme)
+- Mapping: pathname (each post gets its own discussion)
+
+## OpenGraph Images
+
+Blog posts can display GitHub repository previews using **opengraph.githubassets.com**.
+
+Example usage in markdown:
+
+```markdown
+<img src="https://opengraph.githubassets.com/1/LOD-AM/website" alt="LOD-AM/website" width="800" />
+[View LOD-AM/website on GitHub](https://github.com/LOD-AM/website)
+```
+
+This generates a nice preview card of your GitHub repository directly in the blog post.
+
+
 ## Dependencies
 
 - Eleventy (11ty) - Static site generator
