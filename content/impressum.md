@@ -19,12 +19,12 @@
 					</p>
 					
 					<p class="card-text">
-						<strong>Email:</strong> [YOUR EMAIL]
+						<strong>Email:</strong> info@lod-am.net
 					</p>
 					
 					<h3>Contact</h3>
 					<p class="card-text">
-						For questions or concerns regarding this website, please contact: <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a>
+						For questions or concerns regarding this website, please contact: <a href="mailto:info@lod-am.net">info@lod-am.net</a>
 					</p>
 					
 					<p class="text-muted small">

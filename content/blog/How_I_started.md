@@ -23,6 +23,14 @@ The core of LOD-AM is the **triple store**, my RDF-based database where I’m co
 
 With Eleventy’s JavaScript-friendly nature, I can query my triple store using SPARQL and fetch the data directly into my site. Whether at build time or client-side, I can pull in entities, display their relationships, and keep the content dynamic without sacrificing the simplicity of a static site. It’s not always seamless—there are plenty of moments debugging queries or troubleshooting data models—but it’s effective. And that’s what matters.
 
+Curious for the code?
+
+<img src="https://opengraph.githubassets.com/1/LOD-AM/website" alt="LOD-AM/website" width="800" />
+
+[View LOD-AM/website on GitHub →](https://github.com/LOD-AM/website)
+
+
+
 ### A Modern Workflow: Mistral and GitHub
 
 Now, here’s something I won’t hide: **this website is pretty much a vibe coding attempt**. I’m using Mistral to help me write, debug, and refine the code. Am I a developer? Not really. But I don’t need to be. Mistral helps me bridge the gaps in my knowledge, allowing me to focus on what I *do* know—my data and my research.
