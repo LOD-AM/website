@@ -116,11 +116,11 @@
 					
 					<h2 class="card-title">Contact</h2>
 					<p class="card-text">
-						For questions or concerns regarding this privacy policy or the processing of your personal data, please contact: <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a>
+						For questions or concerns regarding this privacy policy or the processing of your personal data, please contact: <a href="mailto:[YOUR EMAIL]">info@lod-am.net</a>
 					</p>
 					
 					<p class="text-muted small">
-						*Last updated: [DATE]*
+						*Last updated: 28.06.2026*
 					</p>
 				</div>
 			</div>

@@ -43,6 +43,15 @@ eleventyNavigation:
 					</ul>
 				</div>
 			</div>
+			
+			<div class="card mb-4">
+				<div class="card-body">
+					<h2 class="card-title">Disclaimer</h2>
+					<p class="card-text">
+					This is a personal, non-commercial blog. All content is provided for educational and illustrative purposes only. No revenue is generated from this site.
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
