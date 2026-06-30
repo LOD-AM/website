@@ -37,4 +37,4 @@ So here’s the setup: old hardware, free software, and a DIY spirit. It’s not
 
 And if you’re reading this, you’re seeing the result. A project built on the belief that you don’t need expensive tools or corporate solutions to do meaningful work. Sometimes, all you need is a couple of old PCs, a commitment to free software, and the willingness to figure things out as you go.
 
-As always, if you have questions, suggestions, or just want to geek out about homelabs and triple stores, drop me a line at **info@lod-am.net**.
+As always, if you have questions, suggestions, or just want to geek out about homelabs and triple stores, drop me a line at **info@lod-am.net** or (if you have a GitHub-Account) in a **comment** below.

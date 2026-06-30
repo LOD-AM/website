@@ -41,4 +41,4 @@ Connecting Mistral with the GitHub repository has been a game-changer. It’s th
 
 So here we are: a website built with Eleventy, styled with Bootstrap, powered by JavaScript, and assisted by AI. It’s not the most sophisticated setup, nor is it the most polished. But it’s **effective**. It lets me share my work, display my data, and document my journey without the overhead of becoming a full-stack developer.
 
-This project is still very much a work in progress. But with these tools and this approach, I’m able to focus on what really matters: the data, the connections, and the insights. And if you have thoughts, suggestions, or just want to share your own experiences, I’d love to hear from you at **info@lod-am.net**.
+This project is still very much a work in progress. But with these tools and this approach, I’m able to focus on what really matters: the data, the connections, and the insights. And if you have thoughts, suggestions, or just want to share your own experiences, I’d love to hear from you at **info@lod-am.net** or (if you have a GitHub-Account) in a **comment** below.
