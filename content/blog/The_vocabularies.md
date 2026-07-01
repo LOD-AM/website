@@ -48,8 +48,6 @@ So here’s my vocabulary stack:
 
 Together, they give me a **balance of global standards and flexibility**. Where comprehensive vocabularies exist (like Getty AAT and Allotrope), I use them. Where I need the ability to add custom entries (like Pleiades and PeriodO), I’ve chosen vocabularies that let me do just that.
 
-Is this the perfect setup? Probably not. But it’s **pragmatic, interoperable, and it works** for a one-person project like mine. And if I need to adjust later, I can always refine the model.
-
 Curious for the itty-bitty details?
 
 <img src="https://opengraph.githubassets.com/1/LOD-AM/vocabularies" alt="LOD-AM/vocabularies" width="800" />
