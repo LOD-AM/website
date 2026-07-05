@@ -6,7 +6,7 @@ tags: ["concept", "ontology"]
 ---
 So, I’ve got my homelab running, my website set up with Eleventy, and my triple store humming away with Fuseki. But none of that matters much if I don’t have a solid way to structure the data. That’s where the ontologies come in.
 
-Curious for the itty-bitty details of the deployment of the triple store?
+Curious for the details of the deployment of the triple store?
 
 <img src="https://opengraph.githubassets.com/1/LOD-AM/triplestore" alt="LOD-AM/triplestore" width="800" />
 
