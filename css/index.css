@@ -507,21 +507,21 @@ code[class*="language-"] {
 
 /* Main container background */
 .giscus {
-  --giscus-color-bg: #3A2E22 !important; /* LOD-AM deep umber */
-  --giscus-color-bg-secondary: #2A241D !important; /* LOD-AM charcoal */
-  --giscus-color-bg-hover: #4A3F32 !important; /* Slightly lighter */
+  --giscus-color-bg: #3A2E22 !important;
+  --giscus-color-bg-secondary: #2A241D !important;
+  --giscus-color-bg-hover: #4A3F32 !important;
 }
 
 /* Text colors */
 .giscus {
-  --giscus-color-text: #F5F0E6 !important; /* LOD-AM chalk white */
+  --giscus-color-text: #F5F0E6 !important;
   --giscus-color-text-secondary: rgba(245, 240, 230, 0.7) !important;
   --giscus-color-text-muted: rgba(245, 240, 230, 0.5) !important;
 }
 
 /* Primary colors (buttons, links) - Terracotta */
 .giscus {
-  --giscus-color-primary: #CB6D51 !important; /* LOD-AM terracotta */
+  --giscus-color-primary: #CB6D51 !important;
   --giscus-color-primary-hover: #B84A2F !important;
   --giscus-color-primary-text: #3A2E22 !important;
 }
@@ -534,15 +534,15 @@ code[class*="language-"] {
 
 /* Input field styling */
 .giscus {
-  --giscus-color-input-bg: #2A241D !important; /* LOD-AM charcoal */
+  --giscus-color-input-bg: #2A241D !important;
   --giscus-color-input-text: #F5F0E6 !important;
   --giscus-color-input-border: rgba(245, 240, 230, 0.3) !important;
-  --giscus-color-input-border-focus: #CB6D51 !important; /* Terracotta focus */
+  --giscus-color-input-border-focus: #CB6D51 !important;
 }
 
 /* Button styling */
 .giscus {
-  --giscus-color-btn-bg: #CB6D51 !important; /* Terracotta */
+  --giscus-color-btn-bg: #CB6D51 !important;
   --giscus-color-btn-bg-hover: #B84A2F !important;
   --giscus-color-btn-text: #3A2E22 !important;
 }
@@ -563,7 +563,7 @@ code[class*="language-"] {
 
 /* Link colors */
 .giscus {
-  --giscus-color-link: #CB6D51 !important; /* Terracotta */
+  --giscus-color-link: #CB6D51 !important;
   --giscus-color-link-hover: #F09B86 !important;
 }
 
@@ -576,4 +576,27 @@ code[class*="language-"] {
 
 .giscus iframe {
   background: transparent !important;
+}
+
+/* ===== Custom Spacing for Markdown Content ===== */
+/* Space below headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Space between paragraphs */
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Reduce space between consecutive headings */
+h1 + h2, h2 + h3, h3 + h4 {
+  margin-top: 1rem;
+}
+
+/* Remove extra space before first paragraph after a heading */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+  margin-top: 0;
 }
