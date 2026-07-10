@@ -86,6 +86,7 @@ async function getOpenGraphImage(url) {
 async function getDOITitle(doiUrl) {
   try {
     const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\///i, '');
+
     const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
     const response = await fetch(crossrefUrl, {
       headers: {
