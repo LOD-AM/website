@@ -9,6 +9,13 @@ import pluginFilters from "./_config/filters.js";
 // Helper function to fetch OpenGraph image from a URL
 async function getOpenGraphImage(url) {
   try {
+    const hostname = new URL(url).hostname;
+    
+    // Site-specific fallbacks - check BEFORE fetching
+    if (hostname.includes('persee.fr')) {
+      return 'https://www.persee.fr/img/persee-logo.png';
+    }
+    
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     
@@ -29,14 +36,6 @@ async function getOpenGraphImage(url) {
     }
     
     const html = await response.text();
-    
-    // Site-specific fallbacks for known academic platforms
-    const hostname = new URL(url).hostname;
-    
-    // Persee.fr - use their logo
-    if (hostname.includes('persee.fr')) {
-      return 'https://www.persee.fr/portals/19695/images/persee-logo.png';
-    }
     
     // Extract OpenGraph image
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
@@ -80,6 +79,12 @@ async function getOpenGraphImage(url) {
     console.warn('[' + new Date().toISOString() + '] No image found for ' + url);
     return null;
   } catch (error) {
+    // If fetch fails, check for site-specific fallback
+    const hostname = new URL(url).hostname;
+    if (hostname.includes('persee.fr')) {
+      return 'https://www.persee.fr/img/persee-logo.png';
+    }
+    
     console.warn('[' + new Date().toISOString() + '] Error fetching ' + url + ': ' + error.message);
     return null;
   }
