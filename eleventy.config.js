@@ -220,13 +220,10 @@ export default async function(eleventyConfig) {
     if (url.includes('doi.org/')) {
       title = customTitle || (await getDOITitle(url)) || displayUrl;
     }
-    
-    return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.5em 1em 1em 1em; border-radius: 8px;">' +
-      '<div style="display: flex; align-items: center; gap: 1em;">' +
-        '<img src="/img/literature-logo.svg" alt="Literature" style="width: 200px; height: auto;" loading="lazy" />' +
-        '<span style="color: #333; font-weight: bold;">' + title + '</span>' +
-      '</div>' +
-      '<div style="color: #555; font-size: 0.9em; margin-top: 0.5em;">' + displayUrl + '</div>' +
+    return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.75em; border-radius: 8px;">' +
+      '<img src="/img/literature-logo.svg" alt="Literature" style="max-width: 50px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
+      '<div style="color: #3a3a3a; font-weight: bold; font-size: 1.1em;">' +  title + '</div>' +
+      '<div style="color: #3a3a3a; font-size: 1.1em;">' + displayUrl + '</div>' +
     '</a>';
   });
 };

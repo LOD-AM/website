@@ -1,5 +1,5 @@
 ---
-title: Tackling Legacy Archaeometallurgy - The a Paper about Arslantepe as Our First Test Case
+title: Tackling Legacy Data practically
 description: How I'm using a 2002 paper on Arslantepe's metal objects to build practical Linked Open Data solutions for archaeometallurgical challenges.
 date: 2026-07-09
 tags: ["case study", "modelling", "Arslantepe"]
