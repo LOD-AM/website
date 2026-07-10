@@ -7,6 +7,8 @@ tags: ["concept"]
 
 Hi again, it’s me—Fabian. In the About-Post, I introduced LOD-AM as my personal sandbox for experimenting with Linked Open Data in archaeometallurgy. Today, I want to share how this sandbox actually became a website you can visit. The short answer: **Eleventy, Bootstrap 5, and JavaScript**—with a little help from an AI assistant.  
 
+<p></p>
+
 ### Why Eleventy?
 
 I needed a tool that would let me focus on content and data, not on fighting with complex build systems. **Eleventy** fit the bill perfectly. It’s a static site generator that’s fast, flexible, and—most importantly—unopinionated. No forced folder structures, no convoluted configuration. Just files in, HTML out. And since it’s JavaScript-based, I can use the same language to both build my site and interact with my triple store. That simplicity is exactly what I needed for a project where the data, not the framework, should be the star.  
@@ -28,8 +30,6 @@ Curious for the code?
 <img src="https://opengraph.githubassets.com/1/LOD-AM/website" alt="LOD-AM/website" width="800" />
 
 [View LOD-AM/website on GitHub →](https://github.com/LOD-AM/website)
-
-
 
 ### A Modern Workflow: Mistral and GitHub
 
