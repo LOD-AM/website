@@ -220,9 +220,10 @@ export default async function(eleventyConfig) {
     if (url.includes('doi.org/')) {
       title = customTitle || (await getDOITitle(url)) || displayUrl;
     }
+    
     return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.75em; border-radius: 8px;">' +
       '<img src="/img/literature-logo.svg" alt="Literature" style="max-width: 50px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
-      '<div style="color: #3a3a3a; font-weight: bold; font-size: 1.1em;">' +  title + '</div>' +
+      '<h3 style="color: #3a3a3a; font-size: 1.1em; margin: 0.5em 0;">Title of the source: ' + title + '</h3>' +
       '<div style="color: #3a3a3a; font-size: 1.1em;">' + displayUrl + '</div>' +
     '</a>';
   });
