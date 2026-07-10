@@ -1,21 +1,115 @@
-MIT License
+Creative Commons Attribution 4.0 International License
 
-Copyright (c) 2017–2024 Zach Leatherman @zachleat
+This work is licensed under the Creative Commons Attribution 4.0 International License.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+**Work Title:** LOD-AM Website Content  
+**Author:** Fabian Fricke / LOD-AM Project  
+**Year:** 2026  
+**Website:** https://github.com/LOD-AM/website
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+To view a copy of this license, visit:
+https://creativecommons.org/licenses/by/4.0/
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+or send a letter to:
+Creative Commons
+P.O. Box 1866, Mountain View, CA 94042, USA.
+
+================================================================================
+
+## Dual Licensing Notice
+
+This repository contains both **original content** and **third-party code** with different licensing:
+
+### 1. Original Content (CC-BY-4.0)
+All original content created by Fabian Fricke and the LOD-AM project is licensed under **Creative Commons Attribution 4.0 International (CC-BY-4.0)**, including:
+- Markdown files in /content/ (except legal documents)
+- Text content, blog posts, documentation
+- Original images in /content/img/ and /public/img/
+- Data files in /_data/
+
+**Attribution Requirements:**
+When using or sharing CC-BY-4.0 licensed content, you must:
+- Give appropriate credit to "Fabian Fricke / LOD-AM Project"
+- Provide a link to the license: https://creativecommons.org/licenses/by/4.0/
+- Indicate if changes were made
+- Retain any existing copyright notices
+
+### 2. Code and Dependencies (Original Licenses)
+The following components retain their original open source licenses:
+- **Eleventy** static site generator (MIT License)
+- **Bootstrap 5** (MIT License)  
+- **Popper.js** (MIT License)
+- All npm dependencies (see package.json for individual licenses)
+- Configuration files derived from Eleventy templates
+
+### 3. Legal Documents (Not CC-Licensed)
+The following are legal documents required for German website compliance and are **NOT** subject to CC-BY-4.0:
+- content/impressum.md (Legal notice / Impressum)
+- content/privacy.md (Privacy Policy)
+
+### 4. Excluded Files
+Not covered by CC-BY-4.0:
+- /node_modules/ (third-party dependencies)
+- Files with explicit alternative licensing
+
+================================================================================
+
+## Full CC-BY-4.0 License Text
+
+Creative Commons Attribution 4.0 International Public License
+
+By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License ("Public License").
+
+### Section 1 - Definitions
+
+**a. Adapted Material** means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material.
+
+**b. Licensed Material** means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
+
+**c. Licensed Rights** means the rights granted to You subject to the terms and conditions of this Public License.
+
+**d. Licensor** means Fabian Fricke / LOD-AM Project.
+
+**e. You** means the individual or entity exercising the Licensed Rights.
+
+### Section 2 - Scope
+
+**a. License grant** - Subject to the terms of this Public License, the Licensor grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to reproduce, Share, and produce Adapted Material.
+
+**b. Exceptions and Limitations** - For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply.
+
+### Section 3 - License Conditions
+
+**a. Attribution** - If You Share the Licensed Material, You must:
+  1. Retain identification of the creator (Fabian Fricke / LOD-AM Project)
+  2. Retain a copyright notice
+  3. Retain a notice that refers to this Public License
+  4. Retain a URI or hyperlink to the Licensed Material
+  5. Indicate if You modified the Licensed Material
+  6. Indicate the Licensed Material is licensed under this Public License
+
+You may satisfy these conditions in any reasonable manner.
+
+### Section 4 - Sui Generis Database Rights
+
+Where the Licensed Rights include Sui Generis Database Rights, You must comply with Section 3(a) if You Share all or a substantial portion of the database contents.
+
+### Section 5 - Disclaimer of Warranties
+
+**UNLESS OTHERWISE AGREED, THE LICENSED MATERIAL IS PROVIDED "AS-IS" WITHOUT WARRANTIES OF ANY KIND.**
+
+### Section 6 - Term and Termination
+
+This Public License applies for the term of the Copyright and Similar Rights licensed here. Your rights terminate automatically if You fail to comply.
+
+### Section 7 - Other Terms
+
+The Licensor shall not be bound by any additional terms communicated by You.
+
+### Section 8 - Interpretation
+
+This Public License does not reduce, limit, or impose conditions on lawful use without permission.
+
+**Full legal text available at:** https://creativecommons.org/licenses/by/4.0/legalcode
+
+For more information, visit: https://creativecommons.org/licenses/by/4.0/
