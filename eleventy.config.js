@@ -53,7 +53,7 @@ async function getOpenGraphImage(url) {
     }
     
     // Dublin Core image
-    const dcImageMatch = html.match(/<meta name="DC\.identifier"[^>]*content="([^"]+)"/i);
+    const dcImageMatch = html.match(/<meta name="DC.identifier"[^>]*content="([^"]+)"/i);
     if (dcImageMatch) {
       return dcImageMatch[1];
     }
