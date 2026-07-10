@@ -6,6 +6,50 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 
+// Helper function to fetch OpenGraph image from a URL
+async function getOpenGraphImage(url) {
+  try {
+    // Use allorigins.win proxy to avoid CORS issues
+    const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
+    const response = await fetch(proxyUrl, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      console.warn('Failed to fetch OpenGraph data for ' + url + ': ' + response.status);
+      return null;
+    }
+    
+    const data = await response.json();
+    const html = data.contents;
+    
+    // Extract OpenGraph image
+    const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
+    if (ogImageMatch) {
+      return ogImageMatch[1];
+    }
+    
+    // Extract Twitter Card image as fallback
+    const twitterImageMatch = html.match(/<meta name="twitter:image"[^>]*content="([^"]+)"/i);
+    if (twitterImageMatch) {
+      return twitterImageMatch[1];
+    }
+    
+    // Extract favicon as last resort
+    const faviconMatch = html.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href="([^"]+)"/i);
+    if (faviconMatch) {
+      return faviconMatch[1];
+    }
+    
+    return null;
+  } catch (error) {
+    console.warn('Error fetching OpenGraph image for ' + url + ':', error);
+    return null;
+  }
+}
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -116,6 +160,31 @@ export default async function(eleventyConfig) {
 
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
+	});
+
+	// Link Preview Shortcode
+	// Usage: {% linkPreview "https://example.com" %}
+	// Returns the OpenGraph image URL for the given URL
+	eleventyConfig.addAsyncShortcode("linkPreview", async (url) => {
+		const imageUrl = await getOpenGraphImage(url);
+		return imageUrl || "/img/fallback-preview.jpg";
+	});
+
+	// Link Preview Component Shortcode
+	// Usage: {% linkPreviewCard "https://example.com", "Title" %}
+	// Returns HTML for a link preview card
+	eleventyConfig.addAsyncShortcode("linkPreviewCard", async (url, title = "") => {
+		const imageUrl = await getOpenGraphImage(url);
+		const fallbackImage = "/img/fallback-preview.jpg";
+		const displayUrl = new URL(url).hostname;
+		
+		return '
+			<a href="' + url + '" class="link-preview-card" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">
+				<img src="' + (imageUrl || fallbackImage) + '" alt="' + (title || displayUrl) + '" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5em;" />
+				<div style="font-weight: bold;">' + (title || displayUrl) + '</div>
+				<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>
+			</a>
+		';
 	});
 };
 
