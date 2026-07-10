@@ -10,20 +10,23 @@ import pluginFilters from "./_config/filters.js";
 async function getOpenGraphImage(url) {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), 15000);
     
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0)',
-        'Accept': 'text/html'
+        'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0; +https://lod-am.net)',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5'
       },
-      signal: controller.signal
+      signal: controller.signal,
+      // Some sites need this for HTTP/2
+      mode: 'no-cors'
     });
     
     clearTimeout(timeout);
     
     if (!response.ok) {
-      console.warn('Failed to fetch ' + url + ': ' + response.status);
+      console.warn('[' + new Date().toISOString() + '] HTTP ' + response.status + ' for ' + url);
       return null;
     }
     
@@ -32,24 +35,28 @@ async function getOpenGraphImage(url) {
     // Extract OpenGraph image
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
     if (ogImageMatch) {
+      console.log('[' + new Date().toISOString() + '] Found og:image: ' + ogImageMatch[1]);
       return ogImageMatch[1];
     }
     
     // Extract Twitter Card image as fallback
     const twitterImageMatch = html.match(/<meta name="twitter:image"[^>]*content="([^"]+)"/i);
     if (twitterImageMatch) {
+      console.log('[' + new Date().toISOString() + '] Found twitter:image: ' + twitterImageMatch[1]);
       return twitterImageMatch[1];
     }
     
     // Extract favicon as last resort
     const faviconMatch = html.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href="([^"]+)"/i);
     if (faviconMatch) {
+      console.log('[' + new Date().toISOString() + '] Found favicon: ' + faviconMatch[1]);
       return faviconMatch[1];
     }
     
+    console.warn('[' + new Date().toISOString() + '] No OpenGraph/Twitter/Favicon image found for ' + url);
     return null;
   } catch (error) {
-    console.warn('Error fetching OpenGraph image for ' + url + ':', error.message);
+    console.warn('[' + new Date().toISOString() + '] Error fetching ' + url + ': ' + error.message);
     return null;
   }
 }
@@ -171,7 +178,7 @@ export default async function(eleventyConfig) {
   // Returns the OpenGraph image URL for the given URL
   eleventyConfig.addAsyncShortcode("linkPreview", async (url) => {
     const imageUrl = await getOpenGraphImage(url);
-    return imageUrl || "/img/fallback-preview.jpg";
+    return imageUrl || "/img/fallback-preview.svg";
   });
 
   // Link Preview Component Shortcode
@@ -179,12 +186,12 @@ export default async function(eleventyConfig) {
   // Returns HTML for a link preview card
   eleventyConfig.addAsyncShortcode("linkPreviewCard", async (url, title = "") => {
     const imageUrl = await getOpenGraphImage(url);
-    const fallbackImage = "/img/fallback-preview.jpg";
+    const fallbackImage = "/img/fallback-preview.svg";
     const displayUrl = new URL(url).hostname;
     const safeTitle = title || displayUrl;
     
     return `<a href="${url}" class="link-preview-card" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">
-      <img src="${imageUrl || fallbackImage}" alt="${safeTitle}" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5em;" />
+      <img src="${imageUrl || fallbackImage}" alt="${safeTitle}" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />
       <div style="font-weight: bold;">${safeTitle}</div>
       <div style="color: #666; font-size: 0.9em;">${displayUrl}</div>
     </a>`;
