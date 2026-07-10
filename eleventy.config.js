@@ -225,6 +225,106 @@ export default async function(eleventyConfig) {
       <div style="color: #666; font-size: 0.9em;">${displayUrl}</div>
     </a>`;
   });
+
+  // Academic Link Shortcode
+  // Usage: {% academicLink "https://doi.org/10.1234/abc" %}
+  // Usage: {% academicLink "https://doi.org/10.1234/abc", "Custom Title" %}
+  // Returns HTML card with platform logo and paper title
+
+  // Academic platform logos
+  const academicLogos = {
+    'doi.org': 'https://www.doi.org/assets/images/doi-logo.svg',
+    'worldcat.org': 'https://worldcat.org/assets/images/worldcat-logo.svg',
+    'zenodo.org': 'https://zenodo.org/static/img/logos/zenodo-gradient-round.svg',
+    'jstor.org': 'https://www.jstor.org/images/jstor-logo.svg'
+  };
+
+  // Helper function to fetch DOI metadata
+  async function getDOIMetadata(doiUrl) {
+    try {
+      const cleanDoi = doiUrl.replace(/^https?://doi.org//i, '');
+      
+      // Try Crossref API first
+      const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
+      const response = await fetch(crossrefUrl, {
+        headers: {
+          'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        const title = data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
+        return { title, image: null };
+      }
+      
+      // Fallback: try DOI resolution with citeproc+json
+      const doiResolutionUrl = 'https://doi.org/' + encodeURIComponent(cleanDoi);
+      const doiResponse = await fetch(doiResolutionUrl, {
+        headers: {
+          'Accept': 'application/citeproc+json'
+        }
+      });
+      
+      if (doiResponse.ok) {
+        const data = await doiResponse.json();
+        const title = data.title || cleanDoi;
+        return { title, image: null };
+      }
+      
+      return { title: cleanDoi, image: null };
+    } catch (error) {
+      console.warn('[' + new Date().toISOString() + '] Error fetching DOI metadata: ' + error.message);
+      return { title: doiUrl, image: null };
+    }
+  }
+
+  // Helper function for academic links
+  async function getAcademicLinkData(url) {
+    const hostname = new URL(url).hostname;
+    
+    for (const [domain, logo] of Object.entries(academicLogos)) {
+      if (hostname.includes(domain)) {
+        let title = '';
+        let image = logo;
+        
+        if (domain === 'doi.org') {
+          const metadata = await getDOIMetadata(url);
+          title = metadata.title;
+          image = logo;
+        }
+        
+        return { title, image, platform: domain };
+      }
+    }
+    
+    return null;
+  }
+
+  eleventyConfig.addAsyncShortcode("academicLink", async (url, customTitle = null) => {
+    const academicData = await getAcademicLinkData(url);
+    const displayUrl = new URL(url).hostname;
+    
+    if (academicData) {
+      const title = customTitle || academicData.title || displayUrl;
+      const logo = academicData.image;
+      
+      return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">' +
+        '<img src="' + logo + '" alt="' + academicData.platform + '" style="max-width: 200px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
+        '<div style="font-weight: bold;">' + title + '</div>' +
+        '<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>' +
+      '</a>';
+    }
+    
+    // Fallback to generic academic icon
+    const title = customTitle || displayUrl;
+    return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">' +
+      '<img src="/img/academic-icon.svg" alt="Academic Paper" style="max-width: 200px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
+      '<div style="font-weight: bold;">' + title + '</div>' +
+      '<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>' +
+    '</a>';
+  });
 };
 
 export const config = {
