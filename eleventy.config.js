@@ -9,21 +9,25 @@ import pluginFilters from "./_config/filters.js";
 // Helper function to fetch OpenGraph image from a URL
 async function getOpenGraphImage(url) {
   try {
-    // Use allorigins.win proxy to avoid CORS issues
-    const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
-    const response = await fetch(proxyUrl, {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    
+    const response = await fetch(url, {
       headers: {
-        'Accept': 'application/json'
-      }
+        'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0)',
+        'Accept': 'text/html'
+      },
+      signal: controller.signal
     });
     
+    clearTimeout(timeout);
+    
     if (!response.ok) {
-      console.warn('Failed to fetch OpenGraph data for ' + url + ': ' + response.status);
+      console.warn('Failed to fetch ' + url + ': ' + response.status);
       return null;
     }
     
-    const data = await response.json();
-    const html = data.contents;
+    const html = await response.text();
     
     // Extract OpenGraph image
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
@@ -45,7 +49,7 @@ async function getOpenGraphImage(url) {
     
     return null;
   } catch (error) {
-    console.warn('Error fetching OpenGraph image for ' + url + ':', error);
+    console.warn('Error fetching OpenGraph image for ' + url + ':', error.message);
     return null;
   }
 }
