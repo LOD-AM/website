@@ -47,6 +47,7 @@
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
 		"@zachleat/heading-anchors": "^1.0.5",
-		"bootstrap": "^5.3.8"
+		"bootstrap": "^5.3.8",
+		"node-fetch": "^3.3.2"
 	}
 }
