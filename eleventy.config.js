@@ -242,7 +242,7 @@ export default async function(eleventyConfig) {
   // Helper function to fetch DOI metadata
   async function getDOIMetadata(doiUrl) {
     try {
-            const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\///i, '');
+            const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\//i, '');
       
       // Try Crossref API first
       const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
