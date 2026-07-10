@@ -18,9 +18,7 @@ async function getOpenGraphImage(url) {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5'
       },
-      signal: controller.signal,
-      // Some sites need this for HTTP/2
-      mode: 'no-cors'
+      signal: controller.signal
     });
     
     clearTimeout(timeout);
@@ -31,6 +29,14 @@ async function getOpenGraphImage(url) {
     }
     
     const html = await response.text();
+    
+    // Site-specific fallbacks for known academic platforms
+    const hostname = new URL(url).hostname;
+    
+    // Persee.fr - use their logo
+    if (hostname.includes('persee.fr')) {
+      return 'https://www.persee.fr/portals/19695/images/persee-logo.png';
+    }
     
     // Extract OpenGraph image
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
@@ -46,14 +52,32 @@ async function getOpenGraphImage(url) {
       return twitterImageMatch[1];
     }
     
+    // Dublin Core image
+    const dcImageMatch = html.match(/<meta name="DC\.identifier"[^>]*content="([^"]+)"/i);
+    if (dcImageMatch) {
+      return dcImageMatch[1];
+    }
+    
+    // Schema.org image
+    const schemaImageMatch = html.match(/<meta itemprop="image"[^>]*content="([^"]+)"/i);
+    if (schemaImageMatch) {
+      return schemaImageMatch[1];
+    }
+    
     // Extract favicon as last resort
     const faviconMatch = html.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href="([^"]+)"/i);
     if (faviconMatch) {
-      console.log('[' + new Date().toISOString() + '] Found favicon: ' + faviconMatch[1]);
       return faviconMatch[1];
     }
     
-    console.warn('[' + new Date().toISOString() + '] No OpenGraph/Twitter/Favicon image found for ' + url);
+    // Try to find the first image in the page
+    const imgMatch = html.match(/<img[^>]*src="([^"]+)"/i);
+    if (imgMatch) {
+      console.log('[' + new Date().toISOString() + '] Found first <img>: ' + imgMatch[1]);
+      return imgMatch[1];
+    }
+    
+    console.warn('[' + new Date().toISOString() + '] No image found for ' + url);
     return null;
   } catch (error) {
     console.warn('[' + new Date().toISOString() + '] Error fetching ' + url + ': ' + error.message);
