@@ -170,7 +170,29 @@ This generates a nice preview card of your GitHub repository directly in the blo
 
 ## License
 
-This project is licensed under the MIT License.
+This repository uses **dual licensing**:
+
+### Content License (CC-BY-4.0)
+All original content created by Fabian Fricke and the LOD-AM project (markdown files, text, images in /content/ and /public/img/) is licensed under **Creative Commons Attribution 4.0 International (CC-BY-4.0)**.
+
+<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+
+**Attribution Requirements:**
+- Give appropriate credit to "Fabian Fricke / LOD-AM Project"
+- Provide a link to the license: https://creativecommons.org/licenses/by/4.0/
+- Indicate if changes were made
+- Retain any existing copyright notices
+
+### Code License (MIT)
+The code (Eleventy configuration, templates, JavaScript) and third-party dependencies retain their original licenses:
+- Eleventy static site generator (MIT License)
+- Bootstrap 5 (MIT License)
+- Popper.js (MIT License)
+- All npm dependencies (see package.json for individual licenses)
+
+**Note:** Legal documents (content/impressum.md, content/privacy.md) are required for German website compliance and are NOT subject to CC-BY-4.0.
+
+For full license details, see the [LICENSE](LICENSE) file.
 
 ## Links
 
@@ -178,5 +200,6 @@ This project is licensed under the MIT License.
 - Commits: https://github.com/LOD-AM/Website/commits/main
 - Eleventy Docs: https://www.11ty.dev/
 - Bootstrap Docs: https://getbootstrap.com/
+- CC-BY-4.0 License: https://creativecommons.org/licenses/by/4.0/
 
-Last updated: June 27, 2026 | Documentation version: 1.0
+Last updated: July 10, 2026 | Documentation version: 1.1
