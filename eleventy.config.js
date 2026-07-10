@@ -236,13 +236,25 @@ export default async function(eleventyConfig) {
   // Helper function to fetch DOI title
   async function getDOITitle(doiUrl) {
     try {
-      const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\///i, '');
+      const cleanDoi = doiUrl.replace(/^https?://doi.org//i, '');
       const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
       const response = await fetch(crossrefUrl, {
         headers: {
           'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
           'Accept': 'application/json'
         }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        return data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
+      }
+      return cleanDoi;
+    } catch (error) {
+      console.warn('[' + new Date().toISOString() + '] Error fetching DOI title: ' + error.message);
+      return doiUrl;
+    }
+  }
       });
       
       if (response.ok) {
