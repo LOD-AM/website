@@ -221,7 +221,7 @@ export default async function(eleventyConfig) {
       title = customTitle || (await getDOITitle(url)) || displayUrl;
     }
     
-    return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">' +
+    return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #f5deb3; border: 2px solid black; padding: 1em; border-radius: 8px;">' +
       '<img src="/img/literature-logo.svg" alt="Literature" style="max-width: 200px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
       '<div style="font-weight: bold;">' + title + '</div>' +
       '<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>' +
