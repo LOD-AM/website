@@ -47,7 +47,7 @@ So here’s my plan: over the next series of posts, I’ll tackle each challenge
 
 **Next Post:** *Modelling Unknowns: Fragments, Fuzzy Values, and Probabilistic Typing*
 - Deep dive into **CIDOC-CRM + Getty AAT** for uncertain classifications
-- Introduction of the **fuzzy value extension**
+- Implementing a **lean apllication of CIDOC-CRM** for the given use-case.
 
 **Following Post:** *The Analytical Workflow: Linking Trace Elements and Lead Isotopes with AFO*
 - Step-by-step mapping of **measurements (fuzzy or not)** based on **AFO**
