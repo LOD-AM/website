@@ -19,7 +19,7 @@ numberOfLatestPostsToShow: 3
 			
 			{% set postslist = collections.blog | head(-1 * numberOfLatestPostsToShow) %}
 			{% set postslistCounter = postsCount %}
-			{% include "postslist.njk" %}
+			{% include "bloglist.njk" %}
 			
 			{% set morePosts = postsCount - numberOfLatestPostsToShow %}
 			{% if morePosts > 0 %}

@@ -165,11 +165,11 @@ export default async function(eleventyConfig) {
     },
     metadata: {
       language: "en",
-      title: "Blog Title",
-      subtitle: "This is a longer description about your blog.",
-      base: "https://example.com/",
+      title: "Linked Open Data for Ancient Metallurgy",
+      subtitle: "A sandbox project dedicated to ancient metallurgical & open data methodologies.",
+      base: "https://lod-am.net/",
       author: {
-        name: "Your Name"
+        name: "Fabian Fricke"
       }
     }
   });
