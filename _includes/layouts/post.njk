@@ -30,9 +30,9 @@ layout: layouts/base.njk
     {{ content | safe }}
   </div>
 
-  {% if collections.posts %}
-  {% set previousPost = collections.posts | getPreviousCollectionItem %}
-  {% set nextPost = collections.posts | getNextCollectionItem %}
+  {% if collections.blog %}
+  {% set previousPost = collections.blog | getPreviousCollectionItem %}
+  {% set nextPost = collections.blog | getNextCollectionItem %}
   {% if nextPost or previousPost %}
   <nav aria-label="Post navigation" class="mt-5">
     <ul class="pagination justify-content-center">

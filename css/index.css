@@ -1,40 +1,11 @@
-/* LOD-AM Color Schema - Dark Theme */
-
-:root {
-	/* Primary Colors */
-	--lodam-terracotta: #CB6D51;
-	--lodam-ochre: #CC8B32;
-	--lodam-malachite: #3D9970;
-	--lodam-sage: #8A9B68;
-	--lodam-chalk-white: #F5F0E6;
-	--lodam-deep-umber: #3A2E22;
-	--lodam-charcoal: #2A241D;
-	--lodam-burnt-sienna: #D45D3D;
-	--lodam-sunset-orange: #F28C28;
-	--lodam-muted-teal: #4A7C7E;
-	
-	/* Bootstrap Theme Overrides - Dark Theme */
-	--bs-primary: var(--lodam-terracotta);
-	--bs-secondary: var(--lodam-malachite);
-	--bs-success: var(--lodam-sage);
-	--bs-info: var(--lodam-ochre);
-	--bs-warning: var(--lodam-sunset-orange);
-	--bs-danger: var(--lodam-burnt-sienna);
-	--bs-light: var(--lodam-deep-umber);
-	--bs-dark: var(--lodam-charcoal);
-	--bs-body-color: var(--lodam-chalk-white);
-	--bs-body-bg: var(--lodam-deep-umber);
-	--bs-link-color: var(--lodam-terracotta);
-	--bs-link-hover-color: #F09B86;
-	--bs-border-color: rgba(245, 240, 230, 0.15);
-	--bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+/* LOD-AM Custom Styles - Dark Theme */
+/* Load AFTER bootstrap-theme.css and bootstrap.min.css */
 
 body {
 	font-family: var(--bs-font-sans-serif);
 	font-weight: 500;
 	line-height: 1.6;
-  font-size: 1.1rem;
+	font-size: 1.1rem;
 	color: var(--bs-body-color);
 	background-color: var(--bs-body-bg);
 }
@@ -72,34 +43,6 @@ body {
 	transform: translateY(-2px);
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 	border-color: rgba(226, 114, 91, 0.5);
-}
-
-.btn-primary {
-	background-color: var(--lodam-burnt-sienna);
-	border-color: var(--lodam-burnt-sienna);
-	color: var(--lodam-chalk-white);
-	font-weight: 600;
-	border-radius: 0.375rem;
-}
-
-.btn-primary:hover {
-	background-color: #b84a2f;
-	border-color: #b84a2f;
-	box-shadow: 0 4px 12px rgba(212, 93, 61, 0.4);
-}
-
-.btn-secondary {
-	background-color: var(--lodam-malachite);
-	border-color: var(--lodam-malachite);
-	color: var(--lodam-chalk-white);
-	font-weight: 600;
-	border-radius: 0.375rem;
-}
-
-.btn-secondary:hover {
-	background-color: #32825d;  /* Matches --bs-btn-hover-bg */
-	border-color: #2e7855;     /* Matches --bs-btn-hover-border-color */
-	box-shadow: 0 4px 12px rgba(61, 153, 112, 0.4);
 }
 
 footer {
@@ -208,255 +151,6 @@ code[class*="language-"] {
 	border: 0;
 }
 
-/* ===== LOD-AM Bootstrap Button Overrides - Dark Theme ===== */
-/* Must load AFTER bootstrap.min.css to take effect */
-
-/* Primary buttons - Terracotta (#CB6D51) */
-.btn-primary {
-  --bs-btn-bg: #CB6D51;
-  --bs-btn-border-color: #CB6D51;
-  --bs-btn-hover-bg: #c85f4a;
-  --bs-btn-hover-border-color: #c15845;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.3);
-  --bs-btn-active-bg: #b14f3f;
-  --bs-btn-active-border-color: #a94a3a;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.3);
-  --bs-btn-disabled-bg: #CB6D51;
-  --bs-btn-disabled-border-color: #CB6D51;
-  color: #F5F0E6;
-}
-
-.btn-outline-primary {
-  --bs-btn-color: #CB6D51;
-  --bs-btn-border-color: #CB6D51;
-  --bs-btn-hover-bg: #CB6D51;
-  --bs-btn-hover-border-color: #CB6D51;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(226, 114, 91, 0.3);
-  color: #CB6D51;
-  --bs-btn-focus-shadow-rgb: 13, 110, 253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #CB6D51;
-  --bs-btn-active-border-color: #CB6D51;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #CB6D51;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #CB6D51;
-  --bs-gradient: none;
-}
-
-.btn-outline-primary:hover {
-  color: #F5F0E6;
-}
-
-/* Secondary buttons - Malachite (#3D9970) */
-.btn-secondary {
-  --bs-btn-bg: #3D9970;
-  --bs-btn-border-color: #3D9970;
-  --bs-btn-hover-bg: #32825d;
-  --bs-btn-hover-border-color: #2e7855;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.3);
-  --bs-btn-active-bg: #296e48;
-  --bs-btn-active-border-color: #266542;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.3);
-  --bs-btn-disabled-bg: #3D9970;
-  --bs-btn-disabled-border-color: #3D9970;
-  color: #F5F0E6;
-}
-
-.btn-outline-secondary {
-  --bs-btn-color: #3D9970;
-  --bs-btn-border-color: #3D9970;
-  --bs-btn-hover-bg: #3D9970;
-  --bs-btn-hover-border-color: #3D9970;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(61, 153, 112, 0.3);
-  color: #3D9970;
-}
-
-.btn-outline-secondary:hover {
-  color: #F5F0E6;
-}
-
-/* Success buttons - Sage (#8A9B68) */
-.btn-success {
-  --bs-btn-bg: #8A9B68;
-  --bs-btn-border-color: #8A9B68;
-  --bs-btn-hover-bg: #758658;
-  --bs-btn-hover-border-color: #6d7e52;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.3);
-  --bs-btn-active-bg: #63744b;
-  --bs-btn-active-border-color: #5c6d45;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.3);
-  --bs-btn-disabled-bg: #8A9B68;
-  --bs-btn-disabled-border-color: #8A9B68;
-  color: #3A2E22;
-}
-
-.btn-outline-success {
-  --bs-btn-color: #8A9B68;
-  --bs-btn-border-color: #8A9B68;
-  --bs-btn-hover-bg: #8A9B68;
-  --bs-btn-hover-border-color: #8A9B68;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(138, 155, 104, 0.3);
-  color: #8A9B68;
-}
-
-.btn-outline-success:hover {
-  color: #3A2E22;
-}
-
-/* Info buttons - Ochre (#CC8B32) */
-.btn-info {
-  --bs-btn-bg: #CC8B32;
-  --bs-btn-border-color: #CC8B32;
-  --bs-btn-hover-bg: #b37a2b;
-  --bs-btn-hover-border-color: #a97228;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.3);
-  --bs-btn-active-bg: #9e6c26;
-  --bs-btn-active-border-color: #946523;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.3);
-  --bs-btn-disabled-bg: #CC8B32;
-  --bs-btn-disabled-border-color: #CC8B32;
-  color: #3A2E22;
-}
-
-.btn-outline-info {
-  --bs-btn-color: #CC8B32;
-  --bs-btn-border-color: #CC8B32;
-  --bs-btn-hover-bg: #CC8B32;
-  --bs-btn-hover-border-color: #CC8B32;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(204, 139, 50, 0.3);
-  color: #CC8B32;
-}
-
-.btn-outline-info:hover {
-  color: #3A2E22;
-}
-
-/* Warning buttons - Sunset Orange (#F28C28) */
-.btn-warning {
-  --bs-btn-bg: #F28C28;
-  --bs-btn-border-color: #F28C28;
-  --bs-btn-hover-bg: #e07d24;
-  --bs-btn-hover-border-color: #d47321;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.3);
-  --bs-btn-active-bg: #ca6f20;
-  --bs-btn-active-border-color: #be661d;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.3);
-  --bs-btn-disabled-bg: #F28C28;
-  --bs-btn-disabled-border-color: #F28C28;
-  color: #3A2E22;
-}
-
-.btn-outline-warning {
-  --bs-btn-color: #F28C28;
-  --bs-btn-border-color: #F28C28;
-  --bs-btn-hover-bg: #F28C28;
-  --bs-btn-hover-border-color: #F28C28;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(242, 140, 40, 0.3);
-  color: #F28C28;
-}
-
-.btn-outline-warning:hover {
-  color: #3A2E22;
-}
-
-/* Danger buttons - Burnt Sienna (#D45D3D) */
-.btn-danger {
-  --bs-btn-bg: #D45D3D;
-  --bs-btn-border-color: #D45D3D;
-  --bs-btn-hover-bg: #b84f34;
-  --bs-btn-hover-border-color: #a84830;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.3);
-  --bs-btn-active-bg: #9f432c;
-  --bs-btn-active-border-color: #933e28;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.3);
-  --bs-btn-disabled-bg: #D45D3D;
-  --bs-btn-disabled-border-color: #D45D3D;
-  color: #F5F0E6;
-}
-
-.btn-outline-danger {
-  --bs-btn-color: #D45D3D;
-  --bs-btn-border-color: #D45D3D;
-  --bs-btn-hover-bg: #D45D3D;
-  --bs-btn-hover-border-color: #D45D3D;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(212, 93, 61, 0.3);
-  color: #D45D3D;
-}
-
-.btn-outline-danger:hover {
-  color: #F5F0E6;
-}
-
-/* Light buttons - Deep Umber */
-.btn-light {
-  --bs-btn-bg: #4A3F32;
-  --bs-btn-border-color: #4A3F32;
-  --bs-btn-hover-bg: #5a4d3f;
-  --bs-btn-hover-border-color: #52473a;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(74, 63, 50, 0.3);
-  --bs-btn-active-bg: #3a2e22;
-  --bs-btn-active-border-color: #32281e;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(74, 63, 50, 0.3);
-  --bs-btn-disabled-bg: #4A3F32;
-  --bs-btn-disabled-border-color: #4A3F32;
-  color: #F5F0E6;
-}
-
-.btn-outline-light {
-  --bs-btn-color: #F5F0E6;
-  --bs-btn-border-color: #F5F0E6;
-  --bs-btn-hover-bg: #F5F0E6;
-  --bs-btn-hover-border-color: #F5F0E6;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(245, 240, 230, 0.3);
-  color: #F5F0E6;
-}
-
-.btn-outline-light:hover {
-  color: #3A2E22;
-}
-
-/* Dark buttons - Charcoal */
-.btn-dark {
-  --bs-btn-bg: #1A1611;
-  --bs-btn-border-color: #2A241D;
-  --bs-btn-hover-bg: #261f16;
-  --bs-btn-hover-border-color: #221c14;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(26, 22, 17, 0.5);
-  --bs-btn-active-bg: #14110c;
-  --bs-btn-active-border-color: #100d09;
-  --bs-btn-active-shadow: 0 0 0 0.25rem rgba(26, 22, 17, 0.5);
-  --bs-btn-disabled-bg: #1A1611;
-  --bs-btn-disabled-border-color: #2A241D;
-  color: #F5F0E6;
-}
-
-.btn-outline-dark {
-  --bs-btn-color: #2A241D;
-  --bs-btn-border-color: #2A241D;
-  --bs-btn-hover-bg: #2A241D;
-  --bs-btn-hover-border-color: #2A241D;
-  --bs-btn-box-shadow: 0 0 0 0.25rem rgba(42, 36, 29, 0.3);
-  color: #2A241D;
-}
-
-.btn-outline-dark:hover {
-  color: #F5F0E6;
-}
-
-/* Link buttons */
-.btn-link {
-  color: #CB6D51;
-}
-
-.btn-link:hover {
-  color: #F09B86;
-}
-
-.btn-sm {
-  --bs-btn-font-weight: 550;
-}
-
 /* Background utility classes */
 .bg-terracotta { background-color: var(--lodam-terracotta); }
 .bg-ochre { background-color: var(--lodam-ochre); }
@@ -468,135 +162,40 @@ code[class*="language-"] {
 .bg-burnt-sienna { background-color: var(--lodam-burnt-sienna); color: var(--lodam-chalk-white); }
 .bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
 
-
-/* ===== Giscus Comments Styling - Dark Theme ===== */
+/* Giscus Comments Styling - Dark Theme */
 .giscus {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(245, 240, 230, 0.1);
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(245, 240, 230, 0.1);
 }
 
-/* Giscus frame styling for dark theme */
 .giscus-frame {
-  background-color: var(--lodam-deep-umber) !important;
-  border: none !important;
-  border-radius: 0.375rem !important;
-}
-
-/* Ensure Giscus matches our dark theme */
-[data-giscus-theme="dark"] {
-  --giscus-color-primary: var(--lodam-terracotta);
-  --giscus-color-text: var(--lodam-chalk-white);
-  --giscus-color-bg: var(--lodam-deep-umber);
-  --giscus-color-bg-secondary: var(--lodam-charcoal);
-  --giscus-color-border: rgba(245, 240, 230, 0.15);
-  --giscus-color-input-bg: var(--lodam-charcoal);
-  --giscus-color-input-text: var(--lodam-chalk-white);
-  --giscus-color-input-border: rgba(245, 240, 230, 0.3);
-}
-
-/* Responsive adjustments for Giscus */
-@media (max-width: 768px) {
-  .giscus {
-    padding-top: 1.5rem;
-  }
-}
-
-
-
-
-/* Main container background */
-.giscus {
-  --giscus-color-bg: #3A2E22 !important;
-  --giscus-color-bg-secondary: #2A241D !important;
-  --giscus-color-bg-hover: #4A3F32 !important;
-}
-
-/* Text colors */
-.giscus {
-  --giscus-color-text: #F5F0E6 !important;
-  --giscus-color-text-secondary: rgba(245, 240, 230, 0.7) !important;
-  --giscus-color-text-muted: rgba(245, 240, 230, 0.5) !important;
-}
-
-/* Primary colors (buttons, links) - Terracotta */
-.giscus {
-  --giscus-color-primary: #CB6D51 !important;
-  --giscus-color-primary-hover: #B84A2F !important;
-  --giscus-color-primary-text: #3A2E22 !important;
-}
-
-/* Border colors */
-.giscus {
-  --giscus-color-border: rgba(245, 240, 230, 0.15) !important;
-  --giscus-color-border-muted: rgba(245, 240, 230, 0.08) !important;
-}
-
-/* Input field styling */
-.giscus {
-  --giscus-color-input-bg: #2A241D !important;
-  --giscus-color-input-text: #F5F0E6 !important;
-  --giscus-color-input-border: rgba(245, 240, 230, 0.3) !important;
-  --giscus-color-input-border-focus: #CB6D51 !important;
-}
-
-/* Button styling */
-.giscus {
-  --giscus-color-btn-bg: #CB6D51 !important;
-  --giscus-color-btn-bg-hover: #B84A2F !important;
-  --giscus-color-btn-text: #3A2E22 !important;
-}
-
-/* Reaction buttons */
-.giscus {
-  --giscus-color-reaction-bg: #2A241D !important;
-  --giscus-color-reaction-bg-hover: #3A2E22 !important;
-  --giscus-color-reaction-text: #F5F0E6 !important;
-}
-
-/* Code blocks in comments */
-.giscus {
-  --giscus-color-code-bg: #1e1a14 !important;
-  --giscus-color-code-text: #F5F0E6 !important;
-  --giscus-color-code-border: rgba(245, 240, 230, 0.15) !important;
-}
-
-/* Link colors */
-.giscus {
-  --giscus-color-link: #CB6D51 !important;
-  --giscus-color-link-hover: #F09B86 !important;
-}
-
-/* Ensure proper spacing and sizing */
-.giscus-frame {
-  background-color: #3A2E22 !important;
-  border: none !important;
-  border-radius: 0.375rem !important;
+	background-color: var(--lodam-deep-umber) !important;
+	border: none !important;
+	border-radius: 0.375rem !important;
 }
 
 .giscus iframe {
-  background: transparent !important;
+	background: transparent !important;
 }
 
-/* ===== Custom Spacing for Markdown Content ===== */
-/* Space below headings */
+/* Custom Spacing for Markdown Content */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
 }
 
-/* Space between paragraphs */
 p {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
 }
 
 /* Reduce space between consecutive headings */
 h1 + h2, h2 + h3, h3 + h4 {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 /* Remove extra space before first paragraph after a heading */
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-  margin-top: 0;
+	margin-top: 0;
 }

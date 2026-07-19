@@ -56,7 +56,7 @@ export default function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		const collectionTags = ["all", "posts", "blog", "find", "site", "culture"];
+		const collectionTags = ["all", "blog", "find", "site", "culture"];
 		return (tags || []).filter(tag => !collectionTags.includes(tag));
 	});
 
