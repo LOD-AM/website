@@ -94,7 +94,7 @@
   --bs-btn-disabled-opacity: 0.65;
   --bs-btn-focus-box-shadow: 0 0 0 0.25rem;
   
-  /* Primary Button - Override Bootstrap's .btn-primary inline vars */
+  /* Primary Button */
   --bs-primary-btn-color: var(--lodam-chalk-white);
   --bs-primary-btn-bg: var(--lodam-burnt-sienna);
   --bs-primary-btn-border-color: var(--lodam-burnt-sienna);
@@ -212,4 +212,126 @@
   /* Footer colors */
   --bs-footer-bg: var(--lodam-charcoal);
   --bs-footer-color: rgba(245, 240, 230, 0.7);
+}
+
+/* Override Bootstrap's .btn class inline variables */
+/* Bootstrap defines these INSIDE the .btn class, so we need to override them there too */
+.btn {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: rgba(226, 114, 91, 0.2);
+  --bs-btn-hover-border-color: rgba(226, 114, 91, 0.4);
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: rgba(226, 114, 91, 0.3);
+  --bs-btn-active-border-color: rgba(226, 114, 91, 0.5);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: transparent;
+  --bs-btn-focus-shadow-rgb: 226, 114, 91;
+}
+
+/* Override specific button color classes */
+.btn-primary {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-bg: var(--lodam-burnt-sienna);
+  --bs-btn-border-color: var(--lodam-burnt-sienna);
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: #b84a2f;
+  --bs-btn-hover-border-color: #c15845;
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: #9f432c;
+  --bs-btn-active-border-color: #933e28;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-bg: var(--lodam-burnt-sienna);
+  --bs-btn-disabled-border-color: var(--lodam-burnt-sienna);
+  --bs-btn-focus-shadow-rgb: 226, 114, 91;
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-bg: var(--lodam-malachite);
+  --bs-btn-border-color: var(--lodam-malachite);
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: #32825d;
+  --bs-btn-hover-border-color: #2e7855;
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: #296e48;
+  --bs-btn-active-border-color: #266542;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-bg: var(--lodam-malachite);
+  --bs-btn-disabled-border-color: var(--lodam-malachite);
+  --bs-btn-focus-shadow-rgb: 61, 153, 112;
+}
+
+.btn-success {
+  --bs-btn-color: var(--lodam-deep-umber);
+  --bs-btn-bg: var(--lodam-sage);
+  --bs-btn-border-color: var(--lodam-sage);
+  --bs-btn-hover-color: var(--lodam-deep-umber);
+  --bs-btn-hover-bg: #758658;
+  --bs-btn-hover-border-color: #6d7e52;
+  --bs-btn-active-color: var(--lodam-deep-umber);
+  --bs-btn-active-bg: #63744b;
+  --bs-btn-active-border-color: #5c6d45;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-deep-umber);
+  --bs-btn-disabled-bg: var(--lodam-sage);
+  --bs-btn-disabled-border-color: var(--lodam-sage);
+  --bs-btn-focus-shadow-rgb: 138, 155, 104;
+}
+
+.btn-info {
+  --bs-btn-color: var(--lodam-deep-umber);
+  --bs-btn-bg: var(--lodam-ochre);
+  --bs-btn-border-color: var(--lodam-ochre);
+  --bs-btn-hover-color: var(--lodam-deep-umber);
+  --bs-btn-hover-bg: #b37a2b;
+  --bs-btn-hover-border-color: #a97228;
+  --bs-btn-active-color: var(--lodam-deep-umber);
+  --bs-btn-active-bg: #9e6c26;
+  --bs-btn-active-border-color: #946523;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-deep-umber);
+  --bs-btn-disabled-bg: var(--lodam-ochre);
+  --bs-btn-disabled-border-color: var(--lodam-ochre);
+  --bs-btn-focus-shadow-rgb: 204, 139, 50;
+}
+
+.btn-warning {
+  --bs-btn-color: var(--lodam-deep-umber);
+  --bs-btn-bg: var(--lodam-sunset-orange);
+  --bs-btn-border-color: var(--lodam-sunset-orange);
+  --bs-btn-hover-color: var(--lodam-deep-umber);
+  --bs-btn-hover-bg: #e07d24;
+  --bs-btn-hover-border-color: #d47321;
+  --bs-btn-active-color: var(--lodam-deep-umber);
+  --bs-btn-active-bg: #ca6f20;
+  --bs-btn-active-border-color: #be661d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-deep-umber);
+  --bs-btn-disabled-bg: var(--lodam-sunset-orange);
+  --bs-btn-disabled-border-color: var(--lodam-sunset-orange);
+  --bs-btn-focus-shadow-rgb: 242, 140, 40;
+}
+
+.btn-danger {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-bg: var(--lodam-burnt-sienna);
+  --bs-btn-border-color: var(--lodam-burnt-sienna);
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: #b84f34;
+  --bs-btn-hover-border-color: #a84830;
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: #9f432c;
+  --bs-btn-active-border-color: #933e28;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-bg: var(--lodam-burnt-sienna);
+  --bs-btn-disabled-border-color: var(--lodam-burnt-sienna);
+  --bs-btn-focus-shadow-rgb: 212, 93, 61;
 }
