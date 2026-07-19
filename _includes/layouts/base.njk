@@ -17,11 +17,78 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		
-		<!-- Override Bootstrap's default body background -->
+		<!-- Override Bootstrap's default variables that get set in :root -->
 		<style>
 			:root {
+				/* Body */
 				--bs-body-bg: var(--lodam-deep-umber);
 				--bs-body-color: var(--lodam-chalk-white);
+				
+				/* Buttons - override Bootstrap defaults */
+				--bs-btn-bg: transparent;
+				--bs-btn-border-width: 1px;
+				--bs-btn-color: var(--lodam-chalk-white);
+				--bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+				
+				/* Primary Button */
+				--bs-primary: var(--lodam-terracotta);
+				--bs-primary-rgb: 203, 109, 81;
+				--bs-primary-btn-bg: var(--lodam-burnt-sienna);
+				--bs-primary-btn-border-color: var(--lodam-burnt-sienna);
+				--bs-primary-btn-color: var(--lodam-chalk-white);
+				--bs-primary-btn-hover-bg: #b84a2f;
+				--bs-primary-btn-hover-border-color: #c15845;
+				
+				/* Secondary Button */
+				--bs-secondary: var(--lodam-malachite);
+				--bs-secondary-rgb: 61, 153, 112;
+				--bs-secondary-btn-bg: var(--lodam-malachite);
+				--bs-secondary-btn-border-color: var(--lodam-malachite);
+				--bs-secondary-btn-color: var(--lodam-chalk-white);
+				--bs-secondary-btn-hover-bg: #32825d;
+				--bs-secondary-btn-hover-border-color: #2e7855;
+				
+				/* Success Button */
+				--bs-success: var(--lodam-sage);
+				--bs-success-rgb: 138, 155, 104;
+				--bs-success-btn-bg: var(--lodam-sage);
+				--bs-success-btn-border-color: var(--lodam-sage);
+				--bs-success-btn-color: var(--lodam-deep-umber);
+				--bs-success-btn-hover-bg: #758658;
+				--bs-success-btn-hover-border-color: #6d7e52;
+				
+				/* Info Button */
+				--bs-info: var(--lodam-ochre);
+				--bs-info-rgb: 204, 139, 50;
+				--bs-info-btn-bg: var(--lodam-ochre);
+				--bs-info-btn-border-color: var(--lodam-ochre);
+				--bs-info-btn-color: var(--lodam-deep-umber);
+				--bs-info-btn-hover-bg: #b37a2b;
+				--bs-info-btn-hover-border-color: #a97228;
+				
+				/* Warning Button */
+				--bs-warning: var(--lodam-sunset-orange);
+				--bs-warning-rgb: 242, 140, 40;
+				--bs-warning-btn-bg: var(--lodam-sunset-orange);
+				--bs-warning-btn-border-color: var(--lodam-sunset-orange);
+				--bs-warning-btn-color: var(--lodam-deep-umber);
+				--bs-warning-btn-hover-bg: #e07d24;
+				--bs-warning-btn-hover-border-color: #d47321;
+				
+				/* Danger Button */
+				--bs-danger: var(--lodam-burnt-sienna);
+				--bs-danger-rgb: 212, 93, 61;
+				--bs-danger-btn-bg: var(--lodam-burnt-sienna);
+				--bs-danger-btn-border-color: var(--lodam-burnt-sienna);
+				--bs-danger-btn-color: var(--lodam-chalk-white);
+				--bs-danger-btn-hover-bg: #b84f34;
+				--bs-danger-btn-hover-border-color: #a84830;
+				
+				/* Light & Dark Buttons */
+				--bs-light: var(--lodam-deep-umber);
+				--bs-light-rgb: 58, 46, 34;
+				--bs-dark: var(--lodam-charcoal);
+				--bs-dark-rgb: 42, 36, 29;
 			}
 		</style>
 		
