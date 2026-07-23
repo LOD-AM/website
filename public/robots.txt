@@ -3,4 +3,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://www.lod-am.net
+Sitemap: Sitemap: https://lod-am.net/sitemap.xml
