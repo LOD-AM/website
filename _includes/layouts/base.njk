@@ -8,6 +8,9 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="canonical" href="{{ page.url | htmlBaseUrl(metadata.url) }}" />
 
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
 		<!-- Fediverse creator attribution for blog posts -->
 		{% if page.inputPath and page.inputPath.includes('blog') %}
 		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
