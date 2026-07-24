@@ -70,4 +70,4 @@ I’m also planning to produce **PeriodO-aligned data**. Full transparency: I in
 
 And, because I’m all about efficiency, I’m working on some **automation**—generating my own data from CSV files and pulling terms from Getty AAT into my triple store.
 
-So, that’s where things stand. Still learning, still building, still figuring it out as I go. And as always, if you have thoughts, suggestions, or just want to geek out about data modeling, you know where to find me: **info@lod-am.net**.
+So, that’s where things stand. Still learning, still building, still figuring it out as I go. And as always, if you have thoughts, suggestions, or just want to geek out about data modeling, you know where to find me: **info@lod-am.net** or (if you have a GitHub account) in a **comment** below.
