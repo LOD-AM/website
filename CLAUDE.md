@@ -26,8 +26,11 @@ remote images). Network errors there are warnings, not build failures.
 - `content/`: input dir. `content/blog/*.md` posts; `about.md`, `impressum.md`, `privacy.md`
 - `_includes/layouts/`: `base.njk`, `home.njk`, `post.njk` (post page incl. Giscus comments)
 - `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours
-- `_config/filters.js`: date/tag filters; `eleventy.config.js`: plugins and shortcodes
-- `css/bootstrap-theme.css`: theme colours; `public/`: static files copied as-is
+- `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
+  `eleventy.config.js`: plugins and build settings
+- `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +
+  LOD-AM palette as variables; style components via Bootstrap's component variables, not
+  `!important`. `public/`: static files copied as-is
 
 ## Blog posts
 Front matter:
@@ -55,7 +58,7 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - **Don't change the `title` of a published post**: Giscus maps comment threads by title.
 - `impressum.md` and `privacy.md` are German legal documents. Change them only on explicit request.
 - Technical claims about the data model must match knowledge-graph `CONVENTIONS.md`.
-- Keep the dark, earthy theme (`css/bootstrap-theme.css`, `_data/tagColors.js`).
+- Keep the dark, earthy theme (`css/theme.css`, `_data/tagColors.js`).
   Check layout changes in a browser at phone and desktop width.
 - **Accessibility:** text must reach WCAG AA contrast (4.5:1, large text 3:1), one
   `<h1>` per page, no skipped heading levels. New tag colours must pass with
@@ -64,8 +67,8 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
   icons, no embeds that load by themselves. Giscus loads only after the visitor
   clicks "Load comments". Anything new that contacts another server needs the
   owner's OK and a line in `privacy.md` (which only the owner edits).
-- Files in `css/` are pulled into the layout through Nunjucks: **never write
-  `{%` or `{{` in them**, not even in comments, or the build breaks.
+- Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
+  gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
 ## LOD-AM project (shared block: keep identical in every repo)
 Source of truth: knowledge-graph `CLAUDE.md`. Edit it there first, then copy it unchanged; CI (`scripts/check_shared_block.sh`) fails on drift.

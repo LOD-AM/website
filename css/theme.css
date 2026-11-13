@@ -1,0 +1,274 @@
+/* LOD-AM theme for Bootstrap 5.3 (dark mode).
+ *
+ * Load after bootstrap.min.css. <html data-bs-theme="dark"> switches Bootstrap
+ * to its dark colour mode; this file sets that mode's variables to the LOD-AM
+ * palette and styles components through Bootstrap's component variables.
+ *
+ * Contrast: every text colour here reaches WCAG AA (4.5:1, large text 3:1)
+ * on its background. Check the ratio before changing a colour.
+ *
+ * This file is copied as a static file and is NOT processed by Nunjucks, but
+ * keep template tags out of it anyway (see CLAUDE.md).
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Palette
+ * ------------------------------------------------------------------------- */
+:root {
+  --lodam-terracotta: #E2725B;        /* accents, large text only (3.3:1 on umber) */
+  --lodam-terracotta-deep: #A9472F;   /* navbar, primary buttons: light text 5.1:1 */
+  --lodam-terracotta-deeper: #9C4330; /* hover / gradient end: light text 5.7:1 */
+  --lodam-terracotta-light: #F09B86;  /* links: 4.75:1 on umber */
+  --lodam-terracotta-pale: #F7C1B2;   /* link hover */
+  --lodam-ochre: #E6B85C;
+  --lodam-malachite: #3D9970;
+  --lodam-sage: #9DC688;
+  --lodam-chalk-white: #F5F0E6;       /* text */
+  --lodam-deep-umber: #4A3F32;        /* page background */
+  --lodam-charcoal: #3A2E22;          /* cards, footer */
+  --lodam-ink: #1A1611;               /* footer gradient end */
+  --lodam-paper: #D2B48C;             /* literature cards */
+  --lodam-paper-ink: #3A3A3A;         /* text on paper: 5.8:1 */
+
+  --lodam-text-soft: rgba(245, 240, 230, 0.85); /* paragraphs */
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. Bootstrap dark mode, mapped to the palette
+ * ------------------------------------------------------------------------- */
+[data-bs-theme=dark] {
+  color-scheme: dark;
+
+  --bs-body-color: var(--lodam-chalk-white);
+  --bs-body-color-rgb: 245, 240, 230;
+  --bs-body-bg: var(--lodam-deep-umber);
+  --bs-body-bg-rgb: 74, 63, 50;
+  --bs-body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-body-font-size: 1.1rem;
+  --bs-body-font-weight: 500;
+  --bs-body-line-height: 1.6;
+
+  --bs-emphasis-color: var(--lodam-chalk-white);
+  --bs-emphasis-color-rgb: 245, 240, 230;
+  --bs-heading-color: var(--lodam-chalk-white);
+  --bs-secondary-color: rgba(245, 240, 230, 0.75);  /* .text-muted, .text-body-secondary */
+  --bs-secondary-color-rgb: 245, 240, 230;
+  --bs-secondary-bg: var(--lodam-charcoal);
+  --bs-tertiary-bg: var(--lodam-charcoal);
+  --bs-code-color: var(--lodam-ochre);
+
+  --bs-link-color: var(--lodam-terracotta-light);
+  --bs-link-color-rgb: 240, 155, 134;
+  --bs-link-hover-color: var(--lodam-terracotta-pale);
+  --bs-link-hover-color-rgb: 247, 193, 178;
+
+  --bs-border-color: rgba(245, 240, 230, 0.15);
+  --bs-border-color-translucent: rgba(245, 240, 230, 0.1);
+  --bs-focus-ring-color: rgba(226, 114, 91, 0.4);
+
+  /* Theme colours (.text-primary, .border-secondary, ...). Hex and RGB match. */
+  --bs-primary: var(--lodam-terracotta);
+  --bs-primary-rgb: 226, 114, 91;
+  --bs-secondary: var(--lodam-malachite);
+  --bs-secondary-rgb: 61, 153, 112;
+  --bs-success: var(--lodam-sage);
+  --bs-success-rgb: 157, 198, 136;
+  --bs-info: var(--lodam-ochre);
+  --bs-info-rgb: 230, 184, 92;
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Base elements
+ * ------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-4 {
+  font-weight: 700;
+}
+/* Spacing on the elements only, so component classes such as .card-title
+   keep their own margins. */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+h1 + h2, h2 + h3, h3 + h4 { margin-top: 1rem; }
+
+p {
+  color: var(--lodam-text-soft);
+  line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Skip link: hidden until focused with the keyboard (.visually-hidden-focusable) */
+#skip-link:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1050;
+  padding: 0.5rem 1rem;
+  background: var(--lodam-chalk-white);
+  color: var(--lodam-charcoal);
+  border-radius: 0.375rem;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Components (through Bootstrap's component variables)
+ * ------------------------------------------------------------------------- */
+
+/* Navbar: .site-nav doubles the specificity of Bootstrap's
+   .navbar[data-bs-theme=dark] rule, so no !important is needed. */
+.navbar.site-nav {
+  --bs-navbar-color: var(--lodam-chalk-white);
+  --bs-navbar-hover-color: var(--lodam-chalk-white);
+  --bs-navbar-active-color: var(--lodam-chalk-white);
+  --bs-navbar-brand-color: var(--lodam-chalk-white);
+  --bs-navbar-brand-hover-color: var(--lodam-chalk-white);
+  background: linear-gradient(135deg, var(--lodam-terracotta-deep) 0%, var(--lodam-terracotta-deeper) 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid #CB6D51;
+}
+.site-nav .navbar-brand { font-weight: 700; font-size: 1.25rem; }
+.site-nav .nav-link { font-weight: 600; font-size: 1.1rem; }
+
+/* Cards */
+.card {
+  --bs-card-bg: var(--lodam-charcoal);
+  --bs-card-border-color: rgba(245, 240, 230, 0.08);
+  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  border-color: rgba(226, 114, 91, 0.5);
+}
+.card-text { color: var(--lodam-text-soft); line-height: 1.7; }
+
+/* Buttons: only the variants the site uses. Tag buttons (.btn without a
+   variant) get their colours from inline styles (_data/tagColors.js). */
+.btn-primary {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-bg: var(--lodam-terracotta-deep);
+  --bs-btn-border-color: var(--lodam-terracotta-deep);
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: var(--lodam-terracotta-deeper);
+  --bs-btn-hover-border-color: var(--lodam-terracotta-deeper);
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: #8F3D2B;
+  --bs-btn-active-border-color: #8F3D2B;
+  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-bg: var(--lodam-terracotta-deep);
+  --bs-btn-disabled-border-color: var(--lodam-terracotta-deep);
+  --bs-btn-focus-shadow-rgb: 226, 114, 91;
+}
+.btn-outline-secondary {
+  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-border-color: rgba(245, 240, 230, 0.4);
+  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-bg: rgba(226, 114, 91, 0.2);
+  --bs-btn-hover-border-color: rgba(226, 114, 91, 0.6);
+  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-bg: rgba(226, 114, 91, 0.3);
+  --bs-btn-active-border-color: rgba(226, 114, 91, 0.6);
+}
+
+.badge {
+  font-weight: 600;
+  padding: 0.35em 0.65em;
+  border-radius: 0.375rem;
+}
+
+.list-group {
+  --bs-list-group-bg: var(--lodam-charcoal);
+  --bs-list-group-color: var(--lodam-text-soft);
+  --bs-list-group-border-color: rgba(245, 240, 230, 0.08);
+}
+.list-group-item { border-left: none; border-right: none; }
+
+.pagination {
+  --bs-pagination-color: var(--lodam-terracotta-light);
+  --bs-pagination-bg: var(--lodam-charcoal);
+  --bs-pagination-border-color: rgba(226, 114, 91, 0.3);
+  --bs-pagination-hover-color: var(--lodam-chalk-white);
+  --bs-pagination-hover-bg: var(--lodam-terracotta-deep);
+  --bs-pagination-hover-border-color: var(--lodam-terracotta-deep);
+  --bs-pagination-focus-color: var(--lodam-chalk-white);
+  --bs-pagination-focus-bg: var(--lodam-terracotta-deep);
+  --bs-pagination-active-bg: var(--lodam-terracotta-deep);
+  --bs-pagination-active-border-color: var(--lodam-terracotta-deep);
+}
+
+/* Footer */
+.site-footer {
+  background: linear-gradient(135deg, var(--lodam-charcoal) 0%, var(--lodam-ink) 100%);
+  color: rgba(245, 240, 230, 0.7);
+}
+.site-footer p { color: var(--lodam-text-soft); }
+.site-footer a { color: var(--lodam-chalk-white); }
+.site-footer a:hover { color: var(--lodam-ochre); }
+
+/* ---------------------------------------------------------------------------
+ * 5. Site-specific blocks
+ * ------------------------------------------------------------------------- */
+
+/* Link cards: output of the academicLink and linkPreviewCard shortcodes */
+.link-card {
+  display: block;
+  margin: 1em 0;
+  padding: 0.75em 1em;
+  border: 2px solid var(--lodam-charcoal);
+  border-radius: 0.5rem;
+  background-color: var(--lodam-charcoal);
+  color: var(--lodam-chalk-white);
+  text-decoration: none;
+}
+.link-card:hover {
+  border-color: var(--lodam-terracotta);
+  color: var(--lodam-chalk-white);
+  text-decoration: none;
+}
+.link-card__title { display: block; font-weight: 700; font-size: 1.1em; overflow-wrap: anywhere; }
+.link-card__host { display: block; font-size: 0.95em; opacity: 0.85; }
+.link-card__icon { display: block; width: 50px; height: auto; margin-bottom: 0.5em; }
+.link-card__image { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 0.5em; }
+.link-card--literature {
+  background-color: var(--lodam-paper);
+  border-color: #000;
+  color: var(--lodam-paper-ink);
+}
+.link-card--literature:hover { color: var(--lodam-paper-ink); border-color: var(--lodam-charcoal); }
+
+/* Inline Bootstrap Icons (output of the icon shortcode) */
+svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
+
+/* CC licence icons in the footer */
+.cc-icon { width: 1em; height: 1em; margin-left: 0.2em; vertical-align: baseline; }
+
+/* Code blocks (Prism) */
+pre[class*="language-"] {
+  background: #1E1A14;
+  border: 1px solid rgba(245, 240, 230, 0.15);
+  border-radius: 0.375rem;
+  color: var(--lodam-chalk-white);
+}
+code[class*="language-"] {
+  background: #2A241D;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  color: var(--lodam-chalk-white);
+}
+
+/* Giscus: the only !important rules, because they override styles of a
+   third-party iframe. */
+.giscus:not(:empty) { margin-top: 1rem; }
+.giscus-frame {
+  background-color: var(--lodam-deep-umber) !important;
+  border: none !important;
+  border-radius: 0.375rem !important;
+}
+.giscus iframe { background: transparent !important; }
