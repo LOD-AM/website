@@ -1,0 +1,80 @@
+name: build
+
+# Every PR and every push to main: build the site and check the output.
+# Push to main additionally publishes the built site to the `deploy` branch;
+# the web server's webhook pulls that branch and serves it as is.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # 6.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Cache Eleventy fetch cache (link previews, remote images)
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
+        with:
+          path: ./.cache
+          key: eleventy-fetch-${{ github.run_id }}
+          restore-keys: eleventy-fetch-
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+
+      - name: Upload built site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # 7.0.2
+        with:
+          name: site
+          path: _site/
+          retention-days: 7
+
+  deploy:
+    # Only main is deployed, and only if the build and checks passed.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # 8.0.2
+        with:
+          name: site
+          path: site
+
+      - name: Publish to the deploy branch
+        env:
+          REPO: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          if git clone --quiet --depth 1 --branch deploy "$REPO" out; then
+            echo "updating existing deploy branch"
+          else
+            git init --quiet -b deploy out && git -C out remote add origin "$REPO"
+          fi
+          git -C out config user.name "github-actions[bot]"
+          git -C out config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Replace the content completely (keep only .git), so deleted pages disappear.
+          find out -mindepth 1 -maxdepth 1 ! -name .git -exec rm -r {} +
+          cp -a site/. out/
+          cd out
+          git add -A
+          if git diff --cached --quiet; then echo "site unchanged, nothing to deploy"; exit 0; fi
+          git commit --quiet -m "Deploy ${GITHUB_SHA::7}" -m "Built from ${{ github.server_url }}/${{ github.repository }}/commit/${GITHUB_SHA}"
+          git push --quiet origin deploy
+          echo "deployed $(git rev-parse --short HEAD) (source ${GITHUB_SHA::7})"
