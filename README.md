@@ -33,69 +33,9 @@ Every push to `main` is built and checked by GitHub Actions and, if everything p
 published to the `deploy` branch, which the web server pulls via webhook.
 See [docs/deployment.md](docs/deployment.md).
 
-## Modifications History
+## Changes
 
-### Major Changes Applied (June 24-27, 2026)
-
-#### 1. Bootstrap 5 Integration (June 26, 2026)
-- Installed Bootstrap 5 via npm (bootstrap, @popperjs/core)
-- Added Bootstrap CSS and JavaScript to all layouts
-- Configured passthrough copy for Bootstrap assets
-- Updated all templates to use Bootstrap components (navbar, cards, buttons, badges, pagination, grid)
-- Converted JavaScript front matter to YAML front matter in all templates
-- Added Bootstrap Icons via CDN
-
-Files Modified: All layout templates, eleventy.config.js, package.json, css/index.css
-
-#### 2. Logo and Favicon (June 26, 2026)
-- Added LOD-AM logo to navbar
-- Added favicon support (.ico and .png)
-- Created public/img/ directory for static assets
-- Logo resized to 75x75px with max-width/max-height constraints
-
-Files Modified: _includes/layouts/base.njk, public/img/logo.svg, public/img/favicon.ico
-
-#### 3. Legal Compliance - German Pages (June 27, 2026)
-- Created content/impressum.md - Legal notice page (required for German websites)
-- Created content/privacy.md - GDPR-compliant privacy policy
-- Added links to both pages in footer
-- Excluded from main navigation (standard practice for legal pages)
-
-Pages Available At:
-- /impressum/ - Impressum (Legal notice)
-- /privacy/ - Privacy Policy
-
-Files Modified: content/impressum.md, content/privacy.md, _includes/layouts/base.njk
-
-#### 4. Collection Renaming (June 26-27, 2026)
-- Renamed collection from posts to blog for semantic clarity
-- Updated all references in templates and configuration
-- Renamed _includes/postslist.njk to _includes/bloglist.njk
-
-Files Modified: eleventy.config.js, _includes/bloglist.njk, content/blog/blog.11tydata.js, content/blog.njk, _filters.js
-
-#### 5. Theme and Styling (June 26-27, 2026)
-- Created custom css/bootstrap-theme.css with LOD-AM colors
-- Applied earthy/archaeological color scheme (Primary: #8B4513, Secondary: #556B2F)
-- Converted to dark theme with proper contrast
-- Applied bold font weights (body: 500, headings: 700)
-- Added individual tag colors using tagColors.js
-- Fixed date text color, button colors, and various CSS issues
-
-Files Modified: css/bootstrap-theme.css, css/index.css, _includes/layouts/base.njk, tagColors.js, _filters.js
-
-### Statistics
-
-- Total Commits: 60+
-- Files Modified: 25+
-- Period: June 24-27, 2026
-
-### By Category:
-- Bootstrap Integration: 25+ commits (42%)
-- Styling and Theme: 18 commits (30%)
-- Logo and Branding: 8 commits (13%)
-- Legal Compliance: 3 commits (5%)
-- Collection Renaming: 6 commits (10%)
+See [CHANGELOG.md](CHANGELOG.md) and the pull requests on GitHub.
 
 ## Legal Pages
 
@@ -115,7 +55,7 @@ The site uses a custom LOD-AM color scheme with earthy tones:
 - Background: Dark (#121212)
 - Text: Light (#e0e0e0)
 
-To modify colors, edit css/bootstrap-theme.css.
+To modify colors, edit the palette at the top of `css/theme.css` (check WCAG AA contrast, see CLAUDE.md).
 
 ### Tag Colors
 Individual tags have custom colors defined in tagColors.js. Add new tags to the mapping.
