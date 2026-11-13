@@ -8,11 +8,17 @@ building LOD-AM.
 ```bash
 npm ci
 npm start        # dev server on http://localhost:8080 (drafts shown)
-npm run build    # production build to _site/ (drafts excluded). Must succeed before a PR
+npm run build    # production build to _site/ (drafts excluded)
+npm run check    # checks on _site/: required files, posts vs drafts, internal links
 ```
-`build-ghpages`/`start-ghpages` are leftovers from the eleventy-base-blog starter
-(wrong path prefix). Don't use them. Deployment to the server is done by the
-owner; ask how before changing anything deployment-related.
+Both must pass before a PR (CI `build.yml` runs them). Eleventy doesn't clean
+`_site/`, so stale files from earlier builds can make `check` fail locally.
+
+**Deployment** ([docs/deployment.md](docs/deployment.md)): every push to `main`
+is built in CI and, only if build and check pass, pushed to the `deploy` branch.
+The owner's web server pulls `deploy` via webhook and serves it. Never edit
+`deploy` by hand; changes reach the site only through `main`. Server-side
+changes (webhook, web server config) are the owner's.
 The build fetches external URLs (link previews, DOI titles via Crossref,
 remote images). Network errors there are warnings, not build failures.
 

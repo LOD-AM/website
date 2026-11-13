@@ -18,15 +18,20 @@ This is the official website for the LOD-AM project, built with Eleventy static 
    npm install
 
 3. Run the development server:
-   npx @11ty/eleventy --serve
+   npm start
 
 4. Open your browser to http://localhost:8080
 
-### Build for Production
+### Build and check
 
-npx @11ty/eleventy
+npm run build    # static files in _site/
+npm run check    # sanity checks on _site/ (required files, posts, internal links)
 
-This will generate static files in the _site directory.
+### Deployment
+
+Every push to `main` is built and checked by GitHub Actions and, if everything passes,
+published to the `deploy` branch, which the web server pulls via webhook.
+See [docs/deployment.md](docs/deployment.md).
 
 ## Modifications History
 
@@ -146,7 +151,7 @@ The Giscus script is configured in _includes/layouts/post.njk with:
 - Repository: LOD-AM/Website
 - Category: Comments
 - Theme: Dark (matches the site's color scheme)
-- Mapping: pathname (each post gets its own discussion)
+- Mapping: title (each post gets its own discussion; don't rename published posts)
 
 ## OpenGraph Images
 
