@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,247 +35,11 @@
 		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 		<link rel="icon" type="image/png" href="/img/logo.svg">
 
-		<!-- Bootstrap CSS - MUST load BEFORE theme overrides -->
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
-		
-		<!-- LOD-AM Theme Variables - Load AFTER Bootstrap to override defaults -->
-		<link rel="stylesheet" href="/css/bootstrap-theme.css">
-		
-		<!-- Custom CSS -->
-		
-		<style>/* LOD-AM Custom Styles - Dark Theme */
-/* Load AFTER bootstrap-theme.css and bootstrap.min.css */
-
-body {
-	font-family: var(--bs-font-sans-serif);
-	font-weight: 500;
-	line-height: 1.6;
-	font-size: 1.1rem;
-	color: var(--bs-body-color);
-	background-color: var(--bs-body-bg);
-}
-
-.navbar {
-	/* Deeper terracotta: light nav text needs >= 4.5:1 (was 3.2:1) */
-	background: linear-gradient(135deg, #A9472F 0%, #9C4330 100%);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-	border-bottom: 3px solid var(--lodam-terracotta);
-}
-
-.navbar-brand {
-	font-weight: 700;
-	font-size: 1.25rem;
-	color: var(--lodam-chalk-white) !important;
-}
-
-.nav-link {
-	font-weight: 600;
-	font-size: 1.1rem;
-	color: var(--lodam-chalk-white) !important;
-}
-
-.nav-link:hover {
-	color: var(--lodam-chalk-white) !important;
-}
-
-.card {
-	background-color: var(--lodam-charcoal);
-	border: 1px solid rgba(245, 240, 230, 0.08);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-	border-radius: 0.375rem;
-}
-
-.card:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-	border-color: rgba(226, 114, 91, 0.5);
-}
-
-footer {
-	background: linear-gradient(135deg, var(--lodam-charcoal) 0%, #1a1611 100%);
-	color: rgba(245, 240, 230, 0.7);
-}
-
-footer a {
-	color: var(--lodam-chalk-white);
-}
-
-footer a:hover {
-	color: var(--lodam-ochre);
-}
-
-.display-4, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	color: var(--lodam-chalk-white);
-	font-weight: 700;
-}
-
-p, .card-text {
-	color: rgba(245, 240, 230, 0.85);
-	line-height: 1.7;
-}
-
-/* Light terracotta: 4.75:1 on the page background (terracotta was 2.9:1) */
-a {
-	color: #F09B86;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #F7C1B2;
-	text-decoration: underline;
-}
-
-.badge {
-	font-weight: 600;
-	padding: 0.35em 0.65em;
-	border-radius: 0.375rem;
-}
-
-.bg-primary {
-	background-color: var(--lodam-terracotta);
-	color: var(--lodam-deep-umber);
-}
-
-.bg-secondary {
-	background-color: var(--lodam-malachite);
-	color: var(--lodam-chalk-white);
-}
-
-.list-group-item {
-	border-left: none;
-	border-right: none;
-	border-color: rgba(245, 240, 230, 0.08);
-	background-color: var(--lodam-charcoal);
-	color: rgba(245, 240, 230, 0.85);
-}
-
-.page-item.active .page-link {
-	background-color: var(--lodam-terracotta);
-	border-color: var(--lodam-terracotta);
-	color: var(--lodam-chalk-white);
-}
-
-.page-link {
-	color: #F09B86;
-	border-color: rgba(226, 114, 91, 0.3);
-	background-color: var(--lodam-charcoal);
-}
-
-.page-link:hover {
-	color: var(--lodam-chalk-white);
-	background-color: var(--lodam-terracotta);
-	border-color: var(--lodam-terracotta);
-}
-
-pre[class*="language-"] {
-	background: #1e1a14;
-	border: 1px solid rgba(245, 240, 230, 0.15);
-	border-radius: 0.375rem;
-	color: #F5F0E6;
-}
-
-code[class*="language-"] {
-	background: #2a241d;
-	padding: 0.2rem 0.4rem;
-	border-radius: 0.25rem;
-	color: #F5F0E6;
-}
-
-/* Skip link: hidden until focused with the keyboard */
-#skip-link:focus {
-	position: absolute;
-	top: 0.5rem;
-	left: 0.5rem;
-	z-index: 1050;
-	padding: 0.5rem 1rem;
-	background: var(--lodam-chalk-white);
-	color: var(--lodam-charcoal);
-	border-radius: 0.375rem;
-	font-weight: 700;
-}
-
-/* Link cards: output of the academicLink and linkPreviewCard shortcodes.
-   (No template tags in this file: it is included through Nunjucks.) */
-.link-card {
-	display: block;
-	margin: 1em 0;
-	padding: 0.75em 1em;
-	border: 2px solid var(--lodam-charcoal);
-	border-radius: 0.5rem;
-	background-color: var(--lodam-charcoal);
-	color: var(--lodam-chalk-white);
-	text-decoration: none;
-}
-.link-card:hover {
-	border-color: var(--lodam-terracotta);
-	color: var(--lodam-chalk-white);
-	text-decoration: none;
-}
-.link-card__title { display: block; font-weight: 700; font-size: 1.1em; overflow-wrap: anywhere; }
-.link-card__host { display: block; font-size: 0.95em; opacity: 0.85; }
-.link-card__icon { display: block; width: 50px; height: auto; margin-bottom: 0.5em; }
-.link-card__image { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 0.5em; }
-/* Literature: the tan "paper" card. #3A3A3A on #D2B48C = 5.8:1 */
-.link-card--literature {
-	background-color: #D2B48C;
-	border-color: #000;
-	color: #3A3A3A;
-}
-.link-card--literature:hover { color: #3A3A3A; border-color: var(--lodam-charcoal); }
-
-/* Background utility classes */
-.bg-terracotta { background-color: var(--lodam-terracotta); }
-.bg-ochre { background-color: var(--lodam-ochre); }
-.bg-malachite { background-color: var(--lodam-malachite); }
-.bg-sage { background-color: var(--lodam-sage); }
-.bg-chalk-white { background-color: var(--lodam-chalk-white); color: var(--lodam-deep-umber); }
-.bg-deep-umber { background-color: var(--lodam-deep-umber); color: var(--lodam-chalk-white); }
-.bg-charcoal { background-color: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
-.bg-burnt-sienna { background-color: var(--lodam-burnt-sienna); color: var(--lodam-chalk-white); }
-.bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
-
-/* Giscus Comments Styling - Dark Theme */
-.giscus:not(:empty) {
-	margin-top: 1rem;
-}
-
-.giscus-frame {
-	background-color: var(--lodam-deep-umber) !important;
-	border: none !important;
-	border-radius: 0.375rem !important;
-}
-
-.giscus iframe {
-	background: transparent !important;
-}
-
-/* Custom Spacing for Markdown Content */
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 0;
-	margin-bottom: 1.5rem;
-}
-
-p {
-	margin-top: 0;
-	margin-bottom: 1.5rem;
-}
-
-/* Reduce space between consecutive headings */
-h1 + h2, h2 + h3, h3 + h4 {
-	margin-top: 1rem;
-}
-
-/* Remove extra space before first paragraph after a heading */
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-	margin-top: 0;
-}
-
-/* Inline Bootstrap Icons (output of the icon shortcode) */
-.bi, svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
-
-/* CC licence icons in the footer */
-.cc-icon { width: 1em; height: 1em; margin-left: 0.2em; vertical-align: baseline; }
-/**
+		<link rel="stylesheet" href="/css/theme.css">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
@@ -449,7 +213,7 @@ pre[class*="language-diff-"] {
 		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
 
 		<!-- Bootstrap Navbar -->
-		<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
 			<div class="container">
 				<a class="navbar-brand" href="/">
 					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
@@ -587,7 +351,7 @@ At first glance, it’s tempting to just say:</p>
 		</main>
 
 		<!-- Bootstrap Footer -->
-		<footer class="bg-charcoal text-white py-4 mt-auto">
+		<footer class="site-footer py-4 mt-auto">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
