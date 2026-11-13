@@ -6,6 +6,16 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 
+// Escape text for use in HTML content and attribute values.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // Helper function to fetch OpenGraph image from a URL
 async function getOpenGraphImage(url) {
   try {
@@ -153,12 +163,6 @@ export default async function(eleventyConfig) {
     type: "atom",
     outputPath: "/feed/feed.xml",
     stylesheet: "pretty-atom-feed.xsl",
-    templateData: {
-      eleventyNavigation: {
-        key: "Feed",
-        order: 4
-      }
-    },
     collection: {
       name: "blog",
       limit: 10,
@@ -200,32 +204,33 @@ export default async function(eleventyConfig) {
     return imageUrl || "/img/fallback-preview.svg";
   });
 
+  // Card linking to an external page. Inline elements only (<a>, <img>, <span>),
+  // because Markdown wraps the shortcode output in a <p>; block elements such
+  // as <div> inside it would split the link into several boxes.
   eleventyConfig.addAsyncShortcode("linkPreviewCard", async (url, title = "") => {
     const imageUrl = await getOpenGraphImage(url);
-    const fallbackImage = "/img/fallback-preview.svg";
     const displayUrl = new URL(url).hostname;
     const safeTitle = title || displayUrl;
-    
-    return '<a href="' + url + '" class="link-preview-card" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">' +
-      '<img src="' + (imageUrl || fallbackImage) + '" alt="' + safeTitle + '" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
-      '<div style="font-weight: bold;">' + safeTitle + '</div>' +
-      '<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>' +
-    '</a>';
+    return `<a href="${escapeHtml(url)}" class="link-card">` +
+      `<img src="${escapeHtml(imageUrl || "/img/fallback-preview.svg")}" alt="" class="link-card__image" loading="lazy" eleventy:ignore>` +
+      `<span class="link-card__title">${escapeHtml(safeTitle)}</span>` +
+      `<span class="link-card__host">${escapeHtml(displayUrl)}</span>` +
+    `</a>`;
   });
 
+  // Card for literature, e.g. {% academicLink "https://doi.org/..." %}.
+  // DOI titles come from Crossref; without network the DOI itself is shown.
   eleventyConfig.addAsyncShortcode("academicLink", async (url, customTitle = null) => {
     const displayUrl = new URL(url).hostname;
     let title = customTitle || displayUrl;
-    
-    if (url.includes('doi.org/')) {
+    if (url.includes("doi.org/")) {
       title = customTitle || (await getDOITitle(url)) || displayUrl;
     }
-    
-     return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.75em; border-radius: 8px;">' +
-      '<img src="/img/literature-logo.svg" alt="Literature" style="max-width: 50px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
-      '<div style="color: #3a3a3a; font-weight: bold; font-size: 1.1em;">' +  title + '</div>' +
-      '<div style="color: #3a3a3a; font-size: 1.1em;">' + displayUrl + '</div>' +
-    '</a>';
+    return `<a href="${escapeHtml(url)}" class="link-card link-card--literature">` +
+      `<img src="/img/literature-logo.svg" alt="" width="50" height="50" class="link-card__icon" eleventy:ignore>` +
+      `<span class="link-card__title">${escapeHtml(title)}</span>` +
+      `<span class="link-card__host">${escapeHtml(displayUrl)}</span>` +
+    `</a>`;
   });
 };
 

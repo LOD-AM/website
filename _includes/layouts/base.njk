@@ -15,17 +15,22 @@
 		<meta property="og:title" content="{{ title or metadata.title }}">
 		<meta property="og:description" content="{{ description or metadata.description }}">
 		<meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
-		<meta property="og:type" content="website">
-		<meta property="og:image" content="{{ metadata.url }}/img/logo.png">
+		{%- set isPost = page.inputPath and page.inputPath.includes('/blog/') and page.fileSlug != "blog" %}
+		<meta property="og:type" content="{% if isPost %}article{% else %}website{% endif %}">
+		{%- if isPost %}
+		<meta property="article:published_time" content="{{ page.date | htmlDateString }}">
+		{%- endif %}
+		<meta property="og:image" content="{{ '/img/logo.png' | htmlBaseUrl(metadata.url) }}">
+		<meta property="og:image:alt" content="LOD-AM logo">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="{{ title or metadata.title }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
-		<meta name="twitter:image" content="{{ metadata.url }}/img/logo.svg">
+		<meta name="twitter:image" content="{{ '/img/logo.png' | htmlBaseUrl(metadata.url) }}">
 
 		<!-- Fediverse creator attribution for blog posts -->
-		{% if page.inputPath and page.inputPath.includes('blog') %}
+		{% if isPost %}
 		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
 		{% endif %}
 
@@ -47,15 +52,15 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
 
 		<!-- Bootstrap Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+		<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
 			<div class="container">
 				<a class="navbar-brand" href="/">
-					<img src="/img/logo.svg" alt="{{ metadata.title }}" style="height: 75px; width: 75px;" class="d-inline-block align-top">
+					<img src="/img/logo.svg" alt="{{ metadata.title }}: home" width="75" height="75" class="d-inline-block align-top" eleventy:ignore>
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="mainNav">
@@ -94,6 +99,7 @@
 						<p class="mb-0 small">
 							<a href="/impressum/" class="text-white me-3">Impressum</a>
 							<a href="/privacy/" class="text-white me-3">Privacy Policy</a>
+							<a href="/feed/feed.xml" class="text-white me-3">Feed (Atom)</a>
 							<a href="https://github.com/LOD-AM/website" class="text-white me-3">GitHub</a>
 							<a rel="me" href="https://archaeo.social/@FabianF" class="text-white me-3">Mastodon</a>
 						</p>

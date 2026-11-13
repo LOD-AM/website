@@ -15,21 +15,21 @@ numberOfLatestPostsToShow: 3
 			<p>Hi, I'm Fabian. Welcome to my digital sandbox, where I play with Linked Open Data for Ancient Metallurgy (LOD-AM)—a little scientific side hustle of mine.</p>
 			<p>This is my private experiment, a one-man show where I get to ask questions about copper-based metallurgy in Eurasia and all the Research Data Management (RDM) chaos that comes with it.</p>
 
-			<h1 class="display-4 mb-4">Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+			<h2 class="display-4 mb-4">Latest post{% if latestPostsCount != 1 %}s{% endif %}</h2>
 			
 			{% set postslist = collections.blog | head(-1 * numberOfLatestPostsToShow) %}
-			{% set postslistCounter = postsCount %}
+			{% set headingLevel = 3 %}
 			{% include "bloglist.njk" %}
 			
 			{% set morePosts = postsCount - numberOfLatestPostsToShow %}
 			{% if morePosts > 0 %}
-			<p class="mt-4">{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in the <a href="/blog/" class="btn btn-outline-primary">blog-archive</a></p>
+			<p class="mt-4">{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} in the <a href="/blog/" class="btn btn-primary btn-sm ms-1">blog archive</a></p>
 			{% endif %}
 		</div>
 		<div class="col-lg-4">
 			<div class="card mb-4">
 				<div class="card-header">
-					<h4 class="mb-0">About</h4>
+					<h2 class="h5 mb-0">About</h2>
 				</div>
 				<div class="card-body">
 					<p>{{ metadata.description or metadata.subtitle }}</p>
