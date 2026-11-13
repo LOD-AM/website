@@ -54,7 +54,7 @@
 			</div>
 		</div>
 
-		<div class="card mb-4">
+		<div class="card mb-4" id="comments">
 			<div class="card-body">
 				<h2 class="card-title">5. Comments (giscus and GitHub)</h2>
 				<p class="card-text">Blog posts offer comments through <a href="https://giscus.app">giscus</a>, an open-source comment system that stores comments as GitHub Discussions in the public repository <a href="https://github.com/LOD-AM/website/discussions">LOD-AM/website</a>.</p>
@@ -63,7 +63,7 @@
 				<ul>
 					<li><strong>Providers:</strong> the giscus organization, operator of giscus.app (<a href="https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md">privacy policy</a>); GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>).</li>
 					<li><strong>Legal basis:</strong> your consent, Art. 6(1)(a) GDPR, given by clicking "Load comments". Writing a comment is subject to GitHub's terms, which you accept with your GitHub account.</li>
-					<li><strong>Transfer to third countries:</strong> GitHub, Inc. is located in the USA, and the servers of giscus.app may also be located outside the EU. For GitHub, the transfer is based on the European Commission's adequacy decision for the EU-U.S. Data Privacy Framework (Art. 45 GDPR), in which GitHub participates, and otherwise on the standard contractual clauses GitHub refers to in its privacy statement. Data transferred to the USA may be accessed by US authorities.</li>
+					<li><strong>Transfer to the USA:</strong> GitHub, Inc. is located in the USA, and the servers of giscus.app may also be located outside the EU. GitHub, Inc. is not certified under the EU-U.S. Data Privacy Framework, so no adequacy decision of the European Commission covers this transfer. It therefore takes place only on the basis of your explicit consent (Art. 49(1)(a) GDPR), which you give by clicking "Load comments" after being informed about it next to the button. <strong>Possible risks:</strong> the USA does not provide a level of data protection equivalent to that of the EU. In particular, US authorities may be able to access the data without you being informed, and you may not have effective legal remedies against this.</li>
 					<li><strong>Storage period:</strong> comments remain in the GitHub discussion until you or the controller delete them. You can edit or delete your own comments on GitHub at any time. Other data processed by giscus.app and GitHub is governed by their privacy policies.</li>
 					<li><strong>Withdrawal:</strong> you can withdraw your consent at any time with effect for the future. Simply don't load the comments again; when you reload the page, they are not loaded until you click again. Existing comments can be deleted on GitHub, or ask the controller to delete them.</li>
 				</ul>
