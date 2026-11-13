@@ -72,11 +72,16 @@
   --bs-body-bg-rgb: 74, 63, 50;
   
   /* Link colors */
-  --bs-link-color: var(--lodam-terracotta);
-  --bs-link-color-rgb: 226, 114, 91;
-  --bs-link-hover-color: #F09B86;
-  --bs-link-hover-color-rgb: 240, 155, 134;
+  --bs-link-color: #F09B86;
+  --bs-link-color-rgb: 240, 155, 134;
+  --bs-link-hover-color: #F7C1B2;
+  --bs-link-hover-color-rgb: 247, 193, 178;
   
+  /* Secondary text (.text-muted, .text-body-secondary) and inline code */
+  --bs-secondary-color: rgba(245, 240, 230, 0.75);
+  --bs-secondary-color-rgb: 245, 240, 230;
+  --bs-code-color: var(--lodam-ochre);
+
   /* Border and focus */
   --bs-border-color: rgba(245, 240, 230, 0.15);
   --bs-border-color-translucent: rgba(245, 240, 230, 0.1);
@@ -236,12 +241,13 @@
 
 /* Override specific button color classes */
 .btn-primary {
+  /* #A9472F: light text 5.1:1 (burnt sienna was 3.4:1) */
   --bs-btn-color: var(--lodam-chalk-white);
-  --bs-btn-bg: var(--lodam-burnt-sienna);
-  --bs-btn-border-color: var(--lodam-burnt-sienna);
+  --bs-btn-bg: #A9472F;
+  --bs-btn-border-color: #A9472F;
   --bs-btn-hover-color: var(--lodam-chalk-white);
-  --bs-btn-hover-bg: #b84a2f;
-  --bs-btn-hover-border-color: #c15845;
+  --bs-btn-hover-bg: #9C4330;
+  --bs-btn-hover-border-color: #9C4330;
   --bs-btn-active-color: var(--lodam-chalk-white);
   --bs-btn-active-bg: #9f432c;
   --bs-btn-active-border-color: #933e28;

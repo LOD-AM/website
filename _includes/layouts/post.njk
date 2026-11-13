@@ -35,18 +35,18 @@ layout: layouts/base.njk
   {% set nextPost = collections.blog | getNextCollectionItem %}
   {% if nextPost or previousPost %}
   <nav aria-label="Post navigation" class="mt-5">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
       {% if previousPost %}
       <li class="page-item">
         <a class="page-link" href="{{ previousPost.url }}">
-          <i class="bi bi-arrow-left"></i> Previous: {{ previousPost.data.title }}
+          {% icon "arrow-left" %} Previous: {{ previousPost.data.title }}
         </a>
       </li>
       {% endif %}
       {% if nextPost %}
       <li class="page-item">
         <a class="page-link" href="{{ nextPost.url }}">
-          Next: {{ nextPost.data.title }} <i class="bi bi-arrow-right"></i>
+          Next: {{ nextPost.data.title }} {% icon "arrow-right" %}
         </a>
       </li>
       {% endif %}
@@ -56,7 +56,31 @@ layout: layouts/base.njk
   {% endif %}
 </article>
 
-{# Giscus Comments #}
-<div class="giscus mt-5 pt-4 border-top border-secondary"></div>
-{% raw %}<script src="https://giscus.app/client.js" data-repo="lod-am/website" data-repo-id="R_kgDOTERevg" data-category="Comments" data-category-id="DIC_kwDOTERevs4DAFDJ" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="gruvbox_dark" data-lang="en" crossorigin="anonymous" async></script>{% endraw %}
+{# Giscus comments, loaded only after a click: no request to giscus.app or
+   GitHub before the visitor asks for it. Settings are unchanged (mapping by
+   title, so don't rename published posts). #}
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub.</p>
+    <button type="button" class="btn btn-primary" id="load-comments">{% icon "chat-dots" %} Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+<script>
+document.getElementById("load-comments")?.addEventListener("click", () => {
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  Object.entries({
+    repo: "lod-am/website", repoId: "R_kgDOTERevg",
+    category: "Comments", categoryId: "DIC_kwDOTERevs4DAFDJ",
+    mapping: "title", strict: "0", reactionsEnabled: "1", emitMetadata: "0",
+    inputPosition: "bottom", theme: "gruvbox_dark", lang: "en", loading: "lazy",
+  }).forEach(([k, v]) => { s.dataset[k] = v; });
+  s.crossOrigin = "anonymous";
+  s.async = true;
+  document.getElementById("comments-consent").remove();
+  document.querySelector(".comments").appendChild(s);
+});
+</script>
 

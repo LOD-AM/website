@@ -11,9 +11,10 @@ body {
 }
 
 .navbar {
-	background: linear-gradient(135deg, var(--lodam-terracotta) 0%, #c45a45 100%);
+	/* Deeper terracotta: light nav text needs >= 4.5:1 (was 3.2:1) */
+	background: linear-gradient(135deg, #A9472F 0%, #9C4330 100%);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-	border-bottom: 3px solid rgba(226, 114, 91, 0.8);
+	border-bottom: 3px solid var(--lodam-terracotta);
 }
 
 .navbar-brand {
@@ -25,7 +26,7 @@ body {
 .nav-link {
 	font-weight: 600;
 	font-size: 1.1rem;
-	color: rgba(245, 240, 230, 0.9) !important;
+	color: var(--lodam-chalk-white) !important;
 }
 
 .nav-link:hover {
@@ -58,7 +59,7 @@ footer a:hover {
 	color: var(--lodam-ochre);
 }
 
-.display-4, h1, h2, h3, h4, h5, h6 {
+.display-4, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	color: var(--lodam-chalk-white);
 	font-weight: 700;
 }
@@ -68,13 +69,14 @@ p, .card-text {
 	line-height: 1.7;
 }
 
+/* Light terracotta: 4.75:1 on the page background (terracotta was 2.9:1) */
 a {
-	color: var(--lodam-terracotta);
+	color: #F09B86;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #F09B86;
+	color: #F7C1B2;
 	text-decoration: underline;
 }
 
@@ -109,7 +111,7 @@ a:hover {
 }
 
 .page-link {
-	color: var(--lodam-terracotta);
+	color: #F09B86;
 	border-color: rgba(226, 114, 91, 0.3);
 	background-color: var(--lodam-charcoal);
 }
@@ -134,22 +136,47 @@ code[class*="language-"] {
 	color: #F5F0E6;
 }
 
+/* Skip link: hidden until focused with the keyboard */
 #skip-link:focus {
-	background: var(--lodam-terracotta);
-	color: var(--lodam-chalk-white);
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 1050;
+	padding: 0.5rem 1rem;
+	background: var(--lodam-chalk-white);
+	color: var(--lodam-charcoal);
+	border-radius: 0.375rem;
+	font-weight: 700;
 }
 
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
+/* Link cards: output of the academicLink and linkPreviewCard shortcodes.
+   (No template tags in this file: it is included through Nunjucks.) */
+.link-card {
+	display: block;
+	margin: 1em 0;
+	padding: 0.75em 1em;
+	border: 2px solid var(--lodam-charcoal);
+	border-radius: 0.5rem;
+	background-color: var(--lodam-charcoal);
+	color: var(--lodam-chalk-white);
+	text-decoration: none;
 }
+.link-card:hover {
+	border-color: var(--lodam-terracotta);
+	color: var(--lodam-chalk-white);
+	text-decoration: none;
+}
+.link-card__title { display: block; font-weight: 700; font-size: 1.1em; overflow-wrap: anywhere; }
+.link-card__host { display: block; font-size: 0.95em; opacity: 0.85; }
+.link-card__icon { display: block; width: 50px; height: auto; margin-bottom: 0.5em; }
+.link-card__image { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 0.5em; }
+/* Literature: the tan "paper" card. #3A3A3A on #D2B48C = 5.8:1 */
+.link-card--literature {
+	background-color: #D2B48C;
+	border-color: #000;
+	color: #3A3A3A;
+}
+.link-card--literature:hover { color: #3A3A3A; border-color: var(--lodam-charcoal); }
 
 /* Background utility classes */
 .bg-terracotta { background-color: var(--lodam-terracotta); }
@@ -163,10 +190,8 @@ code[class*="language-"] {
 .bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
 
 /* Giscus Comments Styling - Dark Theme */
-.giscus {
-	margin-top: 2rem;
-	padding-top: 2rem;
-	border-top: 1px solid rgba(245, 240, 230, 0.1);
+.giscus:not(:empty) {
+	margin-top: 1rem;
 }
 
 .giscus-frame {
@@ -199,3 +224,9 @@ h1 + h2, h2 + h3, h3 + h4 {
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 	margin-top: 0;
 }
+
+/* Inline Bootstrap Icons (output of the icon shortcode) */
+.bi, svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
+
+/* CC licence icons in the footer */
+.cc-icon { width: 1em; height: 1em; margin-left: 0.2em; vertical-align: baseline; }

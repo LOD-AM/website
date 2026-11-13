@@ -25,25 +25,19 @@ const lodAmColors = {
   sunsetOrangeDark: '#D9731F',
 };
 
+// Only colours that reach WCAG AA (4.5:1) with either dark or light text.
+// (terracotta, malachite, sage, burntSienna, burntSiennaLight, terracottaDark,
+// ochreDark, sageDark, sunsetOrangeDark stay out: neither text colour is readable enough.)
 const colorPalette = [
-  'terracotta',
-  'ochre', 
-  'malachite',
-  'sage',
-  'burntSienna',
+  'ochre',
   'sunsetOrange',
   'terracottaLight',
   'ochreLight',
   'malachiteLight',
   'sageLight',
-  'burntSiennaLight',
   'sunsetOrangeLight',
-  'terracottaDark',
-  'ochreDark',
   'malachiteDark',
-  'sageDark',
   'burntSiennaDark',
-  'sunsetOrangeDark',
 ];
 
 const customTagColors = {};
@@ -68,12 +62,23 @@ function hexToRgb(hex) {
   return { r, g, b };
 }
 
+// WCAG relative luminance and contrast ratio
+function luminance(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+  return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+}
+function contrast(a, b) {
+  const [x, y] = [luminance(a), luminance(b)].sort((m, n) => n - m);
+  return (x + 0.05) / (y + 0.05);
+}
+
+const DARK_TEXT = '#3A2E22';
+const LIGHT_TEXT = '#F5F0E6';
+
 function getTagStyle(tag) {
   const color = getTagColor(tag);
-  const colorObj = hexToRgb(color);
-  const luminance = (0.299 * colorObj.r + 0.587 * colorObj.g + 0.114 * colorObj.b) / 255;
-  const textColor = luminance > 0.5 ? '#3A2E22' : '#F5F0E6';
-  
+  const textColor = contrast(color, DARK_TEXT) >= contrast(color, LIGHT_TEXT) ? DARK_TEXT : LIGHT_TEXT;
   return {
     style: 'background-color: ' + color + '; color: ' + textColor + ';',
     textColor: textColor
@@ -84,8 +89,8 @@ function getTagBgClass(tag) {
   const result = getTagStyle(tag);
   return {
     style: result.style,
-    textClass: result.textColor === '#F5F0E6' ? 'text-light' : 'text-dark'
+    textClass: result.textColor === LIGHT_TEXT ? 'text-light' : 'text-dark'
   };
 }
 
-export { getTagColor, getTagStyle, getTagBgClass, customTagColors };
+export { getTagColor, getTagStyle, getTagBgClass, customTagColors, contrast };

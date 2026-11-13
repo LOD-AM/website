@@ -20,6 +20,7 @@ eleventyComputed:
 			<p class="lead mb-4">{{ collections[tag] | length }} post{% if collections[tag] | length != 1 %}s{% endif %} with this tag</p>
 			
 			{% set postslist = collections[ tag ] %}
+			{% set headingLevel = 2 %}
 			{% include "bloglist.njk" %}
 			
 			<p class="mt-4"><a href="/tags/" class="btn btn-outline-secondary">All tags</a></p>

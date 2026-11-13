@@ -41,7 +41,10 @@ draft: true                           # optional; drafts are left out of builds
 ---
 ```
 Shortcodes: `{% academicLink "https://doi.org/..." %}` (DOI card, title from Crossref),
-`{% linkPreview url %}`, `{% linkPreviewCard url, "title" %}`.
+`{% linkPreview url %}`, `{% linkPreviewCard url, "title" %}`, `{% icon "house" %}`
+(Bootstrap Icons inlined from the npm package; add a label as 2nd argument if the
+icon carries meaning). External fetches (link previews, Crossref) are cached in
+`.cache/` for 4 weeks via `@11ty/eleventy-fetch`.
 
 ## Rules
 - **The owner writes the posts.** Their voice, their opinions. If asked to draft,
@@ -54,6 +57,15 @@ Shortcodes: `{% academicLink "https://doi.org/..." %}` (DOI card, title from Cro
 - Technical claims about the data model must match knowledge-graph `CONVENTIONS.md`.
 - Keep the dark, earthy theme (`css/bootstrap-theme.css`, `_data/tagColors.js`).
   Check layout changes in a browser at phone and desktop width.
+- **Accessibility:** text must reach WCAG AA contrast (4.5:1, large text 3:1), one
+  `<h1>` per page, no skipped heading levels. New tag colours must pass with
+  dark or light text (`_data/tagColors.js` picks the text colour by contrast).
+- **No third-party requests on page load** (privacy): no CDNs, no remote fonts or
+  icons, no embeds that load by themselves. Giscus loads only after the visitor
+  clicks "Load comments". Anything new that contacts another server needs the
+  owner's OK and a line in `privacy.md` (which only the owner edits).
+- Files in `css/` are pulled into the layout through Nunjucks: **never write
+  `{%` or `{{` in them**, not even in comments, or the build breaks.
 
 ## LOD-AM project (shared block: keep identical in every repo)
 Source of truth: knowledge-graph `CLAUDE.md`. Edit it there first, then copy it unchanged; CI (`scripts/check_shared_block.sh`) fails on drift.

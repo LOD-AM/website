@@ -1,11 +1,12 @@
 // Sanity checks on the built site in _site/ (run after `npm run build`).
+// Optional argument: another output folder, e.g. node scripts/check_build.mjs /tmp/site
 // - required files exist
 // - every non-draft post in content/blog/ has a page, drafts have none
 // - internal links and assets (href/src starting with "/") resolve
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
 
-const SITE = "_site";
+const SITE = process.argv[2] || "_site";
 const errors = [];
 
 for (const f of ["index.html", "404.html", "feed/feed.xml", "sitemap.xml", "robots.txt", "blog/index.html"]) {

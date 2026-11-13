@@ -3,8 +3,23 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import EleventyFetch from "@11ty/eleventy-fetch";
+import { readFileSync } from "node:fs";
 
 import pluginFilters from "./_config/filters.js";
+
+// How long fetched link previews and DOI titles are reused before refetching.
+const FETCH_CACHE_DURATION = "4w";
+
+// Escape text for use in HTML content and attribute values.
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 // Helper function to fetch OpenGraph image from a URL
 async function getOpenGraphImage(url) {
@@ -15,26 +30,20 @@ async function getOpenGraphImage(url) {
       return 'https://www.persee.fr/img/persee-logo.png';
     }
     
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 15000);
-    
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0; +https://lod-am.net)',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5'
-      },
-      signal: controller.signal
+    // Cached in .cache/ (CI keeps it between runs): builds don't depend on
+    // the remote page being reachable, and repeat builds give the same output.
+    const html = await EleventyFetch(url, {
+      duration: FETCH_CACHE_DURATION,
+      type: "text",
+      fetchOptions: {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0; +https://lod-am.net)',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5'
+        },
+        signal: AbortSignal.timeout(15000)
+      }
     });
-    
-    clearTimeout(timeout);
-    
-    if (!response.ok) {
-      console.warn('[' + new Date().toISOString() + '] HTTP ' + response.status + ' for ' + url);
-      return null;
-    }
-    
-    const html = await response.text();
     
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
     if (ogImageMatch) {
@@ -88,18 +97,18 @@ async function getDOITitle(doiUrl) {
     const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\//i, '');
 
     const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
-    const response = await fetch(crossrefUrl, {
-      headers: {
-        'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
-        'Accept': 'application/json'
+    const data = await EleventyFetch(crossrefUrl, {
+      duration: FETCH_CACHE_DURATION,
+      type: "json",
+      fetchOptions: {
+        headers: {
+          'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
+          'Accept': 'application/json'
+        },
+        signal: AbortSignal.timeout(15000)
       }
     });
-    
-    if (response.ok) {
-      const data = await response.json();
-      return data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
-    }
-    return cleanDoi;
+    return data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
   } catch (error) {
     console.warn('[' + new Date().toISOString() + '] Error fetching DOI title: ' + error.message);
     return doiUrl;
@@ -153,12 +162,6 @@ export default async function(eleventyConfig) {
     type: "atom",
     outputPath: "/feed/feed.xml",
     stylesheet: "pretty-atom-feed.xsl",
-    templateData: {
-      eleventyNavigation: {
-        key: "Feed",
-        order: 4
-      }
-    },
     collection: {
       name: "blog",
       limit: 10,
@@ -176,6 +179,8 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
+    // Keep SVGs as they are instead of rendering 1024 px AVIF/WebP copies
+    svgShortCircuit: true,
     failOnError: false,
     htmlOptions: {
       imgAttributes: {
@@ -191,6 +196,17 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin);
 
+  // Bootstrap Icons, inlined from the npm package (no icon font, no CDN).
+  // {% icon "house" %} is decorative; {% icon "house", "Home" %} gets a label.
+  eleventyConfig.addShortcode("icon", (name, label = "") => {
+    if (!/^[a-z0-9-]+$/.test(name)) throw new Error(`invalid icon name: ${name}`);
+    const svg = readFileSync(`node_modules/bootstrap-icons/icons/${name}.svg`, "utf8").trim();
+    const a11y = label
+      ? `role="img" aria-label="${escapeHtml(label)}"`
+      : `aria-hidden="true" focusable="false"`;
+    return svg.replace("<svg", `<svg ${a11y}`);
+  });
+
   eleventyConfig.addShortcode("currentBuildDate", () => {
     return (new Date()).toISOString();
   });
@@ -200,32 +216,33 @@ export default async function(eleventyConfig) {
     return imageUrl || "/img/fallback-preview.svg";
   });
 
+  // Card linking to an external page. Inline elements only (<a>, <img>, <span>),
+  // because Markdown wraps the shortcode output in a <p>; block elements such
+  // as <div> inside it would split the link into several boxes.
   eleventyConfig.addAsyncShortcode("linkPreviewCard", async (url, title = "") => {
     const imageUrl = await getOpenGraphImage(url);
-    const fallbackImage = "/img/fallback-preview.svg";
     const displayUrl = new URL(url).hostname;
     const safeTitle = title || displayUrl;
-    
-    return '<a href="' + url + '" class="link-preview-card" style="display: block; text-decoration: none; color: inherit; margin: 1em 0;">' +
-      '<img src="' + (imageUrl || fallbackImage) + '" alt="' + safeTitle + '" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
-      '<div style="font-weight: bold;">' + safeTitle + '</div>' +
-      '<div style="color: #666; font-size: 0.9em;">' + displayUrl + '</div>' +
-    '</a>';
+    return `<a href="${escapeHtml(url)}" class="link-card">` +
+      `<img src="${escapeHtml(imageUrl || "/img/fallback-preview.svg")}" alt="" class="link-card__image" loading="lazy" eleventy:ignore>` +
+      `<span class="link-card__title">${escapeHtml(safeTitle)}</span>` +
+      `<span class="link-card__host">${escapeHtml(displayUrl)}</span>` +
+    `</a>`;
   });
 
+  // Card for literature, e.g. {% academicLink "https://doi.org/..." %}.
+  // DOI titles come from Crossref; without network the DOI itself is shown.
   eleventyConfig.addAsyncShortcode("academicLink", async (url, customTitle = null) => {
     const displayUrl = new URL(url).hostname;
     let title = customTitle || displayUrl;
-    
-    if (url.includes('doi.org/')) {
+    if (url.includes("doi.org/")) {
       title = customTitle || (await getDOITitle(url)) || displayUrl;
     }
-    
-     return '<a href="' + url + '" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.75em; border-radius: 8px;">' +
-      '<img src="/img/literature-logo.svg" alt="Literature" style="max-width: 50px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" loading="lazy" />' +
-      '<div style="color: #3a3a3a; font-weight: bold; font-size: 1.1em;">' +  title + '</div>' +
-      '<div style="color: #3a3a3a; font-size: 1.1em;">' + displayUrl + '</div>' +
-    '</a>';
+    return `<a href="${escapeHtml(url)}" class="link-card link-card--literature">` +
+      `<img src="/img/literature-logo.svg" alt="" width="50" height="50" class="link-card__icon" eleventy:ignore>` +
+      `<span class="link-card__title">${escapeHtml(title)}</span>` +
+      `<span class="link-card__host">${escapeHtml(displayUrl)}</span>` +
+    `</a>`;
   });
 };
 

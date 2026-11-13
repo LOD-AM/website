@@ -1,20 +1,23 @@
+{#- Post cards. Set `postslist`; optional `headingLevel` (default 2). -#}
+{%- set hl = headingLevel or 2 %}
 {%- for post in postslist | reverse %}
-<div class="card mb-3 {% if post.url == url %}border-primary{% endif %}">
+<div class="card mb-3">
   <div class="card-body">
-    <h3 class="card-title">
+    <h{{ hl }} class="card-title h3">
       <a href="{{ post.url }}" class="text-decoration-none">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    </h3>
+    </h{{ hl }}>
     <p class="card-text mb-0">
-      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd. LLLL yyyy") }}</time>
+      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
     </p>
     {% if post.data.excerpt or post.data.description %}
     <p class="card-text mt-2">{{ post.data.excerpt or post.data.description | truncate(200) }}</p>
     {% endif %}
   </div>
-  {% if post.data.tags.length %}
+  {%- set postTags = post.data.tags | filterTagList %}
+  {% if postTags.length %}
   <div class="card-footer bg-transparent">
-    {% for tag in post.data.tags %}
-    <span class="badge me-2" style="{{ tag | getTagStyle }}">{{ tag }}</span>
+    {% for tag in postTags %}
+    <a href="/tags/{{ tag | slugify }}/" class="badge me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
     {% endfor %}
   </div>
   {% endif %}
