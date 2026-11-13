@@ -3,7 +3,6 @@ eleventyNavigation:
   key: "About"
   order: 3
 ---
-<div class="container">
 	<div class="row justify-content-center">
 		<div class="col-lg-8">
 			<h1 class="display-4 mb-4">About</h1>
@@ -54,4 +53,3 @@ eleventyNavigation:
 			</div>
 		</div>
 	</div>
-</div>

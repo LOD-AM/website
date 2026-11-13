@@ -13,7 +13,6 @@ eleventyComputed:
   title: "Tagged '{{ tag }}'"
   permalink: "/tags/{{ tag | slugify }}/"
 ---
-<div class="container">
 	<div class="row justify-content-center">
 		<div class="col-lg-8">
 			<h1 class="display-4 mb-4">Tagged <span class="badge" style="{{ tag | getTagStyle }}">"{{ tag }}"</span></h1>
@@ -26,4 +25,3 @@ eleventyComputed:
 			<p class="mt-4"><a href="/tags/" class="btn btn-outline-secondary">All tags</a></p>
 		</div>
 	</div>
-</div>
