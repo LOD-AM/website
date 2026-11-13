@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tagged &#39;concept&#39;</title>
+		<meta name="description" content="A sandbox project dedicated to ancient metallurgical &amp; open data methodologies.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/tags/concept/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Tagged &#39;concept&#39;">
+		<meta property="og:description" content="A sandbox project dedicated to ancient metallurgical &amp; open data methodologies.">
+		<meta property="og:url" content="https://lod-am.net/tags/concept/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://lod-am.net//img/logo.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Tagged &#39;concept&#39;">
+		<meta name="twitter:description" content="A sandbox project dedicated to ancient metallurgical &amp; open data methodologies.">
+		<meta name="twitter:image" content="https://lod-am.net//img/logo.svg">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap CSS - MUST load BEFORE theme overrides -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		
+		<!-- LOD-AM Theme Variables - Load AFTER Bootstrap to override defaults -->
+		<link rel="stylesheet" href="/css/bootstrap-theme.css">
+		
+		<!-- Custom CSS -->
+		
+		<style>/* LOD-AM Custom Styles - Dark Theme */
+/* Load AFTER bootstrap-theme.css and bootstrap.min.css */
+
+body {
+	font-family: var(--bs-font-sans-serif);
+	font-weight: 500;
+	line-height: 1.6;
+	font-size: 1.1rem;
+	color: var(--bs-body-color);
+	background-color: var(--bs-body-bg);
+}
+
+.navbar {
+	background: linear-gradient(135deg, var(--lodam-terracotta) 0%, #c45a45 100%);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	border-bottom: 3px solid rgba(226, 114, 91, 0.8);
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: var(--lodam-chalk-white) !important;
+}
+
+.nav-link {
+	font-weight: 600;
+	font-size: 1.1rem;
+	color: rgba(245, 240, 230, 0.9) !important;
+}
+
+.nav-link:hover {
+	color: var(--lodam-chalk-white) !important;
+}
+
+.card {
+	background-color: var(--lodam-charcoal);
+	border: 1px solid rgba(245, 240, 230, 0.08);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	border-radius: 0.375rem;
+}
+
+.card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+	border-color: rgba(226, 114, 91, 0.5);
+}
+
+footer {
+	background: linear-gradient(135deg, var(--lodam-charcoal) 0%, #1a1611 100%);
+	color: rgba(245, 240, 230, 0.7);
+}
+
+footer a {
+	color: var(--lodam-chalk-white);
+}
+
+footer a:hover {
+	color: var(--lodam-ochre);
+}
+
+.display-4, h1, h2, h3, h4, h5, h6 {
+	color: var(--lodam-chalk-white);
+	font-weight: 700;
+}
+
+p, .card-text {
+	color: rgba(245, 240, 230, 0.85);
+	line-height: 1.7;
+}
+
+a {
+	color: var(--lodam-terracotta);
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F09B86;
+	text-decoration: underline;
+}
+
+.badge {
+	font-weight: 600;
+	padding: 0.35em 0.65em;
+	border-radius: 0.375rem;
+}
+
+.bg-primary {
+	background-color: var(--lodam-terracotta);
+	color: var(--lodam-deep-umber);
+}
+
+.bg-secondary {
+	background-color: var(--lodam-malachite);
+	color: var(--lodam-chalk-white);
+}
+
+.list-group-item {
+	border-left: none;
+	border-right: none;
+	border-color: rgba(245, 240, 230, 0.08);
+	background-color: var(--lodam-charcoal);
+	color: rgba(245, 240, 230, 0.85);
+}
+
+.page-item.active .page-link {
+	background-color: var(--lodam-terracotta);
+	border-color: var(--lodam-terracotta);
+	color: var(--lodam-chalk-white);
+}
+
+.page-link {
+	color: var(--lodam-terracotta);
+	border-color: rgba(226, 114, 91, 0.3);
+	background-color: var(--lodam-charcoal);
+}
+
+.page-link:hover {
+	color: var(--lodam-chalk-white);
+	background-color: var(--lodam-terracotta);
+	border-color: var(--lodam-terracotta);
+}
+
+pre[class*="language-"] {
+	background: #1e1a14;
+	border: 1px solid rgba(245, 240, 230, 0.15);
+	border-radius: 0.375rem;
+	color: #F5F0E6;
+}
+
+code[class*="language-"] {
+	background: #2a241d;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.25rem;
+	color: #F5F0E6;
+}
+
+#skip-link:focus {
+	background: var(--lodam-terracotta);
+	color: var(--lodam-chalk-white);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Background utility classes */
+.bg-terracotta { background-color: var(--lodam-terracotta); }
+.bg-ochre { background-color: var(--lodam-ochre); }
+.bg-malachite { background-color: var(--lodam-malachite); }
+.bg-sage { background-color: var(--lodam-sage); }
+.bg-chalk-white { background-color: var(--lodam-chalk-white); color: var(--lodam-deep-umber); }
+.bg-deep-umber { background-color: var(--lodam-deep-umber); color: var(--lodam-chalk-white); }
+.bg-charcoal { background-color: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
+.bg-burnt-sienna { background-color: var(--lodam-burnt-sienna); color: var(--lodam-chalk-white); }
+.bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
+
+/* Giscus Comments Styling - Dark Theme */
+.giscus {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(245, 240, 230, 0.1);
+}
+
+.giscus-frame {
+	background-color: var(--lodam-deep-umber) !important;
+	border: none !important;
+	border-radius: 0.375rem !important;
+}
+
+.giscus iframe {
+	background: transparent !important;
+}
+
+/* Custom Spacing for Markdown Content */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+/* Reduce space between consecutive headings */
+h1 + h2, h2 + h3, h3 + h4 {
+	margin-top: 1rem;
+}
+
+/* Remove extra space before first paragraph after a heading */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 0;
+}</style>
+		
+		<!-- Bootstrap Icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<picture><source type="image/avif" srcset="/img/urz3oWH-gu-1024.avif 1024w"><source type="image/webp" srcset="/img/urz3oWH-gu-1024.webp 1024w"><img loading="lazy" decoding="async" src="/img/urz3oWH-gu-1024.svg" alt="Linked Open Data for Ancient Metallurgy" style="height: 75px; width: 75px;" class="d-inline-block align-top" width="1024" height="1024"></picture>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blogs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/feed/feed.xml">Feed</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-8">
+			<h1 class="display-4 mb-4" id="tagged-concept">Tagged <span class="badge" style="background-color: #E07A5D; color: #3A2E22;">"concept"</span></h1>
+			<p class="lead mb-4">5 posts with this tag</p>
+			
+			
+			
+<div class="card mb-3 ">
+  <div class="card-body">
+    <h3 class="card-title" id="learning-by-doing">
+      <a href="/blog/Learning_by_Doing_My First_Data_Example/" class="text-decoration-none">Learning by Doing</a>
+    </h3>
+    <p class="card-text mb-0">
+      <time datetime="2026-07-23">23. July 2026</time>
+    </p>
+    
+    <p class="card-text mt-2">How my ontological ideas turned into actual data—and what I learned along the way.</p>
+    
+  </div>
+  
+  <div class="card-footer bg-transparent">
+    
+    <span class="badge me-2" style="background-color: #F09B86; color: #3A2E22;">blog</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">concept</span>
+    
+    <span class="badge me-2" style="background-color: #5FB389; color: #3A2E22;">data</span>
+    
+  </div>
+  
+</div>
+<div class="card mb-3 ">
+  <div class="card-body">
+    <h3 class="card-title" id="the-vocabularies-finding-the-right-words-for-my-data">
+      <a href="/blog/The_vocabularies/" class="text-decoration-none">The Vocabularies - Finding the Right Words for My Data</a>
+    </h3>
+    <p class="card-text mb-0">
+      <time datetime="2026-06-30">30. June 2026</time>
+    </p>
+    
+    <p class="card-text mt-2">How I chose Pleiades, PeriodO, Getty AAT, Allotrope, and FABIO for LOD-AM.</p>
+    
+  </div>
+  
+  <div class="card-footer bg-transparent">
+    
+    <span class="badge me-2" style="background-color: #F09B86; color: #3A2E22;">blog</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">concept</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">vocabularies</span>
+    
+  </div>
+  
+</div>
+<div class="card mb-3 ">
+  <div class="card-body">
+    <h3 class="card-title" id="the-ontologies-choosing-the-right-tools-for-the-job">
+      <a href="/blog/The_ontologies/" class="text-decoration-none">The Ontologies - Choosing the Right Tools for the Job</a>
+    </h3>
+    <p class="card-text mb-0">
+      <time datetime="2026-06-29">29. June 2026</time>
+    </p>
+    
+    <p class="card-text mt-2">How I chose CIDOC CRM, FRBRoo, and the Allotrope Framework for LOD-AM.</p>
+    
+  </div>
+  
+  <div class="card-footer bg-transparent">
+    
+    <span class="badge me-2" style="background-color: #F09B86; color: #3A2E22;">blog</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">concept</span>
+    
+    <span class="badge me-2" style="background-color: #A8B885; color: #3A2E22;">ontology</span>
+    
+  </div>
+  
+</div>
+<div class="card mb-3 ">
+  <div class="card-body">
+    <h3 class="card-title" id="the-infrastructure-a-homelab-for-lod-am">
+      <a href="/blog/The_infrastructure/" class="text-decoration-none">The Infrastructure - A Homelab for LOD-AM</a>
+    </h3>
+    <p class="card-text mb-0">
+      <time datetime="2026-06-28">28. June 2026</time>
+    </p>
+    
+    <p class="card-text mt-2">How I built LOD-AM on a budget with old hardware and free software.</p>
+    
+  </div>
+  
+  <div class="card-footer bg-transparent">
+    
+    <span class="badge me-2" style="background-color: #F09B86; color: #3A2E22;">blog</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">concept</span>
+    
+    <span class="badge me-2" style="background-color: #A67229; color: #F5F0E6;">infrastructure</span>
+    
+  </div>
+  
+</div>
+<div class="card mb-3 ">
+  <div class="card-body">
+    <h3 class="card-title" id="how-i-started">
+      <a href="/blog/How_I_started/" class="text-decoration-none">How I started</a>
+    </h3>
+    <p class="card-text mb-0">
+      <time datetime="2026-06-27">27. June 2026</time>
+    </p>
+    
+    <p class="card-text mt-2">So, how we got to the point to see this website? I&#39;ll tell you.</p>
+    
+  </div>
+  
+  <div class="card-footer bg-transparent">
+    
+    <span class="badge me-2" style="background-color: #F09B86; color: #3A2E22;">blog</span>
+    
+    <span class="badge me-2" style="background-color: #E07A5D; color: #3A2E22;">concept</span>
+    
+  </div>
+  
+</div>
+			
+			<p class="mt-4"><a href="/tags/" class="btn btn-outline-secondary">All tags</a></p>
+		</div>
+	</div>
+</div>
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="bg-charcoal text-white py-4 mt-auto">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="mb-0"><em>Built with <a href="https://www.11ty.dev/" class="text-white">Eleventy v3.1.6</a></em></p>
+					</div>
+					<div class="col-md-6 text-md-end">
+						<p class="mb-0">&copy; Fabian Fricke 2026</p>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-12 text-center">
+						<p class="mb-0 small">
+							<a href="/impressum/" class="text-white me-3">Impressum</a>
+							<a href="/privacy/" class="text-white me-3">Privacy Policy</a>
+							<a href="https://github.com/LOD-AM/website" class="text-white me-3">GitHub</a>
+							<a rel="me" href="https://archaeo.social/@FabianF" class="text-white me-3">Mastodon</a>
+						</p>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-12 text-center">
+						<p class="mb-0 small">
+							<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under 
+							<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+							<picture><source type="image/avif" srcset="/tags/concept/k9VcRe7534-64.avif 64w"><source type="image/webp" srcset="/tags/concept/k9VcRe7534-64.webp 64w"><img loading="lazy" decoding="async" src="/tags/concept/k9VcRe7534-64.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;vertical-align: baseline;" width="64" height="64"></picture>
+							<picture><source type="image/avif" srcset="/tags/concept/F4qYah1Txz-64.avif 64w"><source type="image/webp" srcset="/tags/concept/F4qYah1Txz-64.webp 64w"><img loading="lazy" decoding="async" src="/tags/concept/F4qYah1Txz-64.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;vertical-align: baseline;" width="64" height="64"></picture>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src=""></script>
+	</body>
+</html>

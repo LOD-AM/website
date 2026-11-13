@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tackling Legacy Data practically</title>
+		<meta name="description" content="How I&#39;m using a 2002 paper on Arslantepe&#39;s metal objects to build practical Linked Open Data solutions for archaeometallurgical challenges.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/The_first_example/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Tackling Legacy Data practically">
+		<meta property="og:description" content="How I&#39;m using a 2002 paper on Arslantepe&#39;s metal objects to build practical Linked Open Data solutions for archaeometallurgical challenges.">
+		<meta property="og:url" content="https://lod-am.net/blog/The_first_example/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://lod-am.net//img/logo.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Tackling Legacy Data practically">
+		<meta name="twitter:description" content="How I&#39;m using a 2002 paper on Arslantepe&#39;s metal objects to build practical Linked Open Data solutions for archaeometallurgical challenges.">
+		<meta name="twitter:image" content="https://lod-am.net//img/logo.svg">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap CSS - MUST load BEFORE theme overrides -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		
+		<!-- LOD-AM Theme Variables - Load AFTER Bootstrap to override defaults -->
+		<link rel="stylesheet" href="/css/bootstrap-theme.css">
+		
+		<!-- Custom CSS -->
+		
+		<style>/* LOD-AM Custom Styles - Dark Theme */
+/* Load AFTER bootstrap-theme.css and bootstrap.min.css */
+
+body {
+	font-family: var(--bs-font-sans-serif);
+	font-weight: 500;
+	line-height: 1.6;
+	font-size: 1.1rem;
+	color: var(--bs-body-color);
+	background-color: var(--bs-body-bg);
+}
+
+.navbar {
+	background: linear-gradient(135deg, var(--lodam-terracotta) 0%, #c45a45 100%);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	border-bottom: 3px solid rgba(226, 114, 91, 0.8);
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 1.25rem;
+	color: var(--lodam-chalk-white) !important;
+}
+
+.nav-link {
+	font-weight: 600;
+	font-size: 1.1rem;
+	color: rgba(245, 240, 230, 0.9) !important;
+}
+
+.nav-link:hover {
+	color: var(--lodam-chalk-white) !important;
+}
+
+.card {
+	background-color: var(--lodam-charcoal);
+	border: 1px solid rgba(245, 240, 230, 0.08);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	border-radius: 0.375rem;
+}
+
+.card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+	border-color: rgba(226, 114, 91, 0.5);
+}
+
+footer {
+	background: linear-gradient(135deg, var(--lodam-charcoal) 0%, #1a1611 100%);
+	color: rgba(245, 240, 230, 0.7);
+}
+
+footer a {
+	color: var(--lodam-chalk-white);
+}
+
+footer a:hover {
+	color: var(--lodam-ochre);
+}
+
+.display-4, h1, h2, h3, h4, h5, h6 {
+	color: var(--lodam-chalk-white);
+	font-weight: 700;
+}
+
+p, .card-text {
+	color: rgba(245, 240, 230, 0.85);
+	line-height: 1.7;
+}
+
+a {
+	color: var(--lodam-terracotta);
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F09B86;
+	text-decoration: underline;
+}
+
+.badge {
+	font-weight: 600;
+	padding: 0.35em 0.65em;
+	border-radius: 0.375rem;
+}
+
+.bg-primary {
+	background-color: var(--lodam-terracotta);
+	color: var(--lodam-deep-umber);
+}
+
+.bg-secondary {
+	background-color: var(--lodam-malachite);
+	color: var(--lodam-chalk-white);
+}
+
+.list-group-item {
+	border-left: none;
+	border-right: none;
+	border-color: rgba(245, 240, 230, 0.08);
+	background-color: var(--lodam-charcoal);
+	color: rgba(245, 240, 230, 0.85);
+}
+
+.page-item.active .page-link {
+	background-color: var(--lodam-terracotta);
+	border-color: var(--lodam-terracotta);
+	color: var(--lodam-chalk-white);
+}
+
+.page-link {
+	color: var(--lodam-terracotta);
+	border-color: rgba(226, 114, 91, 0.3);
+	background-color: var(--lodam-charcoal);
+}
+
+.page-link:hover {
+	color: var(--lodam-chalk-white);
+	background-color: var(--lodam-terracotta);
+	border-color: var(--lodam-terracotta);
+}
+
+pre[class*="language-"] {
+	background: #1e1a14;
+	border: 1px solid rgba(245, 240, 230, 0.15);
+	border-radius: 0.375rem;
+	color: #F5F0E6;
+}
+
+code[class*="language-"] {
+	background: #2a241d;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.25rem;
+	color: #F5F0E6;
+}
+
+#skip-link:focus {
+	background: var(--lodam-terracotta);
+	color: var(--lodam-chalk-white);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Background utility classes */
+.bg-terracotta { background-color: var(--lodam-terracotta); }
+.bg-ochre { background-color: var(--lodam-ochre); }
+.bg-malachite { background-color: var(--lodam-malachite); }
+.bg-sage { background-color: var(--lodam-sage); }
+.bg-chalk-white { background-color: var(--lodam-chalk-white); color: var(--lodam-deep-umber); }
+.bg-deep-umber { background-color: var(--lodam-deep-umber); color: var(--lodam-chalk-white); }
+.bg-charcoal { background-color: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
+.bg-burnt-sienna { background-color: var(--lodam-burnt-sienna); color: var(--lodam-chalk-white); }
+.bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
+
+/* Giscus Comments Styling - Dark Theme */
+.giscus {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(245, 240, 230, 0.1);
+}
+
+.giscus-frame {
+	background-color: var(--lodam-deep-umber) !important;
+	border: none !important;
+	border-radius: 0.375rem !important;
+}
+
+.giscus iframe {
+	background: transparent !important;
+}
+
+/* Custom Spacing for Markdown Content */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+}
+
+/* Reduce space between consecutive headings */
+h1 + h2, h2 + h3, h3 + h4 {
+	margin-top: 1rem;
+}
+
+/* Remove extra space before first paragraph after a heading */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 0;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+		<!-- Bootstrap Icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<picture><source type="image/avif" srcset="/img/urz3oWH-gu-1024.avif 1024w"><source type="image/webp" srcset="/img/urz3oWH-gu-1024.webp 1024w"><img loading="lazy" decoding="async" src="/img/urz3oWH-gu-1024.svg" alt="Linked Open Data for Ancient Metallurgy" style="height: 75px; width: 75px;" class="d-inline-block align-top" width="1024" height="1024"></picture>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blogs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/feed/feed.xml">Feed</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4" id="tackling-legacy-data-practically">Tackling Legacy Data practically</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-07-09">09 July 2026</time>
+        
+      </small>
+    </div>
+    
+    
+    <div class="mb-3">
+      
+      
+      <a href="/tags/case-study/" class="badge me-2" style="background-color: #A67229; color: #F5F0E6;">case study</a>
+      
+      
+      <a href="/tags/modelling/" class="badge me-2" style="background-color: #A67229; color: #F5F0E6;">modelling</a>
+      
+      
+      <a href="/tags/arslantepe/" class="badge me-2" style="background-color: #A67229; color: #F5F0E6;">Arslantepe</a>
+      
+    </div>
+    
+  </header>
+
+  <div class="content">
+    <p>So, I’ve got my ontologies sorted and my vocabularies in place. But none of that matters much if I don’t have <strong>real data</strong> to work with. That’s where this 2002 paper comes in.</p>
+<p>Curious for the paper itself?</p>
+<p><a href="https://doi.org/10.3406/paleo.2002.4745" class="link-preview-card academic-link" style="display: block; text-decoration: none; color: inherit; margin: 1em 0; background-color: #d2b48c; border: 2px solid black; padding: 0.75em; border-radius: 8px;"><picture><source type="image/avif" srcset="/img/cuGc-qKw8K-1024.avif 1024w"><source type="image/webp" srcset="/img/cuGc-qKw8K-1024.webp 1024w"><img loading="lazy" decoding="async" src="/img/cuGc-qKw8K-1024.svg" alt="Literature" style="max-width: 50px; height: auto; border-radius: 8px; margin-bottom: 0.5em;" width="1024" height="1024"></picture><div style="color: #3a3a3a; font-weight: bold; font-size: 1.1em;">Chemical Composition and Lead Isotopy of Metal Objects from the &quot;Royal&quot; Tomb and Other Related Finds at Arslantepe, Eastern Anatolia</div><div style="color: #3a3a3a; font-size: 1.1em;">doi.org</div></a></p>
+<h2 id="why-this-paper">Why This Paper?</h2>
+<p>Here’s the thing: I needed a <strong>real-world example</strong> that exposes the messy, complicated data issues we face in archaeometallurgy. And this paper by <strong>Hauptmann, Schmitt-Strecker, Begemann, and Palmieri</strong> is <em>perfect</em>.</p>
+<p>Arslantepe—a 30-meter-high tell in Eastern Anatolia—has a <strong>&quot;Royal Tomb&quot;</strong> complex from the Early Bronze Age, packed with objects made from alloys that have been analyzed for both <strong>trace elements</strong> and <strong>lead isotopes</strong>. It’s a goldmine of data, but it’s also a <strong>minefield</strong> of modelling challenges.</p>
+<h2 id="the-six-challenges-it-throws-at-us">The Six Challenges It Throws At Us</h2>
+<p>Working through this paper, I quickly realized it forces me to confront <strong>six critical modelling questions</strong> that keep coming up in legacy archaeometallurgical literature:</p>
+<h3 id="1-the-unknowns-fragments-without-types"><strong>1. The Unknowns: Fragments Without Types</strong></h3>
+<p>So, there are metal fragments in the assemblage that can’t be assigned a definitive typology. They’re just... fragments. No clear morphology, no easy classification. This is a <strong>fundamental issue</strong> in archaeology: how do you represent objects when you don’t have enough information to classify them? It’s not just about missing data—it’s about <strong>structural uncertainty</strong> in your knowledge model. If we can’t handle unknowns gracefully, we can’t model real-world archaeology.</p>
+<h3 id="2-the-double-analysis-trace-elements-lead-isotopes"><strong>2. The Double Analysis: Trace Elements + Lead Isotopes</strong></h3>
+<p>The paper presents <strong>both</strong> trace element compositions and <strong>lead isotope ratios</strong> for the same artifacts. This isn’t just about storing two datasets—it’s about <strong>linking analytical methods</strong> that tell different stories. Trace elements speak to alloy composition and technological choices; lead isotopes reveal provenance and trade networks. The challenge? Modelling these as <strong>complementary but distinct</strong> lines of evidence that together tell a richer story about the object’s history.</p>
+<h3 id="3-the-chronology-puzzle-multiple-complexes-different-dates"><strong>3. The Chronology Puzzle: Multiple Complexes, Different Dates</strong></h3>
+<p>Arslantepe’s <strong>Royal Tomb</strong> and <strong>Palace hoard</strong> belong to different archaeological complexes with distinct chronological attributions. This is where <strong>stratigraphic reality</strong> meets data modelling: sites don’t have single dates, they have <strong>complex temporal layers</strong>. The question is how to represent objects that belong to different phases, with different dating methods, and sometimes overlapping timeframes—without flattening the archaeological record into oversimplified categories.</p>
+<h3 id="4-the-fuzzy-data-0-1-0-5-not-detected"><strong>4. The Fuzzy Data: &quot;&gt;0.1%&quot;, &quot;&lt;0.5%&quot;, &quot;Not Detected&quot;</strong></h3>
+<p>The paper includes <strong>qualitative descriptors</strong> like &quot;<code>&gt;0.1%</code>&quot;, &quot;<code>&gt;0.5%</code>&quot;, or &quot;<strong>not detected</strong>&quot; rather than precise values. This is <strong>real analytical data</strong>—not sloppy work, but the nature of detection limits and measurement uncertainty. The modelling challenge is preserving this <strong>nuance</strong> while still making the data queryable. If we force everything into exact numbers, we lose the honesty of the original analysis. If we treat it as text, we lose the ability to reason computationally.</p>
+<h3 id="5-the-spearhead-problem-one-artifact-two-samples"><strong>5. The Spearhead Problem: One Artifact, Two Samples</strong></h3>
+<p>Two samples were taken from <strong>different parts of the same spearhead</strong>—one from the <strong>blade</strong>, one from the <strong>socket</strong>—yielding different results. This exposes a <strong>fundamental tension</strong> in archaeometallurgical data: the <strong>artifact</strong> (the conceptual whole) vs. the <strong>sample</strong> (the physical fragment analyzed). How do we maintain the relationship between them? How do we track that sample A and sample B come from the same object, but represent different materials or manufacturing processes? Get this wrong, and you lose the very connections that make the data meaningful.</p>
+<h3 id="6-the-id-chaos-excavation-lab-and-publication-systems"><strong>6. The ID Chaos: Excavation, Lab, and Publication Systems</strong></h3>
+<p>The artifacts carry <strong>three different identifier schemes</strong> from different contexts. This is the <strong>reality of legacy data integration</strong>: every institution, every project, every publication creates its own system. The challenge isn’t just technical—it’s <strong>conceptual</strong>. How do we reconcile that &quot;Tomb 16/H/50&quot; in the excavation log, &quot;AR-23&quot; in the lab notebook, and &quot;Fig. 3, no. 12&quot; in the paper all refer to the same physical object? Without solving this, we can’t link datasets, and without linking datasets, we can’t do meaningful cross-project research.</p>
+<h2 id="the-roadmap-from-paper-to-queryable-data">The Roadmap: From Paper to Queryable Data</h2>
+<p>So here’s my plan: over the next series of posts, I’ll tackle each challenge systematically.</p>
+<p><strong>Next Post:</strong> <em>Modelling Unknowns: Fragments, Fuzzy Values, and Probabilistic Typing</em></p>
+<ul>
+<li>Deep dive into <strong>CIDOC-CRM + Getty AAT</strong> for uncertain classifications</li>
+<li>Implementing a <strong>lean apllication of CIDOC-CRM</strong> for the given use-case.</li>
+</ul>
+<p><strong>Following Post:</strong> <em>The Analytical Workflow: Linking Trace Elements and Lead Isotopes with AFO</em></p>
+<ul>
+<li>Step-by-step mapping of <strong>measurements (fuzzy or not)</strong> based on <strong>AFO</strong></li>
+</ul>
+<p><strong>Later Post:</strong> <em>Temporal Modelling: Arslantepe’s Stratigraphy in PeriodO</em></p>
+<ul>
+<li>How I <strong>extended PeriodO</strong> with local phases</li>
+<li>Experimenting with a hierarchy for <strong>chronological phases</strong></li>
+</ul>
+<p><strong>Final Post:</strong> <em>The Full Arslantepe Dataset: Querying the Triple Store</em></p>
+<ul>
+<li><strong>Live SPARQL endpoint</strong> demonstration</li>
+<li><strong>Example queries</strong> addressing all six challenges</li>
+</ul>
+<p>As always, if you have thoughts, suggestions, or just want to nerd out about archaeometallurgical data modelling, write me an Email to <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/The_vocabularies/">
+          <i class="bi bi-arrow-left"></i> Previous: The Vocabularies - Finding the Right Words for My Data
+        </a>
+      </li>
+      
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Learning_by_Doing_My First_Data_Example/">
+          Next: Learning by Doing <i class="bi bi-arrow-right"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<div class="giscus mt-5 pt-4 border-top border-secondary"></div>
+<script src="https://giscus.app/client.js" data-repo="lod-am/website" data-repo-id="R_kgDOTERevg" data-category="Comments" data-category-id="DIC_kwDOTERevs4DAFDJ" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="gruvbox_dark" data-lang="en" crossorigin="anonymous" async=""></script>
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="bg-charcoal text-white py-4 mt-auto">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="mb-0"><em>Built with <a href="https://www.11ty.dev/" class="text-white">Eleventy v3.1.6</a></em></p>
+					</div>
+					<div class="col-md-6 text-md-end">
+						<p class="mb-0">&copy; Fabian Fricke 2026</p>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-12 text-center">
+						<p class="mb-0 small">
+							<a href="/impressum/" class="text-white me-3">Impressum</a>
+							<a href="/privacy/" class="text-white me-3">Privacy Policy</a>
+							<a href="https://github.com/LOD-AM/website" class="text-white me-3">GitHub</a>
+							<a rel="me" href="https://archaeo.social/@FabianF" class="text-white me-3">Mastodon</a>
+						</p>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-12 text-center">
+						<p class="mb-0 small">
+							<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under 
+							<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+							<picture><source type="image/avif" srcset="/blog/The_first_example/k9VcRe7534-64.avif 64w"><source type="image/webp" srcset="/blog/The_first_example/k9VcRe7534-64.webp 64w"><img loading="lazy" decoding="async" src="/blog/The_first_example/k9VcRe7534-64.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;vertical-align: baseline;" width="64" height="64"></picture>
+							<picture><source type="image/avif" srcset="/blog/The_first_example/F4qYah1Txz-64.avif 64w"><source type="image/webp" srcset="/blog/The_first_example/F4qYah1Txz-64.webp 64w"><img loading="lazy" decoding="async" src="/blog/The_first_example/F4qYah1Txz-64.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;vertical-align: baseline;" width="64" height="64"></picture>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src=""></script>
+	</body>
+</html>
