@@ -3,8 +3,13 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import EleventyFetch from "@11ty/eleventy-fetch";
+import { readFileSync } from "node:fs";
 
 import pluginFilters from "./_config/filters.js";
+
+// How long fetched link previews and DOI titles are reused before refetching.
+const FETCH_CACHE_DURATION = "4w";
 
 // Escape text for use in HTML content and attribute values.
 function escapeHtml(str) {
@@ -25,26 +30,20 @@ async function getOpenGraphImage(url) {
       return 'https://www.persee.fr/img/persee-logo.png';
     }
     
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 15000);
-    
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0; +https://lod-am.net)',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5'
-      },
-      signal: controller.signal
+    // Cached in .cache/ (CI keeps it between runs): builds don't depend on
+    // the remote page being reachable, and repeat builds give the same output.
+    const html = await EleventyFetch(url, {
+      duration: FETCH_CACHE_DURATION,
+      type: "text",
+      fetchOptions: {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (compatible; Eleventy Link Preview/1.0; +https://lod-am.net)',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5'
+        },
+        signal: AbortSignal.timeout(15000)
+      }
     });
-    
-    clearTimeout(timeout);
-    
-    if (!response.ok) {
-      console.warn('[' + new Date().toISOString() + '] HTTP ' + response.status + ' for ' + url);
-      return null;
-    }
-    
-    const html = await response.text();
     
     const ogImageMatch = html.match(/<meta property="og:image"[^>]*content="([^"]+)"/i);
     if (ogImageMatch) {
@@ -98,18 +97,18 @@ async function getDOITitle(doiUrl) {
     const cleanDoi = doiUrl.replace(/^https?:\/\/doi.org\//i, '');
 
     const crossrefUrl = 'https://api.crossref.org/works/' + encodeURIComponent(cleanDoi);
-    const response = await fetch(crossrefUrl, {
-      headers: {
-        'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
-        'Accept': 'application/json'
+    const data = await EleventyFetch(crossrefUrl, {
+      duration: FETCH_CACHE_DURATION,
+      type: "json",
+      fetchOptions: {
+        headers: {
+          'User-Agent': 'LOD-AM/1.0 (https://lod-am.net)',
+          'Accept': 'application/json'
+        },
+        signal: AbortSignal.timeout(15000)
       }
     });
-    
-    if (response.ok) {
-      const data = await response.json();
-      return data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
-    }
-    return cleanDoi;
+    return data.message?.title?.[0] || data.message?.container_title?.[0] || cleanDoi;
   } catch (error) {
     console.warn('[' + new Date().toISOString() + '] Error fetching DOI title: ' + error.message);
     return doiUrl;
@@ -180,6 +179,8 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
+    // Keep SVGs as they are instead of rendering 1024 px AVIF/WebP copies
+    svgShortCircuit: true,
     failOnError: false,
     htmlOptions: {
       imgAttributes: {
@@ -194,6 +195,17 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin);
+
+  // Bootstrap Icons, inlined from the npm package (no icon font, no CDN).
+  // {% icon "house" %} is decorative; {% icon "house", "Home" %} gets a label.
+  eleventyConfig.addShortcode("icon", (name, label = "") => {
+    if (!/^[a-z0-9-]+$/.test(name)) throw new Error(`invalid icon name: ${name}`);
+    const svg = readFileSync(`node_modules/bootstrap-icons/icons/${name}.svg`, "utf8").trim();
+    const a11y = label
+      ? `role="img" aria-label="${escapeHtml(label)}"`
+      : `aria-hidden="true" focusable="false"`;
+    return svg.replace("<svg", `<svg ${a11y}`);
+  });
 
   eleventyConfig.addShortcode("currentBuildDate", () => {
     return (new Date()).toISOString();

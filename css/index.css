@@ -190,10 +190,8 @@ code[class*="language-"] {
 .bg-sunset-orange { background-color: var(--lodam-sunset-orange); color: var(--lodam-deep-umber); }
 
 /* Giscus Comments Styling - Dark Theme */
-.giscus {
-	margin-top: 2rem;
-	padding-top: 2rem;
-	border-top: 1px solid rgba(245, 240, 230, 0.1);
+.giscus:not(:empty) {
+	margin-top: 1rem;
 }
 
 .giscus-frame {
@@ -226,3 +224,9 @@ h1 + h2, h2 + h3, h3 + h4 {
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 	margin-top: 0;
 }
+
+/* Inline Bootstrap Icons (output of the icon shortcode) */
+.bi, svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
+
+/* CC licence icons in the footer */
+.cc-icon { width: 1em; height: 1em; margin-left: 0.2em; vertical-align: baseline; }
