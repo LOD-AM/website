@@ -12,11 +12,27 @@ npm run build    # production build to _site/ (drafts excluded)
 npm run check    # checks on _site/: required files, posts vs drafts, internal links
 ```
 Both must pass before a PR (CI `build.yml` runs them). Eleventy doesn't clean
-`_site/`, so stale files from earlier builds can make `check` fail locally.
+`_site/`, so stale files can make `check` fail locally: build into a fresh folder
+instead (`npx @11ty/eleventy --output=/tmp/site-x && node scripts/check_build.mjs /tmp/site-x`).
+
+**Browser checks** (Playwright; preinstalled in Claude cloud sessions):
+```bash
+npm run qa                                  # = node scripts/qa.mjs all _site
+node scripts/qa.mjs audit|overflow|thirdparty [siteDir]
+node scripts/qa.mjs screenshots <outDir> [siteDir]   # before/after: build both
+python3 scripts/qa-pixdiff.py <beforeDir> <afterDir> [diffDir]
+```
+`audit` = WCAG AA contrast + headings on the key page types; `overflow` = 375 px
+phone; `thirdparty` = no requests to other hosts on load + Giscus only after the
+click. Run `npm run qa` for any template/CSS change, and attach the screenshot
+comparison to visual changes (images go to the owner in chat; PRs can't hold them).
 
 **Deployment** ([docs/deployment.md](docs/deployment.md)): every push to `main`
 is built in CI and, only if build and check pass, pushed to the `deploy` branch.
-The owner's web server pulls `deploy` via webhook and serves it. Never edit
+The owner's web server (Nginx Proxy Manager → Caddy serving static files, in an
+LXC on Proxmox) pulls `deploy` via webhook and serves it. **Until website#11 is
+done, the server still pulls `main` and builds itself**, so verify live changes
+on the `deploy` branch (`git show origin/deploy:<path>`). Never edit
 `deploy` by hand; changes reach the site only through `main`. Server-side
 changes (webhook, web server config) are the owner's.
 The build fetches external URLs (link previews, DOI titles via Crossref,
@@ -70,6 +86,16 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
   gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
+## Where to resume (state 2026-11-13)
+- Phases 1–3 of the improvement plan are done (#22–#24); privacy policy and
+  Impressum updated (#27).
+- Phases 4–5 (#12, #13 and sub-issues #14–#21) wait for the knowledge-graph data:
+  label `waiting-for-kg`. #17 lists where published posts differ from the model.
+- Owner-side: #11 (switch the server to `deploy`, block `.git` in Caddy).
+- Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
+- Before a public SPARQL endpoint or anything that contacts another server:
+  update `privacy.md` with the owner (it covers lod-am.net only).
+
 ## LOD-AM project (shared block: keep identical in every repo)
 Source of truth: knowledge-graph `CLAUDE.md`. Edit it there first, then copy it unchanged; CI (`scripts/check_shared_block.sh`) fails on drift.
 LOD-AM = Linked Open Data for Ancient Metallurgy, a one-person research project (https://lod-am.net).
@@ -85,3 +111,5 @@ Rules for every repo:
 - Never commit secrets (passwords, SMTP credentials, `.env`, `shiro.ini`).
 - English for code, docs and commits. Keep commits small and explain *why*.
 - Verify before you claim: run the repo's checks and report what you ran.
+- Open work lives in each repo's GitHub issues; each CLAUDE.md has a "Where to resume"
+  section. The owner merges PRs; after a merge, start new work from the updated `main`.
