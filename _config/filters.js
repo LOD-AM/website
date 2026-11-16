@@ -66,5 +66,5 @@ export default function(eleventyConfig) {
 
 	// Get tag color for individual tag badges
 	eleventyConfig.addFilter("getTagColor", (tag) => getTagColor(tag));
-	eleventyConfig.addFilter("getTagStyle", (tag) => getTagStyle(tag).style);
+	eleventyConfig.addFilter("getTagStyle", (tag) => getTagStyle(tag));
 }

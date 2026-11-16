@@ -19,8 +19,8 @@ eleventyNavigation:
 				</div>
 				<div class="card-body">
 					{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
-					<a href="/tags/{{ tag | slugify }}/" class="btn btn-sm m-1" style="{{ tag | getTagStyle }}">
-						#{{ tag }} <span class="badge ms-1" style="{{ tag | getTagStyle }}">{{ collections[tag] | length }}</span>
+					<a href="/tags/{{ tag | slugify }}/" class="tag m-1" style="{{ tag | getTagStyle }}">
+						{{ tag }} <span class="tag__count">{{ collections[tag] | length }}</span>
 					</a>
 					{% endfor %}
 				</div>

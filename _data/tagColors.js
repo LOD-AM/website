@@ -1,5 +1,5 @@
 // LOD-AM Tag Color Mapping
-// Uses the LOD-AM color schema with variations to provide unique colors for each tag
+// Uses the LOD-AM colour scheme with variations: each tag gets a stable dot colour
 
 const lodAmColors = {
   terracotta: '#CB6D51',
@@ -25,19 +25,20 @@ const lodAmColors = {
   sunsetOrangeDark: '#D9731F',
 };
 
-// Only colours that reach WCAG AA (4.5:1) with either dark or light text.
-// (terracotta, malachite, sage, burntSienna, burntSiennaLight, terracottaDark,
-// ochreDark, sageDark, sunsetOrangeDark stay out: neither text colour is readable enough.)
+// Tags are neutral outlined chips; the colour is only a small dot that helps
+// to tell tags apart (the label carries the meaning). Every colour here reaches
+// 3:1 (WCAG non-text contrast) on both page background (#4A3F32) and cards (#3A2E22).
 const colorPalette = [
   'ochre',
+  'sage',
   'sunsetOrange',
   'terracottaLight',
   'ochreLight',
   'malachiteLight',
   'sageLight',
+  'burntSiennaLight',
   'sunsetOrangeLight',
-  'malachiteDark',
-  'burntSiennaDark',
+  'sunsetOrangeDark',
 ];
 
 const customTagColors = {};
@@ -62,7 +63,7 @@ function hexToRgb(hex) {
   return { r, g, b };
 }
 
-// WCAG relative luminance and contrast ratio
+// WCAG relative luminance and contrast ratio (to check new colours)
 function luminance(hex) {
   const { r, g, b } = hexToRgb(hex);
   const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
@@ -73,24 +74,9 @@ function contrast(a, b) {
   return (x + 0.05) / (y + 0.05);
 }
 
-const DARK_TEXT = '#3A2E22';
-const LIGHT_TEXT = '#F5F0E6';
-
+// Inline style for a tag chip: sets the dot colour used by .tag in theme.css
 function getTagStyle(tag) {
-  const color = getTagColor(tag);
-  const textColor = contrast(color, DARK_TEXT) >= contrast(color, LIGHT_TEXT) ? DARK_TEXT : LIGHT_TEXT;
-  return {
-    style: 'background-color: ' + color + '; color: ' + textColor + ';',
-    textColor: textColor
-  };
+  return '--tag-color: ' + getTagColor(tag) + ';';
 }
 
-function getTagBgClass(tag) {
-  const result = getTagStyle(tag);
-  return {
-    style: result.style,
-    textClass: result.textColor === LIGHT_TEXT ? 'text-light' : 'text-dark'
-  };
-}
-
-export { getTagColor, getTagStyle, getTagBgClass, customTagColors, contrast };
+export { getTagColor, getTagStyle, customTagColors, contrast };
