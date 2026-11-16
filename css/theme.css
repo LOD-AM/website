@@ -27,8 +27,7 @@
   --lodam-deep-umber: #4A3F32;        /* page background */
   --lodam-charcoal: #3A2E22;          /* cards, footer */
   --lodam-ink: #1A1611;               /* footer gradient end */
-  --lodam-paper: #D2B48C;             /* literature cards */
-  --lodam-paper-ink: #3A3A3A;         /* text on paper: 5.8:1 */
+  --lodam-paper: #D2B48C;             /* edge of literature cards */
 
   --lodam-text-soft: rgba(245, 240, 230, 0.85); /* paragraphs */
 }
@@ -211,10 +210,50 @@ a:hover { text-decoration: underline; }
 .site-footer p { color: var(--lodam-text-soft); }
 .site-footer a { color: var(--lodam-chalk-white); }
 .site-footer a:hover { color: var(--lodam-ochre); }
+.footer-links a { display: inline-block; margin: 0.15rem 0.6rem; }
 
 /* ---------------------------------------------------------------------------
  * 5. Site-specific blocks
  * ------------------------------------------------------------------------- */
+
+/* Reading width: long texts (posts) at about 70 characters per line */
+.reading-column { max-width: 70ch; margin-inline: auto; }
+
+/* Post titles in lists: light text, terracotta only on hover, so the accent
+   colour stays reserved for links and actions */
+.post-title-link { color: var(--lodam-chalk-white); text-decoration: none; }
+.post-title-link:hover { color: var(--lodam-terracotta-light); text-decoration: none; }
+
+/* Tags: neutral outlined chips; a coloured dot (_data/tagColors.js, set as
+   --tag-color) tells them apart without competing with the content */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.15em 0.65em;
+  border: 1px solid rgba(245, 240, 230, 0.3);
+  border-radius: 999px;
+  color: var(--lodam-text-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.tag::before {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: var(--tag-color, var(--lodam-ochre));
+}
+.tag:hover {
+  border-color: var(--lodam-terracotta-light);
+  color: var(--lodam-chalk-white);
+  text-decoration: none;
+}
+.tag--lg { font-size: 1rem; padding: 0.3em 0.85em; }
+.tag__count { opacity: 0.8; font-weight: 500; }
+.tag__count::before { content: "· "; }
 
 /* Link cards: output of the academicLink and linkPreviewCard shortcodes */
 .link-card {
@@ -236,12 +275,12 @@ a:hover { text-decoration: underline; }
 .link-card__host { display: block; font-size: 0.95em; opacity: 0.85; }
 .link-card__icon { display: block; width: 50px; height: auto; margin-bottom: 0.5em; }
 .link-card__image { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 0.5em; }
+/* Literature: a dark card with a "paper" edge, so it stays part of the dark page */
 .link-card--literature {
-  background-color: var(--lodam-paper);
-  border-color: #000;
-  color: var(--lodam-paper-ink);
+  border: 1px solid rgba(245, 240, 230, 0.12);
+  border-left: 6px solid var(--lodam-paper);
 }
-.link-card--literature:hover { color: var(--lodam-paper-ink); border-color: var(--lodam-charcoal); }
+.link-card--literature:hover { border-color: var(--lodam-terracotta); border-left-color: var(--lodam-paper); }
 
 /* Inline Bootstrap Icons (output of the icon shortcode) */
 svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
