@@ -86,11 +86,15 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
   gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
-## Where to resume (state 2026-11-13)
+## Where to resume (state 2026-11-16)
 - Phases 1–3 of the improvement plan are done (#22–#24); privacy policy and
   Impressum updated (#27).
-- Phases 4–5 (#12, #13 and sub-issues #14–#21) wait for the knowledge-graph data:
-  label `waiting-for-kg`. #17 lists where published posts differ from the model.
+- The data model is finished (knowledge-graph#23); issues updated, label `waiting-for-kg` dropped.
+- Phase 4 (#12; #14–#17) doesn't depend on the data: build the templates now. Open owner
+  input is listed in each issue (series order, ORCID, which posts get *Update:* notes; #30).
+- Phase 5 (#13; #18–#21): IRIs are `/id/<kind>/<uuid>`. Build the pipeline on the public
+  knowledge-graph data first. The research database (ingest converter output, private)
+  goes on the site only after the owner releases it; how it reaches the public build is open (#21).
 - Owner-side: #11 (switch the server to `deploy`, block `.git` in Caddy).
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
 - Before a public SPARQL endpoint or anything that contacts another server:
