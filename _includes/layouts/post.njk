@@ -5,6 +5,7 @@ layout: layouts/base.njk
 <style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
 <style>{% include "css/prism-diff.css" %}</style>
 
+<div class="reading-column">
 <article class="mb-5">
   <header class="mb-4">
     <h1 class="display-4">{{ title }}</h1>
@@ -20,7 +21,7 @@ layout: layouts/base.njk
     <div class="mb-3">
       {% for tag in tags | filterTagList %}
       {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <a href="{{ tagUrl }}" class="badge me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
+      <a href="{{ tagUrl }}" class="tag me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
       {% endfor %}
     </div>
     {% endif %}
@@ -67,6 +68,7 @@ layout: layouts/base.njk
   </div>
   <div class="giscus"></div>
 </section>
+</div>
 <script>
 document.getElementById("load-comments")?.addEventListener("click", () => {
   const s = document.createElement("script");

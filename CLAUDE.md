@@ -46,7 +46,8 @@ remote images). Network errors there are warnings, not build failures.
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +
   LOD-AM palette as variables; style components via Bootstrap's component variables, not
-  `!important`. `public/`: static files copied as-is
+  `!important`. Terracotta is the accent for the navbar, links and the main action only;
+  long texts sit in `.reading-column` (~70 characters per line). `public/`: static files copied as-is
 
 ## Blog posts
 Front matter:
@@ -77,8 +78,8 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Keep the dark, earthy theme (`css/theme.css`, `_data/tagColors.js`).
   Check layout changes in a browser at phone and desktop width.
 - **Accessibility:** text must reach WCAG AA contrast (4.5:1, large text 3:1), one
-  `<h1>` per page, no skipped heading levels. New tag colours must pass with
-  dark or light text (`_data/tagColors.js` picks the text colour by contrast).
+  `<h1>` per page, no skipped heading levels. Tags are outlined chips with a
+  coloured dot: new tag colours need 3:1 on page and card background (`_data/tagColors.js`).
 - **No third-party requests on page load** (privacy): no CDNs, no remote fonts or
   icons, no embeds that load by themselves. Giscus loads only after the visitor
   clicks "Load comments". Anything new that contacts another server needs the

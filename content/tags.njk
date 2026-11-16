@@ -6,8 +6,8 @@
 			<div class="d-flex flex-wrap gap-2">
 			{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
 				{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-				<a href="{{ tagUrl }}" class="btn" style="{{ tag | getTagStyle }}">
-					{{ tag }} <span class="badge ms-1" style="{{ tag | getTagStyle }}">{{ collections[tag] | length }}</span>
+				<a href="{{ tagUrl }}" class="tag tag--lg" style="{{ tag | getTagStyle }}">
+					{{ tag }} <span class="tag__count">{{ collections[tag] | length }}</span>
 				</a>
 			{% endfor %}
 			</div>

@@ -4,7 +4,7 @@
 <div class="card mb-3">
   <div class="card-body">
     <h{{ hl }} class="card-title h3">
-      <a href="{{ post.url }}" class="text-decoration-none">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+      <a href="{{ post.url }}" class="post-title-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
     </h{{ hl }}>
     <p class="card-text mb-0">
       <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
@@ -17,7 +17,7 @@
   {% if postTags.length %}
   <div class="card-footer bg-transparent">
     {% for tag in postTags %}
-    <a href="/tags/{{ tag | slugify }}/" class="badge me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
+    <a href="/tags/{{ tag | slugify }}/" class="tag me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
     {% endfor %}
   </div>
   {% endif %}
