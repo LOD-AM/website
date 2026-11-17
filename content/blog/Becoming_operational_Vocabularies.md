@@ -22,7 +22,7 @@ For the object types, I didn’t start from scratch. The LOD-AM typology is base
 
 Why SAM? Because the SAM database will become **one of the most important sources** for LOD-AM. Its thousands of analyses of early metal objects are classified with exactly this typology. If LOD-AM speaks the same typological language, that data can come in without being forced into categories it was never meant for.
 
-**[Your story: your own first contact with the SAM data, or why it matters to you?]**
+One might say, that I am not free of bias in regards to Rüdiger Krause. That's correct. I studied Vor- und Frühgeschichte in the Goethe University Frankfurt and I have been a student of his for many years. He did a lot to put me on the path, which let me to this point and I am deeply thankful for that and for many other things. So he more than earned this little citation. 
 
 The typology is a **SKOS concept scheme** with up to four levels. At the top are broad classes like *daggers and other blades*, *axes and adzes* or *elements of dress and jewellery*. Below them come type groups (*daggers*) and the types themselves (*flat dagger or dagger, unspecified*). Every concept has an English and a German label.
 
