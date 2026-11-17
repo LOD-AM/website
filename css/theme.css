@@ -99,6 +99,9 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* Images never wider than their column (posts contain e.g. <img width="800">) */
+main img, main picture { max-width: 100%; height: auto; }
+
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
