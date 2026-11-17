@@ -70,7 +70,8 @@ const KINDS = ["site", "feature", "find", "analysis", "type", "period", "culture
 if (existsSync("data/published")) {
   for (const f of readdirSync("data/published").filter((f) => f.endsWith(".ttl"))) {
     if (!existsSync(join(SITE, "data", f))) errors.push(`released data not downloadable: /data/${f}`);
-    const ids = new Set(readFileSync(join("data/published", f), "utf8").match(/https:\/\/lod-am\.net\/id\/[a-z]+\/[0-9a-f-]{36}(?![\w/-])/g) || []);
+    // records, and the records behind helper nodes (<record>/<role>, e.g. a site's place)
+    const ids = new Set((readFileSync(join("data/published", f), "utf8").match(/https:\/\/lod-am\.net\/id\/[a-z]+\/[0-9a-f-]{36}/g) || []));
     for (const iri of ids) {
       const [kind, uuid] = iri.slice("https://lod-am.net/id/".length).split("/");
       if (!KINDS.includes(kind)) continue;
