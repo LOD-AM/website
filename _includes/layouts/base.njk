@@ -67,9 +67,26 @@
 				<div class="collapse navbar-collapse" id="mainNav">
 					<ul class="navbar-nav me-auto">
 					{%- for entry in collections.all | eleventyNavigation %}
+						{%- if entry.key == "Data" %}
+						{#- Data: dropdown with the overview and the kinds of records that exist (website#14) #}
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="{{ entry.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% if page.url.startsWith("/data/") or page.url.startsWith("/id/") %} aria-current="true"{% endif %}>{{ entry.title }}</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="{{ entry.url }}">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								{%- for key in ["site", "find", "analysis", "type", "period", "culture"] %}
+								{%- if lodam.byKind[key].length %}
+								<li><a class="dropdown-item" href="/data/{{ lodam.KINDS[key].slug }}/">{{ lodam.KINDS[key].plural }}</a></li>
+								{%- endif %}
+								{%- endfor %}
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+							</ul>
+						</li>
+						{%- else %}
 						<li class="nav-item">
 							<a class="nav-link" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
 						</li>
+						{%- endif %}
 					{%- endfor %}
 					</ul>
 				</div>
