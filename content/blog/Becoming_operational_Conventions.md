@@ -2,7 +2,7 @@
 title: Becoming Operational - The Conventions
 description: From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.
 date: 2026-11-17
-tags: ["concept", "modelling"]
+topics: ["data_modelling", "ontologies", "dating", "gazetteers"]
 draft: false
 ---
 

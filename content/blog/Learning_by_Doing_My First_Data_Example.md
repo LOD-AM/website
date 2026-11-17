@@ -2,7 +2,8 @@
 title: Learning by Doing
 description: How my ontological ideas turned into actual data—and what I learned along the way.
 date: 2026-07-23
-tags: ["concept", "data"]
+topics: ["rdf", "data_modelling", "chemical_analysis"]
+about: ["https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"]
 ---
 
 It’s been a while since my last post. That’s just how these learning-by-doing projects go, especially when you’re fitting them into spare moments between everything else. But I haven’t been idle. Far from it. I’ve been working on turning my ontological ideas into actual data—and I’m ready to share the first example.

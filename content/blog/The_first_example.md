@@ -2,7 +2,9 @@
 title: Tackling Legacy Data practically
 description: How I'm using a 2002 paper on Arslantepe's metal objects to build practical Linked Open Data solutions for archaeometallurgical challenges.
 date: 2026-07-09
-tags: ["case study", "modelling", "Arslantepe"]
+topics: ["legacy_data", "chemical_analysis", "lead_isotope_analysis", "dating"]
+type: case-study
+about: ["https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"]
 ---
 
 So, I’ve got my ontologies sorted and my vocabularies in place. But none of that matters much if I don’t have **real data** to work with. That’s where this 2002 paper comes in.

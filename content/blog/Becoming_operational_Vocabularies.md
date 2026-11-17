@@ -2,7 +2,7 @@
 title: Becoming Operational - Our Own Vocabularies, Linked to the AAT
 description: Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.
 date: 2026-11-17
-tags: ["vocabularies", "modelling"]
+topics: ["controlled_vocabularies", "typology", "dating"]
 draft: false
 ---
 
