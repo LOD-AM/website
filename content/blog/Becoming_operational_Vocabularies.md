@@ -3,7 +3,7 @@ title: Becoming Operational - Our Own Vocabularies, Linked to the AAT
 description: Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.
 date: 2026-11-17
 tags: ["vocabularies", "modelling"]
-draft: true
+draft: false
 ---
 
 So, back in [The Vocabularies](/blog/The_vocabularies/), I chose the Getty AAT for object and feature types, and Pleiades and PeriodO for sites and periods. I still stand by that choice. But the moment we started working with real data, I realised I needed something in between: **local controlled vocabularies** that say exactly what the sources say—and that are *linked* to the big vocabularies instead of being replaced by them.

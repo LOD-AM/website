@@ -3,7 +3,7 @@ title: Becoming Operational - Why I Switched from Mistral to Claude
 description: I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.
 date: 2026-11-17
 tags: ["concept", "infrastructure"]
-draft: true
+draft: false
 ---
 
 Hi again! It’s been quiet on the blog for a while—but not in the repositories. A lot happened, and over the next few posts I’ll tell you how LOD-AM went from a hand-written example to its first real dataset online. But before I get to that, there’s something I want to get out of the way. I promised to be transparent about how this project is built, so here it is: **I changed my AI assistant.**

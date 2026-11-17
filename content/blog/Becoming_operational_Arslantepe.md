@@ -3,7 +3,7 @@ title: Becoming Operational - Arslantepe Is Online
 description: The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.
 date: 2026-11-17
 tags: ["data", "Arslantepe"]
-draft: true
+draft: false
 ---
 
 This is the post I’ve been waiting to write since the very beginning of LOD-AM: **the first complete dataset is online!** Every find and every analysis from Arslantepe published by Hauptmann, Schmitt-Strecker, Begemann and Palmieri in 2002 is now available as Linked Open Data—right here on this website, one page per record.

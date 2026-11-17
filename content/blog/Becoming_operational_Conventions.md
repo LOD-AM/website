@@ -3,7 +3,7 @@ title: Becoming Operational - The Conventions
 description: From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.
 date: 2026-11-17
 tags: ["concept", "modelling"]
-draft: true
+draft: false
 ---
 
 So, my [first data example](/blog/Learning_by_Doing_My%20First_Data_Example/) was written by hand, one triple at a time. That’s great for learning—but it doesn’t scale. As soon as you want to publish more than a handful of objects, you need **rules**. Rules that say exactly how an object, a site or an analysis is written down, and checks that refuse anything that breaks them.
@@ -22,9 +22,7 @@ Here’s a question that sounds simple: how old is a dagger? In most publication
 
 So that’s what LOD-AM says. The object sits in its context—a grave, a hoard, a layer—using CRMarchaeo’s `AP21i_is_contained_in`, and only the context is dated: it **witnessed** a period (`crm:P8i_witnessed`). And if the grave lies in a kurgan, it’s part of the kurgan and of the site.
 
-It’s a small shift, but it keeps the data honest. If someone redates the grave tomorrow, every object in it moves along—and nobody has to pretend we dated the objects themselves.
-
-**[Your story: a case where the dating of an object vs. its context caused trouble in your own work?]**
+It’s a small shift, but it keeps the data honest. If someone redates the grave tomorrow, every object in it moves along—and nobody has to pretend we dated the objects themselves. Maybe that's something, only a prehistorian can say.
 
 ### 2. "Not detected" is not zero
 
