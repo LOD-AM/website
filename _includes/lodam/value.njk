@@ -1,0 +1,3 @@
+{#- One value: link (internal / external) or text, with optional language and note. Set `v`. -#}
+{%- if v.href %}<a href="{{ v.href }}"{% if v.external %} rel="noopener"{% endif %}{% if v.title %} title="{{ v.title }}"{% endif %}>{{ v.text }}</a>{% elif v.code %}<code>{{ v.text }}</code>{% else %}<span{% if v.lang %} lang="{{ v.lang }}"{% endif %}{% if v.title %} title="{{ v.title }}"{% endif %}{% if v.note === true %} class="text-body-secondary fst-italic"{% endif %}>{{ v.text }}</span>{% endif %}
+{%- if v.note and v.note !== true %} <span class="text-body-secondary small">({{ v.note }})</span>{% endif -%}

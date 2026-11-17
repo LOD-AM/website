@@ -25,6 +25,9 @@ export default async function(eleventyConfig) {
     })
     .addPassthroughCopy("./content/feed/pretty-atom-feed.xsl");
 
+  // Released LOD-AM data (website#18): downloads at /data/<citation key>.ttl
+  eleventyConfig.addPassthroughCopy({ "data/published": "data" });
+
   eleventyConfig.addPassthroughCopy("./css/**/*.css");
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/css/bootstrap.min.css": "/css/bootstrap.min.css",

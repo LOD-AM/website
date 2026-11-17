@@ -1,0 +1,24 @@
+---
+pagination:
+  data: lodam.KINDS
+  size: 1
+  alias: kind
+permalink: "/data/{{ lodam.KINDS[kind].slug }}/"
+eleventyComputed:
+  title: "{{ lodam.KINDS[kind].plural }} · LOD-AM data"
+  description: "All {{ lodam.KINDS[kind].plural | lower }} in the released LOD-AM data."
+---
+{%- set k = lodam.KINDS[kind] %}
+{%- set items = lodam.byKind[kind] %}
+<div class="reading-column ms-0">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a></nav>
+  <h1 class="mb-3">{{ k.plural }}</h1>
+  <p class="lead">{{ items.length }} {{ (k.plural if items.length != 1 else k.singular) | lower }} in the released data.</p>
+  <ul class="entity-list">
+    {%- for r in items %}
+    <li><a href="{{ r.path }}">{{ r.label }}</a></li>
+    {%- else %}
+    <li>None yet.</li>
+    {%- endfor %}
+  </ul>
+</div>
