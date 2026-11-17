@@ -6,6 +6,8 @@ export default {
 	author: {
 		name: "Fabian Fricke",
 		email: "info@lod-am.net",
-		url: "https://lod-am.net/about/"
+		url: "https://lod-am.net/about/",
+		// Profiles for schema.org sameAs (JSON-LD). Add ORCID here if wanted.
+		sameAs: ["https://archaeo.social/@FabianF"]
 	}
 }

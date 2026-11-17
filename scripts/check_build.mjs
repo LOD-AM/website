@@ -3,6 +3,7 @@
 // - required files exist
 // - every non-draft post in content/blog/ has a page, drafts have none
 // - internal links and assets (href/src starting with "/") resolve
+// - every post page has parseable schema.org JSON-LD (BlogPosting), the home page WebSite
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
 
@@ -13,6 +14,19 @@ for (const f of ["index.html", "404.html", "feed/feed.xml", "sitemap.xml", "robo
   if (!existsSync(join(SITE, f))) errors.push(`missing ${f}`);
 }
 
+// schema.org JSON-LD: present, parseable, of the expected type
+function checkJsonLd(file, type) {
+  const blocks = [...readFileSync(file, "utf8").matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  if (!blocks.length) return errors.push(`${file}: no JSON-LD`);
+  for (const [, json] of blocks) {
+    let data;
+    try { data = JSON.parse(json); } catch (e) { errors.push(`${file}: JSON-LD doesn't parse (${e.message})`); continue; }
+    const types = (data["@graph"] || [data]).map((x) => x["@type"]);
+    if (!types.includes(type)) errors.push(`${file}: JSON-LD has no ${type}`);
+  }
+}
+if (existsSync(join(SITE, "index.html"))) checkJsonLd(join(SITE, "index.html"), "WebSite");
+
 const postsDir = "content/blog";
 let posts = 0;
 for (const f of readdirSync(postsDir).filter((f) => extname(f) === ".md")) {
@@ -22,6 +36,7 @@ for (const f of readdirSync(postsDir).filter((f) => extname(f) === ".md")) {
   const draft = /^draft:\s*true\s*$/m.test(fm);
   if (draft && existsSync(page)) errors.push(`draft is published: ${f}`);
   if (!draft && !existsSync(page)) errors.push(`post has no page: ${f}`);
+  if (!draft && existsSync(page)) checkJsonLd(page, "BlogPosting");
   if (!draft) posts++;
 }
 

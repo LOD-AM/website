@@ -41,7 +41,7 @@ remote images). Network errors there are warnings, not build failures.
 ## Layout
 - `content/`: input dir. `content/blog/*.md` posts; `about.md`, `impressum.md`, `privacy.md`
 - `_includes/layouts/`: `base.njk`, `home.njk`, `post.njk` (post page incl. Giscus comments)
-- `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours
+- `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours; `_data/series.js`: blog series
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +
@@ -60,6 +60,10 @@ tags: ["concept", "infrastructure"]   # lower case, reuse existing tags
 draft: true                           # optional; drafts are left out of builds
 ---
 ```
+Series: `_data/series.js` lists the posts of a series by file name (no front matter needed);
+posts get "Part n of m", Home and Blog a "Start here" box. Add new posts of the series there.
+Every post page carries schema.org `BlogPosting` JSON-LD (built in `_config/filters.js`,
+author profiles in `_data/metadata.js` → `sameAs`); `npm run check` verifies it.
 Shortcodes: `{% academicLink "https://doi.org/..." %}` (DOI card, title from Crossref),
 `{% linkPreview url %}`, `{% linkPreviewCard url, "title" %}`, `{% icon "house" %}`
 (Bootstrap Icons inlined from the npm package; add a label as 2nd argument if the

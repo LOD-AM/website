@@ -1,0 +1,13 @@
+{#- "Start here" box for a blog series (website#15). Set `seriesId`. -#}
+{%- set sr = collections.blog | seriesById(seriesId) %}
+{%- if sr and sr.parts.length %}
+<aside class="series-box mb-4" id="{{ sr.series.id }}" aria-labelledby="{{ sr.series.id }}-heading">
+  <h2 id="{{ sr.series.id }}-heading" class="h5 mb-2">Start here: {{ sr.series.title }}</h2>
+  <p class="mb-2">{{ sr.series.intro }}</p>
+  <ol class="mb-0">
+    {%- for p in sr.parts %}
+    <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+    {%- endfor %}
+  </ol>
+</aside>
+{%- endif %}
