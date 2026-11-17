@@ -12,7 +12,7 @@ Hi again! It’s been quiet on the blog for a while—but not in the repositorie
 
 In [How I started](/blog/How_I_started/), I wrote that this website was pretty much a vibe coding attempt with Mistral. That was true back then. Since then, LOD-AM has been built with **Claude**, Anthropic’s AI assistant, working directly in my GitHub repositories.
 
-**[Your story: when and why did you first try Claude? Was there a moment where you noticed the difference?]**
+I am glad enough to work with a lot of colleagues, who love to experiment with every piece of technology available. And when I got a recommendation and a report of his recent progress from my dear colleague Lasse, I just had to try it out. We'll see how the European competitors of Anthropic will do. I am hoping for the best. Competition boosts business afterall. 
 
 ### Why? Time.
 
