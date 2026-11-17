@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Becoming Operational - Why I Switched from Mistral to Claude</title>
+		<meta name="description" content="I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/Becoming_operational_Claude/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Becoming Operational - Why I Switched from Mistral to Claude">
+		<meta property="og:description" content="I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.">
+		<meta property="og:url" content="https://lod-am.net/blog/Becoming_operational_Claude/">
+		<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-11-17">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Becoming Operational - Why I Switched from Mistral to Claude">
+		<meta name="twitter:description" content="I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "@id": "https://lod-am.net/blog/Becoming_operational_Claude/#post",
+ "headline": "Becoming Operational - Why I Switched from Mistral to Claude",
+ "description": "I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.",
+ "url": "https://lod-am.net/blog/Becoming_operational_Claude/",
+ "mainEntityOfPage": "https://lod-am.net/blog/Becoming_operational_Claude/",
+ "inLanguage": "en",
+ "datePublished": "2026-11-17",
+ "dateModified": "2026-11-17",
+ "keywords": [
+  "concept",
+  "infrastructure"
+ ],
+ "image": "https://lod-am.net/img/logo.png",
+ "author": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "isPartOf": [
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/"
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "name": "Becoming Operational",
+   "url": "https://lod-am.net/blog/#becoming-operational"
+  }
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}</script>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<div class="reading-column">
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4" id="becoming-operational-why-i-switched-from-mistral-to-claude">Becoming Operational - Why I Switched from Mistral to Claude</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-11-17">17 November 2026</time>
+        
+      </small>
+    </div>
+    
+    
+    <div class="mb-3">
+      
+      
+      <a href="/tags/concept/" class="tag me-2" style="--tag-color: #F28C28;">concept</a>
+      
+      
+      <a href="/tags/infrastructure/" class="tag me-2" style="--tag-color: #5FB389;">infrastructure</a>
+      
+    </div>
+    
+    <details class="series-box">
+      <summary>Part 1 of 4 in <em>Becoming Operational</em></summary>
+      <ol class="mb-0 mt-2">
+        <li><span aria-current="page">Becoming Operational - Why I Switched from Mistral to Claude</span></li>
+        <li><a href="/blog/Becoming_operational_Conventions/">Becoming Operational - The Conventions</a></li>
+        <li><a href="/blog/Becoming_operational_Vocabularies/">Becoming Operational - Our Own Vocabularies, Linked to the AAT</a></li>
+        <li><a href="/blog/Becoming_operational_Arslantepe/">Becoming Operational - Arslantepe Is Online</a></li>
+      </ol>
+    </details>
+  </header>
+
+  <div class="content">
+    <p>Hi again! It’s been quiet on the blog for a while—but not in the repositories. A lot happened, and over the next few posts I’ll tell you how LOD-AM went from a hand-written example to its first real dataset online. But before I get to that, there’s something I want to get out of the way. I promised to be transparent about how this project is built, so here it is: <strong>I changed my AI assistant.</strong></p>
+<h3 id="from-mistral-to-claude">From Mistral to Claude</h3>
+<p>In <a href="/blog/How_I_started/">How I started</a>, I wrote that this website was pretty much a vibe coding attempt with Mistral. That was true back then. Since then, LOD-AM has been built with <strong>Claude</strong>, Anthropic’s AI assistant, working directly in my GitHub repositories.</p>
+<p>I am glad enough to work with a lot of colleagues, who love to experiment with every piece of technology available. And when I got a recommendation and a report of his recent progress from my dear colleague Lasse, I just had to try it out. We'll see how the European competitors of Anthropic will do. I am hoping for the best. Competition boosts business afterall.</p>
+<h3 id="why-time">Why? Time.</h3>
+<p>Here’s the thing: LOD-AM is a free-time project. It has to fit into spare evenings between everything else. Every hour I spend on it has to count—so I have to be as <strong>effective</strong> as possible. And with Claude, I simply get more done.</p>
+<p>What made the difference for me isn’t that Claude can write code. It’s that it can carry a task from start to finish: read my conventions, change the data model, run the checks, look at the result in a browser, and come back with a pull request I can review. And when something fails, it tells me what failed—instead of pretending it worked.</p>
+<h3 id="who-decides-what">Who decides what?</h3>
+<p>This part matters most to me, so let me be clear about it:</p>
+<p><strong>The research decisions are mine.</strong> What a value in a publication means, which type an object belongs to, which period a context dates to—whenever something is a domain judgement and not a fact from a specification, Claude doesn’t decide it. It writes the question down, and I answer it. My sandbox, still my rules.</p>
+<p><strong>Claude does the heavy lifting.</strong> Writing and testing the conversion, looking up ontology terms, checking every AAT identifier against the Getty endpoint, building the pages you see here, keeping the documentation up to date.</p>
+<p><strong>Nothing goes live without me.</strong> Claude works on branches and opens pull requests. I review them, and I merge them.</p>
+<h3 id="trust-but-check">Trust, but check</h3>
+<p>There’s one mistake an AI assistant makes all too easily in a project like this: inventing an ontology term that <em>looks</em> perfectly plausible but doesn’t exist. That’s why every single term in LOD-AM is now checked automatically against the published ontologies before anything is merged. I don’t have to trust the assistant—I can check it.</p>
+<h3 id="and-these-posts">And these posts?</h3>
+<p>Full transparency here as well: Claude drafted this series from our notes, issues and pull requests. I went through it, changed what didn’t sound like me, and I stand behind every word.</p>
+<p>Curious how the rules for Claude look? They’re in the repositories, right next to the code:</p>
+<picture><source type="image/avif" srcset="/blog/Becoming_operational_Claude/bOFbZK1fuI-800.avif 800w"><source type="image/webp" srcset="/blog/Becoming_operational_Claude/bOFbZK1fuI-800.webp 800w"><img loading="lazy" decoding="async" src="/blog/Becoming_operational_Claude/bOFbZK1fuI-800.png" alt="LOD-AM/knowledge-graph" width="800" height="400"></picture>
+<p><a href="https://github.com/LOD-AM/knowledge-graph">View LOD-AM/knowledge-graph on GitHub →</a></p>
+<p>As always, if you have thoughts, suggestions, or just want to talk about working with AI in research, you know where to find me: <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Arslantepe/">
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+</svg> Previous: Becoming Operational - Arslantepe Is Online
+        </a>
+      </li>
+      
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Conventions/">
+          Next: Becoming Operational - The Conventions <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+</svg>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub, Inc. in the <strong>USA</strong> and transfers your IP address and browser data there. The USA does not have a level of data protection equivalent to the EU's; US authorities may access the data. By clicking the button, you consent to this transfer (Art. 49(1)(a) GDPR). Details: <a href="/privacy/#comments">privacy policy, section 5</a>.</p>
+    <button type="button" class="btn btn-primary" id="load-comments"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"></path>
+</svg> Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+</div>
+
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src="/dist/fQ0GDP1uDo.js"></script>
+	</body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Becoming Operational - Our Own Vocabularies, Linked to the AAT</title>
+		<meta name="description" content="Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/Becoming_operational_Vocabularies/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Becoming Operational - Our Own Vocabularies, Linked to the AAT">
+		<meta property="og:description" content="Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.">
+		<meta property="og:url" content="https://lod-am.net/blog/Becoming_operational_Vocabularies/">
+		<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-11-17">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Becoming Operational - Our Own Vocabularies, Linked to the AAT">
+		<meta name="twitter:description" content="Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "@id": "https://lod-am.net/blog/Becoming_operational_Vocabularies/#post",
+ "headline": "Becoming Operational - Our Own Vocabularies, Linked to the AAT",
+ "description": "Why LOD-AM now has local controlled vocabularies for object types, site and feature types and periods, and how they connect to the Getty AAT.",
+ "url": "https://lod-am.net/blog/Becoming_operational_Vocabularies/",
+ "mainEntityOfPage": "https://lod-am.net/blog/Becoming_operational_Vocabularies/",
+ "inLanguage": "en",
+ "datePublished": "2026-11-17",
+ "dateModified": "2026-11-17",
+ "keywords": [
+  "vocabularies",
+  "modelling"
+ ],
+ "image": "https://lod-am.net/img/logo.png",
+ "author": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "isPartOf": [
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/"
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "name": "Becoming Operational",
+   "url": "https://lod-am.net/blog/#becoming-operational"
+  }
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}</script>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<div class="reading-column">
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4" id="becoming-operational-our-own-vocabularies-linked-to-the-aat">Becoming Operational - Our Own Vocabularies, Linked to the AAT</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-11-17">17 November 2026</time>
+        
+      </small>
+    </div>
+    
+    
+    <div class="mb-3">
+      
+      
+      <a href="/tags/vocabularies/" class="tag me-2" style="--tag-color: #F7A852;">vocabularies</a>
+      
+      
+      <a href="/tags/modelling/" class="tag me-2" style="--tag-color: #F09B86;">modelling</a>
+      
+    </div>
+    
+    <details class="series-box">
+      <summary>Part 3 of 4 in <em>Becoming Operational</em></summary>
+      <ol class="mb-0 mt-2">
+        <li><a href="/blog/Becoming_operational_Claude/">Becoming Operational - Why I Switched from Mistral to Claude</a></li>
+        <li><a href="/blog/Becoming_operational_Conventions/">Becoming Operational - The Conventions</a></li>
+        <li><span aria-current="page">Becoming Operational - Our Own Vocabularies, Linked to the AAT</span></li>
+        <li><a href="/blog/Becoming_operational_Arslantepe/">Becoming Operational - Arslantepe Is Online</a></li>
+      </ol>
+    </details>
+  </header>
+
+  <div class="content">
+    <p>So, back in <a href="/blog/The_vocabularies/">The Vocabularies</a>, I chose the Getty AAT for object and feature types, and Pleiades and PeriodO for sites and periods. I still stand by that choice. But the moment we started working with real data, I realised I needed something in between: <strong>local controlled vocabularies</strong> that say exactly what the sources say—and that are <em>linked</em> to the big vocabularies instead of being replaced by them.</p>
+<h3 id="why-not-just-use-the-aat">Why not just use the AAT?</h3>
+<p>Here’s the thing: the AAT and an archaeometallurgical typology answer different questions. The AAT knows <em>awls</em> and <em>chisels</em>. It doesn’t know a <em>Maykop fork</em> or a <em>single-bladed shaft-hole axe</em>. If I simply replaced every type with the nearest AAT concept, I’d throw away exactly the information the typology was made for.</p>
+<p>It’s the knife-or-scissors problem from my <a href="/blog/Learning_by_Doing_My%20First_Data_Example/">first data example</a> all over again: the words we use for objects carry the judgement of the people who classified them. A vocabulary that’s too coarse silently overwrites that judgement.</p>
+<h3 id="the-typology-built-on-sam">The typology: built on SAM</h3>
+<p>For the object types, I didn’t start from scratch. The LOD-AM typology is based on the typology of the old <strong>SAM project</strong> (<em>Studien zu den Anfängen der Metallurgie</em>), as published by Krause in 2003, plus a few additions of my own:</p>
+<blockquote>
+<p>Rüdiger Krause, <em>Studien zur kupfer- und frühbronzezeitlichen Metallurgie zwischen Karpatenbecken und Ostsee</em> (Rahden/Westf. 2003).</p>
+</blockquote>
+<p>Why SAM? Because the SAM database will become <strong>one of the most important sources</strong> for LOD-AM. Its thousands of analyses of early metal objects are classified with exactly this typology. If LOD-AM speaks the same typological language, that data can come in without being forced into categories it was never meant for.</p>
+<p>One might say, that I am not free of bias in regards to Rüdiger Krause. That's correct. I studied Vor- und Frühgeschichte in the Goethe University Frankfurt and I have been a student of his for many years. He did a lot to put me on the path, which let me to this point and I am deeply thankful for that and for many other things. So he more than earned this little citation.</p>
+<p>The typology is a <strong>SKOS concept scheme</strong> with up to four levels. At the top are broad classes like <em>daggers and other blades</em>, <em>axes and adzes</em> or <em>elements of dress and jewellery</em>. Below them come type groups (<em>daggers</em>) and the types themselves (<em>flat dagger or dagger, unspecified</em>). Every concept has an English and a German label.</p>
+<h3 id="connecting-it-to-the-aat">Connecting it to the AAT</h3>
+<p>Instead of replacing our types with AAT concepts, every concept that has a counterpart in the AAT is <strong>linked</strong> to it, with one of two SKOS relations:</p>
+<ul>
+<li><code>skos:closeMatch</code> when both mean (nearly) the same: our <em>awl</em> is a close match of AAT <em>awls</em>, our <em>bowl</em> of AAT <em>bowls (vessels)</em>.</li>
+<li><code>skos:broadMatch</code> when the AAT concept is broader: our <em>single-bladed shaft-hole axe</em> has the broad match AAT <em>axes (tools)</em>, our <em>Maykop fork</em> AAT <em>forks (object genre)</em>.</li>
+</ul>
+<p>Of the roughly 230 concepts in the typology, about a quarter are close matches, most others have a broad match, and only a handful (like <em>unknown</em>) have none. And yes—every single AAT identifier was checked against the Getty SPARQL endpoint. No invented IDs.</p>
+<p>The best part? You can ask LOD-AM for &quot;all daggers&quot; in AAT terms and still get every object with the precise type the publication gave it. Global and local at the same time.</p>
+<h3 id="site-and-feature-types">Site and feature types</h3>
+<p>The same idea works for sites and features. LOD-AM has its own small vocabulary of <strong>site and feature types</strong>—<em>settlement</em>, <em>hoard</em>, <em>grave</em>, <em>kurgan</em>, <em>layer</em> and a few more—each linked to the AAT where a fitting concept exists. Arslantepe is a <em>settlement</em> (close match: AAT <em>settlements</em>), the Palace Hoard a <em>hoard</em> (AAT <em>hoards (groupings)</em>), the Royal Tomb a <em>grave</em> (AAT <em>graves</em>).</p>
+<h3 id="periods">Periods</h3>
+<p>For periods, I followed the way PeriodO organises them—and full transparency, after <a href="/blog/Learning_by_Doing_My%20First_Data_Example/">missing PeriodO’s hierarchies at first</a>, I was glad to finally get this right. Every period belongs to the <strong>chronology system</strong> of its source. &quot;Arslantepe VIA&quot; always means Arslantepe VIA <em>as defined there</em>, with its own time-span (3350–3000 BC). The phases are grouped into <strong>cultures</strong>: Arslantepe VIA is a phase of the <em>Northern Mesopotamian Late Chalcolithic</em>, Arslantepe VIB1 of the <em>Northern Mesopotamian Early Bronze Age</em>. A context is dated to a phase; the culture follows from it.</p>
+<h3 id="what-s-next-pleiades-and-periodo">What’s next: Pleiades and PeriodO</h3>
+<p>These local vocabularies aren’t the end point—they’re a bridge. Next, I’m going to connect them to the gazetteers I chose at the very beginning:</p>
+<ul>
+<li><strong>Sites</strong> will be linked to their <strong>Pleiades</strong> places. Where a site is still missing in Pleiades, I’ll add it.</li>
+<li><strong>Periods</strong> will go to <strong>PeriodO</strong>. Since our chronology systems are already organised the way PeriodO organises its collections, each of them can become one PeriodO collection.</li>
+</ul>
+<p>Until then, the local vocabularies do their job: precise enough for the sources, and linked enough to be found.</p>
+<p>Curious for the itty-bitty details?</p>
+<picture><source type="image/avif" srcset="/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.avif 800w"><source type="image/webp" srcset="/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.webp 800w"><img loading="lazy" decoding="async" src="/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.png" alt="LOD-AM/knowledge-graph" width="800" height="400"></picture>
+<p><a href="https://github.com/LOD-AM/knowledge-graph">View LOD-AM/knowledge-graph on GitHub →</a></p>
+<p>As always, if you have thoughts, suggestions, or just want to talk vocabularies, you know where to find me: <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Conventions/">
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+</svg> Previous: Becoming Operational - The Conventions
+        </a>
+      </li>
+      
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub, Inc. in the <strong>USA</strong> and transfers your IP address and browser data there. The USA does not have a level of data protection equivalent to the EU's; US authorities may access the data. By clicking the button, you consent to this transfer (Art. 49(1)(a) GDPR). Details: <a href="/privacy/#comments">privacy policy, section 5</a>.</p>
+    <button type="button" class="btn btn-primary" id="load-comments"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"></path>
+</svg> Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+</div>
+
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src="/dist/fQ0GDP1uDo.js"></script>
+	</body>
+</html>

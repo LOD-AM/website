@@ -6,11 +6,156 @@
   <subtitle>A sandbox project dedicated to ancient metallurgical &amp; open data methodologies.</subtitle>
   <link href="https://lod-am.net/feed/feed.xml" rel="self" />
   <link href="https://lod-am.net/" />
-  <updated>2026-07-23T00:00:00Z</updated>
+  <updated>2026-11-17T00:00:00Z</updated>
   <id>https://lod-am.net/</id>
   <author>
     <name>Fabian Fricke</name>
   </author>
+  <entry>
+    <title>Becoming Operational - Our Own Vocabularies, Linked to the AAT</title>
+    <link href="https://lod-am.net/blog/Becoming_operational_Vocabularies/" />
+    <updated>2026-11-17T00:00:00Z</updated>
+    <id>https://lod-am.net/blog/Becoming_operational_Vocabularies/</id>
+    <content type="html">&lt;p&gt;So, back in &lt;a href=&quot;https://lod-am.net/blog/The_vocabularies/&quot;&gt;The Vocabularies&lt;/a&gt;, I chose the Getty AAT for object and feature types, and Pleiades and PeriodO for sites and periods. I still stand by that choice. But the moment we started working with real data, I realised I needed something in between: &lt;strong&gt;local controlled vocabularies&lt;/strong&gt; that say exactly what the sources say—and that are &lt;em&gt;linked&lt;/em&gt; to the big vocabularies instead of being replaced by them.&lt;/p&gt;
+&lt;h3 id=&quot;why-not-just-use-the-aat&quot;&gt;Why not just use the AAT?&lt;/h3&gt;
+&lt;p&gt;Here’s the thing: the AAT and an archaeometallurgical typology answer different questions. The AAT knows &lt;em&gt;awls&lt;/em&gt; and &lt;em&gt;chisels&lt;/em&gt;. It doesn’t know a &lt;em&gt;Maykop fork&lt;/em&gt; or a &lt;em&gt;single-bladed shaft-hole axe&lt;/em&gt;. If I simply replaced every type with the nearest AAT concept, I’d throw away exactly the information the typology was made for.&lt;/p&gt;
+&lt;p&gt;It’s the knife-or-scissors problem from my &lt;a href=&quot;https://lod-am.net/blog/Learning_by_Doing_My%20First_Data_Example/&quot;&gt;first data example&lt;/a&gt; all over again: the words we use for objects carry the judgement of the people who classified them. A vocabulary that’s too coarse silently overwrites that judgement.&lt;/p&gt;
+&lt;h3 id=&quot;the-typology-built-on-sam&quot;&gt;The typology: built on SAM&lt;/h3&gt;
+&lt;p&gt;For the object types, I didn’t start from scratch. The LOD-AM typology is based on the typology of the old &lt;strong&gt;SAM project&lt;/strong&gt; (&lt;em&gt;Studien zu den Anfängen der Metallurgie&lt;/em&gt;), as published by Krause in 2003, plus a few additions of my own:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Rüdiger Krause, &lt;em&gt;Studien zur kupfer- und frühbronzezeitlichen Metallurgie zwischen Karpatenbecken und Ostsee&lt;/em&gt; (Rahden/Westf. 2003).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Why SAM? Because the SAM database will become &lt;strong&gt;one of the most important sources&lt;/strong&gt; for LOD-AM. Its thousands of analyses of early metal objects are classified with exactly this typology. If LOD-AM speaks the same typological language, that data can come in without being forced into categories it was never meant for.&lt;/p&gt;
+&lt;p&gt;One might say, that I am not free of bias in regards to Rüdiger Krause. That&#39;s correct. I studied Vor- und Frühgeschichte in the Goethe University Frankfurt and I have been a student of his for many years. He did a lot to put me on the path, which let me to this point and I am deeply thankful for that and for many other things. So he more than earned this little citation.&lt;/p&gt;
+&lt;p&gt;The typology is a &lt;strong&gt;SKOS concept scheme&lt;/strong&gt; with up to four levels. At the top are broad classes like &lt;em&gt;daggers and other blades&lt;/em&gt;, &lt;em&gt;axes and adzes&lt;/em&gt; or &lt;em&gt;elements of dress and jewellery&lt;/em&gt;. Below them come type groups (&lt;em&gt;daggers&lt;/em&gt;) and the types themselves (&lt;em&gt;flat dagger or dagger, unspecified&lt;/em&gt;). Every concept has an English and a German label.&lt;/p&gt;
+&lt;h3 id=&quot;connecting-it-to-the-aat&quot;&gt;Connecting it to the AAT&lt;/h3&gt;
+&lt;p&gt;Instead of replacing our types with AAT concepts, every concept that has a counterpart in the AAT is &lt;strong&gt;linked&lt;/strong&gt; to it, with one of two SKOS relations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;skos:closeMatch&lt;/code&gt; when both mean (nearly) the same: our &lt;em&gt;awl&lt;/em&gt; is a close match of AAT &lt;em&gt;awls&lt;/em&gt;, our &lt;em&gt;bowl&lt;/em&gt; of AAT &lt;em&gt;bowls (vessels)&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skos:broadMatch&lt;/code&gt; when the AAT concept is broader: our &lt;em&gt;single-bladed shaft-hole axe&lt;/em&gt; has the broad match AAT &lt;em&gt;axes (tools)&lt;/em&gt;, our &lt;em&gt;Maykop fork&lt;/em&gt; AAT &lt;em&gt;forks (object genre)&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of the roughly 230 concepts in the typology, about a quarter are close matches, most others have a broad match, and only a handful (like &lt;em&gt;unknown&lt;/em&gt;) have none. And yes—every single AAT identifier was checked against the Getty SPARQL endpoint. No invented IDs.&lt;/p&gt;
+&lt;p&gt;The best part? You can ask LOD-AM for &amp;quot;all daggers&amp;quot; in AAT terms and still get every object with the precise type the publication gave it. Global and local at the same time.&lt;/p&gt;
+&lt;h3 id=&quot;site-and-feature-types&quot;&gt;Site and feature types&lt;/h3&gt;
+&lt;p&gt;The same idea works for sites and features. LOD-AM has its own small vocabulary of &lt;strong&gt;site and feature types&lt;/strong&gt;—&lt;em&gt;settlement&lt;/em&gt;, &lt;em&gt;hoard&lt;/em&gt;, &lt;em&gt;grave&lt;/em&gt;, &lt;em&gt;kurgan&lt;/em&gt;, &lt;em&gt;layer&lt;/em&gt; and a few more—each linked to the AAT where a fitting concept exists. Arslantepe is a &lt;em&gt;settlement&lt;/em&gt; (close match: AAT &lt;em&gt;settlements&lt;/em&gt;), the Palace Hoard a &lt;em&gt;hoard&lt;/em&gt; (AAT &lt;em&gt;hoards (groupings)&lt;/em&gt;), the Royal Tomb a &lt;em&gt;grave&lt;/em&gt; (AAT &lt;em&gt;graves&lt;/em&gt;).&lt;/p&gt;
+&lt;h3 id=&quot;periods&quot;&gt;Periods&lt;/h3&gt;
+&lt;p&gt;For periods, I followed the way PeriodO organises them—and full transparency, after &lt;a href=&quot;https://lod-am.net/blog/Learning_by_Doing_My%20First_Data_Example/&quot;&gt;missing PeriodO’s hierarchies at first&lt;/a&gt;, I was glad to finally get this right. Every period belongs to the &lt;strong&gt;chronology system&lt;/strong&gt; of its source. &amp;quot;Arslantepe VIA&amp;quot; always means Arslantepe VIA &lt;em&gt;as defined there&lt;/em&gt;, with its own time-span (3350–3000 BC). The phases are grouped into &lt;strong&gt;cultures&lt;/strong&gt;: Arslantepe VIA is a phase of the &lt;em&gt;Northern Mesopotamian Late Chalcolithic&lt;/em&gt;, Arslantepe VIB1 of the &lt;em&gt;Northern Mesopotamian Early Bronze Age&lt;/em&gt;. A context is dated to a phase; the culture follows from it.&lt;/p&gt;
+&lt;h3 id=&quot;what-s-next-pleiades-and-periodo&quot;&gt;What’s next: Pleiades and PeriodO&lt;/h3&gt;
+&lt;p&gt;These local vocabularies aren’t the end point—they’re a bridge. Next, I’m going to connect them to the gazetteers I chose at the very beginning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sites&lt;/strong&gt; will be linked to their &lt;strong&gt;Pleiades&lt;/strong&gt; places. Where a site is still missing in Pleiades, I’ll add it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Periods&lt;/strong&gt; will go to &lt;strong&gt;PeriodO&lt;/strong&gt;. Since our chronology systems are already organised the way PeriodO organises its collections, each of them can become one PeriodO collection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Until then, the local vocabularies do their job: precise enough for the sources, and linked enough to be found.&lt;/p&gt;
+&lt;p&gt;Curious for the itty-bitty details?&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.avif 800w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.webp 800w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://lod-am.net/blog/Becoming_operational_Vocabularies/bOFbZK1fuI-800.png&quot; alt=&quot;LOD-AM/knowledge-graph&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/LOD-AM/knowledge-graph&quot;&gt;View LOD-AM/knowledge-graph on GitHub →&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, if you have thoughts, suggestions, or just want to talk vocabularies, you know where to find me: &lt;strong&gt;info@lod-am.net&lt;/strong&gt; or (if you have a GitHub account) in a &lt;strong&gt;comment&lt;/strong&gt; below.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Becoming Operational - The Conventions</title>
+    <link href="https://lod-am.net/blog/Becoming_operational_Conventions/" />
+    <updated>2026-11-17T00:00:00Z</updated>
+    <id>https://lod-am.net/blog/Becoming_operational_Conventions/</id>
+    <content type="html">&lt;p&gt;So, my &lt;a href=&quot;https://lod-am.net/blog/Learning_by_Doing_My%20First_Data_Example/&quot;&gt;first data example&lt;/a&gt; was written by hand, one triple at a time. That’s great for learning—but it doesn’t scale. As soon as you want to publish more than a handful of objects, you need &lt;strong&gt;rules&lt;/strong&gt;. Rules that say exactly how an object, a site or an analysis is written down, and checks that refuse anything that breaks them.&lt;/p&gt;
+&lt;p&gt;That’s what the last weeks were about. All those rules now live in one place: the &lt;strong&gt;conventions&lt;/strong&gt; of the knowledge graph. I won’t walk you through all of them here (that would be a very long and very boring post). Instead, here are three decisions that taught me something—and one confession.&lt;/p&gt;
+&lt;h3 id=&quot;the-confession-first&quot;&gt;The confession first&lt;/h3&gt;
+&lt;p&gt;Remember when I wrote that &lt;code&gt;crm:P71_is_listed_in&lt;/code&gt; might end up being one of the most frequent properties in the whole triple store? Well. It doesn’t even exist in CIDOC CRM 7.1.3. Neither did a few other things in my first prototype.&lt;/p&gt;
+&lt;p&gt;That’s why every term in LOD-AM is now &lt;strong&gt;checked automatically&lt;/strong&gt; against the published ontologies—CIDOC CRM 7.1.3, CRMsci, CRMarchaeo, Allotrope and FaBiO—including whether a property is even allowed between the two things it connects. On top of that, the data is validated against SHACL shapes. If a term doesn’t exist, the data doesn’t go out. Publications are now linked with &lt;code&gt;crm:P70i_is_documented_in&lt;/code&gt;, by the way.&lt;/p&gt;
+&lt;h3 id=&quot;1-we-date-the-context-not-the-object&quot;&gt;1. We date the context, not the object&lt;/h3&gt;
+&lt;p&gt;Here’s a question that sounds simple: how old is a dagger? In most publications, the honest answer is: we don’t know how old the &lt;em&gt;dagger&lt;/em&gt; is. We know how old the &lt;strong&gt;grave&lt;/strong&gt; is that it was found in.&lt;/p&gt;
+&lt;p&gt;So that’s what LOD-AM says. The object sits in its context—a grave, a hoard, a layer—using CRMarchaeo’s &lt;code&gt;AP21i_is_contained_in&lt;/code&gt;, and only the context is dated: it &lt;strong&gt;witnessed&lt;/strong&gt; a period (&lt;code&gt;crm:P8i_witnessed&lt;/code&gt;). And if the grave lies in a kurgan, it’s part of the kurgan and of the site.&lt;/p&gt;
+&lt;p&gt;It’s a small shift, but it keeps the data honest. If someone redates the grave tomorrow, every object in it moves along—and nobody has to pretend we dated the objects themselves. Maybe that&#39;s something, only a prehistorian can say.&lt;/p&gt;
+&lt;h3 id=&quot;2-not-detected-is-not-zero&quot;&gt;2. &amp;quot;Not detected&amp;quot; is not zero&lt;/h3&gt;
+&lt;p&gt;This one hurts every archaeometallurgist who has ever worked with legacy tables. You open an old analysis table and find an empty cell. Or a dash. Or &amp;quot;n.d.&amp;quot;. Or a 0. What do they mean? Was the element looked for and not found? Was it never measured? Was it below a detection limit nobody wrote down?&lt;/p&gt;
+&lt;p&gt;These are &lt;strong&gt;different statements&lt;/strong&gt;, and LOD-AM keeps them apart:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a value below a stated limit (&amp;quot;&amp;lt; 0.001 %&amp;quot;) is recorded as a maximum,&lt;/li&gt;
+&lt;li&gt;an element that was &lt;strong&gt;not analysed&lt;/strong&gt; gets no measurement at all,&lt;/li&gt;
+&lt;li&gt;an element that was looked for but &lt;strong&gt;not detected&lt;/strong&gt; gets a measurement without a value, marked as &lt;code&gt;:not_detected&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;language-turtle&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-turtle&quot;&gt;&lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;Bi_measurement&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;afr&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;AFR_0002099&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;crm&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;E54_Dimension&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;# mass fraction&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;afx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;AFX_0002816&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;chebi&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;33301&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;                       &lt;span class=&quot;token comment&quot;&gt;# quantifies bismuth atom&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;crm&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;P2_has_type&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;not_detected&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;qudt&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;unit&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;&lt;span class=&quot;token prefix&quot;&gt;unit&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token local-name&quot;&gt;PERCENT&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And never, ever a 0. Which brings me to the most important rule of all: &lt;strong&gt;values are published as reported.&lt;/strong&gt; Nothing is recalculated, normalised or rounded.&lt;/p&gt;
+&lt;p&gt;While I was at it, my AFO prototype got a proper overhaul too. The analysis now takes a &lt;strong&gt;sample&lt;/strong&gt;, and a sampling event connects the sample to the object. Element contents are &lt;strong&gt;mass fractions&lt;/strong&gt; (not concentrations), with real numbers and units instead of strings. And lead isotope ratios name both their isotopes.&lt;/p&gt;
+&lt;h3 id=&quot;3-pleiades-but-not-the-same-as&quot;&gt;3. Pleiades, but not &amp;quot;the same as&amp;quot;&lt;/h3&gt;
+&lt;p&gt;In linked data, it’s tempting to say &amp;quot;our Arslantepe is the same as Pleiades’ Arslantepe&amp;quot; with &lt;code&gt;owl:sameAs&lt;/code&gt;. Simple, done. But &lt;code&gt;sameAs&lt;/code&gt; is a strong claim: it means everything Pleiades says about the place is now also true of &lt;em&gt;our&lt;/em&gt; site, and everything we say is true of theirs. Merge two datasets with slightly different ideas of a site, and you get a mess.&lt;/p&gt;
+&lt;p&gt;So when a site is linked to Pleiades, the Pleiades URI becomes an &lt;strong&gt;identifier&lt;/strong&gt; of our site—a pointer, not a merger. Next to it, the site keeps the &lt;strong&gt;name as reported&lt;/strong&gt; in the publication, because that name is the link back to the literature, and a real GeoSPARQL geometry, so a triple store can actually do spatial queries with it.&lt;/p&gt;
+&lt;h3 id=&quot;everything-else&quot;&gt;Everything else&lt;/h3&gt;
+&lt;p&gt;There’s more: one IRI per record under &lt;code&gt;https://lod-am.net/id/&lt;/code&gt;, labels in English and German, our own typology for object types (that one gets the next post), and a bibliography that comes straight from my public Zotero group. Curious for the itty-bitty details?&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Conventions/mBZBEYVl29-800.avif 800w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Conventions/mBZBEYVl29-800.webp 800w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://lod-am.net/blog/Becoming_operational_Conventions/mBZBEYVl29-800.png&quot; alt=&quot;LOD-AM/knowledge-graph CONVENTIONS.md&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md&quot;&gt;Read CONVENTIONS.md on GitHub →&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;why-all-this-effort&quot;&gt;Why all this effort?&lt;/h3&gt;
+&lt;p&gt;Because the next step was real data. With the conventions in place and every rule checked automatically, a dataset is no longer something I craft by hand—it’s something that has to &lt;strong&gt;pass&lt;/strong&gt;. In the last post of this series, I’ll show you the first one that did.&lt;/p&gt;
+&lt;p&gt;As always, if you have thoughts, suggestions, or just want to geek out about data modelling, you know where to find me: &lt;strong&gt;info@lod-am.net&lt;/strong&gt; or (if you have a GitHub account) in a &lt;strong&gt;comment&lt;/strong&gt; below.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Becoming Operational - Why I Switched from Mistral to Claude</title>
+    <link href="https://lod-am.net/blog/Becoming_operational_Claude/" />
+    <updated>2026-11-17T00:00:00Z</updated>
+    <id>https://lod-am.net/blog/Becoming_operational_Claude/</id>
+    <content type="html">&lt;p&gt;Hi again! It’s been quiet on the blog for a while—but not in the repositories. A lot happened, and over the next few posts I’ll tell you how LOD-AM went from a hand-written example to its first real dataset online. But before I get to that, there’s something I want to get out of the way. I promised to be transparent about how this project is built, so here it is: &lt;strong&gt;I changed my AI assistant.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;from-mistral-to-claude&quot;&gt;From Mistral to Claude&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&quot;https://lod-am.net/blog/How_I_started/&quot;&gt;How I started&lt;/a&gt;, I wrote that this website was pretty much a vibe coding attempt with Mistral. That was true back then. Since then, LOD-AM has been built with &lt;strong&gt;Claude&lt;/strong&gt;, Anthropic’s AI assistant, working directly in my GitHub repositories.&lt;/p&gt;
+&lt;p&gt;I am glad enough to work with a lot of colleagues, who love to experiment with every piece of technology available. And when I got a recommendation and a report of his recent progress from my dear colleague Lasse, I just had to try it out. We&#39;ll see how the European competitors of Anthropic will do. I am hoping for the best. Competition boosts business afterall.&lt;/p&gt;
+&lt;h3 id=&quot;why-time&quot;&gt;Why? Time.&lt;/h3&gt;
+&lt;p&gt;Here’s the thing: LOD-AM is a free-time project. It has to fit into spare evenings between everything else. Every hour I spend on it has to count—so I have to be as &lt;strong&gt;effective&lt;/strong&gt; as possible. And with Claude, I simply get more done.&lt;/p&gt;
+&lt;p&gt;What made the difference for me isn’t that Claude can write code. It’s that it can carry a task from start to finish: read my conventions, change the data model, run the checks, look at the result in a browser, and come back with a pull request I can review. And when something fails, it tells me what failed—instead of pretending it worked.&lt;/p&gt;
+&lt;h3 id=&quot;who-decides-what&quot;&gt;Who decides what?&lt;/h3&gt;
+&lt;p&gt;This part matters most to me, so let me be clear about it:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The research decisions are mine.&lt;/strong&gt; What a value in a publication means, which type an object belongs to, which period a context dates to—whenever something is a domain judgement and not a fact from a specification, Claude doesn’t decide it. It writes the question down, and I answer it. My sandbox, still my rules.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claude does the heavy lifting.&lt;/strong&gt; Writing and testing the conversion, looking up ontology terms, checking every AAT identifier against the Getty endpoint, building the pages you see here, keeping the documentation up to date.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nothing goes live without me.&lt;/strong&gt; Claude works on branches and opens pull requests. I review them, and I merge them.&lt;/p&gt;
+&lt;h3 id=&quot;trust-but-check&quot;&gt;Trust, but check&lt;/h3&gt;
+&lt;p&gt;There’s one mistake an AI assistant makes all too easily in a project like this: inventing an ontology term that &lt;em&gt;looks&lt;/em&gt; perfectly plausible but doesn’t exist. That’s why every single term in LOD-AM is now checked automatically against the published ontologies before anything is merged. I don’t have to trust the assistant—I can check it.&lt;/p&gt;
+&lt;h3 id=&quot;and-these-posts&quot;&gt;And these posts?&lt;/h3&gt;
+&lt;p&gt;Full transparency here as well: Claude drafted this series from our notes, issues and pull requests. I went through it, changed what didn’t sound like me, and I stand behind every word.&lt;/p&gt;
+&lt;p&gt;Curious how the rules for Claude look? They’re in the repositories, right next to the code:&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Claude/bOFbZK1fuI-800.avif 800w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Claude/bOFbZK1fuI-800.webp 800w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://lod-am.net/blog/Becoming_operational_Claude/bOFbZK1fuI-800.png&quot; alt=&quot;LOD-AM/knowledge-graph&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/LOD-AM/knowledge-graph&quot;&gt;View LOD-AM/knowledge-graph on GitHub →&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, if you have thoughts, suggestions, or just want to talk about working with AI in research, you know where to find me: &lt;strong&gt;info@lod-am.net&lt;/strong&gt; or (if you have a GitHub account) in a &lt;strong&gt;comment&lt;/strong&gt; below.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Becoming Operational - Arslantepe Is Online</title>
+    <link href="https://lod-am.net/blog/Becoming_operational_Arslantepe/" />
+    <updated>2026-11-17T00:00:00Z</updated>
+    <id>https://lod-am.net/blog/Becoming_operational_Arslantepe/</id>
+    <content type="html">&lt;p&gt;This is the post I’ve been waiting to write since the very beginning of LOD-AM: &lt;strong&gt;the first complete dataset is online!&lt;/strong&gt; Every find and every analysis from Arslantepe published by Hauptmann, Schmitt-Strecker, Begemann and Palmieri in 2002 is now available as Linked Open Data—right here on this website, one page per record.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://doi.org/10.3406/paleo.2002.4745&quot; class=&quot;link-card link-card--literature&quot;&gt;&lt;img src=&quot;https://lod-am.net/img/literature-logo.svg&quot; alt=&quot;&quot; width=&quot;50&quot; height=&quot;50&quot; class=&quot;link-card__icon&quot;&gt;&lt;span class=&quot;link-card__title&quot;&gt;Chemical Composition and Lead Isotopy of Metal Objects from the &amp;quot;Royal&amp;quot; Tomb and Other Related Finds at Arslantepe, Eastern Anatolia&lt;/span&gt;&lt;span class=&quot;link-card__host&quot;&gt;doi.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;back-to-where-it-started&quot;&gt;Back to where it started&lt;/h3&gt;
+&lt;p&gt;Arslantepe has been with LOD-AM from the start. Back in July, I &lt;a href=&quot;https://lod-am.net/blog/The_first_example/&quot;&gt;picked this very paper&lt;/a&gt; as my test case—because it throws pretty much every modelling problem of legacy data at you: fragments without types, one artifact with two samples, &amp;quot;not detected&amp;quot; values, and three different ID systems. It was a minefield. Now it’s no longer a test case. It’s the real thing.&lt;/p&gt;
+&lt;h3 id=&quot;what-s-in-it&quot;&gt;What’s in it&lt;/h3&gt;
+&lt;p&gt;We collected the Arslantepe data directly from the publication and modelled it following the &lt;a href=&quot;https://lod-am.net/blog/Becoming_operational_Conventions/&quot;&gt;conventions&lt;/a&gt; and &lt;a href=&quot;https://lod-am.net/blog/Becoming_operational_Vocabularies/&quot;&gt;vocabularies&lt;/a&gt; from this series. Here’s what you get:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;58 finds&lt;/strong&gt; (metal objects and casting waste), each with its type from the LOD-AM typology, linked to the Getty AAT;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;78 analyses&lt;/strong&gt;: &lt;strong&gt;50 chemical analyses&lt;/strong&gt; with 14 elements each, and &lt;strong&gt;28 lead isotope analyses&lt;/strong&gt; by the Deutsches Bergbau-Museum Bochum with three lead isotope ratios each;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;7 archaeological contexts&lt;/strong&gt;, among them the famous &lt;strong&gt;Royal Tomb&lt;/strong&gt; with 38 of the finds, and the &lt;strong&gt;Palace Hoard&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;periods&lt;/strong&gt; they date to, from Arslantepe VII to VIC, each with its time-span and its culture.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And every value is exactly as the publication reported it. Where an element was looked for but not found, the data says &amp;quot;not detected&amp;quot;—not 0. Nothing is recalculated.&lt;/p&gt;
+&lt;h3 id=&quot;where-to-find-it&quot;&gt;Where to find it&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href=&quot;https://lod-am.net/data/&quot;&gt;Data overview&lt;/a&gt;, with lists of all finds, analyses, contexts, periods and more.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&quot;https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/&quot;&gt;Arslantepe site page&lt;/a&gt;, the &lt;a href=&quot;https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d/&quot;&gt;Royal Tomb&lt;/a&gt; and the &lt;a href=&quot;https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869/&quot;&gt;Palace Hoard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&quot;https://lod-am.net/data/publications/hauptmann2002chemical/&quot;&gt;publication page&lt;/a&gt;, which brings all records of the article together.&lt;/li&gt;
+&lt;li&gt;And the &lt;strong&gt;whole dataset as RDF&lt;/strong&gt; (Turtle) for &lt;a href=&quot;https://lod-am.net/data/hauptmann2002chemical.ttl&quot;&gt;download&lt;/a&gt;, under CC BY 4.0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Every record has its own IRI under &lt;code&gt;https://lod-am.net/id/&lt;/code&gt;. So you can cite and link a single find or a single analysis—not just the article.&lt;/p&gt;
+&lt;h3 id=&quot;a-word-of-thanks&quot;&gt;A word of thanks&lt;/h3&gt;
+&lt;p&gt;I’m really proud of this one. Getting here meant many evenings of checking types, contexts, periods and values, and deciding, again and again, what the publication actually says. And I have to say it: I’m impressed by Claude’s performance along the way. It turned my decisions into a data model, a conversion and these pages, it caught inconsistencies I would have overlooked, and it never got tired of yet another round of checks. For a free-time project like mine, that made all the difference. But enough, that already sounds like advertisement, but it really worked....&lt;/p&gt;
+&lt;h3 id=&quot;this-is-only-the-beginning&quot;&gt;This is only the beginning&lt;/h3&gt;
+&lt;p&gt;Arslantepe is the first dataset—but it won’t stay alone for long. The conventions, the vocabularies and the checks are in place now, and they work. That’s why I’m sure we’ll make &lt;strong&gt;more data from many more publications&lt;/strong&gt; available soon.&lt;/p&gt;
+&lt;p&gt;Curious for the code behind the pages?&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.avif 800w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://lod-am.net/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.webp 800w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://lod-am.net/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.png&quot; alt=&quot;LOD-AM/website&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/LOD-AM/website&quot;&gt;View LOD-AM/website on GitHub →&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, if you have thoughts, suggestions, or find something in the data that doesn’t look right, you know where to find me: &lt;strong&gt;info@lod-am.net&lt;/strong&gt; or (if you have a GitHub account) in a &lt;strong&gt;comment&lt;/strong&gt; below.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Learning by Doing</title>
     <link href="https://lod-am.net/blog/Learning_by_Doing_My%20First_Data_Example/" />

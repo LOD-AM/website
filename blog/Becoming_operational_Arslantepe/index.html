@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Becoming Operational - Arslantepe Is Online</title>
+		<meta name="description" content="The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/Becoming_operational_Arslantepe/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Becoming Operational - Arslantepe Is Online">
+		<meta property="og:description" content="The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.">
+		<meta property="og:url" content="https://lod-am.net/blog/Becoming_operational_Arslantepe/">
+		<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-11-17">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Becoming Operational - Arslantepe Is Online">
+		<meta name="twitter:description" content="The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "@id": "https://lod-am.net/blog/Becoming_operational_Arslantepe/#post",
+ "headline": "Becoming Operational - Arslantepe Is Online",
+ "description": "The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.",
+ "url": "https://lod-am.net/blog/Becoming_operational_Arslantepe/",
+ "mainEntityOfPage": "https://lod-am.net/blog/Becoming_operational_Arslantepe/",
+ "inLanguage": "en",
+ "datePublished": "2026-11-17",
+ "dateModified": "2026-11-17",
+ "keywords": [
+  "data",
+  "Arslantepe"
+ ],
+ "image": "https://lod-am.net/img/logo.png",
+ "author": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "isPartOf": [
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/"
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "name": "Becoming Operational",
+   "url": "https://lod-am.net/blog/#becoming-operational"
+  }
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "citation": [
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://doi.org/10.3406/paleo.2002.4745",
+   "url": "https://doi.org/10.3406/paleo.2002.4745"
+  }
+ ]
+}</script>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<div class="reading-column">
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4" id="becoming-operational-arslantepe-is-online">Becoming Operational - Arslantepe Is Online</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-11-17">17 November 2026</time>
+        
+      </small>
+    </div>
+    
+    
+    <div class="mb-3">
+      
+      
+      <a href="/tags/data/" class="tag me-2" style="--tag-color: #CC8B32;">data</a>
+      
+      
+      <a href="/tags/arslantepe/" class="tag me-2" style="--tag-color: #5FB389;">Arslantepe</a>
+      
+    </div>
+    
+    <details class="series-box">
+      <summary>Part 4 of 4 in <em>Becoming Operational</em></summary>
+      <ol class="mb-0 mt-2">
+        <li><a href="/blog/Becoming_operational_Claude/">Becoming Operational - Why I Switched from Mistral to Claude</a></li>
+        <li><a href="/blog/Becoming_operational_Conventions/">Becoming Operational - The Conventions</a></li>
+        <li><a href="/blog/Becoming_operational_Vocabularies/">Becoming Operational - Our Own Vocabularies, Linked to the AAT</a></li>
+        <li><span aria-current="page">Becoming Operational - Arslantepe Is Online</span></li>
+      </ol>
+    </details>
+  </header>
+
+  <div class="content">
+    <p>This is the post I’ve been waiting to write since the very beginning of LOD-AM: <strong>the first complete dataset is online!</strong> Every find and every analysis from Arslantepe published by Hauptmann, Schmitt-Strecker, Begemann and Palmieri in 2002 is now available as Linked Open Data—right here on this website, one page per record.</p>
+<p><a href="https://doi.org/10.3406/paleo.2002.4745" class="link-card link-card--literature"><img src="/img/literature-logo.svg" alt="" width="50" height="50" class="link-card__icon"><span class="link-card__title">Chemical Composition and Lead Isotopy of Metal Objects from the &quot;Royal&quot; Tomb and Other Related Finds at Arslantepe, Eastern Anatolia</span><span class="link-card__host">doi.org</span></a></p>
+<h3 id="back-to-where-it-started">Back to where it started</h3>
+<p>Arslantepe has been with LOD-AM from the start. Back in July, I <a href="/blog/The_first_example/">picked this very paper</a> as my test case—because it throws pretty much every modelling problem of legacy data at you: fragments without types, one artifact with two samples, &quot;not detected&quot; values, and three different ID systems. It was a minefield. Now it’s no longer a test case. It’s the real thing.</p>
+<h3 id="what-s-in-it">What’s in it</h3>
+<p>We collected the Arslantepe data directly from the publication and modelled it following the <a href="/blog/Becoming_operational_Conventions/">conventions</a> and <a href="/blog/Becoming_operational_Vocabularies/">vocabularies</a> from this series. Here’s what you get:</p>
+<ul>
+<li><strong>58 finds</strong> (metal objects and casting waste), each with its type from the LOD-AM typology, linked to the Getty AAT;</li>
+<li><strong>78 analyses</strong>: <strong>50 chemical analyses</strong> with 14 elements each, and <strong>28 lead isotope analyses</strong> by the Deutsches Bergbau-Museum Bochum with three lead isotope ratios each;</li>
+<li><strong>7 archaeological contexts</strong>, among them the famous <strong>Royal Tomb</strong> with 38 of the finds, and the <strong>Palace Hoard</strong>;</li>
+<li>the <strong>periods</strong> they date to, from Arslantepe VII to VIC, each with its time-span and its culture.</li>
+</ul>
+<p>And every value is exactly as the publication reported it. Where an element was looked for but not found, the data says &quot;not detected&quot;—not 0. Nothing is recalculated.</p>
+<h3 id="where-to-find-it">Where to find it</h3>
+<ul>
+<li>The <a href="/data/">Data overview</a>, with lists of all finds, analyses, contexts, periods and more.</li>
+<li>The <a href="/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/">Arslantepe site page</a>, the <a href="/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d/">Royal Tomb</a> and the <a href="/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869/">Palace Hoard</a>.</li>
+<li>The <a href="/data/publications/hauptmann2002chemical/">publication page</a>, which brings all records of the article together.</li>
+<li>And the <strong>whole dataset as RDF</strong> (Turtle) for <a href="/data/hauptmann2002chemical.ttl">download</a>, under CC BY 4.0.</li>
+</ul>
+<p>Every record has its own IRI under <code>https://lod-am.net/id/</code>. So you can cite and link a single find or a single analysis—not just the article.</p>
+<h3 id="a-word-of-thanks">A word of thanks</h3>
+<p>I’m really proud of this one. Getting here meant many evenings of checking types, contexts, periods and values, and deciding, again and again, what the publication actually says. And I have to say it: I’m impressed by Claude’s performance along the way. It turned my decisions into a data model, a conversion and these pages, it caught inconsistencies I would have overlooked, and it never got tired of yet another round of checks. For a free-time project like mine, that made all the difference. But enough, that already sounds like advertisement, but it really worked....</p>
+<h3 id="this-is-only-the-beginning">This is only the beginning</h3>
+<p>Arslantepe is the first dataset—but it won’t stay alone for long. The conventions, the vocabularies and the checks are in place now, and they work. That’s why I’m sure we’ll make <strong>more data from many more publications</strong> available soon.</p>
+<p>Curious for the code behind the pages?</p>
+<picture><source type="image/avif" srcset="/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.avif 800w"><source type="image/webp" srcset="/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.webp 800w"><img loading="lazy" decoding="async" src="/blog/Becoming_operational_Arslantepe/IErUOKwdlH-800.png" alt="LOD-AM/website" width="800" height="400"></picture>
+<p><a href="https://github.com/LOD-AM/website">View LOD-AM/website on GitHub →</a></p>
+<p>As always, if you have thoughts, suggestions, or find something in the data that doesn’t look right, you know where to find me: <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Learning_by_Doing_My First_Data_Example/">
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+</svg> Previous: Learning by Doing
+        </a>
+      </li>
+      
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Claude/">
+          Next: Becoming Operational - Why I Switched from Mistral to Claude <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+</svg>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub, Inc. in the <strong>USA</strong> and transfers your IP address and browser data there. The USA does not have a level of data protection equivalent to the EU's; US authorities may access the data. By clicking the button, you consent to this transfer (Art. 49(1)(a) GDPR). Details: <a href="/privacy/#comments">privacy policy, section 5</a>.</p>
+    <button type="button" class="btn btn-primary" id="load-comments"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"></path>
+</svg> Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+</div>
+
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src="/dist/fQ0GDP1uDo.js"></script>
+	</body>
+</html>

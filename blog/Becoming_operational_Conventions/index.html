@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Becoming Operational - The Conventions</title>
+		<meta name="description" content="From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/Becoming_operational_Conventions/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Becoming Operational - The Conventions">
+		<meta property="og:description" content="From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.">
+		<meta property="og:url" content="https://lod-am.net/blog/Becoming_operational_Conventions/">
+		<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-11-17">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Becoming Operational - The Conventions">
+		<meta name="twitter:description" content="From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "@id": "https://lod-am.net/blog/Becoming_operational_Conventions/#post",
+ "headline": "Becoming Operational - The Conventions",
+ "description": "From a hand-written example to rules that real data has to pass - the modelling conventions of LOD-AM.",
+ "url": "https://lod-am.net/blog/Becoming_operational_Conventions/",
+ "mainEntityOfPage": "https://lod-am.net/blog/Becoming_operational_Conventions/",
+ "inLanguage": "en",
+ "datePublished": "2026-11-17",
+ "dateModified": "2026-11-17",
+ "keywords": [
+  "concept",
+  "modelling"
+ ],
+ "image": "https://lod-am.net/img/logo.png",
+ "author": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "isPartOf": [
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/"
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "name": "Becoming Operational",
+   "url": "https://lod-am.net/blog/#becoming-operational"
+  }
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/"
+}</script>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<div class="reading-column">
+<article class="mb-5">
+  <header class="mb-4">
+    <h1 class="display-4" id="becoming-operational-the-conventions">Becoming Operational - The Conventions</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-11-17">17 November 2026</time>
+        
+      </small>
+    </div>
+    
+    
+    <div class="mb-3">
+      
+      
+      <a href="/tags/concept/" class="tag me-2" style="--tag-color: #F28C28;">concept</a>
+      
+      
+      <a href="/tags/modelling/" class="tag me-2" style="--tag-color: #F09B86;">modelling</a>
+      
+    </div>
+    
+    <details class="series-box">
+      <summary>Part 2 of 4 in <em>Becoming Operational</em></summary>
+      <ol class="mb-0 mt-2">
+        <li><a href="/blog/Becoming_operational_Claude/">Becoming Operational - Why I Switched from Mistral to Claude</a></li>
+        <li><span aria-current="page">Becoming Operational - The Conventions</span></li>
+        <li><a href="/blog/Becoming_operational_Vocabularies/">Becoming Operational - Our Own Vocabularies, Linked to the AAT</a></li>
+        <li><a href="/blog/Becoming_operational_Arslantepe/">Becoming Operational - Arslantepe Is Online</a></li>
+      </ol>
+    </details>
+  </header>
+
+  <div class="content">
+    <p>So, my <a href="/blog/Learning_by_Doing_My%20First_Data_Example/">first data example</a> was written by hand, one triple at a time. That’s great for learning—but it doesn’t scale. As soon as you want to publish more than a handful of objects, you need <strong>rules</strong>. Rules that say exactly how an object, a site or an analysis is written down, and checks that refuse anything that breaks them.</p>
+<p>That’s what the last weeks were about. All those rules now live in one place: the <strong>conventions</strong> of the knowledge graph. I won’t walk you through all of them here (that would be a very long and very boring post). Instead, here are three decisions that taught me something—and one confession.</p>
+<h3 id="the-confession-first">The confession first</h3>
+<p>Remember when I wrote that <code>crm:P71_is_listed_in</code> might end up being one of the most frequent properties in the whole triple store? Well. It doesn’t even exist in CIDOC CRM 7.1.3. Neither did a few other things in my first prototype.</p>
+<p>That’s why every term in LOD-AM is now <strong>checked automatically</strong> against the published ontologies—CIDOC CRM 7.1.3, CRMsci, CRMarchaeo, Allotrope and FaBiO—including whether a property is even allowed between the two things it connects. On top of that, the data is validated against SHACL shapes. If a term doesn’t exist, the data doesn’t go out. Publications are now linked with <code>crm:P70i_is_documented_in</code>, by the way.</p>
+<h3 id="1-we-date-the-context-not-the-object">1. We date the context, not the object</h3>
+<p>Here’s a question that sounds simple: how old is a dagger? In most publications, the honest answer is: we don’t know how old the <em>dagger</em> is. We know how old the <strong>grave</strong> is that it was found in.</p>
+<p>So that’s what LOD-AM says. The object sits in its context—a grave, a hoard, a layer—using CRMarchaeo’s <code>AP21i_is_contained_in</code>, and only the context is dated: it <strong>witnessed</strong> a period (<code>crm:P8i_witnessed</code>). And if the grave lies in a kurgan, it’s part of the kurgan and of the site.</p>
+<p>It’s a small shift, but it keeps the data honest. If someone redates the grave tomorrow, every object in it moves along—and nobody has to pretend we dated the objects themselves. Maybe that's something, only a prehistorian can say.</p>
+<h3 id="2-not-detected-is-not-zero">2. &quot;Not detected&quot; is not zero</h3>
+<p>This one hurts every archaeometallurgist who has ever worked with legacy tables. You open an old analysis table and find an empty cell. Or a dash. Or &quot;n.d.&quot;. Or a 0. What do they mean? Was the element looked for and not found? Was it never measured? Was it below a detection limit nobody wrote down?</p>
+<p>These are <strong>different statements</strong>, and LOD-AM keeps them apart:</p>
+<ul>
+<li>a value below a stated limit (&quot;&lt; 0.001 %&quot;) is recorded as a maximum,</li>
+<li>an element that was <strong>not analysed</strong> gets no measurement at all,</li>
+<li>an element that was looked for but <strong>not detected</strong> gets a measurement without a value, marked as <code>:not_detected</code>:</li>
+</ul>
+<pre class="language-turtle" tabindex="0"><code class="language-turtle"><span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">Bi_measurement</span></span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span><span class="token local-name">AFR_0002099</span></span><span class="token punctuation">,</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E54_Dimension</span></span> <span class="token punctuation">;</span>   <span class="token comment"># mass fraction</span>
+    <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0002816</span></span> <span class="token function"><span class="token prefix">chebi<span class="token punctuation">:</span></span><span class="token local-name">33301</span></span> <span class="token punctuation">;</span>                       <span class="token comment"># quantifies bismuth atom</span>
+    <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P2_has_type</span></span> <span class="token function"><span class="token prefix"><span class="token punctuation">:</span></span><span class="token local-name">not_detected</span></span> <span class="token punctuation">;</span>
+    <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span><span class="token local-name">unit</span></span> <span class="token function"><span class="token prefix">unit<span class="token punctuation">:</span></span><span class="token local-name">PERCENT</span></span> <span class="token punctuation">.</span></code></pre>
+<p>And never, ever a 0. Which brings me to the most important rule of all: <strong>values are published as reported.</strong> Nothing is recalculated, normalised or rounded.</p>
+<p>While I was at it, my AFO prototype got a proper overhaul too. The analysis now takes a <strong>sample</strong>, and a sampling event connects the sample to the object. Element contents are <strong>mass fractions</strong> (not concentrations), with real numbers and units instead of strings. And lead isotope ratios name both their isotopes.</p>
+<h3 id="3-pleiades-but-not-the-same-as">3. Pleiades, but not &quot;the same as&quot;</h3>
+<p>In linked data, it’s tempting to say &quot;our Arslantepe is the same as Pleiades’ Arslantepe&quot; with <code>owl:sameAs</code>. Simple, done. But <code>sameAs</code> is a strong claim: it means everything Pleiades says about the place is now also true of <em>our</em> site, and everything we say is true of theirs. Merge two datasets with slightly different ideas of a site, and you get a mess.</p>
+<p>So when a site is linked to Pleiades, the Pleiades URI becomes an <strong>identifier</strong> of our site—a pointer, not a merger. Next to it, the site keeps the <strong>name as reported</strong> in the publication, because that name is the link back to the literature, and a real GeoSPARQL geometry, so a triple store can actually do spatial queries with it.</p>
+<h3 id="everything-else">Everything else</h3>
+<p>There’s more: one IRI per record under <code>https://lod-am.net/id/</code>, labels in English and German, our own typology for object types (that one gets the next post), and a bibliography that comes straight from my public Zotero group. Curious for the itty-bitty details?</p>
+<picture><source type="image/avif" srcset="/blog/Becoming_operational_Conventions/mBZBEYVl29-800.avif 800w"><source type="image/webp" srcset="/blog/Becoming_operational_Conventions/mBZBEYVl29-800.webp 800w"><img loading="lazy" decoding="async" src="/blog/Becoming_operational_Conventions/mBZBEYVl29-800.png" alt="LOD-AM/knowledge-graph CONVENTIONS.md" width="800" height="400"></picture>
+<p><a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">Read CONVENTIONS.md on GitHub →</a></p>
+<h3 id="why-all-this-effort">Why all this effort?</h3>
+<p>Because the next step was real data. With the conventions in place and every rule checked automatically, a dataset is no longer something I craft by hand—it’s something that has to <strong>pass</strong>. In the last post of this series, I’ll show you the first one that did.</p>
+<p>As always, if you have thoughts, suggestions, or just want to geek out about data modelling, you know where to find me: <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Claude/">
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+</svg> Previous: Becoming Operational - Why I Switched from Mistral to Claude
+        </a>
+      </li>
+      
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Becoming_operational_Vocabularies/">
+          Next: Becoming Operational - Our Own Vocabularies, Linked to the AAT <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+</svg>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub, Inc. in the <strong>USA</strong> and transfers your IP address and browser data there. The USA does not have a level of data protection equivalent to the EU's; US authorities may access the data. By clicking the button, you consent to this transfer (Art. 49(1)(a) GDPR). Details: <a href="/privacy/#comments">privacy policy, section 5</a>.</p>
+    <button type="button" class="btn btn-primary" id="load-comments"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"></path>
+</svg> Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+</div>
+
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script type="module" src="/dist/fQ0GDP1uDo.js"></script>
+	</body>
+</html>
