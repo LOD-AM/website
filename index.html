@@ -28,6 +28,42 @@
 		<!-- Fediverse creator attribution for blog posts -->
 		
 
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://lod-am.net/#website",
+   "name": "Linked Open Data for Ancient Metallurgy",
+   "url": "https://lod-am.net/",
+   "description": "A sandbox project dedicated to ancient metallurgical & open data methodologies.",
+   "inLanguage": "en",
+   "author": {
+    "@id": "https://lod-am.net/about/#me"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://lod-am.net/about/#me",
+   "name": "Fabian Fricke",
+   "url": "https://lod-am.net/about/",
+   "sameAs": [
+    "https://archaeo.social/@FabianF"
+   ]
+  },
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/",
+   "author": {
+    "@id": "https://lod-am.net/about/#me"
+   }
+  }
+ ]
+}</script>
+
 		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 		<link rel="icon" type="image/png" href="/img/logo.svg">
@@ -78,6 +114,22 @@
 			<h1 class="display-4 mb-4" id="welcome-to-linked-open-data-for-ancient-metallurgy">Welcome to Linked Open Data for Ancient Metallurgy</h1>
 			<p>Hi, I'm Fabian. Welcome to my digital sandbox, where I play with Linked Open Data for Ancient Metallurgy (LOD-AM)—a little scientific side hustle of mine.</p>
 			<p>This is my private experiment, a one-man show where I get to ask questions about copper-based metallurgy in Eurasia and all the Research Data Management (RDM) chaos that comes with it.</p>
+
+			
+			
+<aside class="series-box mb-4" id="building-lod-am" aria-labelledby="building-lod-am-heading">
+  <h2 id="building-lod-am-heading" class="h5 mb-2">Start here: Building LOD-AM</h2>
+  <p class="mb-2">New here? This series tells how LOD-AM came about, from the first idea and the homelab to the first real data. Best read in order.</p>
+  <ol class="mb-0">
+    <li><a href="/blog/How_I_started/">How I started</a></li>
+    <li><a href="/blog/The_infrastructure/">The Infrastructure - A Homelab for LOD-AM</a></li>
+    <li><a href="/blog/The_ontologies/">The Ontologies - Choosing the Right Tools for the Job</a></li>
+    <li><a href="/blog/The_vocabularies/">The Vocabularies - Finding the Right Words for My Data</a></li>
+    <li><a href="/blog/The_first_example/">Tackling Legacy Data practically</a></li>
+    <li><a href="/blog/Learning_by_Doing_My First_Data_Example/">Learning by Doing</a></li>
+  </ol>
+</aside>
+
 
 			<h2 class="mt-5 mb-4" id="latest-posts">Latest posts</h2>
 			
