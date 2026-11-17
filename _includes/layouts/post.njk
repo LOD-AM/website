@@ -25,6 +25,18 @@ layout: layouts/base.njk
       {% endfor %}
     </div>
     {% endif %}
+
+    {%- set sr = collections.blog | seriesOf(page.fileSlug) %}
+    {%- if sr and sr.index >= 0 %}
+    <details class="series-box">
+      <summary>Part {{ sr.index + 1 }} of {{ sr.parts.length }} in <em>{{ sr.series.title }}</em></summary>
+      <ol class="mb-0 mt-2">
+        {%- for p in sr.parts %}
+        <li>{% if p.url == page.url %}<span aria-current="page">{{ p.data.title }}</span>{% else %}<a href="{{ p.url }}">{{ p.data.title }}</a>{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </details>
+    {%- endif %}
   </header>
 
   <div class="content">
