@@ -59,6 +59,1511 @@
 	
 		
 		<url>
+			<loc>https://lod-am.net/data/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/data/sites/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/data/publications/hauptmann2002chemical/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/data/publications/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/person/06526ecd-3514-e73d-8319-d69407da0f91/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/region/8feca6e1-98fd-4838-a18c-e801c952cce8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/culture/54c70a24-de1b-46dd-95b0-13029a4ae894/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/person/2583816f-634a-51d5-7b0e-ae4256575fa2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/55526f31-ccc5-4c09-806f-c528a2d6f49e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/561b5ede-c714-41f7-afc2-e7aa41cf175f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/da6081e3-c22c-43dc-99cf-9a2b834fca3f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/4cfba3b0-27bd-4ee4-9ab5-f47bb4ff7293/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/f179e4ce-3415-48da-a3f4-bd56efc9b077/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/c912cee1-3c27-4d7d-8ea3-6f9d8d9b38cc/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/cc7b7373-132e-4537-9ea3-44d030355466/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/6880a16a-b65f-4bcf-9278-c622c27b7ab4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/35d292b4-169a-4847-8ac5-428c9ca72ac5/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/8617989c-e99b-4e81-8b57-e707b8dc85c5/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/f1aea236-08ac-450d-8371-6cfd45b8b85e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/4c196761-59b7-4876-9473-e1c831020983/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/b220f040-d41b-47ee-a2f4-80283fd6b9d4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/54771f81-da93-4aca-abe0-15d2b917b767/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/chronology/39be00e9-6d75-4b9c-889e-ede455c29626/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/c772c3aa-6d20-4f22-8cc7-715bbadce301/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/d1bd0c5c-67c7-42f7-b388-331a1c85f26b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/8b8d073b-974e-48bb-b198-1590a2ccffc1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/2146411b-904b-4a6d-850a-37ba56afc3dd/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/07126867-320f-45f2-8a0a-9c37b895c8c4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/d35bbe82-a847-44ed-aece-9957ce1ebab7/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/5efa1ccc-f09a-4dad-a2e9-23d264f15050/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/326e500d-26d8-4c4d-b210-464dfb44d55a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/452deab4-8ea1-47d1-8b9f-c505f4fe702c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/e91cbfd1-17b1-4162-8af2-049ff228ec1b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/538473f9-b52f-41cc-b363-91e32045696d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/4f5d221f-a707-450b-8dab-d08160b8628a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/5f8210e6-4f71-4877-904d-606af3917318/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/4ac34d32-6bfa-4bd1-8a4a-ec421ab335e1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/d9e03dff-726a-4f0d-acca-c5be7344ee4c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/794dd9e6-6c26-492e-b53a-4cbcf7a3ef11/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/20b00c14-a069-491c-a365-24f24f7830da/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/086c2bb1-7a77-41f9-892b-e0e19d4675ca/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/7167119b-0418-4e16-adc7-d05d480606a2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/634a096c-5dc7-476a-b35d-7d8aeb97995c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/6fd77cc4-2b63-4ed1-b7fa-95af82a6ea01/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/2a9acd13-543a-475f-8b2e-90f7fa868385/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/f65548d8-a0d8-4de2-b2ad-dc98ff299997/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/7f997a47-1bb1-b180-935f-d2a455b92065/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/8e23cf21-b1ec-f7c1-f531-f2fdeaf4fb1b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/26a9cabc-46b3-41eb-b61b-eb2351736d90/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/5ab4a954-bb5c-4237-ae66-13312b31fbca/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/0b4d4a2d-438d-441d-aadc-9d96a9886f8c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/abab9506-c910-482e-b645-c7877b86ab14/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/846cb931-4676-4aa7-8bf1-13eaceac0b7b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/6e7f3e75-af89-42aa-8afa-aa0c403d81ca/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/6b9acc5d-b501-4e6a-9bff-e63c8da5145a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/6ecabf90-1ecd-49f0-a366-379a356ae2c0/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/3c50f5be-4029-4911-af95-6bb65442d6df/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/person/0d004b44-2459-f7cb-3516-2585a6b0ac2e/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/3f8ffd6b-d47c-1613-f4a9-213326a3abb2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/site/85a9c8d6-5771-41ba-b5a3-a79b1152e406/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/5cb92466-3035-4d19-8265-34b472fc4b27/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/24a624fc-7cb3-4a3a-8bc0-407a3fa89816/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/b007a011-5b1d-4f6b-a57d-9d17b8c53dfd/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/region/f82ca066-6f79-4f46-b1dd-737f7a550470/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/journal/15f29ad9-015e-9ff8-d36f-95a83e016c8d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/03c7bcb1-e358-4672-a3df-1c11cc31d0a8/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/036079bd-3f71-459e-b9ff-8a0d76189921/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/562f7ec7-48d8-4348-98ac-059f95ee65df/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/3d0ebeb1-ab09-42ee-a975-f65638719cea/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/c7e94195-8fb6-4530-8790-18fc20649057/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/2886e1d4-430e-494c-b479-40799115f84b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/c6951c76-eca7-4144-ad1b-9a9a118c9b8b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/de245a9a-46f7-4cca-b6f6-d80927db6961/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/b480309f-8ed7-430c-9854-3cc5464c42a9/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/5d15f780-60f5-4570-8e76-d2da8c844ac2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/945fffcc-2fb1-4771-a7ce-9a75907c2436/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/19d849fb-d725-45e5-8449-0080e31537b9/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/person/8738a59c-1153-45a6-bb11-21fe6f82b5ac/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/a9bd30fe-194a-49f6-9494-18ac4fbb674a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/a4874ab7-97be-4315-b2da-aeeaadb38b15/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/386ff65e-38b4-4e1c-ac38-963e244ab245/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/4e7e0f9d-8f79-4b99-986a-25777d0afbb1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/6ec60c33-6dc1-484f-b578-43f0aed89dde/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/f57ba98b-5d3f-4626-94dd-d7a1ab654627/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/7f57d6c3-09f3-415d-a71a-4aae8197bd43/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/a1540470-f7ef-43ed-842b-874d8a0556ea/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/8a233981-1517-4471-8d20-9873949802bd/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/c7f0df3e-fa13-4040-9cf5-c93ba8edb117/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/b759279f-093a-46c7-8d81-1191e4ce736f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/546eb25e-31f3-4958-b3c0-772509509d86/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/d22a482b-a2a2-4d44-b025-3c005e1e8d5f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/30871380-ff3b-494f-9984-70c2c3baf857/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/4f084b2e-4334-4b9a-8f3f-7ec73aef1be1/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/e8f3e3eb-a100-4450-a410-80b74e8a52e6/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/3ea27ec7-1e3c-4c54-9a4b-acee8c61e249/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/89e70a5b-b125-4125-be33-6e423915c675/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/92131cbc-ddfc-4407-94ac-8cac4f613a89/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/0a447a3a-1e9e-4115-b521-f8aee1e528a7/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/3d0fee13-7129-4469-9cab-413bdfa7bbeb/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/4343f447-9ceb-4727-8bf7-ba1b16d5001a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/20fba788-5ca7-4cd7-80dc-7f43234a2fa7/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/d463ac30-f668-4260-8e26-ccb03ea7a982/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/4be2d50c-70bf-4593-b5ee-e2a635137ba2/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/b824e657-6bcd-4b21-b220-a9da9858f007/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/1857ac0e-7e16-4004-a300-8f16bbdcb615/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/83a82b77-02b5-4aac-b2f3-8903d97cd0cf/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/e07c341a-51fe-9d96-191b-353f287af14b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/28287aff-a17e-4bf6-8f13-75ddb84a299a/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/0445fe50-49b2-433d-949b-5062a371994f/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/538d3bc3-19bd-40ca-8551-c0fc7c0b7ccc/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/89031bef-b94e-4cdd-95b9-14579f6e6396/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/67a932a4-9c69-4d05-a645-fa767164db02/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/1c04726d-5e87-4b01-9d67-2d50e0d7c678/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/9acd3f63-ce57-44e2-ad29-0825bee76196/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/find/050ce3a1-85fb-4de5-a0a0-c728b167cc59/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/type/aa79dce1-8a75-4498-9cba-87ede12cee6b/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/9e243264-559c-482f-9fad-77c63cfb4cf6/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/ca592d99-30af-45b0-a1b9-3351a6983b92/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/id/period/fe6665cc-528b-40a7-9ba5-a1d1725b44ee/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
 			<loc>https://lod-am.net/impressum/</loc>
 			<lastmod>2026-11-17</lastmod>
 		</url>
