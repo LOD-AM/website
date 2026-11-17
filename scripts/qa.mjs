@@ -35,7 +35,17 @@ try {
 const KEY_PAGES = {
   home: "/", blog: "/blog/", post: "/blog/The_first_example/", about: "/about/",
   tags: "/tags/", tag: "/tags/concept/", notfound: "/404.html", impressum: "/impressum/", privacy: "/privacy/",
+  data: "/data/", datalist: "/data/finds/",
 };
+// Entity pages have uuid paths: take the first page of these kinds that exists in the build
+function addEntityPages(site) {
+  for (const kind of ["site", "find", "analysis", "period", "type"]) {
+    const dir = path.join(site, "id", kind);
+    if (fs.existsSync(dir)) { const first = fs.readdirSync(dir).sort()[0]; if (first) KEY_PAGES[`entity-${kind}`] = `/id/${kind}/${first}/`; }
+  }
+  const pubs = path.join(site, "data", "publications");
+  if (fs.existsSync(pubs)) { const first = fs.readdirSync(pubs).filter((f) => !f.includes(".")).sort()[0]; if (first) KEY_PAGES.publication = `/data/publications/${first}/`; }
+}
 const GISCUS_EXPECTED = { repo: "lod-am/website", category: "Comments", mapping: "title" };
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml",
   ".png": "image/png", ".webp": "image/webp", ".avif": "image/avif", ".ico": "image/x-icon", ".xml": "application/xml" };
@@ -173,6 +183,7 @@ async function screenshots(browser, base, out) {
 const [cmd = "all", a1, a2] = process.argv.slice(2);
 const site = path.resolve(cmd === "screenshots" ? (a2 || "_site") : (a1 || "_site"));
 if (!fs.existsSync(path.join(site, "index.html"))) { console.error(`no built site in ${site} (run npm run build)`); process.exit(2); }
+addEntityPages(site);
 const { srv, base } = await serve(site);
 const browser = await chromium.launch();
 let failed = 0;

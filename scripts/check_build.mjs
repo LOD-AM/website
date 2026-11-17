@@ -4,6 +4,8 @@
 // - every non-draft post in content/blog/ has a page, drafts have none
 // - internal links and assets (href/src starting with "/") resolve
 // - every post page has parseable schema.org JSON-LD (BlogPosting), the home page WebSite
+// - every LOD-AM record in data/published/*.ttl (/id/<kind>/<uuid>) has its page, and the
+//   released files are downloadable under /data/
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
 
@@ -62,8 +64,24 @@ for (const file of htmlFiles(SITE)) {
   }
 }
 
+// Entity pages (website#18)
+let records = 0;
+const KINDS = ["site", "feature", "find", "analysis", "type", "period", "culture", "chronology", "region", "lab", "person", "journal"];
+if (existsSync("data/published")) {
+  for (const f of readdirSync("data/published").filter((f) => f.endsWith(".ttl"))) {
+    if (!existsSync(join(SITE, "data", f))) errors.push(`released data not downloadable: /data/${f}`);
+    const ids = new Set(readFileSync(join("data/published", f), "utf8").match(/https:\/\/lod-am\.net\/id\/[a-z]+\/[0-9a-f-]{36}(?![\w/-])/g) || []);
+    for (const iri of ids) {
+      const [kind, uuid] = iri.slice("https://lod-am.net/id/".length).split("/");
+      if (!KINDS.includes(kind)) continue;
+      records++;
+      if (!existsSync(join(SITE, "id", kind, uuid, "index.html"))) errors.push(`no page for ${iri}`);
+    }
+  }
+}
+
 if (errors.length) {
   console.error(`Build check FAILED (${errors.length}):\n- ` + [...new Set(errors)].join("\n- "));
   process.exit(1);
 }
-console.log(`Build check ok: ${posts} posts, ${links} internal links/assets checked`);
+console.log(`Build check ok: ${posts} posts, ${records} LOD-AM records with pages, ${links} internal links/assets checked`);

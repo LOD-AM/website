@@ -1,0 +1,33 @@
+---
+title: "Data · LOD-AM"
+description: "The LOD-AM knowledge graph: released data on ancient metal objects, their analyses, sites and periods."
+permalink: /data/
+eleventyNavigation:
+  key: Data
+  order: 3
+---
+<div class="reading-column ms-0">
+  <h1 class="mb-4">Data</h1>
+  {# DRAFT by Claude: the owner rewrites this intro (website#20) #}
+  <p>LOD-AM publishes its research data as Linked Open Data. Every record has its own address under <code>https://lod-am.net/id/</code>; this page lists what is released so far. The data is published one publication at a time.</p>
+  <p>How the data is modelled is documented in the <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a> (CIDOC CRM 7.1.3, Allotrope, FaBiO, Getty AAT).</p>
+
+  <h2 class="h4 mt-5">Released data</h2>
+  <ul class="entity-list">
+    {%- for d in lodam.datasets %}
+    <li>{% if d.publication %}<a href="{{ d.publication.path }}">{{ d.publication.citation }}: {{ d.publication.title }}</a>{% else %}{{ d.key }}{% endif %}
+      · <a href="{{ d.file }}">download (Turtle, {{ d.triples }} triples)</a></li>
+    {%- endfor %}
+  </ul>
+  <p class="small text-body-secondary">Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+
+  <h2 class="h4 mt-5">Browse</h2>
+  <ul class="entity-list entity-list--columns">
+    {%- for key, k in lodam.KINDS %}
+    {%- if lodam.byKind[key].length %}
+    <li><a href="/data/{{ k.slug }}/">{{ k.plural }}</a> <span class="text-body-secondary small">({{ lodam.byKind[key].length }})</span></li>
+    {%- endif %}
+    {%- endfor %}
+    <li><a href="/data/publications/">Publications</a> <span class="text-body-secondary small">({{ lodam.publications.length }})</span></li>
+  </ul>
+</div>

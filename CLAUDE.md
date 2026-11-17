@@ -42,6 +42,11 @@ remote images). Network errors there are warnings, not build failures.
 - `content/`: input dir. `content/blog/*.md` posts; `about.md`, `impressum.md`, `privacy.md`
 - `_includes/layouts/`: `base.njk`, `home.njk`, `post.njk` (post page incl. Giscus comments)
 - `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours; `_data/series.js`: blog series
+- **LOD-AM data** (website#18): `data/published/*.ttl` (publications the owner released, exported
+  from ingest), `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
+  reads them (n3) and builds one view per record; pages: `content/id/entity.njk` (`/id/<kind>/<uuid>/`),
+  `content/data/` (overview, lists, publications). Nothing on these pages may be computed from the data
+  (values as reported); `npm run check` fails if a record has no page.
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +
@@ -91,15 +96,16 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
   gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
-## Where to resume (state 2026-11-16)
+## Where to resume (state 2026-11-17)
 - Phases 1–3 of the improvement plan are done (#22–#24); privacy policy and
   Impressum updated (#27).
 - The data model is finished (knowledge-graph#23); issues updated, label `waiting-for-kg` dropped.
-- Phase 4 (#12; #14–#17) doesn't depend on the data: build the templates now. Open owner
-  input is listed in each issue (series order, ORCID, which posts get *Update:* notes; #30).
-- Phase 5 (#13; #18–#21): IRIs are `/id/<kind>/<uuid>`. Build the pipeline on the public
-  knowledge-graph data first. The research database (ingest converter output, private)
-  goes on the site only after the owner releases it; how it reaches the public build is open (#21).
+- Phase 4 (#12; #14–#17): series navigation and JSON-LD done (#15, #16); open: ORCID (optional),
+  which posts get *Update:* notes (#17); #30 postponed.
+- Phase 5 (#13; #18–#21): entity pages for the first released publication (hauptmann2002chemical,
+  owner 2026-11-17) and the Data menu are built. Further publications only with the owner's OK
+  (`data/README.md`). Open: RDF per entity + content negotiation (#19), Data page text and
+  example queries (#20), automatic rebuilds (#21, postponed).
 - Owner-side: #11 (switch the server to `deploy`, block `.git` in Caddy).
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
 - Before a public SPARQL endpoint or anything that contacts another server:
