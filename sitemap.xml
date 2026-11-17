@@ -1487,7 +1487,14 @@
 	
 		
 		<url>
-			<loc>https://lod-am.net/tags/</loc>
+			<loc>https://lod-am.net/topics/anatolia/</loc>
+			<lastmod>2026-11-17</lastmod>
+		</url>
+	
+	
+		
+		<url>
+			<loc>https://lod-am.net/topics/</loc>
 			<lastmod>2026-11-17</lastmod>
 		</url>
 	

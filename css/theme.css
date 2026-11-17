@@ -256,6 +256,17 @@ a:hover { text-decoration: underline; }
 }
 .tag--lg { font-size: 1rem; padding: 0.3em 0.85em; }
 .tag__count { opacity: 0.8; font-weight: 500; }
+/* Post type (e.g. "Case study"): plain text label, not a link, set apart from the topic chips */
+.post-type {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--lodam-ochre);
+}
+/* Topic hierarchy on /topics/ */
+.topic-tree { padding-left: 1.2rem; }
+.topic-tree li { color: var(--lodam-text-soft); margin: 0.15rem 0; }
 .tag__count::before { content: "· "; }
 
 /* Series: "Part n of m" on posts and the "Start here" box (website#15).
