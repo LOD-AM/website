@@ -36,7 +36,7 @@
 
 		<!-- schema.org metadata (JSON-LD) -->
 		{%- if isPost %}
-		<script type="application/ld+json" eleventy:ignore>{{ { title: title, description: description, tags: tags, updated: updated } | jsonLdPost(page, page.rawInput) | safe }}</script>
+		<script type="application/ld+json" eleventy:ignore>{{ { title: title, description: description, topics: topics, about: about, updated: updated } | jsonLdPost(page, page.rawInput) | safe }}</script>
 		{%- elif page.url == "/" %}
 		<script type="application/ld+json" eleventy:ignore>{{ "" | jsonLdSite | safe }}</script>
 		{%- endif %}

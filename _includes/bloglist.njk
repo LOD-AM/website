@@ -13,12 +13,11 @@
     <p class="card-text mt-2">{{ post.data.excerpt or post.data.description | truncate(200) }}</p>
     {% endif %}
   </div>
-  {%- set postTags = post.data.tags | filterTagList %}
-  {% if postTags.length %}
-  <div class="card-footer bg-transparent">
-    {% for tag in postTags %}
-    <a href="/tags/{{ tag | slugify }}/" class="tag me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
-    {% endfor %}
+  {%- set postTopics = post.data.topics | topicsOf(post.inputPath) %}
+  {% if postTopics.length or post.data.type %}
+  <div class="card-footer bg-transparent d-flex flex-wrap gap-2 align-items-center">
+    {% if post.data.type %}<span class="post-type">{{ post.data.type | postTypeLabel(post.inputPath) }}</span>{% endif %}
+    {% for t in postTopics %}<a href="{{ t.path }}" class="tag" style="{{ t.name | getTagStyle }}">{{ t.label }}</a>{% endfor %}
   </div>
   {% endif %}
 </div>

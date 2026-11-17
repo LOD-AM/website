@@ -48,5 +48,13 @@ eleventyComputed:
   </section>
   {% endfor %}
 
+  {%- set posts = collections.blog | postsAbout(record.iri) %}
+  {% if posts.length %}
+  <section class="mt-4" aria-labelledby="posts-about">
+    <h2 id="posts-about" class="h4">Blog posts about this {{ record.kindLabel | lower }}</h2>
+    <ul class="entity-list">{% for p in posts | reverse %}<li><a href="{{ p.url }}">{{ p.data.title }}</a> <span class="text-body-secondary small">({{ p.date | readableDate("dd LLLL yyyy") }})</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
   <p class="small text-body-secondary mt-5">Data released by the author under CC BY 4.0. Modelling: <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>.</p>
 </div>

@@ -17,14 +17,16 @@ eleventyNavigation:
 			{% include "start-here.njk" %}
 			<div class="card mb-4">
 				<div class="card-header">
-					<h2 class="h5 mb-0">Tags</h2>
+					<h2 class="h5 mb-0">Topics</h2>
 				</div>
 				<div class="card-body">
-					{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
-					<a href="/tags/{{ tag | slugify }}/" class="tag m-1" style="{{ tag | getTagStyle }}">
-						{{ tag }} <span class="tag__count">{{ collections[tag] | length }}</span>
-					</a>
+					{% for t in topicVocab.topics %}
+					{%- set n = collections.blog | postsWithTopic(t.name) | length %}
+					{%- if n %}
+					<a href="{{ t.path }}" class="tag m-1" style="{{ t.name | getTagStyle }}">{{ t.label }} <span class="tag__count">{{ n }}</span></a>
+					{%- endif %}
 					{% endfor %}
+					<p class="small mt-2 mb-0"><a href="/topics/">All topics</a></p>
 				</div>
 			</div>
 		</div>

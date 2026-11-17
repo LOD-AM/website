@@ -1,0 +1,12 @@
+---
+pagination:
+  data: topicVocab.topics
+  size: 1
+  alias: topic
+permalink: "{{ topic.idPath }}"
+layout: layouts/redirect.njk
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  target: "{{ topic.path }}"
+  redirectTitle: "{{ topic.label }}"
+---

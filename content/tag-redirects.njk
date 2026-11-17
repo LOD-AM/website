@@ -1,0 +1,12 @@
+---
+pagination:
+  data: tagRedirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}"
+layout: layouts/redirect.njk
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  target: "{{ r.to }}"
+  redirectTitle: "{{ r.title }}"
+---

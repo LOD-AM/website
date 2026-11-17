@@ -17,13 +17,17 @@ layout: layouts/base.njk
       </small>
     </div>
     
-    {% if tags.length %}
-    <div class="mb-3">
-      {% for tag in tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <a href="{{ tagUrl }}" class="tag me-2" style="{{ tag | getTagStyle }}">{{ tag }}</a>
-      {% endfor %}
+    {%- set postTopics = topics | topicsOf(page.inputPath) %}
+    {% if postTopics.length or type %}
+    <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+      {% if type %}<span class="post-type">{{ type | postTypeLabel(page.inputPath) }}</span>{% endif %}
+      {% for t in postTopics %}<a href="{{ t.path }}" class="tag" style="{{ t.name | getTagStyle }}">{{ t.label }}</a>{% endfor %}
     </div>
+    {% endif %}
+    {% if about and about.length %}
+    <p class="small mb-3">About:
+      {% for iri in about %}{% set r = lodam.records | recordByIri(iri, page.inputPath) %}<a href="{{ r.path }}">{{ r.label }}</a> <span class="text-body-secondary">({{ r.kindLabel | lower }})</span>{% if not loop.last %}, {% endif %}{% endfor %}
+    </p>
     {% endif %}
 
     {%- set sr = collections.blog | seriesOf(page.fileSlug) %}
