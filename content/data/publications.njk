@@ -1,0 +1,15 @@
+---
+permalink: /data/publications/
+title: "Publications · LOD-AM data"
+description: "Publications whose data is released on LOD-AM."
+---
+<div class="reading-column ms-0">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a></nav>
+  <h1 class="mb-3">Publications</h1>
+  <p class="lead">The data on this site comes from these publications, released one by one.</p>
+  <ul class="entity-list">
+    {%- for p in lodam.publications %}
+    <li><a href="{{ p.path }}">{{ p.citation }}: {{ p.title }}</a> <span class="text-body-secondary small">({{ p.finds.length }} finds, {{ p.analyses.length }} analyses)</span></li>
+    {%- endfor %}
+  </ul>
+</div>
