@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import { getTagColor, getTagStyle } from '../_data/tagColors.js';
 import series from '../_data/series.js';
 import metadata from '../_data/metadata.js';
+import topicData from '../_data/topicVocab.js';
 
 export default function(eleventyConfig) {
 	// Date filter for formatting dates with a format string
@@ -113,7 +114,7 @@ export default function(eleventyConfig) {
 			inLanguage: metadata.language,
 			datePublished: iso(page.date),
 			dateModified: iso(data.updated || page.date),
-			keywords: (data.tags || []).filter((t) => !["blog", "all"].includes(t)),
+			keywords: topicsOf(data.topics, page.inputPath).map((t) => t.label),
 			image: absolute("/img/logo.png"),
 			author: person,
 			isPartOf: s
@@ -122,6 +123,17 @@ export default function(eleventyConfig) {
 			license: "https://creativecommons.org/licenses/by/4.0/",
 		};
 		if (dois.length) obj.citation = dois.map((d) => ({ "@type": "ScholarlyArticle", "@id": d, url: d }));
+		// about: the topics (as DefinedTerms of the LOD-AM topics scheme, sameAs Wikidata where exact)
+		// and the LOD-AM records the post is about (front matter `about`)
+		const about = [
+			...topicsOf(data.topics, page.inputPath).map((t) => ({
+				"@type": "DefinedTerm", "@id": t.iri, name: t.label, url: absolute(t.path),
+				inDefinedTermSet: topicData.scheme,
+				...(t.matches.some((m) => m.kind === "exactMatch") ? { sameAs: t.matches.filter((m) => m.kind === "exactMatch").map((m) => m.iri) } : {}),
+			})),
+			...(data.about || []).map((iri) => ({ "@id": iri })),
+		];
+		if (about.length) obj.about = about;
 		return toScript(obj);
 	});
 
@@ -134,4 +146,30 @@ export default function(eleventyConfig) {
 			{ ...blog, author: { "@id": person["@id"] } },
 		],
 	}));
+
+	// Topics (website: controlled vocabulary from knowledge-graph data/vocab/topics.ttl).
+	// Unknown names stop the build, so posts can only use topics of the vocabulary.
+	function topicsOf(names, where = "") {
+		return (names || []).map((n) => {
+			const t = topicData.byName[n];
+			if (!t) throw new Error(`Unknown topic "${n}" in ${where}: use a name from data/vocab/topics.ttl (without "topic_")`);
+			return t;
+		});
+	}
+	eleventyConfig.addFilter("topicsOf", (names, where) => topicsOf(names, where));
+	eleventyConfig.addFilter("postsWithTopic", (posts, name) => (posts || []).filter((p) => (p.data.topics || []).includes(name)));
+	eleventyConfig.addFilter("postsAbout", (posts, iri) => (posts || []).filter((p) => (p.data.about || []).includes(iri)));
+	// Records named in a post's `about` must have a page (released data)
+	eleventyConfig.addFilter("recordByIri", (records, iri, where = "") => {
+		const r = (records || []).find((x) => x.iri === iri);
+		if (!r) throw new Error(`"about" in ${where} names ${iri}, which is not in the released data`);
+		return r;
+	});
+	// Post types (front matter `type`); unknown types stop the build
+	const POST_TYPES = { "case-study": "Case study" };
+	eleventyConfig.addFilter("postTypeLabel", (type, where = "") => {
+		if (!type) return "";
+		if (!POST_TYPES[type]) throw new Error(`Unknown post type "${type}" in ${where}: one of ${Object.keys(POST_TYPES).join(", ")}`);
+		return POST_TYPES[type];
+	});
 }

@@ -2,7 +2,7 @@
 title: The Vocabularies - Finding the Right Words for My Data
 description: How I chose Pleiades, PeriodO, Getty AAT, Allotrope, and FABIO for LOD-AM.
 date: 2026-06-30
-tags: ["concept", "vocabularies"]
+topics: ["controlled_vocabularies", "gazetteers"]
 ---
 
 So, I’ve got my infrastructure sorted and my ontologies in place. But ontologies alone aren’t enough—I also needed **controlled vocabularies** to fill them with meaningful, consistent data. And since my research isn’t limited to the Mediterranean or the Near East, I needed vocabularies that could handle **global coverage** while still letting me add my own terms when needed.

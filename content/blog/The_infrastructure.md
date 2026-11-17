@@ -2,7 +2,7 @@
 title: The Infrastructure - A Homelab for LOD-AM
 description: How I built LOD-AM on a budget with old hardware and free software.
 date: 2026-06-28
-tags: ["concept", "infrastructure"]
+topics: ["self_hosting", "triplestore"]
 ---
 
 So, how does LOD-AM actually run? The answer might surprise you: **under my desk**. That’s right—this entire project lives on two old Fujitsu mini PCs that I picked up second-hand for next to nothing. Welcome to my homelab.

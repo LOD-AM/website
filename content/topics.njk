@@ -1,0 +1,20 @@
+---
+title: "Topics · LOD-AM"
+description: "The LOD-AM topics: a small controlled vocabulary for the field, linked to Wikidata."
+permalink: /topics/
+---
+{%- macro tree(list) %}
+<ul class="topic-tree">
+  {%- for t in list %}
+  {%- set n = collections.blog | postsWithTopic(t.name) | length %}
+  <li><a href="{{ t.path }}">{{ t.label }}</a>{% if n %} <span class="text-body-secondary small">({{ n }})</span>{% endif %}
+    {%- if t.narrowerTopics.length %}{{ tree(t.narrowerTopics) }}{% endif %}</li>
+  {%- endfor %}
+</ul>
+{%- endmacro %}
+<div class="reading-column ms-0">
+  <h1 class="mb-3">Topics</h1>
+  <p class="lead">Posts on this site are filed under a small controlled vocabulary for the field LOD-AM works in. Each topic is linked to <a href="https://www.wikidata.org/">Wikidata</a>.</p>
+  {{ tree(topicVocab.top) }}
+  <p class="small text-body-secondary mt-4">Vocabulary: <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/data/vocab/topics.ttl">topics.ttl</a> (SKOS) in the LOD-AM knowledge graph. The number in brackets is the number of posts.</p>
+</div>

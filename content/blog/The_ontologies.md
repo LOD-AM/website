@@ -2,7 +2,7 @@
 title: The Ontologies - Choosing the Right Tools for the Job
 description: How I chose CIDOC CRM, FRBRoo, and the Allotrope Framework for LOD-AM.
 date: 2026-06-29
-tags: ["concept", "ontology"]
+topics: ["ontologies", "cidoc_crm"]
 ---
 So, I’ve got my homelab running, my website set up with Eleventy, and my triple store humming away with Fuseki. But none of that matters much if I don’t have a solid way to structure the data. That’s where the ontologies come in.
 

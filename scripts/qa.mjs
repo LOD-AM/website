@@ -34,7 +34,7 @@ try {
 
 const KEY_PAGES = {
   home: "/", blog: "/blog/", post: "/blog/The_first_example/", about: "/about/",
-  tags: "/tags/", tag: "/tags/concept/", notfound: "/404.html", impressum: "/impressum/", privacy: "/privacy/",
+  topics: "/topics/", topic: "/topics/chemical-analysis/", notfound: "/404.html", impressum: "/impressum/", privacy: "/privacy/",
   data: "/data/", datalist: "/data/finds/",
 };
 // Entity pages have uuid paths: take the first page of these kinds that exists in the build
@@ -68,7 +68,8 @@ function allPages(site) {
     for (const e of fs.readdirSync(d)) {
       const p = path.join(d, e);
       if (fs.statSync(p).isDirectory()) walk(p);
-      else if (e.endsWith(".html")) out.push("/" + path.relative(site, p).replace(/index\.html$/, ""));
+      // redirect pages (old tags, topic IRIs) navigate away at once: nothing to check there
+      else if (e.endsWith(".html") && !/http-equiv="refresh"/.test(fs.readFileSync(p, "utf8"))) out.push("/" + path.relative(site, p).replace(/index\.html$/, ""));
     }
   })(site);
   return out.sort();

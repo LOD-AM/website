@@ -2,7 +2,8 @@
 title: Becoming Operational - Arslantepe Is Online
 description: The first complete dataset is live - all finds and analyses from Arslantepe published by Hauptmann et al. 2002, as Linked Open Data.
 date: 2026-11-17
-tags: ["data", "Arslantepe"]
+topics: ["open_data", "linked_data", "chemical_analysis", "lead_isotope_analysis"]
+about: ["https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"]
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: Becoming Operational - Why I Switched from Mistral to Claude
 description: I now build LOD-AM with Claude instead of Mistral. Here is why, and how the work is split between us.
 date: 2026-11-17
-tags: ["concept", "infrastructure"]
+topics: ["research_data_management", "digital_humanities"]
 draft: false
 ---
 

@@ -1,0 +1,32 @@
+---
+pagination:
+  data: topicVocab.topics
+  size: 1
+  alias: topic
+permalink: "{{ topic.path }}"
+eleventyComputed:
+  title: "{{ topic.label }} · Topics · LOD-AM"
+  description: "Posts about {{ topic.label }} on LOD-AM."
+---
+{%- set posts = collections.blog | postsWithTopic(topic.name) %}
+<div class="reading-column ms-0">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/topics/">Topics</a>{% for b in topic.broaderTopics %} › <a href="{{ b.path }}">{{ b.label }}</a>{% endfor %}</nav>
+  <h1 class="mb-1">{{ topic.label }}</h1>
+  <p class="entity-iri mb-4"><span class="text-body-secondary">Topic ·</span> <code>{{ topic.iri }}</code></p>
+  <dl class="entity-facts mb-4">
+    {% if topic.labelDe %}<dt>German</dt><dd lang="de">{{ topic.labelDe }}</dd>{% endif %}
+    {% if topic.altLabels.length %}<dt>Also</dt><dd>{{ topic.altLabels | join(", ") }}</dd>{% endif %}
+    {% if topic.scopeNote %}<dt>Scope</dt><dd>{{ topic.scopeNote }}</dd>{% endif %}
+    {% if topic.matches.length %}<dt>Wikidata</dt><dd>{% for m in topic.matches %}{{ m.relation }} <a href="{{ m.iri }}">{{ m.label }} ({{ m.qid }})</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>{% endif %}
+    {% if topic.narrowerTopics.length %}<dt>Narrower</dt><dd>{% for t in topic.narrowerTopics %}<a href="{{ t.path }}">{{ t.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+    {% if topic.relatedTopics.length %}<dt>Related</dt><dd>{% for t in topic.relatedTopics %}<a href="{{ t.path }}">{{ t.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd>{% endif %}
+  </dl>
+  <h2 class="h4">Posts <span class="text-body-secondary fs-6">({{ posts.length }})</span></h2>
+  {% if posts.length %}
+  {% set postslist = posts %}
+  {% set headingLevel = 3 %}
+  {% include "bloglist.njk" %}
+  {% else %}
+  <p>No posts on this topic yet.</p>
+  {% endif %}
+</div>

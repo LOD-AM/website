@@ -61,10 +61,17 @@ Front matter:
 title: The Infrastructure - A Homelab for LOD-AM
 description: One sentence for lists and social previews.
 date: 2026-06-28
-tags: ["concept", "infrastructure"]   # lower case, reuse existing tags
+topics: ["self_hosting", "triplestore"]   # names from data/vocab/topics.ttl (without "topic_")
+type: case-study                      # optional post type (_config/filters.js POST_TYPES)
+about: ["https://lod-am.net/id/site/<uuid>"]   # optional: LOD-AM records the post is about
 draft: true                           # optional; drafts are left out of builds
 ---
 ```
+**Topics, not tags** (owner, 2026-11-17): posts are filed under the controlled vocabulary
+`data/vocab/topics.ttl` (SKOS, matched to Wikidata; source: knowledge-graph). An unknown topic,
+post type or `about` IRI stops the build. A new topic goes into knowledge-graph first (with its
+Wikidata id), then copy the file here. Pages: `/topics/`, `/topics/<name>/`; the topic IRIs
+`/id/topic_<name>` and the old `/tags/...` pages redirect (`_data/tagRedirects.js`).
 Series: `_data/series.js` lists the posts of a series by file name (no front matter needed);
 posts get "Part n of m", Home and Blog a "Start here" box. Add new posts of the series there.
 Every post page carries schema.org `BlogPosting` JSON-LD (built in `_config/filters.js`,

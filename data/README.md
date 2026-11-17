@@ -8,8 +8,8 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
   analyses and what they point to; checked with knowledge-graph's term check and SHACL).
   Served for download at `/data/<citation-key>.ttl`. Licence: CC BY 4.0.
   Never put anything else from ingest here: the database as a whole stays private.
-- `vocab/`: copied unchanged from `LOD-AM/knowledge-graph` (commit a63f587):
-  `data/vocab/*.ttl` (local concepts such as `:not_detected`) and `tools/chebi.tsv`,
+- `vocab/`: copied unchanged from `LOD-AM/knowledge-graph` (commit a151281 for `topics.ttl` and `wikidata.tsv`, otherwise a63f587):
+  `data/vocab/*.ttl` (local concepts such as `:not_detected`; `topics.ttl` = the blog's topics) and `tools/chebi.tsv`,
   `tools/wikidata.tsv` (verified element and nuclide ids). Copy again when they change there.
 - AAT labels for the pages: `_data/aatLabels.json` (`node scripts/aat_labels.mjs` adds missing ones).
 
