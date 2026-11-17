@@ -14,8 +14,6 @@ This is the post I’ve been waiting to write since the very beginning of LOD-AM
 
 Arslantepe has been with LOD-AM from the start. Back in July, I [picked this very paper](/blog/The_first_example/) as my test case—because it throws pretty much every modelling problem of legacy data at you: fragments without types, one artifact with two samples, "not detected" values, and three different ID systems. It was a minefield. Now it’s no longer a test case. It’s the real thing.
 
-**[Your story: what did it feel like to see the first entity page live?]**
-
 ### What’s in it
 
 We collected the Arslantepe data directly from the publication and modelled it following the [conventions](/blog/Becoming_operational_Conventions/) and [vocabularies](/blog/Becoming_operational_Vocabularies/) from this series. Here’s what you get:
@@ -38,7 +36,7 @@ Every record has its own IRI under `https://lod-am.net/id/`. So you can cite and
 
 ### A word of thanks
 
-I’m really proud of this one. Getting here meant many evenings of checking types, contexts, periods and values, and deciding, again and again, what the publication actually says. And I have to say it: I’m impressed by Claude’s performance along the way. It turned my decisions into a data model, a conversion and these pages, it caught inconsistencies I would have overlooked, and it never got tired of yet another round of checks. For a free-time project like mine, that made all the difference.
+I’m really proud of this one. Getting here meant many evenings of checking types, contexts, periods and values, and deciding, again and again, what the publication actually says. And I have to say it: I’m impressed by Claude’s performance along the way. It turned my decisions into a data model, a conversion and these pages, it caught inconsistencies I would have overlooked, and it never got tired of yet another round of checks. For a free-time project like mine, that made all the difference. But enough, that already sounds like advertisement, but it really worked....
 
 ### This is only the beginning
 
