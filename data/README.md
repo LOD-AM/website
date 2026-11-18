@@ -4,7 +4,7 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
 
 - `published/<citation-key>.ttl`: the records of one publication the owner **released**
   for the website, exported from the private `LOD-AM/ingest` with
-  `scripts/export_publication.sh <citation-key>` (only that publication's finds and
+  `scripts/rdf/export_publication.sh <citation-key>` (only that publication's finds and
   analyses and what they point to; checked with knowledge-graph's term check and SHACL).
   Served for download at `/data/<citation-key>.ttl`. Licence: CC BY 4.0.
   Never put anything else from ingest here: the database as a whole stays private.
@@ -15,6 +15,6 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
 
 ## Adding a released publication
 1. Owner's OK; ingest `docs/decisions.md` lists it.
-2. In ingest: `scripts/materialize.sh`, then `scripts/export_publication.sh <citation-key>`.
+2. In ingest: `scripts/rdf/materialize.sh`, then `scripts/rdf/export_publication.sh <citation-key>`.
 3. Copy `out/published/<citation-key>.ttl` here into `published/`, run
    `NODE_USE_ENV_PROXY=1 node scripts/aat_labels.mjs`, build and `npm run check` (every record needs its page).
