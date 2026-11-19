@@ -1,0 +1,41 @@
+---
+pagination:
+  data: lodam.publications
+  size: 1
+  alias: pub
+permalink: "{{ pub.path }}analyses/"
+eleventyComputed:
+  title: "Analyses in {{ pub.citation | safe }} · LOD-AM"
+  description: "All analyses of {{ pub.citation | safe }} as reported: chemical composition and lead isotope ratios."
+---
+<div class="entity entity--full">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › <a href="/data/publications/">Publications</a> › <a href="{{ pub.path }}">{{ pub.citation }}</a></nav>
+  {%- set entity = { kindLabel: "Analyses of a publication", label: "Analyses in " + pub.citation, summary: [pub.title] } %}
+  {% include "lodam/header.njk" %}
+
+  <p class="reading-column ms-0">The values are those reported in the publication, one row per analysis. Each row links to the
+  analysis and to the analysed object. Nothing has been calculated, converted or rounded.</p>
+
+  {%- set c = pub.results.composition %}
+  {% if c.count %}
+  <section class="mt-4" aria-labelledby="r-composition">
+    <h2 id="r-composition" class="h4">Chemical composition <span class="text-body-secondary fs-6">({{ c.count }})</span></h2>
+    <p class="small text-body-secondary">Mass fractions{% if c.units.length == 1 %} in {{ c.units[0] }}{% endif %}. “&lt; x” = below x;
+    “n.d.” = not detected (looked for, not found); empty = not analysed. Copper is not given for copper-base objects.</p>
+    {%- set t = c %}{% set tid = "r-composition" %}
+    {% include "lodam/table.njk" %}
+  </section>
+  {% endif %}
+
+  {%- set r = pub.results.ratios %}
+  {% if r.count %}
+  <section class="mt-5" aria-labelledby="r-ratios">
+    <h2 id="r-ratios" class="h4">Lead isotope ratios <span class="text-body-secondary fs-6">({{ r.count }})</span></h2>
+    <p class="small text-body-secondary">Ratios as reported (dimensionless).</p>
+    {%- set t = r %}{% set tid = "r-ratios" %}
+    {% include "lodam/table.njk" %}
+  </section>
+  {% endif %}
+
+  <p class="small text-body-secondary mt-5">Data released by the author under CC BY 4.0. Download: <a href="/data/{{ pub.key }}.ttl">{{ pub.key }}.ttl</a> (Turtle).</p>
+</div>

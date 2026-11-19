@@ -44,7 +44,7 @@ function addEntityPages(site) {
     if (fs.existsSync(dir)) { const first = fs.readdirSync(dir).sort()[0]; if (first) KEY_PAGES[`entity-${kind}`] = `/id/${kind}/${first}/`; }
   }
   const pubs = path.join(site, "data", "publications");
-  if (fs.existsSync(pubs)) { const first = fs.readdirSync(pubs).filter((f) => !f.includes(".")).sort()[0]; if (first) KEY_PAGES.publication = `/data/publications/${first}/`; }
+  if (fs.existsSync(pubs)) { const first = fs.readdirSync(pubs).filter((f) => !f.includes(".")).sort()[0]; if (first) { KEY_PAGES.publication = `/data/publications/${first}/`; KEY_PAGES["publication-analyses"] = `/data/publications/${first}/analyses/`; } }
 }
 const GISCUS_EXPECTED = { repo: "lod-am/website", category: "Comments", mapping: "title" };
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml",

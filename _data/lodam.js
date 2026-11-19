@@ -203,6 +203,34 @@ function contextOf(find) {
 	const phases = [...new Set([...features, ...atSite].flatMap((c) => iris(c, P("crm", "P8i_witnessed"))))];
 	return { features, sites, phases, withoutFeature: features.length === 0 };
 }
+// Results of an analysis (has output): element mass fractions and lead isotope ratios, each value
+// as reported: the number, "< x" (upper limit), "not detected", or "–"
+function resultsOf(analysis) {
+	const elementRows = [], ratioRows = [];
+	for (const m of iris(analysis, P("afx", "AFX_0000395"))) {
+		const analyte = first(m, P("afx", "AFX_0002816"));
+		const value = first(m, P("qudt", "numericValue"));
+		const max = iris(m, P("afx", "AFX_0000331")).map((x) => first(x, P("qudt", "numericValue")))[0];
+		const notDetected = iris(m, P("crm", "P2_has_type")).includes(ID + "not_detected");
+		const shown = value != null ? { text: value, num: true } : max != null ? { text: `< ${max}`, num: true } : notDetected ? { text: "not detected", note: true } : { text: "–" };
+		const unit = first(m, P("qudt", "unit"));
+		if (types(m).includes(P("afr", "AFR_0002368"))) {
+			const ref = first(m, P("afx", "AFX_0001550"));
+			const key = `${wikidata.get(analyte) || curie(analyte)} / ${wikidata.get(ref) || curie(ref)}`;
+			ratioRows.push({ key, sort: key, shown, cells: [{ text: key }, shown] });
+		} else {
+			const e = elements.get(analyte);
+			const unitText = UNIT_LABELS[unit] || (unit ? curie(unit) : "");
+			elementRows.push({ key: analyte, sort: e ? e.order : 999, shown, unit: unitText,
+				head: e ? { text: e.symbol, title: e.label, href: analyte, external: true } : link(analyte),
+				cells: [e ? { text: e.symbol, title: e.label, href: analyte, external: true } : link(analyte), shown, { text: unitText }] });
+		}
+	}
+	elementRows.sort((a, b) => a.sort - b.sort);
+	ratioRows.sort((a, b) => collator.compare(a.sort, b.sort));
+	return { elementRows, ratioRows };
+}
+
 // Analyses of a find: sampling events (O3) of the find or its parts → sample (O5) → analysis (input)
 function analysesOf(find) {
 	const sampled = [find, ...iris(find, P("crm", "P46_is_composed_of"))];
@@ -322,27 +350,12 @@ function makeView(iri, kind) {
 		fact("Carried out by", use(P("crm", "P14_carried_out_by")).map(val));
 		techFact("Sample", samples.map((s) => ({ text: labelOf(s) || curie(s) })));
 		// Results (has output): element mass fractions and lead isotope ratios
-		const outputs = use(P("afx", "AFX_0000395")).map((o) => o.value);
-		const elementRows = [], ratioRows = [];
-		for (const m of outputs) {
-			const t = types(m);
-			const analyte = first(m, P("afx", "AFX_0002816"));
-			const value = first(m, P("qudt", "numericValue"));
-			const max = iris(m, P("afx", "AFX_0000331")).map((x) => first(x, P("qudt", "numericValue")))[0];
-			const notDetected = iris(m, P("crm", "P2_has_type")).includes(ID + "not_detected");
-			const shown = value != null ? { text: value, num: true } : max != null ? { text: `< ${max}`, num: true } : notDetected ? { text: "not detected", note: true } : { text: "–" };
-			if (t.includes(P("afr", "AFR_0002368"))) {
-				const ref = first(m, P("afx", "AFX_0001550"));
-				ratioRows.push({ sort: `${wikidata.get(analyte)}/${wikidata.get(ref)}`, cells: [{ text: `${wikidata.get(analyte) || curie(analyte)} / ${wikidata.get(ref) || curie(ref)}` }, shown] });
-			} else {
-				const e = elements.get(analyte);
-				elementRows.push({ sort: e ? e.order : 999, cells: [e ? { text: e.symbol, title: e.label, href: analyte, external: true } : link(analyte), shown, { text: UNIT_LABELS[first(m, P("qudt", "unit"))] || (first(m, P("qudt", "unit")) ? curie(first(m, P("qudt", "unit"))) : "") }] });
-			}
-		}
-		if (elementRows.length) sections.push({ heading: "Composition", caption: "Mass fractions as reported in the publication; “< x” = below x; “not detected” = looked for, not found. Copper is not given for copper-base objects; other elements not listed were not analysed.", table: { head: ["Element", "Value", "Unit"], numeric: [1], rows: elementRows.sort((a, b) => a.sort - b.sort).map((r) => r.cells) } });
+		used.add(P("afx", "AFX_0000395"));
+		const { elementRows, ratioRows } = resultsOf(iri);
+		if (elementRows.length) sections.push({ heading: "Composition", caption: "Mass fractions as reported in the publication; “< x” = below x; “not detected” = looked for, not found. Copper is not given for copper-base objects; other elements not listed were not analysed.", table: { head: ["Element", "Value", "Unit"], numeric: [1], rows: elementRows.map((r) => r.cells) } });
 		summary = [[elementRows.length && "Chemical composition", ratioRows.length && "Lead isotope ratios"].filter(Boolean).join(", "),
 			ctx.map(shortContext).join("; "), short(get("Dated by its context to")), short(get("Carried out by"))];
-		if (ratioRows.length) sections.push({ heading: "Lead isotope ratios", caption: "Ratios as reported (dimensionless).", table: { head: ["Ratio", "Value"], numeric: [1], rows: ratioRows.sort((a, b) => collator.compare(a.sort, b.sort)).map((r) => r.cells) } });
+		if (ratioRows.length) sections.push({ heading: "Lead isotope ratios", caption: "Ratios as reported (dimensionless).", table: { head: ["Ratio", "Value"], numeric: [1], rows: ratioRows.map((r) => r.cells) } });
 	}
 
 	if (kind === "site" || kind === "feature" || kind === "region") {
@@ -447,6 +460,45 @@ for (const s of out.keys()) {
 records.sort((a, b) => collator.compare(a.label, b.label));
 const byKind = Object.fromEntries(Object.keys(KINDS).map((k) => [k, records.filter((r) => r.kind === k)]));
 
+// All analyses of a publication as published (planning#10): one row per analysis, one column
+// per element or ratio that occurs; an empty cell = not analysed. Values exactly as on the
+// analysis pages, nothing computed.
+function resultsTables(analyses) {
+	const num = (a) => first(a, P("dcterms", "identifier")) || labelOf(a) || a;
+	const rows = analyses.map((a) => ({ a, r: resultsOf(a) })).sort((x, y) => collator.compare(num(x.a), num(y.a)));
+	const object = (a) => objsOfAnalysis(a).map((f) => ({ ...link(f), text: numberOf(f) || link(f).text, title: labelOf(f) || undefined }));
+	const build = (pick, headOf) => {
+		const withData = rows.filter((x) => pick(x.r).length);
+		const cols = new Map();
+		for (const x of withData) for (const c of pick(x.r)) if (!cols.has(c.key)) cols.set(c.key, c);
+		const order = [...cols.values()].sort((a, b) => (typeof a.sort === "number" ? a.sort - b.sort : collator.compare(a.sort, b.sort)));
+		const units = [...new Set(order.map((c) => c.unit).filter(Boolean))];
+		return {
+			head: ["Analysis", "Object", ...order.map(headOf)],
+			numeric: order.map((_, i) => i + 2),
+			units,
+			count: withData.length,
+			rows: withData.map((x) => [
+				{ ...link(x.a), text: num(x.a), title: labelOf(x.a) || undefined },
+				cell(object(x.a)),
+				...order.map((c) => {
+					const v = pick(x.r).find((y) => y.key === c.key)?.shown || { text: "" };
+					// "not detected" as "n.d." in these dense tables (explained in the caption)
+					return v.text === "not detected" ? { text: "n.d.", note: true, title: "not detected" } : v;
+				}),
+			]),
+		};
+	};
+	return {
+		composition: build((r) => r.elementRows, (c) => c.head),
+		ratios: build((r) => r.ratioRows, (c) => ({ text: c.key })),
+	};
+}
+// The object(s) an analysis sampled (analysis → sample → sampling event → object)
+function objsOfAnalysis(a) {
+	return [...new Set(iris(a, P("afx", "AFX_0000399")).flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))))];
+}
+
 // Publications (page /data/publications/<citation key>/)
 const publications = [...out.keys()].filter(isPublication).map((iri) => {
 	const docs = subs(iri, P("crm", "P70i_is_documented_in")).filter((x) => kindOf(x));
@@ -462,6 +514,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		finds: sortLinks(docs.filter((x) => kindOf(x) === "find").map(link)),
 		findsTable: findsTable(docs.filter((x) => kindOf(x) === "find")), findsCaption: FINDS_CAPTION,
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
+		results: resultsTables(docs.filter((x) => kindOf(x) === "analysis")),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));

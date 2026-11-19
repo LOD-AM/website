@@ -286,6 +286,7 @@ a:hover { text-decoration: underline; }
 /* Entity pages (/id/...; website#18): facts as a two-column list, results as tables.
    A slightly lighter surface for tables keeps dense numbers readable on the dark page. */
 .entity { max-width: 60rem; }
+.entity--full { max-width: none; }
 /* Record header (docs/components.md): kind, title, summary line */
 .entity-kind {
   font-size: 0.8rem;
@@ -332,6 +333,11 @@ a:hover { text-decoration: underline; }
 .entity-table--wide { width: 100%; }
 .entity-table--wide td, .entity-table--wide th { vertical-align: top; }
 .entity-table--wide thead th, .entity-table--wide tbody th { white-space: nowrap; }
+/* Tables of values per analysis (planning#10): the analysis number stays visible while the
+   table scrolls sideways on narrow screens */
+.entity-table--values td { white-space: nowrap; }
+.entity-table--values tbody th { position: sticky; left: 0; z-index: 1; }
+.entity-table--values thead th:first-child { position: sticky; left: 0; z-index: 2; }
 
 /* Data dropdown in the navbar */
 .site-nav .dropdown-menu {

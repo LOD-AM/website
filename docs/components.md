@@ -49,6 +49,14 @@ number, and the first cell is the row header. A column that only repeats the pag
 site on a site page) is left out. Values come from the data; the phase is the phase of the find's
 context. The tables don't sort or filter on the client: the page works without JavaScript.
 
+## Analyses of a publication
+`/data/publications/<key>/analyses/` (`content/data/publication-analyses.njk`, `resultsTables()` in
+`_data/lodam.js`) has one table for chemical composition and one for lead isotope ratios. There is one
+row per analysis, and the columns are the elements or ratios that occur. The values come from the same
+function as the analysis pages (`resultsOf()`), and an empty cell means not analysed. In these dense
+tables only, "not detected" is written "n.d." (explained in the caption, full term as a tooltip). The
+analysis number stays visible while the table scrolls sideways.
+
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what
 linked-data users need but researchers don't look for first: the IRI (breaks after each `/` on
