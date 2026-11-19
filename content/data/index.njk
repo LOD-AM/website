@@ -1,25 +1,77 @@
 ---
 title: "Data · LOD-AM"
-description: "The LOD-AM knowledge graph: released data on ancient metal objects, their analyses, sites and periods."
+description: "Archaeometallurgical data on copper-base objects as Linked Open Data: finds, contexts, chemical and lead isotope analyses, released one publication at a time."
 permalink: /data/
 eleventyNavigation:
   key: Data
   order: 3
 ---
+{#- DRAFT by Claude in an academic register (planning#15): the owner reviews the wording. -#}
 <div class="reading-column ms-0">
   <h1 class="mb-4">Data</h1>
-  {# DRAFT by Claude: the owner rewrites this intro (website#20) #}
-  <p>LOD-AM publishes its research data as Linked Open Data. Every record has its own address under <code>https://lod-am.net/id/</code>; this page lists what is released so far. The data is published one publication at a time.</p>
-  <p>How the data is modelled is documented in the <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a> (CIDOC CRM 7.1.3, Allotrope, FaBiO, Getty AAT).</p>
 
-  <h2 class="h4 mt-5">Released data</h2>
+  <p class="lead">LOD-AM publishes archaeometallurgical data on copper-base objects from Eurasia as Linked Open Data.
+  The data are compiled from published sources and comprise the objects, their archaeological contexts and dating,
+  and the chemical and lead isotope analyses reported for them.</p>
+
+  <h2 class="h4 mt-5">Scope of the released data</h2>
+  <p>The data are released one publication at a time. A release comprises the finds and analyses reported in that
+  publication, together with the sites, contexts, phases, typological classes, laboratories and bibliographic records
+  to which they refer. The underlying research database contains further sites and publications, which will be released
+  successively. The present selection is therefore neither complete nor representative, and it should not be used
+  for quantitative comparisons beyond the publications listed below.</p>
+
+  <h2 class="h4 mt-5">Presentation of values</h2>
   <ul class="entity-list">
-    {%- for d in lodam.datasets %}
-    <li>{% if d.publication %}<a href="{{ d.publication.path }}">{{ d.publication.citation }}: {{ d.publication.title }}</a>{% else %}{{ d.key }}{% endif %}
-      · <a href="{{ d.file }}">download (Turtle, {{ d.triples }} triples)</a></li>
+    <li>All values are reproduced as reported in the source publication, including values such as 0 or 0.0001.
+      No values have been recalculated, normalised, rounded or corrected, and none are given that the source does not report.</li>
+    <li>Elements reported as not detected are recorded as such and are distinguished from elements that were not
+      analysed. Detection limits are given only where the source reports them (“&lt; x”).</li>
+    <li>Copper values of copper-base objects are not included.</li>
+    <li>A find is dated by its archaeological context (feature or site), not individually.</li>
+  </ul>
+  <p>The data model follows CIDOC CRM 7.1.3 with the extensions CRMsci and CRMarchaeo; analytical results are
+  expressed with the Allotrope Foundation Ontologies and bibliographic records with FaBiO. Object, site and feature
+  types are linked to the Getty Art &amp; Architecture Thesaurus. The modelling rules are documented in the
+  <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>. Every record
+  has a persistent IRI under <code>https://lod-am.net/id/</code> and can be downloaded in Turtle and JSON-LD from its page.</p>
+
+  <h2 class="h4 mt-5" id="released">Released data</h2>
+  <div class="table-responsive">
+    <table class="table table-sm entity-table entity-table--wide" aria-labelledby="released">
+      <thead><tr><th scope="col">Publication</th><th scope="col">Released</th><th scope="col" class="text-end">Finds</th><th scope="col" class="text-end">Analyses</th><th scope="col">Download</th></tr></thead>
+      <tbody>
+        {%- for d in lodam.datasets %}
+        <tr>
+          <th scope="row">{% if d.publication %}<a href="{{ d.publication.path }}">{{ d.publication.citation }}</a>{% else %}{{ d.key }}{% endif %}</th>
+          <td>{{ d.released or "–" }}</td>
+          <td class="text-end entity-num">{{ d.finds }}</td>
+          <td class="text-end entity-num">{% if d.publication and d.analyses %}<a href="{{ d.publication.path }}analyses/">{{ d.analyses }}</a>{% else %}{{ d.analyses }}{% endif %}</td>
+          <td><a href="{{ d.file }}" download>{{ d.key }}.ttl</a> <span class="text-body-secondary small">(Turtle, {{ d.triples }} triples)</span></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="h4 mt-5">Licence and citation</h2>
+  <p>The data are released under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International licence (CC BY 4.0)</a>.
+  When using them, please cite the individual records (a citation is given on each record page) or the dataset, and the source publications.
+  {%- if metadata.release.version %} The current release is version {{ metadata.release.version }}{% if metadata.release.doi %},
+  <a href="https://doi.org/{{ metadata.release.doi }}">doi:{{ metadata.release.doi }}</a>{% endif %}.{% else %}
+  Versioned releases with a DOI are in preparation.{% endif %}</p>
+
+  <h2 class="h4 mt-5">Corrections</h2>
+  <p>Errors in the data, whether in transcription, attribution or modelling, can be reported to
+  <a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a>. Please name the record (its IRI) and,
+  where possible, the page or table of the source publication. Corrections are listed in the changelog below.</p>
+
+  <h2 class="h4 mt-5">Changelog</h2>
+  <ul class="entity-list">
+    {%- for r in lodam.dataReleases %}
+    <li><strong>{{ r.date }}</strong>: {{ r.changes }}</li>
     {%- endfor %}
   </ul>
-  <p class="small text-body-secondary">Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 
   <h2 class="h4 mt-5">Browse</h2>
   <ul class="entity-list entity-list--columns">

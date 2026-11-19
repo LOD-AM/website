@@ -46,6 +46,8 @@
 		<script type="application/ld+json" eleventy:ignore>{{ { title: title, description: description, topics: topics, about: about, updated: updated } | jsonLdPost(page, page.rawInput) | safe }}</script>
 		{%- elif page.url == "/" %}
 		<script type="application/ld+json" eleventy:ignore>{{ "" | jsonLdSite | safe }}</script>
+		{%- elif page.url == "/data/" %}
+		<script type="application/ld+json" eleventy:ignore>{{ lodam | jsonLdDataset | safe }}</script>
 		{%- endif %}
 
 		<!-- Favicon -->

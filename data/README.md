@@ -18,3 +18,5 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
 2. In ingest: `scripts/rdf/materialize.sh`, then `scripts/rdf/export_publication.sh <citation-key>`.
 3. Copy `out/published/<citation-key>.ttl` here into `published/`, run
    `NODE_USE_ENV_PROXY=1 node scripts/aat_labels.mjs`, build and `npm run check` (every record needs its page).
+4. Add an entry to `_data/dataReleases.js` (date, citation key, what changed). That file is the data changelog
+   on `/data/`, and `npm run check` fails without the entry. Record corrections to released data there too.

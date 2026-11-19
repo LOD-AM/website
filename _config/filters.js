@@ -147,6 +147,41 @@ export default function(eleventyConfig) {
 		],
 	}));
 
+	// schema.org Dataset for /data/ (planning#15, for dataset search engines). Only values that
+	// are in the data or the release metadata; nothing is derived from the data.
+	eleventyConfig.addFilter("jsonLdDataset", (lodam) => {
+		const rel = metadata.release || {};
+		const dates = lodam.dataReleases.map((r) => r.date).sort();
+		const obj = {
+			"@context": "https://schema.org",
+			"@type": "Dataset",
+			"@id": absolute("/data/") + "#dataset",
+			name: "LOD-AM: archaeometallurgical data on copper-base objects (released publications)",
+			description: "Linked Open Data on ancient copper-base metal objects, their contexts and their chemical and lead isotope analyses, compiled from published sources and released one publication at a time. Values are given as reported in the source publications. Modelled in CIDOC CRM 7.1.3 with CRMsci and CRMarchaeo, the Allotrope Foundation Ontologies and FaBiO.",
+			url: absolute("/data/"),
+			license: "https://creativecommons.org/licenses/by/4.0/",
+			isAccessibleForFree: true,
+			inLanguage: metadata.language,
+			creator: person,
+			publisher: person,
+			keywords: ["archaeometallurgy", "copper", "chemical composition", "lead isotopes", "Linked Open Data", "CIDOC CRM"],
+			...(dates.length ? { datePublished: dates[0], dateModified: dates[dates.length - 1] } : {}),
+			...(rel.version ? { version: rel.version } : {}),
+			...(rel.doi ? { identifier: `https://doi.org/${rel.doi}`, sameAs: `https://doi.org/${rel.doi}` } : {}),
+			distribution: lodam.datasets.map((d) => ({
+				"@type": "DataDownload", name: `${d.key}.ttl`, contentUrl: absolute(d.file), encodingFormat: "text/turtle",
+			})),
+			citation: lodam.publications.map((p) => ({
+				"@type": "ScholarlyArticle", name: p.title, ...(p.doi ? { "@id": `https://doi.org/${p.doi}`, url: `https://doi.org/${p.doi}` } : {}),
+			})),
+			spatialCoverage: lodam.siteCoords.filter((x) => x.lat && x.lon).map((x) => ({
+				"@type": "Place", name: x.label, url: x.iri,
+				geo: { "@type": "GeoCoordinates", latitude: Number(x.lat), longitude: Number(x.lon) },
+			})),
+		};
+		return toScript(obj);
+	});
+
 	// Topics (website: controlled vocabulary from knowledge-graph data/vocab/topics.ttl).
 	// Unknown names stop the build, so posts can only use topics of the vocabulary.
 	function topicsOf(names, where = "") {

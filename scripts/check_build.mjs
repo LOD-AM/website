@@ -99,6 +99,24 @@ if (existsSync("data/published")) {
   }
 }
 
+// Data page (planning#15): every released file is in the data changelog, and the
+// schema.org Dataset is valid JSON naming every download
+{
+  const { default: releases } = await import(new URL("../_data/dataReleases.js", import.meta.url));
+  const released = new Set(releases.flatMap((r) => r.publications));
+  for (const f of existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : []) {
+    if (!released.has(f.replace(/\.ttl$/, ""))) errors.push(`data/published/${f} has no entry in _data/dataReleases.js`);
+  }
+  const html = readFileSync(join(SITE, "data", "index.html"), "utf8");
+  const m = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  try {
+    const ds = JSON.parse(m[1]);
+    if (ds["@type"] !== "Dataset" || !ds.name || !ds.description || !ds.license) errors.push("/data/: Dataset JSON-LD lacks @type, name, description or license");
+    for (const f of readdirSync("data/published").filter((f) => f.endsWith(".ttl")))
+      if (!ds.distribution?.some((d) => d.contentUrl.endsWith(`/data/${f}`))) errors.push(`/data/: Dataset JSON-LD has no distribution for ${f}`);
+  } catch (e) { errors.push(`/data/: no valid Dataset JSON-LD (${e.message})`); }
+}
+
 if (errors.length) {
   console.error(`Build check FAILED (${errors.length}):\n- ` + [...new Set(errors)].join("\n- "));
   process.exit(1);

@@ -11,6 +11,7 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { Parser, Writer } from "n3";
 import metadata from "./metadata.js";
+import dataReleases from "./dataReleases.js";
 
 const aatLabels = JSON.parse(readFileSync("_data/aatLabels.json", "utf8"));
 
@@ -597,6 +598,20 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));
 
-for (const d of datasets) d.publication = publications.find((p) => p.key === d.key) || null;
+for (const d of datasets) {
+	d.publication = publications.find((p) => p.key === d.key) || null;
+	// First release of this publication (the oldest changelog entry naming it)
+	d.released = [...dataReleases].reverse().find((r) => r.publications.includes(d.key))?.date || null;
+	const docs = d.publication ? subs(d.publication.iri, P("crm", "P70i_is_documented_in")) : [];
+	d.finds = docs.filter((x) => kindOf(x) === "find").length;
+	d.analyses = docs.filter((x) => kindOf(x) === "analysis").length;
+}
+// Sites with their coordinates as in the data (schema.org Dataset spatialCoverage)
+const siteCoords = byKind.site.map((r) => {
+	const pl = iris(r.iri, P("crm", "P53_has_former_or_current_location"))[0];
+	const wkt = pl ? iris(pl, P("geo", "hasGeometry")).map((g) => first(g, P("geo", "asWKT")))[0] || "" : "";
+	const m = wkt.match(/POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)/i);
+	return { iri: r.iri, label: r.label, lon: m ? m[1] : null, lat: m ? m[2] : null };
+});
 
-export default { ID, KINDS, records, byKind, publications, datasets, turtleOf, jsonldOf };
+export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, turtleOf, jsonldOf };
