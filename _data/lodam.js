@@ -9,7 +9,8 @@
 // so nothing is silently dropped.
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { Parser } from "n3";
+import { Parser, Writer } from "n3";
+import metadata from "./metadata.js";
 
 const aatLabels = JSON.parse(readFileSync("_data/aatLabels.json", "utf8"));
 
@@ -452,10 +453,87 @@ function makeView(iri, kind) {
 	return { iri, kind, kindLabel: KINDS[kind].singular, path: pathOf(iri), label, summary, description, facts, tech, sections };
 }
 
+// --- Per-record files and citation (planning#13) -------------------------------------------
+// A record's own triples: the record and its helper nodes, whose IRIs continue the record's IRI
+// (<record>/sample, <record>/as, <record>/time_span, ...). Same data as its page.
+const ownQuads = (iri) => quads.filter((q) => q.subject.value === iri || q.subject.value.startsWith(iri + "/"));
+function usedPrefixes(qs) {
+	const terms = qs.flatMap((q) => [q.subject, q.predicate, q.object]).filter((t) => t.termType === "NamedNode").map((t) => t.value);
+	const pre = { "": ID };
+	for (const [p, ns] of Object.entries(NS)) if (terms.some((t) => t.startsWith(ns))) pre[p] = ns;
+	return pre;
+}
+function turtleOf(iri) {
+	const qs = ownQuads(iri);
+	const w = new Writer({ prefixes: usedPrefixes(qs) });
+	w.addQuads(qs);
+	let text = "";
+	w.end((err, result) => { if (err) throw err; text = result; });
+	return `# ${labelOf(iri) || iri}\n# ${iri} · LOD-AM (${metadata.url}) · CC BY 4.0\n\n${text}`;
+}
+// JSON-LD with the same prefixes as the Turtle file: one node per subject, values as
+// {"@id"} or {"@value", "@language" | "@type"}
+function jsonldOf(iri) {
+	const qs = ownQuads(iri);
+	const pre = usedPrefixes(qs);
+	const short = (t) => { for (const [p, ns] of Object.entries(pre)) if (p && t.startsWith(ns)) return `${p}:${t.slice(ns.length)}`; return t; };
+	const nodes = new Map();
+	for (const q of qs) {
+		const id = q.subject.value;
+		if (!nodes.has(id)) nodes.set(id, { "@id": id });
+		const n = nodes.get(id);
+		if (q.predicate.value === NS.rdf + "type" && q.object.termType === "NamedNode") { (n["@type"] ||= []).push(short(q.object.value)); continue; }
+		const o = q.object.termType === "Literal"
+			? (q.object.language ? { "@value": q.object.value, "@language": q.object.language }
+				: q.object.datatype && q.object.datatype.value !== NS.xsd + "string" ? { "@value": q.object.value, "@type": short(q.object.datatype.value) } : { "@value": q.object.value })
+			: { "@id": q.object.value };
+		(n[short(q.predicate.value)] ||= []).push(o);
+	}
+	const context = Object.fromEntries(Object.entries(pre).filter(([p]) => p));
+	return JSON.stringify({ "@context": context, "@graph": [...nodes.values()] }, null, 1) + "\n";
+}
+// "Cite this record": the LOD-AM release (version, DOI from _data/metadata.js, set at each
+// release) and the publication the values come from
+function citeOf(iri, kind) {
+	const rel = metadata.release || {};
+	const author = metadata.author.name.split(" ");
+	const family = author.pop(), given = author.join(" ");
+	const yearOf = (rel.date || new Date().toISOString()).slice(0, 4);
+	const label = labelOf(iri) || iri;
+	const pubs = iris(iri, P("crm", "P70i_is_documented_in")).filter(isPublication);
+	const source = pubs.map((p) => citation(p) + (first(p, P("prism", "doi")) ? ` (https://doi.org/${first(p, P("prism", "doi"))})` : ""));
+	const project = "LOD-AM – Linked Open Data for Ancient Metallurgy";
+	const text = `${family}, ${given} (${yearOf}): ${label}. ${KINDS[kind].singular} in ${project}`
+		+ (rel.version ? `, version ${rel.version}` : "") + `. ${iri}`
+		+ (rel.doi ? `. https://doi.org/${rel.doi}` : "")
+		+ (source.length ? `. Data from ${source.join("; ")}` : "") + ".";
+	const key = `lodam_${kind}_${iri.split("/").pop().slice(0, 8)}`;
+	const esc = (x) => x.replace(/[{}\\]/g, "");
+	const bib = [
+		`@misc{${key},`,
+		`  author       = {${family}, ${given}},`,
+		`  title        = {${esc(label)}},`,
+		`  howpublished = {${KINDS[kind].singular} in ${project}},`,
+		`  year         = {${yearOf}},`,
+		rel.version ? `  version      = {${rel.version}},` : null,
+		rel.doi ? `  doi          = {${rel.doi}},` : null,
+		`  url          = {${iri}},`,
+		source.length ? `  note         = {Data from ${esc(source.join("; "))}},` : null,
+		`}`,
+	].filter(Boolean).join("\n");
+	return { text, bibtex: bib, release: rel.version ? { version: rel.version, doi: rel.doi } : null };
+}
+
 const records = [];
 for (const s of out.keys()) {
 	const kind = kindOf(s);
-	if (kind) records.push(makeView(s, kind));
+	if (kind) {
+		const v = makeView(s, kind);
+		const base = v.path.replace(/\/$/, "");
+		v.files = { ttl: `${base}.ttl`, jsonld: `${base}.jsonld` };
+		v.cite = citeOf(s, kind);
+		records.push(v);
+	}
 }
 records.sort((a, b) => collator.compare(a.label, b.label));
 const byKind = Object.fromEntries(Object.keys(KINDS).map((k) => [k, records.filter((r) => r.kind === k)]));
@@ -521,4 +599,4 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 
 for (const d of datasets) d.publication = publications.find((p) => p.key === d.key) || null;
 
-export default { ID, KINDS, records, byKind, publications, datasets };
+export default { ID, KINDS, records, byKind, publications, datasets, turtleOf, jsonldOf };

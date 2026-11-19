@@ -7,6 +7,10 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="canonical" href="{{ page.url | htmlBaseUrl(metadata.url) }}" />
+		{%- if record and record.files %}
+		<link rel="alternate" type="text/turtle" href="{{ record.files.ttl }}">
+		<link rel="alternate" type="application/ld+json" href="{{ record.files.jsonld }}">
+		{%- endif %}
 
 		<!-- Mastodon verification -->
 		<link rel="me" href="https://archaeo.social/@FabianF">

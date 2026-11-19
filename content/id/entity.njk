@@ -42,6 +42,8 @@ eleventyComputed:
   </section>
   {% endif %}
 
+  {% include "lodam/cite.njk" %}
+
   {%- set tech = { iri: record.iri, facts: record.tech, sections: record.sections } %}
   {% include "lodam/technical.njk" %}
 

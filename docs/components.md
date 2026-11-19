@@ -16,8 +16,9 @@ where and when it is from, and where it was published. The modelling comes last.
 | 3 | **Key facts** | `_includes/lodam/facts.njk` | `<dl>` of what researchers look for, per kind |
 | 4 | Sections | `_includes/lodam/table.njk` | tables of finds and features, value tables (composition, isotope ratios), short lists; each with a caption explaining how to read it |
 | 5 | Blog posts about the record | (in the page) | posts whose `about` names the record |
-| 6 | **Technical details** | `_includes/lodam/technical.njk` | IRI, names in all languages, classes, identifiers, sample, "Other statements" |
-| 7 | Licence line | (in the page) | CC BY 4.0 and a link to the conventions |
+| 6 | **Cite and download** | `_includes/lodam/cite.njk` | citation (text, BibTeX), Turtle and JSON-LD of the record |
+| 7 | **Technical details** | `_includes/lodam/technical.njk` | IRI, names in all languages, classes, identifiers, sample, "Other statements" |
+| 8 | Licence line | (in the page) | CC BY 4.0 and a link to the conventions |
 
 ## Record header
 - **Kind**: `record.kindLabel` ("Find", "Analysis", …) above the title.
@@ -56,6 +57,15 @@ row per analysis, and the columns are the elements or ratios that occur. The val
 function as the analysis pages (`resultsOf()`), and an empty cell means not analysed. In these dense
 tables only, "not detected" is written "n.d." (explained in the caption, full term as a tooltip). The
 analysis number stays visible while the table scrolls sideways.
+
+## Cite and download
+`record.cite` (`citeOf()` in `_data/lodam.js`): author, year, label, kind, the project, the release
+version and DOI from `_data/metadata.js` → `release` (set them at each release; each release gets a
+Zenodo DOI), the IRI and the publication the values come from. Shown as text and BibTeX.
+Downloads: `/id/<kind>/<uuid>.ttl` and `.jsonld` (`content/id/entity-ttl.11ty.js`,
+`entity-jsonld.11ty.js`) hold the record and its helper nodes (IRIs that continue the record's IRI),
+the same data as the page. They are also linked in the page head (`rel="alternate"`). `npm run check`
+checks that they exist, parse and hold the right number of triples.
 
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what
