@@ -22,7 +22,7 @@ eleventyComputed:
   {%- if record.map %}
   <section class="mt-4" aria-labelledby="map-heading">
     <h2 id="map-heading" class="h4">Map</h2>
-    {%- set map = record.map %}{% set mapHeadingId = "map" %}
+    {%- set currentIri = record.iri %}
     {% include "lodam/map.njk" %}
   </section>
   {%- endif %}

@@ -84,14 +84,15 @@ Lead isotope diagrams (owner, 2026-11-19) appear on the same page and come from 
 Ratios are plotted as reported and never converted. Each point links to its analysis, with a tooltip.
 
 ## Site maps
-`_includes/lodam/map.njk` shows a static relief map with the site markers on site pages and on
-`/data/sites/`. The images come from `scripts/map/build_maps.py`, one per 1° × 1° tile that contains a
-released site (owner, 2026-11-19). They use a Copernicus GLO-90 hillshade with an earthy elevation
-tint, HydroRIVERS rivers (smoothed for drawing), and Natural Earth lakes, reservoirs and sea, with no
-borders, places or roads. `lodam.maps` in `_data/lodam.js` places the markers in percent of the image
-(equirectangular, like the image), so adding a site to an existing tile needs no new image. Markers and
-labels are HTML (readable at any width) in fixed colours, because the image is the same in both modes.
-The scale bar is true at the tile's middle latitude. Full attributions are on `/data/#map-sources`.
+One relief map of the whole area of the research database, `public/img/maps/overview.webp`
+(2048 px wide), made offline by `scripts/map/build_maps.py`. It is rendered in Web Mercator at zoom 7
+(about 0.9 km per pixel) and scaled down. It combines a Copernicus GLO-90 hillshade with an earthy tint,
+HydroRIVERS rivers and Natural Earth natural lakes and sea. There are no borders, places, roads or
+modern reservoirs. The owner chose this scale (2026-11-19): **every site page and `/data/sites/` show
+the whole area**, with all released sites; on a site page that site is highlighted
+(`_includes/lodam/map.njk`, `currentIri`). Markers are placed at build time in percent of the image by
+`lodam.maps` in `_data/lodam.js`, so releasing sites needs no new image. They are HTML in fixed colours,
+because the map is the same in both modes. Full attributions are on `/data/#map-sources`.
 
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what

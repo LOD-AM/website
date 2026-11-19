@@ -1,18 +1,24 @@
 {
- "tiles": [
-  {
-   "tile": "N38E038",
-   "src": "/img/maps/N38E038.webp",
-   "west": 38,
-   "south": 38,
-   "east": 39,
-   "north": 39,
-   "width": 939,
-   "height": 1200,
-   "kmPerDegreeLat": 110.574,
-   "kmPerDegreeLon": 87.12
-  }
- ],
+ "zoom": 7,
+ "tileSize": 256,
+ "extent": {
+  "west": 21,
+  "south": 30,
+  "east": 62,
+  "north": 53
+ },
+ "canvas": {
+  "originX": 18176,
+  "originY": 10496,
+  "width": 4096,
+  "height": 3072
+ },
+ "overview": {
+  "src": "/img/maps/overview.webp",
+  "width": 2048,
+  "height": 1536
+ },
+ "minUplandKm2": 2000,
  "sources": [
   {
    "name": "Copernicus DEM GLO-90",
@@ -26,9 +32,8 @@
   },
   {
    "name": "Natural Earth",
-   "text": "Lakes, reservoirs and sea: Natural Earth (public domain).",
+   "text": "Natural lakes and sea: Natural Earth (public domain). Reservoirs are left out.",
    "url": "https://www.naturalearthdata.com"
   }
- ],
- "minUplandKm2": 50
+ ]
 }

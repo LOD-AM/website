@@ -66,11 +66,12 @@ eleventyNavigation:
   <a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a>. Please name the record (its IRI) and,
   where possible, the page or table of the source publication. Corrections are listed in the changelog below.</p>
 
-  {%- if lodam.maps.length %}
+  {%- if lodam.maps %}
   <h2 class="h4 mt-5" id="map-sources">Map data</h2>
-  <p>The site maps show the relief and the present-day water network, without borders, settlements or roads.
-  One map is made for each 1° × 1° area that contains a released site. Rivers, lakes, reservoirs and coastlines are
-  shown as they are today, not as they were in antiquity. Sources:</p>
+  <p>The site maps show the relief and the present-day water network, without borders, settlements, roads or modern
+  reservoirs. Every site is shown on the same map of the whole area of the research database
+  ({{ lodam.maps.extent.west }}–{{ lodam.maps.extent.east }}° E, {{ lodam.maps.extent.south }}–{{ lodam.maps.extent.north }}° N). Rivers, natural lakes and coastlines are shown as they are today, not as they
+  were in antiquity. Sources:</p>
   <ul class="entity-list">
     {%- for src in lodam.mapSources %}
     <li><a href="{{ src.url }}">{{ src.name }}</a>: {{ src.text }}</li>

@@ -14,14 +14,12 @@ eleventyComputed:
   <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a></nav>
   <h1 class="mb-3">{{ k.plural }}</h1>
   <p class="lead">{{ items.length }} {{ (k.plural if items.length != 1 else k.singular) | lower }} in the released data.</p>
-  {%- if kind == "site" and lodam.maps.length %}
-  {%- for m in lodam.maps %}
-  <section class="mb-4" aria-labelledby="map-{{ m.tile }}">
-    <h2 id="map-{{ m.tile }}" class="h5">Map {{ m.extent }}</h2>
-    {%- set map = m %}{% set mapHeadingId = "map-" + m.tile %}
+  {%- if kind == "site" and lodam.maps and lodam.maps.sites.length %}
+  <section class="mb-4" aria-labelledby="map-overview">
+    <h2 id="map-overview" class="h5">Map</h2>
+    {%- set currentIri = false %}
     {% include "lodam/map.njk" %}
   </section>
-  {%- endfor %}
   <h2 class="h5">All sites</h2>
   {%- endif %}
   <ul class="entity-list">
