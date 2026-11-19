@@ -67,6 +67,16 @@ Downloads: `/id/<kind>/<uuid>.ttl` and `.jsonld` (`content/id/entity-ttl.11ty.js
 the same data as the page. They are also linked in the page head (`rel="alternate"`). `npm run check`
 checks that they exist, parse and hold the right number of triples.
 
+## Charts
+Static SVG built at build time by `_config/charts.js`, with no JavaScript and no chart library.
+Histograms of element contents (planning#23) appear on the analyses page of a publication; their data
+comes from `histogramsOf()` in `_data/lodam.js`. There is one chart per element, all on the same
+log10 axis (four bins per power of ten), with a count axis per chart. "Not detected", "< x" and 0
+are counted next to the chart, not plotted. Each bar has a native tooltip (`<title>`), each chart a
+text alternative, and a table view sits in a `<details>`. There is one mark colour per mode
+(`--lodam-chart-bar`), checked with the dataviz palette validator (lightness band for marks, 3:1 on the
+chart surface). Text uses text colours, never the mark colour.
+
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what
 linked-data users need but researchers don't look for first: the IRI (breaks after each `/` on

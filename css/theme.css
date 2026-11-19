@@ -435,6 +435,31 @@ a:hover { text-decoration: underline; }
 .entity-table--values tbody th { position: sticky; left: 0; z-index: 1; }
 .entity-table--values thead th:first-child { position: sticky; left: 0; z-index: 2; }
 
+/* Charts (planning#23): static SVG from _config/charts.js. One series per chart, so one mark
+   colour; it reaches 3:1 on the chart surface and stays inside the lightness band for marks
+   in each mode (checked with the dataviz palette validator). Text uses text colours, never
+   the mark colour; grid and axes are recessive hairlines. */
+:root, [data-bs-theme=dark] { --lodam-chart-bar: #BA8633; }  /* 3.9:1 on #3A2E22 */
+[data-bs-theme=light] { --lodam-chart-bar: #85570F; }         /* 4.9:1 on #EBE3D5 */
+.chart-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+}
+.chart-figure {
+  margin: 0;
+  padding: 0.75rem 0.75rem 0.25rem;
+  background: var(--lodam-charcoal);
+  border-radius: 0.375rem;
+}
+.chart-figure figcaption { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; }
+.chart { display: block; width: 100%; height: auto; }
+.chart-bar { fill: var(--lodam-chart-bar); }
+.chart-bar:hover { fill: var(--lodam-chalk-white); }
+.chart-grid { stroke: rgba(var(--lodam-line-rgb), 0.15); stroke-width: 1; }
+.chart-axis { stroke: rgba(var(--lodam-line-rgb), 0.45); stroke-width: 1; }
+.chart-tick { fill: var(--lodam-text-secondary); font-size: 11px; font-variant-numeric: tabular-nums; }
+
 /* Data dropdown in the navbar */
 .site-nav .dropdown-menu {
   --bs-dropdown-bg: var(--lodam-charcoal);

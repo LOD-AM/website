@@ -6,6 +6,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 import pluginShortcodes from "./_config/shortcodes.js";
+import pluginCharts from "./_config/charts.js";
 import metadata from "./_data/metadata.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
@@ -92,6 +93,7 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(pluginShortcodes);
+  eleventyConfig.addPlugin(pluginCharts);
   eleventyConfig.addPlugin(IdAttributePlugin);
 
 };

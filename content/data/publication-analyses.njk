@@ -16,6 +16,43 @@ eleventyComputed:
   <p class="reading-column ms-0">The values are those reported in the publication, one row per analysis. Each row links to the
   analysis and to the analysed object. Nothing has been calculated, converted or rounded.</p>
 
+  {%- set hg = pub.histograms %}
+  {% if hg %}
+  <section class="mt-4" aria-labelledby="r-distribution">
+    <h2 id="r-distribution" class="h4">Distribution of element contents</h2>
+    <p class="small text-body-secondary reading-column ms-0">One histogram per element: the number of analyses per range of reported values{% if hg.units.length == 1 %} ({{ hg.units[0] }}){% endif %},
+    on a logarithmic axis (four ranges per power of ten), the same axis for all elements. The count axis differs per element.
+    Values reported as “not detected”, below a detection limit (“&lt; x”) or as 0 cannot be shown on a logarithmic axis and are
+    counted below each chart. The values are as reported; ranges and counts are only for the chart. Point at a bar for its range and count.</p>
+    <div class="chart-grid-list">
+      {%- for e in hg.elements %}
+      <figure class="chart-figure">
+        <figcaption><strong>{% set v = e.head %}{% include "lodam/value.njk" %}</strong>
+          <span class="text-body-secondary small">{{ e.n }} value{% if e.n != 1 %}s{% endif %}{% if e.nd %} · {{ e.nd }} not detected{% endif %}{% if e.limit %} · {{ e.limit }} below a limit{% endif %}{% if e.zero %} · {{ e.zero }} reported as 0{% endif %}</span></figcaption>
+        {{ e | histogramSvg(hg, "hist-" + loop.index) | safe }}
+      </figure>
+      {%- endfor %}
+    </div>
+    <details class="mt-3">
+      <summary>The histograms as a table</summary>
+      <div class="table-responsive mt-2">
+        <table class="table table-sm entity-table" aria-label="Number of analyses per range of reported values, per element">
+          <thead><tr><th scope="col">Element</th><th scope="col">Range{% if hg.units.length == 1 %} ({{ hg.units[0] }}){% endif %}</th><th scope="col" class="text-end">Analyses</th></tr></thead>
+          <tbody>
+            {%- for e in hg.elements %}{% for b in e.bins %}{% if b.count %}
+            <tr><th scope="row">{{ e.head.text }}</th><td class="entity-num">{{ b.from }} to &lt; {{ b.to }}</td><td class="text-end entity-num">{{ b.count }}</td></tr>
+            {%- endif %}{% endfor %}
+            {%- if e.nd %}<tr><th scope="row">{{ e.head.text }}</th><td>not detected</td><td class="text-end entity-num">{{ e.nd }}</td></tr>{% endif %}
+            {%- if e.limit %}<tr><th scope="row">{{ e.head.text }}</th><td>below a detection limit</td><td class="text-end entity-num">{{ e.limit }}</td></tr>{% endif %}
+            {%- if e.zero %}<tr><th scope="row">{{ e.head.text }}</th><td>reported as 0</td><td class="text-end entity-num">{{ e.zero }}</td></tr>{% endif %}
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+  {% endif %}
+
   {%- set c = pub.results.composition %}
   {% if c.count %}
   <section class="mt-4" aria-labelledby="r-composition">

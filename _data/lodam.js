@@ -573,6 +573,40 @@ function resultsTables(analyses) {
 		ratios: build((r) => r.ratioRows, (c) => ({ text: c.key })),
 	};
 }
+// Histograms of the reported element contents of a publication (planning#23, owner 2026-11-19:
+// "histograms with a log10 scale of all present elements"). One per element, all on the same
+// log10 axis (quarter-decade bins) and the same count axis, so the elements can be compared.
+// Only reported numbers are plotted. "Not detected", upper limits ("< x") and 0 have no place
+// on a log scale; they are counted next to the chart instead. The values themselves are not
+// changed; the binning is only for drawing.
+const BINS_PER_DECADE = 4;
+function histogramsOf(analyses) {
+	const byElement = new Map();
+	for (const a of analyses) for (const r of resultsOf(a).elementRows) {
+		if (!byElement.has(r.key)) byElement.set(r.key, { head: r.head, sort: r.sort, unit: r.unit, values: [], nd: 0, limit: 0, zero: 0 });
+		const e = byElement.get(r.key);
+		if (r.shown.text === "not detected") e.nd++;
+		else if (r.shown.text.startsWith("<")) e.limit++;
+		else if (Number(r.shown.text) > 0) e.values.push(Number(r.shown.text));
+		else if (Number(r.shown.text) === 0) e.zero++;
+	}
+	const all = [...byElement.values()].flatMap((e) => e.values);
+	if (!all.length) return null;
+	const lo = Math.floor(Math.log10(Math.min(...all))), hi = Math.ceil(Math.log10(Math.max(...all)) + 1e-9);
+	const nBins = (hi - lo) * BINS_PER_DECADE;
+	const edge = (i) => 10 ** (lo + i / BINS_PER_DECADE);
+	const fmt = (x) => Number(x.toPrecision(2)).toString();
+	const elementsList = [...byElement.values()].sort((a, b) => a.sort - b.sort).map((e) => {
+		const counts = new Array(nBins).fill(0);
+		// small epsilon so values exactly on a decade (0.001) fall into the bin that starts there
+		for (const v of e.values) counts[Math.min(nBins - 1, Math.floor((Math.log10(v) - lo) * BINS_PER_DECADE + 1e-9))]++;
+		return { ...e, n: e.values.length, bins: counts.map((c, i) => ({ i, count: c, from: fmt(edge(i)), to: fmt(edge(i + 1)) })) };
+	});
+	const units = [...new Set(elementsList.map((e) => e.unit).filter(Boolean))];
+	return { lo, hi, nBins, binsPerDecade: BINS_PER_DECADE, decades: Array.from({ length: hi - lo + 1 }, (_, i) => lo + i),
+		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList };
+}
+
 // The object(s) an analysis sampled (analysis → sample → sampling event → object)
 function objsOfAnalysis(a) {
 	return [...new Set(iris(a, P("afx", "AFX_0000399")).flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))))];
@@ -594,6 +628,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		findsTable: findsTable(docs.filter((x) => kindOf(x) === "find")), findsCaption: FINDS_CAPTION,
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
 		results: resultsTables(docs.filter((x) => kindOf(x) === "analysis")),
+		histograms: histogramsOf(docs.filter((x) => kindOf(x) === "analysis")),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));
