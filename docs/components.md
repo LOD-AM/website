@@ -76,4 +76,8 @@ phones), names in every language, CIDOC CRM / AFO / FaBiO classes, identifiers a
 ## Styles
 `css/theme.css`, "Record header" and "Technical details": `.entity-kind`, `.entity-summary`,
 `.entity-technical`, `.entity-iri`, plus `.entity-facts`, `.entity-list` and `.entity-table`.
-Text colours meet WCAG AA on the page background (see the palette comments).
+Text colours meet WCAG AA on the page background in dark and light mode (see the palette comments;
+`npm run qa` audits both). Use the theme tokens (`--lodam-chalk-white` = strong text,
+`--lodam-charcoal` = surface, `--lodam-stripe`, `rgba(var(--lodam-line-rgb), a)` for lines) rather
+than fixed colours, so a component works in both modes. Numbers in tables use `.entity-num`
+(tabular figures), and in wide tables only the first column's links use the accent colour.

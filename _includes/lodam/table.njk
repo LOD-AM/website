@@ -4,7 +4,7 @@
     <thead><tr>{% for h in t.head %}<th scope="col"{% if loop.index0 in (t.numeric or []) %} class="text-end"{% endif %}>{% if h.text %}{% set v = h %}{% include "lodam/value.njk" %}{% else %}{{ h }}{% endif %}</th>{% endfor %}</tr></thead>
     <tbody>
       {%- for row in t.rows %}
-      <tr>{% for cellv in row %}{% if loop.first and (not t.numeric or t.head.length > 3) %}<th scope="row">{% include "lodam/cell.njk" %}</th>{% else %}<td{% if loop.index0 in (t.numeric or []) %} class="text-end font-monospace"{% endif %}>{% include "lodam/cell.njk" %}</td>{% endif %}{% endfor %}</tr>
+      <tr>{% for cellv in row %}{% if loop.first and (not t.numeric or t.head.length > 3) %}<th scope="row">{% include "lodam/cell.njk" %}</th>{% else %}<td{% if loop.index0 in (t.numeric or []) %} class="text-end entity-num"{% endif %}>{% include "lodam/cell.njk" %}</td>{% endif %}{% endfor %}</tr>
       {%- endfor %}
     </tbody>
   </table>

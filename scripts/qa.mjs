@@ -3,7 +3,7 @@
 //   node scripts/qa.mjs [audit|overflow|thirdparty|all] [siteDir]   (default: all, _site)
 //   node scripts/qa.mjs screenshots <outDir> [siteDir]
 //
-// audit       WCAG AA contrast of every visible text element (4.5:1, large
+// audit       (in dark and light mode) WCAG AA contrast of every visible text element (4.5:1, large
 //             text 3:1), one <h1> per page, no skipped heading levels, images
 //             without alt, buttons without a name. Key page types.
 // overflow    horizontal overflow on a 375 px phone, all pages
@@ -82,9 +82,13 @@ async function newPage(browser, opts) {
   return page;
 }
 
+// Both colour modes (planning#20): the page follows prefers-color-scheme
+const MODES = ["dark", "light"];
+
 async function audit(browser, base) {
-  const page = await newPage(browser, { viewport: { width: 1366, height: 900 } });
   let failed = 0;
+  for (const mode of MODES) {
+  const page = await newPage(browser, { viewport: { width: 1366, height: 900 }, colorScheme: mode });
   for (const url of Object.values(KEY_PAGES)) {
     await page.goto(base + url, { waitUntil: "load" });
     const r = await page.evaluate(() => {
@@ -118,9 +122,12 @@ async function audit(browser, base) {
       [...document.querySelectorAll("button")].filter((x) => !x.textContent.trim() && !x.getAttribute("aria-label")).forEach(() => fails.push("button without a name"));
       return [...new Set(fails)];
     });
-    console.log(`${r.length ? "FAIL" : "ok  "} audit ${url}`);
+    const theme = await page.evaluate(() => document.documentElement.dataset.bsTheme);
+    if (theme !== mode) r.push(`page is in ${theme} mode, expected ${mode}`);
+    console.log(`${r.length ? "FAIL" : "ok  "} audit (${mode}) ${url}`);
     r.slice(0, 10).forEach((f) => console.log(`       ${f}`));
     failed += r.length ? 1 : 0;
+  }
   }
   return failed;
 }
@@ -169,12 +176,14 @@ async function thirdparty(browser, base, site) {
 
 async function screenshots(browser, base, out) {
   fs.mkdirSync(out, { recursive: true });
+  // dark: <view>-<page>.png (as before, for comparisons); light: <view>-light-<page>.png
+  for (const mode of MODES)
   for (const [view, opts] of [["desktop", { viewport: { width: 1366, height: 900 } }], ["phone", devices["iPhone 13"]]]) {
-    const page = await newPage(browser, opts);
+    const page = await newPage(browser, { ...opts, colorScheme: mode });
     for (const [name, url] of Object.entries(KEY_PAGES)) {
       await page.goto(base + url, { waitUntil: "load" });
       await page.waitForTimeout(200);
-      await page.screenshot({ path: path.join(out, `${view}-${name}.png`), fullPage: true });
+      await page.screenshot({ path: path.join(out, `${view}${mode === "dark" ? "" : "-" + mode}-${name}.png`), fullPage: true });
     }
   }
   console.log(`screenshots written to ${out}`);

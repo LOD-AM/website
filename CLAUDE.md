@@ -50,8 +50,10 @@ remote images). Network errors there are warnings, not build failures.
   summary line, key facts, technical details) and its includes in `_includes/lodam/`: `docs/components.md`.
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
-- `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +
-  LOD-AM palette as variables; style components via Bootstrap's component variables, not
+- `css/theme.css`: the only stylesheet besides Bootstrap. Dark mode by default, light mode
+  (owner, 2026-11-19) via `prefers-color-scheme` or the navbar toggle (`public/js/theme.js`, choice only
+  in localStorage; the inline head script sets `data-bs-theme` before the first paint and needs
+  `eleventy:ignore`, otherwise the JS bundle takes it). LOD-AM palette as theme tokens (one set per mode); style components via Bootstrap's component variables, not
   `!important`. Terracotta is the accent for the navbar, links and the main action only;
   long texts sit in `.reading-column` (~70 characters per line). `public/`: static files copied as-is
 
@@ -92,11 +94,13 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - **Don't change the `title` of a published post**: Giscus maps comment threads by title.
 - `impressum.md` and `privacy.md` are German legal documents. Change them only on explicit request.
 - Technical claims about the data model must match knowledge-graph `CONVENTIONS.md`.
-- Keep the dark, earthy theme (`css/theme.css`, `_data/tagColors.js`).
+- Keep the earthy theme in both modes (`css/theme.css`, `_data/tagColors.js`); navbar, footer and
+  code blocks stay dark. Every colour change needs AA in **both** modes (`npm run qa` audits both).
   Check layout changes in a browser at phone and desktop width.
 - **Accessibility:** text must reach WCAG AA contrast (4.5:1, large text 3:1), one
   `<h1>` per page, no skipped heading levels. Tags are outlined chips with a
-  coloured dot: new tag colours need 3:1 on page and card background (`_data/tagColors.js`).
+  coloured dot: new tag colours need 3:1 on page and card background (`_data/tagColors.js`; the
+  light-mode dot is derived automatically).
 - **No third-party requests on page load** (privacy): no CDNs, no remote fonts or
   icons, no embeds that load by themselves. Giscus loads only after the visitor
   clicks "Load comments". Anything new that contacts another server needs the

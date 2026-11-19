@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{#- Light/dark mode before the first paint (planning#20): stored choice, else the browser's
+		    setting; without JavaScript the page stays dark. Local only, see public/js/theme.js. #}
+		<script eleventy:ignore>(function(){var t;try{t=localStorage.getItem("lodam-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-bs-theme",t)})();</script>
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -65,6 +68,9 @@
 				<a class="navbar-brand" href="/">
 					<img src="/img/logo.svg" alt="{{ metadata.title }}: home" width="75" height="75" class="d-inline-block align-top" eleventy:ignore>
 				</a>
+				<button type="button" class="btn btn-sm theme-toggle ms-auto me-2 order-lg-last ms-lg-2 me-lg-0" id="theme-toggle" aria-label="Switch between light and dark mode" hidden>
+					<span class="icon-sun">{% icon "sun" %}</span><span class="icon-moon">{% icon "moon-stars" %}</span>
+				</button>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -106,7 +112,7 @@
 		</main>
 
 		<!-- Bootstrap Footer -->
-		<footer class="site-footer py-4 mt-auto text-center">
+		<footer class="site-footer py-4 mt-auto text-center" data-bs-theme="dark">
 			<div class="container">
 				<nav aria-label="Footer" class="footer-links small mb-2">
 					<a href="/impressum/">Impressum</a>
@@ -127,6 +133,7 @@
 
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/theme.js"></script>
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>
