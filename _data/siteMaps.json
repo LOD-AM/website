@@ -7,13 +7,6 @@
   "east": 62,
   "north": 53
  },
- "tiles": {
-  "x0": 71,
-  "x1": 87,
-  "y0": 41,
-  "y1": 53,
-  "path": "/img/maps/z7/"
- },
  "canvas": {
   "originX": 18176,
   "originY": 10496,
@@ -22,8 +15,8 @@
  },
  "overview": {
   "src": "/img/maps/overview.webp",
-  "width": 1200,
-  "height": 900
+  "width": 2048,
+  "height": 1536
  },
  "minUplandKm2": 2000,
  "sources": [

@@ -1,24 +1,21 @@
-{#- Relief map window around a site (planning#18, docs/components.md). Set `map` (= record.map) and
-    `mapHeadingId`. A fixed scale (Web Mercator, zoom 7) for every site: the tiles are plain images in a
-    layer that CSS centres on the site, so the window works without JavaScript at any width. -#}
-<figure class="site-map mb-0" aria-labelledby="{{ mapHeadingId }}-cap">
-  <div class="site-map__frame site-map__frame--window" role="img"
-    aria-label="Relief map of the area around {{ map.label }}, about 600 by 450 km, with rivers and natural lakes; north is up.">
-    <div class="site-map__layer" style="left: calc(50% - {{ map.centerX | round(1) }}px); top: calc(50% - {{ map.centerY | round(1) }}px)">
-      {%- for t in map.tiles %}
-      <img src="{{ t.src }}" width="{{ map.tileSize }}" height="{{ map.tileSize }}" alt="" loading="lazy" decoding="async" style="left: {{ t.x }}px; top: {{ t.y }}px" eleventy:ignore>
-      {%- endfor %}
-      {%- for x in map.sites %}
-      <a class="site-map__marker{% if x.current %} site-map__marker--current{% endif %}" href="{{ x.path }}" style="left: {{ x.x | round(1) }}px; top: {{ x.y | round(1) }}px"{% if x.current %} aria-current="page"{% endif %}>
-        <span class="site-map__dot" aria-hidden="true"></span><span class="site-map__label">{{ x.label }}</span>
-      </a>
-      {%- endfor %}
-    </div>
-    <div class="site-map__scale" style="width: {{ map.scale.px }}px" aria-hidden="true"><span>{{ map.scale.km }} km</span></div>
+{#- Relief map of the whole LOD-AM area with the released sites (planning#18, docs/components.md).
+    Optional `currentIri`: the site of the page, highlighted. One fixed scale everywhere (owner). -#}
+{%- set m = lodam.maps %}
+{%- set mapId = "map-" + (currentIri | replace("https://lod-am.net/id/site/", "") if currentIri else "all") %}
+<figure class="site-map mb-0" aria-labelledby="{{ mapId }}-cap">
+  <div class="site-map__frame" style="aspect-ratio: {{ m.overview.width }} / {{ m.overview.height }}">
+    <img src="{{ m.overview.src }}" width="{{ m.overview.width }}" height="{{ m.overview.height }}" loading="lazy" decoding="async"
+      alt="Relief map of the LOD-AM area ({{ m.extent.west }}–{{ m.extent.east }}° E, {{ m.extent.south }}–{{ m.extent.north }}° N) with rivers and natural lakes; marked: {% for x in m.sites %}{{ x.label }}{% if not loop.last %}, {% endif %}{% endfor %}." eleventy:ignore>
+    {%- for x in m.sites %}
+    {%- set cur = currentIri and x.iri == currentIri %}
+    <a class="site-map__marker{% if cur %} site-map__marker--current{% endif %}" href="{{ x.path }}" style="left: {{ x.left | round(3) }}%; top: {{ x.top | round(3) }}%"{% if cur %} aria-current="page"{% endif %}>
+      <span class="site-map__dot" aria-hidden="true"></span><span class="site-map__label">{{ x.label }}</span>
+    </a>
+    {%- endfor %}
   </div>
-  <figcaption id="{{ mapHeadingId }}-cap" class="small text-body-secondary mt-2">
-    The same scale on every site page; the scale bar holds at the site's latitude. North is up. Rivers, natural lakes and
-    coastlines as today; modern reservoirs are left out. Relief: Copernicus DEM GLO-90; rivers: HydroRIVERS; lakes and sea:
-    Natural Earth (<a href="/data/#map-sources">sources</a>).
+  <figcaption id="{{ mapId }}-cap" class="small text-body-secondary mt-2">
+    The area of the LOD-AM research database, {{ m.extent.west }}–{{ m.extent.east }}° E, {{ m.extent.south }}–{{ m.extent.north }}° N,
+    with the released sites{% if currentIri %}; this site is highlighted{% endif %}. North is up. Rivers, natural lakes and coastlines as today;
+    modern reservoirs are left out. Relief: Copernicus DEM GLO-90; rivers: HydroRIVERS; lakes and sea: Natural Earth (<a href="/data/#map-sources">sources</a>).
   </figcaption>
 </figure>

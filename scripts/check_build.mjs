@@ -118,7 +118,7 @@ if (existsSync("data/published")) {
 }
 
 // Site maps (planning#18): every released site lies inside the map area, and its page shows the
-// map (the tile images it uses are checked by the internal link check above). A site outside the
+// map with the site highlighted. A site outside the
 // area: widen EXTENT in scripts/map/build_maps.py and run it again.
 {
   const m = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : null;
@@ -131,7 +131,7 @@ if (existsSync("data/published")) {
       if (!e || lon < e.west || lon > e.east || lat < e.south || lat > e.north)
         errors.push(`site ${g[1]} (${lat} N, ${lon} E) is outside the map area: widen EXTENT in scripts/map/build_maps.py`);
       const page = join(SITE, "id", "site", g[1], "index.html");
-      if (existsSync(page) && !readFileSync(page, "utf8").includes("site-map__frame--window")) errors.push(`site page ${g[1]} shows no map`);
+      if (existsSync(page) && !readFileSync(page, "utf8").includes('site-map__marker site-map__marker--current')) errors.push(`site page ${g[1]} shows no map`);
     }
   }
 }

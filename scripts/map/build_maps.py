@@ -2,10 +2,11 @@
 """Base map for the site pages (LOD-AM/planning#18).
 
 One relief map at a fixed, small scale for the whole area of the LOD-AM research database
-(owner, 2026-11-19: "load all tiles for the whole database and fix the map to this scale"),
-in Web Mercator at zoom 7 (about 0.9 km per pixel at 40° N), cut into 256 px tiles. Each site
-page shows a window of it around the site; /data/sites/ shows a scaled-down overview. No
-borders, settlements, roads or reservoirs.
+(owner, 2026-11-19: "load all tiles for the whole database and fix the map to this scale"), in
+Web Mercator. The owner chose the overview scale: every site page and /data/sites/ show the whole
+area in one image (overview.webp), with the site marked. It is rendered at zoom 7 (about 0.9 km per
+pixel at 40° N) and scaled down, so rivers and coasts stay smooth. No borders, settlements, roads
+or reservoirs.
 - Relief: Copernicus DEM GLO-90 (read at 30" from the files' overviews; hillshade + earthy tint)
 - Rivers: HydroRIVERS v1.0 (HydroSHEDS), line width by upstream area
 - Natural lakes and sea: Natural Earth 10m (public domain); reservoirs are left out (owner).
@@ -18,7 +19,7 @@ when sites are released.
     pip install -r scripts/map/requirements.txt
     python3 scripts/map/build_maps.py        # downloads into .cache/maps/, ~10 minutes
 Needs: copernicus-dem-90m.s3.amazonaws.com, data.hydrosheds.org, raw.githubusercontent.com.
-Writes public/img/maps/z7/<x>_<y>.webp, public/img/maps/overview.webp and _data/siteMaps.json.
+Writes public/img/maps/overview.webp and _data/siteMaps.json.
 """
 import io, json, math, os, sys, urllib.error, urllib.request, zipfile
 from concurrent.futures import ThreadPoolExecutor
@@ -45,7 +46,7 @@ EXAGGERATION = 3.0                   # vertical exaggeration for the hillshade a
 MIN_UPLAND_KM2 = 2000                # rivers with a smaller catchment are left out
 HYDRO_REGIONS = ["eu", "as"]
 SUPER = 2                            # draw vectors at 2x, then scale down
-OVERVIEW_WIDTH = 1200
+OVERVIEW_WIDTH = 2048                # sharp up to ~1000 CSS px on 2x screens
 
 SOURCES = [
     # Licences (owner, 2026-11-19): COP-DEM-GLO-90-F, free of charge, worldwide, non-exclusive, no time limit.
@@ -243,23 +244,12 @@ def main():
         w = min(4.0, 0.6 + 0.8 * math.log10(upland / MIN_UPLAND_KM2)) * SUPER
         draw.line([px(p) for p in smooth(pts)], fill=WATER_LINE, width=max(1, round(w)), joint="curve")
 
-    img = img.resize((W, H), Image.LANCZOS)
-    tiles_dir = OUT_DIR / f"z{ZOOM}"
-    tiles_dir.mkdir(parents=True, exist_ok=True)
-    for old in tiles_dir.glob("*.webp"): old.unlink()
-    size = 0
-    for tx in range(tx0, tx1):
-        for ty in range(ty0, ty1):
-            x, y = (tx - tx0) * TILE, (ty - ty0) * TILE
-            p = tiles_dir / f"{tx}_{ty}.webp"
-            img.crop((x, y, x + TILE, y + TILE)).save(p, "WEBP", quality=78, method=6)
-            size += p.stat().st_size
     oh = round(H * OVERVIEW_WIDTH / W)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     img.resize((OVERVIEW_WIDTH, oh), Image.LANCZOS).save(OUT_DIR / "overview.webp", "WEBP", quality=80, method=6)
-    log(f"  {(tx1 - tx0) * (ty1 - ty0)} tiles, {size // 1024} KB; overview {(OUT_DIR / 'overview.webp').stat().st_size // 1024} KB")
+    log(f"  overview {OVERVIEW_WIDTH} x {oh} px, {(OUT_DIR / 'overview.webp').stat().st_size // 1024} KB")
     OUT_JSON.write_text(json.dumps({
         "zoom": ZOOM, "tileSize": TILE, "extent": dict(zip(["west", "south", "east", "north"], EXTENT)),
-        "tiles": {"x0": tx0, "x1": tx1, "y0": ty0, "y1": ty1, "path": f"/img/maps/z{ZOOM}/"},
         "canvas": {"originX": ox, "originY": oy, "width": W, "height": H},
         "overview": {"src": "/img/maps/overview.webp", "width": OVERVIEW_WIDTH, "height": oh},
         "minUplandKm2": MIN_UPLAND_KM2, "sources": SOURCES,

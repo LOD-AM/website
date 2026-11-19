@@ -17,7 +17,8 @@ eleventyComputed:
   {%- if kind == "site" and lodam.maps and lodam.maps.sites.length %}
   <section class="mb-4" aria-labelledby="map-overview">
     <h2 id="map-overview" class="h5">Map</h2>
-    {% include "lodam/map-overview.njk" %}
+    {%- set currentIri = false %}
+    {% include "lodam/map.njk" %}
   </section>
   <h2 class="h5">All sites</h2>
   {%- endif %}
