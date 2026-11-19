@@ -5,21 +5,19 @@ pagination:
   alias: pub
 permalink: "{{ pub.path }}"
 eleventyComputed:
-  title: "{{ pub.citation }} · Publication · LOD-AM"
-  description: "{{ pub.title }}"
+  title: "{{ pub.citation | safe }} · Publication · LOD-AM"
+  description: "Publication: {{ pub.title | safe }}. {{ pub.summary | join(' · ') | safe }}"
 ---
 <div class="entity">
   <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › <a href="/data/publications/">Publications</a></nav>
-  <h1 class="mb-1">{{ pub.title }}</h1>
-  <p class="entity-iri mb-4"><span class="text-body-secondary">Publication ·</span> <code>{{ pub.iri }}</code></p>
+  {%- set entity = { kindLabel: "Publication", label: pub.title, summary: pub.summary } %}
+  {% include "lodam/header.njk" %}
   <dl class="entity-facts">
     <dt>Authors</dt><dd>{% for v in pub.authors %}{% include "lodam/value.njk" %}{% if not loop.last %}, {% endif %}{% endfor %}</dd>
     {% if pub.year %}<dt>Year</dt><dd>{{ pub.year }}</dd>{% endif %}
     {% if pub.journal %}<dt>Journal</dt><dd>{% set v = pub.journal %}{% include "lodam/value.njk" %}{% if pub.volume %}, vol. {{ pub.volume }}{% endif %}</dd>{% endif %}
     {% if pub.pages %}<dt>Pages</dt><dd>{{ pub.pages }}</dd>{% endif %}
     {% if pub.doi %}<dt>DOI</dt><dd><a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a></dd>{% endif %}
-    <dt>Citation key</dt><dd><code>{{ pub.key }}</code></dd>
-    <dt>Class</dt><dd>{% for v in pub.classes %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
   </dl>
   {% for part in [["Finds documented in it", pub.finds], ["Analyses documented in it", pub.analyses], ["Other records", pub.other]] %}
   {% if part[1].length %}
@@ -29,4 +27,10 @@ eleventyComputed:
   </section>
   {% endif %}
   {% endfor %}
+
+  {%- set tech = { iri: pub.iri, facts: [
+    { label: "Citation key", values: [{ text: pub.key, code: true }] },
+    { label: "Class", values: pub.classes }
+  ] } %}
+  {% include "lodam/technical.njk" %}
 </div>

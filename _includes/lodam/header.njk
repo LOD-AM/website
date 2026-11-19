@@ -1,0 +1,8 @@
+{#- Record header (docs/components.md): kind, title, summary line. Set `entity` = {kindLabel, label, summary}. -#}
+<header class="entity-header mb-4">
+  <p class="entity-kind mb-1">{{ entity.kindLabel }}</p>
+  <h1 class="mb-2">{{ entity.label }}</h1>
+  {%- if entity.summary and entity.summary.length %}
+  <p class="entity-summary mb-0">{{ entity.summary | join(" · ") }}</p>
+  {%- endif %}
+</header>

@@ -1,0 +1,26 @@
+{#- Technical details (docs/components.md): IRI, names, classes, identifiers, other statements.
+    Set `tech` = {iri, facts, sections?}; only sections with `tech: true` are shown here. -#}
+<section class="entity-technical mt-5" aria-labelledby="technical">
+  <h2 id="technical" class="h5">Technical details</h2>
+  <dl class="entity-facts">
+    <dt>IRI</dt>
+    <dd><code class="entity-iri">{{ tech.iri | replace("/", "/<wbr>") | safe }}</code></dd>
+    {%- for f in tech.facts %}
+    <dt>{{ f.label }}</dt>
+    <dd>{% for v in f.values %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+    {%- endfor %}
+  </dl>
+  {%- for s in tech.sections or [] %}{% if s.tech %}
+  <h3 class="h6 mt-4" id="t{{ loop.index }}">{{ s.heading }}</h3>
+  <div class="table-responsive">
+    <table class="table table-sm entity-table" aria-labelledby="t{{ loop.index }}">
+      <thead><tr>{% for h in s.table.head %}<th scope="col">{{ h }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {%- for row in s.table.rows %}
+        <tr>{% for v in row %}<td>{% include "lodam/value.njk" %}</td>{% endfor %}</tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  {%- endif %}{% endfor %}
+</section>

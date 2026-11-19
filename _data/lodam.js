@@ -169,10 +169,10 @@ function citation(pub) {
 // A link (or text) for any IRI: own page, publication page, external IRI with a readable name
 function link(iri) {
 	if (kindOf(iri) && out.has(iri)) return { href: pathOf(iri), text: labelOf(iri) || iri.slice(ID.length) };
-	if (isPublication(iri)) return { href: `/data/publications/${pubKey(iri)}/`, text: `${citation(iri)}: ${first(iri, P("dcterms", "title"))}` };
+	if (isPublication(iri)) return { href: `/data/publications/${pubKey(iri)}/`, text: `${citation(iri)}: ${first(iri, P("dcterms", "title"))}`, short: citation(iri) };
 	if (iri.startsWith(ID) && labelOf(iri)) return { text: labelOf(iri), title: curie(iri) };  // local concept (knowledge-graph vocab)
 	let m;
-	if ((m = iri.match(/^http:\/\/vocab\.getty\.edu\/aat\/(\d+)$/))) return { href: iri, text: aatLabels[m[1]] ? `${aatLabels[m[1]]} (AAT)` : `AAT ${m[1]}`, external: true };
+	if ((m = iri.match(/^http:\/\/vocab\.getty\.edu\/aat\/(\d+)$/))) return { href: iri, text: aatLabels[m[1]] ? `${aatLabels[m[1]]} (AAT)` : `AAT ${m[1]}`, short: aatLabels[m[1]], external: true };
 	if (elements.has(iri)) return { href: iri, text: `${elements.get(iri).label} (${elements.get(iri).symbol})`, external: true };
 	if (wikidata.has(iri)) return { href: iri, text: wikidata.get(iri), external: true };
 	if (CLASS_LABELS[iri]) return { href: iri, text: CLASS_LABELS[iri], external: true };
@@ -187,19 +187,49 @@ const sortLinks = (ls) => ls.sort((a, b) => collator.compare(a.text, b.text));
 // Years as in the data: "-2800" = 2800 BC (CONVENTIONS "Local periods"); never computed further
 const year = (y) => (y == null ? "?" : y.startsWith("-") ? `${y.slice(1)} BC` : `AD ${y}`);
 
+// The site a feature belongs to (graves are part of their kurgan, the kurgan of the site)
+function siteOfFeature(f, seen = new Set()) {
+	if (seen.has(f)) return [];
+	seen.add(f);
+	return iris(f, P("crm", "P46i_forms_part_of")).flatMap((x) => (kindOf(x) === "site" ? [x] : kindOf(x) === "feature" ? siteOfFeature(x, seen) : []));
+}
+// Where a find was found and what dates it: its feature(s), site(s) and the phases of those
+// contexts. Finds without a feature point to their site's place (CONVENTIONS "Finds without a feature").
+function contextOf(find) {
+	const features = iris(find, P("crmarchaeo", "AP21i_is_contained_in"));
+	const atSite = iris(find, P("crm", "P53_has_former_or_current_location"))
+		.flatMap((pl) => subs(pl, P("crm", "P53_has_former_or_current_location")).filter((s) => kindOf(s) === "site"));
+	const sites = [...new Set([...features.flatMap((f) => siteOfFeature(f)), ...atSite])];
+	const phases = [...new Set([...features, ...atSite].flatMap((c) => iris(c, P("crm", "P8i_witnessed"))))];
+	return { features, sites, phases, withoutFeature: features.length === 0 };
+}
+// One short item of the summary line: the values of a fact, joined
+const short = (values) => (values || []).map((v) => v.short || v.text).filter(Boolean).join(", ");
+// Feature and site for the summary line, without the site if a feature's label already names it
+// ("Arslantepe, unspecified context, Arslantepe VIC")
+function shortContext(c) {
+	const f = short(c.features.map(link));
+	return [f, ...c.sites.map((x) => link(x).text).filter((t) => !f.includes(t))].filter(Boolean).join(", ");
+}
+// Drop summary items that an earlier item already contains (a phase named in a feature's label)
+const dedupe = (items) => items.filter(Boolean).filter((x, i, a) => !a.slice(0, i).some((y) => y.includes(x)));
+
 // --- Views ------------------------------------------------------------------------------------
 function makeView(iri, kind) {
 	const used = new Set();                         // predicates shown (outgoing)
-	const facts = [];                               // [{label, values:[{text, href?, lang?}]}]
-	const sections = [];                            // [{heading, list?:[links], table?:{head, rows}}]
+	const facts = [];                               // key facts: [{label, values:[{text, href?, lang?}]}]
+	const tech = [];                                // technical details (names, classes, identifiers)
+	const sections = [];                            // [{heading, list?:[links], table?:{head, rows}, tech?}]
 	const use = (p) => { used.add(p); return objs(iri, p); };
 	const fact = (label, values) => { if (values.length) facts.push({ label, values }); };
+	const techFact = (label, values) => { if (values.length) tech.push({ label, values }); };
+	const get = (label) => facts.find((f) => f.label === label)?.values;
 	const list = (heading, links) => { if (links.length) sections.push({ heading, list: sortLinks(links) }); };
 
 	// Names: every label with its language
 	const names = [...use(P("rdfs", "label")), ...use(P("skos", "prefLabel")), ...use(P("foaf", "name"))];
-	if (names.length > 1) fact("Names", names.map((l) => ({ text: l.value, lang: l.language || undefined, note: LANG_NAMES[l.language] || l.language })));
-	fact("Class", use(P("rdf", "type")).map(val));
+	if (names.length > 1) techFact("Names", names.map((l) => ({ text: l.value, lang: l.language || undefined, note: LANG_NAMES[l.language] || l.language })));
+	techFact("Class", use(P("rdf", "type")).map(val));
 
 	// Types and identifiers, the same for every kind
 	fact("Type", use(P("crm", "P2_has_type")).map(val));
@@ -209,20 +239,20 @@ function makeView(iri, kind) {
 		const isUrl = /^https?:\/\//.test(content || "");
 		return { text: content || o.value, href: isUrl ? content : undefined, external: isUrl, note: t || undefined };
 	});
-	fact("Identifiers", ids);
-	fact("Identifier", use(P("dcterms", "identifier")).map(lit));
-	fact("Note (from the source)", use(P("crm", "P3_has_note")).map(lit));
+	techFact("Identifiers", ids);
+	techFact("Identifier", use(P("dcterms", "identifier")).map(lit));
+	const notes = use(P("crm", "P3_has_note")).map(lit);  // shown after the kind's own facts
+	let summary = [];                               // items of the line under the title (values only)
 
 	if (kind === "find") {
 		fact("Material", use(P("crm", "P45_consists_of")).map(val));
-		const ctx = use(P("crmarchaeo", "AP21i_is_contained_in")).map(val);
-		fact("Found in (feature)", ctx);
-		// Finds without a feature point to their site's place (CONVENTIONS "Finds without a feature")
-		const places = use(P("crm", "P53_has_former_or_current_location")).map((o) => o.value);
-		fact("Found at (site)", places.flatMap((pl) => subs(pl, P("crm", "P53_has_former_or_current_location")).filter((s) => kindOf(s) === "site")).map(link));
-		const dating = [...iris(iri, P("crmarchaeo", "AP21i_is_contained_in")), ...places.flatMap((pl) => subs(pl, P("crm", "P53_has_former_or_current_location")))]
-			.flatMap((c) => iris(c, P("crm", "P8i_witnessed")));
-		fact("Dated by its context to", [...new Set(dating)].map(link));
+		used.add(P("crmarchaeo", "AP21i_is_contained_in"));
+		used.add(P("crm", "P53_has_former_or_current_location"));
+		const c = contextOf(iri);
+		fact("Found in (feature)", c.features.map(link));
+		fact(c.withoutFeature ? "Found at (site)" : "Site", c.sites.map(link));
+		fact("Dated by its context to", c.phases.map(link));
+		summary = [short(get("Type")), short(get("Material")), shortContext(c), short(get("Dated by its context to"))];
 		fact("Parts", use(P("crm", "P46_is_composed_of")).map(val));
 		fact("Part of", use(P("crm", "P46i_forms_part_of")).map(val));
 		// Analyses: sampling events (O3) of the find or its parts → sample (O5) → analysis (input)
@@ -234,10 +264,17 @@ function makeView(iri, kind) {
 	}
 
 	if (kind === "analysis") {
-		fact("Carried out by", use(P("crm", "P14_carried_out_by")).map(val));
 		const samples = use(P("afx", "AFX_0000399")).map((o) => o.value);
-		fact("Sample", samples.map((s) => ({ text: labelOf(s) || curie(s) })));
-		fact("Sampled object", samples.flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))).map(link));
+		const objects = [...new Set(samples.flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))))];
+		fact("Sampled object", objects.map(link));
+		// The object's context, as on its own page (a sample of a part: the part's whole)
+		const finds = objects.flatMap((o) => (kindOf(o) === "find" ? [o] : iris(o, P("crm", "P46i_forms_part_of"))));
+		const ctx = finds.map(contextOf);
+		const ctxLinks = [...new Set(ctx.flatMap((x) => [...x.features, ...x.sites]))].map(link);
+		fact("Context of the object", ctxLinks);
+		fact("Dated by its context to", [...new Set(ctx.flatMap((x) => x.phases))].map(link));
+		fact("Carried out by", use(P("crm", "P14_carried_out_by")).map(val));
+		techFact("Sample", samples.map((s) => ({ text: labelOf(s) || curie(s) })));
 		// Results (has output): element mass fractions and lead isotope ratios
 		const outputs = use(P("afx", "AFX_0000395")).map((o) => o.value);
 		const elementRows = [], ratioRows = [];
@@ -257,6 +294,8 @@ function makeView(iri, kind) {
 			}
 		}
 		if (elementRows.length) sections.push({ heading: "Composition", caption: "Mass fractions as reported in the publication; “< x” = below x; “not detected” = looked for, not found. Copper is not given for copper-base objects; other elements not listed were not analysed.", table: { head: ["Element", "Value", "Unit"], numeric: [1], rows: elementRows.sort((a, b) => a.sort - b.sort).map((r) => r.cells) } });
+		summary = [[elementRows.length && "Chemical composition", ratioRows.length && "Lead isotope ratios"].filter(Boolean).join(", "),
+			ctx.map(shortContext).join("; "), short(get("Dated by its context to")), short(get("Carried out by"))];
 		if (ratioRows.length) sections.push({ heading: "Lead isotope ratios", caption: "Ratios as reported (dimensionless).", table: { head: ["Ratio", "Value"], numeric: [1], rows: ratioRows.sort((a, b) => collator.compare(a.sort, b.sort)).map((r) => r.cells) } });
 	}
 
@@ -276,6 +315,8 @@ function makeView(iri, kind) {
 		fact("Region", regions.map(link));
 		fact("Part of", use(P("crm", "P46i_forms_part_of")).map(val));
 		fact("Dated to (phase)", use(P("crm", "P8i_witnessed")).map(val));
+		if (kind === "site") summary = [short(get("Type")), short(get("Region")), short(get("Location"))];
+		if (kind === "feature") summary = [short(get("Type")), short([...new Set(siteOfFeature(iri))].map(link)), short(get("Dated to (phase)"))];
 		if (kind === "region") {
 			const within = subs(iri, P("crm", "P89_falls_within")).flatMap((x) => (kindOf(x) === "site" ? [x] : subs(x, P("crm", "P53_has_former_or_current_location")).filter((s) => kindOf(s) === "site")));
 			list("Sites in this region", [...new Set(within)].map(link));
@@ -296,16 +337,19 @@ function makeView(iri, kind) {
 		fact("Chronology system", use(P("skos", "inScheme")).map(val));
 		fact("Part of (culture)", use(P("crm", "P9i_forms_part_of")).map(val));
 		list("Contexts dated to this phase", subs(iri, P("crm", "P8i_witnessed")).map(link));
+		summary = [short(get("Time-span")), short(get("Part of (culture)")), short(get("Chronology system"))];
 	}
 	if (kind === "culture") list("Phases", use(P("crm", "P9_consists_of")).map(val));
 	if (kind === "chronology") list("Phases in this system", subs(iri, P("skos", "inScheme")).filter((x) => kindOf(x)).map(link));
 
 	if (kind === "type") {
-		fact("Scheme", [...use(P("skos", "inScheme")), ...use(P("skos", "topConceptOf"))].map(val));
+		const schemes = [...new Set([...use(P("skos", "inScheme")), ...use(P("skos", "topConceptOf"))].map((o) => o.value))];
+		fact("Scheme", schemes.map(link));
 		fact("Broader", use(P("skos", "broader")).map(val));
 		fact("Close match", use(P("skos", "closeMatch")).map(val));
 		fact("Broad match", use(P("skos", "broadMatch")).map(val));
 		list("Narrower", subs(iri, P("skos", "broader")).map(link));
+		summary = [get("Broader") ? `narrower term of ${short(get("Broader"))}` : "", short(get("Scheme"))];
 		list("Records of this type", subs(iri, P("crm", "P2_has_type")).filter((x) => kindOf(x)).map(link));
 	}
 
@@ -323,7 +367,16 @@ function makeView(iri, kind) {
 		list("Articles", subs(iri, P("dcterms", "isPartOf")).filter(isPublication).map(link));
 	}
 
+	fact("Note (from the source)", notes);
 	fact("Documented in", use(P("crm", "P70i_is_documented_in")).map(val));
+	if (kind === "find" || kind === "analysis") summary.push(short(get("Documented in")));
+	if (kind === "person") {
+		const pubs = sections.find((x) => x.heading === "Publications")?.list;
+		if (pubs) summary = [`author of ${short(pubs)}`];
+	}
+	// Other kinds (labs, journals, regions, cultures, chronology systems): no summary line;
+	// their key facts are short enough
+	summary = dedupe(summary);
 
 	// Everything not shown above, so no statement is hidden
 	const other = [];
@@ -331,9 +384,11 @@ function makeView(iri, kind) {
 		if (used.has(p)) continue;
 		for (const o of os) other.push([{ text: curie(p), code: true }, val(o)]);
 	}
-	if (other.length) sections.push({ heading: "Other statements", table: { head: ["Property", "Value"], rows: other } });
+	if (other.length) sections.push({ heading: "Other statements", tech: true, table: { head: ["Property", "Value"], rows: other } });
 
-	return { iri, kind, kindLabel: KINDS[kind].singular, path: pathOf(iri), label: labelOf(iri) || iri.slice(ID.length), facts, sections };
+	const label = labelOf(iri) || iri.slice(ID.length);
+	const description = `${KINDS[kind].singular}: ${label}${summary.length ? ". " + summary.join(" · ") : ""}`;
+	return { iri, kind, kindLabel: KINDS[kind].singular, path: pathOf(iri), label, summary, description, facts, tech, sections };
 }
 
 const records = [];
@@ -355,6 +410,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		authors: authorsOf(iri).map((a) => link(a.iri)), year: first(iri, P("fabio", "hasPublicationYear")),
 		journal: journal ? link(journal) : null, volume: first(iri, P("prism", "volume")), pages,
 		doi: first(iri, P("prism", "doi")), classes: types(iri).map(link),
+		summary: [citation(iri), journal ? labelOf(journal) || link(journal).text : null, pages ? `pp. ${pages}` : null].filter(Boolean),
 		finds: sortLinks(docs.filter((x) => kindOf(x) === "find").map(link)),
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),

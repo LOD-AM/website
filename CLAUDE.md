@@ -46,7 +46,8 @@ remote images). Network errors there are warnings, not build failures.
   from ingest), `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
   reads them (n3) and builds one view per record; pages: `content/id/entity.njk` (`/id/<kind>/<uuid>/`),
   `content/data/` (overview, lists, publications). Nothing on these pages may be computed from the data
-  (values as reported); `npm run check` fails if a record has no page.
+  (values as reported); `npm run check` fails if a record has no page. Page structure (header with
+  summary line, key facts, technical details) and its includes in `_includes/lodam/`: `docs/components.md`.
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap. `<html data-bs-theme="dark">` +

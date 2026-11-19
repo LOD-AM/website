@@ -286,7 +286,22 @@ a:hover { text-decoration: underline; }
 /* Entity pages (/id/...; website#18): facts as a two-column list, results as tables.
    A slightly lighter surface for tables keeps dense numbers readable on the dark page. */
 .entity { max-width: 60rem; }
-.entity-iri code { color: var(--lodam-text-soft); overflow-wrap: anywhere; font-size: 0.85rem; }
+/* Record header (docs/components.md): kind, title, summary line */
+.entity-kind {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lodam-sage);           /* 5.0:1 on umber */
+}
+.entity-summary { font-size: 1.15rem; color: var(--lodam-text-soft); }
+/* Technical details: IRI, classes, names, identifiers, other statements */
+.entity-technical {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(245, 240, 230, 0.15);
+  font-size: 0.95rem;
+}
+.entity-iri { color: var(--lodam-text-soft); font-size: 0.85rem; }
 .entity-facts {
   display: grid;
   grid-template-columns: minmax(8rem, 14rem) 1fr;

@@ -1,0 +1,9 @@
+{#- Key-facts list (docs/components.md). Set `facts` = [{label, values}]. -#}
+{%- if facts.length %}
+<dl class="entity-facts">
+  {%- for f in facts %}
+  <dt>{{ f.label }}</dt>
+  <dd>{% for v in f.values %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+  {%- endfor %}
+</dl>
+{%- endif %}
