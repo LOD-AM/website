@@ -21,23 +21,15 @@ eleventyComputed:
 
   {% for s in record.sections %}{% if not s.tech %}
   <section class="mt-4" aria-labelledby="s{{ loop.index }}">
-    <h2 id="s{{ loop.index }}" class="h4">{{ s.heading }}{% if s.list %} <span class="text-body-secondary fs-6">({{ s.list.length }})</span>{% endif %}</h2>
+    <h2 id="s{{ loop.index }}" class="h4">{{ s.heading }}{% if s.list or s.count %} <span class="text-body-secondary fs-6">({{ s.count or s.list.length }})</span>{% endif %}</h2>
     {% if s.caption %}<p class="small text-body-secondary">{{ s.caption }}</p>{% endif %}
     {% if s.list %}
     <ul class="entity-list">
       {%- for v in s.list %}<li>{% include "lodam/value.njk" %}</li>{% endfor %}
     </ul>
     {% elif s.table %}
-    <div class="table-responsive">
-      <table class="table table-sm entity-table">
-        <thead><tr>{% for h in s.table.head %}<th scope="col"{% if loop.index0 in (s.table.numeric or []) %} class="text-end"{% endif %}>{{ h }}</th>{% endfor %}</tr></thead>
-        <tbody>
-          {%- for row in s.table.rows %}
-          <tr>{% for v in row %}<td{% if loop.index0 in (s.table.numeric or []) %} class="text-end font-monospace"{% endif %}>{% include "lodam/value.njk" %}</td>{% endfor %}</tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    {%- set t = s.table %}{% set tid = "s" + loop.index %}
+    {% include "lodam/table.njk" %}
     {% endif %}
   </section>
   {% endif %}{% endfor %}

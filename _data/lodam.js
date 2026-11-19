@@ -203,6 +203,54 @@ function contextOf(find) {
 	const phases = [...new Set([...features, ...atSite].flatMap((c) => iris(c, P("crm", "P8i_witnessed"))))];
 	return { features, sites, phases, withoutFeature: features.length === 0 };
 }
+// Analyses of a find: sampling events (O3) of the find or its parts → sample (O5) → analysis (input)
+function analysesOf(find) {
+	const sampled = [find, ...iris(find, P("crm", "P46_is_composed_of"))];
+	return [...new Set(sampled.flatMap((x) => subs(x, P("crmsci", "O3_sampled_from")))
+		.flatMap((st) => iris(st, P("crmsci", "O5_removed")))
+		.flatMap((smp) => subs(smp, P("afx", "AFX_0000399"))))];
+}
+// All features below a feature or site (graves in a kurgan in a site)
+function featuresBelow(x, seen = new Set()) {
+	return subs(x, P("crm", "P46i_forms_part_of")).filter((f) => kindOf(f) === "feature" && !seen.has(f) && seen.add(f))
+		.flatMap((f) => [f, ...featuresBelow(f, seen)]);
+}
+const cell = (links) => (links.length === 1 ? links[0] : links.length ? { multi: links } : { text: "" });
+const numberOf = (find) => iris(find, P("crm", "P1_is_identified_by")).map((i) => first(i, P("crm", "P190_has_symbolic_content"))).filter(Boolean)[0];
+// Table of finds (website: planning#9): one row per find, values as in the data, sorted by
+// feature and find number. A column that only repeats the page's own record (the type on a
+// type page, the site on a site page) is left out.
+function findsTable(finds, self) {
+	const rows = finds.map((f) => {
+		const c = contextOf(f);
+		const sort = [short(c.features.map(link)), numberOf(f) || labelOf(f) || f].join(" ");
+		return { sort, cells: [
+			{ ...link(f), text: numberOf(f) || link(f).text, title: labelOf(f) || undefined },
+			cell(iris(f, P("crm", "P2_has_type")).map(link)),
+			cell(iris(f, P("crm", "P45_consists_of")).map((m) => ({ ...link(m), text: link(m).short || link(m).text }))),
+			cell(c.features.map(link)),
+			cell(c.sites.map(link)),
+			cell(c.phases.map(link)),
+			cell(analysesOf(f).map((a) => ({ ...link(a), text: (labelOf(a) || "analysis").split(" of ")[0] }))),
+		] };
+	}).sort((a, b) => collator.compare(a.sort, b.sort)).map((r) => r.cells);
+	const head = ["Find", "Type", "Material", "Feature", "Site", "Phase (by context)", "Analyses"];
+	const selfLabel = self ? labelOf(self) : null;
+	const keep = head.map((_, i) => i === 0 || !rows.length || !rows.every((r) => !r[i].multi && r[i].text === selfLabel));
+	return { head: head.filter((_, i) => keep[i]), rows: rows.map((r) => r.filter((_, i) => keep[i])), count: rows.length };
+}
+function featuresTable(features) {
+	const rows = features.map((f) => ({ sort: labelOf(f) || f, cells: [
+		link(f),
+		cell(iris(f, P("crm", "P2_has_type")).map(link)),
+		cell(iris(f, P("crm", "P46i_forms_part_of")).filter((x) => kindOf(x) === "feature").map(link)),
+		cell(iris(f, P("crm", "P8i_witnessed")).map(link)),
+	] })).sort((a, b) => collator.compare(a.sort, b.sort)).map((r) => r.cells);
+	const head = ["Feature", "Type", "Part of", "Phase"];
+	const keep = head.map((_, i) => i !== 2 || rows.some((r) => r[2].text !== ""));
+	return { head: head.filter((_, i) => keep[i]), rows: rows.map((r) => r.filter((_, i) => keep[i])), count: rows.length };
+}
+
 // One short item of the summary line: the values of a fact, joined
 const short = (values) => (values || []).map((v) => v.short || v.text).filter(Boolean).join(", ");
 // Feature and site for the summary line, without the site if a feature's label already names it
@@ -213,6 +261,8 @@ function shortContext(c) {
 }
 // Drop summary items that an earlier item already contains (a phase named in a feature's label)
 const dedupe = (items) => items.filter(Boolean).filter((x, i, a) => !a.slice(0, i).some((y) => y.includes(x)));
+
+const FINDS_CAPTION = "Find number as in the source; the phase is that of the find's context (feature or site).";
 
 // --- Views ------------------------------------------------------------------------------------
 function makeView(iri, kind) {
@@ -225,6 +275,7 @@ function makeView(iri, kind) {
 	const techFact = (label, values) => { if (values.length) tech.push({ label, values }); };
 	const get = (label) => facts.find((f) => f.label === label)?.values;
 	const list = (heading, links) => { if (links.length) sections.push({ heading, list: sortLinks(links) }); };
+	const table = (heading, t, caption) => { if (t.rows.length) sections.push({ heading, caption, table: t, count: t.count }); };
 
 	// Names: every label with its language
 	const names = [...use(P("rdfs", "label")), ...use(P("skos", "prefLabel")), ...use(P("foaf", "name"))];
@@ -255,12 +306,7 @@ function makeView(iri, kind) {
 		summary = [short(get("Type")), short(get("Material")), shortContext(c), short(get("Dated by its context to"))];
 		fact("Parts", use(P("crm", "P46_is_composed_of")).map(val));
 		fact("Part of", use(P("crm", "P46i_forms_part_of")).map(val));
-		// Analyses: sampling events (O3) of the find or its parts → sample (O5) → analysis (input)
-		const sampled = [iri, ...iris(iri, P("crm", "P46_is_composed_of"))];
-		const analyses = sampled.flatMap((x) => subs(x, P("crmsci", "O3_sampled_from")))
-			.flatMap((st) => iris(st, P("crmsci", "O5_removed")))
-			.flatMap((smp) => subs(smp, P("afx", "AFX_0000399")));
-		list("Analyses", [...new Set(analyses)].map(link));
+		list("Analyses", analysesOf(iri).map(link));
 	}
 
 	if (kind === "analysis") {
@@ -321,13 +367,13 @@ function makeView(iri, kind) {
 			const within = subs(iri, P("crm", "P89_falls_within")).flatMap((x) => (kindOf(x) === "site" ? [x] : subs(x, P("crm", "P53_has_former_or_current_location")).filter((s) => kindOf(s) === "site")));
 			list("Sites in this region", [...new Set(within)].map(link));
 		} else {
-			const parts = subs(iri, P("crm", "P46i_forms_part_of")).filter((x) => kindOf(x) === "feature");
-			list(kind === "site" ? "Features" : "Parts of this feature", parts.map(link));
+			const parts = featuresBelow(iri);
+			table(kind === "site" ? "Features" : "Parts of this feature", featuresTable(parts));
 			const finds = [
 				...[iri, ...parts].flatMap((x) => subs(x, P("crmarchaeo", "AP21i_is_contained_in"))),
 				...places.flatMap((pl) => subs(pl, P("crm", "P53_has_former_or_current_location"))).filter((x) => kindOf(x) === "find"),
 			];
-			list("Finds", [...new Set(finds)].map(link));
+			table("Finds", findsTable([...new Set(finds)], iri), FINDS_CAPTION);
 		}
 	}
 
@@ -350,7 +396,9 @@ function makeView(iri, kind) {
 		fact("Broad match", use(P("skos", "broadMatch")).map(val));
 		list("Narrower", subs(iri, P("skos", "broader")).map(link));
 		summary = [get("Broader") ? `narrower term of ${short(get("Broader"))}` : "", short(get("Scheme"))];
-		list("Records of this type", subs(iri, P("crm", "P2_has_type")).filter((x) => kindOf(x)).map(link));
+		const ofType = subs(iri, P("crm", "P2_has_type")).filter((x) => kindOf(x));
+		table("Finds of this type", findsTable(ofType.filter((x) => kindOf(x) === "find"), iri), FINDS_CAPTION);
+		list("Other records of this type", ofType.filter((x) => kindOf(x) !== "find").map(link));
 	}
 
 	if (kind === "lab") {
@@ -412,6 +460,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		doi: first(iri, P("prism", "doi")), classes: types(iri).map(link),
 		summary: [citation(iri), journal ? labelOf(journal) || link(journal).text : null, pages ? `pp. ${pages}` : null].filter(Boolean),
 		finds: sortLinks(docs.filter((x) => kindOf(x) === "find").map(link)),
+		findsTable: findsTable(docs.filter((x) => kindOf(x) === "find")), findsCaption: FINDS_CAPTION,
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
 	};

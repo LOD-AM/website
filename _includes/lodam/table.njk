@@ -1,0 +1,11 @@
+{#- Value table (docs/components.md). Set `t` = {head, rows, numeric?} and `tid` = id of its heading. -#}
+<div class="table-responsive">
+  <table class="table table-sm entity-table{% if t.head.length > 3 %} entity-table--wide{% endif %}" aria-labelledby="{{ tid }}">
+    <thead><tr>{% for h in t.head %}<th scope="col"{% if loop.index0 in (t.numeric or []) %} class="text-end"{% endif %}>{{ h }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      {%- for row in t.rows %}
+      <tr>{% for cellv in row %}{% if loop.first and not t.numeric %}<th scope="row">{% include "lodam/cell.njk" %}</th>{% else %}<td{% if loop.index0 in (t.numeric or []) %} class="text-end font-monospace"{% endif %}>{% include "lodam/cell.njk" %}</td>{% endif %}{% endfor %}</tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>

@@ -14,7 +14,7 @@ where and when it is from, and where it was published. The modelling comes last.
 | 1 | Breadcrumb | (in the page) | `Data › <kind list>` |
 | 2 | **Record header** | `_includes/lodam/header.njk` | kind (small caps), title (`<h1>`), summary line |
 | 3 | **Key facts** | `_includes/lodam/facts.njk` | `<dl>` of what researchers look for, per kind |
-| 4 | Sections | (in the page) | lists and value tables (composition, isotope ratios) with an explanatory caption |
+| 4 | Sections | `_includes/lodam/table.njk` | tables of finds and features, value tables (composition, isotope ratios), short lists; each with a caption explaining how to read it |
 | 5 | Blog posts about the record | (in the page) | posts whose `about` names the record |
 | 6 | **Technical details** | `_includes/lodam/technical.njk` | IRI, names in all languages, classes, identifiers, sample, "Other statements" |
 | 7 | Licence line | (in the page) | CC BY 4.0 and a link to the conventions |
@@ -40,6 +40,14 @@ where published (publication). Labels are plain English ("Found in (feature)"), 
 "not detected" is in italics. The caption states how to read the values (units, "< x",
 "not detected", what was not analysed). Phones scroll a wide table inside its own container
 (`.table-responsive`).
+
+## Tables of finds and features
+`findsTable()` and `featuresTable()` in `_data/lodam.js`, rendered with `_includes/lodam/table.njk`
+(cells with several values via `_includes/lodam/cell.njk`). They are used on site, feature, type and
+publication pages instead of long lists. There is one row per record, sorted by feature and find
+number, and the first cell is the row header. A column that only repeats the page's own record (the
+site on a site page) is left out. Values come from the data; the phase is the phase of the find's
+context. The tables don't sort or filter on the client: the page works without JavaScript.
 
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what

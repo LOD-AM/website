@@ -19,7 +19,15 @@ eleventyComputed:
     {% if pub.pages %}<dt>Pages</dt><dd>{{ pub.pages }}</dd>{% endif %}
     {% if pub.doi %}<dt>DOI</dt><dd><a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a></dd>{% endif %}
   </dl>
-  {% for part in [["Finds documented in it", pub.finds], ["Analyses documented in it", pub.analyses], ["Other records", pub.other]] %}
+  {% if pub.findsTable.rows.length %}
+  <section class="mt-4" aria-labelledby="p-finds">
+    <h2 id="p-finds" class="h4">Finds documented in it <span class="text-body-secondary fs-6">({{ pub.findsTable.count }})</span></h2>
+    <p class="small text-body-secondary">{{ pub.findsCaption }}</p>
+    {%- set t = pub.findsTable %}{% set tid = "p-finds" %}
+    {% include "lodam/table.njk" %}
+  </section>
+  {% endif %}
+  {% for part in [["Analyses documented in it", pub.analyses], ["Other records", pub.other]] %}
   {% if part[1].length %}
   <section class="mt-4" aria-labelledby="p{{ loop.index }}">
     <h2 id="p{{ loop.index }}" class="h4">{{ part[0] }} <span class="text-body-secondary fs-6">({{ part[1].length }})</span></h2>

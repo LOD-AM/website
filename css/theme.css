@@ -327,6 +327,11 @@ a:hover { text-decoration: underline; }
 }
 .entity-table tbody tr:nth-child(even) > * { background-color: #42362A; }
 .entity-table th { color: var(--lodam-chalk-white); }
+.entity-table tbody th { font-weight: 500; }
+/* Tables of finds and features: full width, cells on top so multi-line cells line up */
+.entity-table--wide { width: 100%; }
+.entity-table--wide td, .entity-table--wide th { vertical-align: top; }
+.entity-table--wide thead th, .entity-table--wide tbody th { white-space: nowrap; }
 
 /* Data dropdown in the navbar */
 .site-nav .dropdown-menu {
