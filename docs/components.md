@@ -67,6 +67,32 @@ Downloads: `/id/<kind>/<uuid>.ttl` and `.jsonld` (`content/id/entity-ttl.11ty.js
 the same data as the page. They are also linked in the page head (`rel="alternate"`). `npm run check`
 checks that they exist, parse and hold the right number of triples.
 
+## Charts
+Static SVG built at build time by `_config/charts.js`, with no JavaScript and no chart library.
+Histograms of element contents (planning#23) appear on the analyses page of a publication; their data
+comes from `histogramsOf()` in `_data/lodam.js`. There is one chart per element, all on the same
+log10 axis (four bins per power of ten), with a count axis per chart. "Not detected", "< x" and 0
+are counted next to the chart, not plotted. Each bar has a native tooltip (`<title>`), each chart a
+text alternative, and a table view sits in a `<details>`. There is one mark colour per mode
+(`--lodam-chart-bar`), checked with the dataviz palette validator (lightness band for marks, 3:1 on the
+chart surface). Text uses text colours, never the mark colour.
+
+Lead isotope diagrams (owner, 2026-11-19) appear on the same page and come from `isotopePlotsOf()` and
+`scatterSvg()`. There are two scatterplots with a shared Y axis. With ²⁰⁴Pb-based ratios, Y is
+²⁰⁶Pb/²⁰⁴Pb against X = ²⁰⁸Pb/²⁰⁴Pb, then X = ²⁰⁷Pb/²⁰⁴Pb. Only without ²⁰⁴Pb-based ratios, Y is
+²⁰⁴Pb/²⁰⁶Pb against X = ²⁰⁸Pb/²⁰⁶Pb, then X = ²⁰⁷Pb/²⁰⁶Pb (`ISOTOPE_PLOTS` in `_data/lodam.js`).
+Ratios are plotted as reported and never converted. Each point links to its analysis, with a tooltip.
+
+## Site maps
+`_includes/lodam/map.njk` shows a static relief map with the site markers on site pages and on
+`/data/sites/`. The images come from `scripts/map/build_maps.py`, one per 1° × 1° tile that contains a
+released site (owner, 2026-11-19). They use a Copernicus GLO-90 hillshade with an earthy elevation
+tint, HydroRIVERS rivers (smoothed for drawing), and Natural Earth lakes, reservoirs and sea, with no
+borders, places or roads. `lodam.maps` in `_data/lodam.js` places the markers in percent of the image
+(equirectangular, like the image), so adding a site to an existing tile needs no new image. Markers and
+labels are HTML (readable at any width) in fixed colours, because the image is the same in both modes.
+The scale bar is true at the tile's middle latitude. Full attributions are on `/data/#map-sources`.
+
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what
 linked-data users need but researchers don't look for first: the IRI (breaks after each `/` on

@@ -573,6 +573,77 @@ function resultsTables(analyses) {
 		ratios: build((r) => r.ratioRows, (c) => ({ text: c.key })),
 	};
 }
+// Histograms of the reported element contents of a publication (planning#23, owner 2026-11-19:
+// "histograms with a log10 scale of all present elements"). One per element, all on the same
+// log10 axis (quarter-decade bins) and the same count axis, so the elements can be compared.
+// Only reported numbers are plotted. "Not detected", upper limits ("< x") and 0 have no place
+// on a log scale; they are counted next to the chart instead. The values themselves are not
+// changed; the binning is only for drawing.
+const BINS_PER_DECADE = 4;
+// Elements left out of the histograms (owner, 2026-11-19: "We can ignore P and Te for the
+// histograms"). Their values stay in the tables and on the analysis pages.
+const HISTOGRAM_EXCLUDE = new Set([NS.chebi + "28659", NS.chebi + "30452"]);   // phosphorus, tellurium
+function histogramsOf(analyses) {
+	const byElement = new Map();
+	const excluded = new Set();
+	for (const a of analyses) for (const r of resultsOf(a).elementRows) {
+		if (HISTOGRAM_EXCLUDE.has(r.key)) { excluded.add(r.head.text); continue; }
+		if (!byElement.has(r.key)) byElement.set(r.key, { head: r.head, sort: r.sort, unit: r.unit, values: [], nd: 0, limit: 0, zero: 0 });
+		const e = byElement.get(r.key);
+		if (r.shown.text === "not detected") e.nd++;
+		else if (r.shown.text.startsWith("<")) e.limit++;
+		else if (Number(r.shown.text) > 0) e.values.push(Number(r.shown.text));
+		else if (Number(r.shown.text) === 0) e.zero++;
+	}
+	const all = [...byElement.values()].flatMap((e) => e.values);
+	if (!all.length) return null;
+	const lo = Math.floor(Math.log10(Math.min(...all))), hi = Math.ceil(Math.log10(Math.max(...all)) + 1e-9);
+	const nBins = (hi - lo) * BINS_PER_DECADE;
+	const edge = (i) => 10 ** (lo + i / BINS_PER_DECADE);
+	const fmt = (x) => Number(x.toPrecision(2)).toString();
+	const elementsList = [...byElement.values()].sort((a, b) => a.sort - b.sort).map((e) => {
+		const counts = new Array(nBins).fill(0);
+		// small epsilon so values exactly on a decade (0.001) fall into the bin that starts there
+		for (const v of e.values) counts[Math.min(nBins - 1, Math.floor((Math.log10(v) - lo) * BINS_PER_DECADE + 1e-9))]++;
+		return { ...e, n: e.values.length, bins: counts.map((c, i) => ({ i, count: c, from: fmt(edge(i)), to: fmt(edge(i + 1)) })) };
+	});
+	const units = [...new Set(elementsList.map((e) => e.unit).filter(Boolean))];
+	return { lo, hi, nBins, binsPerDecade: BINS_PER_DECADE, decades: Array.from({ length: hi - lo + 1 }, (_, i) => lo + i),
+		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList,
+		excluded: [...excluded].sort() };
+}
+
+// Lead isotope diagrams of a publication (owner, 2026-11-19): two scatterplots with the same Y.
+// With 204Pb-based ratios: Y = 206Pb/204Pb against X = 208Pb/204Pb, then X = 207Pb/204Pb.
+// Only without 204Pb-based ratios: Y = 204Pb/206Pb against X = 208Pb/206Pb, then X = 207Pb/206Pb.
+// Ratios are plotted as reported and never converted (e.g. 206/204 is not computed from 204/206).
+const ISOTOPE_PLOTS = [
+	{ y: "lead-206 / lead-204", xs: ["lead-208 / lead-204", "lead-207 / lead-204"] },
+	{ y: "lead-204 / lead-206", xs: ["lead-208 / lead-206", "lead-207 / lead-206"] },   // only without 204-based data
+];
+const ratioLabel = (key) => key.replace(/lead-(\d+) \/ lead-(\d+)/, (_, a, b) => `${a}Pb/${b}Pb`);
+function isotopePlotsOf(analyses) {
+	const rows = analyses.map((a) => {
+		const v = {};
+		for (const r of resultsOf(a).ratioRows) if (r.shown.num && !r.shown.text.startsWith("<")) v[r.key] = Number(r.shown.text);
+		return { a, v };
+	}).filter((x) => Object.keys(x.v).length);
+	if (!rows.length) return null;
+	const has = (key) => rows.some((x) => key in x.v);
+	const set = ISOTOPE_PLOTS.find((s) => has(s.y) && s.xs.some(has));
+	if (!set) return null;
+	const num = (a) => first(a, P("dcterms", "identifier")) || labelOf(a) || a;
+	const plots = set.xs.filter(has).map((x) => ({
+		x, y: set.y, xLabel: ratioLabel(x), yLabel: ratioLabel(set.y),
+		points: rows.filter((r) => x in r.v && set.y in r.v).map((r) => {
+			const objs = objsOfAnalysis(r.a);
+			return { x: r.v[x], y: r.v[set.y], href: pathOf(r.a), analysis: num(r.a),
+				object: objs.map((o) => numberOf(o) || labelOf(o) || "").join(", ") };
+		}),
+	}));
+	return { basis: set === ISOTOPE_PLOTS[0] ? "204" : "206", plots };
+}
+
 // The object(s) an analysis sampled (analysis → sample → sampling event → object)
 function objsOfAnalysis(a) {
 	return [...new Set(iris(a, P("afx", "AFX_0000399")).flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))))];
@@ -594,6 +665,8 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		findsTable: findsTable(docs.filter((x) => kindOf(x) === "find")), findsCaption: FINDS_CAPTION,
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
 		results: resultsTables(docs.filter((x) => kindOf(x) === "analysis")),
+		histograms: histogramsOf(docs.filter((x) => kindOf(x) === "analysis")),
+		isotopePlots: isotopePlotsOf(docs.filter((x) => kindOf(x) === "analysis")),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));
@@ -606,12 +679,28 @@ for (const d of datasets) {
 	d.finds = docs.filter((x) => kindOf(x) === "find").length;
 	d.analyses = docs.filter((x) => kindOf(x) === "analysis").length;
 }
-// Sites with their coordinates as in the data (schema.org Dataset spatialCoverage)
+// Sites with their coordinates as in the data (schema.org Dataset spatialCoverage, maps)
 const siteCoords = byKind.site.map((r) => {
 	const pl = iris(r.iri, P("crm", "P53_has_former_or_current_location"))[0];
 	const wkt = pl ? iris(pl, P("geo", "hasGeometry")).map((g) => first(g, P("geo", "asWKT")))[0] || "" : "";
 	const m = wkt.match(/POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)/i);
-	return { iri: r.iri, label: r.label, lon: m ? m[1] : null, lat: m ? m[2] : null };
+	return { iri: r.iri, label: r.label, path: r.path, lon: m ? m[1] : null, lat: m ? m[2] : null };
 });
 
-export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, turtleOf, jsonldOf };
+// Base maps (planning#18): one relief image per 1x1 degree tile with released sites, made by
+// scripts/map/build_maps.py (_data/siteMaps.json). Markers are placed here, in percent of the
+// image (equirectangular, like the image), so the images don't change when sites are added.
+const siteMapData = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : { tiles: [], sources: [] };
+const maps = siteMapData.tiles.map((t) => {
+	const sites = siteCoords.filter((x) => x.lat != null && Number(x.lon) >= t.west && Number(x.lon) < t.east && Number(x.lat) >= t.south && Number(x.lat) < t.north)
+		.map((x) => ({ ...x, left: (100 * (Number(x.lon) - t.west)) / (t.east - t.west), top: (100 * (t.north - Number(x.lat))) / (t.north - t.south) }));
+	// scale bar: 10 km as a share of the image width (true scale at the tile's middle)
+	return { ...t, sites, scaleKm: 10, scalePct: (100 * 10) / (t.kmPerDegreeLon * (t.east - t.west)),
+		extent: `${t.south}–${t.north}° N, ${t.west}–${t.east}° E` };
+});
+for (const r of byKind.site) {
+	const m = maps.find((t) => t.sites.some((x) => x.iri === r.iri));
+	if (m) r.map = { ...m, sites: m.sites.map((x) => ({ ...x, current: x.iri === r.iri })) };
+}
+
+export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData.sources, turtleOf, jsonldOf };

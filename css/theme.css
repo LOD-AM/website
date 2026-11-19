@@ -435,6 +435,99 @@ a:hover { text-decoration: underline; }
 .entity-table--values tbody th { position: sticky; left: 0; z-index: 1; }
 .entity-table--values thead th:first-child { position: sticky; left: 0; z-index: 2; }
 
+/* Charts (planning#23): static SVG from _config/charts.js. One series per chart, so one mark
+   colour; it reaches 3:1 on the chart surface and stays inside the lightness band for marks
+   in each mode (checked with the dataviz palette validator). Text uses text colours, never
+   the mark colour; grid and axes are recessive hairlines. */
+:root, [data-bs-theme=dark] { --lodam-chart-bar: #BA8633; }  /* 3.9:1 on #3A2E22 */
+[data-bs-theme=light] { --lodam-chart-bar: #85570F; }         /* 4.9:1 on #EBE3D5 */
+.chart-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+}
+.chart-figure {
+  margin: 0;
+  padding: 0.75rem 0.75rem 0.25rem;
+  background: var(--lodam-charcoal);
+  border-radius: 0.375rem;
+}
+.chart-figure figcaption { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; }
+.chart { display: block; width: 100%; height: auto; }
+.chart-bar { fill: var(--lodam-chart-bar); }
+.chart-bar:hover { fill: var(--lodam-chalk-white); }
+.chart-grid { stroke: rgba(var(--lodam-line-rgb), 0.15); stroke-width: 1; }
+.chart-axis { stroke: rgba(var(--lodam-line-rgb), 0.45); stroke-width: 1; }
+.chart-tick { fill: var(--lodam-text-secondary); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart-axis-title { fill: var(--lodam-chalk-white); font-size: 13px; font-weight: 600; }
+.chart--scatter .chart-tick { font-size: 12px; }
+/* Scatter points: >= 8 px, 2 px ring in the surface colour so overlapping points stay distinct */
+.chart-point { fill: var(--lodam-chart-bar); stroke: var(--lodam-charcoal); stroke-width: 2; }
+.chart-point-link:hover .chart-point, .chart-point-link:focus-visible .chart-point { fill: var(--lodam-chalk-white); }
+.chart-point-link:focus-visible { outline: none; }
+.chart-grid-list--wide { grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); }
+
+/* Site maps (planning#18): a static relief image (scripts/map/build_maps.py) with HTML markers.
+   The image is the same in both modes, so markers and labels use fixed colours that work on it:
+   dark dot with a light ring, dark text on a light label (13:1). */
+.site-map { max-width: 40rem; }
+.site-map__frame {
+  position: relative;
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.25);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  background: #CBD4B2;
+}
+.site-map__frame img { display: block; width: 100%; height: 100%; }
+.site-map__marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transform: translate(-0.5rem, -50%);   /* the dot's centre sits on the site */
+  text-decoration: none;
+}
+.site-map__dot {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #2B2219;
+  box-shadow: 0 0 0 2px #F5F0E6;
+}
+.site-map__marker--current .site-map__dot { background: #A9472F; }
+.site-map__label {
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.25rem;
+  background: rgba(245, 240, 230, 0.92);
+  color: #2B2219;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.site-map__marker:hover .site-map__label, .site-map__marker:focus-visible .site-map__label { text-decoration: underline; }
+.site-map__scale {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  height: 0.4rem;
+  border: 2px solid #2B2219;
+  border-top: none;
+}
+.site-map__scale span {
+  position: absolute;
+  bottom: 0.45rem;
+  left: 0;
+  padding: 0 0.3rem;
+  border-radius: 0.2rem;
+  background: rgba(245, 240, 230, 0.92);
+  color: #2B2219;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* Data dropdown in the navbar */
 .site-nav .dropdown-menu {
   --bs-dropdown-bg: var(--lodam-charcoal);

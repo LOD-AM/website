@@ -1,0 +1,40 @@
+# title: Lead isotope ratios of the finds from a site
+# question: Which lead isotope ratios have been reported for the finds from Arslantepe, and in which context was each find made?
+# columns: find findNumber context isotope reference ratio
+# conventions: finds and their contexts (features, finds without a feature), sampling, lead isotope ratios
+# note: change the site name to query another site. Ratios as reported (dimensionless). A find
+# note: made in a feature of a feature (a grave in a kurgan) is found through crm:P46i_forms_part_of+.
+PREFIX crm:        <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crmsci:     <http://www.cidoc-crm.org/extensions/crmsci/>
+PREFIX crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>
+PREFIX afx:        <http://purl.allotrope.org/ontologies/property#>
+PREFIX afr:        <http://purl.allotrope.org/ontologies/result#>
+PREFIX qudt:       <http://qudt.org/schema/qudt#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd:         <http://www.wikidata.org/entity/>
+
+SELECT ?find ?findNumber ?context ?isotope ?reference ?ratio WHERE {
+  ?site a crm:E27_Site ; rdfs:label "Arslantepe"@en .
+  # The find's context: a feature of the site, or (finds without a feature) the site's place
+  {
+    ?feature crm:P46i_forms_part_of+ ?site .
+    ?find crmarchaeo:AP21i_is_contained_in ?feature .
+    ?feature rdfs:label ?context . FILTER (lang(?context) = "en")
+  } UNION {
+    ?site crm:P53_has_former_or_current_location ?place .
+    ?find crm:P53_has_former_or_current_location ?place .
+    BIND ("(site, no feature)" AS ?context)
+  }
+  ?find a crm:E22_Human-Made_Object .
+  OPTIONAL { ?find crm:P1_is_identified_by/crm:P190_has_symbolic_content ?findNumber }
+  # find -> sampling -> sample -> analysis -> its results
+  ?sampling crmsci:O3_sampled_from ?find ; crmsci:O5_removed ?sample .
+  ?analysis afx:AFX_0000399 ?sample ; afx:AFX_0000395 ?result .
+  ?result a afr:AFR_0002368 ;                 # analyte molar ratio
+          afx:AFX_0002816 ?nuclide ;          # analyte (numerator)
+          afx:AFX_0001550 ?referenceNuclide ; # reference (denominator)
+          qudt:numericValue ?ratio .
+  VALUES (?nuclide ?isotope) { (wd:Q18883429 "lead-204") (wd:Q18883438 "lead-206") (wd:Q18883443 "lead-207") (wd:Q16670466 "lead-208") }
+  VALUES (?referenceNuclide ?reference) { (wd:Q18883429 "lead-204") (wd:Q18883438 "lead-206") (wd:Q18883443 "lead-207") (wd:Q16670466 "lead-208") }
+}
+ORDER BY ?findNumber ?isotope

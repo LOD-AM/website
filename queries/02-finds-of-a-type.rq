@@ -1,0 +1,23 @@
+# title: Finds of a type, with material, context and dating
+# question: Which awls are there, what are they made of, where were they found and to which phase does their context date?
+# columns: find findNumber material feature phase
+# conventions: typology (SKOS), finds and their contexts, dating of contexts (not of objects)
+# note: change the type label ("awl"@en; German labels such as "Pfriem"@de work too). Material is a Getty AAT concept.
+PREFIX crm:        <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?find ?findNumber ?material ?feature ?phase WHERE {
+  ?type skos:inScheme <https://lod-am.net/id/typology> ; skos:prefLabel "awl"@en .
+  ?find a crm:E22_Human-Made_Object ; crm:P2_has_type ?type .
+  OPTIONAL { ?find crm:P1_is_identified_by/crm:P190_has_symbolic_content ?findNumber }
+  OPTIONAL { ?find crm:P45_consists_of ?material }
+  OPTIONAL {
+    ?find crmarchaeo:AP21i_is_contained_in ?f .
+    ?f rdfs:label ?feature . FILTER (lang(?feature) = "en")
+    # a context is dated, the find through its context
+    OPTIONAL { ?f crm:P8i_witnessed/rdfs:label ?phase . FILTER (lang(?phase) = "en") }
+  }
+}
+ORDER BY ?findNumber

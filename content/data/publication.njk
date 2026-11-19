@@ -31,7 +31,7 @@ eleventyComputed:
   <section class="mt-4" aria-labelledby="p-analyses">
     <h2 id="p-analyses" class="h4">Analyses documented in it <span class="text-body-secondary fs-6">({{ pub.analyses.length }})</span></h2>
     <p>{% if pub.results.composition.count %}{{ pub.results.composition.count }} chemical analyses{% endif %}{% if pub.results.composition.count and pub.results.ratios.count %} and {% endif %}{% if pub.results.ratios.count %}{{ pub.results.ratios.count }} lead isotope analyses{% endif %},
-    all values in two tables: <a href="{{ pub.path }}analyses/">Analyses in {{ pub.citation }}</a>. Each analysis is also linked from its find in the table above.</p>
+    all values in two tables, with histograms of the element contents: <a href="{{ pub.path }}analyses/">Analyses in {{ pub.citation }}</a>. Each analysis is also linked from its find in the table above.</p>
   </section>
   {% endif %}
   {% for part in [["Other records", pub.other]] %}

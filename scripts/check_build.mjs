@@ -117,6 +117,23 @@ if (existsSync("data/published")) {
   } catch (e) { errors.push(`/data/: no valid Dataset JSON-LD (${e.message})`); }
 }
 
+// Site maps (planning#18): every released site lies in a map tile whose image exists.
+// After releasing a site in a new 1° tile, run scripts/map/build_maps.py.
+{
+  const maps = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")).tiles : [];
+  for (const t of maps) if (!existsSync(join(SITE, t.src))) errors.push(`map image missing: ${t.src}`);
+  for (const f of existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : []) {
+    const text = readFileSync(join("data/published", f), "utf8");
+    for (const m of text.matchAll(/<https:\/\/lod-am\.net\/id\/site\/([0-9a-f-]{36})\/geometry>[^.]*?asWKT\s+"POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)"/gs)) {
+      const [lon, lat] = [Number(m[2]), Number(m[3])];
+      if (!maps.some((t) => lon >= t.west && lon < t.east && lat >= t.south && lat < t.north))
+        errors.push(`site ${m[1]} (${lat} N, ${lon} E) has no map: run scripts/map/build_maps.py`);
+      const page = join(SITE, "id", "site", m[1], "index.html");
+      if (existsSync(page) && !readFileSync(page, "utf8").includes('class="site-map')) errors.push(`site page ${m[1]} shows no map`);
+    }
+  }
+}
+
 if (errors.length) {
   console.error(`Build check FAILED (${errors.length}):\n- ` + [...new Set(errors)].join("\n- "));
   process.exit(1);

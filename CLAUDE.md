@@ -10,6 +10,7 @@ npm ci
 npm start        # dev server on http://localhost:8080 (drafts shown)
 npm run build    # production build to _site/ (drafts excluded)
 npm run check    # checks on _site/: required files, posts vs drafts, internal links
+npm run check:queries   # example SPARQL queries (queries/*.rq) against the released data, no server
 ```
 Both must pass before a PR (CI `build.yml` runs them). Eleventy doesn't clean
 `_site/`, so stale files can make `check` fail locally: build into a fresh folder
@@ -48,6 +49,8 @@ remote images). Network errors there are warnings, not build failures.
   `content/data/` (overview, lists, publications). Nothing on these pages may be computed from the data
   (values as reported); `npm run check` fails if a record has no page. Page structure (header with
   summary line, key facts, technical details) and its includes in `_includes/lodam/`: `docs/components.md`.
+  Site maps: static relief images per 1° tile from `scripts/map/build_maps.py` (offline; see `data/README.md`),
+  markers placed at build time; histograms on the publication analyses page from `_config/charts.js` (static SVG).
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap. Dark mode by default, light mode

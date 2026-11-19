@@ -20,3 +20,7 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
    `NODE_USE_ENV_PROXY=1 node scripts/aat_labels.mjs`, build and `npm run check` (every record needs its page).
 4. Add an entry to `_data/dataReleases.js` (date, citation key, what changed). That file is the data changelog
    on `/data/`, and `npm run check` fails without the entry. Record corrections to released data there too.
+5. If a released site lies in a 1° × 1° area without a map yet: `pip install -r scripts/map/requirements.txt`, then
+   `python3 scripts/map/build_maps.py` (downloads into `.cache/maps/`; needs copernicus-dem-90m.s3.amazonaws.com,
+   data.hydrosheds.org and raw.githubusercontent.com). It writes `public/img/maps/<tile>.webp` and
+   `_data/siteMaps.json`; `npm run check` fails if a site has no map.

@@ -33,6 +33,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run check
+      # Example SPARQL queries against the released data (LOD-AM/planning#24)
+      - run: npm run check:queries
 
       - name: Upload built site
         if: github.event_name != 'pull_request'

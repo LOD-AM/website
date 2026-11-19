@@ -1,0 +1,19 @@
+{#- Relief map of one tile with its site markers (planning#18, docs/components.md). Set `map`
+    (an entry of lodam.maps or record.map) and `mapHeadingId`. The image is static; markers and
+    labels are HTML in percent of the image, so labels stay readable at any width. -#}
+<figure class="site-map mb-0" aria-labelledby="{{ mapHeadingId }}-cap">
+  <div class="site-map__frame" style="aspect-ratio: {{ map.width }} / {{ map.height }}">
+    <img src="{{ map.src }}" width="{{ map.width }}" height="{{ map.height }}" loading="lazy" decoding="async"
+      alt="Relief map of {{ map.extent }} with rivers and lakes{% if map.sites.length %}; marked: {% for x in map.sites %}{{ x.label }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}." eleventy:ignore>
+    {%- for x in map.sites %}
+    <a class="site-map__marker{% if x.current %} site-map__marker--current{% endif %}" href="{{ x.path }}" style="left: {{ x.left }}%; top: {{ x.top }}%"{% if x.current %} aria-current="page"{% endif %}>
+      <span class="site-map__dot" aria-hidden="true"></span><span class="site-map__label">{{ x.label }}</span>
+    </a>
+    {%- endfor %}
+    <div class="site-map__scale" style="width: {{ map.scalePct }}%" aria-hidden="true"><span>{{ map.scaleKm }} km</span></div>
+  </div>
+  <figcaption id="{{ mapHeadingId }}-cap" class="small text-body-secondary mt-2">
+    {{ map.extent }}. North is up; scale true at the map's middle latitude. Rivers, lakes, reservoirs and coastlines as today.
+    Relief: Copernicus DEM GLO-90; rivers: HydroRIVERS; lakes and sea: Natural Earth (<a href="/data/#map-sources">sources</a>).
+  </figcaption>
+</figure>
