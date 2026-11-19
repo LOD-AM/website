@@ -607,12 +607,13 @@ function histogramsOf(analyses) {
 		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList };
 }
 
-// Lead isotope diagrams of a publication (owner, 2026-11-19): two scatterplots with the same X.
-// ²⁰⁴Pb-based ratios when the publication reports them; otherwise the ²⁰⁶Pb-based ratios as
-// reported. Ratios are never converted (e.g. 206/204 is not computed from 204/206).
+// Lead isotope diagrams of a publication (owner, 2026-11-19): two scatterplots with the same Y.
+// With 204Pb-based ratios: Y = 206Pb/204Pb against X = 208Pb/204Pb, then X = 207Pb/204Pb.
+// Only without 204Pb-based ratios: Y = 204Pb/206Pb against X = 208Pb/206Pb, then X = 207Pb/206Pb.
+// Ratios are plotted as reported and never converted (e.g. 206/204 is not computed from 204/206).
 const ISOTOPE_PLOTS = [
-	{ x: "lead-206 / lead-204", ys: ["lead-207 / lead-204", "lead-208 / lead-204"] },
-	{ x: "lead-208 / lead-206", ys: ["lead-207 / lead-206", "lead-204 / lead-206"] },   // only without 204-based data
+	{ y: "lead-206 / lead-204", xs: ["lead-208 / lead-204", "lead-207 / lead-204"] },
+	{ y: "lead-204 / lead-206", xs: ["lead-208 / lead-206", "lead-207 / lead-206"] },   // only without 204-based data
 ];
 const ratioLabel = (key) => key.replace(/lead-(\d+) \/ lead-(\d+)/, (_, a, b) => `${a}Pb/${b}Pb`);
 function isotopePlotsOf(analyses) {
@@ -623,14 +624,14 @@ function isotopePlotsOf(analyses) {
 	}).filter((x) => Object.keys(x.v).length);
 	if (!rows.length) return null;
 	const has = (key) => rows.some((x) => key in x.v);
-	const set = ISOTOPE_PLOTS.find((s) => has(s.x) && s.ys.some(has));
+	const set = ISOTOPE_PLOTS.find((s) => has(s.y) && s.xs.some(has));
 	if (!set) return null;
 	const num = (a) => first(a, P("dcterms", "identifier")) || labelOf(a) || a;
-	const plots = set.ys.filter(has).map((y) => ({
-		x: set.x, y, xLabel: ratioLabel(set.x), yLabel: ratioLabel(y),
-		points: rows.filter((r) => set.x in r.v && y in r.v).map((r) => {
+	const plots = set.xs.filter(has).map((x) => ({
+		x, y: set.y, xLabel: ratioLabel(x), yLabel: ratioLabel(set.y),
+		points: rows.filter((r) => x in r.v && set.y in r.v).map((r) => {
 			const objs = objsOfAnalysis(r.a);
-			return { x: r.v[set.x], y: r.v[y], href: pathOf(r.a), analysis: num(r.a),
+			return { x: r.v[x], y: r.v[set.y], href: pathOf(r.a), analysis: num(r.a),
 				object: objs.map((o) => numberOf(o) || labelOf(o) || "").join(", ") };
 		}),
 	}));
