@@ -4,6 +4,8 @@
 @prefix : <https://lod-am.net/id/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
 
 <https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4> a skos:ConceptScheme;
+    dcterms:source <https://lod-am.net/id/pub/rothman2002tepe>;
     skos:prefLabel "Tepe Gawra Stufen"@de, "Tepe Gawra periods"@en.

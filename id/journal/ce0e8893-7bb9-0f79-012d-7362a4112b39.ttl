@@ -1,0 +1,10 @@
+# Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms
+# https://lod-am.net/id/journal/ce0e8893-7bb9-0f79-012d-7362a4112b39 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix fabio: <http://purl.org/spar/fabio/>.
+
+<https://lod-am.net/id/journal/ce0e8893-7bb9-0f79-012d-7362a4112b39> a fabio:Journal;
+    dcterms:title "Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms".

@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/97ac280c-e3a8-c242-8c5c-24fffc4ca7bf",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Vignola"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "C"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "C Vignola"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "fabio": "http://purl.org/spar/fabio/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/journal/ce0e8893-7bb9-0f79-012d-7362a4112b39",
+   "@type": [
+    "fabio:Journal"
+   ],
+   "dcterms:title": [
+    {
+     "@value": "Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms"
+    }
+   ]
+  }
+ ]
+}

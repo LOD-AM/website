@@ -1,13 +1,19 @@
 {
  "@context": {
   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-  "skos": "http://www.w3.org/2004/02/skos/core#"
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "dcterms": "http://purl.org/dc/terms/"
  },
  "@graph": [
   {
    "@id": "https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1",
    "@type": [
     "skos:ConceptScheme"
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://lod-am.net/id/pub/vignola2019changes"
+    }
    ],
    "skos:prefLabel": [
     {

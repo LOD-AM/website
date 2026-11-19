@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/f6d4a1f5-1b85-18f0-2ad3-e6303a753384",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Marzaioli"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "F"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "F Marzaioli"
+    }
+   ]
+  }
+ ]
+}

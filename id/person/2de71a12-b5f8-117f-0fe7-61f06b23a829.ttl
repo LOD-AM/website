@@ -1,0 +1,11 @@
+# F Terrasi
+# https://lod-am.net/id/person/2de71a12-b5f8-117f-0fe7-61f06b23a829 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://lod-am.net/id/person/2de71a12-b5f8-117f-0fe7-61f06b23a829> a foaf:Person;
+    foaf:familyName "Terrasi";
+    foaf:givenName "F";
+    foaf:name "F Terrasi".

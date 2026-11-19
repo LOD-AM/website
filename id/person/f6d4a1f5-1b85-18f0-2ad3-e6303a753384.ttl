@@ -1,0 +1,11 @@
+# F Marzaioli
+# https://lod-am.net/id/person/f6d4a1f5-1b85-18f0-2ad3-e6303a753384 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://lod-am.net/id/person/f6d4a1f5-1b85-18f0-2ad3-e6303a753384> a foaf:Person;
+    foaf:familyName "Marzaioli";
+    foaf:givenName "F";
+    foaf:name "F Marzaioli".

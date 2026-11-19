@@ -1,13 +1,19 @@
 {
  "@context": {
   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-  "skos": "http://www.w3.org/2004/02/skos/core#"
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "dcterms": "http://purl.org/dc/terms/"
  },
  "@graph": [
   {
    "@id": "https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4",
    "@type": [
     "skos:ConceptScheme"
+   ],
+   "dcterms:source": [
+    {
+     "@id": "https://lod-am.net/id/pub/rothman2002tepe"
+    }
    ],
    "skos:prefLabel": [
     {

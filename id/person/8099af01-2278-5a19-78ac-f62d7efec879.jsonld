@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/8099af01-2278-5a19-78ac-f62d7efec879",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Frangipane"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "M"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "M Frangipane"
+    }
+   ]
+  }
+ ]
+}

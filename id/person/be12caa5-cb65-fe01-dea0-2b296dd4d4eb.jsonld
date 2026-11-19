@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/be12caa5-cb65-fe01-dea0-2b296dd4d4eb",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Masi"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "A"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "A Masi"
+    }
+   ]
+  }
+ ]
+}

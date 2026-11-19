@@ -1,0 +1,11 @@
+# Gian Maria Di Nocera
+# https://lod-am.net/id/person/47ab4d6f-cfca-5149-b920-c3d5294632cd · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://lod-am.net/id/person/47ab4d6f-cfca-5149-b920-c3d5294632cd> a foaf:Person;
+    foaf:familyName "Di Nocera";
+    foaf:givenName "Gian Maria";
+    foaf:name "Gian Maria Di Nocera".
