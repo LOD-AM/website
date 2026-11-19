@@ -1,0 +1,18 @@
+# Bracelet, unspecified (no. ARSL 64, Arslantepe)
+# https://lod-am.net/id/find/d35bbe82-a847-44ed-aece-9957ce1ebab7 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+
+<https://lod-am.net/id/find/d35bbe82-a847-44ed-aece-9957ce1ebab7> a crm:E22_Human-Made_Object;
+    rdfs:label "Armring, unbestimmt (Nr. ARSL 64, Arslantepe)"@de, "Bracelet, unspecified (no. ARSL 64, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/d35bbe82-a847-44ed-aece-9957ce1ebab7/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/8b8d073b-974e-48bb-b198-1590a2ccffc1>;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.
+<https://lod-am.net/id/find/d35bbe82-a847-44ed-aece-9957ce1ebab7/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 64";
+    crm:P2_has_type :old_identifier.

@@ -1,0 +1,14 @@
+# dagger blades or daggers with organic handle
+# https://lod-am.net/id/type/7f997a47-1bb1-b180-935f-d2a455b92065 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/7f997a47-1bb1-b180-935f-d2a455b92065> a crm:E55_Type, skos:Concept;
+    skos:broadMatch aat:300037058;
+    skos:broader <https://lod-am.net/id/type/8e23cf21-b1ec-f7c1-f531-f2fdeaf4fb1b>;
+    skos:inScheme :typology;
+    skos:prefLabel "Dolchklingen oder Dolche mit organischem Griff"@de, "dagger blades or daggers with organic handle"@en.

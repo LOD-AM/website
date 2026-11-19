@@ -1,0 +1,17 @@
+# Arslantepe VIB2
+# https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43/time_span> a crm:E52_Time-Span;
+    crm:P79_beginning_is_qualified_by "-2900";
+    crm:P80_end_is_qualified_by "-2750".
+<https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43> a crm:E4_Period;
+    rdfs:label "Arslantepe VIB2"@de, "Arslantepe VIB2"@en;
+    crm:P4_has_time-span <https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43/time_span>;
+    crm:P9i_forms_part_of <https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73>;
+    skos:inScheme <https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1>.

@@ -1,0 +1,435 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "unit": "http://qudt.org/vocab/unit#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "chebi": "http://purl.obolibrary.org/obo/CHEBI_"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34",
+   "@type": [
+    "afp:AFP_0002680",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Chemische Analyse 144 von Schale (Nr. ARSL 47, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/bi"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/co"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/fe"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ni"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/p"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/pb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/se"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sn"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "144"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/d1bd0c5c-67c7-42f7-b388-331a1c85f26b"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30512"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.395",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27563"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.88",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_29287"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/bi",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_33301"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/co",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27638"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.002",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/fe",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_18248"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.138",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ni",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28112"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.92",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/p",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28659"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/pb",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_25016"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sb",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30513"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.123",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/se",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27568"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sn",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27007"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.008",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30452"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27363"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.005",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Schale (Nr. ARSL 47, Arslantepe) (144)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Bowl (no. ARSL 47, Arslantepe) (144)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

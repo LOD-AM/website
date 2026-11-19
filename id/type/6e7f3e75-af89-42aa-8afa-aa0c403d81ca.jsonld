@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/6e7f3e75-af89-42aa-8afa-aa0c403d81ca",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300037058"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/7f997a47-1bb1-b180-935f-d2a455b92065"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Flachdolch oder Dolch, unbestimmt",
+     "@language": "de"
+    },
+    {
+     "@value": "flat dagger or dagger, unspecified",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

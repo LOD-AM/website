@@ -1,0 +1,164 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "wd": "http://www.wikidata.org/entity/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc",
+   "@type": [
+    "afp:AFP_0001427",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Bleiisotopenanalyse 4 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Lead isotope analysis 4 of Sword, unspecified (no. ARSL 15, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb204_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb207_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb208_pb206"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "4"
+    }
+   ],
+   "crm:P14_carried_out_by": [
+    {
+     "@id": "https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/d463ac30-f668-4260-8e26-ccb03ea7a982"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb204_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883429"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.05352",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb207_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883443"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.8385",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb208_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q16670466"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "2.0767",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (4)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (4)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

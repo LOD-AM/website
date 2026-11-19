@@ -1,0 +1,21 @@
+# Beaker (no. ARSL 58, Arslantepe)
+# https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78> a crm:E22_Human-Made_Object;
+    rdfs:label "Becher (Nr. ARSL 58, Arslantepe)"@de, "Beaker (no. ARSL 58, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/54771f81-da93-4aca-abe0-15d2b917b767>;
+    crm:P3_has_note "Becher";
+    crm:P45_consists_of aat:300241441;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.
+<https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 58";
+    crm:P2_has_type :old_identifier.

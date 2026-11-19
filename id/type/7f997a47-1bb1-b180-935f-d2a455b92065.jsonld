@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/7f997a47-1bb1-b180-935f-d2a455b92065",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300037058"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/8e23cf21-b1ec-f7c1-f531-f2fdeaf4fb1b"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Dolchklingen oder Dolche mit organischem Griff",
+     "@language": "de"
+    },
+    {
+     "@value": "dagger blades or daggers with organic handle",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

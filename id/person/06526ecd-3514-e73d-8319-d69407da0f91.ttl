@@ -1,0 +1,11 @@
+# Alberto M Palmieri
+# https://lod-am.net/id/person/06526ecd-3514-e73d-8319-d69407da0f91 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://lod-am.net/id/person/06526ecd-3514-e73d-8319-d69407da0f91> a foaf:Person;
+    foaf:familyName "Palmieri";
+    foaf:givenName "Alberto M";
+    foaf:name "Alberto M Palmieri".

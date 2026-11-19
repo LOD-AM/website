@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/aa79dce1-8a75-4498-9cba-87ede12cee6b",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300193015"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Gefäße",
+     "@language": "de"
+    },
+    {
+     "@value": "vessels",
+     "@language": "en"
+    }
+   ],
+   "skos:topConceptOf": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ]
+  }
+ ]
+}

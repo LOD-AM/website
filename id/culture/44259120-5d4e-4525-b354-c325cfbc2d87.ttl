@@ -1,0 +1,11 @@
+# Northern Mesopotamian Late Chalcolithic
+# https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87> a crm:E4_Period;
+    rdfs:label "Nordmesopotamisches Spätchalkolithikum"@de, "Northern Mesopotamian Late Chalcolithic"@en;
+    crm:P9_consists_of <https://lod-am.net/id/period/0445fe50-49b2-433d-949b-5062a371994f>, <https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319>, <https://lod-am.net/id/period/55526f31-ccc5-4c09-806f-c528a2d6f49e>, <https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa>.

@@ -1,0 +1,57 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43/time_span",
+   "@type": [
+    "crm:E52_Time-Span"
+   ],
+   "crm:P79_beginning_is_qualified_by": [
+    {
+     "@value": "-2900"
+    }
+   ],
+   "crm:P80_end_is_qualified_by": [
+    {
+     "@value": "-2750"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43",
+   "@type": [
+    "crm:E4_Period"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Arslantepe VIB2",
+     "@language": "de"
+    },
+    {
+     "@value": "Arslantepe VIB2",
+     "@language": "en"
+    }
+   ],
+   "crm:P4_has_time-span": [
+    {
+     "@id": "https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43/time_span"
+    }
+   ],
+   "crm:P9i_forms_part_of": [
+    {
+     "@id": "https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1"
+    }
+   ]
+  }
+ ]
+}

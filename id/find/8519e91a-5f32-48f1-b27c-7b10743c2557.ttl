@@ -1,0 +1,21 @@
+# Spearhead, unspecified (no. ARSL 28, Arslantepe)
+# https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 28";
+    crm:P2_has_type :old_identifier.
+<https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557> a crm:E22_Human-Made_Object;
+    rdfs:label "Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de, "Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/a1540470-f7ef-43ed-842b-874d8a0556ea>;
+    crm:P3_has_note "Lanze";
+    crm:P45_consists_of aat:300241441;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.

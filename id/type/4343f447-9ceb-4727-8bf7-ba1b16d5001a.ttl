@@ -1,0 +1,14 @@
+# spearheads and other points
+# https://lod-am.net/id/type/4343f447-9ceb-4727-8bf7-ba1b16d5001a · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/4343f447-9ceb-4727-8bf7-ba1b16d5001a> a crm:E55_Type, skos:Concept;
+    skos:broadMatch aat:300037204;
+    skos:inScheme :typology;
+    skos:prefLabel "Lanzen und andere Spitzen"@de, "spearheads and other points"@en;
+    skos:topConceptOf :typology.

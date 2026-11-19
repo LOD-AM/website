@@ -1,0 +1,19 @@
+# Ring, unspecified (no. ARSL 46, Arslantepe)
+# https://lod-am.net/id/find/b480309f-8ed7-430c-9854-3cc5464c42a9 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+
+<https://lod-am.net/id/find/b480309f-8ed7-430c-9854-3cc5464c42a9> a crm:E22_Human-Made_Object;
+    rdfs:label "Ring, unbestimmt (Nr. ARSL 46, Arslantepe)"@de, "Ring, unspecified (no. ARSL 46, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/b480309f-8ed7-430c-9854-3cc5464c42a9/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/de245a9a-46f7-4cca-b6f6-d80927db6961>;
+    crm:P3_has_note "Spiralring";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.
+<https://lod-am.net/id/find/b480309f-8ed7-430c-9854-3cc5464c42a9/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 46";
+    crm:P2_has_type :old_identifier.

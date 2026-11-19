@@ -1,0 +1,73 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/find/086c2bb1-7a77-41f9-892b-e0e19d4675ca",
+   "@type": [
+    "crm:E22_Human-Made_Object"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/210, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Casting residue, sprue, slag (no. TR-8/210, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "crm:P1_is_identified_by": [
+    {
+     "@id": "https://lod-am.net/id/find/086c2bb1-7a77-41f9-892b-e0e19d4675ca/old_identifier"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/5efa1ccc-f09a-4dad-a2e9-23d264f15050"
+    }
+   ],
+   "crm:P3_has_note": [
+    {
+     "@value": "Fragment"
+    }
+   ],
+   "crm:P45_consists_of": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300241441"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ],
+   "crmarchaeo:AP21i_is_contained_in": [
+    {
+     "@id": "https://lod-am.net/id/feature/f179e4ce-3415-48da-a3f4-bd56efc9b077"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/find/086c2bb1-7a77-41f9-892b-e0e19d4675ca/old_identifier",
+   "@type": [
+    "crm:E42_Identifier"
+   ],
+   "crm:P190_has_symbolic_content": [
+    {
+     "@value": "TR-8/210"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/old_identifier"
+    }
+   ]
+  }
+ ]
+}

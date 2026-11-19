@@ -1,0 +1,11 @@
+# Northern Mesopotamian Early Bronze Age
+# https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73> a crm:E4_Period;
+    rdfs:label "Nordmesopotamische Frühbronzezeit"@de, "Northern Mesopotamian Early Bronze Age"@en;
+    crm:P9_consists_of <https://lod-am.net/id/period/28287aff-a17e-4bf6-8f13-75ddb84a299a>, <https://lod-am.net/id/period/561b5ede-c714-41f7-afc2-e7aa41cf175f>, <https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43>, <https://lod-am.net/id/period/da6081e3-c22c-43dc-99cf-9a2b834fca3f>.

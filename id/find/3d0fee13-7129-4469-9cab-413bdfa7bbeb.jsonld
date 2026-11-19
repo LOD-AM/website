@@ -1,0 +1,68 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/find/3d0fee13-7129-4469-9cab-413bdfa7bbeb/old_identifier",
+   "@type": [
+    "crm:E42_Identifier"
+   ],
+   "crm:P190_has_symbolic_content": [
+    {
+     "@value": "TR-8/31"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/old_identifier"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/find/3d0fee13-7129-4469-9cab-413bdfa7bbeb",
+   "@type": [
+    "crm:E22_Human-Made_Object"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Spearhead, unspecified (no. TR-8/31, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "crm:P1_is_identified_by": [
+    {
+     "@id": "https://lod-am.net/id/find/3d0fee13-7129-4469-9cab-413bdfa7bbeb/old_identifier"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/a1540470-f7ef-43ed-842b-874d8a0556ea"
+    }
+   ],
+   "crm:P45_consists_of": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300241441"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ],
+   "crmarchaeo:AP21i_is_contained_in": [
+    {
+     "@id": "https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869"
+    }
+   ]
+  }
+ ]
+}

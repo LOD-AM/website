@@ -1,0 +1,14 @@
+# pendant, unspecified
+# https://lod-am.net/id/type/03c7bcb1-e358-4672-a3df-1c11cc31d0a8 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/03c7bcb1-e358-4672-a3df-1c11cc31d0a8> a crm:E55_Type, skos:Concept;
+    skos:broader <https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29>;
+    skos:closeMatch aat:300046002;
+    skos:inScheme :typology;
+    skos:prefLabel "Anhänger, unbestimmt"@de, "pendant, unspecified"@en.

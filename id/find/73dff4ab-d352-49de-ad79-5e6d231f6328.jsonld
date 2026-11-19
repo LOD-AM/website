@@ -1,0 +1,67 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328",
+   "@type": [
+    "crm:E22_Human-Made_Object"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Majkop-Gabel (Nr. ARSL 23, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Maykop fork (no. ARSL 23, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "crm:P1_is_identified_by": [
+    {
+     "@id": "https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328/old_identifier"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed"
+    }
+   ],
+   "crm:P3_has_note": [
+    {
+     "@value": "vier Spiralen"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ],
+   "crmarchaeo:AP21i_is_contained_in": [
+    {
+     "@id": "https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328/old_identifier",
+   "@type": [
+    "crm:E42_Identifier"
+   ],
+   "crm:P190_has_symbolic_content": [
+    {
+     "@value": "ARSL 23"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/old_identifier"
+    }
+   ]
+  }
+ ]
+}

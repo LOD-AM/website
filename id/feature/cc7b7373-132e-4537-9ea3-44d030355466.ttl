@@ -1,0 +1,14 @@
+# Arslantepe, unspecified context, Arslantepe VIC
+# https://lod-am.net/id/feature/cc7b7373-132e-4537-9ea3-44d030355466 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+
+<https://lod-am.net/id/feature/cc7b7373-132e-4537-9ea3-44d030355466> a crm:E25_Human-Made_Feature, crmarchaeo:A2_Stratigraphic_Volume_Unit;
+    rdfs:label "Arslantepe, unbestimmter Kontext, Arslantepe VIC"@de, "Arslantepe, unspecified context, Arslantepe VIC"@en;
+    crm:P2_has_type <https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34>;
+    crm:P46i_forms_part_of <https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8>;
+    crm:P8i_witnessed <https://lod-am.net/id/period/da6081e3-c22c-43dc-99cf-9a2b834fca3f>.

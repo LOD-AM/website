@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/20fba788-5ca7-4cd7-80dc-7f43234a2fa7",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/e07c341a-51fe-9d96-191b-353f287af14b"
+    }
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300037048"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Schwert, unbestimmt",
+     "@language": "de"
+    },
+    {
+     "@value": "sword, unspecified",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

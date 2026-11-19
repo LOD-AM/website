@@ -1,0 +1,9 @@
+# Tepe Gawra periods
+# https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+<https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4> a skos:ConceptScheme;
+    skos:prefLabel "Tepe Gawra Stufen"@de, "Tepe Gawra periods"@en.

@@ -1,0 +1,435 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "unit": "http://qudt.org/vocab/unit#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "chebi": "http://purl.obolibrary.org/obo/CHEBI_"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf",
+   "@type": [
+    "afp:AFP_0002680",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Chemische Analyse 161 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Chemical analysis 161 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ag"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/as"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/au"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/bi"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/co"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/fe"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ni"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/p"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/pb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/se"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sn"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/te"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/zn"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "161"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/386ff65e-38b4-4e1c-ac38-963e244ab245"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ag",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30512"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.007",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/as",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27563"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "2.25",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/au",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_29287"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/bi",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_33301"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.007",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/co",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27638"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/fe",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_18248"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.83",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ni",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28112"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "1.98",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/p",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28659"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/pb",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_25016"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sb",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30513"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.002",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/se",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27568"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sn",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27007"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/te",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30452"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/zn",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27363"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (161)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (161)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

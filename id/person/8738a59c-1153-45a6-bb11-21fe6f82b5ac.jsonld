@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/8738a59c-1153-45a6-bb11-21fe6f82b5ac",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Schmitt-Strecker"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "Sigrid"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "Sigrid Schmitt-Strecker"
+    }
+   ]
+  }
+ ]
+}

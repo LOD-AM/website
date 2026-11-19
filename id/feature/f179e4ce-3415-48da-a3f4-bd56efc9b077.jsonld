@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/feature/f179e4ce-3415-48da-a3f4-bd56efc9b077",
+   "@type": [
+    "crm:E25_Human-Made_Feature",
+    "crmarchaeo:A2_Stratigraphic_Volume_Unit"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Arslantepe, unbestimmter Kontext, Arslantepe VIB1",
+     "@language": "de"
+    },
+    {
+     "@value": "Arslantepe, unspecified context, Arslantepe VIB1",
+     "@language": "en"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34"
+    }
+   ],
+   "crm:P46i_forms_part_of": [
+    {
+     "@id": "https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"
+    }
+   ],
+   "crm:P8i_witnessed": [
+    {
+     "@id": "https://lod-am.net/id/period/561b5ede-c714-41f7-afc2-e7aa41cf175f"
+    }
+   ]
+  }
+ ]
+}

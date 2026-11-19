@@ -1,0 +1,36 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/b007a011-5b1d-4f6b-a57d-9d17b8c53dfd",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Barren und Gussreste",
+     "@language": "de"
+    },
+    {
+     "@value": "ingots and casting waste",
+     "@language": "en"
+    }
+   ],
+   "skos:topConceptOf": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ]
+  }
+ ]
+}

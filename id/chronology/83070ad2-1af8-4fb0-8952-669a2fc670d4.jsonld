@@ -1,0 +1,24 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4",
+   "@type": [
+    "skos:ConceptScheme"
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Tepe Gawra Stufen",
+     "@language": "de"
+    },
+    {
+     "@value": "Tepe Gawra periods",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

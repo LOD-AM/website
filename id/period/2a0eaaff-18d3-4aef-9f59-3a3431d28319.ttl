@@ -1,0 +1,17 @@
+# Tepe Gawra 9
+# https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319> a crm:E4_Period;
+    rdfs:label "Tepe Gawra 9"@de, "Tepe Gawra 9"@en;
+    crm:P4_has_time-span <https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319/time_span>;
+    crm:P9i_forms_part_of <https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87>;
+    skos:inScheme <https://lod-am.net/id/chronology/83070ad2-1af8-4fb0-8952-669a2fc670d4>.
+<https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319/time_span> a crm:E52_Time-Span;
+    crm:P79_beginning_is_qualified_by "-3850";
+    crm:P80_end_is_qualified_by "-3750".

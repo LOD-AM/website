@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/8b8d073b-974e-48bb-b198-1590a2ccffc1",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29"
+    }
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300045991"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Armring, unbestimmt",
+     "@language": "de"
+    },
+    {
+     "@value": "bracelet, unspecified",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

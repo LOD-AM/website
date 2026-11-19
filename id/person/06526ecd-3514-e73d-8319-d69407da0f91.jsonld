@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/06526ecd-3514-e73d-8319-d69407da0f91",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Palmieri"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "Alberto M"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "Alberto M Palmieri"
+    }
+   ]
+  }
+ ]
+}

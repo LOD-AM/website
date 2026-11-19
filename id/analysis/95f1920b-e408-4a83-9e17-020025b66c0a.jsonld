@@ -1,0 +1,164 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "wd": "http://www.wikidata.org/entity/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a",
+   "@type": [
+    "afp:AFP_0001427",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Bleiisotopenanalyse 2 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Lead isotope analysis 2 of Socketed chisel (no. ARSL 13, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb204_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb207_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb208_pb206"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "2"
+    }
+   ],
+   "crm:P14_carried_out_by": [
+    {
+     "@id": "https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/7f57d6c3-09f3-415d-a71a-4aae8197bd43"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb204_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883429"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.05307",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb207_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883443"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.831",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb208_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q16670466"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "2.0657",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (2)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (2)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

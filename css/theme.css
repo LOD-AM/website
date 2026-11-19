@@ -15,54 +15,98 @@
  * 1. Palette
  * ------------------------------------------------------------------------- */
 :root {
+  /* Constants (the same in both modes) */
   --lodam-terracotta: #E2725B;        /* accents, large text only (3.3:1 on umber) */
   --lodam-terracotta-deep: #A9472F;   /* navbar, primary buttons: light text 5.1:1 */
   --lodam-terracotta-deeper: #9C4330; /* hover / gradient end: light text 5.7:1 */
+  --lodam-on-accent: #F5F0E6;         /* text on terracotta (buttons, navbar) */
+  --lodam-code-bg: #1E1A14;           /* code blocks stay dark in both modes */
+  --lodam-code-inline-bg: #2A241D;
+  --lodam-code-text: #F5F0E6;
+}
+
+/* Theme tokens. Dark mode is the default (also without JavaScript); light mode
+ * (planning#20) sets the same names, so components need no second set of rules.
+ * The names keep their dark-mode meaning: --lodam-chalk-white is "strong text",
+ * --lodam-deep-umber "page", --lodam-charcoal "surface". Navbar and footer carry
+ * data-bs-theme="dark" and so stay dark in both modes. */
+:root,
+[data-bs-theme=dark] {
+  --lodam-ochre: #E6B85C;             /* small accent text, code: 5.9:1 on umber */
+  --lodam-malachite: #3D9970;         /* series edge */
+  --lodam-sage: #9DC688;              /* record kind label: 5.3:1 on umber */
   --lodam-terracotta-light: #F09B86;  /* links: 4.75:1 on umber */
   --lodam-terracotta-pale: #F7C1B2;   /* link hover */
-  --lodam-ochre: #E6B85C;
-  --lodam-malachite: #3D9970;
-  --lodam-sage: #9DC688;
   --lodam-chalk-white: #F5F0E6;       /* text */
+  --lodam-chalk-white-rgb: 245, 240, 230;
   --lodam-deep-umber: #4A3F32;        /* page background */
-  --lodam-charcoal: #3A2E22;          /* cards, footer */
+  --lodam-deep-umber-rgb: 74, 63, 50;
+  --lodam-charcoal: #3A2E22;          /* cards, tables, footer */
   --lodam-ink: #1A1611;               /* footer gradient end */
   --lodam-paper: #D2B48C;             /* edge of literature cards */
-
+  --lodam-line-rgb: 245, 240, 230;    /* borders: rgba(var(--lodam-line-rgb), a) */
+  --lodam-stripe: #42362A;            /* every other table row */
+  --lodam-row-hover: #54473A;         /* table row under the pointer: links 4.5:1 */
+  --lodam-link-rgb: 240, 155, 134;
+  --lodam-link-hover-rgb: 247, 193, 178;
   --lodam-text-soft: rgba(245, 240, 230, 0.85); /* paragraphs */
+  --lodam-text-secondary: rgba(245, 240, 230, 0.75);
+}
+[data-bs-theme=light] {
+  /* Contrast on page #F5F0E6 / surface #EBE3D5 / stripe #E2D8C7: text 13.7 / 12.3 / 11.1,
+     links 5.7 / 5.1 / 4.6, secondary text 5.8 / 5.2 / 4.7, kind label 5.3 / 4.7 */
+  --lodam-ochre: #85570F;
+  --lodam-malachite: #2E7A56;
+  --lodam-sage: #4F6B3A;
+  --lodam-terracotta-light: #9C4330;
+  --lodam-terracotta-pale: #7A3424;
+  --lodam-chalk-white: #2B2219;
+  --lodam-chalk-white-rgb: 43, 34, 25;
+  --lodam-deep-umber: #F5F0E6;
+  --lodam-deep-umber-rgb: 245, 240, 230;
+  --lodam-charcoal: #EBE3D5;
+  --lodam-ink: #D9CDB8;
+  --lodam-paper: #8C6B42;
+  --lodam-line-rgb: 43, 34, 25;
+  --lodam-stripe: #E2D8C7;
+  --lodam-row-hover: #D9CDB8;
+  --lodam-link-rgb: 156, 67, 48;
+  --lodam-link-hover-rgb: 122, 52, 36;
+  --lodam-text-soft: rgba(43, 34, 25, 0.85);
+  --lodam-text-secondary: rgba(43, 34, 25, 0.72);
 }
 
 /* ---------------------------------------------------------------------------
  * 2. Bootstrap dark mode, mapped to the palette
  * ------------------------------------------------------------------------- */
-[data-bs-theme=dark] {
-  color-scheme: dark;
+[data-bs-theme=dark],
+[data-bs-theme=light] {
 
   --bs-body-color: var(--lodam-chalk-white);
-  --bs-body-color-rgb: 245, 240, 230;
+  --bs-body-color-rgb: var(--lodam-chalk-white-rgb);
   --bs-body-bg: var(--lodam-deep-umber);
-  --bs-body-bg-rgb: 74, 63, 50;
+  --bs-body-bg-rgb: var(--lodam-deep-umber-rgb);
   --bs-body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --bs-body-font-size: 1.1rem;
   --bs-body-font-weight: 500;
   --bs-body-line-height: 1.6;
 
   --bs-emphasis-color: var(--lodam-chalk-white);
-  --bs-emphasis-color-rgb: 245, 240, 230;
+  --bs-emphasis-color-rgb: var(--lodam-chalk-white-rgb);
   --bs-heading-color: var(--lodam-chalk-white);
-  --bs-secondary-color: rgba(245, 240, 230, 0.75);  /* .text-muted, .text-body-secondary */
-  --bs-secondary-color-rgb: 245, 240, 230;
+  --bs-secondary-color: var(--lodam-text-secondary);  /* .text-muted, .text-body-secondary */
+  --bs-secondary-color-rgb: var(--lodam-chalk-white-rgb);
   --bs-secondary-bg: var(--lodam-charcoal);
   --bs-tertiary-bg: var(--lodam-charcoal);
   --bs-code-color: var(--lodam-ochre);
 
   --bs-link-color: var(--lodam-terracotta-light);
-  --bs-link-color-rgb: 240, 155, 134;
+  --bs-link-color-rgb: var(--lodam-link-rgb);
   --bs-link-hover-color: var(--lodam-terracotta-pale);
-  --bs-link-hover-color-rgb: 247, 193, 178;
+  --bs-link-hover-color-rgb: var(--lodam-link-hover-rgb);
 
-  --bs-border-color: rgba(245, 240, 230, 0.15);
-  --bs-border-color-translucent: rgba(245, 240, 230, 0.1);
+  --bs-border-color: rgba(var(--lodam-line-rgb), 0.15);
+  --bs-border-color-translucent: rgba(var(--lodam-line-rgb), 0.1);
   --bs-focus-ring-color: rgba(226, 114, 91, 0.4);
 
   /* Theme colours (.text-primary, .border-secondary, ...). Hex and RGB match. */
@@ -74,6 +118,13 @@
   --bs-success-rgb: 157, 198, 136;
   --bs-info: var(--lodam-ochre);
   --bs-info-rgb: 230, 184, 92;
+}
+[data-bs-theme=dark] { color-scheme: dark; }
+[data-bs-theme=light] {
+  color-scheme: light;
+  /* terracotta text on the light page: the deep tone (5.8:1) instead of the accent (2.7:1) */
+  --bs-primary: var(--lodam-terracotta-deep);
+  --bs-primary-rgb: 169, 71, 47;
 }
 
 /* ---------------------------------------------------------------------------
@@ -135,12 +186,27 @@ a:hover { text-decoration: underline; }
   border-bottom: 3px solid #CB6D51;
 }
 .site-nav .navbar-brand { font-weight: 700; font-size: 1.25rem; }
+/* Light/dark toggle (planning#20): shown only when JavaScript runs (theme.js removes [hidden]) */
+.theme-toggle {
+  --bs-btn-color: var(--lodam-on-accent);
+  --bs-btn-border-color: rgba(245, 240, 230, 0.5);
+  --bs-btn-hover-color: var(--lodam-on-accent);
+  --bs-btn-hover-bg: rgba(0, 0, 0, 0.15);
+  --bs-btn-hover-border-color: var(--lodam-on-accent);
+  --bs-btn-active-color: var(--lodam-on-accent);
+  --bs-btn-active-bg: rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+.theme-toggle svg.bi { width: 1.15em; height: 1.15em; }
+/* :root, because the navbar itself is always data-bs-theme="dark" */
+:root[data-bs-theme=light] .theme-toggle .icon-sun,
+:root[data-bs-theme=dark] .theme-toggle .icon-moon { display: none; }
 .site-nav .nav-link { font-weight: 600; font-size: 1.1rem; }
 
 /* Cards */
 .card {
   --bs-card-bg: var(--lodam-charcoal);
-  --bs-card-border-color: rgba(245, 240, 230, 0.08);
+  --bs-card-border-color: rgba(var(--lodam-line-rgb), 0.08);
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -154,23 +220,23 @@ a:hover { text-decoration: underline; }
 /* Buttons: only the variants the site uses. Tag buttons (.btn without a
    variant) get their colours from inline styles (_data/tagColors.js). */
 .btn-primary {
-  --bs-btn-color: var(--lodam-chalk-white);
+  --bs-btn-color: var(--lodam-on-accent);
   --bs-btn-bg: var(--lodam-terracotta-deep);
   --bs-btn-border-color: var(--lodam-terracotta-deep);
-  --bs-btn-hover-color: var(--lodam-chalk-white);
+  --bs-btn-hover-color: var(--lodam-on-accent);
   --bs-btn-hover-bg: var(--lodam-terracotta-deeper);
   --bs-btn-hover-border-color: var(--lodam-terracotta-deeper);
-  --bs-btn-active-color: var(--lodam-chalk-white);
+  --bs-btn-active-color: var(--lodam-on-accent);
   --bs-btn-active-bg: #8F3D2B;
   --bs-btn-active-border-color: #8F3D2B;
-  --bs-btn-disabled-color: var(--lodam-chalk-white);
+  --bs-btn-disabled-color: var(--lodam-on-accent);
   --bs-btn-disabled-bg: var(--lodam-terracotta-deep);
   --bs-btn-disabled-border-color: var(--lodam-terracotta-deep);
   --bs-btn-focus-shadow-rgb: 226, 114, 91;
 }
 .btn-outline-secondary {
   --bs-btn-color: var(--lodam-chalk-white);
-  --bs-btn-border-color: rgba(245, 240, 230, 0.4);
+  --bs-btn-border-color: rgba(var(--lodam-line-rgb), 0.4);
   --bs-btn-hover-color: var(--lodam-chalk-white);
   --bs-btn-hover-bg: rgba(226, 114, 91, 0.2);
   --bs-btn-hover-border-color: rgba(226, 114, 91, 0.6);
@@ -188,7 +254,7 @@ a:hover { text-decoration: underline; }
 .list-group {
   --bs-list-group-bg: var(--lodam-charcoal);
   --bs-list-group-color: var(--lodam-text-soft);
-  --bs-list-group-border-color: rgba(245, 240, 230, 0.08);
+  --bs-list-group-border-color: rgba(var(--lodam-line-rgb), 0.08);
 }
 .list-group-item { border-left: none; border-right: none; }
 
@@ -196,10 +262,10 @@ a:hover { text-decoration: underline; }
   --bs-pagination-color: var(--lodam-terracotta-light);
   --bs-pagination-bg: var(--lodam-charcoal);
   --bs-pagination-border-color: rgba(226, 114, 91, 0.3);
-  --bs-pagination-hover-color: var(--lodam-chalk-white);
+  --bs-pagination-hover-color: var(--lodam-on-accent);
   --bs-pagination-hover-bg: var(--lodam-terracotta-deep);
   --bs-pagination-hover-border-color: var(--lodam-terracotta-deep);
-  --bs-pagination-focus-color: var(--lodam-chalk-white);
+  --bs-pagination-focus-color: var(--lodam-on-accent);
   --bs-pagination-focus-bg: var(--lodam-terracotta-deep);
   --bs-pagination-active-bg: var(--lodam-terracotta-deep);
   --bs-pagination-active-border-color: var(--lodam-terracotta-deep);
@@ -208,7 +274,7 @@ a:hover { text-decoration: underline; }
 /* Footer */
 .site-footer {
   background: linear-gradient(135deg, var(--lodam-charcoal) 0%, var(--lodam-ink) 100%);
-  color: rgba(245, 240, 230, 0.7);
+  color: var(--lodam-text-secondary);
 }
 .site-footer p { color: var(--lodam-text-soft); }
 .site-footer a { color: var(--lodam-chalk-white); }
@@ -234,7 +300,7 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 0.4em;
   padding: 0.15em 0.65em;
-  border: 1px solid rgba(245, 240, 230, 0.3);
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.3);
   border-radius: 999px;
   color: var(--lodam-text-soft);
   font-size: 0.85rem;
@@ -249,6 +315,7 @@ a:hover { text-decoration: underline; }
   border-radius: 50%;
   background: var(--tag-color, var(--lodam-ochre));
 }
+[data-bs-theme=light] .tag::before { background: var(--tag-color-light, var(--lodam-ochre)); }
 .tag:hover {
   border-color: var(--lodam-terracotta-light);
   color: var(--lodam-chalk-white);
@@ -274,19 +341,49 @@ a:hover { text-decoration: underline; }
 .series-box {
   padding: 0.75rem 1rem;
   background: var(--lodam-charcoal);
-  border: 1px solid rgba(245, 240, 230, 0.12);
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.12);
   border-left: 6px solid var(--lodam-malachite);
   border-radius: 0.5rem;
 }
 .series-box p, .series-box li { color: var(--lodam-text-soft); }
 .series-box summary { cursor: pointer; font-weight: 600; }
-.series-box ol { padding-left: 1.4rem; }
+.series-box ol, .series-box ul { padding-left: 1.4rem; }
+/* "Explore the data" on the home page (planning#16): same box, ochre edge = data */
+.data-box { border-left-color: var(--lodam-ochre); }
 .series-box [aria-current="page"] { color: var(--lodam-chalk-white); font-weight: 700; }
 
 /* Entity pages (/id/...; website#18): facts as a two-column list, results as tables.
    A slightly lighter surface for tables keeps dense numbers readable on the dark page. */
 .entity { max-width: 60rem; }
-.entity-iri code { color: var(--lodam-text-soft); overflow-wrap: anywhere; font-size: 0.85rem; }
+.entity--full { max-width: none; }
+/* Record header (docs/components.md): kind, title, summary line */
+.entity-kind {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lodam-sage);           /* 5.3:1 on umber */
+}
+.entity-summary { font-size: 1.15rem; color: var(--lodam-text-soft); }
+/* Technical details: IRI, classes, names, identifiers, other statements */
+.entity-technical {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(var(--lodam-line-rgb), 0.15);
+  font-size: 0.95rem;
+}
+.entity-iri { color: var(--lodam-text-soft); font-size: 0.85rem; }
+/* Cite and download (planning#13) */
+.entity-cite {
+  padding: 1rem 1.25rem;
+  background: var(--lodam-charcoal);
+  border-left: 4px solid var(--lodam-ochre);
+  border-radius: 0.375rem;
+  color: var(--lodam-text-soft);
+}
+.entity-cite summary { cursor: pointer; font-weight: 600; color: var(--lodam-chalk-white); }
+.entity-bibtex { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.85rem; }
+.entity-bibtex code { color: var(--lodam-chalk-white); }
+.entity-cite .entity-bibtex { color: var(--lodam-chalk-white); }
 .entity-facts {
   display: grid;
   grid-template-columns: minmax(8rem, 14rem) 1fr;
@@ -305,13 +402,38 @@ a:hover { text-decoration: underline; }
 .entity-table {
   --bs-table-bg: var(--lodam-charcoal);
   --bs-table-color: var(--lodam-chalk-white);
-  --bs-table-striped-bg: rgba(245, 240, 230, 0.04);
-  --bs-table-border-color: rgba(245, 240, 230, 0.12);
+  --bs-table-striped-bg: rgba(var(--lodam-line-rgb), 0.04);
+  --bs-table-border-color: rgba(var(--lodam-line-rgb), 0.12);
   width: auto;
   min-width: 18rem;
 }
-.entity-table tbody tr:nth-child(even) > * { background-color: #42362A; }
+.entity-table tbody tr:nth-child(even) > * { background-color: var(--lodam-stripe); }
+/* Dense tables (planning#20): figures of equal width in the text font (narrower and easier
+   to read than monospace), a stronger rule under the header, and the row under the pointer
+   highlighted so long rows stay easy to follow */
+.entity-num { font-variant-numeric: tabular-nums; }
+.entity-table thead th { border-bottom: 2px solid rgba(var(--lodam-line-rgb), 0.35); vertical-align: bottom; }
+.entity-table tbody tr:hover > * { background-color: var(--lodam-row-hover); }
+/* In wide tables only the first column (the record of the row) is in the accent colour;
+   the other links are text-coloured with an underline, so the table doesn't look like a sea of links */
+.entity-table--wide td a {
+  color: var(--lodam-chalk-white);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--lodam-line-rgb), 0.35);
+  text-underline-offset: 0.2em;
+}
+.entity-table--wide td a:hover { color: var(--lodam-terracotta-light); text-decoration-color: currentColor; }
 .entity-table th { color: var(--lodam-chalk-white); }
+.entity-table tbody th { font-weight: 500; }
+/* Tables of finds and features: full width, cells on top so multi-line cells line up */
+.entity-table--wide { width: 100%; }
+.entity-table--wide td, .entity-table--wide th { vertical-align: top; }
+.entity-table--wide thead th, .entity-table--wide tbody th { white-space: nowrap; }
+/* Tables of values per analysis (planning#10): the analysis number stays visible while the
+   table scrolls sideways on narrow screens */
+.entity-table--values td { white-space: nowrap; }
+.entity-table--values tbody th { position: sticky; left: 0; z-index: 1; }
+.entity-table--values thead th:first-child { position: sticky; left: 0; z-index: 2; }
 
 /* Data dropdown in the navbar */
 .site-nav .dropdown-menu {
@@ -320,7 +442,7 @@ a:hover { text-decoration: underline; }
   --bs-dropdown-link-hover-bg: var(--lodam-terracotta-deep);
   --bs-dropdown-link-hover-color: var(--lodam-chalk-white);
   --bs-dropdown-link-active-bg: var(--lodam-terracotta-deeper);
-  --bs-dropdown-border-color: rgba(245, 240, 230, 0.15);
+  --bs-dropdown-border-color: rgba(var(--lodam-line-rgb), 0.15);
 }
 
 /* Link cards: output of the academicLink and linkPreviewCard shortcodes */
@@ -345,7 +467,7 @@ a:hover { text-decoration: underline; }
 .link-card__image { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 0.5em; }
 /* Literature: a dark card with a "paper" edge, so it stays part of the dark page */
 .link-card--literature {
-  border: 1px solid rgba(245, 240, 230, 0.12);
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.12);
   border-left: 6px solid var(--lodam-paper);
 }
 .link-card--literature:hover { border-color: var(--lodam-terracotta); border-left-color: var(--lodam-paper); }
@@ -358,16 +480,16 @@ svg.bi { width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; 
 
 /* Code blocks (Prism) */
 pre[class*="language-"] {
-  background: #1E1A14;
+  background: var(--lodam-code-bg);
   border: 1px solid rgba(245, 240, 230, 0.15);
   border-radius: 0.375rem;
-  color: var(--lodam-chalk-white);
+  color: var(--lodam-code-text);
 }
 code[class*="language-"] {
-  background: #2A241D;
+  background: var(--lodam-code-inline-bg);
   padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
-  color: var(--lodam-chalk-white);
+  color: var(--lodam-code-text);
 }
 
 /* Giscus: the only !important rules, because they override styles of a

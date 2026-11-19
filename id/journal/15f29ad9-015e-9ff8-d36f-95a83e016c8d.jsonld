@@ -1,0 +1,20 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "fabio": "http://purl.org/spar/fabio/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/journal/15f29ad9-015e-9ff8-d36f-95a83e016c8d",
+   "@type": [
+    "fabio:Journal"
+   ],
+   "dcterms:title": [
+    {
+     "@value": "Paléorient"
+    }
+   ]
+  }
+ ]
+}

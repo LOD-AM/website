@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300393163"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Majkop-Gabel",
+     "@language": "de"
+    },
+    {
+     "@value": "Maykop fork",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87",
+   "@type": [
+    "crm:E4_Period"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Nordmesopotamisches Spätchalkolithikum",
+     "@language": "de"
+    },
+    {
+     "@value": "Northern Mesopotamian Late Chalcolithic",
+     "@language": "en"
+    }
+   ],
+   "crm:P9_consists_of": [
+    {
+     "@id": "https://lod-am.net/id/period/0445fe50-49b2-433d-949b-5062a371994f"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/2a0eaaff-18d3-4aef-9f59-3a3431d28319"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/55526f31-ccc5-4c09-806f-c528a2d6f49e"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa"
+    }
+   ]
+  }
+ ]
+}

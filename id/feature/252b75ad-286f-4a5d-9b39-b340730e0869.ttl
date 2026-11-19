@@ -1,0 +1,14 @@
+# Palace Hoard
+# https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+
+<https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869> a crm:E25_Human-Made_Feature, crmarchaeo:A2_Stratigraphic_Volume_Unit;
+    rdfs:label "Palasthort"@de, "Palace Hoard"@en;
+    crm:P2_has_type <https://lod-am.net/id/type/24a624fc-7cb3-4a3a-8bc0-407a3fa89816>;
+    crm:P46i_forms_part_of <https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8>;
+    crm:P8i_witnessed <https://lod-am.net/id/period/55526f31-ccc5-4c09-806f-c528a2d6f49e>.

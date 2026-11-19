@@ -1,0 +1,14 @@
+# flat chisel, wedge
+# https://lod-am.net/id/type/abab9506-c910-482e-b645-c7877b86ab14 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/abab9506-c910-482e-b645-c7877b86ab14> a crm:E55_Type, skos:Concept;
+    skos:broader <https://lod-am.net/id/type/4c196761-59b7-4876-9473-e1c831020983>;
+    skos:closeMatch aat:300024665;
+    skos:inScheme :typology;
+    skos:prefLabel "Flachmeißel, Keil"@de, "flat chisel, wedge"@en.

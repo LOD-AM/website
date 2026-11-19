@@ -1,0 +1,164 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "wd": "http://www.wikidata.org/entity/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5",
+   "@type": [
+    "afp:AFP_0001427",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Bleiisotopenanalyse 25 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Lead isotope analysis 25 of Sword, unspecified (no. TR-8/28, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb204_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb207_pb206"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb208_pb206"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "25"
+    }
+   ],
+   "crm:P14_carried_out_by": [
+    {
+     "@id": "https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/83a82b77-02b5-4aac-b2f3-8903d97cd0cf"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb204_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883429"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.05562",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb207_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883443"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.8664",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb208_pb206",
+   "@type": [
+    "afr:AFR_0002368"
+   ],
+   "afx:AFX_0001550": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q18883438"
+    }
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://www.wikidata.org/entity/Q16670466"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "2.1104",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (25)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (25)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

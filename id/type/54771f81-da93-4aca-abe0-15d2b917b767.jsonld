@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/54771f81-da93-4aca-abe0-15d2b917b767",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/aa79dce1-8a75-4498-9cba-87ede12cee6b"
+    }
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300043198"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Becher",
+     "@language": "de"
+    },
+    {
+     "@value": "beaker",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/feature/252b75ad-286f-4a5d-9b39-b340730e0869",
+   "@type": [
+    "crm:E25_Human-Made_Feature",
+    "crmarchaeo:A2_Stratigraphic_Volume_Unit"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Palasthort",
+     "@language": "de"
+    },
+    {
+     "@value": "Palace Hoard",
+     "@language": "en"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/24a624fc-7cb3-4a3a-8bc0-407a3fa89816"
+    }
+   ],
+   "crm:P46i_forms_part_of": [
+    {
+     "@id": "https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"
+    }
+   ],
+   "crm:P8i_witnessed": [
+    {
+     "@id": "https://lod-am.net/id/period/55526f31-ccc5-4c09-806f-c528a2d6f49e"
+    }
+   ]
+  }
+ ]
+}

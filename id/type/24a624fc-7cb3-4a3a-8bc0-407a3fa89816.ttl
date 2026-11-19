@@ -1,0 +1,12 @@
+# hoard
+# https://lod-am.net/id/type/24a624fc-7cb3-4a3a-8bc0-407a3fa89816 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/24a624fc-7cb3-4a3a-8bc0-407a3fa89816> a crm:E55_Type, skos:Concept;
+    skos:closeMatch aat:300195474;
+    skos:prefLabel "Hort"@de, "hoard"@en.

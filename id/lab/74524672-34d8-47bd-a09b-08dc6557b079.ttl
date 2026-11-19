@@ -1,0 +1,14 @@
+# German Mining Museum Bochum
+# https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+<https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> a crm:E74_Group;
+    rdfs:label "Deutsches Bergbau-Museum Bochum"@de, "German Mining Museum Bochum"@en;
+    dcterms:identifier "03k7cjr94";
+    owl:sameAs <https://ror.org/03k7cjr94>.

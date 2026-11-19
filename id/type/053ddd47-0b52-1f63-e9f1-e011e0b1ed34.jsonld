@@ -1,0 +1,26 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "unbestimmter Kontext",
+     "@language": "de"
+    },
+    {
+     "@value": "unspecified context",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

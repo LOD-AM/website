@@ -1,0 +1,40 @@
+# Lead isotope analysis 21 of Ring, unspecified (no. ARSL 63, Arslantepe)
+# https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix wd: <http://www.wikidata.org/entity/>.
+
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd> a afp:AFP_0001427, crm:E7_Activity;
+    rdfs:label "Bleiisotopenanalyse 21 von Ring, unbestimmt (Nr. ARSL 63, Arslantepe)"@de, "Lead isotope analysis 21 of Ring, unspecified (no. ARSL 63, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb204_pb206>, <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb207_pb206>, <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb208_pb206>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample>;
+    dcterms:identifier "21";
+    crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/945fffcc-2fb1-4771-a7ce-9a75907c2436>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample>.
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb204_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q18883429;
+    qudt:numericValue 0.05291.
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb207_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q18883443;
+    qudt:numericValue 0.83.
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb208_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q16670466;
+    qudt:numericValue 2.0683.
+<https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 63, Arslantepe) (21)"@de, "Sample from Ring, unspecified (no. ARSL 63, Arslantepe) (21)"@en.

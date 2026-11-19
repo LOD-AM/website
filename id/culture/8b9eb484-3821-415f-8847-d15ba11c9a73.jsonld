@@ -1,0 +1,39 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/culture/8b9eb484-3821-415f-8847-d15ba11c9a73",
+   "@type": [
+    "crm:E4_Period"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Nordmesopotamische Frühbronzezeit",
+     "@language": "de"
+    },
+    {
+     "@value": "Northern Mesopotamian Early Bronze Age",
+     "@language": "en"
+    }
+   ],
+   "crm:P9_consists_of": [
+    {
+     "@id": "https://lod-am.net/id/period/28287aff-a17e-4bf6-8f13-75ddb84a299a"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/561b5ede-c714-41f7-afc2-e7aa41cf175f"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/7d79372b-75ec-4c49-a8f7-0806fccd4b43"
+    },
+    {
+     "@id": "https://lod-am.net/id/period/da6081e3-c22c-43dc-99cf-9a2b834fca3f"
+    }
+   ]
+  }
+ ]
+}

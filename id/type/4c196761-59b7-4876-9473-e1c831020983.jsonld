@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/4c196761-59b7-4876-9473-e1c831020983",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300024841"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Pfrieme, Meißel und andere Geräte",
+     "@language": "de"
+    },
+    {
+     "@value": "awls, chisels and other tools",
+     "@language": "en"
+    }
+   ],
+   "skos:topConceptOf": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ]
+  }
+ ]
+}

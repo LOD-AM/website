@@ -1,0 +1,84 @@
+# Chemical analysis 154 of Flat chisel, wedge (no. ARSL 24, Arslantepe)
+# https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 154 von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)"@de, "Chemical analysis 154 of Flat chisel, wedge (no. ARSL 24, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/ag>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/as>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/au>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/bi>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/co>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/fe>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/ni>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/p>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/pb>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sb>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/se>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sn>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/te>, <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sample>;
+    dcterms:identifier "154";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sample>.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.081;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 1.65;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.435;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 1.36;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 0.017;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.01;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.008;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe) (154)"@de, "Sample from Flat chisel, wedge (no. ARSL 24, Arslantepe) (154)"@en.

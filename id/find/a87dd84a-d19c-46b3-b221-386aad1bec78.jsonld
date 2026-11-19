@@ -1,0 +1,73 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78",
+   "@type": [
+    "crm:E22_Human-Made_Object"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Becher (Nr. ARSL 58, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Beaker (no. ARSL 58, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "crm:P1_is_identified_by": [
+    {
+     "@id": "https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78/old_identifier"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/54771f81-da93-4aca-abe0-15d2b917b767"
+    }
+   ],
+   "crm:P3_has_note": [
+    {
+     "@value": "Becher"
+    }
+   ],
+   "crm:P45_consists_of": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300241441"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ],
+   "crmarchaeo:AP21i_is_contained_in": [
+    {
+     "@id": "https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/find/a87dd84a-d19c-46b3-b221-386aad1bec78/old_identifier",
+   "@type": [
+    "crm:E42_Identifier"
+   ],
+   "crm:P190_has_symbolic_content": [
+    {
+     "@value": "ARSL 58"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/old_identifier"
+    }
+   ]
+  }
+ ]
+}

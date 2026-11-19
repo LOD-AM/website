@@ -1,0 +1,14 @@
+# Maykop fork
+# https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed> a crm:E55_Type, skos:Concept;
+    skos:broadMatch aat:300393163;
+    skos:broader <https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29>;
+    skos:inScheme :typology;
+    skos:prefLabel "Majkop-Gabel"@de, "Maykop fork"@en.

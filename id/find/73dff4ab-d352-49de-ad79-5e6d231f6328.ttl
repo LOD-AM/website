@@ -1,0 +1,19 @@
+# Maykop fork (no. ARSL 23, Arslantepe)
+# https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+
+<https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328> a crm:E22_Human-Made_Object;
+    rdfs:label "Majkop-Gabel (Nr. ARSL 23, Arslantepe)"@de, "Maykop fork (no. ARSL 23, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/a574e70a-4899-4cd0-9abc-2685cd8782ed>;
+    crm:P3_has_note "vier Spiralen";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.
+<https://lod-am.net/id/find/73dff4ab-d352-49de-ad79-5e6d231f6328/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 23";
+    crm:P2_has_type :old_identifier.

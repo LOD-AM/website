@@ -1,0 +1,14 @@
+# pin, special or unspecified form
+# https://lod-am.net/id/type/562f7ec7-48d8-4348-98ac-059f95ee65df · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/562f7ec7-48d8-4348-98ac-059f95ee65df> a crm:E55_Type, skos:Concept;
+    skos:broader <https://lod-am.net/id/type/c1a00170-1b71-487a-b6e1-61b389eabe29>;
+    skos:closeMatch aat:300046006;
+    skos:inScheme :typology;
+    skos:prefLabel "Nadel, Sonderform, Form unbestimmt"@de, "pin, special or unspecified form"@en.

@@ -1,0 +1,84 @@
+# Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)
+# https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 140 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)"@de, "Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ag>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/as>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/au>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/bi>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/co>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/fe>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ni>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/p>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/pb>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sb>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/se>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sn>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/te>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample>;
+    dcterms:identifier "140";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/3d0ebeb1-ab09-42ee-a975-f65638719cea>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample>.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.108;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 0.054;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.019;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.003;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.508;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 0.75;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 0.043;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.005;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.019;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.022;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (140)"@de, "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (140)"@en.

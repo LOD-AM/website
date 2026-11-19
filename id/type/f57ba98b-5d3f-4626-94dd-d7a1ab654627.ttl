@@ -1,0 +1,14 @@
+# socketed chisel
+# https://lod-am.net/id/type/f57ba98b-5d3f-4626-94dd-d7a1ab654627 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/f57ba98b-5d3f-4626-94dd-d7a1ab654627> a crm:E55_Type, skos:Concept;
+    skos:broadMatch aat:300024665;
+    skos:broader <https://lod-am.net/id/type/4c196761-59b7-4876-9473-e1c831020983>;
+    skos:inScheme :typology;
+    skos:prefLabel "Tüllenmeißel"@de, "socketed chisel"@en.

@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/5efa1ccc-f09a-4dad-a2e9-23d264f15050",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/b007a011-5b1d-4f6b-a57d-9d17b8c53dfd"
+    }
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300011790"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Gussrückstand, Gusszapfen, Schlacke",
+     "@language": "de"
+    },
+    {
+     "@value": "casting residue, sprue, slag",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

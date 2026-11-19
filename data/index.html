@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>(function(){var t;try{t=localStorage.getItem("lodam-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-bs-theme",t)})();</script>
 		<title>Data · LOD-AM</title>
-		<meta name="description" content="The LOD-AM knowledge graph: released data on ancient metal objects, their analyses, sites and periods.">
+		<meta name="description" content="Archaeometallurgical data on copper-base objects as Linked Open Data: finds, contexts, chemical and lead isotope analyses, released one publication at a time.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
 		<link rel="canonical" href="https://lod-am.net/data/">
 
@@ -13,7 +14,7 @@
 
 		<!-- OpenGraph / Social Media Meta Tags -->
 		<meta property="og:title" content="Data · LOD-AM">
-		<meta property="og:description" content="The LOD-AM knowledge graph: released data on ancient metal objects, their analyses, sites and periods.">
+		<meta property="og:description" content="Archaeometallurgical data on copper-base objects as Linked Open Data: finds, contexts, chemical and lead isotope analyses, released one publication at a time.">
 		<meta property="og:url" content="https://lod-am.net/data/">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="https://lod-am.net/img/logo.png">
@@ -22,13 +23,80 @@
 		<meta property="og:image:height" content="630">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Data · LOD-AM">
-		<meta name="twitter:description" content="The LOD-AM knowledge graph: released data on ancient metal objects, their analyses, sites and periods.">
+		<meta name="twitter:description" content="Archaeometallurgical data on copper-base objects as Linked Open Data: finds, contexts, chemical and lead isotope analyses, released one publication at a time.">
 		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
 
 		<!-- Fediverse creator attribution for blog posts -->
 		
 
 		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "@id": "https://lod-am.net/data/#dataset",
+ "name": "LOD-AM: archaeometallurgical data on copper-base objects (released publications)",
+ "description": "Linked Open Data on ancient copper-base metal objects, their contexts and their chemical and lead isotope analyses, compiled from published sources and released one publication at a time. Values are given as reported in the source publications. Modelled in CIDOC CRM 7.1.3 with CRMsci and CRMarchaeo, the Allotrope Foundation Ontologies and FaBiO.",
+ "url": "https://lod-am.net/data/",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "isAccessibleForFree": true,
+ "inLanguage": "en",
+ "creator": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "publisher": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "keywords": [
+  "archaeometallurgy",
+  "copper",
+  "chemical composition",
+  "lead isotopes",
+  "Linked Open Data",
+  "CIDOC CRM"
+ ],
+ "datePublished": "2026-11-17",
+ "dateModified": "2026-11-17",
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "name": "hauptmann2002chemical.ttl",
+   "contentUrl": "https://lod-am.net/data/hauptmann2002chemical.ttl",
+   "encodingFormat": "text/turtle"
+  }
+ ],
+ "citation": [
+  {
+   "@type": "ScholarlyArticle",
+   "name": "Chemical composition and lead isotopy of metal objects from the\" Royal\" Tomb and other related finds at Arslantepe, Eastern Anatolia",
+   "@id": "https://doi.org/10.3406/paleo.2002.4745",
+   "url": "https://doi.org/10.3406/paleo.2002.4745"
+  }
+ ],
+ "spatialCoverage": [
+  {
+   "@type": "Place",
+   "name": "Arslantepe",
+   "url": "https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8",
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3611,
+    "longitude": 38.3819
+   }
+  }
+ ]
+}</script>
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -50,6 +118,14 @@
 				<a class="navbar-brand" href="/">
 					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
 				</a>
+				<button type="button" class="btn btn-sm theme-toggle ms-auto me-2 order-lg-last ms-lg-2 me-lg-0" id="theme-toggle" aria-label="Switch between light and dark mode" hidden="">
+					<span class="icon-sun"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"></path>
+</svg></span><span class="icon-moon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"></path>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"></path>
+</svg></span>
+				</button>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -88,16 +164,63 @@
 				<heading-anchors>
 					<div class="reading-column ms-0">
   <h1 class="mb-4" id="data">Data</h1>
-  
-  <p>LOD-AM publishes its research data as Linked Open Data. Every record has its own address under <code>https://lod-am.net/id/</code>; this page lists what is released so far. The data is published one publication at a time.</p>
-  <p>How the data is modelled is documented in the <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a> (CIDOC CRM 7.1.3, Allotrope, FaBiO, Getty AAT).</p>
 
-  <h2 class="h4 mt-5" id="released-data">Released data</h2>
+  <p class="lead">LOD-AM publishes archaeometallurgical data on copper-base objects from Eurasia as Linked Open Data.
+  The data are compiled from published sources and comprise the objects, their archaeological contexts and dating,
+  and the chemical and lead isotope analyses reported for them.</p>
+
+  <h2 class="h4 mt-5" id="scope-of-the-released-data">Scope of the released data</h2>
+  <p>The data are released one publication at a time. A release comprises the finds and analyses reported in that
+  publication, together with the sites, contexts, phases, typological classes, laboratories and bibliographic records
+  to which they refer. The underlying research database contains further sites and publications, which will be released
+  successively. The present selection is therefore neither complete nor representative, and it should not be used
+  for quantitative comparisons beyond the publications listed below.</p>
+
+  <h2 class="h4 mt-5" id="presentation-of-values">Presentation of values</h2>
   <ul class="entity-list">
-    <li><a href="/data/publications/hauptmann2002chemical/">Hauptmann et al. 2002: Chemical composition and lead isotopy of metal objects from the&quot; Royal&quot; Tomb and other related finds at Arslantepe, Eastern Anatolia</a>
-      · <a href="/data/hauptmann2002chemical.ttl">download (Turtle, 6155 triples)</a></li>
+    <li>All values are reproduced as reported in the source publication, including values such as 0 or 0.0001.
+      No values have been recalculated, normalised, rounded or corrected, and none are given that the source does not report.</li>
+    <li>Elements reported as not detected are recorded as such and are distinguished from elements that were not
+      analysed. Detection limits are given only where the source reports them (“&lt; x”).</li>
+    <li>Copper values of copper-base objects are not included.</li>
+    <li>A find is dated by its archaeological context (feature or site), not individually.</li>
   </ul>
-  <p class="small text-body-secondary">Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  <p>The data model follows CIDOC CRM 7.1.3 with the extensions CRMsci and CRMarchaeo; analytical results are
+  expressed with the Allotrope Foundation Ontologies and bibliographic records with FaBiO. Object, site and feature
+  types are linked to the Getty Art &amp; Architecture Thesaurus. The modelling rules are documented in the
+  <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>. Every record
+  has a persistent IRI under <code>https://lod-am.net/id/</code> and can be downloaded in Turtle and JSON-LD from its page.</p>
+
+  <h2 class="h4 mt-5" id="released">Released data</h2>
+  <div class="table-responsive">
+    <table class="table table-sm entity-table entity-table--wide" aria-labelledby="released">
+      <thead><tr><th scope="col">Publication</th><th scope="col">Released</th><th scope="col" class="text-end">Finds</th><th scope="col" class="text-end">Analyses</th><th scope="col">Download</th></tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="/data/publications/hauptmann2002chemical/">Hauptmann et al. 2002</a></th>
+          <td>2026-11-17</td>
+          <td class="text-end entity-num">58</td>
+          <td class="text-end entity-num"><a href="/data/publications/hauptmann2002chemical/analyses/">78</a></td>
+          <td><a href="/data/hauptmann2002chemical.ttl" download="">hauptmann2002chemical.ttl</a> <span class="text-body-secondary small">(Turtle, 6155 triples)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="h4 mt-5" id="licence-and-citation">Licence and citation</h2>
+  <p>The data are released under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International licence (CC BY 4.0)</a>.
+  When using them, please cite the individual records (a citation is given on each record page) or the dataset, and the source publications.
+  Versioned releases with a DOI are in preparation.</p>
+
+  <h2 class="h4 mt-5" id="corrections">Corrections</h2>
+  <p>Errors in the data, whether in transcription, attribution or modelling, can be reported to
+  <a href="mailto:info@lod-am.net">info@lod-am.net</a>. Please name the record (its IRI) and,
+  where possible, the page or table of the source publication. Corrections are listed in the changelog below.</p>
+
+  <h2 class="h4 mt-5" id="changelog">Changelog</h2>
+  <ul class="entity-list">
+    <li><strong>2026-11-17</strong>: First release: the finds and analyses reported in Hauptmann et al. 2002 (Arslantepe), with the sites, contexts, phases, types, laboratories and persons they refer to.</li>
+  </ul>
 
   <h2 class="h4 mt-5" id="browse">Browse</h2>
   <ul class="entity-list entity-list--columns">
@@ -123,7 +246,7 @@
 		</main>
 
 		<!-- Bootstrap Footer -->
-		<footer class="site-footer py-4 mt-auto text-center">
+		<footer class="site-footer py-4 mt-auto text-center" data-bs-theme="dark">
 			<div class="container">
 				<nav aria-label="Footer" class="footer-links small mb-2">
 					<a href="/impressum/">Impressum</a>
@@ -144,6 +267,7 @@
 
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/theme.js"></script>
 		<script type="module" src=""></script>
 	</body>
 </html>

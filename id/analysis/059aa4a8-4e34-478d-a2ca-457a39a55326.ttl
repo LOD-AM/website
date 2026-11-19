@@ -1,0 +1,84 @@
+# Chemical analysis 149 of Spearhead, unspecified (no. ARSL 28, Arslantepe)
+# https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 149 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de, "Chemical analysis 149 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/ag>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/as>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/au>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/bi>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/co>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/fe>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/ni>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/p>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/pb>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sb>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/se>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sn>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/te>, <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sample>;
+    dcterms:identifier "149";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sample>.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.31;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 1.15;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.008;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.005;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 1.69;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 0.03;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.0762;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (149)"@de, "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (149)"@en.

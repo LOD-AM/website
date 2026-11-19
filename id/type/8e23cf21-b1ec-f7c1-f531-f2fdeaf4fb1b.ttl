@@ -1,0 +1,14 @@
+# daggers
+# https://lod-am.net/id/type/8e23cf21-b1ec-f7c1-f531-f2fdeaf4fb1b · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/8e23cf21-b1ec-f7c1-f531-f2fdeaf4fb1b> a crm:E55_Type, skos:Concept;
+    skos:broader <https://lod-am.net/id/type/26a9cabc-46b3-41eb-b61b-eb2351736d90>;
+    skos:closeMatch aat:300037058;
+    skos:inScheme :typology;
+    skos:prefLabel "Dolche"@de, "daggers"@en.

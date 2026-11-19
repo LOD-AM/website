@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmarchaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d",
+   "@type": [
+    "crm:E25_Human-Made_Feature",
+    "crmarchaeo:A2_Stratigraphic_Volume_Unit"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Königsgrab",
+     "@language": "de"
+    },
+    {
+     "@value": "Royal Tomb",
+     "@language": "en"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/type/3f8ffd6b-d47c-1613-f4a9-213326a3abb2"
+    }
+   ],
+   "crm:P46i_forms_part_of": [
+    {
+     "@id": "https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8"
+    }
+   ],
+   "crm:P8i_witnessed": [
+    {
+     "@id": "https://lod-am.net/id/period/561b5ede-c714-41f7-afc2-e7aa41cf175f"
+    }
+   ]
+  }
+ ]
+}

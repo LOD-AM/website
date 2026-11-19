@@ -1,0 +1,84 @@
+# Chemical analysis 148 of Casting residue, sprue, slag (no. TR-8/202, Arslantepe)
+# https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 148 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe)"@de, "Chemical analysis 148 of Casting residue, sprue, slag (no. TR-8/202, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/ag>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/as>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/au>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/bi>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/co>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/fe>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/ni>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/p>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/pb>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sb>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/se>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sn>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/te>, <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sample>;
+    dcterms:identifier "148";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/538473f9-b52f-41cc-b363-91e32045696d>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sample>.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.037;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 1.1;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.056;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.051;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.027;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 0.83;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 1.63;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.62;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.006;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe) (148)"@de, "Sample from Casting residue, sprue, slag (no. TR-8/202, Arslantepe) (148)"@en.

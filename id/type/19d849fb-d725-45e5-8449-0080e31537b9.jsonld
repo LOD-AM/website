@@ -1,0 +1,32 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/19d849fb-d725-45e5-8449-0080e31537b9",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:closeMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300444153"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Siedlung",
+     "@language": "de"
+    },
+    {
+     "@value": "settlement",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

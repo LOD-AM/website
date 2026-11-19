@@ -1,0 +1,22 @@
+# Arslantepe
+# https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+
+<https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/geometry> a geo:Geometry;
+    geo:asWKT "POINT (38.3819 38.3611)"^^geo:wktLiteral.
+<https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/location> a crm:E53_Place, geo:Feature;
+    crm:P89_falls_within <https://lod-am.net/id/region/f82ca066-6f79-4f46-b1dd-737f7a550470>;
+    geo:hasGeometry <https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/geometry>.
+<https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/name_as_reported> a crm:E41_Appellation;
+    crm:P190_has_symbolic_content "Arslantepe";
+    crm:P2_has_type :name_as_reported.
+<https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8> a crm:E27_Site;
+    rdfs:label "Arslantepe"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/name_as_reported>;
+    crm:P2_has_type <https://lod-am.net/id/type/19d849fb-d725-45e5-8449-0080e31537b9>;
+    crm:P53_has_former_or_current_location <https://lod-am.net/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/location>.

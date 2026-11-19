@@ -1,0 +1,10 @@
+# Paléorient
+# https://lod-am.net/id/journal/15f29ad9-015e-9ff8-d36f-95a83e016c8d · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix fabio: <http://purl.org/spar/fabio/>.
+
+<https://lod-am.net/id/journal/15f29ad9-015e-9ff8-d36f-95a83e016c8d> a fabio:Journal;
+    dcterms:title "Paléorient".

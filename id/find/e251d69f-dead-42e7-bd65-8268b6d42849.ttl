@@ -1,0 +1,21 @@
+# Flat chisel, wedge (no. ARSL 24, Arslantepe)
+# https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849> a crm:E22_Human-Made_Object;
+    rdfs:label "Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)"@de, "Flat chisel, wedge (no. ARSL 24, Arslantepe)"@en;
+    crm:P1_is_identified_by <https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849/old_identifier>;
+    crm:P2_has_type <https://lod-am.net/id/type/abab9506-c910-482e-b645-c7877b86ab14>;
+    crm:P3_has_note "Meissel";
+    crm:P45_consists_of aat:300241441;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>;
+    crmarchaeo:AP21i_is_contained_in <https://lod-am.net/id/feature/230027af-11bd-4fce-ac4d-39cd542cf78d>.
+<https://lod-am.net/id/find/e251d69f-dead-42e7-bd65-8268b6d42849/old_identifier> a crm:E42_Identifier;
+    crm:P190_has_symbolic_content "ARSL 24";
+    crm:P2_has_type :old_identifier.

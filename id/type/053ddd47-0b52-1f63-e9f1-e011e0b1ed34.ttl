@@ -1,0 +1,10 @@
+# unspecified context
+# https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/type/053ddd47-0b52-1f63-e9f1-e011e0b1ed34> a crm:E55_Type, skos:Concept;
+    skos:prefLabel "unbestimmter Kontext"@de, "unspecified context"@en.

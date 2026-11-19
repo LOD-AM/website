@@ -1,0 +1,17 @@
+# Arslantepe VII
+# https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+
+<https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa/time_span> a crm:E52_Time-Span;
+    crm:P79_beginning_is_qualified_by "-3900";
+    crm:P80_end_is_qualified_by "-3350".
+<https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa> a crm:E4_Period;
+    rdfs:label "Arslantepe VII"@de, "Arslantepe VII"@en;
+    crm:P4_has_time-span <https://lod-am.net/id/period/b67708d0-02a7-4428-9d68-664111a537aa/time_span>;
+    crm:P9i_forms_part_of <https://lod-am.net/id/culture/44259120-5d4e-4525-b354-c325cfbc2d87>;
+    skos:inScheme <https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1>.

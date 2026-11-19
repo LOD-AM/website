@@ -1,0 +1,11 @@
+# Andreas Hauptmann
+# https://lod-am.net/id/person/2583816f-634a-51d5-7b0e-ae4256575fa2 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://lod-am.net/id/person/2583816f-634a-51d5-7b0e-ae4256575fa2> a foaf:Person;
+    foaf:familyName "Hauptmann";
+    foaf:givenName "Andreas";
+    foaf:name "Andreas Hauptmann".

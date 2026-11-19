@@ -1,0 +1,29 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "foaf": "http://xmlns.com/foaf/0.1/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/person/0d004b44-2459-f7cb-3516-2585a6b0ac2e",
+   "@type": [
+    "foaf:Person"
+   ],
+   "foaf:familyName": [
+    {
+     "@value": "Begemann"
+    }
+   ],
+   "foaf:givenName": [
+    {
+     "@value": "Friedrich"
+    }
+   ],
+   "foaf:name": [
+    {
+     "@value": "Friedrich Begemann"
+    }
+   ]
+  }
+ ]
+}

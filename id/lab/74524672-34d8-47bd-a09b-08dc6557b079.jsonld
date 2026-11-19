@@ -1,0 +1,37 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "dcterms": "http://purl.org/dc/terms/",
+  "owl": "http://www.w3.org/2002/07/owl#"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079",
+   "@type": [
+    "crm:E74_Group"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Deutsches Bergbau-Museum Bochum",
+     "@language": "de"
+    },
+    {
+     "@value": "German Mining Museum Bochum",
+     "@language": "en"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "03k7cjr94"
+    }
+   ],
+   "owl:sameAs": [
+    {
+     "@id": "https://ror.org/03k7cjr94"
+    }
+   ]
+  }
+ ]
+}

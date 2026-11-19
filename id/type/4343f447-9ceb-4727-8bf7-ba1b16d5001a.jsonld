@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/4343f447-9ceb-4727-8bf7-ba1b16d5001a",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300037204"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Lanzen und andere Spitzen",
+     "@language": "de"
+    },
+    {
+     "@value": "spearheads and other points",
+     "@language": "en"
+    }
+   ],
+   "skos:topConceptOf": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ]
+  }
+ ]
+}

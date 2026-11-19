@@ -1,0 +1,84 @@
+# Chemical analysis 174 of Sword, unspecified (no. ARSL 15, Arslantepe)
+# https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 174 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)"@de, "Chemical analysis 174 of Sword, unspecified (no. ARSL 15, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/ag>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/as>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/au>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/bi>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/co>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/fe>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/ni>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/p>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/pb>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sb>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/se>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sn>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/te>, <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sample>;
+    dcterms:identifier "174";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/d463ac30-f668-4260-8e26-ccb03ea7a982>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sample>.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 3.15;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.007;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.008;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 0.002;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.007;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (174)"@de, "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (174)"@en.

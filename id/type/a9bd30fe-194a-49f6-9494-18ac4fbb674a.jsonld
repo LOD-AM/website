@@ -1,0 +1,42 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "aat": "http://vocab.getty.edu/aat/"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/type/a9bd30fe-194a-49f6-9494-18ac4fbb674a",
+   "@type": [
+    "crm:E55_Type",
+    "skos:Concept"
+   ],
+   "skos:broadMatch": [
+    {
+     "@id": "http://vocab.getty.edu/aat/300024664"
+    }
+   ],
+   "skos:broader": [
+    {
+     "@id": "https://lod-am.net/id/type/b220f040-d41b-47ee-a2f4-80283fd6b9d4"
+    }
+   ],
+   "skos:inScheme": [
+    {
+     "@id": "https://lod-am.net/id/typology"
+    }
+   ],
+   "skos:prefLabel": [
+    {
+     "@value": "Schaftlochaxt, einschneidig",
+     "@language": "de"
+    },
+    {
+     "@value": "single-bladed shaft-hole axe",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

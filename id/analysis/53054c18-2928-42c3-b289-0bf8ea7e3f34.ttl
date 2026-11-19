@@ -1,0 +1,84 @@
+# Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)
+# https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix unit: <http://qudt.org/vocab/unit#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
+
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34> a afp:AFP_0002680, crm:E7_Activity;
+    rdfs:label "Chemische Analyse 144 von Schale (Nr. ARSL 47, Arslantepe)"@de, "Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/bi>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/co>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/fe>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ni>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/p>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/pb>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sb>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/se>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sn>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample>;
+    dcterms:identifier "144";
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/d1bd0c5c-67c7-42f7-b388-331a1c85f26b>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample>.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30512;
+    qudt:numericValue 0.395;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27563;
+    qudt:numericValue 0.88;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:29287;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/bi> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:33301;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/co> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27638;
+    qudt:numericValue 0.002;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/fe> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:18248;
+    qudt:numericValue 0.138;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ni> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28112;
+    qudt:numericValue 0.92;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/p> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:28659;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/pb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:25016;
+    qudt:numericValue 0.001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sb> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30513;
+    qudt:numericValue 0.123;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/se> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27568;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27007;
+    qudt:numericValue 0.008;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:30452;
+    qudt:numericValue 0.0001;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn> a afr:AFR_0002099;
+    afx:AFX_0002816 chebi:27363;
+    qudt:numericValue 0.005;
+    qudt:unit unit:PERCENT.
+<https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Schale (Nr. ARSL 47, Arslantepe) (144)"@de, "Sample from Bowl (no. ARSL 47, Arslantepe) (144)"@en.

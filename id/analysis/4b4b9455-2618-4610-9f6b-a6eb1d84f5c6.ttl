@@ -1,0 +1,40 @@
+# Lead isotope analysis 12 of Spearhead, unspecified (no. ARSL 28, Arslantepe)
+# https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>.
+@prefix afx: <http://purl.allotrope.org/ontologies/property#>.
+@prefix afr: <http://purl.allotrope.org/ontologies/result#>.
+@prefix afp: <http://purl.allotrope.org/ontologies/process#>.
+@prefix afm: <http://purl.allotrope.org/ontologies/material#>.
+@prefix qudt: <http://qudt.org/schema/qudt#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix wd: <http://www.wikidata.org/entity/>.
+
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6> a afp:AFP_0001427, crm:E7_Activity;
+    rdfs:label "Bleiisotopenanalyse 12 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de, "Lead isotope analysis 12 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en;
+    afx:AFX_0000395 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb204_pb206>, <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb207_pb206>, <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb208_pb206>;
+    afx:AFX_0000399 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sample>;
+    dcterms:identifier "12";
+    crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
+    crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sampling> a crmsci:S2_Sample_Taking;
+    crmsci:O3_sampled_from <https://lod-am.net/id/find/8519e91a-5f32-48f1-b27c-7b10743c2557>;
+    crmsci:O5_removed <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sample>.
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb204_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q18883429;
+    qudt:numericValue 0.05306.
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb207_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q18883443;
+    qudt:numericValue 0.83.
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb208_pb206> a afr:AFR_0002368;
+    afx:AFX_0001550 wd:Q18883438;
+    afx:AFX_0002816 wd:Q16670466;
+    qudt:numericValue 2.0627.
+<https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sample> a afm:AFM_0001099, crmsci:S13_Sample;
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (12)"@de, "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (12)"@en.

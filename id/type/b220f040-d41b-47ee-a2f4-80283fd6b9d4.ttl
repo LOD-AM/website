@@ -1,0 +1,14 @@
+# axes and adzes
+# https://lod-am.net/id/type/b220f040-d41b-47ee-a2f4-80283fd6b9d4 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix aat: <http://vocab.getty.edu/aat/>.
+
+<https://lod-am.net/id/type/b220f040-d41b-47ee-a2f4-80283fd6b9d4> a crm:E55_Type, skos:Concept;
+    skos:broadMatch aat:300024662;
+    skos:inScheme :typology;
+    skos:prefLabel "Äxte und Beile"@de, "axes and adzes"@en;
+    skos:topConceptOf :typology.

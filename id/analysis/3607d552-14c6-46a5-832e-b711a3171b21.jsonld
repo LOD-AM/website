@@ -1,0 +1,435 @@
+{
+ "@context": {
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+  "crmsci": "http://www.cidoc-crm.org/extensions/crmsci/",
+  "afx": "http://purl.allotrope.org/ontologies/property#",
+  "afr": "http://purl.allotrope.org/ontologies/result#",
+  "afp": "http://purl.allotrope.org/ontologies/process#",
+  "afm": "http://purl.allotrope.org/ontologies/material#",
+  "qudt": "http://qudt.org/schema/qudt#",
+  "unit": "http://qudt.org/vocab/unit#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "chebi": "http://purl.obolibrary.org/obo/CHEBI_"
+ },
+ "@graph": [
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21",
+   "@type": [
+    "afp:AFP_0002680",
+    "crm:E7_Activity"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Chemische Analyse 89 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)",
+     "@language": "de"
+    },
+    {
+     "@value": "Chemical analysis 89 of Spearhead, unspecified (no. TR-8/9, Arslantepe)",
+     "@language": "en"
+    }
+   ],
+   "afx:AFX_0000395": [
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ag"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/as"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/au"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/bi"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/co"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/fe"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ni"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/p"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/pb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sb"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/se"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sn"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/te"
+    },
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/zn"
+    }
+   ],
+   "afx:AFX_0000399": [
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample"
+    }
+   ],
+   "dcterms:identifier": [
+    {
+     "@value": "89"
+    }
+   ],
+   "crm:P70i_is_documented_in": [
+    {
+     "@id": "https://doi.org/10.3406/paleo.2002.4745"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sampling",
+   "@type": [
+    "crmsci:S2_Sample_Taking"
+   ],
+   "crmsci:O3_sampled_from": [
+    {
+     "@id": "https://lod-am.net/id/find/89e70a5b-b125-4125-be33-6e423915c675"
+    }
+   ],
+   "crmsci:O5_removed": [
+    {
+     "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ag",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30512"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0031",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/as",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27563"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "3.77",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/au",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_29287"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.000019",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/bi",
+   "@type": [
+    "afr:AFR_0002099",
+    "crm:E54_Dimension"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_33301"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/not_detected"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/co",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27638"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.00004",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/fe",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_18248"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0035",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ni",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28112"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.001",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/p",
+   "@type": [
+    "afr:AFR_0002099",
+    "crm:E54_Dimension"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_28659"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/not_detected"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/pb",
+   "@type": [
+    "afr:AFR_0002099",
+    "crm:E54_Dimension"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_25016"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/not_detected"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sb",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30513"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0047",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/se",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27568"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.00035",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sn",
+   "@type": [
+    "afr:AFR_0002099",
+    "crm:E54_Dimension"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27007"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/not_detected"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/te",
+   "@type": [
+    "afr:AFR_0002099",
+    "crm:E54_Dimension"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_30452"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ],
+   "crm:P2_has_type": [
+    {
+     "@id": "https://lod-am.net/id/not_detected"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/zn",
+   "@type": [
+    "afr:AFR_0002099"
+   ],
+   "afx:AFX_0002816": [
+    {
+     "@id": "http://purl.obolibrary.org/obo/CHEBI_27363"
+    }
+   ],
+   "qudt:numericValue": [
+    {
+     "@value": "0.0022",
+     "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    }
+   ],
+   "qudt:unit": [
+    {
+     "@id": "http://qudt.org/vocab/unit#PERCENT"
+    }
+   ]
+  },
+  {
+   "@id": "https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample",
+   "@type": [
+    "afm:AFM_0001099",
+    "crmsci:S13_Sample"
+   ],
+   "rdfs:label": [
+    {
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (89)",
+     "@language": "de"
+    },
+    {
+     "@value": "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (89)",
+     "@language": "en"
+    }
+   ]
+  }
+ ]
+}

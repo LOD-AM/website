@@ -1,0 +1,9 @@
+# Arslantepe periods
+# https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1 · LOD-AM (https://lod-am.net/) · CC BY 4.0
+
+@prefix : <https://lod-am.net/id/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+<https://lod-am.net/id/chronology/bffcc2eb-7e52-46f8-86cd-2f552b07a4d1> a skos:ConceptScheme;
+    skos:prefLabel "Arslantepe Stufen"@de, "Arslantepe periods"@en.
