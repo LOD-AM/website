@@ -49,6 +49,58 @@ export function histogramSvg(e, h, idBase) {
 	return out.join("");
 }
 
+// Ratio label with superscript mass numbers: "207Pb/206Pb" -> "²⁰⁷Pb/²⁰⁶Pb"
+const supLabel = (l) => l.replace(/(\d+)Pb/g, (_, n) => n.split("").map((c) => SUP[c]).join("") + "Pb");
+
+// Clean linear ticks (steps of 1, 2, 2.5 or 5 x 10^k) around [min, max]
+function linearTicks(min, max, count = 5) {
+	if (min === max) { min -= Math.abs(min) * 0.01 || 1; max += Math.abs(max) * 0.01 || 1; }
+	const raw = (max - min) / count, mag = 10 ** Math.floor(Math.log10(raw));
+	const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw);
+	const lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step;
+	const decimals = Math.max(0, -Math.floor(Math.log10(step)) + (step / mag === 2.5 ? 1 : 0));
+	const ticks = [];
+	for (let v = lo; v <= hi + step / 2; v += step) ticks.push(Number(v.toFixed(decimals)));
+	return { lo, hi, ticks, decimals };
+}
+
+// scatterSvg(plot): one lead isotope diagram. Each point links to its analysis and has a native
+// tooltip with the values as reported. One series, so one mark colour and no legend.
+export function scatterSvg(p, idBase) {
+	const W = 440, H = 360, ml = 64, mr = 16, mt = 14, mb = 52;
+	const pw = W - ml - mr, ph = H - mt - mb;
+	const xs = p.points.map((d) => d.x), ys = p.points.map((d) => d.y);
+	const pad = (a) => (Math.max(...a) - Math.min(...a)) * 0.06 || Math.abs(a[0]) * 0.01;
+	const X = linearTicks(Math.min(...xs) - pad(xs), Math.max(...xs) + pad(xs));
+	const Y = linearTicks(Math.min(...ys) - pad(ys), Math.max(...ys) + pad(ys));
+	const sx = (v) => ml + ((v - X.lo) / (X.hi - X.lo)) * pw;
+	const sy = (v) => mt + ph - ((v - Y.lo) / (Y.hi - Y.lo)) * ph;
+	const xl = supLabel(p.xLabel), yl = supLabel(p.yLabel);
+	const out = [];
+	out.push(`<svg class="chart chart--scatter" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${idBase}-t" xmlns="http://www.w3.org/2000/svg">`);
+	out.push(`<title id="${idBase}-t">${esc(`${yl} against ${xl}: ${p.points.length} analyses, values as reported`)}</title>`);
+	for (const t of Y.ticks) {
+		out.push(`<line class="chart-grid" x1="${ml}" x2="${W - mr}" y1="${sy(t).toFixed(1)}" y2="${sy(t).toFixed(1)}"/>`);
+		out.push(`<text class="chart-tick" x="${ml - 6}" y="${(sy(t) + 4).toFixed(1)}" text-anchor="end">${t.toFixed(Y.decimals)}</text>`);
+	}
+	for (const t of X.ticks) {
+		out.push(`<line class="chart-grid" x1="${sx(t).toFixed(1)}" x2="${sx(t).toFixed(1)}" y1="${mt}" y2="${mt + ph}"/>`);
+		out.push(`<text class="chart-tick" x="${sx(t).toFixed(1)}" y="${mt + ph + 17}" text-anchor="middle">${t.toFixed(X.decimals)}</text>`);
+	}
+	out.push(`<line class="chart-axis" x1="${ml}" x2="${W - mr}" y1="${mt + ph}" y2="${mt + ph}"/>`);
+	out.push(`<line class="chart-axis" x1="${ml}" x2="${ml}" y1="${mt}" y2="${mt + ph}"/>`);
+	out.push(`<text class="chart-axis-title" x="${ml + pw / 2}" y="${H - 10}" text-anchor="middle">${esc(xl)}</text>`);
+	out.push(`<text class="chart-axis-title" transform="translate(16 ${mt + ph / 2}) rotate(-90)" text-anchor="middle">${esc(yl)}</text>`);
+	for (const d of p.points) {
+		const tip = `Analysis ${d.analysis}${d.object ? ` (${d.object})` : ""}: ${xl} ${d.x}, ${yl} ${d.y}`;
+		out.push(`<a href="${esc(d.href)}" class="chart-point-link"><circle class="chart-point" cx="${sx(d.x).toFixed(1)}" cy="${sy(d.y).toFixed(1)}" r="4.5"><title>${esc(tip)}</title></circle></a>`);
+	}
+	out.push(`</svg>`);
+	return out.join("");
+}
+
 export default function (eleventyConfig) {
+	eleventyConfig.addFilter("scatterSvg", (p, idBase) => scatterSvg(p, idBase));
+	eleventyConfig.addFilter("isotopeLabel", (l) => supLabel(l));
 	eleventyConfig.addFilter("histogramSvg", (e, h, idBase) => histogramSvg(e, h, idBase));
 }

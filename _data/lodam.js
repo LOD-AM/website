@@ -607,6 +607,36 @@ function histogramsOf(analyses) {
 		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList };
 }
 
+// Lead isotope diagrams of a publication (owner, 2026-11-19): two scatterplots with the same X.
+// ²⁰⁴Pb-based ratios when the publication reports them; otherwise the ²⁰⁶Pb-based ratios as
+// reported. Ratios are never converted (e.g. 206/204 is not computed from 204/206).
+const ISOTOPE_PLOTS = [
+	{ x: "lead-206 / lead-204", ys: ["lead-207 / lead-204", "lead-208 / lead-204"] },
+	{ x: "lead-208 / lead-206", ys: ["lead-207 / lead-206", "lead-204 / lead-206"] },   // only without 204-based data
+];
+const ratioLabel = (key) => key.replace(/lead-(\d+) \/ lead-(\d+)/, (_, a, b) => `${a}Pb/${b}Pb`);
+function isotopePlotsOf(analyses) {
+	const rows = analyses.map((a) => {
+		const v = {};
+		for (const r of resultsOf(a).ratioRows) if (r.shown.num && !r.shown.text.startsWith("<")) v[r.key] = Number(r.shown.text);
+		return { a, v };
+	}).filter((x) => Object.keys(x.v).length);
+	if (!rows.length) return null;
+	const has = (key) => rows.some((x) => key in x.v);
+	const set = ISOTOPE_PLOTS.find((s) => has(s.x) && s.ys.some(has));
+	if (!set) return null;
+	const num = (a) => first(a, P("dcterms", "identifier")) || labelOf(a) || a;
+	const plots = set.ys.filter(has).map((y) => ({
+		x: set.x, y, xLabel: ratioLabel(set.x), yLabel: ratioLabel(y),
+		points: rows.filter((r) => set.x in r.v && y in r.v).map((r) => {
+			const objs = objsOfAnalysis(r.a);
+			return { x: r.v[set.x], y: r.v[y], href: pathOf(r.a), analysis: num(r.a),
+				object: objs.map((o) => numberOf(o) || labelOf(o) || "").join(", ") };
+		}),
+	}));
+	return { basis: set === ISOTOPE_PLOTS[0] ? "204" : "206", plots };
+}
+
 // The object(s) an analysis sampled (analysis → sample → sampling event → object)
 function objsOfAnalysis(a) {
 	return [...new Set(iris(a, P("afx", "AFX_0000399")).flatMap((s) => subs(s, P("crmsci", "O5_removed"))).flatMap((st) => iris(st, P("crmsci", "O3_sampled_from"))))];
@@ -629,6 +659,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		analyses: sortLinks(docs.filter((x) => kindOf(x) === "analysis").map(link)),
 		results: resultsTables(docs.filter((x) => kindOf(x) === "analysis")),
 		histograms: histogramsOf(docs.filter((x) => kindOf(x) === "analysis")),
+		isotopePlots: isotopePlotsOf(docs.filter((x) => kindOf(x) === "analysis")),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));

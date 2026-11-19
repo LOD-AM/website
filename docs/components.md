@@ -77,6 +77,12 @@ text alternative, and a table view sits in a `<details>`. There is one mark colo
 (`--lodam-chart-bar`), checked with the dataviz palette validator (lightness band for marks, 3:1 on the
 chart surface). Text uses text colours, never the mark colour.
 
+Lead isotope diagrams (owner, 2026-11-19) appear on the same page and come from `isotopePlotsOf()` and
+`scatterSvg()`. There are two scatterplots with a shared X axis: ²⁰⁶Pb/²⁰⁴Pb against ²⁰⁷Pb/²⁰⁴Pb and
+²⁰⁸Pb/²⁰⁴Pb. Only when a publication has no ²⁰⁴Pb-based ratios, X is ²⁰⁸Pb/²⁰⁶Pb and Y is ²⁰⁷Pb/²⁰⁶Pb
+and ²⁰⁴Pb/²⁰⁶Pb (`ISOTOPE_PLOTS` in `_data/lodam.js`). Ratios are plotted as reported and never converted.
+Each point links to its analysis, with a tooltip.
+
 ## Site maps
 `_includes/lodam/map.njk` shows a static relief map with the site markers on site pages and on
 `/data/sites/`. The images come from `scripts/map/build_maps.py`, one per 1° × 1° tile that contains a

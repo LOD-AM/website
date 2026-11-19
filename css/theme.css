@@ -459,6 +459,13 @@ a:hover { text-decoration: underline; }
 .chart-grid { stroke: rgba(var(--lodam-line-rgb), 0.15); stroke-width: 1; }
 .chart-axis { stroke: rgba(var(--lodam-line-rgb), 0.45); stroke-width: 1; }
 .chart-tick { fill: var(--lodam-text-secondary); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart-axis-title { fill: var(--lodam-chalk-white); font-size: 13px; font-weight: 600; }
+.chart--scatter .chart-tick { font-size: 12px; }
+/* Scatter points: >= 8 px, 2 px ring in the surface colour so overlapping points stay distinct */
+.chart-point { fill: var(--lodam-chart-bar); stroke: var(--lodam-charcoal); stroke-width: 2; }
+.chart-point-link:hover .chart-point, .chart-point-link:focus-visible .chart-point { fill: var(--lodam-chalk-white); }
+.chart-point-link:focus-visible { outline: none; }
+.chart-grid-list--wide { grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); }
 
 /* Site maps (planning#18): a static relief image (scripts/map/build_maps.py) with HTML markers.
    The image is the same in both modes, so markers and labels use fixed colours that work on it:

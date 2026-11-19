@@ -64,6 +64,25 @@ eleventyComputed:
   </section>
   {% endif %}
 
+  {%- set ip = pub.isotopePlots %}
+  {% if ip %}
+  <section class="mt-5" aria-labelledby="r-isotope-plots">
+    <h2 id="r-isotope-plots" class="h4">Lead isotope diagrams</h2>
+    <p class="small text-body-secondary reading-column ms-0">One point per analysis, with the ratios as reported.
+    {%- if ip.basis == "206" %} The publication reports ratios to ²⁰⁶Pb only, so the diagrams use these; ratios to ²⁰⁴Pb are not calculated from them.{% endif %}
+    Point at a point for its analysis and values, or select it to open the analysis. All values are in the table below.</p>
+    <div class="chart-grid-list chart-grid-list--wide">
+      {%- for p in ip.plots %}
+      <figure class="chart-figure">
+        <figcaption><strong>{{ p.yLabel | isotopeLabel }} against {{ p.xLabel | isotopeLabel }}</strong>
+          <span class="text-body-secondary small">{{ p.points.length }} analyses</span></figcaption>
+        {{ p | scatterSvg("iso-" + loop.index) | safe }}
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {%- set r = pub.results.ratios %}
   {% if r.count %}
   <section class="mt-5" aria-labelledby="r-ratios">
