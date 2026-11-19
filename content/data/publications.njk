@@ -1,15 +1,27 @@
 ---
 permalink: /data/publications/
 title: "Publications · LOD-AM data"
-description: "Publications whose data is released on LOD-AM."
+description: "Publications whose data is released on LOD-AM, and publications cited as sources of the chronologies."
 ---
 <div class="reading-column ms-0">
   <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a></nav>
   <h1 class="mb-3">Publications</h1>
-  <p class="lead">The data on this site comes from these publications, released one by one.</p>
+  <h2 class="h4 mt-4">Released data</h2>
+  <p>The data on this site comes from these publications, released one by one.</p>
   <ul class="entity-list">
-    {%- for p in lodam.publications %}
+    {%- for p in lodam.releasedPublications %}
     <li><a href="{{ p.path }}">{{ p.citation }}: {{ p.title }}</a> <span class="text-body-secondary small">({{ p.finds.length }} finds, {{ p.analyses.length }} analyses)</span></li>
     {%- endfor %}
   </ul>
+  {%- set cited = [] %}{% for p in lodam.publications %}{% if not p.released %}{% set cited = (cited.push(p), cited) %}{% endif %}{% endfor %}
+  {%- if cited.length %}
+  <h2 class="h4 mt-5">Cited as sources</h2>
+  <p>Publications that the released data refers to, such as the source of a chronology system. Only their bibliographic
+  records are on this site, not data from them.</p>
+  <ul class="entity-list">
+    {%- for p in cited %}
+    <li><a href="{{ p.path }}">{{ p.citation }}: {{ p.title }}</a>{% if p.chronologies.length %} <span class="text-body-secondary small">(source of {{ p.chronologies | length }} chronology system{% if p.chronologies.length != 1 %}s{% endif %})</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
 </div>

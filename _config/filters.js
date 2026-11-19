@@ -171,7 +171,7 @@ export default function(eleventyConfig) {
 			distribution: lodam.datasets.map((d) => ({
 				"@type": "DataDownload", name: `${d.key}.ttl`, contentUrl: absolute(d.file), encodingFormat: "text/turtle",
 			})),
-			citation: lodam.publications.map((p) => ({
+			citation: lodam.releasedPublications.map((p) => ({
 				"@type": "ScholarlyArticle", name: p.title, ...(p.doi ? { "@id": `https://doi.org/${p.doi}`, url: `https://doi.org/${p.doi}` } : {}),
 			})),
 			spatialCoverage: lodam.siteCoords.filter((x) => x.lat && x.lon).map((x) => ({
