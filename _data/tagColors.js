@@ -74,9 +74,22 @@ function contrast(a, b) {
   return (x + 0.05) / (y + 0.05);
 }
 
-// Inline style for a tag chip: sets the dot colour used by .tag in theme.css
-function getTagStyle(tag) {
-  return '--tag-color: ' + getTagColor(tag) + ';';
+// Light mode (planning#20): the same colour, darkened until it reaches 3:1 on the light page
+// (#F5F0E6) and card (#EBE3D5) backgrounds, so new colours need no second list
+const LIGHT_BACKGROUNDS = ['#F5F0E6', '#EBE3D5'];
+function forLightMode(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  for (let f = 1; f > 0; f -= 0.02) {
+    const c = '#' + [r, g, b].map((v) => Math.round(v * f).toString(16).padStart(2, '0')).join('');
+    if (LIGHT_BACKGROUNDS.every((bg) => contrast(c, bg) >= 3)) return c.toUpperCase();
+  }
+  return '#2A241D';
 }
 
-export { getTagColor, getTagStyle, customTagColors, contrast };
+// Inline style for a tag chip: sets the dot colours used by .tag in theme.css
+function getTagStyle(tag) {
+  const c = getTagColor(tag);
+  return '--tag-color: ' + c + '; --tag-color-light: ' + forLightMode(c) + ';';
+}
+
+export { getTagColor, getTagStyle, customTagColors, contrast, forLightMode };

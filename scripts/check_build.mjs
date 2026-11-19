@@ -6,6 +6,7 @@
 // - every post page has parseable schema.org JSON-LD (BlogPosting), the home page WebSite
 // - every LOD-AM record in data/published/*.ttl (/id/<kind>/<uuid>) has its page, and the
 //   released files are downloadable under /data/
+import { Parser } from "n3";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
 
@@ -64,6 +65,13 @@ for (const file of htmlFiles(SITE)) {
   }
 }
 
+// Triples of a record in a released file: the record and its helper nodes (<record>/...)
+const parsed = new Map();
+function ownCount(file, iri) {
+  if (!parsed.has(file)) parsed.set(file, new Parser().parse(readFileSync(join("data/published", file), "utf8")));
+  return parsed.get(file).filter((q) => q.subject.value === iri || q.subject.value.startsWith(iri + "/")).length;
+}
+
 // Entity pages (website#18)
 let records = 0;
 const KINDS = ["site", "feature", "find", "analysis", "type", "period", "culture", "chronology", "region", "lab", "person", "journal"];
@@ -77,8 +85,36 @@ if (existsSync("data/published")) {
       if (!KINDS.includes(kind)) continue;
       records++;
       if (!existsSync(join(SITE, "id", kind, uuid, "index.html"))) errors.push(`no page for ${iri}`);
+      // Per-record downloads (planning#13): exist, parse, and hold the record's own triples
+      const base = join(SITE, "id", kind, uuid);
+      if (!existsSync(base + ".ttl") || !existsSync(base + ".jsonld")) { errors.push(`no Turtle/JSON-LD download for ${iri}`); continue; }
+      try {
+        const n = new Parser().parse(readFileSync(base + ".ttl", "utf8")).length;
+        const own = ownCount(f, iri);
+        if (n !== own) errors.push(`${iri}.ttl: ${n} triples, expected ${own}`);
+        const doc = JSON.parse(readFileSync(base + ".jsonld", "utf8"));
+        if (!doc["@graph"]?.some((x) => x["@id"] === iri)) errors.push(`${iri}.jsonld: record node missing`);
+      } catch (e) { errors.push(`${iri}: download does not parse (${e.message})`); }
     }
   }
+}
+
+// Data page (planning#15): every released file is in the data changelog, and the
+// schema.org Dataset is valid JSON naming every download
+{
+  const { default: releases } = await import(new URL("../_data/dataReleases.js", import.meta.url));
+  const released = new Set(releases.flatMap((r) => r.publications));
+  for (const f of existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : []) {
+    if (!released.has(f.replace(/\.ttl$/, ""))) errors.push(`data/published/${f} has no entry in _data/dataReleases.js`);
+  }
+  const html = readFileSync(join(SITE, "data", "index.html"), "utf8");
+  const m = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  try {
+    const ds = JSON.parse(m[1]);
+    if (ds["@type"] !== "Dataset" || !ds.name || !ds.description || !ds.license) errors.push("/data/: Dataset JSON-LD lacks @type, name, description or license");
+    for (const f of readdirSync("data/published").filter((f) => f.endsWith(".ttl")))
+      if (!ds.distribution?.some((d) => d.contentUrl.endsWith(`/data/${f}`))) errors.push(`/data/: Dataset JSON-LD has no distribution for ${f}`);
+  } catch (e) { errors.push(`/data/: no valid Dataset JSON-LD (${e.message})`); }
 }
 
 if (errors.length) {

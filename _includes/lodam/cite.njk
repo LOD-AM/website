@@ -1,0 +1,16 @@
+{#- "Cite and download" box (docs/components.md, planning#13). Set `record`. -#}
+<section class="entity-cite mt-5" aria-labelledby="cite">
+  <h2 id="cite" class="h5">Cite and download</h2>
+  <p class="mb-2">{{ record.cite.text }}</p>
+  {%- if not record.cite.release %}
+  <p class="small text-body-secondary mb-2">There is no versioned release of the data yet; once there is, the version and its DOI are added here.</p>
+  {%- endif %}
+  <details class="mb-3">
+    <summary>BibTeX</summary>
+    <pre class="entity-bibtex mt-2 mb-0"><code>{{ record.cite.bibtex }}</code></pre>
+  </details>
+  <p class="mb-0">Data of this record:
+    <a href="{{ record.files.ttl }}" type="text/turtle" download>Turtle</a> ·
+    <a href="{{ record.files.jsonld }}" type="application/ld+json" download>JSON-LD</a>
+    <span class="text-body-secondary small">(the record and its own nodes; licence CC BY 4.0)</span></p>
+</section>

@@ -3,6 +3,10 @@ export default {
 	url: "https://lod-am.net/",
 	language: "en",
 	description: "A sandbox project dedicated to ancient metallurgical & open data methodologies.",
+	// Current release of the website and its data (Zenodo DOI per release, owner): used in
+	// "Cite this record" on the data pages. Set version, doi (without https://doi.org/) and
+	// date (YYYY-MM-DD) at each release; empty = no release yet.
+	release: { version: "", doi: "", date: "" },
 	author: {
 		name: "Fabian Fricke",
 		email: "info@lod-am.net",

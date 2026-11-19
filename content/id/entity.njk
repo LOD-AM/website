@@ -6,47 +6,33 @@ pagination:
   addAllPagesToCollections: true
 permalink: "{{ record.path }}"
 eleventyComputed:
-  title: "{{ record.label }} · {{ record.kindLabel }} · LOD-AM"
-  description: "{{ record.kindLabel }} in the LOD-AM knowledge graph: {{ record.label }}"
+  title: "{{ record.label | safe }} · {{ record.kindLabel }} · LOD-AM"
+  description: "{{ record.description | safe }}"
 ---
 <div class="entity">
   <nav aria-label="Breadcrumb" class="small mb-2">
     <a href="/data/">Data</a> › <a href="/data/{{ lodam.KINDS[record.kind].slug }}/">{{ lodam.KINDS[record.kind].plural }}</a>
   </nav>
-  <h1 class="mb-1">{{ record.label }}</h1>
-  <p class="entity-iri mb-4"><span class="text-body-secondary">{{ record.kindLabel }} ·</span> <code>{{ record.iri }}</code></p>
+  {%- set entity = { kindLabel: record.kindLabel, label: record.label, summary: record.summary } %}
+  {% include "lodam/header.njk" %}
 
-  {% if record.facts.length %}
-  <dl class="entity-facts">
-    {%- for f in record.facts %}
-    <dt>{{ f.label }}</dt>
-    <dd>{% for v in f.values %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
-    {%- endfor %}
-  </dl>
-  {% endif %}
+  {%- set facts = record.facts %}
+  {% include "lodam/facts.njk" %}
 
-  {% for s in record.sections %}
+  {% for s in record.sections %}{% if not s.tech %}
   <section class="mt-4" aria-labelledby="s{{ loop.index }}">
-    <h2 id="s{{ loop.index }}" class="h4">{{ s.heading }}{% if s.list %} <span class="text-body-secondary fs-6">({{ s.list.length }})</span>{% endif %}</h2>
+    <h2 id="s{{ loop.index }}" class="h4">{{ s.heading }}{% if s.list or s.count %} <span class="text-body-secondary fs-6">({{ s.count or s.list.length }})</span>{% endif %}</h2>
     {% if s.caption %}<p class="small text-body-secondary">{{ s.caption }}</p>{% endif %}
     {% if s.list %}
     <ul class="entity-list">
       {%- for v in s.list %}<li>{% include "lodam/value.njk" %}</li>{% endfor %}
     </ul>
     {% elif s.table %}
-    <div class="table-responsive">
-      <table class="table table-sm entity-table">
-        <thead><tr>{% for h in s.table.head %}<th scope="col"{% if loop.index0 in (s.table.numeric or []) %} class="text-end"{% endif %}>{{ h }}</th>{% endfor %}</tr></thead>
-        <tbody>
-          {%- for row in s.table.rows %}
-          <tr>{% for v in row %}<td{% if loop.index0 in (s.table.numeric or []) %} class="text-end font-monospace"{% endif %}>{% include "lodam/value.njk" %}</td>{% endfor %}</tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    {%- set t = s.table %}{% set tid = "s" + loop.index %}
+    {% include "lodam/table.njk" %}
     {% endif %}
   </section>
-  {% endfor %}
+  {% endif %}{% endfor %}
 
   {%- set posts = collections.blog | postsAbout(record.iri) %}
   {% if posts.length %}
@@ -55,6 +41,11 @@ eleventyComputed:
     <ul class="entity-list">{% for p in posts | reverse %}<li><a href="{{ p.url }}">{{ p.data.title }}</a> <span class="text-body-secondary small">({{ p.date | readableDate("dd LLLL yyyy") }})</span></li>{% endfor %}</ul>
   </section>
   {% endif %}
+
+  {% include "lodam/cite.njk" %}
+
+  {%- set tech = { iri: record.iri, facts: record.tech, sections: record.sections } %}
+  {% include "lodam/technical.njk" %}
 
   <p class="small text-body-secondary mt-5">Data released by the author under CC BY 4.0. Modelling: <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>.</p>
 </div>

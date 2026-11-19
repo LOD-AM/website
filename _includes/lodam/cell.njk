@@ -1,0 +1,2 @@
+{#- One table cell's content: a value, or several (`multi`) one per line. Set `cellv`. -#}
+{%- if cellv.multi %}{% for v in cellv.multi %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}{% else %}{% set v = cellv %}{% include "lodam/value.njk" %}{% endif -%}
