@@ -292,7 +292,7 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--lodam-sage);           /* 5.0:1 on umber */
+  color: var(--lodam-sage);           /* 5.3:1 on umber */
 }
 .entity-summary { font-size: 1.15rem; color: var(--lodam-text-soft); }
 /* Technical details: IRI, classes, names, identifiers, other statements */
