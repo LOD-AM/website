@@ -347,7 +347,9 @@ a:hover { text-decoration: underline; }
 }
 .series-box p, .series-box li { color: var(--lodam-text-soft); }
 .series-box summary { cursor: pointer; font-weight: 600; }
-.series-box ol { padding-left: 1.4rem; }
+.series-box ol, .series-box ul { padding-left: 1.4rem; }
+/* "Explore the data" on the home page (planning#16): same box, ochre edge = data */
+.data-box { border-left-color: var(--lodam-ochre); }
 .series-box [aria-current="page"] { color: var(--lodam-chalk-white); font-weight: 700; }
 
 /* Entity pages (/id/...; website#18): facts as a two-column list, results as tables.
