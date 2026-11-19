@@ -1,0 +1,16 @@
+# title: Types of the LOD-AM typology and their Getty AAT matches
+# question: Which object types does the LOD-AM typology have, which broader type do they belong to, and how are they matched to the Getty AAT?
+# columns: type label broader matchKind aat
+# conventions: typology (SKOS concept scheme), matches to the Getty AAT (closeMatch, broadMatch)
+# note: only the types used by released records are in the released data. Types without an AAT match have empty columns.
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?type ?label ?broader ?matchKind ?aat WHERE {
+  ?type skos:inScheme <https://lod-am.net/id/typology> ; skos:prefLabel ?label . FILTER (lang(?label) = "en")
+  OPTIONAL { ?type skos:broader/skos:prefLabel ?broader . FILTER (lang(?broader) = "en") }
+  OPTIONAL {
+    VALUES (?match ?matchKind) { (skos:exactMatch "exact") (skos:closeMatch "close") (skos:broadMatch "broad") (skos:narrowMatch "narrow") }
+    ?type ?match ?aat . FILTER (STRSTARTS(STR(?aat), "http://vocab.getty.edu/aat/"))
+  }
+}
+ORDER BY ?broader ?label

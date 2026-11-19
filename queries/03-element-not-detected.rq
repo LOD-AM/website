@@ -1,0 +1,23 @@
+# title: Analyses in which an element was not detected
+# question: In which chemical analyses was tin looked for but not detected?
+# columns: analysis label object
+# conventions: chemical composition, "not detected" (lod-am:not_detected) as distinct from "not analysed"
+# note: "Not detected" is a result without a value, typed lod-am:not_detected. An element that was
+# note: not analysed has no result at all, so it doesn't appear here. Elements are ChEBI atoms
+# note: (tin = CHEBI_27007, arsenic = CHEBI_27563, lead = CHEBI_25016).
+PREFIX crm:    <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crmsci: <http://www.cidoc-crm.org/extensions/crmsci/>
+PREFIX afx:    <http://purl.allotrope.org/ontologies/property#>
+PREFIX afr:    <http://purl.allotrope.org/ontologies/result#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo:    <http://purl.obolibrary.org/obo/>
+
+SELECT ?analysis ?label ?object WHERE {
+  ?result a afr:AFR_0002099 ;                 # mass fraction
+          afx:AFX_0002816 obo:CHEBI_27007 ;   # tin
+          crm:P2_has_type <https://lod-am.net/id/not_detected> .
+  ?analysis afx:AFX_0000395 ?result ; rdfs:label ?label . FILTER (lang(?label) = "en")
+  ?analysis afx:AFX_0000399 ?sample .
+  ?sampling crmsci:O5_removed ?sample ; crmsci:O3_sampled_from ?object .
+}
+ORDER BY ?label

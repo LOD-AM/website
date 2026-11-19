@@ -1,0 +1,35 @@
+# title: Arsenic contents of the finds from contexts of one phase
+# question: Which arsenic contents have been reported for finds from contexts dated to Arslantepe VIB1, and in which publication?
+# columns: find findNumber context arsenic upperLimit notDetected unit publication
+# conventions: dating of contexts, chemical composition, "not detected", upper limits ("< x")
+# note: values as reported (mass fraction, unit as given). Exactly one of arsenic, upperLimit and
+# note: notDetected is set per row. Finds without a feature are dated through their site.
+PREFIX crm:        <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crmsci:     <http://www.cidoc-crm.org/extensions/crmsci/>
+PREFIX crmarchaeo: <http://www.cidoc-crm.org/extensions/crmarchaeo/>
+PREFIX afx:        <http://purl.allotrope.org/ontologies/property#>
+PREFIX afr:        <http://purl.allotrope.org/ontologies/result#>
+PREFIX qudt:       <http://qudt.org/schema/qudt#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX obo:        <http://purl.obolibrary.org/obo/>
+
+SELECT ?find ?findNumber ?context ?arsenic ?upperLimit ?notDetected ?unit ?publication WHERE {
+  ?phase a crm:E4_Period ; rdfs:label "Arslantepe VIB1"@en .
+  ?ctx crm:P8i_witnessed ?phase ; rdfs:label ?context . FILTER (lang(?context) = "en")
+  { ?find crmarchaeo:AP21i_is_contained_in ?ctx }                       # a feature
+  UNION
+  { ?ctx crm:P53_has_former_or_current_location ?place .               # a site (finds without a feature)
+    ?find crm:P53_has_former_or_current_location ?place }
+  ?find a crm:E22_Human-Made_Object .
+  OPTIONAL { ?find crm:P1_is_identified_by/crm:P190_has_symbolic_content ?findNumber }
+  ?sampling crmsci:O3_sampled_from ?find ; crmsci:O5_removed ?sample .
+  ?analysis afx:AFX_0000399 ?sample ; afx:AFX_0000395 ?result .
+  ?result a afr:AFR_0002099 ; afx:AFX_0002816 obo:CHEBI_27563 .        # arsenic
+  OPTIONAL { ?result qudt:numericValue ?arsenic }
+  OPTIONAL { ?result afx:AFX_0000331/qudt:numericValue ?upperLimit }
+  OPTIONAL { ?result crm:P2_has_type <https://lod-am.net/id/not_detected> . BIND (true AS ?notDetected) }
+  OPTIONAL { ?result qudt:unit ?unit }
+  OPTIONAL { ?analysis crm:P70i_is_documented_in/dcterms:identifier ?publication }
+}
+ORDER BY ?findNumber

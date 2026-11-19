@@ -10,6 +10,7 @@ npm ci
 npm start        # dev server on http://localhost:8080 (drafts shown)
 npm run build    # production build to _site/ (drafts excluded)
 npm run check    # checks on _site/: required files, posts vs drafts, internal links
+npm run check:queries   # example SPARQL queries (queries/*.rq) against the released data, no server
 ```
 Both must pass before a PR (CI `build.yml` runs them). Eleventy doesn't clean
 `_site/`, so stale files can make `check` fail locally: build into a fresh folder

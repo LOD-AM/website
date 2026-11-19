@@ -1,0 +1,17 @@
+# title: Records documented in a publication
+# question: How many finds and analyses does each released publication document, and what is its DOI?
+# columns: publication citationKey doi finds analyses
+# conventions: literature (FaBiO, citation keys), finds and analyses documented in a publication
+PREFIX crm:     <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prism:   <http://prismstandard.org/namespaces/basic/2.0/>
+PREFIX afp:     <http://purl.allotrope.org/ontologies/process#>
+
+SELECT ?publication ?citationKey ?doi (COUNT(DISTINCT ?find) AS ?finds) (COUNT(DISTINCT ?analysis) AS ?analyses) WHERE {
+  ?publication a crm:E31_Document ; dcterms:identifier ?citationKey .
+  OPTIONAL { ?publication prism:doi ?doi }
+  OPTIONAL { ?find crm:P70i_is_documented_in ?publication ; a crm:E22_Human-Made_Object }
+  OPTIONAL { ?analysis crm:P70i_is_documented_in ?publication ; a crm:E7_Activity }
+}
+GROUP BY ?publication ?citationKey ?doi
+ORDER BY ?citationKey
