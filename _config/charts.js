@@ -8,10 +8,11 @@
 // otherwise flatten all other charts.
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const SUP = { "-": "⁻", 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" };
-const pow10 = (k) => "10" + String(k).split("").map((c) => SUP[c]).join("");
+// A power of ten as a plain number (owner, 2026-11-19: raw values, not 10^x): 0.0001, 0.001, 1, 10
+const decimal = (k) => (k < 0 ? "0." + "0".repeat(-k - 1) + "1" : "1" + "0".repeat(k));
 
 export function histogramSvg(e, h, idBase) {
-	const W = 320, H = 150, ml = 34, mr = 16, mt = 12, mb = 28;
+	const W = 320, H = 175, ml = 34, mr = 22, mt = 12, mb = 53;   // room for the tilted x labels
 	const pw = W - ml - mr, ph = H - mt - mb, base = mt + ph;
 	const yMax = Math.max(1, ...e.bins.map((b) => b.count));
 	// clean count ticks: 0, a middle one when it is a whole number, max
@@ -33,7 +34,9 @@ export function histogramSvg(e, h, idBase) {
 	h.decades.forEach((k, i) => {
 		const xx = x(i * h.binsPerDecade);
 		out.push(`<line class="chart-axis" x1="${xx.toFixed(1)}" x2="${xx.toFixed(1)}" y1="${base}" y2="${base + 4}"/>`);
-		out.push(`<text class="chart-tick" x="${xx.toFixed(1)}" y="${base + 16}" text-anchor="middle">${pow10(k)}</text>`);
+		// tilted, so long values like 0.000001 don't overlap; each label starts at its tick and runs
+		// down to the right, so the long (small) values on the left stay inside the chart
+		out.push(`<text class="chart-tick" transform="translate(${(xx - 3).toFixed(1)} ${base + 11}) rotate(40)" text-anchor="start">${decimal(k)}</text>`);
 	});
 	out.push(`<line class="chart-axis" x1="${ml}" x2="${W - mr}" y1="${base}" y2="${base}"/>`);
 	// bars: rounded data end, square at the baseline; native tooltip per bar
