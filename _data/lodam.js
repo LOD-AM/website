@@ -687,20 +687,49 @@ const siteCoords = byKind.site.map((r) => {
 	return { iri: r.iri, label: r.label, path: r.path, lon: m ? m[1] : null, lat: m ? m[2] : null };
 });
 
-// Base maps (planning#18): one relief image per 1x1 degree tile with released sites, made by
-// scripts/map/build_maps.py (_data/siteMaps.json). Markers are placed here, in percent of the
-// image (equirectangular, like the image), so the images don't change when sites are added.
-const siteMapData = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : { tiles: [], sources: [] };
-const maps = siteMapData.tiles.map((t) => {
-	const sites = siteCoords.filter((x) => x.lat != null && Number(x.lon) >= t.west && Number(x.lon) < t.east && Number(x.lat) >= t.south && Number(x.lat) < t.north)
-		.map((x) => ({ ...x, left: (100 * (Number(x.lon) - t.west)) / (t.east - t.west), top: (100 * (t.north - Number(x.lat))) / (t.north - t.south) }));
-	// scale bar: 10 km as a share of the image width (true scale at the tile's middle)
-	return { ...t, sites, scaleKm: 10, scalePct: (100 * 10) / (t.kmPerDegreeLon * (t.east - t.west)),
-		extent: `${t.south}–${t.north}° N, ${t.west}–${t.east}° E` };
-});
-for (const r of byKind.site) {
-	const m = maps.find((t) => t.sites.some((x) => x.iri === r.iri));
-	if (m) r.map = { ...m, sites: m.sites.map((x) => ({ ...x, current: x.iri === r.iri })) };
+// Base map (planning#18): one relief map in Web Mercator at a fixed scale (zoom 7) for the
+// whole area of the research database, cut into 256 px tiles by scripts/map/build_maps.py
+// (_data/siteMaps.json). Each site page shows a window of it centred on the site; the markers
+// are placed here, so the tiles don't change when sites are released.
+const siteMapData = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : null;
+const MAP_WINDOW = { width: 640, height: 480 };     // largest window shown on a site page (px)
+let maps = null;
+if (siteMapData) {
+	const { zoom, tileSize, canvas, tiles, extent } = siteMapData;
+	const world = tileSize * 2 ** zoom;
+	const gx = (lon) => ((lon + 180) / 360) * world;
+	const gy = (lat) => ((1 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / Math.PI) / 2) * world;
+	// Ground resolution at a latitude (m per px) for the scale bar; a round length of about 100 px
+	const scaleBar = (lat) => {
+		const mPerPx = (40075016.686 * Math.cos((lat * Math.PI) / 180)) / world;
+		const km = [25, 50, 100, 200].reduce((best, k) => (Math.abs(k * 1000 / mPerPx - 100) < Math.abs(best * 1000 / mPerPx - 100) ? k : best));
+		return { km, px: Math.round((km * 1000) / mPerPx) };
+	};
+	const placed = siteCoords.filter((x) => x.lat != null).map((x) => {
+		const lon = Number(x.lon), lat = Number(x.lat);
+		const inside = lon >= extent.west && lon <= extent.east && lat >= extent.south && lat <= extent.north;
+		return { ...x, inside, x: gx(lon) - canvas.originX, y: gy(lat) - canvas.originY };
+	});
+	maps = {
+		...siteMapData, window: MAP_WINDOW,
+		// all released sites on the overview, in percent of the image
+		sites: placed.filter((p) => p.inside).map((p) => ({ ...p, left: (100 * p.x) / canvas.width, top: (100 * p.y) / canvas.height })),
+	};
+	for (const r of byKind.site) {
+		const me = placed.find((p) => p.iri === r.iri);
+		if (!me || !me.inside) continue;
+		// tiles that cover the largest window around the site
+		const hw = MAP_WINDOW.width / 2 + tileSize, hh = MAP_WINDOW.height / 2 + tileSize;
+		const t = [];
+		for (let tx = tiles.x0; tx < tiles.x1; tx++) for (let ty = tiles.y0; ty < tiles.y1; ty++) {
+			const x = (tx - tiles.x0) * tileSize, y = (ty - tiles.y0) * tileSize;
+			if (x + tileSize > me.x - hw && x < me.x + hw && y + tileSize > me.y - hh && y < me.y + hh)
+				t.push({ src: `${tiles.path}${tx}_${ty}.webp`, x, y });
+		}
+		const near = placed.filter((p) => p.inside && Math.abs(p.x - me.x) < MAP_WINDOW.width / 2 && Math.abs(p.y - me.y) < MAP_WINDOW.height / 2)
+			.map((p) => ({ ...p, current: p.iri === r.iri }));
+		r.map = { centerX: me.x, centerY: me.y, tiles: t, tileSize, sites: near, scale: scaleBar(Number(me.lat)), label: me.label };
+	}
 }
 
-export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData.sources, turtleOf, jsonldOf };
+export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData ? siteMapData.sources : [], turtleOf, jsonldOf };

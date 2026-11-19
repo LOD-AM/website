@@ -84,14 +84,19 @@ Lead isotope diagrams (owner, 2026-11-19) appear on the same page and come from 
 Ratios are plotted as reported and never converted. Each point links to its analysis, with a tooltip.
 
 ## Site maps
-`_includes/lodam/map.njk` shows a static relief map with the site markers on site pages and on
-`/data/sites/`. The images come from `scripts/map/build_maps.py`, one per 1° × 1° tile that contains a
-released site (owner, 2026-11-19). They use a Copernicus GLO-90 hillshade with an earthy elevation
-tint, HydroRIVERS rivers (smoothed for drawing), and Natural Earth lakes, reservoirs and sea, with no
-borders, places or roads. `lodam.maps` in `_data/lodam.js` places the markers in percent of the image
-(equirectangular, like the image), so adding a site to an existing tile needs no new image. Markers and
-labels are HTML (readable at any width) in fixed colours, because the image is the same in both modes.
-The scale bar is true at the tile's middle latitude. Full attributions are on `/data/#map-sources`.
+One relief map at a fixed, small scale for the whole area of the research database (owner, 2026-11-19),
+made offline by `scripts/map/build_maps.py`. It is in Web Mercator at zoom 7 (about 0.9 km per pixel at
+40° N) and cut into 256 px tiles (`public/img/maps/z7/`, about 0.7 MB in all), plus a scaled-down
+`overview.webp`. It combines a Copernicus GLO-90 hillshade with an earthy tint, HydroRIVERS rivers and
+Natural Earth natural lakes and sea. There are no borders, places, roads or modern reservoirs.
+- **Site page** (`_includes/lodam/map.njk`): a window of up to 640 × 480 px (about 600 × 450 km), always
+  at the same scale. The tiles are plain images in a layer that CSS centres on the site
+  (`left: calc(50% - x px)`), so it works without JavaScript and narrower screens just see less of the
+  map. The scale bar is computed for the site's latitude.
+- **`/data/sites/`** (`_includes/lodam/map-overview.njk`): the overview with all released sites.
+- **Markers** are placed at build time by `lodam.maps` in `_data/lodam.js`, so releasing sites needs no
+  new images. They are HTML in fixed colours, because the map is the same in both modes.
+- Full attributions are on `/data/#map-sources`.
 
 ## Technical details
 `record.tech`, written with `techFact()`, plus sections marked `tech: true`. This holds what

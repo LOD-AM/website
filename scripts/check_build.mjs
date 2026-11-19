@@ -117,19 +117,21 @@ if (existsSync("data/published")) {
   } catch (e) { errors.push(`/data/: no valid Dataset JSON-LD (${e.message})`); }
 }
 
-// Site maps (planning#18): every released site lies in a map tile whose image exists.
-// After releasing a site in a new 1° tile, run scripts/map/build_maps.py.
+// Site maps (planning#18): every released site lies inside the map area, and its page shows the
+// map (the tile images it uses are checked by the internal link check above). A site outside the
+// area: widen EXTENT in scripts/map/build_maps.py and run it again.
 {
-  const maps = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")).tiles : [];
-  for (const t of maps) if (!existsSync(join(SITE, t.src))) errors.push(`map image missing: ${t.src}`);
+  const m = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : null;
+  if (m && !existsSync(join(SITE, m.overview.src))) errors.push(`map overview missing: ${m.overview.src}`);
   for (const f of existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : []) {
     const text = readFileSync(join("data/published", f), "utf8");
-    for (const m of text.matchAll(/<https:\/\/lod-am\.net\/id\/site\/([0-9a-f-]{36})\/geometry>[^.]*?asWKT\s+"POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)"/gs)) {
-      const [lon, lat] = [Number(m[2]), Number(m[3])];
-      if (!maps.some((t) => lon >= t.west && lon < t.east && lat >= t.south && lat < t.north))
-        errors.push(`site ${m[1]} (${lat} N, ${lon} E) has no map: run scripts/map/build_maps.py`);
-      const page = join(SITE, "id", "site", m[1], "index.html");
-      if (existsSync(page) && !readFileSync(page, "utf8").includes('class="site-map')) errors.push(`site page ${m[1]} shows no map`);
+    for (const g of text.matchAll(/<https:\/\/lod-am\.net\/id\/site\/([0-9a-f-]{36})\/geometry>[^.]*?asWKT\s+"POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)"/gs)) {
+      const [lon, lat] = [Number(g[2]), Number(g[3])];
+      const e = m?.extent;
+      if (!e || lon < e.west || lon > e.east || lat < e.south || lat > e.north)
+        errors.push(`site ${g[1]} (${lat} N, ${lon} E) is outside the map area: widen EXTENT in scripts/map/build_maps.py`);
+      const page = join(SITE, "id", "site", g[1], "index.html");
+      if (existsSync(page) && !readFileSync(page, "utf8").includes("site-map__frame--window")) errors.push(`site page ${g[1]} shows no map`);
     }
   }
 }
