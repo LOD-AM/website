@@ -580,9 +580,14 @@ function resultsTables(analyses) {
 // on a log scale; they are counted next to the chart instead. The values themselves are not
 // changed; the binning is only for drawing.
 const BINS_PER_DECADE = 4;
+// Elements left out of the histograms (owner, 2026-11-19: "We can ignore P and Te for the
+// histograms"). Their values stay in the tables and on the analysis pages.
+const HISTOGRAM_EXCLUDE = new Set([NS.chebi + "28659", NS.chebi + "30452"]);   // phosphorus, tellurium
 function histogramsOf(analyses) {
 	const byElement = new Map();
+	const excluded = new Set();
 	for (const a of analyses) for (const r of resultsOf(a).elementRows) {
+		if (HISTOGRAM_EXCLUDE.has(r.key)) { excluded.add(r.head.text); continue; }
 		if (!byElement.has(r.key)) byElement.set(r.key, { head: r.head, sort: r.sort, unit: r.unit, values: [], nd: 0, limit: 0, zero: 0 });
 		const e = byElement.get(r.key);
 		if (r.shown.text === "not detected") e.nd++;
@@ -604,7 +609,8 @@ function histogramsOf(analyses) {
 	});
 	const units = [...new Set(elementsList.map((e) => e.unit).filter(Boolean))];
 	return { lo, hi, nBins, binsPerDecade: BINS_PER_DECADE, decades: Array.from({ length: hi - lo + 1 }, (_, i) => lo + i),
-		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList };
+		yMax: Math.max(...elementsList.flatMap((e) => e.bins.map((b) => b.count))), units, elements: elementsList,
+		excluded: [...excluded].sort() };
 }
 
 // Lead isotope diagrams of a publication (owner, 2026-11-19): two scatterplots with the same Y.

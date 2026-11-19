@@ -23,7 +23,8 @@ eleventyComputed:
     <p class="small text-body-secondary reading-column ms-0">One histogram per element: the number of analyses per range of reported values{% if hg.units.length == 1 %} ({{ hg.units[0] }}){% endif %},
     on a logarithmic axis (four ranges per power of ten), the same axis for all elements. The count axis differs per element.
     Values reported as “not detected”, below a detection limit (“&lt; x”) or as 0 cannot be shown on a logarithmic axis and are
-    counted below each chart. The values are as reported; ranges and counts are only for the chart. Point at a bar for its range and count.</p>
+    counted below each chart. The values are as reported; ranges and counts are only for the chart. Point at a bar for its range and count.
+    {%- if hg.excluded.length %} {{ hg.excluded | join(" and ") }} {{ "are" if hg.excluded.length > 1 else "is" }} not shown here; {{ "their" if hg.excluded.length > 1 else "its" }} values are in the table below.{% endif %}</p>
     <div class="chart-grid-list">
       {%- for e in hg.elements %}
       <figure class="chart-figure">

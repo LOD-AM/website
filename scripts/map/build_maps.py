@@ -37,8 +37,12 @@ MIN_UPLAND_KM2 = 50      # rivers with a smaller catchment are left out
 HYDRO_REGIONS = ["eu", "as", "af"]   # HydroRIVERS regions to try, in this order
 
 SOURCES = [
-    {"name": "Copernicus DEM GLO-90", "text": "Produced using Copernicus WorldDEM™-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018, provided under COPERNICUS by the European Union and ESA; all rights reserved.", "url": "https://doi.org/10.5270/ESA-c5d3d65"},
-    {"name": "HydroRIVERS", "text": "Lehner, B., Grill, G. (2013): Global river hydrography and network routing: baseline data and new approaches to study the world’s large river systems. Hydrological Processes 27(15): 2171–2186. Data: www.hydrosheds.org.", "url": "https://www.hydrosheds.org"},
+    # Licences (owner, 2026-11-19): COP-DEM-GLO-90-F, free of charge, worldwide, non-exclusive, no time limit.
+    # HydroRIVERS v1.0 is under the HydroSHEDS License Agreement (free for non-commercial and commercial use,
+    # citation required; HydroRIVERS Technical Documentation v1.0, section 4). The CC-BY 4.0 licence of
+    # HydroSHEDS v2 core products does not cover v1.0.
+    {"name": "Copernicus DEM GLO-90", "text": "Produced using Copernicus WorldDEM™-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018, provided under COPERNICUS by the European Union and ESA; all rights reserved. Licence: COP-DEM-GLO-90-F Global 90m Full, Free & Open (Licence for the use of the Copernicus WorldDEM™-90).", "url": "https://doi.org/10.5270/ESA-c5d3d65"},
+    {"name": "HydroRIVERS v1.0", "text": "Lehner, B., Grill, G. (2013): Global river hydrography and network routing: baseline data and new approaches to study the world’s large river systems. Hydrological Processes 27(15): 2171–2186. Data: www.hydrosheds.org, under the HydroSHEDS License Agreement.", "url": "https://www.hydrosheds.org"},
     {"name": "Natural Earth", "text": "Lakes, reservoirs and sea: Natural Earth (public domain).", "url": "https://www.naturalearthdata.com"},
 ]
 
