@@ -19,6 +19,15 @@ eleventyComputed:
     {% if pub.pages %}<dt>Pages</dt><dd>{{ pub.pages }}</dd>{% endif %}
     {% if pub.doi %}<dt>DOI</dt><dd><a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a></dd>{% endif %}
   </dl>
+  {%- if not pub.released %}
+  <p class="small text-body-secondary mt-3">Cited as a source; no data from this publication is released on this site.</p>
+  {%- endif %}
+  {% if pub.chronologies.length %}
+  <section class="mt-4" aria-labelledby="p-chronologies">
+    <h2 id="p-chronologies" class="h4">Chronology systems based on it <span class="text-body-secondary fs-6">({{ pub.chronologies.length }})</span></h2>
+    <ul class="entity-list">{% for v in pub.chronologies %}<li>{% include "lodam/value.njk" %}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
   {% if pub.findsTable.rows.length %}
   <section class="mt-4" aria-labelledby="p-finds">
     <h2 id="p-finds" class="h4">Finds documented in it <span class="text-body-secondary fs-6">({{ pub.findsTable.count }})</span></h2>

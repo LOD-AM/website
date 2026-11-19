@@ -15,7 +15,7 @@ numberOfLatestPostsToShow: 3
 			<p>Hi, I'm Fabian. LOD-AM (Linked Open Data for Ancient Metallurgy) is my side project on copper-based metallurgy in Eurasia. Archaeometallurgical data is scattered across decades of publications; I bring it together and publish it as Linked Open Data that anyone can browse, cite and reuse.</p>
 			<p>What started as a sandbox for experiments now has a working data model, its own controlled vocabularies and a first dataset online: the finds and analyses from Arslantepe published by Hauptmann et al. (2002). More publications follow one by one. The blog is my research diary: how LOD-AM is built, including the detours and the Research Data Management (RDM) chaos along the way.</p>
 
-			{%- set nFinds = lodam.byKind.find.length %}{% set nAnalyses = lodam.byKind.analysis.length %}{% set nPubs = lodam.publications.length %}
+			{%- set nFinds = lodam.byKind.find.length %}{% set nAnalyses = lodam.byKind.analysis.length %}{% set nPubs = lodam.releasedPublications.length %}
 			{%- if nFinds %}
 			<aside class="series-box data-box mb-4" aria-labelledby="explore-heading">
 				<h2 id="explore-heading" class="h5 mb-2">Explore the data</h2>
@@ -25,7 +25,7 @@ numberOfLatestPostsToShow: 3
 					{%- for key in ["site", "find", "analysis"] %}{% if lodam.byKind[key].length %}
 					<li><a href="/data/{{ lodam.KINDS[key].slug }}/">{{ lodam.KINDS[key].plural }}</a></li>
 					{%- endif %}{% endfor %}
-					{%- for p in lodam.publications %}
+					{%- for p in lodam.releasedPublications %}
 					<li><a href="{{ p.path }}analyses/">All analyses in {{ p.citation }}</a></li>
 					{%- endfor %}
 				</ul>

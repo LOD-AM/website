@@ -401,7 +401,12 @@ function makeView(iri, kind) {
 		summary = [short(get("Time-span")), short(get("Part of (culture)")), short(get("Chronology system"))];
 	}
 	if (kind === "culture") list("Phases", use(P("crm", "P9_consists_of")).map(val));
-	if (kind === "chronology") list("Phases in this system", subs(iri, P("skos", "inScheme")).filter((x) => kindOf(x)).map(link));
+	if (kind === "chronology") {
+		// the publication the chronology comes from (dcterms:source; knowledge-graph CONVENTIONS "Local periods")
+		fact("Source", use(P("dcterms", "source")).map(val));
+		list("Phases in this system", subs(iri, P("skos", "inScheme")).filter((x) => kindOf(x)).map(link));
+		summary = get("Source") ? [`after ${short(get("Source"))}`] : [];
+	}
 
 	if (kind === "type") {
 		const schemes = [...new Set([...use(P("skos", "inScheme")), ...use(P("skos", "topConceptOf"))].map((o) => o.value))];
@@ -668,6 +673,10 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		histograms: histogramsOf(docs.filter((x) => kindOf(x) === "analysis")),
 		isotopePlots: isotopePlotsOf(docs.filter((x) => kindOf(x) === "analysis")),
 		other: sortLinks(docs.filter((x) => !["find", "analysis"].includes(kindOf(x))).map(link)),
+		// chronology systems that name this publication as their source (dcterms:source)
+		chronologies: sortLinks(subs(iri, P("dcterms", "source")).filter((x) => kindOf(x) === "chronology").map(link)),
+		// released = its data is on the site (data/published/<key>.ttl); otherwise only cited as a source
+		released: datasets.some((d) => d.key === pubKey(iri)),
 	};
 }).sort((a, b) => collator.compare(a.citation, b.citation));
 
@@ -708,4 +717,6 @@ if (siteMapData) {
 	for (const r of byKind.site) if (sites.some((x) => x.iri === r.iri)) r.map = { current: r.iri };
 }
 
-export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData ? siteMapData.sources : [], turtleOf, jsonldOf };
+const releasedPublications = publications.filter((p) => p.released);
+
+export default { ID, KINDS, records, byKind, publications, releasedPublications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData ? siteMapData.sources : [], turtleOf, jsonldOf };

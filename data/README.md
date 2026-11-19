@@ -5,7 +5,9 @@ Source of the entity pages `/id/<kind>/<uuid>/` and the Data pages (website#18).
 - `published/<citation-key>.ttl`: the records of one publication the owner **released**
   for the website, exported from the private `LOD-AM/ingest` with
   `scripts/rdf/export_publication.sh <citation-key>` (only that publication's finds and
-  analyses and what they point to; checked with knowledge-graph's term check and SHACL).
+  analyses and what they point to; checked with knowledge-graph's term check and SHACL). It also
+  carries the bibliographic records of the publications its chronology systems cite (`dcterms:source`);
+  those get a publication page marked "cited as a source", without data.
   Served for download at `/data/<citation-key>.ttl`. Licence: CC BY 4.0.
   Never put anything else from ingest here: the database as a whole stays private.
 - `vocab/`: copied unchanged from `LOD-AM/knowledge-graph` (commit a151281 for `topics.ttl` and `wikidata.tsv`, otherwise a63f587):
