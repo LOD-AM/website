@@ -641,12 +641,28 @@ for (const d of datasets) {
 	d.finds = docs.filter((x) => kindOf(x) === "find").length;
 	d.analyses = docs.filter((x) => kindOf(x) === "analysis").length;
 }
-// Sites with their coordinates as in the data (schema.org Dataset spatialCoverage)
+// Sites with their coordinates as in the data (schema.org Dataset spatialCoverage, maps)
 const siteCoords = byKind.site.map((r) => {
 	const pl = iris(r.iri, P("crm", "P53_has_former_or_current_location"))[0];
 	const wkt = pl ? iris(pl, P("geo", "hasGeometry")).map((g) => first(g, P("geo", "asWKT")))[0] || "" : "";
 	const m = wkt.match(/POINT\s*\(\s*(-?[\d.]+)\s+(-?[\d.]+)\s*\)/i);
-	return { iri: r.iri, label: r.label, lon: m ? m[1] : null, lat: m ? m[2] : null };
+	return { iri: r.iri, label: r.label, path: r.path, lon: m ? m[1] : null, lat: m ? m[2] : null };
 });
 
-export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, turtleOf, jsonldOf };
+// Base maps (planning#18): one relief image per 1x1 degree tile with released sites, made by
+// scripts/map/build_maps.py (_data/siteMaps.json). Markers are placed here, in percent of the
+// image (equirectangular, like the image), so the images don't change when sites are added.
+const siteMapData = existsSync("_data/siteMaps.json") ? JSON.parse(readFileSync("_data/siteMaps.json", "utf8")) : { tiles: [], sources: [] };
+const maps = siteMapData.tiles.map((t) => {
+	const sites = siteCoords.filter((x) => x.lat != null && Number(x.lon) >= t.west && Number(x.lon) < t.east && Number(x.lat) >= t.south && Number(x.lat) < t.north)
+		.map((x) => ({ ...x, left: (100 * (Number(x.lon) - t.west)) / (t.east - t.west), top: (100 * (t.north - Number(x.lat))) / (t.north - t.south) }));
+	// scale bar: 10 km as a share of the image width (true scale at the tile's middle)
+	return { ...t, sites, scaleKm: 10, scalePct: (100 * 10) / (t.kmPerDegreeLon * (t.east - t.west)),
+		extent: `${t.south}–${t.north}° N, ${t.west}–${t.east}° E` };
+});
+for (const r of byKind.site) {
+	const m = maps.find((t) => t.sites.some((x) => x.iri === r.iri));
+	if (m) r.map = { ...m, sites: m.sites.map((x) => ({ ...x, current: x.iri === r.iri })) };
+}
+
+export default { ID, KINDS, records, byKind, publications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData.sources, turtleOf, jsonldOf };

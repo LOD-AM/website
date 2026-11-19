@@ -20,7 +20,7 @@ export function histogramSvg(e, h, idBase) {
 	const y = (c) => base - (c / yMax) * ph;
 	const slot = pw / h.nBins, gap = 2, bw = Math.max(1, Math.min(24, slot - gap)), r = Math.min(2, bw / 2);
 	const unit = h.units.length === 1 ? h.units[0] : "";
-	const label = `${e.head.title || e.head.text}: ${e.n} reported value${e.n === 1 ? "" : "s"} on a log10 scale`
+	const label = `${e.head.text}${e.head.title ? ` (${e.head.title})` : ""}: ${e.n} reported value${e.n === 1 ? "" : "s"} on a log10 scale`
 		+ (e.nd ? `; ${e.nd} not detected` : "") + (e.limit ? `; ${e.limit} below a detection limit` : "") + (e.zero ? `; ${e.zero} reported as 0` : "");
 	const out = [];
 	out.push(`<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${idBase}-t" xmlns="http://www.w3.org/2000/svg">`);

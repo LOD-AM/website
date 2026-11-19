@@ -1,0 +1,5 @@
+# scripts/map/build_maps.py (run offline, not part of the site build)
+numpy>=2
+pillow>=10
+rasterio>=1.4
+pyshp>=2.3

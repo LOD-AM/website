@@ -19,6 +19,14 @@ eleventyComputed:
   {%- set facts = record.facts %}
   {% include "lodam/facts.njk" %}
 
+  {%- if record.map %}
+  <section class="mt-4" aria-labelledby="map-heading">
+    <h2 id="map-heading" class="h4">Map</h2>
+    {%- set map = record.map %}{% set mapHeadingId = "map" %}
+    {% include "lodam/map.njk" %}
+  </section>
+  {%- endif %}
+
   {% for s in record.sections %}{% if not s.tech %}
   <section class="mt-4" aria-labelledby="s{{ loop.index }}">
     <h2 id="s{{ loop.index }}" class="h4">{{ s.heading }}{% if s.list or s.count %} <span class="text-body-secondary fs-6">({{ s.count or s.list.length }})</span>{% endif %}</h2>
