@@ -35,13 +35,61 @@ push to main ──► GitHub Actions "build" ──► npm ci, npm run build, n
    - Ignore pushes to other branches (check `ref` in the payload). Otherwise every push to `main` triggers a useless pull.
    - Verify the `X-Hub-Signature-256` header with the webhook secret.
 
-3. **Don't serve `.git/`.** The checkout contains a `.git` directory. Block it, e.g. for nginx:
-   ```nginx
-   location ~ /\.git { deny all; return 404; }
-   ```
-   For Caddy: `@git path /.git/*` + `respond @git 404`.
+3. **Don't serve `.git/`.** The checkout contains a `.git` directory, and with `deploy` the
+   checkout *is* the document root. The nginx config below blocks it.
 
 4. The old server-side build (`npm ci && npx @11ty/eleventy`) can be removed once the webhook serves the `deploy` branch.
+
+## Web server (nginx)
+
+Nginx Proxy Manager (TLS, public name) forwards to an nginx that serves the static files on
+port 8080 (`/etc/nginx/sites-available/lod-am`). Recommended config:
+
+```nginx
+server {
+    listen 8080;
+    server_name _;
+
+    # today: /var/www/lod-am-website/_site (main checkout, built on the server)
+    # with deploy (#11): the deploy checkout itself, e.g. /var/www/lod-am.net
+    root /var/www/lod-am-website/_site;
+    index index.html;
+
+    # the site's own 404 page instead of nginx's default one
+    error_page 404 /404.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # never serve git metadata (the deploy checkout has .git/ inside the root)
+    location ~ /\.git {
+        return 404;
+    }
+
+    # RDF downloads (/data/<key>.ttl, /id/<kind>/<uuid>.ttl) as Turtle, not octet-stream.
+    # `types` inside a location replaces the MIME map only there.
+    location ~* \.ttl$ {
+        types { }
+        default_type text/turtle;
+        charset utf-8;
+        charset_types text/turtle;
+    }
+
+    gzip on;
+    # text/html is always compressed; the rest only if listed
+    gzip_types text/css application/javascript application/json application/ld+json
+               text/xml application/xml application/atom+xml image/svg+xml text/turtle;
+}
+```
+
+Apply: `sudo nginx -t && sudo systemctl reload nginx`. Check:
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' https://lod-am.net/.git/config          # 404
+curl -s https://lod-am.net/does-not-exist/ | grep -o '<title>[^<]*'              # the site's 404 page
+curl -sI https://lod-am.net/data/hauptmann2002chemical.ttl | grep -i content-type  # text/turtle
+```
+Rollback: restore the previous file and reload.
 
 ## Rollback
 
