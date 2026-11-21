@@ -31,9 +31,9 @@ comparison to visual changes (images go to the owner in chat; PRs can't hold the
 **Deployment** ([docs/deployment.md](docs/deployment.md)): every push to `main`
 is built in CI and, only if build and check pass, pushed to the `deploy` branch.
 The owner's web server (Nginx Proxy Manager → nginx serving static files on port 8080,
-config in `docs/deployment.md`) pulls `deploy` via webhook and serves it. **Until website#11 is
-done, the server still pulls `main` and builds itself**, so verify live changes
-on the `deploy` branch (`git show origin/deploy:<path>`). Never edit
+config in `docs/deployment.md`) pulls `deploy` via webhook and serves it as is (since
+2026-11-21, website#11; no build on the server). What `deploy` holds is what is live
+(`git show origin/deploy:<path>`). Never edit
 `deploy` by hand; changes reach the site only through `main`. Server-side
 changes (webhook, web server config) are the owner's.
 The build fetches external URLs (link previews, DOI titles via Crossref,
@@ -120,11 +120,10 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
   (Arslantepe) and the Data menu. Further publications only with the owner's OK (`data/README.md`).
 - Live checks: `curl`/Playwright against https://lod-am.net (allowed in the LOD-AM environment).
   The local overflow check can't see remote images the sandbox can't download: check posts live.
-- Owner-side: switch the server to `deploy` (website#11). Today nginx serves `/var/www/lod-am-website/_site`
-  of a `main` checkout built on the server, so `.git/` is outside the root (404 live); stale files of
-  deleted pages stay online (e.g. `/link-preview-examples/`, removed 2026-07-19).
-- `.ttl` is served as `application/octet-stream` and nginx shows its own 404 page; the fix is in the
-  nginx config in `docs/deployment.md` (owner applies it). Content negotiation (RDF per entity) also goes there.
+- Server serves the `deploy` branch since 2026-11-21 (website#11), nginx config as in `docs/deployment.md`:
+  site 404 page, `.git/` blocked, `.ttl` as `text/turtle`. Owner-side leftover: delete the old
+  `/var/www/lod-am-website` once a few deployments have gone through. Next on the server:
+  content negotiation (RDF per entity) in the nginx config.
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
 - Before a public SPARQL endpoint or anything that contacts another server:
   update `privacy.md` with the owner (it covers lod-am.net only).
