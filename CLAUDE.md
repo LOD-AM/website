@@ -44,7 +44,7 @@ remote images). Network errors there are warnings, not build failures.
 - `_includes/layouts/`: `base.njk`, `home.njk`, `post.njk` (post page incl. Giscus comments)
 - `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours; `_data/series.js`: blog series
 - **LOD-AM data** (website#18): `data/published/*.ttl` (publications the owner released, exported
-  from ingest), `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
+  by LOD-AM/pipeline), `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
   reads them (n3) and builds one view per record; pages: `content/id/entity.njk` (`/id/<kind>/<uuid>/`),
   `content/data/` (overview, lists, publications). Nothing on these pages may be computed from the data
   (values as reported); `npm run check` fails if a record has no page. Page structure (header with
@@ -134,7 +134,8 @@ Source of truth: knowledge-graph `CLAUDE.md`. Edit it there first, then copy it 
 LOD-AM = Linked Open Data for Ancient Metallurgy, a one-person research project (https://lod-am.net).
 - `LOD-AM/knowledge-graph`: data model, vocabularies, converters, data. **Authority for all modelling rules** (`CONVENTIONS.md`).
 - `LOD-AM/triplestore`: Apache Jena Fuseki (Docker) that serves the knowledge graph.
-- `LOD-AM/ingest` (**private**): the owner's research database (dump), converter (R2RML) and its output; the database as a whole stays private until the owner says otherwise.
+- `LOD-AM/ingest` (**private**): the owner's research database (dump), its checks and correction rounds; the database as a whole stays private until the owner says otherwise.
+- `LOD-AM/pipeline`: the data pipeline, code only (database snapshot → R2RML/Ontop → enrichment → checks → released publications); runs on the data LXC, never with data on GitHub.
 - `LOD-AM/website`: Eleventy site and blog, self-hosted.
 - `LOD-AM/planning` (**private**): project management for all repos: one issue per task, state in labels (see its README).
 - `LOD-AM/ontologies`, `vocabularies`, `converter`: **superseded** by knowledge-graph; don't edit.
