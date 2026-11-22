@@ -1,7 +1,7 @@
 // LOD-AM entity data for the entity pages /id/<kind>/<uuid>/ (website#18).
 //
-// Reads the released datasets in data/published/*.ttl (exported from LOD-AM/ingest by
-// scripts/rdf/export_publication.sh, one file per publication the owner released) and the
+// Reads the released datasets in data/published/*.ttl (exported by LOD-AM/pipeline, one file per
+// publication the owner released; updated by the data-release pull requests, website#21) and the
 // knowledge-graph vocabulary copied into data/vocab/ (local concepts, verified ChEBI and
 // Wikidata ids). Builds one view per LOD-AM record: facts, tables and links, grouped by
 // meaning. The patterns are those of knowledge-graph CONVENTIONS.md; this file only reads

@@ -44,7 +44,8 @@ remote images). Network errors there are warnings, not build failures.
 - `_includes/layouts/`: `base.njk`, `home.njk`, `post.njk` (post page incl. Giscus comments)
 - `_data/metadata.js`: site title/url/author; `_data/tagColors.js`: tag colours; `_data/series.js`: blog series
 - **LOD-AM data** (website#18): `data/published/*.ttl` (publications the owner released, exported
-  by LOD-AM/pipeline), `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
+  by LOD-AM/pipeline; updated by "Data release" pull requests from the triplestore, `data-release.yml`, website#21),
+  `data/vocab/` (copied from knowledge-graph); see `data/README.md`. `_data/lodam.js`
   reads them (n3) and builds one view per record; pages: `content/id/entity.njk` (`/id/<kind>/<uuid>/`),
   `content/data/` (overview, lists, publications). Nothing on these pages may be computed from the data
   (values as reported); `npm run check` fails if a record has no page. Page structure (header with
