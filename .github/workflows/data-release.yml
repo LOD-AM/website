@@ -59,6 +59,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add _data/dataReleases.js _data/aatLabels.json
+          if git diff --cached --quiet; then echo "nothing to add"; exit 0; fi
           git commit --quiet -m "Data release: changelog entry and AAT labels" \
             -m "Added by .github/workflows/data-release.yml (website#21) on top of the triplestore's push."
           git push --quiet origin "HEAD:refs/heads/data-release"
@@ -75,6 +76,7 @@ jobs:
 
       # Pushes and pull requests made with this workflow's token start no workflows, so build.yml
       # (build, check, example queries) is started here; its result shows on the pull request.
+      # (The pull request's own build waits for "Approve workflows to run": it was opened by the bot)
       - name: Build and check the branch
         env:
           GH_TOKEN: ${{ github.token }}

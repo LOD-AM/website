@@ -26,13 +26,21 @@ const ttlAt = (rev) => {
   const out = git("ls-tree", "--name-only", `${rev}:data/published`);
   return new Set(out.split("\n").filter((f) => f.endsWith(".ttl")).map((f) => f.replace(/\.ttl$/, "")));
 };
-const changes = () => { // publications added, updated, removed against <base>
+// The triples of a Turtle text as N-Triples lines (the release has no blank nodes)
+const triples = (text) => new Set(new Parser().parse(text).map((q) => new Writer({ format: "N-Triples" }).quadToString(q.subject, q.predicate, q.object)));
+const changes = () => { // publications added, updated (other triples), reformatted only, removed against <base>
   const before = ttlAt(base), after = new Set(readdirSync("data/published").filter((f) => f.endsWith(".ttl")).map((f) => f.replace(/\.ttl$/, "")));
-  const changed = new Set(git("diff", "--name-only", base, "--", "data/published").split("\n").filter(Boolean)
-    .map((f) => f.replace(/^data\/published\//, "").replace(/\.ttl$/, "")));
+  const changed = git("diff", "--name-only", base, "--", "data/published").split("\n").filter(Boolean)
+    .map((f) => f.replace(/^data\/published\//, "").replace(/\.ttl$/, ""));
+  const same = (k) => { // same triples, other bytes (e.g. prefixes)
+    const a = triples(git("show", `${base}:data/published/${k}.ttl`)), b = triples(readFileSync(`data/published/${k}.ttl`, "utf8"));
+    return a.size === b.size && [...a].every((t) => b.has(t));
+  };
+  const kept = [...after].filter((k) => before.has(k) && changed.includes(k));
   return {
     added: [...after].filter((k) => !before.has(k)).sort(),
-    updated: [...after].filter((k) => before.has(k) && changed.has(k)).sort(),
+    updated: kept.filter((k) => !same(k)).sort(),
+    reformatted: kept.filter(same).sort(),
     removed: [...before].filter((k) => !after.has(k)).sort(),
   };
 };
@@ -59,6 +67,10 @@ if (cmd === "verify") {
   console.log(`data-release: ok, ${present.length} publication(s) as in release ${releaseId()}`);
 } else if (cmd === "changelog") {
   const { added, updated, removed } = changes();
+  if (!added.length && !updated.length && !removed.length) {
+    console.log("data-release: the triples are unchanged (only the files' formatting differs): no changelog entry");
+    process.exit(0);
+  }
   const parts = [];
   if (added.length) parts.push(`Added: ${added.join(", ")}.`);
   if (updated.length) parts.push(`Updated: ${updated.join(", ")}.`);
@@ -76,18 +88,18 @@ if (cmd === "verify") {
   writeFileSync(p, src.replace(anchor, anchor + text));
   console.log(`data-release: changelog entry added: ${entry.changes}`);
 } else if (cmd === "summary") {
-  const { added, updated, removed } = changes();
+  const { added, updated, reformatted, removed } = changes();
   const m = manifest();
-  // Triples added/removed per file, for the review (the release has no blank nodes)
-  const triples = (text) => new Set(new Parser().parse(text).map((q) => new Writer({ format: "N-Triples" }).quadToString(q.subject, q.predicate, q.object)));
   const rows = [];
-  for (const k of [...added, ...updated, ...removed]) {
+  for (const k of [...added, ...updated, ...reformatted, ...removed]) {
     const f = `data/published/${k}.ttl`;
-    const before = removed.includes(k) || updated.includes(k) ? triples(git("show", `${base}:${f}`)) : new Set();
+    const before = added.includes(k) ? new Set() : triples(git("show", `${base}:${f}`));
     const after = existsSync(f) ? triples(readFileSync(f, "utf8")) : new Set();
     const plus = [...after].filter((t) => !before.has(t)).length, minus = [...before].filter((t) => !after.has(t)).length;
-    rows.push(`| \`${k}\` | ${added.includes(k) ? "added" : removed.includes(k) ? "withdrawn" : "updated"} | ${after.size} | +${plus} / −${minus} |`);
+    const what = added.includes(k) ? "added" : removed.includes(k) ? "withdrawn" : reformatted.includes(k) ? "formatting only" : "updated";
+    rows.push(`| \`${k}\` | ${what} | ${after.size} | +${plus} / −${minus} |`);
   }
+  const formatOnly = !added.length && !updated.length && !removed.length;
   const short = (c) => (c ? String(c).slice(0, 7) : "?");
   console.log(`Data release \`${releaseId()}\` (manifest sha256), live in the triplestore and pushed by its
 \`scripts/publish_website.sh\` (website#21). Built by LOD-AM/pipeline ${short(m.pipeline?.commit)} with
@@ -97,11 +109,13 @@ LOD-AM/knowledge-graph ${short(m.knowledge_graph?.commit)}, created ${m.created 
 |---|---|---:|---:|
 ${rows.join("\n")}
 
-The workflow checked that only the release files changed and that they match the manifest, fetched
-missing AAT labels and added a changelog entry to \`_data/dataReleases.js\`.
+The workflow checked that only the release files changed and that they match the manifest and fetched
+missing AAT labels. ${formatOnly
+    ? "**The triples are unchanged**: only the files' formatting differs (e.g. prefixes), so no changelog entry was added and the pages stay the same. Merge it to keep the files in step with the triplestore, or close it."
+    : "It added a changelog entry to `_data/dataReleases.js`."}
 
 **Before merging (owner):**
-- the changelog text is shown on /data/: rewrite it to say what changed;
+- ${formatOnly ? "nothing to write;" : "the changelog text is shown on /data/: rewrite it to say what changed;"}
 - if \`npm run check:queries\` fails, an example query no longer fits the data (queries/README.md);
 - merging deploys the new entity pages.`);
 } else fail(`unknown command ${cmd}`);
