@@ -1,0 +1,81 @@
+name: data release
+
+# website#21: the triplestore pushes the release it serves to the branch data-release
+# (LOD-AM/triplestore scripts/publish_website.sh, with a deploy key). This workflow checks that
+# the push changes only the release files and that they match the release manifest, adds missing
+# AAT labels and a changelog entry, and opens (or updates) a pull request. The owner merges it;
+# build.yml then deploys as for any other change.
+on:
+  push:
+    branches: [data-release]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: data-release
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # the workflow's own commit on data-release
+      pull-requests: write   # open/update the pull request
+      actions: write         # start build.yml on the branch (see the last step)
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # 6.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Only the triplestore's commit is checked (a re-run checks the same commit)
+      - name: Only release files, as in the manifest
+        run: node scripts/data_release.mjs verify origin/main "$GITHUB_SHA"
+
+      - name: AAT labels (Getty)
+        id: aat
+        continue-on-error: true   # Getty is sometimes degraded; the pages then show "AAT <id>"
+        run: node scripts/aat_labels.mjs
+
+      - name: Changelog entry and pull request text
+        run: |
+          node scripts/data_release.mjs changelog origin/main
+          node scripts/data_release.mjs summary origin/main > "$RUNNER_TEMP/pr.md"
+          if [ "${{ steps.aat.outcome }}" != success ]; then
+            printf '\n**AAT labels missing:** Getty was not reachable. Run `node scripts/aat_labels.mjs` and push to this branch.\n' >> "$RUNNER_TEMP/pr.md"
+          fi
+          printf '\n---\n_Opened by `.github/workflows/data-release.yml`._\n' >> "$RUNNER_TEMP/pr.md"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/dataReleases.js _data/aatLabels.json
+          git commit --quiet -m "Data release: changelog entry and AAT labels" \
+            -m "Added by .github/workflows/data-release.yml (website#21) on top of the triplestore's push."
+          git push --quiet origin "HEAD:refs/heads/data-release"
+
+      # Needs: Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests"
+      - name: Pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Data release $(sha256sum data/release-manifest.json | cut -c1-12)"
+          n=$(gh pr list --head data-release --base main --state open --json number --jq '.[0].number')
+          if [ -n "$n" ]; then gh pr edit "$n" --title "$title" --body-file "$RUNNER_TEMP/pr.md"; echo "updated #$n"
+          else gh pr create --base main --head data-release --title "$title" --body-file "$RUNNER_TEMP/pr.md"; fi
+
+      # Pushes and pull requests made with this workflow's token start no workflows, so build.yml
+      # (build, check, example queries) is started here; its result shows on the pull request.
+      - name: Build and check the branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build.yml --ref data-release
