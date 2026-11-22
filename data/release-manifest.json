@@ -1,16 +1,16 @@
 {
   "manifest_version": 2,
-  "created": "2026-11-22T16:11:36Z",
+  "created": "2026-11-22T22:42:45Z",
   "source": {
     "kind": "snapshot",
-    "file": "20261122T101435Z.sql",
-    "sha256": "c9434340a9863cd7fae091a23339814fd9f13c604905f1317525bb3699140e4b",
-    "taken_at": "2026-11-22T10:14:35Z",
+    "file": "20261122T220504Z.sql",
+    "sha256": "a4bd848c701031c6ffc962732934e5e1c575fb714f479409c02ccb4d26f08594",
+    "taken_at": "2026-11-22T22:05:04Z",
     "server_version": "16.2 (Debian 16.2-1.pgdg120+2)",
     "pg_dump": "16.15"
   },
   "pipeline": {
-    "commit": "825fdb3d0790a1ce2c98a2c875c5ed47de8ab1a3",
+    "commit": "e52cab6689b26db51bd9565ea000e0e7d24fcfcb",
     "modified": false,
     "image": "lod-am-pipeline:e21bca5",
     "ontop": "5.5.0"
@@ -24,7 +24,7 @@
     "library_version": 59
   },
   "publications": {
-    "selected_from": "config",
+    "selected_from": "database",
     "files": [
       {
         "key": "hauptmann2002chemical",
@@ -34,7 +34,7 @@
           "warnings": 58
         },
         "triples": 6230,
-        "sha256": "0685e9bf802694a37837e8cc388cc022808ff918f8d2dcd8f5c2b77426b39602",
+        "sha256": "0bcce7ad3273f1919f37122f9294bd49e8b0ffd0b2de37827e917733839470f2",
         "canonical_sha256": "76aa4ae86e21cc05e234e78886c9709d2ff8f5392ddaabd5ba7960df0118d880"
       }
     ]
