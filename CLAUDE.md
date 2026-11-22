@@ -31,9 +31,8 @@ comparison to visual changes (images go to the owner in chat; PRs can't hold the
 **Deployment** ([docs/deployment.md](docs/deployment.md)): every push to `main`
 is built in CI and, only if build and check pass, pushed to the `deploy` branch.
 The owner's web server (Nginx Proxy Manager → nginx serving static files on port 8080,
-config in `docs/deployment.md`) pulls `deploy` via webhook and serves it. **Until website#11 is
-done, the server still pulls `main` and builds itself**, so verify live changes
-on the `deploy` branch (`git show origin/deploy:<path>`). Never edit
+config in `docs/deployment.md`) pulls `deploy` via webhook and serves it (website#11, done 2026-11-21),
+so verify live changes on the `deploy` branch (`git show origin/deploy:<path>`). Never edit
 `deploy` by hand; changes reach the site only through `main`. Server-side
 changes (webhook, web server config) are the owner's.
 The build fetches external URLs (link previews, DOI titles via Crossref,
@@ -112,7 +111,11 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
   gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
-## Where to resume (state 2026-11-17)
+## Where to resume (state 2026-11-22)
+- **Data releases are automatic** (website#21, 2026-11-22): each release that goes live in the triplestore
+  arrives as a "Data release" PR from the branch `data-release` (`data-release.yml`, `scripts/data_release.mjs`;
+  `data/README.md`). The owner merges; the PR's own checks wait for approval (bot author), the build the
+  workflow starts counts. Never push to `data-release` by hand: the triplestore force-pushes it.
 - Phases 1–3 of the improvement plan are done (#22–#24); privacy policy and
   Impressum updated (#27).
 - The data model is finished (knowledge-graph#23); issues updated, label `waiting-for-kg` dropped.
@@ -121,9 +124,6 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
   (Arslantepe) and the Data menu. Further publications only with the owner's OK (`data/README.md`).
 - Live checks: `curl`/Playwright against https://lod-am.net (allowed in the LOD-AM environment).
   The local overflow check can't see remote images the sandbox can't download: check posts live.
-- Owner-side: switch the server to `deploy` (website#11). Today nginx serves `/var/www/lod-am-website/_site`
-  of a `main` checkout built on the server, so `.git/` is outside the root (404 live); stale files of
-  deleted pages stay online (e.g. `/link-preview-examples/`, removed 2026-07-19).
 - `.ttl` is served as `application/octet-stream` and nginx shows its own 404 page; the fix is in the
   nginx config in `docs/deployment.md` (owner applies it). Content negotiation (RDF per entity) also goes there.
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
