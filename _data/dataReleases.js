@@ -4,6 +4,11 @@
 // Versions and DOIs of the whole website release are in _data/metadata.js -> release.
 export default [
 	{
+		date: "2026-11-22",
+		publications: ["hauptmann2002chemical"],
+		changes: "Data release 7b55606ae6b3. Updated: hauptmann2002chemical.",
+	},
+	{
 		date: "2026-11-19",
 		publications: ["hauptmann2002chemical"],
 		changes: "Chronology systems name their source publication (Arslantepe periods: Vignola et al. 2019; Tepe Gawra periods: Rothman and Peasnall 2002), whose bibliographic records are added. Corrected title of Hauptmann et al. 2002.",
