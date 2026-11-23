@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "LOD-AM website"
+abstract: >-
+  Eleventy site and blog of LOD-AM (Linked Open Data for Ancient Metallurgy),
+  a one-person research project on Linked Open Data for archaeometallurgy.
+  Builds the blog and the pages of the released LOD-AM data (one page per
+  record, query editor, search, dump and VoID description).
+authors:
+  - family-names: Fricke
+    given-names: Fabian
+    orcid: "https://orcid.org/0000-0003-3223-2079"
+    website: "https://lod-am.net/about/"
+repository-code: "https://github.com/LOD-AM/website"
+url: "https://lod-am.net/"
+license: CC-BY-4.0
+keywords:
+  - Linked Open Data
+  - archaeometallurgy
+  - research data management
+  - Eleventy
