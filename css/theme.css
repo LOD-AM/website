@@ -365,6 +365,15 @@ a:hover { text-decoration: underline; }
   color: var(--lodam-sage);           /* 5.3:1 on umber */
 }
 .entity-summary { font-size: 1.15rem; color: var(--lodam-text-soft); }
+/* Kind logo (public/img/<kind>-logo.svg) beside the header; decorative, the kind is in the text */
+.entity-header--icon { display: flex; align-items: center; gap: 1rem; }
+.entity-icon { flex: none; width: 72px; height: 72px; }
+.entity-icon--list { width: 56px; height: 56px; }
+@media (max-width: 575.98px) {
+  .entity-header--icon { display: block; }
+  .entity-header--icon .entity-icon { display: block; width: 48px; height: 48px; margin-bottom: 0.5rem; }
+  .entity-icon--list { width: 48px; height: 48px; }
+}
 /* Technical details: IRI, classes, names, identifiers, other statements */
 .entity-technical {
   padding-top: 1.25rem;

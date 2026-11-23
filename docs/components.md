@@ -21,6 +21,11 @@ where and when it is from, and where it was published. The modelling comes last.
 | 8 | Licence line | (in the page) | CC BY 4.0 and a link to the conventions |
 
 ## Record header
+- **Kind logo**: `public/img/<kind>-logo.svg` (the keys of `KINDS` in `_data/lodam.js`; publication pages use
+  `literature-logo.svg`, the analyses page of a publication `analysis-logo.svg`), left of the text, above it on
+  phones. All share one frame (coloured areas, node-and-link paths) with a cream pictogram per kind. The image is
+  decorative (`alt=""`): the kind is written next to it. A new kind needs its own logo; `npm run check` fails on
+  the missing image. The kind lists (`/data/<kinds>/`, `/data/publications/`) show the same logo next to the `<h1>`.
 - **Kind**: `record.kindLabel` ("Find", "Analysis", …) above the title.
 - **Title**: the record's English label (`labelOf`).
 - **Summary line**: `record.summary`, a few short values joined by " · ", for example
