@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>(function(){var t;try{t=localStorage.getItem("lodam-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-bs-theme",t)})();</script>
+		<title>Goals Reached - From My Research Database to Linked Data</title>
+		<meta name="description" content="My research database stays private, the released publications go out as Linked Data. How the pipeline in between works.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/blog/Goals_reached_Pipeline/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Goals Reached - From My Research Database to Linked Data">
+		<meta property="og:description" content="My research database stays private, the released publications go out as Linked Data. How the pipeline in between works.">
+		<meta property="og:url" content="https://lod-am.net/blog/Goals_reached_Pipeline/">
+		<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-11-23">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Goals Reached - From My Research Database to Linked Data">
+		<meta name="twitter:description" content="My research database stays private, the released publications go out as Linked Data. How the pipeline in between works.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+		<meta name="fediverse:creator" content="@FabianF@archaeo.social">
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+		<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "@id": "https://lod-am.net/blog/Goals_reached_Pipeline/#post",
+ "headline": "Goals Reached - From My Research Database to Linked Data",
+ "description": "My research database stays private, the released publications go out as Linked Data. How the pipeline in between works.",
+ "url": "https://lod-am.net/blog/Goals_reached_Pipeline/",
+ "mainEntityOfPage": "https://lod-am.net/blog/Goals_reached_Pipeline/",
+ "inLanguage": "en",
+ "datePublished": "2026-11-23",
+ "dateModified": "2026-11-23",
+ "keywords": [
+  "research data management",
+  "legacy data",
+  "RDF"
+ ],
+ "image": "https://lod-am.net/img/logo.png",
+ "author": {
+  "@type": "Person",
+  "@id": "https://lod-am.net/about/#me",
+  "name": "Fabian Fricke",
+  "url": "https://lod-am.net/about/",
+  "sameAs": [
+   "https://archaeo.social/@FabianF"
+  ]
+ },
+ "isPartOf": [
+  {
+   "@type": "Blog",
+   "@id": "https://lod-am.net/blog/#blog",
+   "name": "Linked Open Data for Ancient Metallurgy (blog)",
+   "url": "https://lod-am.net/blog/"
+  },
+  {
+   "@type": "CreativeWorkSeries",
+   "name": "Goals Reached",
+   "url": "https://lod-am.net/blog/#goals-reached"
+  }
+ ],
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "about": [
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://lod-am.net/id/topic_research_data_management",
+   "name": "research data management",
+   "url": "https://lod-am.net/topics/research-data-management/",
+   "inDefinedTermSet": "https://lod-am.net/id/topics",
+   "sameAs": [
+    "http://www.wikidata.org/entity/Q30089794"
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://lod-am.net/id/topic_legacy_data",
+   "name": "legacy data",
+   "url": "https://lod-am.net/topics/legacy-data/",
+   "inDefinedTermSet": "https://lod-am.net/id/topics"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://lod-am.net/id/topic_rdf",
+   "name": "RDF",
+   "url": "https://lod-am.net/topics/rdf/",
+   "inDefinedTermSet": "https://lod-am.net/id/topics",
+   "sameAs": [
+    "http://www.wikidata.org/entity/Q54872"
+   ]
+  }
+ ]
+}</script>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css?v=61f8f1a48c">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button type="button" class="btn btn-sm theme-toggle ms-auto me-2 order-lg-last ms-lg-2 me-lg-0" id="theme-toggle" aria-label="Switch between light and dark mode" hidden="">
+					<span class="icon-sun"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"></path>
+</svg></span><span class="icon-moon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"></path>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"></path>
+</svg></span>
+				</button>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><a class="dropdown-item" href="/data/model/">Data model</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg></button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+
+
+
+<div class="reading-column">
+<article class="mb-5" data-pagefind-body="" data-pagefind-filter="kind:Blog post">
+  <header class="mb-4">
+    <h1 class="display-4" id="goals-reached-from-my-research-database-to-linked-data">Goals Reached - From My Research Database to Linked Data</h1>
+    
+    <div class="mb-3">
+      <small>
+        Posted on <time datetime="2026-11-23">23 November 2026</time>
+        
+      </small>
+    </div>
+    
+    <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+      
+      <a href="/topics/research-data-management/" class="tag" data-pagefind-filter="topic" style="--tag-color: #F7A852; --tag-color-light: #AD7639;">research data management</a><a href="/topics/legacy-data/" class="tag" data-pagefind-filter="topic" style="--tag-color: #E6B85C; --tag-color-light: #9C7D3F;">legacy data</a><a href="/topics/rdf/" class="tag" data-pagefind-filter="topic" style="--tag-color: #A8B885; --tag-color-light: #798460;">RDF</a>
+    </div>
+    
+    
+    <details class="series-box" data-pagefind-ignore="">
+      <summary>Part 2 of 4 in <em>Goals Reached</em></summary>
+      <ol class="mb-0 mt-2">
+        <li><a href="/blog/Goals_reached_Milestone/">Goals Reached - Looking Back at Where I Started</a></li>
+        <li><span aria-current="page">Goals Reached - From My Research Database to Linked Data</span></li>
+        <li><a href="/blog/Goals_reached_Triplestore/">Goals Reached - The Triplestore Goes Public</a></li>
+        <li><a href="/blog/Goals_reached_Website/">Goals Reached - Query, Search and Cite the Data</a></li>
+      </ol>
+    </details>
+  </header>
+
+  <div class="content">
+    <p>Here’s a question I avoided for a long time: where does the data for LOD-AM actually <em>come from</em>? The honest answer is: from my <strong>research database</strong>, which I newly started in spring. A relational database where I collect finds, contexts and analyses from the literature, one publication at a time. It’s my working tool, and it’s full of things that are not ready for the world: half-entered tables, open questions, notes to myself.</p>
+<p>So I had a problem. I want the data out there as Linked Open Data. But not <em>all</em> of it, and not before I’ve checked it. The answer to that is the <strong>pipeline</strong>.</p>
+<h3 id="one-rule-the-database-stays-private">One rule: the database stays private</h3>
+<p>This was the first decision, and the easiest one. The database as a whole stays private. What goes online is a <strong>released publication</strong>: the finds and analyses of one article, and only what they point to (their sites, contexts, periods, types, laboratories). A publication is released when I say so, and not a minute earlier.</p>
+<p>The same goes for the code: the pipeline lives on GitHub, but it runs on a container in my homelab, right next to the database. The data never goes to GitHub.</p>
+<h3 id="from-tables-to-triples">From tables to triples</h3>
+<p>In the <a href="/blog/Becoming_operational_Claude/">Becoming Operational</a> series, Arslantepe was converted by a script. That worked, but it meant that the rules of the data model lived twice: once in the <a href="/blog/Becoming_operational_Conventions/">conventions</a>, once in the code. Now the way from the database to RDF is a <strong>mapping</strong>: R2RML, run with Ontop. The mapping says, table by table, which column becomes which triple. No hidden logic, no clever tricks in between.</p>
+<p>The pipeline then goes through the same steps every time:</p>
+<ol>
+<li>take a <strong>snapshot</strong> of the database, so nothing changes while it runs,</li>
+<li><strong>map</strong> it to RDF,</li>
+<li><strong>enrich</strong> it with the details of the cited publications coming from a <strong>Zotero</strong> library</li>
+<li><strong>check</strong> it: every term against the published ontologies, every record against the SHACL shapes of the knowledge graph,</li>
+<li>cut out the <strong>released publications</strong>, one file each.</li>
+</ol>
+<p>If a check fails, nothing is released. That’s the whole point.</p>
+<h3 id="a-release-you-can-check">A release you can check</h3>
+<p>Every release comes with a <strong>manifest</strong>: which version of the pipeline and of the knowledge graph produced it, and a checksum for every file. That sounds boring, but it means that the triplestore and the website can check that they got exactly what the pipeline produced, nothing more and nothing less. And the manifest contains no numbers about the full database, because that stays private, too.</p>
+<h3 id="why-all-this-effort">Why all this effort?</h3>
+<p>Because I’m lazy, in the good way. Arslantepe took many evenings. The next publication should take the evenings I need to <em>check the data</em>, not the evenings to build the machinery again. Now the machinery is there.</p>
+<p>In the next part, I’ll show you where a release goes once it leaves the pipeline: the triplestore.</p>
+<p>As always, if you have thoughts, suggestions, or your own story about getting data out of a research database, you know where to find me: <strong>info@lod-am.net</strong> or (if you have a GitHub account) in a <strong>comment</strong> below.</p>
+
+  </div>
+
+  
+  
+  
+  
+  <nav aria-label="Post navigation" class="mt-5" data-pagefind-ignore="">
+    <ul class="pagination flex-column flex-md-row justify-content-center">
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Goals_reached_Milestone/">
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path>
+</svg> Previous: Goals Reached - Looking Back at Where I Started
+        </a>
+      </li>
+      
+      
+      <li class="page-item">
+        <a class="page-link" href="/blog/Goals_reached_Triplestore/">
+          Next: Goals Reached - The Triplestore Goes Public <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+</svg>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+  
+</article>
+
+
+<section class="comments mt-5 pt-4 border-top border-secondary" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="h4">Comments</h2>
+  <div id="comments-consent">
+    <p class="mb-3">Comments are provided by <a href="https://giscus.app">giscus</a> and stored as GitHub Discussions. Loading them connects your browser to giscus.app and GitHub, Inc. in the <strong>USA</strong> and transfers your IP address and browser data there. The USA does not have a level of data protection equivalent to the EU's; US authorities may access the data. By clicking the button, you consent to this transfer (Art. 49(1)(a) GDPR). Details: <a href="/privacy/#comments">privacy policy, section 6</a>.</p>
+    <button type="button" class="btn btn-primary" id="load-comments"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+  <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"></path>
+  <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"></path>
+</svg> Load comments</button>
+  </div>
+  <div class="giscus"></div>
+</section>
+</div>
+
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center" data-bs-theme="dark">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/theme.js?v=61f8f1a48c"></script>
+		<script type="module" src="/dist/AixP7njmmE.js"></script>
+	</body>
+</html>
