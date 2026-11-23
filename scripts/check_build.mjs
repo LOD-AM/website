@@ -7,6 +7,8 @@
 // - every LOD-AM record in data/published/*.ttl (/id/<kind>/<uuid>) has its page, and the
 //   released files are downloadable under /data/
 // - the search index (Pagefind, planning#17) exists and holds every post and record page
+// - every property drawn in the data model diagram and every namespace in its vocabulary list
+//   occurs in the released data (website#20), so the picture can't drift from what is published
 import { Parser } from "n3";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
@@ -135,6 +137,21 @@ if (existsSync("data/published")) {
       if (existsSync(page) && !readFileSync(page, "utf8").includes('site-map__marker site-map__marker--current')) errors.push(`site page ${g[1]} shows no map`);
     }
   }
+}
+
+// Data model page (website#20): the diagram and the vocabulary list name only what the released
+// data use. A property drawn but no longer used (or renamed in CONVENTIONS.md) fails here.
+{
+  const { default: model } = await import(new URL("../_data/dataModel.js", import.meta.url));
+  const files = existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : [];
+  const ttl = files.map((f) => readFileSync(join("data/published", f), "utf8")).join("\n");
+  if (ttl) {
+    for (const e of model.edges) for (const p of e.props)
+      if (!ttl.includes(p)) errors.push(`/data/model/: "${e.fromTitle} ${e.label} ${e.toTitle}" uses ${p}, which the released data don't contain`);
+    for (const v of model.vocabularies)
+      if (!ttl.includes(v.ns)) errors.push(`/data/model/: namespace of ${v.name} (${v.ns}) not in the released data`);
+  }
+  if (!existsSync(join(SITE, "data", "model", "index.html"))) errors.push("missing data/model/index.html");
 }
 
 // Site search (planning#17): Pagefind's index, with every post and record page in it

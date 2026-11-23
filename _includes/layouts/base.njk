@@ -88,6 +88,7 @@
 							<a class="nav-link dropdown-toggle" href="{{ entry.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% if page.url.startsWith("/data/") or page.url.startsWith("/id/") or page.url.startsWith("/query/") %} aria-current="true"{% endif %}>{{ entry.title }}</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="{{ entry.url }}">Overview</a></li>
+								<li><a class="dropdown-item" href="/data/model/">Data model</a></li>
 								<li><hr class="dropdown-divider"></li>
 								{%- for key in ["site", "find", "analysis", "type", "period", "culture"] %}
 								{%- if lodam.byKind[key].length %}

@@ -747,3 +747,23 @@ code[class*="language-"] .token.tag { color: #FF7AA2; }
 }
 .update-note > :last-child { margin-bottom: 0; }
 .update-note__label { font-size: 0.95rem; color: var(--lodam-chalk-white); margin-bottom: 0.4rem; }
+
+/* Data model diagram (/data/model/, website#20): inline SVG themed by the tokens. Wider than a
+   phone, so it scrolls sideways inside its box instead of shrinking to unreadable text. */
+.model-diagram { overflow-x: auto; }
+.model-diagram svg { display: block; width: 100%; min-width: 840px; max-width: 1248px; height: auto; }
+.model-edge { stroke: rgba(var(--lodam-line-rgb), 0.55); stroke-width: 1.5; }
+.model-edge--dashed { stroke-dasharray: 6 4; }
+.model-arrowhead { fill: rgba(var(--lodam-line-rgb), 0.75); }
+.model-label rect { fill: var(--lodam-deep-umber); }
+.model-label text { fill: var(--lodam-text-soft); color: var(--lodam-text-soft); font-size: 12px; }
+.model-node > rect { fill: var(--lodam-charcoal); stroke: rgba(var(--lodam-line-rgb), 0.25); }
+.model-node--helper > rect { fill: var(--lodam-deep-umber); }
+.model-node--external > rect { fill: var(--lodam-deep-umber); stroke-dasharray: 5 4; stroke: rgba(var(--lodam-line-rgb), 0.5); }
+.model-node > rect.model-node__edge { fill: var(--lodam-ochre); stroke: none; }
+.model-node__title { fill: var(--lodam-chalk-white); color: var(--lodam-chalk-white); font-size: 15px; font-weight: 700; }
+.model-node__class { fill: var(--lodam-text-soft); color: var(--lodam-text-soft); font-size: 11px; font-family: var(--bs-font-monospace); }
+.model-diagram a:hover .model-node__title, .model-diagram a:focus .model-node__title { fill: var(--lodam-terracotta-light); text-decoration: underline; }
+.model-diagram a:focus-visible > g > rect:first-child { stroke: var(--lodam-terracotta-light); stroke-width: 2; }
+.model-ns { overflow-wrap: anywhere; font-size: 0.85rem; color: var(--lodam-text-soft); }
+.model-vocab th[scope="row"] { width: 55%; }

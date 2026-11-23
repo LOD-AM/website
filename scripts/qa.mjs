@@ -36,7 +36,7 @@ try {
 const KEY_PAGES = {
   home: "/", blog: "/blog/", post: "/blog/The_first_example/", about: "/about/",
   topics: "/topics/", topic: "/topics/chemical-analysis/", notfound: "/404.html", impressum: "/impressum/", privacy: "/privacy/",
-  data: "/data/", datalist: "/data/finds/", query: "/query/", examples: "/query/examples/", search: "/search/?q=awl",
+  data: "/data/", datalist: "/data/finds/", query: "/query/", examples: "/query/examples/", search: "/search/?q=awl", model: "/data/model/",
 };
 // The query editor (/query/, planning#22) sends queries only to this endpoint, and only on "Run".
 // The checks answer it with a fixed result (scripts/qa-query-result.json), so they stay offline.

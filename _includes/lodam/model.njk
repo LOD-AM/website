@@ -1,0 +1,33 @@
+{#- Diagram of the data model (website#20), drawn from _data/dataModel.js. Inline SVG: no
+    request, themed through CSS (both modes). The list after it says the same in words. -#}
+{%- set m = dataModel %}
+<div class="model-diagram">
+<svg viewBox="0 0 {{ m.width }} {{ m.height }}" width="{{ m.width }}" height="{{ m.height }}" role="img" aria-labelledby="model-title" aria-describedby="model-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="model-title">Diagram of the LOD-AM data model</title>
+  <desc id="model-desc">Boxes for the kinds of records and the links between them; the same links are listed as text below the diagram.</desc>
+  <defs>
+    <marker id="model-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="model-arrowhead"/>
+    </marker>
+  </defs>
+  {%- for e in m.edges %}
+  <line x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" class="model-edge{% if e.dashed %} model-edge--dashed{% endif %}" marker-end="url(#model-arrow)"/>
+  {%- endfor %}
+  {%- for e in m.edges %}
+  <g class="model-label">
+    <rect x="{{ e.lx - e.lw / 2 }}" y="{{ e.ly - 10 }}" width="{{ e.lw }}" height="20" rx="4"/>
+    <text x="{{ e.lx }}" y="{{ e.ly + 4 }}" text-anchor="middle">{{ e.label }}</text>
+  </g>
+  {%- endfor %}
+  {%- for n in m.nodes %}
+  {%- if n.href %}<a href="{{ n.href }}">{% endif %}
+  <g class="model-node model-node--{{ n.kind }}">
+    <rect x="{{ n.x }}" y="{{ n.y }}" width="{{ n.w }}" height="{{ n.h }}" rx="8"/>
+    {%- if n.kind == "record" %}<rect class="model-node__edge" x="{{ n.x }}" y="{{ n.y }}" width="6" height="{{ n.h }}" rx="3"/>{% endif %}
+    <text x="{{ n.x + 16 }}" y="{{ n.y + 25 }}" class="model-node__title">{{ n.title }}</text>
+    <text x="{{ n.x + 16 }}" y="{{ n.y + 45 }}" class="model-node__class">{{ n.cls }}</text>
+  </g>
+  {%- if n.href %}</a>{% endif %}
+  {%- endfor %}
+</svg>
+</div>
