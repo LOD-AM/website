@@ -1,5 +1,5 @@
 import { IdAttributePlugin, InputPathToUrlTransformPlugin, HtmlBasePlugin } from "@11ty/eleventy";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
@@ -7,6 +7,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import pluginFilters from "./_config/filters.js";
 import pluginShortcodes from "./_config/shortcodes.js";
 import pluginCharts from "./_config/charts.js";
+import pluginUpdates from "./_config/updates.js";
 import metadata from "./_data/metadata.js";
 import * as pagefind from "pagefind";
 import path from "node:path";
@@ -60,25 +61,9 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "atom",
-    outputPath: "/feed/feed.xml",
-    stylesheet: "pretty-atom-feed.xsl",
-    collection: {
-      name: "blog",
-      limit: 10,
-    },
-    // Same values as the rest of the site (_data/metadata.js)
-    metadata: {
-      language: metadata.language,
-      title: metadata.title,
-      subtitle: metadata.description,
-      base: metadata.url,
-      author: {
-        name: metadata.author.name
-      }
-    }
-  });
+  // Atom feed: content/feed/feed.njk (own template since website#17, so that entries carry
+  // their `updated:` date); the plugin adds the date filters it uses.
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
@@ -113,6 +98,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(pluginShortcodes);
   eleventyConfig.addPlugin(pluginCharts);
+  eleventyConfig.addPlugin(pluginUpdates);
   eleventyConfig.addPlugin(IdAttributePlugin);
 
 };
