@@ -7,8 +7,9 @@
 //             text 3:1), one <h1> per page, no skipped heading levels, images
 //             without alt, buttons without a name. Key page types.
 // overflow    horizontal overflow on a 375 px phone, all pages
-// thirdparty  requests to other hosts on page load (all pages), and that
-//             Giscus loads only after "Load comments" with the expected settings
+// thirdparty  requests to other hosts on page load (all pages), that
+//             Giscus loads only after "Load comments" with the expected settings, and that
+//             the query editor contacts only the SPARQL endpoint, only on "Run", and stores nothing
 // screenshots full-page PNGs of the key page types, desktop + phone, for
 //             before/after comparison with scripts/qa-pixdiff.py
 //
@@ -35,8 +36,17 @@ try {
 const KEY_PAGES = {
   home: "/", blog: "/blog/", post: "/blog/The_first_example/", about: "/about/",
   topics: "/topics/", topic: "/topics/chemical-analysis/", notfound: "/404.html", impressum: "/impressum/", privacy: "/privacy/",
-  data: "/data/", datalist: "/data/finds/",
+  data: "/data/", datalist: "/data/finds/", query: "/query/", examples: "/query/examples/", search: "/search/?q=awl",
 };
+// The query editor (/query/, planning#22) sends queries only to this endpoint, and only on "Run".
+// The checks answer it with a fixed result (scripts/qa-query-result.json), so they stay offline.
+const SPARQL_HOST = "triple.lod-am.net";
+const QUERY_RESULT = fs.readFileSync(new URL("./qa-query-result.json", import.meta.url));
+async function runQuery(page) {
+  await page.route((u) => u.hostname === SPARQL_HOST, (r) => r.fulfill({ status: 200, contentType: "application/sparql-results+json", headers: { "access-control-allow-origin": "*" }, body: QUERY_RESULT }));
+  await page.click(".yasqe_queryButton");
+  await page.waitForSelector(".yasr .dataTable tbody tr", { timeout: 10000 });
+}
 // Entity pages have uuid paths: take the first page of these kinds that exists in the build
 function addEntityPages(site) {
   for (const kind of ["site", "find", "analysis", "period", "type"]) {
@@ -48,7 +58,8 @@ function addEntityPages(site) {
 }
 const GISCUS_EXPECTED = { repo: "lod-am/website", category: "Comments", mapping: "title" };
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml",
-  ".png": "image/png", ".webp": "image/webp", ".avif": "image/avif", ".ico": "image/x-icon", ".xml": "application/xml" };
+  ".png": "image/png", ".webp": "image/webp", ".avif": "image/avif", ".ico": "image/x-icon", ".xml": "application/xml",
+  ".json": "application/json", ".wasm": "application/wasm" };
 
 function serve(site) {
   return new Promise((resolve) => {
@@ -82,6 +93,40 @@ async function newPage(browser, opts) {
   return page;
 }
 
+async function pageFails(page) {
+  return page.evaluate(() => {
+    const parse = (c) => { const m = c.match(/[\d.]+/g).map(Number); return { r: m[0], g: m[1], b: m[2], a: m.length > 3 ? m[3] : 1 }; };
+    const lum = ({ r, g, b }) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+    const blend = (fg, bg) => ({ r: fg.r * fg.a + bg.r * (1 - fg.a), g: fg.g * fg.a + bg.g * (1 - fg.a), b: fg.b * fg.a + bg.b * (1 - fg.a), a: 1 });
+    const bgOf = (el) => {
+      const layers = [];
+      for (let e = el; e; e = e.parentElement) {
+        const cs = getComputedStyle(e);
+        if (cs.backgroundImage.includes("gradient")) { const m = cs.backgroundImage.match(/rgba?\([^)]+\)/g); if (m) layers.push(parse(m[m.length - 1])); break; }
+        const c = parse(cs.backgroundColor); if (c.a > 0) { layers.push(c); if (c.a === 1) break; }
+      }
+      let bg = { r: 255, g: 255, b: 255, a: 1 }; for (const l of layers.reverse()) bg = blend(l, bg); return bg;
+    };
+    const fails = [];
+    for (const el of document.querySelectorAll("body *")) {
+      if (!el.offsetParent && getComputedStyle(el).position !== "fixed") continue;
+      const text = [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent.trim()).join(" ").trim();
+      if (!text) continue;
+      const cs = getComputedStyle(el); const bg = bgOf(el); const fg = blend(parse(cs.color), bg);
+      const a = lum(fg), b = lum(bg); const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+      const size = parseFloat(cs.fontSize), bold = parseInt(cs.fontWeight) >= 700;
+      const need = size >= 24 || (bold && size >= 18.66) ? 3 : 4.5;
+      if (ratio < need) fails.push(`contrast ${ratio.toFixed(2)} < ${need}: <${el.tagName.toLowerCase()}> "${text.slice(0, 40)}"`);
+    }
+    const h = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map((x) => +x.tagName[1]);
+    if (h.filter((l) => l === 1).length !== 1) fails.push(`${h.filter((l) => l === 1).length} <h1> elements`);
+    h.forEach((l, i) => { if (i > 0 && l > h[i - 1] + 1) fails.push(`heading level skipped: h${h[i - 1]} -> h${l}`); });
+    document.querySelectorAll("img:not([alt])").forEach((i) => fails.push(`img without alt: ${i.getAttribute("src")}`));
+    [...document.querySelectorAll("button")].filter((x) => !x.textContent.trim() && !x.getAttribute("aria-label")).forEach(() => fails.push("button without a name"));
+    return [...new Set(fails)];
+  });
+}
+
 // Both colour modes (planning#20): the page follows prefers-color-scheme
 const MODES = ["dark", "light"];
 
@@ -91,37 +136,15 @@ async function audit(browser, base) {
   const page = await newPage(browser, { viewport: { width: 1366, height: 900 }, colorScheme: mode });
   for (const url of Object.values(KEY_PAGES)) {
     await page.goto(base + url, { waitUntil: "load" });
-    const r = await page.evaluate(() => {
-      const parse = (c) => { const m = c.match(/[\d.]+/g).map(Number); return { r: m[0], g: m[1], b: m[2], a: m.length > 3 ? m[3] : 1 }; };
-      const lum = ({ r, g, b }) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
-      const blend = (fg, bg) => ({ r: fg.r * fg.a + bg.r * (1 - fg.a), g: fg.g * fg.a + bg.g * (1 - fg.a), b: fg.b * fg.a + bg.b * (1 - fg.a), a: 1 });
-      const bgOf = (el) => {
-        const layers = [];
-        for (let e = el; e; e = e.parentElement) {
-          const cs = getComputedStyle(e);
-          if (cs.backgroundImage.includes("gradient")) { const m = cs.backgroundImage.match(/rgba?\([^)]+\)/g); if (m) layers.push(parse(m[m.length - 1])); break; }
-          const c = parse(cs.backgroundColor); if (c.a > 0) { layers.push(c); if (c.a === 1) break; }
-        }
-        let bg = { r: 255, g: 255, b: 255, a: 1 }; for (const l of layers.reverse()) bg = blend(l, bg); return bg;
-      };
-      const fails = [];
-      for (const el of document.querySelectorAll("body *")) {
-        if (!el.offsetParent && getComputedStyle(el).position !== "fixed") continue;
-        const text = [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent.trim()).join(" ").trim();
-        if (!text) continue;
-        const cs = getComputedStyle(el); const bg = bgOf(el); const fg = blend(parse(cs.color), bg);
-        const a = lum(fg), b = lum(bg); const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-        const size = parseFloat(cs.fontSize), bold = parseInt(cs.fontWeight) >= 700;
-        const need = size >= 24 || (bold && size >= 18.66) ? 3 : 4.5;
-        if (ratio < need) fails.push(`contrast ${ratio.toFixed(2)} < ${need}: <${el.tagName.toLowerCase()}> "${text.slice(0, 40)}"`);
-      }
-      const h = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map((x) => +x.tagName[1]);
-      if (h.filter((l) => l === 1).length !== 1) fails.push(`${h.filter((l) => l === 1).length} <h1> elements`);
-      h.forEach((l, i) => { if (i > 0 && l > h[i - 1] + 1) fails.push(`heading level skipped: h${h[i - 1]} -> h${l}`); });
-      document.querySelectorAll("img:not([alt])").forEach((i) => fails.push(`img without alt: ${i.getAttribute("src")}`));
-      [...document.querySelectorAll("button")].filter((x) => !x.textContent.trim() && !x.getAttribute("aria-label")).forEach(() => fails.push("button without a name"));
-      return [...new Set(fails)];
-    });
+    // search results are loaded after the page (Pagefind)
+    if (url === KEY_PAGES.search) await page.waitForSelector(".pagefind-ui__result", { timeout: 10000 }).catch(() => {});
+    let r = await pageFails(page);
+    if (url === KEY_PAGES.search && !(await page.locator(".pagefind-ui__result").count())) r.push("search shows no results");
+    // the editor's result table exists only after "Run"
+    if (url === KEY_PAGES.query) {
+      await runQuery(page);
+      r = r.concat((await pageFails(page)).map((f) => `after "Run": ${f}`));
+    }
     const theme = await page.evaluate(() => document.documentElement.dataset.bsTheme);
     if (theme !== mode) r.push(`page is in ${theme} mode, expected ${mode}`);
     console.log(`${r.length ? "FAIL" : "ok  "} audit (${mode}) ${url}`);
@@ -171,7 +194,15 @@ async function thirdparty(browser, base, site) {
   const data = await page.evaluate(() => { const s = document.querySelector('script[src*="giscus.app"]'); return s ? { ...s.dataset } : null; });
   const ok = !before.length && data && Object.entries(GISCUS_EXPECTED).every(([k, v]) => data[k] === v) && !errors.length;
   console.log(`${ok ? "ok  " : "FAIL"} giscus: before click ${before.length ? "LOADED" : "nothing"}; after click ${data ? JSON.stringify({ repo: data.repo, category: data.category, mapping: data.mapping }) : "NOT LOADED"}; JS errors: ${errors.length ? errors.join("; ") : "none"}`);
-  return failed + (ok ? 0 : 1);
+  // Query editor: nothing on load (checked above), on "Run" only the LOD-AM endpoint
+  hosts = new Set();
+  await page.goto(base + KEY_PAGES.query, { waitUntil: "networkidle" });
+  let qok = true;
+  try { await runQuery(page); } catch { qok = false; }
+  const stored = await page.evaluate(() => Object.keys(localStorage).filter((k) => k !== "lodam-theme"));
+  qok = qok && hosts.size === 1 && hosts.has(SPARQL_HOST) && !stored.length;
+  console.log(`${qok ? "ok  " : "FAIL"} query editor: on "Run" ${[...hosts].join(", ") || "no request"} (expected ${SPARQL_HOST} only); localStorage: ${stored.length ? stored.join(", ") : "nothing"}`);
+  return failed + (ok ? 0 : 1) + (qok ? 0 : 1);
 }
 
 async function screenshots(browser, base, out) {

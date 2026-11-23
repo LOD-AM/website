@@ -56,6 +56,9 @@
 
 		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		{%- if pageStylesheet %}
+		<link rel="stylesheet" href="{{ pageStylesheet }}?v={{ assetVersion }}">
+		{%- endif %}
 		<link rel="stylesheet" href="/css/theme.css?v={{ assetVersion }}">
 		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
 		<style>{% getBundle "css" %}</style>
@@ -82,7 +85,7 @@
 						{%- if entry.key == "Data" %}
 						{#- Data: dropdown with the overview and the kinds of records that exist (website#14) #}
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="{{ entry.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% if page.url.startsWith("/data/") or page.url.startsWith("/id/") %} aria-current="true"{% endif %}>{{ entry.title }}</a>
+							<a class="nav-link dropdown-toggle" href="{{ entry.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% if page.url.startsWith("/data/") or page.url.startsWith("/id/") or page.url.startsWith("/query/") %} aria-current="true"{% endif %}>{{ entry.title }}</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="{{ entry.url }}">Overview</a></li>
 								<li><hr class="dropdown-divider"></li>
@@ -92,6 +95,9 @@
 								{%- endif %}
 								{%- endfor %}
 								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
 							</ul>
 						</li>
 						{%- else %}
@@ -101,6 +107,11 @@
 						{%- endif %}
 					{%- endfor %}
 					</ul>
+					{#- Site search (planning#17): a plain GET form, results on /search/ #}
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search">{% icon "search" %}</button>
+					</form>
 				</div>
 			</div>
 		</nav>

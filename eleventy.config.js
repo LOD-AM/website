@@ -8,6 +8,8 @@ import pluginFilters from "./_config/filters.js";
 import pluginShortcodes from "./_config/shortcodes.js";
 import pluginCharts from "./_config/charts.js";
 import metadata from "./_data/metadata.js";
+import * as pagefind from "pagefind";
+import path from "node:path";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -32,7 +34,10 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./css/**/*.css");
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/css/bootstrap.min.css": "/css/bootstrap.min.css",
-    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js"
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js",
+    // SPARQL query editor (planning#22), self-hosted like Bootstrap; loaded only on /query/
+    "node_modules/@zazuko/yasgui/build/yasgui.min.js": "/js/yasgui/yasgui.min.js",
+    "node_modules/@zazuko/yasgui/build/yasgui.min.css": "/css/yasgui.min.css"
   });
 
   eleventyConfig.addWatchTarget("css/**/*.css");
@@ -89,6 +94,20 @@ export default async function(eleventyConfig) {
     sharpOptions: {
       animated: true,
     },
+  });
+
+  // Site search (planning#17): Pagefind indexes the built pages after every build into
+  // <output>/pagefind/. Only blog posts and record pages are indexed (data-pagefind-body);
+  // the search runs in the visitor's browser against these files, with no other host.
+  eleventyConfig.on("eleventy.after", async ({ directories }) => {
+    const { index, errors } = await pagefind.createIndex({ forceLanguage: metadata.language });
+    if (!index) throw new Error(`Pagefind: ${errors.join("; ")}`);
+    const added = await index.addDirectory({ path: directories.output });
+    if (added.errors.length) throw new Error(`Pagefind: ${added.errors.join("; ")}`);
+    const written = await index.writeFiles({ outputPath: path.join(directories.output, "pagefind") });
+    if (written.errors.length) throw new Error(`Pagefind: ${written.errors.join("; ")}`);
+    await pagefind.close();
+    console.log(`[pagefind] index written (${added.page_count} pages read; posts and records indexed)`);
   });
 
   eleventyConfig.addPlugin(pluginFilters);

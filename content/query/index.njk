@@ -1,0 +1,28 @@
+---
+title: "SPARQL query · LOD-AM"
+description: "Query the released LOD-AM data with SPARQL in the browser: an editor with syntax highlighting and a result table, connected to the public, read-only LOD-AM endpoint."
+permalink: /query/
+pageStylesheet: /css/yasgui.min.css
+---
+{#- DRAFT by Claude (planning#22): the owner reviews the wording. -#}
+<div class="entity entity--full">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › SPARQL query</nav>
+  <h1 class="mb-3">SPARQL query</h1>
+  <div class="reading-column ms-0">
+    <p>Write a SPARQL query against the released LOD-AM data and run it here, or start from one of the
+    <a href="/query/examples/">example queries</a>. The data follow the
+    <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>.</p>
+    <p class="small text-body-secondary">Endpoint: <code>{{ metadata.sparqlEndpoint }}</code> (read-only; queries stop after 120 seconds).
+    Nothing is sent before you run a query. When you do, your browser sends the query to <code>triple.lod-am.net</code>,
+    the LOD-AM triplestore. The editor keeps nothing in your browser after you leave the page.</p>
+  </div>
+
+  <noscript><p class="data-box series-box">The editor needs JavaScript. Without it, you can send queries to the endpoint
+  directly, e.g. <code>curl --data-urlencode query@query.rq {{ metadata.sparqlEndpoint }}</code>, or read the
+  <a href="/query/examples/">example queries</a>.</p></noscript>
+
+  <div id="yasgui" class="lodam-yasgui mt-4" data-endpoint="{{ metadata.sparqlEndpoint }}"
+       data-default-query="{{ exampleQueries[0].query }}"></div>
+</div>
+<script src="/js/yasgui/yasgui.min.js?v={{ assetVersion }}"></script>
+<script src="/js/query.js?v={{ assetVersion }}"></script>

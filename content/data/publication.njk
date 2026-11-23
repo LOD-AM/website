@@ -8,8 +8,8 @@ eleventyComputed:
   title: "{{ pub.citation | safe }} · Publication · LOD-AM"
   description: "Publication: {{ pub.title | safe }}. {{ pub.summary | join(' · ') | safe }}"
 ---
-<div class="entity">
-  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › <a href="/data/publications/">Publications</a></nav>
+<div class="entity" data-pagefind-body data-pagefind-filter="kind:Publication">
+  <nav aria-label="Breadcrumb" class="small mb-2" data-pagefind-ignore><a href="/data/">Data</a> › <a href="/data/publications/">Publications</a></nav>
   {%- set entity = { kindLabel: "Publication", label: pub.title, summary: pub.summary } %}
   {% include "lodam/header.njk" %}
   <dl class="entity-facts">

@@ -54,6 +54,13 @@ eleventyNavigation:
     </table>
   </div>
 
+  <h2 class="h4 mt-5" id="sparql">SPARQL endpoint</h2>
+  {#- DRAFT by Claude (planning#22): the owner reviews the wording. #}
+  <p>The released data can also be queried with SPARQL, in the <a href="/query/">query editor</a> on this site or
+  directly at the public, read-only endpoint <code>{{ metadata.sparqlEndpoint }}</code>. The endpoint holds the
+  same data as the downloads above, together with the LOD-AM vocabularies, and is updated with every release.
+  <a href="/query/examples/">Example queries</a> show how the data answer typical research questions.</p>
+
   <h2 class="h4 mt-5">Licence and citation</h2>
   <p>The data are released under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International licence (CC BY 4.0)</a>.
   When using them, please cite the individual records (a citation is given on each record page) or the dataset, and the source publications.
