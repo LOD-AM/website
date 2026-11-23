@@ -122,7 +122,7 @@
 
 		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/theme.css?v=55cd27508b">
+		<link rel="stylesheet" href="/css/theme.css?v=01da40bd11">
 		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -337,9 +337,18 @@ pre[class*="language-diff-"] {
 								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
 								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
 								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
 							</ul>
 						</li>
 					</ul>
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg></button>
+					</form>
 				</div>
 			</div>
 		</nav>
@@ -352,7 +361,7 @@ pre[class*="language-diff-"] {
 
 
 <div class="reading-column">
-<article class="mb-5">
+<article class="mb-5" data-pagefind-body="" data-pagefind-filter="kind:Blog post">
   <header class="mb-4">
     <h1 class="display-4" id="tackling-legacy-data-practically">Tackling Legacy Data practically</h1>
     
@@ -365,7 +374,7 @@ pre[class*="language-diff-"] {
     
     <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
       <span class="post-type">Case study</span>
-      <a href="/topics/legacy-data/" class="tag" style="--tag-color: #E6B85C; --tag-color-light: #9C7D3F;">legacy data</a><a href="/topics/chemical-analysis/" class="tag" style="--tag-color: #E07A5D; --tag-color-light: #C16950;">chemical analysis</a><a href="/topics/lead-isotope-analysis/" class="tag" style="--tag-color: #D9731F; --tag-color-light: #C3671C;">lead isotope analysis</a><a href="/topics/dating/" class="tag" style="--tag-color: #5FB389; --tag-color-light: #4C8F6E;">dating and chronology</a>
+      <a href="/topics/legacy-data/" class="tag" data-pagefind-filter="topic" style="--tag-color: #E6B85C; --tag-color-light: #9C7D3F;">legacy data</a><a href="/topics/chemical-analysis/" class="tag" data-pagefind-filter="topic" style="--tag-color: #E07A5D; --tag-color-light: #C16950;">chemical analysis</a><a href="/topics/lead-isotope-analysis/" class="tag" data-pagefind-filter="topic" style="--tag-color: #D9731F; --tag-color-light: #C3671C;">lead isotope analysis</a><a href="/topics/dating/" class="tag" data-pagefind-filter="topic" style="--tag-color: #5FB389; --tag-color-light: #4C8F6E;">dating and chronology</a>
     </div>
     
     
@@ -373,7 +382,7 @@ pre[class*="language-diff-"] {
       <a href="/id/site/fc9ee3ea-41b1-4c3d-a174-d553b81bd6d8/">Arslantepe</a> <span class="text-body-secondary">(site)</span>
     </p>
     
-    <details class="series-box">
+    <details class="series-box" data-pagefind-ignore="">
       <summary>Part 5 of 6 in <em>Building LOD-AM</em></summary>
       <ol class="mb-0 mt-2">
         <li><a href="/blog/How_I_started/">How I started</a></li>
@@ -436,7 +445,7 @@ pre[class*="language-diff-"] {
   
   
   
-  <nav aria-label="Post navigation" class="mt-5">
+  <nav aria-label="Post navigation" class="mt-5" data-pagefind-ignore="">
     <ul class="pagination flex-column flex-md-row justify-content-center">
       
       <li class="page-item">
@@ -504,7 +513,7 @@ pre[class*="language-diff-"] {
 
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="/js/bootstrap.bundle.min.js"></script>
-		<script src="/js/theme.js?v=55cd27508b"></script>
+		<script src="/js/theme.js?v=01da40bd11"></script>
 		<script type="module" src="/dist/AixP7njmmE.js"></script>
 	</body>
 </html>

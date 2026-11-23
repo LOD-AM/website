@@ -37,7 +37,7 @@
 
 		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/theme.css?v=55cd27508b">
+		<link rel="stylesheet" href="/css/theme.css?v=01da40bd11">
 		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
 		<style></style>
 
@@ -85,9 +85,18 @@
 								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
 								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
 								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
 							</ul>
 						</li>
 					</ul>
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg></button>
+					</form>
 				</div>
 			</div>
 		</nav>
@@ -141,7 +150,7 @@
 
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="/js/bootstrap.bundle.min.js"></script>
-		<script src="/js/theme.js?v=55cd27508b"></script>
+		<script src="/js/theme.js?v=01da40bd11"></script>
 		<script type="module" src=""></script>
 	</body>
 </html>

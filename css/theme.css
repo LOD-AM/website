@@ -585,9 +585,12 @@ code[class*="language-"] {
   border-radius: 0.25rem;
   color: var(--lodam-code-text);
 }
+/* Okaidia's pink (language tags in SPARQL/Turtle, HTML tags) has 4.05:1 on the code
+   background; a lighter pink reaches 6.3:1 */
+code[class*="language-"] .token.tag { color: #FF7AA2; }
 
-/* Giscus: the only !important rules, because they override styles of a
-   third-party iframe. */
+/* Giscus: !important because these rules override styles of a third-party iframe
+   (the only other !important rules are in the query editor section below). */
 .giscus:not(:empty) { margin-top: 1rem; }
 .giscus-frame {
   background-color: var(--lodam-deep-umber) !important;
@@ -595,3 +598,139 @@ code[class*="language-"] {
   border-radius: 0.375rem !important;
 }
 .giscus iframe { background: transparent !important; }
+
+/* ---------------------------------------------------------------------------
+ * SPARQL query editor (YASGUI, /query/, planning#22). Its own stylesheet is light-only:
+ * the editor is a code block, so it stays dark in both modes (token colours as in the
+ * Prism theme of the posts); tabs, buttons and the result table use the theme tokens.
+ * ------------------------------------------------------------------------- */
+/* The endpoint is fixed (public/js/query.js): no endpoint field, no request settings */
+.lodam-yasgui .controlbar { display: none; }
+.lodam-yasgui .tabsList { border-bottom: 1px solid rgba(var(--lodam-line-rgb), 0.15); }
+.lodam-yasgui .tabsList a,
+.lodam-yasgui .tabsList .addTab { color: var(--lodam-text-secondary); }
+.lodam-yasgui .tabsList .tab a .closeTab { color: var(--lodam-text-secondary); text-shadow: none; opacity: 1; }
+.lodam-yasgui .tabsList .tab.active a { color: var(--lodam-chalk-white); border-bottom-color: var(--lodam-terracotta); }
+.lodam-yasgui .tabsList .tab:hover a,
+.lodam-yasgui .tabsList .addTab:hover { color: var(--lodam-terracotta-light); }
+
+.lodam-yasgui .yasqe .CodeMirror {
+  background: var(--lodam-code-bg);
+  color: var(--lodam-code-text);
+  border: 1px solid rgba(245, 240, 230, 0.15);
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+}
+.lodam-yasgui .yasqe .CodeMirror-gutters { background: var(--lodam-code-inline-bg); border-right-color: rgba(245, 240, 230, 0.15); }
+.lodam-yasgui .yasqe .CodeMirror-linenumber { color: #A89E8E; }
+.lodam-yasgui .yasqe .CodeMirror-cursor { border-left-color: var(--lodam-code-text); }
+.lodam-yasgui .yasqe .CodeMirror-selected,
+.lodam-yasgui .yasqe .CodeMirror-focused .CodeMirror-selected { background: #4A3F32; }
+.lodam-yasgui .yasqe .CodeMirror-line::selection,
+.lodam-yasgui .yasqe .CodeMirror-line > span::selection,
+.lodam-yasgui .yasqe .CodeMirror-line > span > span::selection { background: #4A3F32; }
+.lodam-yasgui .yasqe .CodeMirror-activeline-background { background: var(--lodam-code-inline-bg); }
+.lodam-yasgui .yasqe .cm-matchhighlight { background: #3A2E22; }
+.lodam-yasgui .cm-s-default .cm-keyword { color: #66D9EF; }
+.lodam-yasgui .cm-s-default .cm-variable-2 { color: #F8F8F2; }
+.lodam-yasgui .cm-s-default .cm-atom,
+.lodam-yasgui .cm-s-default .cm-variable-3 { color: #E6DB74; }
+.lodam-yasgui .cm-s-default .cm-string,
+.lodam-yasgui .cm-s-default .cm-string-2 { color: #A6E22E; }
+.lodam-yasgui .cm-s-default .cm-number { color: #AE81FF; }
+.lodam-yasgui .cm-s-default .cm-comment { color: #A89E8E; }
+.lodam-yasgui .cm-s-default .cm-meta,
+.lodam-yasgui .cm-s-default .cm-qualifier,
+.lodam-yasgui .cm-s-default .cm-builtin { color: #FD971F; }
+.lodam-yasgui .cm-s-default .cm-bracket,
+.lodam-yasgui .cm-s-default .cm-punc { color: var(--lodam-code-text); }
+.lodam-yasgui .cm-s-default .cm-error { color: #FF8A80; }
+.lodam-yasgui div.CodeMirror span.CodeMirror-matchingbracket { color: #A6E22E; }
+/* Run and share buttons on the dark editor */
+.lodam-yasgui .yasqe .yasqe_buttons svg { fill: var(--lodam-code-text); }
+.lodam-yasgui .yasqe .yasqe_btn,
+.lodam-yasgui .yasqe .yasqe_btn.btn_icon:focus { background: transparent; border-color: transparent; color: var(--lodam-code-text); }
+.lodam-yasgui .yasqe .yasqe_btn:hover svg { fill: var(--lodam-ochre); }
+.lodam-yasgui .yasqe .resizeChip { background-color: rgba(var(--lodam-line-rgb), 0.35); }
+.lodam-yasgui .yasqe .notification { background: var(--lodam-charcoal); color: var(--lodam-text-secondary); }
+
+/* Results */
+.lodam-yasgui .yasr { color: var(--lodam-chalk-white); }
+.lodam-yasgui .yasr a { color: var(--lodam-terracotta-light); }
+.lodam-yasgui .yasr a:hover { color: var(--lodam-terracotta-pale); }
+.lodam-yasgui .yasr .yasr_btn { color: var(--lodam-text-secondary); fill: var(--lodam-text-secondary); }
+.lodam-yasgui .yasr .yasr_btn:not(.disabled):hover { color: var(--lodam-chalk-white); fill: var(--lodam-chalk-white); }
+.lodam-yasgui .yasr .yasr_btn:focus,
+.lodam-yasgui .yasr .yasr_btn.selected { color: var(--lodam-terracotta-light); fill: var(--lodam-terracotta-light); }
+.lodam-yasgui .yasr .yasr_response_chip { background: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
+.lodam-yasgui .yasr .yasr_fallback_info:not(:empty),
+.lodam-yasgui .yasr .errorResult .errorMessageContainer .errorMessage {
+  background: var(--lodam-charcoal); color: var(--lodam-chalk-white); border-color: rgba(var(--lodam-line-rgb), 0.2);
+}
+.lodam-yasgui .yasr .errorResult .redOutline { background: var(--lodam-charcoal); color: var(--lodam-chalk-white); border-color: var(--lodam-terracotta); }
+.lodam-yasgui .yasr input,
+.lodam-yasgui .yasr select {
+  background: var(--lodam-deep-umber); color: var(--lodam-chalk-white);
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.35); border-radius: 0.25rem;
+}
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable { background: var(--lodam-charcoal); color: var(--lodam-chalk-white); }
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable tbody tr:nth-child(even) > * { background-color: var(--lodam-stripe); }
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable tbody tr:hover > *,
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable thead tr th:hover { background-color: var(--lodam-row-hover); }
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable thead th { border-bottom: 2px solid rgba(var(--lodam-line-rgb), 0.35); }
+.lodam-yasgui .yasr .dataTables_wrapper .dataTable td .tableEllipse { background-color: rgba(var(--lodam-link-rgb), 0.25); }
+/* Pagination: DataTables sets the button colours with !important (inherit, and grey for
+   disabled buttons), so the colour comes from the container, and disabled needs !important */
+.lodam-yasgui .yasr div.dt-container .dt-paging { color: var(--lodam-chalk-white); }
+.lodam-yasgui .yasr div.dt-container .dt-paging .dt-paging-button.disabled { color: var(--lodam-text-secondary) !important; }
+.lodam-yasgui .yasr div.dt-container .dt-paging .dt-paging-button.current { background: var(--lodam-charcoal); border-color: rgba(var(--lodam-line-rgb), 0.35); }
+/* their hover text is white (!important): a dark umber background in both modes */
+.lodam-yasgui .yasr div.dt-container .dt-paging .dt-paging-button:not(.disabled):hover { background: #4A3F32; border-color: #4A3F32; }
+.lodam-yasgui .yasr .yasr_results .CodeMirror { background: var(--lodam-code-bg); color: var(--lodam-code-text); }
+.lodam-yasgui .yasr .yasr_results .CodeMirror.overflow::before { background: linear-gradient(#0000 0%, #1E1A14aa 75%, #1E1A14 100%); }
+.lodam-yasgui .yasr .yasr_results .overlay_content { background: linear-gradient(90deg, #0000, var(--lodam-deep-umber) 5% 95%, #0000 100%); }
+.lodam-yasgui .yasr .yasr_results .yasr_btn.overlay_btn { background: var(--lodam-charcoal); color: var(--lodam-terracotta-light); border-color: var(--lodam-terracotta-light); }
+/* Wide results scroll sideways inside the editor area, not the page */
+.lodam-yasgui .yasr .yasr_results { overflow-x: auto; }
+
+/* ---------------------------------------------------------------------------
+ * Site search (Pagefind UI, /search/ and the navbar field, planning#17)
+ * ------------------------------------------------------------------------- */
+.lodam-search {
+  --pagefind-ui-primary: var(--lodam-terracotta-light);
+  --pagefind-ui-text: var(--lodam-chalk-white);
+  --pagefind-ui-background: var(--lodam-charcoal);
+  --pagefind-ui-border: rgba(var(--lodam-line-rgb), 0.3);
+  --pagefind-ui-tag: var(--lodam-charcoal);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 0.375rem;
+  --pagefind-ui-font: inherit;
+}
+.lodam-search .pagefind-ui__search-input { color: var(--lodam-chalk-white); }
+.lodam-search .pagefind-ui__search-input::placeholder { color: var(--lodam-text-secondary); opacity: 1; }
+/* Pagefind's rules have four classes (two of them generated): the same specificity here,
+   and theme.css comes later */
+.lodam-search .pagefind-ui .pagefind-ui__result-title .pagefind-ui__result-link,
+.lodam-search .pagefind-ui .pagefind-ui__result-nested .pagefind-ui__result-link { color: var(--lodam-terracotta-light); }
+.lodam-search .pagefind-ui .pagefind-ui__result-title .pagefind-ui__result-link:hover,
+.lodam-search .pagefind-ui .pagefind-ui__result-nested .pagefind-ui__result-link:hover { color: var(--lodam-terracotta-pale); }
+.lodam-search .pagefind-ui__result-excerpt,
+.lodam-search .pagefind-ui__message,
+.lodam-search .pagefind-ui__filter-name,
+.lodam-search .pagefind-ui__filter-label,
+.lodam-search .pagefind-ui__filter-value,
+.lodam-search .pagefind-ui__button { color: var(--lodam-chalk-white); }
+.lodam-search .pagefind-ui__result-excerpt mark { background: rgba(230, 184, 92, 0.3); color: inherit; padding: 0 0.1em; }
+.lodam-search .pagefind-ui__button { background: var(--lodam-charcoal); border-color: rgba(var(--lodam-line-rgb), 0.3); }
+.lodam-search .pagefind-ui__search-clear { background: transparent; border: none; color: var(--lodam-chalk-white); }
+/* navbar field: on the terracotta bar in both modes */
+.site-search .form-control {
+  width: 12rem;
+  background: rgba(26, 22, 17, 0.35);
+  border-color: rgba(245, 240, 230, 0.45);
+  color: var(--lodam-on-accent);
+}
+.site-search .form-control::placeholder { color: rgba(245, 240, 230, 0.85); opacity: 1; }
+.site-search__btn { color: var(--lodam-on-accent); border-color: rgba(245, 240, 230, 0.45); }
+.site-search__btn:hover { color: var(--lodam-on-accent); background: var(--lodam-terracotta-deeper); }
+@media (max-width: 991.98px) { .site-search .form-control { width: 100%; } }

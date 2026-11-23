@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>(function(){var t;try{t=localStorage.getItem("lodam-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-bs-theme",t)})();</script>
+		<title>Example queries · LOD-AM</title>
+		<meta name="description" content="Example SPARQL queries that answer research questions on the released LOD-AM data, ready to open in the query editor.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/query/examples/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Example queries · LOD-AM">
+		<meta property="og:description" content="Example SPARQL queries that answer research questions on the released LOD-AM data, ready to open in the query editor.">
+		<meta property="og:url" content="https://lod-am.net/query/examples/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Example queries · LOD-AM">
+		<meta name="twitter:description" content="Example SPARQL queries that answer research questions on the released LOD-AM data, ready to open in the query editor.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css?v=01da40bd11">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}</style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button type="button" class="btn btn-sm theme-toggle ms-auto me-2 order-lg-last ms-lg-2 me-lg-0" id="theme-toggle" aria-label="Switch between light and dark mode" hidden="">
+					<span class="icon-sun"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"></path>
+</svg></span><span class="icon-moon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"></path>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"></path>
+</svg></span>
+				</button>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="true">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg></button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					
+<div class="entity">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › <a href="/query/">SPARQL query</a> › Examples</nav>
+  <h1 class="mb-3" id="example-queries">Example queries</h1>
+  <div class="reading-column ms-0">
+    <p>Each query answers a research question on the released data. Open it in the <a href="/query/">query editor</a>
+    to run it, change it or download the result. The queries follow the
+    <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>; values are
+    returned as reported in the publications.</p>
+    <ol class="entity-list">
+      <li><a href="#lead-isotopes-of-a-site">Lead isotope ratios of the finds from a site</a></li>
+      <li><a href="#finds-of-a-type">Finds of a type, with material, context and dating</a></li>
+      <li><a href="#element-not-detected">Analyses in which an element was not detected</a></li>
+      <li><a href="#arsenic-of-a-phase">Arsenic contents of the finds from contexts of one phase</a></li>
+      <li><a href="#records-of-a-publication">Records documented in a publication</a></li>
+      <li><a href="#typology-and-aat">Types of the LOD-AM typology and their Getty AAT matches</a></li>
+    </ol>
+  </div>
+  <section class="mt-5" aria-labelledby="lead-isotopes-of-a-site">
+    <h2 id="lead-isotopes-of-a-site" class="h4">Lead isotope ratios of the finds from a site</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">Which lead isotope ratios have been reported for the finds from Arslantepe, and in which context was each find made?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?find</code>, <code>?findNumber</code>, <code>?context</code>, <code>?isotope</code>, <code>?reference</code>, <code>?ratio</code>. Conventions: finds and their contexts (features, finds without a feature), sampling, lead isotope ratios.</p><p class="small text-body-secondary mb-2">Note: change the site name to query another site. Ratios as reported (dimensionless). A find made in a feature of a feature (a grave in a kurgan) is found through crm:P46i_forms_part_of+.</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20crm%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2F%3E%0APREFIX%20crmsci%3A%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmsci%2F%3E%0APREFIX%20crmarchaeo%3A%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmarchaeo%2F%3E%0APREFIX%20afx%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fproperty%23%3E%0APREFIX%20afr%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fresult%23%3E%0APREFIX%20qudt%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%23%3E%0APREFIX%20rdfs%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX%20wd%3A%20%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%0A%0ASELECT%20%3Ffind%20%3FfindNumber%20%3Fcontext%20%3Fisotope%20%3Freference%20%3Fratio%20WHERE%20%7B%0A%20%20%3Fsite%20a%20crm%3AE27_Site%20%3B%20rdfs%3Alabel%20%22Arslantepe%22%40en%20.%0A%20%20%23%20The%20find&#39;s%20context%3A%20a%20feature%20of%20the%20site%2C%20or%20(finds%20without%20a%20feature)%20the%20site&#39;s%20place%0A%20%20%7B%0A%20%20%20%20%3Ffeature%20crm%3AP46i_forms_part_of%2B%20%3Fsite%20.%0A%20%20%20%20%3Ffind%20crmarchaeo%3AAP21i_is_contained_in%20%3Ffeature%20.%0A%20%20%20%20%3Ffeature%20rdfs%3Alabel%20%3Fcontext%20.%20FILTER%20(lang(%3Fcontext)%20%3D%20%22en%22)%0A%20%20%7D%20UNION%20%7B%0A%20%20%20%20%3Fsite%20crm%3AP53_has_former_or_current_location%20%3Fplace%20.%0A%20%20%20%20%3Ffind%20crm%3AP53_has_former_or_current_location%20%3Fplace%20.%0A%20%20%20%20BIND%20(%22(site%2C%20no%20feature)%22%20AS%20%3Fcontext)%0A%20%20%7D%0A%20%20%3Ffind%20a%20crm%3AE22_Human-Made_Object%20.%0A%20%20OPTIONAL%20%7B%20%3Ffind%20crm%3AP1_is_identified_by%2Fcrm%3AP190_has_symbolic_content%20%3FfindNumber%20%7D%0A%20%20%23%20find%20-%3E%20sampling%20-%3E%20sample%20-%3E%20analysis%20-%3E%20its%20results%0A%20%20%3Fsampling%20crmsci%3AO3_sampled_from%20%3Ffind%20%3B%20crmsci%3AO5_removed%20%3Fsample%20.%0A%20%20%3Fanalysis%20afx%3AAFX_0000399%20%3Fsample%20%3B%20afx%3AAFX_0000395%20%3Fresult%20.%0A%20%20%3Fresult%20a%20afr%3AAFR_0002368%20%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20analyte%20molar%20ratio%0A%20%20%20%20%20%20%20%20%20%20afx%3AAFX_0002816%20%3Fnuclide%20%3B%20%20%20%20%20%20%20%20%20%20%23%20analyte%20(numerator)%0A%20%20%20%20%20%20%20%20%20%20afx%3AAFX_0001550%20%3FreferenceNuclide%20%3B%20%23%20reference%20(denominator)%0A%20%20%20%20%20%20%20%20%20%20qudt%3AnumericValue%20%3Fratio%20.%0A%20%20VALUES%20(%3Fnuclide%20%3Fisotope)%20%7B%20(wd%3AQ18883429%20%22lead-204%22)%20(wd%3AQ18883438%20%22lead-206%22)%20(wd%3AQ18883443%20%22lead-207%22)%20(wd%3AQ16670466%20%22lead-208%22)%20%7D%0A%20%20VALUES%20(%3FreferenceNuclide%20%3Freference)%20%7B%20(wd%3AQ18883429%20%22lead-204%22)%20(wd%3AQ18883438%20%22lead-206%22)%20(wd%3AQ18883443%20%22lead-207%22)%20(wd%3AQ16670466%20%22lead-208%22)%20%7D%0A%7D%0AORDER%20BY%20%3FfindNumber%20%3Fisotope%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/01-lead-isotopes-of-a-site.rq">Source (01-lead-isotopes-of-a-site.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/cidoc-crm/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span></span>     <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmsci/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmarchaeo/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/property#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/result#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://qudt.org/schema/qudt#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2000/01/rdf-schema#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span></span>         <span class="token url"><span class="token punctuation">&lt;</span>http://www.wikidata.org/entity/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?find</span> <span class="token variable">?findNumber</span> <span class="token variable">?context</span> <span class="token variable">?isotope</span> <span class="token variable">?reference</span> <span class="token variable">?ratio</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?site</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E27_Site</span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Arslantepe"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+  <span class="token comment"># The find's context: a feature of the site, or (finds without a feature) the site's place</span>
+  <span class="token punctuation">{</span>
+    <span class="token variable">?feature</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P46i_forms_part_of</span></span>+ <span class="token variable">?site</span> <span class="token punctuation">.</span>
+    <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span><span class="token local-name">AP21i_is_contained_in</span></span> <span class="token variable">?feature</span> <span class="token punctuation">.</span>
+    <span class="token variable">?feature</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token variable">?context</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?context</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">UNION</span> <span class="token punctuation">{</span>
+    <span class="token variable">?site</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P53_has_former_or_current_location</span></span> <span class="token variable">?place</span> <span class="token punctuation">.</span>
+    <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P53_has_former_or_current_location</span></span> <span class="token variable">?place</span> <span class="token punctuation">.</span>
+    <span class="token keyword">BIND</span> <span class="token punctuation">(</span><span class="token string">"(site, no feature)"</span> <span class="token keyword">AS</span> <span class="token variable">?context</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token variable">?find</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E22_Human-Made_Object</span></span> <span class="token punctuation">.</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P1_is_identified_by</span></span>/<span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P190_has_symbolic_content</span></span> <span class="token variable">?findNumber</span> <span class="token punctuation">}</span>
+  <span class="token comment"># find -> sampling -> sample -> analysis -> its results</span>
+  <span class="token variable">?sampling</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O3_sampled_from</span></span> <span class="token variable">?find</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O5_removed</span></span> <span class="token variable">?sample</span> <span class="token punctuation">.</span>
+  <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000399</span></span> <span class="token variable">?sample</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000395</span></span> <span class="token variable">?result</span> <span class="token punctuation">.</span>
+  <span class="token variable">?result</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span><span class="token local-name">AFR_0002368</span></span> <span class="token punctuation">;</span>                 <span class="token comment"># analyte molar ratio</span>
+          <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0002816</span></span> <span class="token variable">?nuclide</span> <span class="token punctuation">;</span>          <span class="token comment"># analyte (numerator)</span>
+          <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0001550</span></span> <span class="token variable">?referenceNuclide</span> <span class="token punctuation">;</span> <span class="token comment"># reference (denominator)</span>
+          <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span><span class="token local-name">numericValue</span></span> <span class="token variable">?ratio</span> <span class="token punctuation">.</span>
+  <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token variable">?nuclide</span> <span class="token variable">?isotope</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883429</span></span> <span class="token string">"lead-204"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883438</span></span> <span class="token string">"lead-206"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883443</span></span> <span class="token string">"lead-207"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q16670466</span></span> <span class="token string">"lead-208"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token variable">?referenceNuclide</span> <span class="token variable">?reference</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883429</span></span> <span class="token string">"lead-204"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883438</span></span> <span class="token string">"lead-206"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q18883443</span></span> <span class="token string">"lead-207"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">wd<span class="token punctuation">:</span></span><span class="token local-name">Q16670466</span></span> <span class="token string">"lead-208"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?findNumber</span> <span class="token variable">?isotope</span></code></pre>
+  </section>
+  <section class="mt-5" aria-labelledby="finds-of-a-type">
+    <h2 id="finds-of-a-type" class="h4">Finds of a type, with material, context and dating</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">Which awls are there, what are they made of, where were they found and to which phase does their context date?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?find</code>, <code>?findNumber</code>, <code>?material</code>, <code>?feature</code>, <code>?phase</code>. Conventions: typology (SKOS), finds and their contexts, dating of contexts (not of objects).</p><p class="small text-body-secondary mb-2">Note: change the type label (&quot;awl&quot;@en; German labels such as &quot;Pfriem&quot;@de work too). Material is a Getty AAT concept.</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20crm%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2F%3E%0APREFIX%20crmarchaeo%3A%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmarchaeo%2F%3E%0APREFIX%20rdfs%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX%20skos%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT%20%3Ffind%20%3FfindNumber%20%3Fmaterial%20%3Ffeature%20%3Fphase%20WHERE%20%7B%0A%20%20%3Ftype%20skos%3AinScheme%20%3Chttps%3A%2F%2Flod-am.net%2Fid%2Ftypology%3E%20%3B%20skos%3AprefLabel%20%22awl%22%40en%20.%0A%20%20%3Ffind%20a%20crm%3AE22_Human-Made_Object%20%3B%20crm%3AP2_has_type%20%3Ftype%20.%0A%20%20OPTIONAL%20%7B%20%3Ffind%20crm%3AP1_is_identified_by%2Fcrm%3AP190_has_symbolic_content%20%3FfindNumber%20%7D%0A%20%20OPTIONAL%20%7B%20%3Ffind%20crm%3AP45_consists_of%20%3Fmaterial%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Ffind%20crmarchaeo%3AAP21i_is_contained_in%20%3Ff%20.%0A%20%20%20%20%3Ff%20rdfs%3Alabel%20%3Ffeature%20.%20FILTER%20(lang(%3Ffeature)%20%3D%20%22en%22)%0A%20%20%20%20%23%20a%20context%20is%20dated%2C%20the%20find%20through%20its%20context%0A%20%20%20%20OPTIONAL%20%7B%20%3Ff%20crm%3AP8i_witnessed%2Frdfs%3Alabel%20%3Fphase%20.%20FILTER%20(lang(%3Fphase)%20%3D%20%22en%22)%20%7D%0A%20%20%7D%0A%7D%0AORDER%20BY%20%3FfindNumber%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/02-finds-of-a-type.rq">Source (02-finds-of-a-type.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/cidoc-crm/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmarchaeo/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2000/01/rdf-schema#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2004/02/skos/core#<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?find</span> <span class="token variable">?findNumber</span> <span class="token variable">?material</span> <span class="token variable">?feature</span> <span class="token variable">?phase</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?type</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">inScheme</span></span> <span class="token url"><span class="token punctuation">&lt;</span>https://lod-am.net/id/typology<span class="token punctuation">></span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">prefLabel</span></span> <span class="token string">"awl"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+  <span class="token variable">?find</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E22_Human-Made_Object</span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P2_has_type</span></span> <span class="token variable">?type</span> <span class="token punctuation">.</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P1_is_identified_by</span></span>/<span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P190_has_symbolic_content</span></span> <span class="token variable">?findNumber</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P45_consists_of</span></span> <span class="token variable">?material</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span>
+    <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span><span class="token local-name">AP21i_is_contained_in</span></span> <span class="token variable">?f</span> <span class="token punctuation">.</span>
+    <span class="token variable">?f</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token variable">?feature</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?feature</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span>
+    <span class="token comment"># a context is dated, the find through its context</span>
+    <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?f</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P8i_witnessed</span></span>/<span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token variable">?phase</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?phase</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?findNumber</span></code></pre>
+  </section>
+  <section class="mt-5" aria-labelledby="element-not-detected">
+    <h2 id="element-not-detected" class="h4">Analyses in which an element was not detected</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">In which chemical analyses was tin looked for but not detected?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?analysis</code>, <code>?label</code>, <code>?object</code>. Conventions: chemical composition, &quot;not detected&quot; (lod-am:not_detected) as distinct from &quot;not analysed&quot;.</p><p class="small text-body-secondary mb-2">Note: &quot;Not detected&quot; is a result without a value, typed lod-am:not_detected. An element that was not analysed has no result at all, so it doesn&#39;t appear here. Elements are ChEBI atoms (tin = CHEBI_27007, arsenic = CHEBI_27563, lead = CHEBI_25016).</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20crm%3A%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2F%3E%0APREFIX%20crmsci%3A%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmsci%2F%3E%0APREFIX%20afx%3A%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fproperty%23%3E%0APREFIX%20afr%3A%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fresult%23%3E%0APREFIX%20rdfs%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX%20obo%3A%20%20%20%20%3Chttp%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F%3E%0A%0ASELECT%20%3Fanalysis%20%3Flabel%20%3Fobject%20WHERE%20%7B%0A%20%20%3Fresult%20a%20afr%3AAFR_0002099%20%3B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20mass%20fraction%0A%20%20%20%20%20%20%20%20%20%20afx%3AAFX_0002816%20obo%3ACHEBI_27007%20%3B%20%20%20%23%20tin%0A%20%20%20%20%20%20%20%20%20%20crm%3AP2_has_type%20%3Chttps%3A%2F%2Flod-am.net%2Fid%2Fnot_detected%3E%20.%0A%20%20%3Fanalysis%20afx%3AAFX_0000395%20%3Fresult%20%3B%20rdfs%3Alabel%20%3Flabel%20.%20FILTER%20(lang(%3Flabel)%20%3D%20%22en%22)%0A%20%20%3Fanalysis%20afx%3AAFX_0000399%20%3Fsample%20.%0A%20%20%3Fsampling%20crmsci%3AO5_removed%20%3Fsample%20%3B%20crmsci%3AO3_sampled_from%20%3Fobject%20.%0A%7D%0AORDER%20BY%20%3Flabel%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/03-element-not-detected.rq">Source (03-element-not-detected.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span></span>    <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/cidoc-crm/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmsci/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span></span>    <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/property#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span></span>    <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/result#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span></span>   <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2000/01/rdf-schema#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">obo<span class="token punctuation">:</span></span></span>    <span class="token url"><span class="token punctuation">&lt;</span>http://purl.obolibrary.org/obo/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?analysis</span> <span class="token variable">?label</span> <span class="token variable">?object</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?result</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span><span class="token local-name">AFR_0002099</span></span> <span class="token punctuation">;</span>                 <span class="token comment"># mass fraction</span>
+          <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0002816</span></span> <span class="token function"><span class="token prefix">obo<span class="token punctuation">:</span></span><span class="token local-name">CHEBI_27007</span></span> <span class="token punctuation">;</span>   <span class="token comment"># tin</span>
+          <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P2_has_type</span></span> <span class="token url"><span class="token punctuation">&lt;</span>https://lod-am.net/id/not_detected<span class="token punctuation">></span></span> <span class="token punctuation">.</span>
+  <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000395</span></span> <span class="token variable">?result</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token variable">?label</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?label</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span>
+  <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000399</span></span> <span class="token variable">?sample</span> <span class="token punctuation">.</span>
+  <span class="token variable">?sampling</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O5_removed</span></span> <span class="token variable">?sample</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O3_sampled_from</span></span> <span class="token variable">?object</span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?label</span></code></pre>
+  </section>
+  <section class="mt-5" aria-labelledby="arsenic-of-a-phase">
+    <h2 id="arsenic-of-a-phase" class="h4">Arsenic contents of the finds from contexts of one phase</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">Which arsenic contents have been reported for finds from contexts dated to Arslantepe VIB1, and in which publication?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?find</code>, <code>?findNumber</code>, <code>?context</code>, <code>?arsenic</code>, <code>?upperLimit</code>, <code>?notDetected</code>, <code>?unit</code>, <code>?publication</code>. Conventions: dating of contexts, chemical composition, &quot;not detected&quot;, upper limits (&quot;&lt; x&quot;).</p><p class="small text-body-secondary mb-2">Note: values as reported (mass fraction, unit as given). Exactly one of arsenic, upperLimit and notDetected is set per row. Finds without a feature are dated through their site.</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20crm%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2F%3E%0APREFIX%20crmsci%3A%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmsci%2F%3E%0APREFIX%20crmarchaeo%3A%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fextensions%2Fcrmarchaeo%2F%3E%0APREFIX%20afx%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fproperty%23%3E%0APREFIX%20afr%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fresult%23%3E%0APREFIX%20qudt%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fqudt.org%2Fschema%2Fqudt%23%3E%0APREFIX%20rdfs%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX%20dcterms%3A%20%20%20%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX%20obo%3A%20%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F%3E%0A%0ASELECT%20%3Ffind%20%3FfindNumber%20%3Fcontext%20%3Farsenic%20%3FupperLimit%20%3FnotDetected%20%3Funit%20%3Fpublication%20WHERE%20%7B%0A%20%20%3Fphase%20a%20crm%3AE4_Period%20%3B%20rdfs%3Alabel%20%22Arslantepe%20VIB1%22%40en%20.%0A%20%20%3Fctx%20crm%3AP8i_witnessed%20%3Fphase%20%3B%20rdfs%3Alabel%20%3Fcontext%20.%20FILTER%20(lang(%3Fcontext)%20%3D%20%22en%22)%0A%20%20%7B%20%3Ffind%20crmarchaeo%3AAP21i_is_contained_in%20%3Fctx%20%7D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20a%20feature%0A%20%20UNION%0A%20%20%7B%20%3Fctx%20crm%3AP53_has_former_or_current_location%20%3Fplace%20.%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20a%20site%20(finds%20without%20a%20feature)%0A%20%20%20%20%3Ffind%20crm%3AP53_has_former_or_current_location%20%3Fplace%20%7D%0A%20%20%3Ffind%20a%20crm%3AE22_Human-Made_Object%20.%0A%20%20OPTIONAL%20%7B%20%3Ffind%20crm%3AP1_is_identified_by%2Fcrm%3AP190_has_symbolic_content%20%3FfindNumber%20%7D%0A%20%20%3Fsampling%20crmsci%3AO3_sampled_from%20%3Ffind%20%3B%20crmsci%3AO5_removed%20%3Fsample%20.%0A%20%20%3Fanalysis%20afx%3AAFX_0000399%20%3Fsample%20%3B%20afx%3AAFX_0000395%20%3Fresult%20.%0A%20%20%3Fresult%20a%20afr%3AAFR_0002099%20%3B%20afx%3AAFX_0002816%20obo%3ACHEBI_27563%20.%20%20%20%20%20%20%20%20%23%20arsenic%0A%20%20OPTIONAL%20%7B%20%3Fresult%20qudt%3AnumericValue%20%3Farsenic%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fresult%20afx%3AAFX_0000331%2Fqudt%3AnumericValue%20%3FupperLimit%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fresult%20crm%3AP2_has_type%20%3Chttps%3A%2F%2Flod-am.net%2Fid%2Fnot_detected%3E%20.%20BIND%20(true%20AS%20%3FnotDetected)%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fresult%20qudt%3Aunit%20%3Funit%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fanalysis%20crm%3AP70i_is_documented_in%2Fdcterms%3Aidentifier%20%3Fpublication%20%7D%0A%7D%0AORDER%20BY%20%3FfindNumber%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/04-arsenic-of-a-phase.rq">Source (04-arsenic-of-a-phase.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/cidoc-crm/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span></span>     <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmsci/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/extensions/crmarchaeo/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/property#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/result#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://qudt.org/schema/qudt#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span></span>       <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2000/01/rdf-schema#<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span></span>    <span class="token url"><span class="token punctuation">&lt;</span>http://purl.org/dc/terms/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">obo<span class="token punctuation">:</span></span></span>        <span class="token url"><span class="token punctuation">&lt;</span>http://purl.obolibrary.org/obo/<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?find</span> <span class="token variable">?findNumber</span> <span class="token variable">?context</span> <span class="token variable">?arsenic</span> <span class="token variable">?upperLimit</span> <span class="token variable">?notDetected</span> <span class="token variable">?unit</span> <span class="token variable">?publication</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?phase</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E4_Period</span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token string">"Arslantepe VIB1"</span><span class="token tag"><span class="token punctuation">@</span>en</span> <span class="token punctuation">.</span>
+  <span class="token variable">?ctx</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P8i_witnessed</span></span> <span class="token variable">?phase</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">rdfs<span class="token punctuation">:</span></span><span class="token local-name">label</span></span> <span class="token variable">?context</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?context</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crmarchaeo<span class="token punctuation">:</span></span><span class="token local-name">AP21i_is_contained_in</span></span> <span class="token variable">?ctx</span> <span class="token punctuation">}</span>                       <span class="token comment"># a feature</span>
+  <span class="token keyword">UNION</span>
+  <span class="token punctuation">{</span> <span class="token variable">?ctx</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P53_has_former_or_current_location</span></span> <span class="token variable">?place</span> <span class="token punctuation">.</span>               <span class="token comment"># a site (finds without a feature)</span>
+    <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P53_has_former_or_current_location</span></span> <span class="token variable">?place</span> <span class="token punctuation">}</span>
+  <span class="token variable">?find</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E22_Human-Made_Object</span></span> <span class="token punctuation">.</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P1_is_identified_by</span></span>/<span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P190_has_symbolic_content</span></span> <span class="token variable">?findNumber</span> <span class="token punctuation">}</span>
+  <span class="token variable">?sampling</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O3_sampled_from</span></span> <span class="token variable">?find</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">crmsci<span class="token punctuation">:</span></span><span class="token local-name">O5_removed</span></span> <span class="token variable">?sample</span> <span class="token punctuation">.</span>
+  <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000399</span></span> <span class="token variable">?sample</span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000395</span></span> <span class="token variable">?result</span> <span class="token punctuation">.</span>
+  <span class="token variable">?result</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">afr<span class="token punctuation">:</span></span><span class="token local-name">AFR_0002099</span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0002816</span></span> <span class="token function"><span class="token prefix">obo<span class="token punctuation">:</span></span><span class="token local-name">CHEBI_27563</span></span> <span class="token punctuation">.</span>        <span class="token comment"># arsenic</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?result</span> <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span><span class="token local-name">numericValue</span></span> <span class="token variable">?arsenic</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?result</span> <span class="token function"><span class="token prefix">afx<span class="token punctuation">:</span></span><span class="token local-name">AFX_0000331</span></span>/<span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span><span class="token local-name">numericValue</span></span> <span class="token variable">?upperLimit</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?result</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P2_has_type</span></span> <span class="token url"><span class="token punctuation">&lt;</span>https://lod-am.net/id/not_detected<span class="token punctuation">></span></span> <span class="token punctuation">.</span> <span class="token keyword">BIND</span> <span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token keyword">AS</span> <span class="token variable">?notDetected</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?result</span> <span class="token function"><span class="token prefix">qudt<span class="token punctuation">:</span></span><span class="token local-name">unit</span></span> <span class="token variable">?unit</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P70i_is_documented_in</span></span>/<span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">identifier</span></span> <span class="token variable">?publication</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?findNumber</span></code></pre>
+  </section>
+  <section class="mt-5" aria-labelledby="records-of-a-publication">
+    <h2 id="records-of-a-publication" class="h4">Records documented in a publication</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">How many finds and analyses does each released publication document, and what is its DOI?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?publication</code>, <code>?citationKey</code>, <code>?doi</code>, <code>?finds</code>, <code>?analyses</code>. Conventions: literature (FaBiO, citation keys), finds and analyses documented in a publication.</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20crm%3A%20%20%20%20%20%3Chttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2F%3E%0APREFIX%20dcterms%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX%20prism%3A%20%20%20%3Chttp%3A%2F%2Fprismstandard.org%2Fnamespaces%2Fbasic%2F2.0%2F%3E%0APREFIX%20afp%3A%20%20%20%20%20%3Chttp%3A%2F%2Fpurl.allotrope.org%2Fontologies%2Fprocess%23%3E%0A%0ASELECT%20%3Fpublication%20%3FcitationKey%20%3Fdoi%20(COUNT(DISTINCT%20%3Ffind)%20AS%20%3Ffinds)%20(COUNT(DISTINCT%20%3Fanalysis)%20AS%20%3Fanalyses)%20WHERE%20%7B%0A%20%20%3Fpublication%20a%20crm%3AE31_Document%20%3B%20dcterms%3Aidentifier%20%3FcitationKey%20.%0A%20%20OPTIONAL%20%7B%20%3Fpublication%20prism%3Adoi%20%3Fdoi%20%7D%0A%20%20OPTIONAL%20%7B%20%3Ffind%20crm%3AP70i_is_documented_in%20%3Fpublication%20%3B%20a%20crm%3AE22_Human-Made_Object%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fanalysis%20crm%3AP70i_is_documented_in%20%3Fpublication%20%3B%20a%20crm%3AE7_Activity%20%7D%0A%7D%0AGROUP%20BY%20%3Fpublication%20%3FcitationKey%20%3Fdoi%0AORDER%20BY%20%3FcitationKey%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/05-records-of-a-publication.rq">Source (05-records-of-a-publication.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span></span>     <span class="token url"><span class="token punctuation">&lt;</span>http://www.cidoc-crm.org/cidoc-crm/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://purl.org/dc/terms/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">prism<span class="token punctuation">:</span></span></span>   <span class="token url"><span class="token punctuation">&lt;</span>http://prismstandard.org/namespaces/basic/2.0/<span class="token punctuation">></span></span>
+<span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">afp<span class="token punctuation">:</span></span></span>     <span class="token url"><span class="token punctuation">&lt;</span>http://purl.allotrope.org/ontologies/process#<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?publication</span> <span class="token variable">?citationKey</span> <span class="token variable">?doi</span> <span class="token punctuation">(</span><span class="token keyword">COUNT</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> <span class="token variable">?find</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token variable">?finds</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token keyword">COUNT</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> <span class="token variable">?analysis</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token variable">?analyses</span><span class="token punctuation">)</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?publication</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E31_Document</span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">dcterms<span class="token punctuation">:</span></span><span class="token local-name">identifier</span></span> <span class="token variable">?citationKey</span> <span class="token punctuation">.</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?publication</span> <span class="token function"><span class="token prefix">prism<span class="token punctuation">:</span></span><span class="token local-name">doi</span></span> <span class="token variable">?doi</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?find</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P70i_is_documented_in</span></span> <span class="token variable">?publication</span> <span class="token punctuation">;</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E22_Human-Made_Object</span></span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?analysis</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">P70i_is_documented_in</span></span> <span class="token variable">?publication</span> <span class="token punctuation">;</span> <span class="token keyword">a</span> <span class="token function"><span class="token prefix">crm<span class="token punctuation">:</span></span><span class="token local-name">E7_Activity</span></span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token variable">?publication</span> <span class="token variable">?citationKey</span> <span class="token variable">?doi</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?citationKey</span></code></pre>
+  </section>
+  <section class="mt-5" aria-labelledby="typology-and-aat">
+    <h2 id="typology-and-aat" class="h4">Types of the LOD-AM typology and their Getty AAT matches</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">Which object types does the LOD-AM typology have, which broader type do they belong to, and how are they matched to the Getty AAT?</p>
+      <p class="small text-body-secondary mb-2">Columns: <code>?type</code>, <code>?label</code>, <code>?broader</code>, <code>?matchKind</code>, <code>?aat</code>. Conventions: typology (SKOS concept scheme), matches to the Getty AAT (closeMatch, broadMatch).</p><p class="small text-body-secondary mb-2">Note: only the types used by released records are in the released data. Types without an AAT match have empty columns.</p>
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%0ASELECT%20%3Ftype%20%3Flabel%20%3Fbroader%20%3FmatchKind%20%3Faat%20WHERE%20%7B%0A%20%20%3Ftype%20skos%3AinScheme%20%3Chttps%3A%2F%2Flod-am.net%2Fid%2Ftypology%3E%20%3B%20skos%3AprefLabel%20%3Flabel%20.%20FILTER%20(lang(%3Flabel)%20%3D%20%22en%22)%0A%20%20OPTIONAL%20%7B%20%3Ftype%20skos%3Abroader%2Fskos%3AprefLabel%20%3Fbroader%20.%20FILTER%20(lang(%3Fbroader)%20%3D%20%22en%22)%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20VALUES%20(%3Fmatch%20%3FmatchKind)%20%7B%20(skos%3AexactMatch%20%22exact%22)%20(skos%3AcloseMatch%20%22close%22)%20(skos%3AbroadMatch%20%22broad%22)%20(skos%3AnarrowMatch%20%22narrow%22)%20%7D%0A%20%20%20%20%3Ftype%20%3Fmatch%20%3Faat%20.%20FILTER%20(STRSTARTS(STR(%3Faat)%2C%20%22http%3A%2F%2Fvocab.getty.edu%2Faat%2F%22))%0A%20%20%7D%0A%7D%0AORDER%20BY%20%3Fbroader%20%3Flabel%0A">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/06-typology-and-aat.rq">Source (06-typology-and-aat.rq)</a></p>
+    <pre class="language-sparql" tabindex="0"><code class="language-sparql"><span class="token keyword">PREFIX</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span></span> <span class="token url"><span class="token punctuation">&lt;</span>http://www.w3.org/2004/02/skos/core#<span class="token punctuation">></span></span>
+
+<span class="token keyword">SELECT</span> <span class="token variable">?type</span> <span class="token variable">?label</span> <span class="token variable">?broader</span> <span class="token variable">?matchKind</span> <span class="token variable">?aat</span> <span class="token keyword">WHERE</span> <span class="token punctuation">{</span>
+  <span class="token variable">?type</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">inScheme</span></span> <span class="token url"><span class="token punctuation">&lt;</span>https://lod-am.net/id/typology<span class="token punctuation">></span></span> <span class="token punctuation">;</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">prefLabel</span></span> <span class="token variable">?label</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?label</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span> <span class="token variable">?type</span> <span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">broader</span></span>/<span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">prefLabel</span></span> <span class="token variable">?broader</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">lang</span><span class="token punctuation">(</span><span class="token variable">?broader</span><span class="token punctuation">)</span> = <span class="token string">"en"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token keyword">OPTIONAL</span> <span class="token punctuation">{</span>
+    <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token variable">?match</span> <span class="token variable">?matchKind</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">exactMatch</span></span> <span class="token string">"exact"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">closeMatch</span></span> <span class="token string">"close"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">broadMatch</span></span> <span class="token string">"broad"</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token function"><span class="token prefix">skos<span class="token punctuation">:</span></span><span class="token local-name">narrowMatch</span></span> <span class="token string">"narrow"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token variable">?type</span> <span class="token variable">?match</span> <span class="token variable">?aat</span> <span class="token punctuation">.</span> <span class="token keyword">FILTER</span> <span class="token punctuation">(</span><span class="token keyword">STRSTARTS</span><span class="token punctuation">(</span><span class="token keyword">STR</span><span class="token punctuation">(</span><span class="token variable">?aat</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"http://vocab.getty.edu/aat/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token variable">?broader</span> <span class="token variable">?label</span></code></pre>
+  </section>
+</div>
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center" data-bs-theme="dark">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/theme.js?v=01da40bd11"></script>
+		<script type="module" src=""></script>
+	</body>
+</html>
