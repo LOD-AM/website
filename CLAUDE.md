@@ -51,9 +51,17 @@ remote images). Network errors there are warnings, not build failures.
   summary line, key facts, technical details) and its includes in `_includes/lodam/`: `docs/components.md`.
   Site maps: one relief map of the whole database area (`public/img/maps/overview.webp`, from
   `scripts/map/build_maps.py`, offline; see `data/README.md`) on every site page, markers placed at build time; histograms on the publication analyses page from `_config/charts.js` (static SVG).
+- **Query editor and search** (planning#22, #17): `/query/` is YASGUI (`@zazuko/yasgui`, self-hosted,
+  `public/js/query.js`) fixed to the public read-only endpoint (`_data/metadata.js` `sparqlEndpoint`,
+  triplestore); it sends nothing before "Run", stores nothing, and has the LOV autocompleters and
+  `populateFromUrl` off (both would contact other hosts). `/query/examples/` shows `queries/*.rq`.
+  `/search/` is Pagefind: the `eleventy.after` hook in `eleventy.config.js` indexes posts and record pages
+  (`data-pagefind-body`; filters `kind`, `topic`) into `_site/pagefind/`. `qa.mjs` answers the editor's
+  query with `scripts/qa-query-result.json`, so the checks stay offline.
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
-- `css/theme.css`: the only stylesheet besides Bootstrap. Dark mode by default, light mode
+- `css/theme.css`: the only stylesheet besides Bootstrap (and the vendor sheets of YASGUI and Pagefind,
+  only on their pages, via `pageStylesheet` in front matter). Dark mode by default, light mode
   (owner, 2026-11-19) via `prefers-color-scheme` or the navbar toggle (`public/js/theme.js`, choice only
   in localStorage; the inline head script sets `data-bs-theme` before the first paint and needs
   `eleventy:ignore`, otherwise the JS bundle takes it). LOD-AM palette as theme tokens (one set per mode); style components via Bootstrap's component variables, not
@@ -127,8 +135,9 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - `.ttl` is served as `application/octet-stream` and nginx shows its own 404 page; the fix is in the
   nginx config in `docs/deployment.md` (owner applies it). Content negotiation (RDF per entity) also goes there.
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
-- Before a public SPARQL endpoint or anything that contacts another server:
-  update `privacy.md` with the owner (it covers lod-am.net only).
+- **Query editor and site search** (planning#22, #17; 2026-11-23): `/query/` sends queries to the public endpoint
+  `triple.lod-am.net` on "Run" only. `privacy.md` must cover that host (owner) before it goes live.
+- Anything else that contacts another server: update `privacy.md` with the owner (it covers lod-am.net only).
 
 ## LOD-AM project (shared block: keep identical in every repo)
 Source of truth: knowledge-graph `CLAUDE.md`. Edit it there first, then copy it unchanged; CI (`scripts/check_shared_block.sh`) fails on drift.
