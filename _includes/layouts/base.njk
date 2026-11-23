@@ -10,6 +10,9 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="canonical" href="{{ page.url | htmlBaseUrl(metadata.url) }}" />
+		{%- if page.url == "/data/" %}
+		<link rel="alternate" type="text/turtle" href="/data/void.ttl" title="VoID description of the dataset">
+		{%- endif %}
 		{%- if record and record.files %}
 		<link rel="alternate" type="text/turtle" href="{{ record.files.ttl }}">
 		<link rel="alternate" type="application/ld+json" href="{{ record.files.jsonld }}">
@@ -88,6 +91,7 @@
 							<a class="nav-link dropdown-toggle" href="{{ entry.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% if page.url.startsWith("/data/") or page.url.startsWith("/id/") or page.url.startsWith("/query/") %} aria-current="true"{% endif %}>{{ entry.title }}</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="{{ entry.url }}">Overview</a></li>
+								<li><a class="dropdown-item" href="/data/model/">Data model</a></li>
 								<li><hr class="dropdown-divider"></li>
 								{%- for key in ["site", "find", "analysis", "type", "period", "culture"] %}
 								{%- if lodam.byKind[key].length %}

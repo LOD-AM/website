@@ -1,0 +1,56 @@
+---
+title: "Data model · LOD-AM"
+description: "How the LOD-AM data are modelled: the kinds of records, how they link, and the ontologies and vocabularies they use."
+permalink: /data/model/
+---
+{#- DRAFT by Claude (website#20): the owner reviews the wording. The diagram and the vocabulary
+    list come from _data/dataModel.js; the rules themselves are only in CONVENTIONS.md. -#}
+<div class="entity entity--full">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › Data model</nav>
+  <h1 class="mb-3">Data model</h1>
+  <div class="reading-column ms-0">
+    <p class="lead">Every find, analysis, site and publication is a record with its own IRI under
+    <code>https://lod-am.net/id/</code>. The diagram shows the main kinds of records and how they link.</p>
+    <p>It is an overview for orientation. The modelling rules, with every class and property, are in the
+    <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>.
+    To try the links out, start from the <a href="/query/examples/">example queries</a>.</p>
+  </div>
+
+  <figure class="mt-4" aria-labelledby="model-caption">
+    {% include "lodam/model.njk" %}
+    <figcaption id="model-caption" class="small text-body-secondary mt-2">
+      Boxes with a coloured edge are records with their own pages, each linked to its list; plain boxes are parts of
+      a record (a find's sample, an analysis's measurements); dashed boxes are concepts of other vocabularies. The
+      dashed line is a path the model has but the released data don't use yet: a find known only by its site points
+      to the site's place. Dates belong to contexts: a feature (or a site without features) is dated to a phase, and
+      a find takes the date of its context.
+    </figcaption>
+  </figure>
+
+  <details class="mt-3 reading-column ms-0">
+    <summary>The diagram as text</summary>
+    <ul class="entity-list mt-2">
+      {%- for e in dataModel.edges %}
+      <li>{{ e.fromTitle }} → {{ e.label }} → {{ e.toTitle }} ({% for p in e.props %}<code>{{ p }}</code>{% if not loop.last %} or {% endif %}{% endfor %}){% if e.note %}, {{ e.note }}{% endif %}</li>
+      {%- endfor %}
+    </ul>
+  </details>
+
+  <h2 class="h4 mt-5" id="vocabularies">Ontologies and vocabularies</h2>
+  <p class="reading-column ms-0">The released data use these ontologies and vocabularies. Getty AAT, ChEBI, Wikidata
+  and ROR concepts are reused by their own IRIs. PeriodO and Pleiades are part of the model, but no released record
+  uses them yet.</p>
+  <div class="table-responsive">
+    <table class="table table-sm entity-table model-vocab" aria-labelledby="vocabularies">
+      <thead><tr><th scope="col">Vocabulary, version and namespace</th><th scope="col">Used for</th></tr></thead>
+      <tbody>
+        {%- for v in dataModel.vocabularies %}
+        <tr>
+          <th scope="row">{% if v.url %}<a href="{{ v.url }}">{{ v.name }}</a>{% else %}{{ v.name }}{% endif %}{% if v.version %} <span class="text-body-secondary fw-normal">{{ v.version }}</span>{% endif %}<br><code class="model-ns">{{ v.ns }}</code></th>
+          <td>{{ v.usedFor }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

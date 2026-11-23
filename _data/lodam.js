@@ -9,7 +9,7 @@
 // so nothing is silently dropped.
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { Parser, Writer } from "n3";
+import { Parser, Writer, Store, DataFactory } from "n3";
 import metadata from "./metadata.js";
 import dataReleases from "./dataReleases.js";
 
@@ -719,4 +719,75 @@ if (siteMapData) {
 
 const releasedPublications = publications.filter((p) => p.released);
 
-export default { ID, KINDS, records, byKind, publications, releasedPublications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData ? siteMapData.sources : [], turtleOf, jsonldOf };
+// Full dump and VoID description (website#19). The dump /data/lod-am.ttl is the union of all
+// released files (data/published/*.ttl), each triple once; the vocabularies in data/vocab are not
+// in it (the SPARQL endpoint has them too). /data/void.ttl describes it: one void:Dataset for all
+// released data, one subset per publication. Both are built from the files as released, nothing
+// is changed; npm run check compares them with data/published.
+const dumpStore = new Store();
+for (const d of datasets) dumpStore.addQuads(new Parser().parse(readFileSync(d.source, "utf8")));
+const DUMP_PATH = "/data/lod-am.ttl", VOID_PATH = "/data/void.ttl";
+const abs = (path) => new URL(path.replace(/^\//, ""), metadata.url).href;
+const serialize = (quads, prefixes, header) => {
+	const w = new Writer({ prefixes });
+	w.addQuads(quads);
+	let text = "";
+	w.end((err, result) => { if (err) throw err; text = result; });
+	return `${header}\n\n${text}`;
+};
+function dumpOf() {
+	const qs = dumpStore.getQuads(null, null, null, null);
+	return serialize(qs, usedPrefixes(qs),
+		`# LOD-AM: all released data (${datasets.map((d) => d.key).join(", ")}) · ${metadata.url} · CC BY 4.0\n` +
+		`# ${qs.length} triples. Description: ${abs(VOID_PATH)}`);
+}
+function voidOf() {
+	const { namedNode: N, literal: L, quad: Q } = DataFactory;
+	const V = "http://rdfs.org/ns/void#", XSD = NS.xsd, DC = NS.dcterms, FOAF = NS.foaf;
+	const qs = [];
+	const add = (s, p, o) => qs.push(Q(N(s), N(p), o));
+	const dateLit = (d) => L(d, N(XSD + "date"));
+	const intLit = (n) => L(String(n), N(XSD + "integer"));
+	const all = dumpStore.getQuads(null, null, null, null);
+	const ds = abs("/data/") + "#dataset";
+	const me = abs("/about/") + "#me";
+	const dates = dataReleases.map((r) => r.date).sort();
+	// vocabularies = namespaces of the properties and classes used
+	const used = new Set([...all.map((q) => q.predicate.value), ...all.filter((q) => q.predicate.value === NS.rdf + "type").map((q) => q.object.value)]);
+	const vocabularies = Object.values(NS).filter((ns) => [...used].some((t) => t.startsWith(ns))).sort();
+	const entities = records.filter((r) => dumpStore.countQuads(N(r.iri), null, null, null) > 0).length;
+
+	add(ds, NS.rdf + "type", N(V + "Dataset"));
+	add(ds, DC + "title", L("LOD-AM: archaeometallurgical data on copper-base objects (released publications)", "en"));
+	add(ds, DC + "description", L("Linked Open Data on ancient copper-base metal objects, their contexts and their chemical and lead isotope analyses, compiled from published sources and released one publication at a time. Values are given as reported in the source publications.", "en"));
+	add(ds, DC + "creator", N(me));
+	add(ds, DC + "publisher", N(me));
+	add(ds, DC + "license", N("https://creativecommons.org/licenses/by/4.0/"));
+	if (dates.length) { add(ds, DC + "issued", dateLit(dates[0])); add(ds, DC + "modified", dateLit(dates[dates.length - 1])); }
+	add(ds, FOAF + "homepage", N(abs("/data/")));
+	add(ds, FOAF + "page", N(abs("/data/model/")));
+	add(ds, V + "uriSpace", L(ID));
+	add(ds, V + "dataDump", N(abs(DUMP_PATH)));
+	if (metadata.sparqlEndpoint) add(ds, V + "sparqlEndpoint", N(metadata.sparqlEndpoint));
+	add(ds, V + "feature", N("http://www.w3.org/ns/formats/Turtle"));
+	add(ds, V + "triples", intLit(all.length));
+	add(ds, V + "entities", intLit(entities));
+	for (const ns of vocabularies) add(ds, V + "vocabulary", N(ns));
+	for (const d of datasets) {
+		const sub = `${ds}-${d.key}`;
+		add(ds, V + "subset", N(sub));
+		add(sub, NS.rdf + "type", N(V + "Dataset"));
+		add(sub, DC + "title", L(`Data of ${d.publication ? d.publication.citation : d.key}`, "en"));
+		if (d.publication) add(sub, DC + "source", N(d.publication.iri));
+		if (d.released) add(sub, DC + "issued", dateLit(d.released));
+		add(sub, DC + "license", N("https://creativecommons.org/licenses/by/4.0/"));
+		add(sub, V + "dataDump", N(abs(d.file)));
+		add(sub, V + "triples", intLit(d.triples));
+	}
+	add(me, FOAF + "name", L(metadata.author.name));
+	return serialize(qs, { void: V, dcterms: DC, foaf: FOAF, xsd: XSD },
+		`# VoID description of the LOD-AM data · ${metadata.url} · CC BY 4.0`);
+}
+const dump = { path: DUMP_PATH, voidPath: VOID_PATH, triples: dumpStore.size };
+
+export default { ID, KINDS, records, byKind, publications, releasedPublications, datasets, siteCoords, dataReleases, maps, mapSources: siteMapData ? siteMapData.sources : [], turtleOf, jsonldOf, dump, dumpOf, voidOf };

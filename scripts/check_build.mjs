@@ -7,6 +7,10 @@
 // - every LOD-AM record in data/published/*.ttl (/id/<kind>/<uuid>) has its page, and the
 //   released files are downloadable under /data/
 // - the search index (Pagefind, planning#17) exists and holds every post and record page
+// - every property drawn in the data model diagram and every namespace in its vocabulary list
+//   occurs in the released data (website#20), so the picture can't drift from what is published
+// - the full dump /data/lod-am.ttl holds exactly the triples of data/published/*.ttl, and the VoID
+//   description /data/void.ttl parses and names the dump, each released file and the right counts (website#19)
 import { Parser } from "n3";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
@@ -134,6 +138,46 @@ if (existsSync("data/published")) {
       const page = join(SITE, "id", "site", g[1], "index.html");
       if (existsSync(page) && !readFileSync(page, "utf8").includes('site-map__marker site-map__marker--current')) errors.push(`site page ${g[1]} shows no map`);
     }
+  }
+}
+
+// Data model page (website#20): the diagram and the vocabulary list name only what the released
+// data use. A property drawn but no longer used (or renamed in CONVENTIONS.md) fails here.
+{
+  const { default: model } = await import(new URL("../_data/dataModel.js", import.meta.url));
+  const files = existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : [];
+  const ttl = files.map((f) => readFileSync(join("data/published", f), "utf8")).join("\n");
+  if (ttl) {
+    for (const e of model.edges) for (const p of e.props)
+      if (!ttl.includes(p)) errors.push(`/data/model/: "${e.fromTitle} ${e.label} ${e.toTitle}" uses ${p}, which the released data don't contain`);
+    for (const v of model.vocabularies)
+      if (!ttl.includes(v.ns)) errors.push(`/data/model/: namespace of ${v.name} (${v.ns}) not in the released data`);
+  }
+  if (!existsSync(join(SITE, "data", "model", "index.html"))) errors.push("missing data/model/index.html");
+}
+
+// Full dump and VoID (website#19)
+{
+  const files = existsSync("data/published") ? readdirSync("data/published").filter((f) => f.endsWith(".ttl")) : [];
+  const key = (q) => [q.subject, q.predicate, q.object].map((t) => t.termType === "BlankNode" ? "_" : t.termType + t.value + (t.language || "") + (t.datatype?.value || "")).join(" ");
+  const want = new Set(files.flatMap((f) => new Parser().parse(readFileSync(join("data/published", f), "utf8")).map(key)));
+  const dumpFile = join(SITE, "data", "lod-am.ttl"), voidFile = join(SITE, "data", "void.ttl");
+  if (!existsSync(dumpFile) || !existsSync(voidFile)) errors.push("missing /data/lod-am.ttl or /data/void.ttl");
+  else {
+    try {
+      const got = new Parser().parse(readFileSync(dumpFile, "utf8"));
+      const gotKeys = new Set(got.map(key));
+      const missing = [...want].filter((k) => !gotKeys.has(k)).length, extra = [...gotKeys].filter((k) => !want.has(k)).length;
+      if (missing || extra) errors.push(`/data/lod-am.ttl: ${missing} triples of data/published missing, ${extra} not in data/published`);
+      const v = new Parser().parse(readFileSync(voidFile, "utf8"));
+      const VOID = "http://rdfs.org/ns/void#";
+      const objs = (p) => v.filter((q) => q.predicate.value === VOID + p).map((q) => q.object.value);
+      const ds = "https://lod-am.net/data/#dataset";
+      const top = (p) => v.filter((q) => q.subject.value === ds && q.predicate.value === VOID + p).map((q) => q.object.value);
+      if (!top("dataDump").includes("https://lod-am.net/data/lod-am.ttl")) errors.push("/data/void.ttl: no void:dataDump for lod-am.ttl");
+      if (Number(top("triples")[0]) !== got.length) errors.push(`/data/void.ttl: void:triples ${top("triples")[0]}, the dump has ${got.length}`);
+      for (const f of files) if (!objs("dataDump").includes(`https://lod-am.net/data/${f}`)) errors.push(`/data/void.ttl: no subset with the dump of ${f}`);
+    } catch (e) { errors.push(`/data/lod-am.ttl or /data/void.ttl does not parse (${e.message})`); }
   }
 }
 
