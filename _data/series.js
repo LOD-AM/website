@@ -27,4 +27,16 @@ export default [
 			"Becoming_operational_Arslantepe",
 		],
 	},
+	{
+		id: "goals-reached",
+		title: "Goals Reached",
+		// DRAFT by Claude: the owner rewrites this text.
+		intro: "The goals I set at the start of LOD-AM are reached. This series looks back at them and shows the last pieces: the pipeline, the public triplestore, and a website where you can query, search and cite the data.",
+		parts: [
+			"Goals_reached_Milestone",
+			"Goals_reached_Pipeline",
+			"Goals_reached_Triplestore",
+			"Goals_reached_Website",
+		],
+	},
 ];
