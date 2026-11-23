@@ -3,7 +3,7 @@ title: Goals Reached - From My Research Database to Linked Data
 description: My research database stays private, the released publications go out as Linked Data. How the pipeline in between works.
 date: 2026-11-23
 topics: ["research_data_management", "legacy_data", "rdf"]
-draft: true
+draft: false
 ---
 
 Here’s a question I avoided for a long time: where does the data for LOD-AM actually *come from*? The honest answer is: from my **research database**, which I newly started in spring. A relational database where I collect finds, contexts and analyses from the literature, one publication at a time. It’s my working tool, and it’s full of things that are not ready for the world: half-entered tables, open questions, notes to myself.

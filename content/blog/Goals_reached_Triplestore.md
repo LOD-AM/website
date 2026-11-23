@@ -3,7 +3,7 @@ title: Goals Reached - The Triplestore Goes Public
 description: The LOD-AM triplestore now answers SPARQL queries from everyone, and it updates itself. What changed under my desk.
 date: 2026-11-23
 topics: ["triplestore", "sparql", "self_hosting"]
-draft: true
+draft: false
 ---
 
 Remember the [two old mini PCs under my desk](/blog/The_infrastructure/)? They’re still there, and they’re still doing their job quietly. But since today, one of them does something new: the LOD-AM triplestore answers **SPARQL queries from everyone**.

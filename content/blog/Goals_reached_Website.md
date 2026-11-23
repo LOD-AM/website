@@ -3,7 +3,7 @@ title: Goals Reached - Query, Search and Cite the Data
 description: The LOD-AM website is no longer just a window on the data. You can now query it, search it, download it and cite single records.
 date: 2026-11-23
 topics: ["linked_data", "sparql", "fair_data"]
-draft: true
+draft: false
 ---
 
 When [Arslantepe went online](/blog/Becoming_operational_Arslantepe/) last week, you could look at the data: one page per record, nicely linked. That was already one of my goals. But looking is only half of it. Linked Open Data is meant to be **used**. So in the last days, the website learned a lot of new things.

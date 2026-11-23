@@ -3,7 +3,7 @@ title: Goals Reached - Looking Back at Where I Started
 description: LOD-AM has reached the goals I set at the very beginning. Time to look back at the list, goal by goal.
 date: 2026-11-23
 topics: ["research_data_management", "linked_data", "open_data"]
-draft: true
+draft: false
 ---
 
 Hi again! Today is a good day for LOD-AM. When I started this sandbox back in June, I wrote down a list of goals on the [About page](/about/). I didn’t really expect to tick them off this year, if ever. Well: **we got there.** Apart from a few last points in the automation workflow, every goal on that list is reached.
@@ -14,7 +14,7 @@ That deserves more than a single post. So here is a new series. In this first pa
 
 **Experiment with Linked Open Data for Ancient Metallurgy in a low-pressure sandbox.** Check. And I mean *experiment*: my first prototype used a property that doesn’t even exist in CIDOC CRM 7.1.3 (I [confessed that already](/blog/Becoming_operational_Conventions/)). Failing was allowed, and I used that permission a lot.
 
-**Practice Learning by Doing.** Check, with honours. I learned a whole lot about eleventy, R2RML, SHACL, named graphs and some of the more eleborate features of Git(-hub). Some of it the hard way. 
+**Practice Learning by Doing.** Check, with honours. I learned a whole lot about Eleventy, R2RML, SHACL, named graphs and some of the more elaborate features of Git(-hub). Some of it the hard way. 
 
 **Build an RDF-based triple store to collect and combine archaeometallurgical data from diverse sources.** Check. The triplestore is running, it holds the knowledge graph and the released data, and since today it is **publicly queryable**. "Diverse sources" is still a bit of a promise: so far, one publication is released, with the literature its chronologies come from. But the way from my research database to the triplestore now runs automatically, so the next publications are a question of checking, not of building.
 
