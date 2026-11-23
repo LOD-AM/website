@@ -46,12 +46,14 @@
     "cross-env": "^10.1.0",
     "luxon": "^3.7.2",
     "n3": "^1.26.0",
+    "pagefind": "^1.6.0",
     "prismjs": "^1.30.0",
     "zod": "^4.4.3"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@zachleat/heading-anchors": "^1.0.5",
+    "@zazuko/yasgui": "^4.6.2",
     "bootstrap": "^5.3.8"
   }
 }

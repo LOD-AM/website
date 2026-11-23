@@ -1,0 +1,13 @@
+{
+  "head": { "vars": ["find", "findNumber", "context", "ratio"] },
+  "results": { "bindings": [
+    { "find": { "type": "uri", "value": "https://lod-am.net/id/find/00000000-0000-4000-8000-000000000001" },
+      "findNumber": { "type": "literal", "value": "QA 1" },
+      "context": { "type": "literal", "xml:lang": "en", "value": "Test context" },
+      "ratio": { "type": "literal", "datatype": "http://www.w3.org/2001/XMLSchema#decimal", "value": "0.05295" } },
+    { "find": { "type": "uri", "value": "https://lod-am.net/id/find/00000000-0000-4000-8000-000000000002" },
+      "findNumber": { "type": "literal", "value": "QA 2" },
+      "context": { "type": "literal", "value": "(site, no feature)" },
+      "ratio": { "type": "literal", "datatype": "http://www.w3.org/2001/XMLSchema#decimal", "value": "2.0716" } }
+  ] }
+}

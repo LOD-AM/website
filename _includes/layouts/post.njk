@@ -6,7 +6,7 @@ layout: layouts/base.njk
 <style>{% include "css/prism-diff.css" %}</style>
 
 <div class="reading-column">
-<article class="mb-5">
+<article class="mb-5" data-pagefind-body data-pagefind-filter="kind:Blog post">
   <header class="mb-4">
     <h1 class="display-4">{{ title }}</h1>
     
@@ -21,7 +21,7 @@ layout: layouts/base.njk
     {% if postTopics.length or type %}
     <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
       {% if type %}<span class="post-type">{{ type | postTypeLabel(page.inputPath) }}</span>{% endif %}
-      {% for t in postTopics %}<a href="{{ t.path }}" class="tag" style="{{ t.name | getTagStyle }}">{{ t.label }}</a>{% endfor %}
+      {% for t in postTopics %}<a href="{{ t.path }}" class="tag" data-pagefind-filter="topic" style="{{ t.name | getTagStyle }}">{{ t.label }}</a>{% endfor %}
     </div>
     {% endif %}
     {% if about and about.length %}
@@ -32,7 +32,7 @@ layout: layouts/base.njk
 
     {%- set sr = collections.blog | seriesOf(page.fileSlug) %}
     {%- if sr and sr.index >= 0 %}
-    <details class="series-box">
+    <details class="series-box" data-pagefind-ignore>
       <summary>Part {{ sr.index + 1 }} of {{ sr.parts.length }} in <em>{{ sr.series.title }}</em></summary>
       <ol class="mb-0 mt-2">
         {%- for p in sr.parts %}
@@ -51,7 +51,7 @@ layout: layouts/base.njk
   {% set previousPost = collections.blog | getPreviousCollectionItem %}
   {% set nextPost = collections.blog | getNextCollectionItem %}
   {% if nextPost or previousPost %}
-  <nav aria-label="Post navigation" class="mt-5">
+  <nav aria-label="Post navigation" class="mt-5" data-pagefind-ignore>
     <ul class="pagination flex-column flex-md-row justify-content-center">
       {% if previousPost %}
       <li class="page-item">

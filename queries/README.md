@@ -3,8 +3,10 @@
 Example queries for the LOD-AM data (LOD-AM/planning#24). They answer research questions
 against the released data and follow the patterns of knowledge-graph
 [`CONVENTIONS.md`](https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md).
-They will be shown on the website's query page and examples page once the public SPARQL
-endpoint exists (planning#22). Until then they run in CI only.
+They are shown on the examples page `/query/examples/` (`content/query/examples.njk`, read by
+`_data/exampleQueries.js`), each with a link that opens it in the query editor `/query/`, which
+sends queries to the public endpoint (`sparqlEndpoint` in `_data/metadata.js`; planning#22).
+The examples page shows the query without its header; the header fields become its text.
 
 ## Format
 One query per file, `NN-short-name.rq`, starting with a header of `# key: value` lines:

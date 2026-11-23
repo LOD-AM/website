@@ -1,0 +1,18 @@
+---
+title: "Search · LOD-AM"
+description: "Search the LOD-AM blog and the records of the released data: sites, finds, analyses, types, phases and publications."
+permalink: /search/
+pageStylesheet: /pagefind/pagefind-ui.css
+---
+{#- Site search (planning#17): Pagefind's UI against the index in /pagefind/, built with the
+    site. Runs in the browser; no request to another host. ?q= comes from the navbar form. -#}
+<div class="reading-column ms-0">
+  <h1 class="mb-3">Search</h1>
+  <p class="text-body-secondary">Search the blog and the records of the released data. Names are indexed in all
+  their languages, so <em>Pfriem</em> finds the awls as well. Filter the results by kind of record or by topic.</p>
+  <noscript><p class="data-box series-box">The search needs JavaScript. Without it, browse the
+  <a href="/blog/">blog</a>, the <a href="/topics/">topics</a> or the <a href="/data/">data</a> lists.</p></noscript>
+  <div id="search" class="lodam-search mt-4"></div>
+</div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script src="/js/search.js?v={{ assetVersion }}"></script>

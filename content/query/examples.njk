@@ -1,0 +1,38 @@
+---
+title: "Example queries · LOD-AM"
+description: "Example SPARQL queries that answer research questions on the released LOD-AM data, ready to open in the query editor."
+permalink: /query/examples/
+---
+{#- DRAFT by Claude (planning#22): the owner reviews the wording. The queries and their texts
+    come from queries/*.rq (_data/exampleQueries.js); CI runs each against the released data. -#}
+<style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
+<div class="entity">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › <a href="/query/">SPARQL query</a> › Examples</nav>
+  <h1 class="mb-3">Example queries</h1>
+  <div class="reading-column ms-0">
+    <p>Each query answers a research question on the released data. Open it in the <a href="/query/">query editor</a>
+    to run it, change it or download the result. The queries follow the
+    <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>; values are
+    returned as reported in the publications.</p>
+    <ol class="entity-list">
+      {%- for q in exampleQueries %}
+      <li><a href="#{{ q.slug }}">{{ q.title }}</a></li>
+      {%- endfor %}
+    </ol>
+  </div>
+
+  {%- for q in exampleQueries %}
+  <section class="mt-5" aria-labelledby="{{ q.slug }}">
+    <h2 id="{{ q.slug }}" class="h4">{{ q.title }}</h2>
+    <div class="reading-column ms-0">
+      <p class="mb-2">{{ q.question }}</p>
+      <p class="small text-body-secondary mb-2">Columns: {% for c in q.columns %}<code>?{{ c }}</code>{% if not loop.last %}, {% endif %}{% endfor %}.
+      {%- if q.conventions %} Conventions: {{ q.conventions }}.{% endif %}</p>
+      {%- if q.note %}<p class="small text-body-secondary mb-2">Note: {{ q.note }}</p>{% endif %}
+    </div>
+    <p><a class="btn btn-primary btn-sm" href="/query/?query={{ q.query | urlencode }}">Open in the query editor</a>
+      <a class="btn btn-outline-secondary btn-sm ms-2" href="https://github.com/LOD-AM/website/blob/main/queries/{{ q.file }}">Source ({{ q.file }})</a></p>
+    {% highlight "sparql" %}{{ q.query | safe }}{% endhighlight %}
+  </section>
+  {%- endfor %}
+</div>

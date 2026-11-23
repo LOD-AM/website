@@ -6,6 +6,7 @@
 // - every post page has parseable schema.org JSON-LD (BlogPosting), the home page WebSite
 // - every LOD-AM record in data/published/*.ttl (/id/<kind>/<uuid>) has its page, and the
 //   released files are downloadable under /data/
+// - the search index (Pagefind, planning#17) exists and holds every post and record page
 import { Parser } from "n3";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, extname, basename } from "node:path";
@@ -136,8 +137,22 @@ if (existsSync("data/published")) {
   }
 }
 
+// Site search (planning#17): Pagefind's index, with every post and record page in it
+let indexed = 0;
+{
+  const entry = join(SITE, "pagefind", "pagefind-entry.json");
+  if (!existsSync(entry) || !existsSync(join(SITE, "pagefind", "pagefind-ui.js"))) errors.push("search index missing: pagefind/ (built by the eleventy.after hook)");
+  else {
+    indexed = Object.values(JSON.parse(readFileSync(entry, "utf8")).languages).reduce((n, l) => n + l.page_count, 0);
+    const pages = new Set();
+    for (const kind of existsSync(join(SITE, "id")) ? readdirSync(join(SITE, "id")) : [])
+      for (const e of readdirSync(join(SITE, "id", kind))) if (existsSync(join(SITE, "id", kind, e, "index.html"))) pages.add(`${kind}/${e}`);
+    if (indexed < posts + pages.size) errors.push(`search index holds ${indexed} pages, expected at least ${posts} posts + ${pages.size} records`);
+  }
+}
+
 if (errors.length) {
   console.error(`Build check FAILED (${errors.length}):\n- ` + [...new Set(errors)].join("\n- "));
   process.exit(1);
 }
-console.log(`Build check ok: ${posts} posts, ${records} LOD-AM records with pages, ${links} internal links/assets checked`);
+console.log(`Build check ok: ${posts} posts, ${records} LOD-AM records with pages, ${links} internal links/assets checked, ${indexed} pages in the search index`);

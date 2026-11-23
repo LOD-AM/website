@@ -9,8 +9,8 @@ eleventyComputed:
   title: "{{ record.label | safe }} · {{ record.kindLabel }} · LOD-AM"
   description: "{{ record.description | safe }}"
 ---
-<div class="entity">
-  <nav aria-label="Breadcrumb" class="small mb-2">
+<div class="entity" data-pagefind-body data-pagefind-filter="kind:{{ record.kindLabel }}">
+  <nav aria-label="Breadcrumb" class="small mb-2" data-pagefind-ignore>
     <a href="/data/">Data</a> › <a href="/data/{{ lodam.KINDS[record.kind].slug }}/">{{ lodam.KINDS[record.kind].plural }}</a>
   </nav>
   {%- set entity = { kindLabel: record.kindLabel, label: record.label, summary: record.summary } %}

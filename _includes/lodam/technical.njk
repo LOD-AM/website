@@ -3,11 +3,12 @@
 <section class="entity-technical mt-5" aria-labelledby="technical">
   <h2 id="technical" class="h5">Technical details</h2>
   <dl class="entity-facts">
-    <dt>IRI</dt>
-    <dd><code class="entity-iri">{{ tech.iri | replace("/", "/<wbr>") | safe }}</code></dd>
+    {#- not in the search index (planning#17): IRIs and class names are no search terms #}
+    <dt data-pagefind-ignore>IRI</dt>
+    <dd data-pagefind-ignore><code class="entity-iri">{{ tech.iri | replace("/", "/<wbr>") | safe }}</code></dd>
     {%- for f in tech.facts %}
-    <dt>{{ f.label }}</dt>
-    <dd>{% for v in f.values %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
+    <dt{% if f.label == "Class" %} data-pagefind-ignore{% endif %}>{{ f.label }}</dt>
+    <dd{% if f.label == "Class" %} data-pagefind-ignore{% endif %}>{% for v in f.values %}{% include "lodam/value.njk" %}{% if not loop.last %}<br>{% endif %}{% endfor %}</dd>
     {%- endfor %}
   </dl>
   {%- for s in tech.sections or [] %}{% if s.tech %}
