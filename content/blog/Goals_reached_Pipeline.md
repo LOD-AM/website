@@ -6,7 +6,7 @@ topics: ["research_data_management", "legacy_data", "rdf"]
 draft: true
 ---
 
-Here’s a question I avoided for a long time: where does the data for LOD-AM actually *come from*? The honest answer is: from my **research database**. A relational database where I collect finds, contexts and analyses from the literature, one publication at a time. It’s my working tool, and it’s full of things that are not ready for the world: half-entered tables, open questions, notes to myself.
+Here’s a question I avoided for a long time: where does the data for LOD-AM actually *come from*? The honest answer is: from my **research database**, which I newly started in spring. A relational database where I collect finds, contexts and analyses from the literature, one publication at a time. It’s my working tool, and it’s full of things that are not ready for the world: half-entered tables, open questions, notes to myself.
 
 So I had a problem. I want the data out there as Linked Open Data. But not *all* of it, and not before I’ve checked it. The answer to that is the **pipeline**.
 
@@ -24,10 +24,9 @@ The pipeline then goes through the same steps every time:
 
 1. take a **snapshot** of the database, so nothing changes while it runs,
 2. **map** it to RDF,
-3. **enrich** it,
+3. **enrich** it with the details of the cited publications coming from a **Zotero** library
 4. **check** it: every term against the published ontologies, every record against the SHACL shapes of the knowledge graph,
 5. cut out the **released publications**, one file each.
-<!-- REVIEW (owner): say in a sentence what "enrich" does for you; I left it generic on purpose. -->
 
 If a check fails, nothing is released. That’s the whole point.
 
