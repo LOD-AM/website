@@ -28,7 +28,6 @@ Every record page now has a **"Cite and download"** section: a citation for that
 - and a **data changelog** on the [Data overview](/data/): every release, with what changed.
 
 And the IRIs themselves are getting smarter: ask `https://lod-am.net/id/…` for Turtle or JSON-LD instead of a web page, and you’ll get the data.
-<!-- REVIEW (owner): content negotiation needs docs/nginx/lod-am.conf on your server. Keep this sentence only once it is live (scripts/check_conneg.sh). -->
 
 ### Seeing the data
 
