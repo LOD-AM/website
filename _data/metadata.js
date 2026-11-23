@@ -15,7 +15,7 @@ export default {
 		name: "Fabian Fricke",
 		email: "info@lod-am.net",
 		url: "https://lod-am.net/about/",
-		// Profiles for schema.org sameAs (JSON-LD). Add ORCID here if wanted.
-		sameAs: ["https://archaeo.social/@FabianF"]
+		// Profiles for schema.org sameAs (JSON-LD).
+		sameAs: ["https://orcid.org/0000-0003-3223-2079", "https://archaeo.social/@FabianF"]
 	}
 }
