@@ -1,0 +1,33 @@
+# VoID description of the LOD-AM data · https://lod-am.net/ · CC BY 4.0
+
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<https://lod-am.net/data/#dataset> a void:Dataset;
+    dcterms:title "LOD-AM: archaeometallurgical data on copper-base objects (released publications)"@en;
+    dcterms:description "Linked Open Data on ancient copper-base metal objects, their contexts and their chemical and lead isotope analyses, compiled from published sources and released one publication at a time. Values are given as reported in the source publications."@en;
+    dcterms:creator <https://lod-am.net/about/#me>;
+    dcterms:publisher <https://lod-am.net/about/#me>;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
+    dcterms:issued "2026-11-17"^^xsd:date;
+    dcterms:modified "2026-11-19"^^xsd:date;
+    foaf:homepage <https://lod-am.net/data/>;
+    foaf:page <https://lod-am.net/data/model/>;
+    void:uriSpace "https://lod-am.net/id/";
+    void:dataDump <https://lod-am.net/data/lod-am.ttl>;
+    void:sparqlEndpoint <https://triple.lod-am.net/LOD-AM/sparql>;
+    void:feature <http://www.w3.org/ns/formats/Turtle>;
+    void:triples 6230;
+    void:entities 205;
+    void:vocabulary <http://prismstandard.org/namespaces/basic/2.0/>, <http://purl.allotrope.org/ontologies/material#>, <http://purl.allotrope.org/ontologies/process#>, <http://purl.allotrope.org/ontologies/property#>, <http://purl.allotrope.org/ontologies/result#>, <http://purl.org/dc/terms/>, <http://purl.org/spar/fabio/>, <http://qudt.org/schema/qudt#>, <http://www.cidoc-crm.org/cidoc-crm/>, <http://www.cidoc-crm.org/extensions/crmarchaeo/>, <http://www.cidoc-crm.org/extensions/crmsci/>, <http://www.opengis.net/ont/geosparql#>, <http://www.w3.org/1999/02/22-rdf-syntax-ns#>, <http://www.w3.org/2000/01/rdf-schema#>, <http://www.w3.org/2002/07/owl#>, <http://www.w3.org/2004/02/skos/core#>, <http://xmlns.com/foaf/0.1/>;
+    void:subset <https://lod-am.net/data/#dataset-hauptmann2002chemical>.
+<https://lod-am.net/data/#dataset-hauptmann2002chemical> a void:Dataset;
+    dcterms:title "Data of Hauptmann et al. 2002"@en;
+    dcterms:source <https://doi.org/10.3406/paleo.2002.4745>;
+    dcterms:issued "2026-11-17"^^xsd:date;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
+    void:dataDump <https://lod-am.net/data/hauptmann2002chemical.ttl>;
+    void:triples 6230.
+<https://lod-am.net/about/#me> foaf:name "Fabian Fricke".

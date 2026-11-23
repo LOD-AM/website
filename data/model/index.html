@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>(function(){var t;try{t=localStorage.getItem("lodam-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-bs-theme",t)})();</script>
+		<title>Data model · LOD-AM</title>
+		<meta name="description" content="How the LOD-AM data are modelled: the kinds of records, how they link, and the ontologies and vocabularies they use.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
+		<link rel="canonical" href="https://lod-am.net/data/model/">
+
+		<!-- Mastodon verification -->
+		<link rel="me" href="https://archaeo.social/@FabianF">
+
+		<!-- OpenGraph / Social Media Meta Tags -->
+		<meta property="og:title" content="Data model · LOD-AM">
+		<meta property="og:description" content="How the LOD-AM data are modelled: the kinds of records, how they link, and the ontologies and vocabularies they use.">
+		<meta property="og:url" content="https://lod-am.net/data/model/">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://lod-am.net/img/logo.png">
+		<meta property="og:image:alt" content="LOD-AM logo">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Data model · LOD-AM">
+		<meta name="twitter:description" content="How the LOD-AM data are modelled: the kinds of records, how they link, and the ontologies and vocabularies they use.">
+		<meta name="twitter:image" content="https://lod-am.net/img/logo.png">
+
+		<!-- Fediverse creator attribution for blog posts -->
+		
+
+		<!-- schema.org metadata (JSON-LD) -->
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+		<link rel="icon" type="image/png" href="/img/logo.svg">
+
+		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/theme.css?v=61f8f1a48c">
+		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
+		<style></style>
+
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<a href="#main" id="skip-link" class="visually-hidden-focusable">Skip to main content</a>
+
+		<!-- Bootstrap Navbar -->
+		<nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/img/logo.svg" alt="Linked Open Data for Ancient Metallurgy: home" width="75" height="75" class="d-inline-block align-top">
+				</a>
+				<button type="button" class="btn btn-sm theme-toggle ms-auto me-2 order-lg-last ms-lg-2 me-lg-0" id="theme-toggle" aria-label="Switch between light and dark mode" hidden="">
+					<span class="icon-sun"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"></path>
+</svg></span><span class="icon-moon"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"></path>
+  <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"></path>
+</svg></span>
+				</button>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog/">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/about/">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="true">Data</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><a class="dropdown-item" href="/data/model/">Data model</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
+								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
+								<li><a class="dropdown-item" href="/data/analyses/">Analyses</a></li>
+								<li><a class="dropdown-item" href="/data/types/">Types</a></li>
+								<li><a class="dropdown-item" href="/data/phases/">Phases</a></li>
+								<li><a class="dropdown-item" href="/data/cultures/">Cultures</a></li>
+								<li><a class="dropdown-item" href="/data/publications/">Publications</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/query/">SPARQL query</a></li>
+								<li><a class="dropdown-item" href="/query/examples/">Example queries</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="site-search d-flex my-2 my-lg-0" role="search" action="/search/" method="get">
+						<input class="form-control form-control-sm" type="search" name="q" id="site-search-q" placeholder="Search" aria-label="Search posts and records" autocomplete="off">
+						<button class="btn btn-sm site-search__btn ms-1" type="submit" aria-label="Search"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg></button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<main id="main" class="flex-grow-1">
+			<div class="container py-4">
+				<heading-anchors>
+					<div class="entity entity--full">
+  <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a> › Data model</nav>
+  <h1 class="mb-3" id="data-model">Data model</h1>
+  <div class="reading-column ms-0">
+    <p class="lead">Every find, analysis, site and publication is a record with its own IRI under
+    <code>https://lod-am.net/id/</code>. The diagram shows the main kinds of records and how they link.</p>
+    <p>It is an overview for orientation. The modelling rules, with every class and property, are in the
+    <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>.
+    To try the links out, start from the <a href="/query/examples/">example queries</a>.</p>
+  </div>
+
+  <figure class="mt-4" aria-labelledby="model-caption">
+    
+<div class="model-diagram">
+<svg viewBox="0 0 1248 700" width="1248" height="700" role="img" aria-labelledby="model-title" aria-describedby="model-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="model-title">Diagram of the LOD-AM data model</title>
+  <desc id="model-desc">Boxes for the kinds of records and the links between them; the same links are listed as text below the diagram.</desc>
+  <defs>
+    <marker id="model-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="model-arrowhead"></path>
+    </marker>
+  </defs>
+  <line x1="346" y1="50" x2="250" y2="50" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="460" y1="138" x2="460" y2="86" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="547.5" y1="138" x2="689.6" y2="86" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="902" y1="50" x2="998" y2="50" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="875.5" y1="82" x2="1017.6" y2="134" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="1116" y1="202" x2="1116" y2="254" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="460" y1="258" x2="460" y2="206" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="416.3" y1="258" x2="181.2" y2="86" class="model-edge model-edge--dashed" marker-end="url(#model-arrow)"></line>
+  <line x1="346" y1="290" x2="250" y2="290" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="372.5" y1="322" x2="230.4" y2="374" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="132" y1="378" x2="132" y2="326" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="574" y1="290" x2="998" y2="290" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="460" y1="378" x2="460" y2="326" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="460" y1="442" x2="460" y2="494" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="674" y1="530" x2="578" y2="530" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="902" y1="530" x2="998" y2="530" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="1116" y1="562" x2="1116" y2="614" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="788" y1="562" x2="788" y2="614" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <line x1="831.7" y1="498" x2="1066.8" y2="326" class="model-edge" marker-end="url(#model-arrow)"></line>
+  <g class="model-label">
+    <rect x="260" y="40" width="76" height="20" rx="4"></rect>
+    <text x="298" y="54" text-anchor="middle">located at</text>
+  </g>
+  <g class="model-label">
+    <rect x="431.9" y="102" width="56.2" height="20" rx="4"></rect>
+    <text x="460" y="116" text-anchor="middle">part of</text>
+  </g>
+  <g class="model-label">
+    <rect x="587.1" y="102" width="62.8" height="20" rx="4"></rect>
+    <text x="618.5" y="116" text-anchor="middle">dated to</text>
+  </g>
+  <g class="model-label">
+    <rect x="921.9" y="40" width="56.2" height="20" rx="4"></rect>
+    <text x="950" y="54" text-anchor="middle">part of</text>
+  </g>
+  <g class="model-label">
+    <rect x="911.8" y="98" width="69.4" height="20" rx="4"></rect>
+    <text x="946.5" y="112" text-anchor="middle">in system</text>
+  </g>
+  <g class="model-label">
+    <rect x="1091.2" y="218" width="49.6" height="20" rx="4"></rect>
+    <text x="1116" y="232" text-anchor="middle">source</text>
+  </g>
+  <g class="model-label">
+    <rect x="428.6" y="222" width="62.8" height="20" rx="4"></rect>
+    <text x="460" y="236" text-anchor="middle">found in</text>
+  </g>
+  <g class="model-label">
+    <rect x="260.7" y="162" width="76" height="20" rx="4"></rect>
+    <text x="298.7" y="176" text-anchor="middle">located at</text>
+  </g>
+  <g class="model-label">
+    <rect x="266.6" y="280" width="62.8" height="20" rx="4"></rect>
+    <text x="298" y="294" text-anchor="middle">material</text>
+  </g>
+  <g class="model-label">
+    <rect x="283.3" y="338" width="36.4" height="20" rx="4"></rect>
+    <text x="301.5" y="352" text-anchor="middle">type</text>
+  </g>
+  <g class="model-label">
+    <rect x="103.9" y="342" width="56.2" height="20" rx="4"></rect>
+    <text x="132" y="356" text-anchor="middle">matches</text>
+  </g>
+  <g class="model-label">
+    <rect x="738.1" y="280" width="95.8" height="20" rx="4"></rect>
+    <text x="786" y="294" text-anchor="middle">documented in</text>
+  </g>
+  <g class="model-label">
+    <rect x="415.4" y="342" width="89.2" height="20" rx="4"></rect>
+    <text x="460" y="356" text-anchor="middle">sampled from</text>
+  </g>
+  <g class="model-label">
+    <rect x="431.9" y="458" width="56.2" height="20" rx="4"></rect>
+    <text x="460" y="472" text-anchor="middle">removed</text>
+  </g>
+  <g class="model-label">
+    <rect x="604.5" y="520" width="43" height="20" rx="4"></rect>
+    <text x="626" y="534" text-anchor="middle">input</text>
+  </g>
+  <g class="model-label">
+    <rect x="925.2" y="520" width="49.6" height="20" rx="4"></rect>
+    <text x="950" y="534" text-anchor="middle">output</text>
+  </g>
+  <g class="model-label">
+    <rect x="1078" y="578" width="76" height="20" rx="4"></rect>
+    <text x="1116" y="592" text-anchor="middle">quantifies</text>
+  </g>
+  <g class="model-label">
+    <rect x="736.8" y="578" width="102.4" height="20" rx="4"></rect>
+    <text x="788" y="592" text-anchor="middle">carried out by</text>
+  </g>
+  <g class="model-label">
+    <rect x="901.4" y="402" width="95.8" height="20" rx="4"></rect>
+    <text x="949.3" y="416" text-anchor="middle">documented in</text>
+  </g>
+  <g class="model-node model-node--helper">
+    <rect x="20" y="20" width="224" height="60" rx="8"></rect>
+    <text x="36" y="45" class="model-node__title">Place</text>
+    <text x="36" y="65" class="model-node__class">crm:E53_Place · geo:Feature</text>
+  </g><a href="/data/sites/">
+  <g class="model-node model-node--record">
+    <rect x="348" y="20" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="348" y="20" width="6" height="60" rx="3"></rect>
+    <text x="364" y="45" class="model-node__title">Site</text>
+    <text x="364" y="65" class="model-node__class">crm:E27_Site</text>
+  </g></a><a href="/data/phases/">
+  <g class="model-node model-node--record">
+    <rect x="676" y="20" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="676" y="20" width="6" height="60" rx="3"></rect>
+    <text x="692" y="45" class="model-node__title">Phase</text>
+    <text x="692" y="65" class="model-node__class">crm:E4_Period</text>
+  </g></a><a href="/data/cultures/">
+  <g class="model-node model-node--record">
+    <rect x="1004" y="20" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="1004" y="20" width="6" height="60" rx="3"></rect>
+    <text x="1020" y="45" class="model-node__title">Culture</text>
+    <text x="1020" y="65" class="model-node__class">crm:E4_Period</text>
+  </g></a><a href="/data/features/">
+  <g class="model-node model-node--record">
+    <rect x="348" y="140" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="348" y="140" width="6" height="60" rx="3"></rect>
+    <text x="364" y="165" class="model-node__title">Feature</text>
+    <text x="364" y="185" class="model-node__class">crm:E25 · crmarchaeo:A2</text>
+  </g></a><a href="/data/chronologies/">
+  <g class="model-node model-node--record">
+    <rect x="1004" y="140" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="1004" y="140" width="6" height="60" rx="3"></rect>
+    <text x="1020" y="165" class="model-node__title">Chronology system</text>
+    <text x="1020" y="185" class="model-node__class">skos:ConceptScheme</text>
+  </g></a>
+  <g class="model-node model-node--external">
+    <rect x="20" y="260" width="224" height="60" rx="8"></rect>
+    <text x="36" y="285" class="model-node__title">Getty AAT concept</text>
+    <text x="36" y="305" class="model-node__class">aat:…</text>
+  </g><a href="/data/finds/">
+  <g class="model-node model-node--record">
+    <rect x="348" y="260" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="348" y="260" width="6" height="60" rx="3"></rect>
+    <text x="364" y="285" class="model-node__title">Find</text>
+    <text x="364" y="305" class="model-node__class">crm:E22_Human-Made_Object</text>
+  </g></a><a href="/data/publications/">
+  <g class="model-node model-node--record">
+    <rect x="1004" y="260" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="1004" y="260" width="6" height="60" rx="3"></rect>
+    <text x="1020" y="285" class="model-node__title">Publication</text>
+    <text x="1020" y="305" class="model-node__class">fabio:… · crm:E31_Document</text>
+  </g></a><a href="/data/types/">
+  <g class="model-node model-node--record">
+    <rect x="20" y="380" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="20" y="380" width="6" height="60" rx="3"></rect>
+    <text x="36" y="405" class="model-node__title">Type (LOD-AM typology)</text>
+    <text x="36" y="425" class="model-node__class">crm:E55_Type · skos:Concept</text>
+  </g></a>
+  <g class="model-node model-node--helper">
+    <rect x="348" y="380" width="224" height="60" rx="8"></rect>
+    <text x="364" y="405" class="model-node__title">Sampling</text>
+    <text x="364" y="425" class="model-node__class">crmsci:S2_Sample_Taking</text>
+  </g>
+  <g class="model-node model-node--helper">
+    <rect x="348" y="500" width="224" height="60" rx="8"></rect>
+    <text x="364" y="525" class="model-node__title">Sample</text>
+    <text x="364" y="545" class="model-node__class">crmsci:S13_Sample</text>
+  </g><a href="/data/analyses/">
+  <g class="model-node model-node--record">
+    <rect x="676" y="500" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="676" y="500" width="6" height="60" rx="3"></rect>
+    <text x="692" y="525" class="model-node__title">Analysis</text>
+    <text x="692" y="545" class="model-node__class">crm:E7_Activity · afp:…</text>
+  </g></a>
+  <g class="model-node model-node--helper">
+    <rect x="1004" y="500" width="224" height="60" rx="8"></rect>
+    <text x="1020" y="525" class="model-node__title">Measurement</text>
+    <text x="1020" y="545" class="model-node__class">afr:… (value, unit)</text>
+  </g><a href="/data/labs/">
+  <g class="model-node model-node--record">
+    <rect x="676" y="620" width="224" height="60" rx="8"></rect><rect class="model-node__edge" x="676" y="620" width="6" height="60" rx="3"></rect>
+    <text x="692" y="645" class="model-node__title">Laboratory</text>
+    <text x="692" y="665" class="model-node__class">crm:E74_Group</text>
+  </g></a>
+  <g class="model-node model-node--external">
+    <rect x="1004" y="620" width="224" height="60" rx="8"></rect>
+    <text x="1020" y="645" class="model-node__title">Element or nuclide</text>
+    <text x="1020" y="665" class="model-node__class">ChEBI · Wikidata</text>
+  </g>
+</svg>
+</div>
+
+    <figcaption id="model-caption" class="small text-body-secondary mt-2">
+      Boxes with a coloured edge are records with their own pages, each linked to its list; plain boxes are parts of
+      a record (a find's sample, an analysis's measurements); dashed boxes are concepts of other vocabularies. The
+      dashed line is a path the model has but the released data don't use yet: a find known only by its site points
+      to the site's place. Dates belong to contexts: a feature (or a site without features) is dated to a phase, and
+      a find takes the date of its context.
+    </figcaption>
+  </figure>
+
+  <details class="mt-3 reading-column ms-0">
+    <summary>The diagram as text</summary>
+    <ul class="entity-list mt-2">
+      <li>Site → located at → Place (<code>crm:P53_has_former_or_current_location</code>)</li>
+      <li>Feature → part of → Site (<code>crm:P46i_forms_part_of</code>)</li>
+      <li>Feature → dated to → Phase (<code>crm:P8i_witnessed</code>)</li>
+      <li>Phase → part of → Culture (<code>crm:P9i_forms_part_of</code>)</li>
+      <li>Phase → in system → Chronology system (<code>skos:inScheme</code>)</li>
+      <li>Chronology system → source → Publication (<code>dcterms:source</code>)</li>
+      <li>Find → found in → Feature (<code>crmarchaeo:AP21i_is_contained_in</code>)</li>
+      <li>Find → located at → Place (<code>crm:P53_has_former_or_current_location</code>), only for finds known by their site alone, without a feature</li>
+      <li>Find → material → Getty AAT concept (<code>crm:P45_consists_of</code>)</li>
+      <li>Find → type → Type (LOD-AM typology) (<code>crm:P2_has_type</code>)</li>
+      <li>Type (LOD-AM typology) → matches → Getty AAT concept (<code>skos:closeMatch</code> or <code>skos:broadMatch</code>)</li>
+      <li>Find → documented in → Publication (<code>crm:P70i_is_documented_in</code>)</li>
+      <li>Sampling → sampled from → Find (<code>crmsci:O3_sampled_from</code>)</li>
+      <li>Sampling → removed → Sample (<code>crmsci:O5_removed</code>)</li>
+      <li>Analysis → input → Sample (<code>afx:AFX_0000399</code>)</li>
+      <li>Analysis → output → Measurement (<code>afx:AFX_0000395</code>)</li>
+      <li>Measurement → quantifies → Element or nuclide (<code>afx:AFX_0002816</code>)</li>
+      <li>Analysis → carried out by → Laboratory (<code>crm:P14_carried_out_by</code>)</li>
+      <li>Analysis → documented in → Publication (<code>crm:P70i_is_documented_in</code>)</li>
+    </ul>
+  </details>
+
+  <h2 class="h4 mt-5" id="vocabularies">Ontologies and vocabularies</h2>
+  <p class="reading-column ms-0">The released data use these ontologies and vocabularies. Getty AAT, ChEBI, Wikidata
+  and ROR concepts are reused by their own IRIs. PeriodO and Pleiades are part of the model, but no released record
+  uses them yet.</p>
+  <div class="table-responsive">
+    <table class="table table-sm entity-table model-vocab" aria-labelledby="vocabularies">
+      <thead><tr><th scope="col">Vocabulary, version and namespace</th><th scope="col">Used for</th></tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="https://cidoc-crm.org/Version/version-7.1.3">CIDOC CRM</a> <span class="text-body-secondary fw-normal">7.1.3</span><br><code class="model-ns">http://www.cidoc-crm.org/cidoc-crm/</code></th>
+          <td>finds, sites, features, places, periods, identifiers</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://cidoc-crm.org/crmsci">CRMsci</a> <span class="text-body-secondary fw-normal">3.2</span><br><code class="model-ns">http://www.cidoc-crm.org/extensions/crmsci/</code></th>
+          <td>sampling and samples</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://cidoc-crm.org/crmarchaeo">CRMarchaeo</a> <span class="text-body-secondary fw-normal">2.1.1</span><br><code class="model-ns">http://www.cidoc-crm.org/extensions/crmarchaeo/</code></th>
+          <td>finds in their archaeological features</td>
+        </tr>
+        <tr>
+          <th scope="row">Allotrope Foundation Ontologies (AFO) <span class="text-body-secondary fw-normal">REC/2025/12</span><br><code class="model-ns">http://purl.allotrope.org/ontologies/</code></th>
+          <td>analyses, measurements, sample materials</td>
+        </tr>
+        <tr>
+          <th scope="row">QUDT<br><code class="model-ns">http://qudt.org/</code></th>
+          <td>values and units</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://sparontologies.github.io/fabio/current/fabio.html">FaBiO</a><br><code class="model-ns">http://purl.org/spar/fabio/</code></th>
+          <td>publications and journals</td>
+        </tr>
+        <tr>
+          <th scope="row">Dublin Core Terms, PRISM, FOAF<br><code class="model-ns">http://purl.org/dc/terms/</code></th>
+          <td>titles, authors, pages, DOIs</td>
+        </tr>
+        <tr>
+          <th scope="row">SKOS<br><code class="model-ns">http://www.w3.org/2004/02/skos/core#</code></th>
+          <td>the typology, local vocabularies, chronology systems</td>
+        </tr>
+        <tr>
+          <th scope="row">GeoSPARQL<br><code class="model-ns">http://www.opengis.net/ont/geosparql#</code></th>
+          <td>site coordinates</td>
+        </tr>
+        <tr>
+          <th scope="row">Getty Art &amp; Architecture Thesaurus (AAT)<br><code class="model-ns">http://vocab.getty.edu/aat/</code></th>
+          <td>materials; matches of types and feature types</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://www.ebi.ac.uk/chebi/">ChEBI</a><br><code class="model-ns">http://purl.obolibrary.org/obo/CHEBI_</code></th>
+          <td>chemical elements</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://www.wikidata.org/">Wikidata</a><br><code class="model-ns">http://www.wikidata.org/entity/</code></th>
+          <td>lead isotopes (nuclides)</td>
+        </tr>
+        <tr>
+          <th scope="row">ROR<br><code class="model-ns">https://ror.org/</code></th>
+          <td>laboratories</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+				</heading-anchors>
+			</div>
+		</main>
+
+		<!-- Bootstrap Footer -->
+		<footer class="site-footer py-4 mt-auto text-center" data-bs-theme="dark">
+			<div class="container">
+				<nav aria-label="Footer" class="footer-links small mb-2">
+					<a href="/impressum/">Impressum</a>
+					<a href="/privacy/">Privacy Policy</a>
+					<a href="/feed/feed.xml">Feed (Atom)</a>
+					<a href="https://github.com/LOD-AM/website">GitHub</a>
+					<a rel="me" href="https://archaeo.social/@FabianF">Mastodon</a>
+				</nav>
+				<p class="mb-1 small">
+					<a href="https://github.com/LOD-AM/website">LOD-AM Website</a> &copy; 2026 by <a href="https://lod-am.net">Fabian Fricke</a> is licensed under
+					<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					<img src="/img/cc/cc.svg" alt="" width="16" height="16" class="cc-icon">
+					<img src="/img/cc/by.svg" alt="" width="16" height="16" class="cc-icon">
+				</p>
+				<p class="mb-0 small">Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a></p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap JS Bundle with Popper -->
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/theme.js?v=61f8f1a48c"></script>
+		<script type="module" src=""></script>
+	</body>
+</html>

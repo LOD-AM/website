@@ -8,6 +8,7 @@
 		<meta name="description" content="Archaeometallurgical data on copper-base objects as Linked Open Data: finds, contexts, chemical and lead isotope analyses, released one publication at a time.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Linked Open Data for Ancient Metallurgy">
 		<link rel="canonical" href="https://lod-am.net/data/">
+		<link rel="alternate" type="text/turtle" href="/data/void.ttl" title="VoID description of the dataset">
 
 		<!-- Mastodon verification -->
 		<link rel="me" href="https://archaeo.social/@FabianF">
@@ -71,6 +72,12 @@
  "distribution": [
   {
    "@type": "DataDownload",
+   "name": "lod-am.ttl (all released data)",
+   "contentUrl": "https://lod-am.net/data/lod-am.ttl",
+   "encodingFormat": "text/turtle"
+  },
+  {
+   "@type": "DataDownload",
    "name": "hauptmann2002chemical.ttl",
    "contentUrl": "https://lod-am.net/data/hauptmann2002chemical.ttl",
    "encodingFormat": "text/turtle"
@@ -104,7 +111,7 @@
 
 		<!-- Bootstrap, then the LOD-AM theme (dark mode + palette) -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/theme.css?v=8197f3ce60">
+		<link rel="stylesheet" href="/css/theme.css?v=61f8f1a48c">
 		<!-- Per-page CSS bundle (e.g. syntax highlighting on posts) -->
 		<style></style>
 
@@ -144,6 +151,7 @@
 							<a class="nav-link dropdown-toggle" href="/data/" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="true">Data</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="/data/">Overview</a></li>
+								<li><a class="dropdown-item" href="/data/model/">Data model</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" href="/data/sites/">Sites</a></li>
 								<li><a class="dropdown-item" href="/data/finds/">Finds</a></li>
@@ -196,8 +204,8 @@
   </ul>
   <p>The data model follows CIDOC CRM 7.1.3 with the extensions CRMsci and CRMarchaeo; analytical results are
   expressed with the Allotrope Foundation Ontologies and bibliographic records with FaBiO. Object, site and feature
-  types are linked to the Getty Art &amp; Architecture Thesaurus. The modelling rules are documented in the
-  <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>. Every record
+  types are linked to the Getty Art &amp; Architecture Thesaurus. The <a href="/data/model/">data model</a> page shows how the records link; the modelling rules are
+  documented in the <a href="https://github.com/LOD-AM/knowledge-graph/blob/main/CONVENTIONS.md">LOD-AM conventions</a>. Every record
   has a persistent IRI under <code>https://lod-am.net/id/</code> and can be downloaded in Turtle and JSON-LD from its page.</p>
 
   <h2 class="h4 mt-5" id="released">Released data</h2>
@@ -215,6 +223,9 @@
       </tbody>
     </table>
   </div>
+  <p class="small text-body-secondary">All released data in one file: <a href="/data/lod-am.ttl" download="">lod-am.ttl</a>
+  (Turtle, 6230 triples). The dataset, its downloads and its SPARQL endpoint are described in
+  <a href="/data/void.ttl">VoID</a>, the W3C vocabulary for describing linked datasets.</p>
 
   <h2 class="h4 mt-5" id="sparql">SPARQL endpoint</h2>
   <p>The released data can also be queried with SPARQL, in the <a href="/query/">query editor</a> on this site or
@@ -293,7 +304,7 @@
 
 		<!-- Bootstrap JS Bundle with Popper -->
 		<script src="/js/bootstrap.bundle.min.js"></script>
-		<script src="/js/theme.js?v=8197f3ce60"></script>
+		<script src="/js/theme.js?v=61f8f1a48c"></script>
 		<script type="module" src=""></script>
 	</body>
 </html>
