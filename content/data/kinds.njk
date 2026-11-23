@@ -12,7 +12,7 @@ eleventyComputed:
 {%- set items = lodam.byKind[kind] %}
 <div class="reading-column ms-0">
   <nav aria-label="Breadcrumb" class="small mb-2"><a href="/data/">Data</a></nav>
-  <h1 class="mb-3">{{ k.plural }}</h1>
+  <h1 class="mb-3 d-flex align-items-center gap-3"><img src="/img/{{ kind }}-logo.svg" alt="" width="56" height="56" class="entity-icon entity-icon--list" eleventy:ignore>{{ k.plural }}</h1>
   <p class="lead">{{ items.length }} {{ (k.plural if items.length != 1 else k.singular) | lower }} in the released data.</p>
   {%- if kind == "site" and lodam.maps and lodam.maps.sites.length %}
   <section class="mb-4" aria-labelledby="map-overview">

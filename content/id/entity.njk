@@ -13,7 +13,7 @@ eleventyComputed:
   <nav aria-label="Breadcrumb" class="small mb-2" data-pagefind-ignore>
     <a href="/data/">Data</a> › <a href="/data/{{ lodam.KINDS[record.kind].slug }}/">{{ lodam.KINDS[record.kind].plural }}</a>
   </nav>
-  {%- set entity = { kindLabel: record.kindLabel, label: record.label, summary: record.summary } %}
+  {%- set entity = { kindLabel: record.kindLabel, label: record.label, summary: record.summary, icon: "/img/" + record.kind + "-logo.svg" } %}
   {% include "lodam/header.njk" %}
 
   {%- set facts = record.facts %}

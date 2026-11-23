@@ -10,7 +10,7 @@ eleventyComputed:
 ---
 <div class="entity" data-pagefind-body data-pagefind-filter="kind:Publication">
   <nav aria-label="Breadcrumb" class="small mb-2" data-pagefind-ignore><a href="/data/">Data</a> › <a href="/data/publications/">Publications</a></nav>
-  {%- set entity = { kindLabel: "Publication", label: pub.title, summary: pub.summary } %}
+  {%- set entity = { kindLabel: "Publication", label: pub.title, summary: pub.summary, icon: "/img/literature-logo.svg" } %}
   {% include "lodam/header.njk" %}
   <dl class="entity-facts">
     <dt>Authors</dt><dd>{% for v in pub.authors %}{% include "lodam/value.njk" %}{% if not loop.last %}, {% endif %}{% endfor %}</dd>

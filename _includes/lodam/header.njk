@@ -1,8 +1,13 @@
-{#- Record header (docs/components.md): kind, title, summary line. Set `entity` = {kindLabel, label, summary}. -#}
-<header class="entity-header mb-4">
+{#- Record header (docs/components.md): kind logo, kind, title, summary line. Set `entity` = {kindLabel, label, summary, icon?}. -#}
+<header class="entity-header mb-4{% if entity.icon %} entity-header--icon{% endif %}">
+  {%- if entity.icon %}
+  <img src="{{ entity.icon }}" alt="" width="72" height="72" class="entity-icon" eleventy:ignore>
+  {%- endif %}
+  <div>
   <p class="entity-kind mb-1">{{ entity.kindLabel }}</p>
   <h1 class="mb-2">{{ entity.label }}</h1>
   {%- if entity.summary and entity.summary.length %}
   <p class="entity-summary mb-0">{{ entity.summary | join(" · ") }}</p>
   {%- endif %}
+  </div>
 </header>
