@@ -145,16 +145,31 @@ Email: <a href="mailto:info@lod-am.net">info@lod-am.net</a>
 <p class="card-text"><strong>Recipients:</strong> none. The log data is not passed on and is not combined with other data sources.</p>
 </div>
 </div><p></p>
+<p></p><div class="card mb-4" id="sparql">
+<div class="card-body">
+<h2 class="card-title" id="4-sparql-query-editor-and-endpoint-triple-lod-am-net-site-search">4. SPARQL query editor and endpoint (triple.lod-am.net), site search</h2>
+<p class="card-text">The query editor at <a href="/query/">lod-am.net/query/</a> and the public SPARQL endpoint https://triple.lod-am.net/LOD-AM/sparql are operated by the controller on the same hardware as this website (section 2). Opening the editor sends nothing to triple.lod-am.net. Only when you run a query (by clicking &quot;Run&quot;, or by sending a query to the endpoint directly) does your browser connect to triple.lod-am.net and transmit:</p>
+<ul>
+<li>your IP address, date and time, the requested address, HTTP method, status code, amount of data transferred, referrer and user agent. The reverse proxy stores these in its log files, as described in section 3;</li>
+<li>the text of your query. The triplestore software (Apache Jena Fuseki) writes it, with date and time, to its own log. This log does not contain your IP address.</li>
+</ul>
+<p class="card-text"><strong>Purpose:</strong> answering your query, and ensuring the technical operation and security of the endpoint, in particular detecting and defending against misuse and overload, and analysing errors.</p>
+<p class="card-text"><strong>Legal basis:</strong> Art. 6(1)(f) GDPR. The legitimate interest lies in the purposes above. Without this data, queries cannot be answered.</p>
+<p class="card-text"><strong>Storage period:</strong> the proxy log files as described in section 3. The triplestore log is limited in size: older entries are deleted automatically once it exceeds 50 MB, and the whole log when the software is updated or restarted.</p>
+<p class="card-text"><strong>Recipients:</strong> none.</p>
+<p class="card-text">The query editor does not store anything on your device; your query is lost when you leave the page. If you open an example query, the query is part of the page address (lod-am.net/query/?query=…) and therefore appears in the log files described in section 3. The same applies to search terms entered in the search field of the navigation bar (lod-am.net/search/?q=…). The search itself runs in your browser on files from lod-am.net and contacts no other server.</p>
+</div>
+</div><p></p>
 <p></p><div class="card mb-4">
 <div class="card-body">
-<h2 class="card-title" id="4-cookies-and-storage-on-your-device">4. Cookies and storage on your device</h2>
+<h2 class="card-title" id="5-cookies-and-storage-on-your-device">5. Cookies and storage on your device</h2>
 <p class="card-text">This website itself does not set cookies and does not store or read any information on your device. There is no tracking, no web analytics and no advertising.</p>
-<p class="card-text">Only if you load the comments and sign in with GitHub there (see section 5), giscus stores a login token in your browser's local storage. This happens on the basis of your consent (§ 25(1) TDDDG, Art. 6(1)(a) GDPR), which you give by signing in. You can remove it at any time by signing out in the comment area or deleting the website data in your browser.</p>
+<p class="card-text">Only if you load the comments and sign in with GitHub there (see section 6), giscus stores a login token in your browser's local storage. This happens on the basis of your consent (§ 25(1) TDDDG, Art. 6(1)(a) GDPR), which you give by signing in. You can remove it at any time by signing out in the comment area or deleting the website data in your browser.</p>
 </div>
 </div><p></p>
 <p></p><div class="card mb-4" id="comments">
 <div class="card-body">
-<h2 class="card-title" id="5-comments-giscus-and-github">5. Comments (giscus and GitHub)</h2>
+<h2 class="card-title" id="6-comments-giscus-and-github">6. Comments (giscus and GitHub)</h2>
 <p class="card-text">Blog posts offer comments through <a href="https://giscus.app">giscus</a>, an open-source comment system that stores comments as GitHub Discussions in the public repository <a href="https://github.com/LOD-AM/website/discussions">LOD-AM/website</a>.</p>
 <p class="card-text"><strong>Nothing is loaded without your action.</strong> The comment area is only loaded when you click &quot;Load comments&quot; below a post. Until then, your browser makes no connection to giscus or GitHub.</p>
 <p class="card-text">After the click, your browser connects to the servers of giscus.app and GitHub. They receive the technical data needed for this, in particular your IP address, the address of the page and your user agent. Existing comments are displayed. To write a comment or a reaction, you need a GitHub account and must sign in to GitHub via giscus. Your comment is then published in the GitHub discussion under your GitHub username and is publicly visible.</p>
@@ -169,7 +184,7 @@ Email: <a href="mailto:info@lod-am.net">info@lod-am.net</a>
 </div><p></p>
 <p></p><div class="card mb-4">
 <div class="card-body">
-<h2 class="card-title" id="6-contact-by-email">6. Contact by email</h2>
+<h2 class="card-title" id="7-contact-by-email">7. Contact by email</h2>
 <p class="card-text">If you write to <a href="mailto:info@lod-am.net">info@lod-am.net</a>, your email address, the time and the content of your message are processed in order to answer you.</p>
 <ul>
 <li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in answering enquiries), or Art. 6(1)(b) GDPR if your enquiry concerns a contract or pre-contractual measures.</li>
@@ -180,19 +195,19 @@ Email: <a href="mailto:info@lod-am.net">info@lod-am.net</a>
 </div><p></p>
 <p></p><div class="card mb-4">
 <div class="card-body">
-<h2 class="card-title" id="7-links-to-other-websites">7. Links to other websites</h2>
+<h2 class="card-title" id="8-links-to-other-websites">8. Links to other websites</h2>
 <p class="card-text">This website links to other websites, for example GitHub, Mastodon, DOI and publisher pages. No data is transmitted to these sites until you click a link. After that, the privacy policy of the respective site applies.</p>
 </div>
 </div><p></p>
 <p></p><div class="card mb-4">
 <div class="card-body">
-<h2 class="card-title" id="8-data-security">8. Data security</h2>
+<h2 class="card-title" id="9-data-security">9. Data security</h2>
 <p class="card-text">All connections to this website are encrypted with TLS (HTTPS). The server software is kept up to date, and administrative access is restricted and protected by authentication.</p>
 </div>
 </div><p></p>
 <p></p><div class="card mb-4">
 <div class="card-body">
-<h2 class="card-title" id="9-your-rights">9. Your rights</h2>
+<h2 class="card-title" id="10-your-rights">10. Your rights</h2>
 <p class="card-text">You have the following rights regarding your personal data:</p>
 <ul>
 <li>access (Art. 15 GDPR)</li>
@@ -217,10 +232,10 @@ Alt-Moabit 59–61<br>
 </div><p></p>
 <p></p><div class="card">
 <div class="card-body">
-<h2 class="card-title" id="10-further-information">10. Further information</h2>
-<p class="card-text">You are not obliged to provide personal data. Visiting the website technically requires the log data described in section 3; comments and emails are voluntary. No automated decision-making or profiling within the meaning of Art. 22 GDPR takes place.</p>
+<h2 class="card-title" id="11-further-information">11. Further information</h2>
+<p class="card-text">You are not obliged to provide personal data. Visiting the website technically requires the log data described in section 3; queries, comments and emails are voluntary. No automated decision-making or profiling within the meaning of Art. 22 GDPR takes place.</p>
 <p class="card-text">This privacy policy is updated when the website or the legal situation changes. The current version is always available on this page.</p>
-<p class="text-muted small mb-0">Last updated: 13 November 2026</p>
+<p class="text-muted small mb-0">Last updated: 23 November 2026</p>
 </div>
 </div>
 </div><p></p>
