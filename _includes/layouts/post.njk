@@ -13,6 +13,7 @@ layout: layouts/base.njk
     <div class="mb-3">
       <small>
         Posted on <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        {%- if updated %} · Updated on <time datetime="{{ updated | htmlDateString }}">{{ updated | readableDate }}</time>{% endif %}
         {% if author %} by {{ author }}{% endif %}
       </small>
     </div>

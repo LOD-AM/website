@@ -79,8 +79,14 @@ topics: ["self_hosting", "triplestore"]   # names from data/vocab/topics.ttl (wi
 type: case-study                      # optional post type (_config/filters.js POST_TYPES)
 about: ["https://lod-am.net/id/site/<uuid>"]   # optional: LOD-AM records the post is about
 draft: true                           # optional; drafts are left out of builds
+updated: 2026-11-20                   # optional: date of the latest update note (website#17)
 ---
 ```
+**Update notes** (website#17): a correction to a published post goes in as a dated note where it
+belongs, `{% update "2026-11-20" %}Markdown text{% endupdate %}`, plus `updated:` in the front matter
+(shown as "Updated on …", used for JSON-LD `dateModified`, the feed and the sitemap; `_config/updates.js`).
+The build stops if a note is newer than `updated`, a date is not `YYYY-MM-DD`, or lies before the post.
+The note texts are the owner's. The Atom feed is `content/feed/feed.njk` (own template, so entries carry `updated`).
 **Topics, not tags** (owner, 2026-11-17): posts are filed under the controlled vocabulary
 `data/vocab/topics.ttl` (SKOS, matched to Wikidata; source: knowledge-graph). An unknown topic,
 post type or `about` IRI stops the build. A new topic goes into knowledge-graph first (with its

@@ -1,0 +1,37 @@
+---
+# Atom feed of the blog. Was the virtual template of the RSS plugin's feedPlugin, whose entries
+# always carry the posting date; this copy gives each entry its last change (`updated:`,
+# website#17). Everything else as before.
+permalink: /feed/feed.xml
+layout: false
+eleventyExcludeFromCollections: true
+eleventyImport:
+  collections: ["blog"]
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
+  
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link href="{{ permalink | htmlBaseUrl(metadata.url) }}" rel="self" />
+  <link href="{{ metadata.url | addPathPrefixToFullUrl }}" />
+  <updated>{{ collections.blog | newestModified | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url | addPathPrefixToFullUrl }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+  </author>
+  {%- for post in collections.blog | reverse | head(10) %}
+  {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post | lastModified | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    {%- if post.data.summary %}
+    <summary>{{ post.data.summary }}</summary>
+    {%- endif %}
+    <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.url) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

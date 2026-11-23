@@ -734,3 +734,16 @@ code[class*="language-"] .token.tag { color: #FF7AA2; }
 .site-search__btn { color: var(--lodam-on-accent); border-color: rgba(245, 240, 230, 0.45); }
 .site-search__btn:hover { color: var(--lodam-on-accent); background: var(--lodam-terracotta-deeper); }
 @media (max-width: 991.98px) { .site-search .form-control { width: 100%; } }
+
+/* Dated correction in a published post (website#17, the "update" shortcode).
+   Ochre edge like the data box: a note from later, set apart from the diary text. */
+.update-note {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--lodam-charcoal);
+  border: 1px solid rgba(var(--lodam-line-rgb), 0.12);
+  border-left: 6px solid var(--lodam-ochre);
+  border-radius: 0.5rem;
+}
+.update-note > :last-child { margin-bottom: 0; }
+.update-note__label { font-size: 0.95rem; color: var(--lodam-chalk-white); margin-bottom: 0.4rem; }
