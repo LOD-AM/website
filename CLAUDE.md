@@ -58,6 +58,10 @@ remote images). Network errors there are warnings, not build failures.
   `/search/` is Pagefind: the `eleventy.after` hook in `eleventy.config.js` indexes posts and record pages
   (`data-pagefind-body`; filters `kind`, `topic`) into `_site/pagefind/`. `qa.mjs` answers the editor's
   query with `scripts/qa-query-result.json`, so the checks stay offline.
+- **Data model, dump, VoID** (website#20, #19): `/data/model/` (diagram + vocabularies from `_data/dataModel.js`),
+  `/data/lod-am.ttl` (all of `data/published` in one file) and `/data/void.ttl` (VoID: dump, endpoint, a subset per
+  publication), both built by `dumpOf`/`voidOf` in `_data/lodam.js`. `npm run check` compares them with `data/published`
+  and fails if the diagram names a property the released data don't use.
 - `_config/filters.js`: date/tag filters; `_config/shortcodes.js`: shortcodes + cached fetches;
   `eleventy.config.js`: plugins and build settings
 - `css/theme.css`: the only stylesheet besides Bootstrap (and the vendor sheets of YASGUI and Pagefind,
@@ -138,8 +142,8 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
   (Arslantepe) and the Data menu. Further publications only with the owner's OK (`data/README.md`).
 - Live checks: `curl`/Playwright against https://lod-am.net (allowed in the LOD-AM environment).
   The local overflow check can't see remote images the sandbox can't download: check posts live.
-- `.ttl` is served as `application/octet-stream` and nginx shows its own 404 page; the fix is in the
-  nginx config in `docs/deployment.md` (owner applies it). Content negotiation (RDF per entity) also goes there.
+- nginx serves `.ttl` as `text/turtle` and the site's own 404 page (checked live 2026-11-23). Still open, also in
+  the nginx config (owner, `docs/deployment.md`): content negotiation for record IRIs (website#19).
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
 - **Query editor and site search** (planning#22, #17; live since 2026-11-23, website#57): `/query/` sends queries to the
   public endpoint `triple.lod-am.net` on "Run" only; `privacy.md` section 4 covers it (text approved by the owner on

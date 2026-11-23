@@ -168,9 +168,12 @@ export default function(eleventyConfig) {
 			...(dates.length ? { datePublished: dates[0], dateModified: dates[dates.length - 1] } : {}),
 			...(rel.version ? { version: rel.version } : {}),
 			...(rel.doi ? { identifier: `https://doi.org/${rel.doi}`, sameAs: `https://doi.org/${rel.doi}` } : {}),
-			distribution: lodam.datasets.map((d) => ({
-				"@type": "DataDownload", name: `${d.key}.ttl`, contentUrl: absolute(d.file), encodingFormat: "text/turtle",
-			})),
+			distribution: [
+				{ "@type": "DataDownload", name: "lod-am.ttl (all released data)", contentUrl: absolute(lodam.dump.path), encodingFormat: "text/turtle" },
+				...lodam.datasets.map((d) => ({
+					"@type": "DataDownload", name: `${d.key}.ttl`, contentUrl: absolute(d.file), encodingFormat: "text/turtle",
+				})),
+			],
 			citation: lodam.releasedPublications.map((p) => ({
 				"@type": "ScholarlyArticle", name: p.title, ...(p.doi ? { "@id": `https://doi.org/${p.doi}`, url: `https://doi.org/${p.doi}` } : {}),
 			})),

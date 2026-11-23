@@ -50,9 +50,19 @@ eleventyNavigation:
           <td><a href="{{ d.file }}" download>{{ d.key }}.ttl</a> <span class="text-body-secondary small">(Turtle, {{ d.triples }} triples)</span></td>
         </tr>
         {%- endfor %}
+        {%- if lodam.datasets.length > 1 %}
+        <tr>
+          <th scope="row">All released data</th>
+          <td>–</td><td></td><td></td>
+          <td><a href="{{ lodam.dump.path }}" download>lod-am.ttl</a> <span class="text-body-secondary small">(Turtle, {{ lodam.dump.triples }} triples)</span></td>
+        </tr>
+        {%- endif %}
       </tbody>
     </table>
   </div>
+  <p class="small text-body-secondary">All released data in one file: <a href="{{ lodam.dump.path }}" download>lod-am.ttl</a>
+  (Turtle, {{ lodam.dump.triples }} triples). The dataset, its downloads and its SPARQL endpoint are described in
+  <a href="{{ lodam.dump.voidPath }}">VoID</a>, the W3C vocabulary for describing linked datasets.</p>
 
   <h2 class="h4 mt-5" id="sparql">SPARQL endpoint</h2>
   {#- DRAFT by Claude (planning#22): the owner reviews the wording. #}
