@@ -14,6 +14,7 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 import { Parser, Store } from "n3";
 import { QueryEngine } from "@comunica/query-sparql-rdfjs";
+import { readHeader } from "./query_header.mjs";
 
 const args = process.argv.slice(2);
 const show = args.includes("--show");
@@ -24,16 +25,6 @@ for (const dir of ["data/published", "data/vocab"]) {
   if (!existsSync(dir)) continue;
   for (const f of readdirSync(dir).filter((f) => f.endsWith(".ttl")).sort())
     store.addQuads(new Parser().parse(readFileSync(join(dir, f), "utf8")));
-}
-
-export function readHeader(text) {
-  const header = {};
-  for (const line of text.split("\n")) {
-    const m = line.match(/^#\s*([a-z-]+):\s*(.*)$/);
-    if (m) header[m[1]] = header[m[1]] ? `${header[m[1]]} ${m[2]}` : m[2];
-    else if (!line.startsWith("#")) break;
-  }
-  return header;
 }
 
 const files = only.length ? only : readdirSync("queries").filter((f) => f.endsWith(".rq")).sort().map((f) => join("queries", f));
