@@ -135,8 +135,9 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - `.ttl` is served as `application/octet-stream` and nginx shows its own 404 page; the fix is in the
   nginx config in `docs/deployment.md` (owner applies it). Content negotiation (RDF per entity) also goes there.
 - Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
-- **Query editor and site search** (planning#22, #17; 2026-11-23): `/query/` sends queries to the public endpoint
-  `triple.lod-am.net` on "Run" only. `privacy.md` must cover that host (owner) before it goes live.
+- **Query editor and site search** (planning#22, #17; live since 2026-11-23, website#57): `/query/` sends queries to the
+  public endpoint `triple.lod-am.net` on "Run" only; `privacy.md` section 4 covers it (text approved by the owner on
+  website#57). Its storage period relies on the capped Fuseki log (LOD-AM/triplestore#22).
 - Anything else that contacts another server: update `privacy.md` with the owner (it covers lod-am.net only).
 
 ## LOD-AM project (shared block: keep identical in every repo)
