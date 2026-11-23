@@ -43,53 +43,40 @@ push to main ──► GitHub Actions "build" ──► npm ci, npm run build, n
 ## Web server (nginx)
 
 Nginx Proxy Manager (TLS, public name) forwards to an nginx that serves the static files on
-port 8080 (`/etc/nginx/sites-available/lod-am`). Recommended config:
+port 8080. Its config is [`docs/nginx/lod-am.conf`](nginx/lod-am.conf), tested with
+`scripts/check_conneg.sh` against a local nginx. It:
 
-```nginx
-server {
-    listen 8080;
-    server_name _;
+- serves the site's own 404 page and never `.git/`;
+- serves RDF with its media type: `.ttl` as `text/turtle`, `.jsonld` as `application/ld+json`
+  (both readable from other sites' scripts, CORS `*`);
+- keeps redirects relative (`absolute_redirect off`). Without it, nginx behind the proxy redirects
+  to `http://lod-am.net:8080/…`, which visitors can't reach;
+- does **content negotiation for record IRIs** (website#19). `https://lod-am.net/id/<kind>/<uuid>`
+  (no trailing slash) names a find, site, analysis …, not a page, so it answers `303 See Other`
+  with `Vary: Accept`:
 
-    # today: /var/www/lod-am-website/_site (main checkout, built on the server)
-    # with deploy (#11): the deploy checkout itself, e.g. /var/www/lod-am.net
-    root /var/www/lod-am-website/_site;
-    index index.html;
+  | Accept | Redirected to |
+  |---|---|
+  | `text/turtle` | `/id/<kind>/<uuid>.ttl` |
+  | `application/ld+json` | `/id/<kind>/<uuid>.jsonld` |
+  | anything else (browsers) | `/id/<kind>/<uuid>/` (the page) |
 
-    # the site's own 404 page instead of nginx's default one
-    error_page 404 /404.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    # never serve git metadata (the deploy checkout has .git/ inside the root)
-    location ~ /\.git {
-        return 404;
-    }
-
-    # RDF downloads (/data/<key>.ttl, /id/<kind>/<uuid>.ttl) as Turtle, not octet-stream.
-    # `types` inside a location replaces the MIME map only there.
-    location ~* \.ttl$ {
-        types { }
-        default_type text/turtle;
-        charset utf-8;
-        charset_types text/turtle;
-    }
-
-    gzip on;
-    # text/html is always compressed; the rest only if listed
-    gzip_types text/css application/javascript application/json application/ld+json
-               text/xml application/xml application/atom+xml image/svg+xml text/turtle;
-}
-```
-
-Apply: `sudo nginx -t && sudo systemctl reload nginx`. Check:
+Apply (keep your own `root` line; the file's `map` must sit inside `http { }`, which is the
+case for files in `sites-enabled/` on Debian/Ubuntu):
 ```bash
-curl -s -o /dev/null -w '%{http_code}\n' https://lod-am.net/.git/config          # 404
-curl -s https://lod-am.net/does-not-exist/ | grep -o '<title>[^<]*'              # the site's 404 page
-curl -sI https://lod-am.net/data/hauptmann2002chemical.ttl | grep -i content-type  # text/turtle
+sudo cp /etc/nginx/sites-available/lod-am /etc/nginx/sites-available/lod-am.bak
+sudo nano /etc/nginx/sites-available/lod-am      # take over docs/nginx/lod-am.conf, keep your root
+sudo nginx -t && sudo systemctl reload nginx
 ```
-Rollback: restore the previous file and reload.
+Check from anywhere (only reads; every line should say `ok`):
+```bash
+scripts/check_conneg.sh
+```
+By hand:
+```bash
+curl -sI -H 'Accept: text/turtle' https://lod-am.net/id/find/8617989c-e99b-4e81-8b57-e707b8dc85c5   # 303, Location: ….ttl
+```
+Rollback: `sudo cp /etc/nginx/sites-available/lod-am.bak /etc/nginx/sites-available/lod-am && sudo nginx -t && sudo systemctl reload nginx`.
 
 ## Rollback
 
