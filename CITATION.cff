@@ -2,6 +2,9 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "LOD-AM website"
+version: "0.2.1"
+date-released: "2026-11-23"
+doi: 10.5281/zenodo.24469235
 abstract: >-
   Eleventy site and blog of LOD-AM (Linked Open Data for Ancient Metallurgy),
   a one-person research project on Linked Open Data for archaeometallurgy.
