@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "LOD-AM website"
-version: "0.2.1.1"
+version: "0.2.1"
 date-released: "2026-11-23"
 doi: 10.5281/zenodo.24469235
 abstract: >-
