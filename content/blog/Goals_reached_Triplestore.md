@@ -30,7 +30,6 @@ A query without any graph sees both together. So you don’t have to care, unles
 Making a database public on a home server needs some care. Reading is open to everyone. Writing is not: the endpoint that changes data needs the admin login, and the firewall only lets requests through that come from my reverse proxy. A query that runs too long is stopped after a while, so one heavy query can’t keep the little machine busy for the rest of the day. And there’s a small text index on the labels, so searching for a name is fast.
 
 And because I care about privacy: Fuseki logs the queries it gets, but the logs are capped, so old entries disappear after a while. The [privacy policy](/privacy/) says what that means for you.
-<!-- REVIEW (owner): you approved the privacy wording on website#57; check this paragraph says the same. -->
 
 ### It updates itself
 
