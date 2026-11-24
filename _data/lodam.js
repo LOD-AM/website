@@ -109,11 +109,16 @@ const elements = new Map(readTsv("data/vocab/chebi.tsv").map(([id, label, symbol
 const wikidata = new Map(readTsv("data/vocab/wikidata.tsv").map(([id, label]) => [NS.wd + id, label]));
 
 const out = new Map(), inc = new Map();
+// Each value once per subject and predicate (same value and language). The keys of the values
+// already added sit in a Set beside the list, so a node with many incoming links (a class, a
+// type, a site) costs no list scan per triple.
+const seenValues = new WeakMap();
 function add(m, a, p, b) {
 	if (!m.has(a)) m.set(a, new Map());
 	const pm = m.get(a);
-	if (!pm.has(p)) pm.set(p, []);
-	if (!pm.get(p).some((x) => x.value === b.value && x.language === b.language)) pm.get(p).push(b);
+	if (!pm.has(p)) { const list = []; pm.set(p, list); seenValues.set(list, new Set()); }
+	const list = pm.get(p), seen = seenValues.get(list), k = `${b.language ?? ""}\u0000${b.value}`;
+	if (!seen.has(k)) { seen.add(k); list.push(b); }
 }
 for (const q of quads) {
 	const o = q.object.termType === "Literal"
@@ -462,7 +467,19 @@ function makeView(iri, kind) {
 // --- Per-record files and citation (planning#13) -------------------------------------------
 // A record's own triples: the record and its helper nodes, whose IRIs continue the record's IRI
 // (<record>/sample, <record>/as, <record>/time_span, ...). Same data as its page.
-const ownQuads = (iri) => quads.filter((q) => q.subject.value === iri || q.subject.value.startsWith(iri + "/"));
+// Indexed once by every "/"-prefix of the subject, in the order of the files, so a record's quads
+// come out exactly as a filter over all quads would give them (two lookups per record page).
+const quadsUnder = new Map();
+for (const q of quads) {
+	const s = q.subject.value;
+	for (let i = s.length; i > 0; i = s.lastIndexOf("/", i - 1)) {
+		const key = s.slice(0, i);
+		if (!quadsUnder.has(key)) quadsUnder.set(key, []);
+		quadsUnder.get(key).push(q);
+		if (i <= ID.length) break;   // nothing below the base IRI is a record
+	}
+}
+const ownQuads = (iri) => quadsUnder.get(iri) || [];
 function usedPrefixes(qs) {
 	const terms = qs.flatMap((q) => [q.subject, q.predicate, q.object]).filter((t) => t.termType === "NamedNode").map((t) => t.value);
 	const pre = { "": ID };
