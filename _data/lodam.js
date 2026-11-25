@@ -93,14 +93,20 @@ function readTsv(file) {
 	return readFileSync(file, "utf8").split("\n").filter((l) => l && !l.startsWith("#")).map((l) => l.split("\t"));
 }
 
-const quads = [];
+const quads = [], seenQuads = new Set();
 const datasets = [];
 for (const sub of ["published", "vocab"]) {
 	const dir = join("data", sub);
 	if (!existsSync(dir)) continue;
 	for (const f of readdirSync(dir).filter((f) => f.endsWith(".ttl")).sort()) {
 		const q = new Parser().parse(readFileSync(join(dir, f), "utf8"));
-		quads.push(...q);
+		// Each triple once: a record in several releases (a type, a site, or a find whose analysis
+		// another publication reports) has its triples in each of those files. (The released files
+		// have no blank nodes, so equal terms are equal triples.)
+		for (const x of q) {
+			const k = [x.subject.value, x.predicate.value, x.object.termType, x.object.value, x.object.language || "", x.object.datatype?.value || ""].join("\u0000");
+			if (!seenQuads.has(k)) { seenQuads.add(k); quads.push(x); }
+		}
 		if (sub === "published") datasets.push({ key: f.replace(/\.ttl$/, ""), file: `/data/${f}`, source: join(dir, f), triples: q.length });
 	}
 }
@@ -155,7 +161,10 @@ function kindOf(iri) {
 	return parts.length === 2 && KINDS[parts[0]] ? parts[0] : null;
 }
 const pathOf = (iri) => "/id/" + iri.slice(ID.length) + "/";
-const isPublication = (iri) => types(iri).includes(P("crm", "E31_Document")) && objs(iri, P("dcterms", "title")).length > 0;
+// A publication record: a document with a title and a citation key. The book that contains a chapter
+// (<pub>/book, a helper node of the chapter's record) has no citation key and no page of its own.
+const isDocument = (iri) => types(iri).includes(P("crm", "E31_Document")) && objs(iri, P("dcterms", "title")).length > 0;
+const isPublication = (iri) => isDocument(iri) && objs(iri, P("dcterms", "identifier")).length > 0;
 const pubKey = (iri) => first(iri, P("dcterms", "identifier")) || iri.split("/").pop();
 
 // First author: the creator whose family name starts the citation key (dcterms:creator has
@@ -177,6 +186,7 @@ function citation(pub) {
 function link(iri) {
 	if (kindOf(iri) && out.has(iri)) return { href: pathOf(iri), text: labelOf(iri) || iri.slice(ID.length) };
 	if (isPublication(iri)) return { href: `/data/publications/${pubKey(iri)}/`, text: `${citation(iri)}: ${first(iri, P("dcterms", "title"))}`, short: citation(iri) };
+	if (isDocument(iri)) return { text: first(iri, P("dcterms", "title")) };   // e.g. the book of a chapter
 	if (iri.startsWith(ID) && labelOf(iri)) return { text: labelOf(iri), title: curie(iri) };  // local concept (knowledge-graph vocab)
 	let m;
 	if ((m = iri.match(/^http:\/\/vocab\.getty\.edu\/aat\/(\d+)$/))) return { href: iri, text: aatLabels[m[1]] ? `${aatLabels[m[1]]} (AAT)` : `AAT ${m[1]}`, short: aatLabels[m[1]], external: true };
@@ -680,7 +690,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		iri, key: pubKey(iri), path: `/data/publications/${pubKey(iri)}/`,
 		citation: citation(iri), title: first(iri, P("dcterms", "title")),
 		authors: authorsOf(iri).map((a) => link(a.iri)), year: first(iri, P("fabio", "hasPublicationYear")),
-		journal: journal ? link(journal) : null, volume: first(iri, P("prism", "volume")), pages,
+		journal: journal ? link(journal) : null, inBook: journal ? types(journal).includes(P("fabio", "Book")) : false, volume: first(iri, P("prism", "volume")), pages,
 		doi: first(iri, P("prism", "doi")), classes: types(iri).map(link),
 		summary: [citation(iri), journal ? labelOf(journal) || link(journal).text : null, pages ? `pp. ${pages}` : null].filter(Boolean),
 		finds: sortLinks(docs.filter((x) => kindOf(x) === "find").map(link)),
