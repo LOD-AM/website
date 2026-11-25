@@ -1,4 +1,4 @@
-# Lead isotope analysis 14 of Spearhead, unspecified (no. ARSL 31A, Arslantepe)
+# Lead isotope analysis ARSL 31A of Spearhead, unspecified (no. ARSL 31A, Arslantepe)
 # https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 14 von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de, "Lead isotope analysis 14 of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 31A von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de, "Lead isotope analysis ARSL 31A of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb204_pb206>, <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb207_pb206>, <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/sample>;
-    dcterms:identifier "14";
+    dcterms:identifier "ARSL 31A";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0798.
 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (14)"@de, "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (14)"@en.
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (ARSL 31A)"@de, "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (ARSL 31A)"@en.

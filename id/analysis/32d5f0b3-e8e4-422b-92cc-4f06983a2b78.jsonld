@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 179 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 18 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 179 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)",
+     "@value": "Chemical analysis ARSL 18 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "179"
+     "@value": "ARSL 18"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (179)",
+     "@value": "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (ARSL 18)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (179)",
+     "@value": "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (ARSL 18)",
      "@language": "en"
     }
    ]

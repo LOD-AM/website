@@ -1,4 +1,4 @@
-# Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)
+# Chemical analysis ARSL 47 of Bowl (no. ARSL 47, Arslantepe)
 # https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 144 von Schale (Nr. ARSL 47, Arslantepe)"@de, "Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 47 von Schale (Nr. ARSL 47, Arslantepe)"@de, "Chemical analysis ARSL 47 of Bowl (no. ARSL 47, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/bi>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/co>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/fe>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ni>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/p>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/pb>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sb>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/se>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sn>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te>, <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample>;
-    dcterms:identifier "144";
+    dcterms:identifier "ARSL 47";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/d1bd0c5c-67c7-42f7-b388-331a1c85f26b>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.005;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schale (Nr. ARSL 47, Arslantepe) (144)"@de, "Sample from Bowl (no. ARSL 47, Arslantepe) (144)"@en.
+    rdfs:label "Probe von Schale (Nr. ARSL 47, Arslantepe) (ARSL 47)"@de, "Sample from Bowl (no. ARSL 47, Arslantepe) (ARSL 47)"@en.

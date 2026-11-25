@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 170 von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 30 von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 170 of Spearhead, unspecified (no. ARSL 30, Arslantepe)",
+     "@value": "Chemical analysis ARSL 30 of Spearhead, unspecified (no. ARSL 30, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "170"
+     "@value": "ARSL 30"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe) (170)",
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe) (ARSL 30)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Spearhead, unspecified (no. ARSL 30, Arslantepe) (170)",
+     "@value": "Sample from Spearhead, unspecified (no. ARSL 30, Arslantepe) (ARSL 30)",
      "@language": "en"
     }
    ]

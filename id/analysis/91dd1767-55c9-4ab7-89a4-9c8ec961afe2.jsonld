@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 13 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 29 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 13 of Spearhead, unspecified (no. ARSL 29, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 29 of Spearhead, unspecified (no. ARSL 29, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "13"
+     "@value": "ARSL 29"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (13)",
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (ARSL 29)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (13)",
+     "@value": "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (ARSL 29)",
      "@language": "en"
     }
    ]

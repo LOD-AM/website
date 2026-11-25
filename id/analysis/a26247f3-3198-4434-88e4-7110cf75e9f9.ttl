@@ -1,4 +1,4 @@
-# Lead isotope analysis 16 of Spearhead, unspecified (no. ARSL 34, Arslantepe)
+# Lead isotope analysis ARSL 34 of Spearhead, unspecified (no. ARSL 34, Arslantepe)
 # https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 16 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de, "Lead isotope analysis 16 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 34 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de, "Lead isotope analysis ARSL 34 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb204_pb206>, <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb207_pb206>, <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/sample>;
-    dcterms:identifier "16";
+    dcterms:identifier "ARSL 34";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0865.
 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (16)"@de, "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (16)"@en.
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (ARSL 34)"@de, "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (ARSL 34)"@en.

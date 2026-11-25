@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 156 von Pfriem (Nr. ARSL 22, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 22 von Pfriem (Nr. ARSL 22, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 156 of Awl (no. ARSL 22, Arslantepe)",
+     "@value": "Chemical analysis ARSL 22 of Awl (no. ARSL 22, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "156"
+     "@value": "ARSL 22"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (156)",
+     "@value": "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (ARSL 22)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Awl (no. ARSL 22, Arslantepe) (156)",
+     "@value": "Sample from Awl (no. ARSL 22, Arslantepe) (ARSL 22)",
      "@language": "en"
     }
    ]

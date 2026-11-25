@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 821 von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe)",
+     "@value": "Chemische Analyse TR-8/21 von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 821 of Spearhead, unspecified (no. TR-8/21, Arslantepe)",
+     "@value": "Chemical analysis TR-8/21 of Spearhead, unspecified (no. TR-8/21, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "821"
+     "@value": "TR-8/21"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe) (821)",
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe) (TR-8/21)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Spearhead, unspecified (no. TR-8/21, Arslantepe) (821)",
+     "@value": "Sample from Spearhead, unspecified (no. TR-8/21, Arslantepe) (TR-8/21)",
      "@language": "en"
     }
    ]

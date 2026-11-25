@@ -1,4 +1,4 @@
-# Chemical analysis 156 of Awl (no. ARSL 22, Arslantepe)
+# Chemical analysis ARSL 22 of Awl (no. ARSL 22, Arslantepe)
 # https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 156 von Pfriem (Nr. ARSL 22, Arslantepe)"@de, "Chemical analysis 156 of Awl (no. ARSL 22, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 22 von Pfriem (Nr. ARSL 22, Arslantepe)"@de, "Chemical analysis ARSL 22 of Awl (no. ARSL 22, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/ag>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/as>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/au>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/bi>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/co>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/fe>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/ni>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/p>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/pb>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sb>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/se>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sn>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/te>, <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sample>;
-    dcterms:identifier "156";
+    dcterms:identifier "ARSL 22";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/f1aea236-08ac-450d-8371-6cfd45b8b85e>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.004;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (156)"@de, "Sample from Awl (no. ARSL 22, Arslantepe) (156)"@en.
+    rdfs:label "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (ARSL 22)"@de, "Sample from Awl (no. ARSL 22, Arslantepe) (ARSL 22)"@en.

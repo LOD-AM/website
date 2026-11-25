@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 20 von Ring, unbestimmt (Nr. ARSL 55, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 55 von Ring, unbestimmt (Nr. ARSL 55, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 20 of Ring, unspecified (no. ARSL 55, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 55 of Ring, unspecified (no. ARSL 55, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "20"
+     "@value": "ARSL 55"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Ring, unbestimmt (Nr. ARSL 55, Arslantepe) (20)",
+     "@value": "Probe von Ring, unbestimmt (Nr. ARSL 55, Arslantepe) (ARSL 55)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Ring, unspecified (no. ARSL 55, Arslantepe) (20)",
+     "@value": "Sample from Ring, unspecified (no. ARSL 55, Arslantepe) (ARSL 55)",
      "@language": "en"
     }
    ]

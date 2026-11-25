@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 11 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 23 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 11 of Maykop fork (no. ARSL 23, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 23 of Maykop fork (no. ARSL 23, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "11"
+     "@value": "ARSL 23"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (11)",
+     "@value": "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (ARSL 23)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Maykop fork (no. ARSL 23, Arslantepe) (11)",
+     "@value": "Sample from Maykop fork (no. ARSL 23, Arslantepe) (ARSL 23)",
      "@language": "en"
     }
    ]

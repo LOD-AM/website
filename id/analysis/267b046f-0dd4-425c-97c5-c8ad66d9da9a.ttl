@@ -1,4 +1,4 @@
-# Lead isotope analysis 27 of Sword, unspecified (no. TR-8/4, Arslantepe)
+# Lead isotope analysis TR-8/4 of Sword, unspecified (no. TR-8/4, Arslantepe)
 # https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 27 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de, "Lead isotope analysis 27 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse TR-8/4 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de, "Lead isotope analysis TR-8/4 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb204_pb206>, <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb207_pb206>, <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/sample>;
-    dcterms:identifier "27";
+    dcterms:identifier "TR-8/4";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0879.
 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (27)"@de, "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (27)"@en.
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (TR-8/4)"@de, "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (TR-8/4)"@en.

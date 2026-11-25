@@ -1,4 +1,4 @@
-# Chemical analysis 161 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)
+# Chemical analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)
 # https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 161 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de, "Chemical analysis 161 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 19 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de, "Chemical analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ag>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/as>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/au>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/bi>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/co>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/fe>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ni>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/p>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/pb>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sb>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/se>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sn>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/te>, <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample>;
-    dcterms:identifier "161";
+    dcterms:identifier "ARSL 19";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/386ff65e-38b4-4e1c-ac38-963e244ab245>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.001;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (161)"@de, "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (161)"@en.
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (ARSL 19)"@de, "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (ARSL 19)"@en.

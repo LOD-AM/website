@@ -1,4 +1,4 @@
-# Lead isotope analysis 19 of Bracelet, unspecified (no. ARSL 53, Arslantepe)
+# Lead isotope analysis ARSL 53 of Bracelet, unspecified (no. ARSL 53, Arslantepe)
 # https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 19 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)"@de, "Lead isotope analysis 19 of Bracelet, unspecified (no. ARSL 53, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 53 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)"@de, "Lead isotope analysis ARSL 53 of Bracelet, unspecified (no. ARSL 53, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb204_pb206>, <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb207_pb206>, <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/sample>;
-    dcterms:identifier "19";
+    dcterms:identifier "ARSL 53";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0701.
 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (19)"@de, "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (19)"@en.
+    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (ARSL 53)"@de, "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (ARSL 53)"@en.

@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 144 von Schale (Nr. ARSL 47, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 47 von Schale (Nr. ARSL 47, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)",
+     "@value": "Chemical analysis ARSL 47 of Bowl (no. ARSL 47, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "144"
+     "@value": "ARSL 47"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schale (Nr. ARSL 47, Arslantepe) (144)",
+     "@value": "Probe von Schale (Nr. ARSL 47, Arslantepe) (ARSL 47)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Bowl (no. ARSL 47, Arslantepe) (144)",
+     "@value": "Sample from Bowl (no. ARSL 47, Arslantepe) (ARSL 47)",
      "@language": "en"
     }
    ]

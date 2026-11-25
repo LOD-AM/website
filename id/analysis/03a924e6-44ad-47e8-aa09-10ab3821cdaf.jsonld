@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 161 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 19 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 161 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)",
+     "@value": "Chemical analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "161"
+     "@value": "ARSL 19"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (161)",
+     "@value": "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (ARSL 19)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (161)",
+     "@value": "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (ARSL 19)",
      "@language": "en"
     }
    ]

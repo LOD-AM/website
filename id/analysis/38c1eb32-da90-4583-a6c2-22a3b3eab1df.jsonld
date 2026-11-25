@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 5 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 16 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 5 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 16 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "5"
+     "@value": "ARSL 16"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (5)",
+     "@value": "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (ARSL 16)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (5)",
+     "@value": "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (ARSL 16)",
      "@language": "en"
     }
    ]

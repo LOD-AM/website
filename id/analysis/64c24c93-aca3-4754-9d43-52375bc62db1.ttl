@@ -1,4 +1,4 @@
-# Chemical analysis 162 of Socketed chisel (no. ARSL 13, Arslantepe)
+# Chemical analysis ARSL 13 of Socketed chisel (no. ARSL 13, Arslantepe)
 # https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 162 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de, "Chemical analysis 162 of Socketed chisel (no. ARSL 13, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 13 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de, "Chemical analysis ARSL 13 of Socketed chisel (no. ARSL 13, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/ag>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/as>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/au>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/bi>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/co>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/fe>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/ni>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/p>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/pb>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sb>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/se>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sn>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/te>, <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sample>;
-    dcterms:identifier "162";
+    dcterms:identifier "ARSL 13";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/7f57d6c3-09f3-415d-a71a-4aae8197bd43>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.014;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (162)"@de, "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (162)"@en.
+    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (ARSL 13)"@de, "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (ARSL 13)"@en.

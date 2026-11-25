@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 4 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 15 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 4 of Sword, unspecified (no. ARSL 15, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 15 of Sword, unspecified (no. ARSL 15, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "4"
+     "@value": "ARSL 15"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (4)",
+     "@value": "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (ARSL 15)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (4)",
+     "@value": "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (ARSL 15)",
      "@language": "en"
     }
    ]

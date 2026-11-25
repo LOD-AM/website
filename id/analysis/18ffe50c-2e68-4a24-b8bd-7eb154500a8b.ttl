@@ -1,4 +1,4 @@
-# Lead isotope analysis 17 of Bracelet, unspecified (no. ARSL 40, Arslantepe)
+# Lead isotope analysis ARSL 40 of Bracelet, unspecified (no. ARSL 40, Arslantepe)
 # https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 17 von Armring, unbestimmt (Nr. ARSL 40, Arslantepe)"@de, "Lead isotope analysis 17 of Bracelet, unspecified (no. ARSL 40, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 40 von Armring, unbestimmt (Nr. ARSL 40, Arslantepe)"@de, "Lead isotope analysis ARSL 40 of Bracelet, unspecified (no. ARSL 40, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb204_pb206>, <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb207_pb206>, <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/sample>;
-    dcterms:identifier "17";
+    dcterms:identifier "ARSL 40";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.068.
 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 40, Arslantepe) (17)"@de, "Sample from Bracelet, unspecified (no. ARSL 40, Arslantepe) (17)"@en.
+    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 40, Arslantepe) (ARSL 40)"@de, "Sample from Bracelet, unspecified (no. ARSL 40, Arslantepe) (ARSL 40)"@en.

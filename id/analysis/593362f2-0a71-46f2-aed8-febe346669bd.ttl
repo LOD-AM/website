@@ -1,4 +1,4 @@
-# Chemical analysis 828 of Sword, unspecified (no. TR-8/28, Arslantepe)
+# Chemical analysis TR-8/28 of Sword, unspecified (no. TR-8/28, Arslantepe)
 # https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 828 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de, "Chemical analysis 828 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse TR-8/28 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de, "Chemical analysis TR-8/28 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/ag>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/as>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/au>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/bi>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/co>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/fe>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/ni>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/p>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/pb>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sb>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/se>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sn>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/te>, <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sample>;
-    dcterms:identifier "828";
+    dcterms:identifier "TR-8/28";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/83a82b77-02b5-4aac-b2f3-8903d97cd0cf>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.0021;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (828)"@de, "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (828)"@en.
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (TR-8/28)"@de, "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (TR-8/28)"@en.

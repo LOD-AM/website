@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 140 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 2 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)",
+     "@value": "Chemical analysis ARSL 2 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "140"
+     "@value": "ARSL 2"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (140)",
+     "@value": "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (ARSL 2)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (140)",
+     "@value": "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (ARSL 2)",
      "@language": "en"
     }
    ]

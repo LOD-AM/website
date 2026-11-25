@@ -1,4 +1,4 @@
-# Chemical analysis 152 of Flat chisel, wedge (no. ARSL 25, Arslantepe)
+# Chemical analysis ARSL 25 of Flat chisel, wedge (no. ARSL 25, Arslantepe)
 # https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 152 von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe)"@de, "Chemical analysis 152 of Flat chisel, wedge (no. ARSL 25, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 25 von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe)"@de, "Chemical analysis ARSL 25 of Flat chisel, wedge (no. ARSL 25, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/ag>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/as>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/au>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/bi>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/co>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/fe>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/ni>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/p>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/pb>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sb>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/se>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sn>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/te>, <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sample>;
-    dcterms:identifier "152";
+    dcterms:identifier "ARSL 25";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/846cb931-4676-4aa7-8bf1-13eaceac0b7b>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.001;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe) (152)"@de, "Sample from Flat chisel, wedge (no. ARSL 25, Arslantepe) (152)"@en.
+    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe) (ARSL 25)"@de, "Sample from Flat chisel, wedge (no. ARSL 25, Arslantepe) (ARSL 25)"@en.

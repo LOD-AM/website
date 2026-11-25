@@ -12,7 +12,7 @@
     dcterms:publisher <https://lod-am.net/about/#me>;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/>;
     dcterms:issued "2026-11-17"^^xsd:date;
-    dcterms:modified "2026-11-19"^^xsd:date;
+    dcterms:modified "2026-11-25"^^xsd:date;
     foaf:homepage <https://lod-am.net/data/>;
     foaf:page <https://lod-am.net/data/model/>;
     void:uriSpace "https://lod-am.net/id/";

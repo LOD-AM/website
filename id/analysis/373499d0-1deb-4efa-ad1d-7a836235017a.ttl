@@ -1,4 +1,4 @@
-# Lead isotope analysis 8 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)
+# Lead isotope analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)
 # https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 8 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de, "Lead isotope analysis 8 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 19 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de, "Lead isotope analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb204_pb206>, <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb207_pb206>, <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/sample>;
-    dcterms:identifier "8";
+    dcterms:identifier "ARSL 19";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0713.
 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (8)"@de, "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (8)"@en.
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (ARSL 19)"@de, "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (ARSL 19)"@en.

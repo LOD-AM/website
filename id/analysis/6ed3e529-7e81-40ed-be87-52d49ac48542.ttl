@@ -1,4 +1,4 @@
-# Lead isotope analysis 6 of Vessel, unspecified (no. ARSL 17, Arslantepe)
+# Lead isotope analysis ARSL 17 of Vessel, unspecified (no. ARSL 17, Arslantepe)
 # https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 6 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)"@de, "Lead isotope analysis 6 of Vessel, unspecified (no. ARSL 17, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 17 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)"@de, "Lead isotope analysis ARSL 17 of Vessel, unspecified (no. ARSL 17, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb204_pb206>, <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb207_pb206>, <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/sample>;
-    dcterms:identifier "6";
+    dcterms:identifier "ARSL 17";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0648.
 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (6)"@de, "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (6)"@en.
+    rdfs:label "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (ARSL 17)"@de, "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (ARSL 17)"@en.

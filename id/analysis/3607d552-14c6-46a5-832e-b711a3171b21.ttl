@@ -1,4 +1,4 @@
-# Chemical analysis 89 of Spearhead, unspecified (no. TR-8/9, Arslantepe)
+# Chemical analysis TR-8/9 of Spearhead, unspecified (no. TR-8/9, Arslantepe)
 # https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 89 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de, "Chemical analysis 89 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse TR-8/9 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de, "Chemical analysis TR-8/9 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ag>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/as>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/au>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/bi>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/co>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/fe>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ni>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/p>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/pb>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sb>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/se>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sn>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/te>, <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample>;
-    dcterms:identifier "89";
+    dcterms:identifier "TR-8/9";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/89e70a5b-b125-4125-be33-6e423915c675>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.0022;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (89)"@de, "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (89)"@en.
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (TR-8/9)"@de, "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (TR-8/9)"@en.

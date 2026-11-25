@@ -1,4 +1,4 @@
-# Chemical analysis 169 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)
+# Chemical analysis TR-8/203 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)
 # https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 169 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe)"@de, "Chemical analysis 169 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse TR-8/203 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe)"@de, "Chemical analysis TR-8/203 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/ag>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/as>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/au>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/bi>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/co>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/fe>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/ni>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/p>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/pb>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sb>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/se>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sn>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/te>, <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sample>;
-    dcterms:identifier "169";
+    dcterms:identifier "TR-8/203";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/4f5d221f-a707-450b-8dab-d08160b8628a>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.015;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe) (169)"@de, "Sample from Casting residue, sprue, slag (no. TR-8/203, Arslantepe) (169)"@en.
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe) (TR-8/203)"@de, "Sample from Casting residue, sprue, slag (no. TR-8/203, Arslantepe) (TR-8/203)"@en.

@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 2 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 13 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 2 of Socketed chisel (no. ARSL 13, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 13 of Socketed chisel (no. ARSL 13, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "2"
+     "@value": "ARSL 13"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (2)",
+     "@value": "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (ARSL 13)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (2)",
+     "@value": "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (ARSL 13)",
      "@language": "en"
     }
    ]

@@ -1,4 +1,4 @@
-# Chemical analysis 145 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)
+# Chemical analysis ARSL 5 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)
 # https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 145 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe)"@de, "Chemical analysis 145 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 5 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe)"@de, "Chemical analysis ARSL 5 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/ag>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/as>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/au>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/bi>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/co>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/fe>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/ni>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/p>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/pb>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sb>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/se>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sn>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/te>, <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sample>;
-    dcterms:identifier "145";
+    dcterms:identifier "ARSL 5";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/2886e1d4-430e-494c-b479-40799115f84b>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.009;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe) (145)"@de, "Sample from Pin, special or unspecified form (no. ARSL 5, Arslantepe) (145)"@en.
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe) (ARSL 5)"@de, "Sample from Pin, special or unspecified form (no. ARSL 5, Arslantepe) (ARSL 5)"@en.

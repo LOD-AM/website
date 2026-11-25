@@ -1,4 +1,4 @@
-# Lead isotope analysis 23 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)
+# Lead isotope analysis ARSL 65 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)
 # https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 23 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de, "Lead isotope analysis 23 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 65 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de, "Lead isotope analysis ARSL 65 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb204_pb206>, <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb207_pb206>, <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/sample>;
-    dcterms:identifier "23";
+    dcterms:identifier "ARSL 65";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0856.
 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (23)"@de, "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (23)"@en.
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (ARSL 65)"@de, "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (ARSL 65)"@en.

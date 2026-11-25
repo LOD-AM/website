@@ -1,4 +1,4 @@
-# Chemical analysis 178 of Sword, unspecified (no. ARSL 35, Arslantepe)
+# Chemical analysis ARSL 35 of Sword, unspecified (no. ARSL 35, Arslantepe)
 # https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 178 von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe)"@de, "Chemical analysis 178 of Sword, unspecified (no. ARSL 35, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 35 von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe)"@de, "Chemical analysis ARSL 35 of Sword, unspecified (no. ARSL 35, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/ag>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/as>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/au>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/bi>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/co>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/fe>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/ni>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/p>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/pb>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sb>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/se>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sn>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/te>, <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sample>;
-    dcterms:identifier "178";
+    dcterms:identifier "ARSL 35";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/4be2d50c-70bf-4593-b5ee-e2a635137ba2>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.003;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe) (178)"@de, "Sample from Sword, unspecified (no. ARSL 35, Arslantepe) (178)"@en.
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe) (ARSL 35)"@de, "Sample from Sword, unspecified (no. ARSL 35, Arslantepe) (ARSL 35)"@en.

@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 28 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)",
+     "@value": "Bleiisotopenanalyse TR-8/9 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 28 of Spearhead, unspecified (no. TR-8/9, Arslantepe)",
+     "@value": "Lead isotope analysis TR-8/9 of Spearhead, unspecified (no. TR-8/9, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "28"
+     "@value": "TR-8/9"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (28)",
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (TR-8/9)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (28)",
+     "@value": "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (TR-8/9)",
      "@language": "en"
     }
    ]

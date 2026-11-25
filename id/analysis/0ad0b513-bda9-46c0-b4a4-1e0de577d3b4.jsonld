@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 19 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 53 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 19 of Bracelet, unspecified (no. ARSL 53, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 53 of Bracelet, unspecified (no. ARSL 53, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "19"
+     "@value": "ARSL 53"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (19)",
+     "@value": "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (ARSL 53)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (19)",
+     "@value": "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (ARSL 53)",
      "@language": "en"
     }
    ]

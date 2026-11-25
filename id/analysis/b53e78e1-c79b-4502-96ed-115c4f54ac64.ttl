@@ -1,4 +1,4 @@
-# Chemical analysis 177 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)
+# Chemical analysis ARSL 16 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)
 # https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 177 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de, "Chemical analysis 177 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 16 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de, "Chemical analysis ARSL 16 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/ag>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/as>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/au>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/bi>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/co>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/fe>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/ni>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/p>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/pb>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sb>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/se>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sn>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/te>, <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sample>;
-    dcterms:identifier "177";
+    dcterms:identifier "ARSL 16";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/6b9acc5d-b501-4e6a-9bff-e63c8da5145a>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.007;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (177)"@de, "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (177)"@en.
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (ARSL 16)"@de, "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (ARSL 16)"@en.

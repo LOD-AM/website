@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 810 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)",
+     "@value": "Chemische Analyse TR-8/10 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 810 of Pendant, unspecified (no. TR-8/10, Arslantepe)",
+     "@value": "Chemical analysis TR-8/10 of Pendant, unspecified (no. TR-8/10, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "810"
+     "@value": "TR-8/10"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (810)",
+     "@value": "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (TR-8/10)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (810)",
+     "@value": "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (TR-8/10)",
      "@language": "en"
     }
    ]

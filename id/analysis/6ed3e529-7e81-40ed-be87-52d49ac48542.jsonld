@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 6 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 17 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 6 of Vessel, unspecified (no. ARSL 17, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 17 of Vessel, unspecified (no. ARSL 17, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "6"
+     "@value": "ARSL 17"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (6)",
+     "@value": "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (ARSL 17)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (6)",
+     "@value": "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (ARSL 17)",
      "@language": "en"
     }
    ]

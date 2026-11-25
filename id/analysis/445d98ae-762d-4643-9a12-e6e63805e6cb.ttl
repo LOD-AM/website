@@ -1,4 +1,4 @@
-# Lead isotope analysis 11 of Maykop fork (no. ARSL 23, Arslantepe)
+# Lead isotope analysis ARSL 23 of Maykop fork (no. ARSL 23, Arslantepe)
 # https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 11 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)"@de, "Lead isotope analysis 11 of Maykop fork (no. ARSL 23, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 23 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)"@de, "Lead isotope analysis ARSL 23 of Maykop fork (no. ARSL 23, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb204_pb206>, <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb207_pb206>, <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/sample>;
-    dcterms:identifier "11";
+    dcterms:identifier "ARSL 23";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0694.
 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (11)"@de, "Sample from Maykop fork (no. ARSL 23, Arslantepe) (11)"@en.
+    rdfs:label "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (ARSL 23)"@de, "Sample from Maykop fork (no. ARSL 23, Arslantepe) (ARSL 23)"@en.

@@ -1,4 +1,4 @@
-# Lead isotope analysis 21 of Ring, unspecified (no. ARSL 63, Arslantepe)
+# Lead isotope analysis ARSL 63 of Ring, unspecified (no. ARSL 63, Arslantepe)
 # https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -15,10 +15,10 @@
 @prefix wd: <http://www.wikidata.org/entity/>.
 
 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd> a afp:AFP_0001427, crm:E7_Activity;
-    rdfs:label "Bleiisotopenanalyse 21 von Ring, unbestimmt (Nr. ARSL 63, Arslantepe)"@de, "Lead isotope analysis 21 of Ring, unspecified (no. ARSL 63, Arslantepe)"@en;
+    rdfs:label "Bleiisotopenanalyse ARSL 63 von Ring, unbestimmt (Nr. ARSL 63, Arslantepe)"@de, "Lead isotope analysis ARSL 63 of Ring, unspecified (no. ARSL 63, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb204_pb206>, <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb207_pb206>, <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb208_pb206>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample>;
-    dcterms:identifier "21";
+    dcterms:identifier "ARSL 63";
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079>;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sampling> a crmsci:S2_Sample_Taking;
@@ -37,4 +37,4 @@
     afx:AFX_0002816 wd:Q16670466;
     qudt:numericValue 2.0683.
 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 63, Arslantepe) (21)"@de, "Sample from Ring, unspecified (no. ARSL 63, Arslantepe) (21)"@en.
+    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 63, Arslantepe) (ARSL 63)"@de, "Sample from Ring, unspecified (no. ARSL 63, Arslantepe) (ARSL 63)"@en.

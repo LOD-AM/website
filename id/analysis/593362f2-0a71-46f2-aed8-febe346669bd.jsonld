@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 828 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)",
+     "@value": "Chemische Analyse TR-8/28 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 828 of Sword, unspecified (no. TR-8/28, Arslantepe)",
+     "@value": "Chemical analysis TR-8/28 of Sword, unspecified (no. TR-8/28, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "828"
+     "@value": "TR-8/28"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (828)",
+     "@value": "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (TR-8/28)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (828)",
+     "@value": "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (TR-8/28)",
      "@language": "en"
     }
    ]

@@ -1,4 +1,4 @@
-# Chemical analysis 157 of Spearhead, unspecified (no. ARSL 33, Arslantepe)
+# Chemical analysis ARSL 33 of Spearhead, unspecified (no. ARSL 33, Arslantepe)
 # https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 157 von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe)"@de, "Chemical analysis 157 of Spearhead, unspecified (no. ARSL 33, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 33 von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe)"@de, "Chemical analysis ARSL 33 of Spearhead, unspecified (no. ARSL 33, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/ag>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/as>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/au>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/bi>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/co>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/fe>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/ni>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/p>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/pb>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sb>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/se>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sn>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/te>, <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sample>;
-    dcterms:identifier "157";
+    dcterms:identifier "ARSL 33";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/e8f3e3eb-a100-4450-a410-80b74e8a52e6>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.001;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe) (157)"@de, "Sample from Spearhead, unspecified (no. ARSL 33, Arslantepe) (157)"@en.
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe) (ARSL 33)"@de, "Sample from Spearhead, unspecified (no. ARSL 33, Arslantepe) (ARSL 33)"@en.

@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 9 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 20 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 9 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 20 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "9"
+     "@value": "ARSL 20"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (9)",
+     "@value": "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (ARSL 20)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (9)",
+     "@value": "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (ARSL 20)",
      "@language": "en"
     }
    ]

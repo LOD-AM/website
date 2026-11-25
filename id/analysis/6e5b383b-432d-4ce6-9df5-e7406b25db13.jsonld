@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 174 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 15 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 174 of Sword, unspecified (no. ARSL 15, Arslantepe)",
+     "@value": "Chemical analysis ARSL 15 of Sword, unspecified (no. ARSL 15, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "174"
+     "@value": "ARSL 15"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (174)",
+     "@value": "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (ARSL 15)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (174)",
+     "@value": "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (ARSL 15)",
      "@language": "en"
     }
    ]

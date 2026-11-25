@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 147 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe)",
+     "@value": "Chemische Analyse TR-8/200 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 147 of Casting residue, sprue, slag (no. TR-8/200, Arslantepe)",
+     "@value": "Chemical analysis TR-8/200 of Casting residue, sprue, slag (no. TR-8/200, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "147"
+     "@value": "TR-8/200"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe) (147)",
+     "@value": "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe) (TR-8/200)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Casting residue, sprue, slag (no. TR-8/200, Arslantepe) (147)",
+     "@value": "Sample from Casting residue, sprue, slag (no. TR-8/200, Arslantepe) (TR-8/200)",
      "@language": "en"
     }
    ]

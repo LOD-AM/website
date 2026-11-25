@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 3 von Pfriem (Nr. ARSL 14, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 14 von Pfriem (Nr. ARSL 14, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 3 of Awl (no. ARSL 14, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 14 of Awl (no. ARSL 14, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "3"
+     "@value": "ARSL 14"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (3)",
+     "@value": "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (ARSL 14)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Awl (no. ARSL 14, Arslantepe) (3)",
+     "@value": "Sample from Awl (no. ARSL 14, Arslantepe) (ARSL 14)",
      "@language": "en"
     }
    ]

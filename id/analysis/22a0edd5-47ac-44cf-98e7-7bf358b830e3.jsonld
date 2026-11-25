@@ -22,11 +22,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Chemische Analyse 154 von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)",
+     "@value": "Chemische Analyse ARSL 24 von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Chemical analysis 154 of Flat chisel, wedge (no. ARSL 24, Arslantepe)",
+     "@value": "Chemical analysis ARSL 24 of Flat chisel, wedge (no. ARSL 24, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -81,7 +81,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "154"
+     "@value": "ARSL 24"
     }
    ],
    "crm:P70i_is_documented_in": [
@@ -422,11 +422,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe) (154)",
+     "@value": "Probe von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe) (ARSL 24)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Flat chisel, wedge (no. ARSL 24, Arslantepe) (154)",
+     "@value": "Sample from Flat chisel, wedge (no. ARSL 24, Arslantepe) (ARSL 24)",
      "@language": "en"
     }
    ]

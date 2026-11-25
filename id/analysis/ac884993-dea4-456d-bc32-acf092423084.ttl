@@ -1,4 +1,4 @@
-# Chemical analysis 810 of Pendant, unspecified (no. TR-8/10, Arslantepe)
+# Chemical analysis TR-8/10 of Pendant, unspecified (no. TR-8/10, Arslantepe)
 # https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084 · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 810 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)"@de, "Chemical analysis 810 of Pendant, unspecified (no. TR-8/10, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse TR-8/10 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)"@de, "Chemical analysis TR-8/10 of Pendant, unspecified (no. TR-8/10, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/ag>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/as>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/au>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/bi>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/co>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/fe>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/ni>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/p>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/pb>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sb>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/se>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sn>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/te>, <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sample>;
-    dcterms:identifier "810";
+    dcterms:identifier "TR-8/10";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/036079bd-3f71-459e-b9ff-8a0d76189921>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.00011;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (810)"@de, "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (810)"@en.
+    rdfs:label "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (TR-8/10)"@de, "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (TR-8/10)"@en.

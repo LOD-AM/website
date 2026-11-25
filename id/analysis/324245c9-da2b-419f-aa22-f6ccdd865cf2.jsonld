@@ -21,11 +21,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Bleiisotopenanalyse 15 von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)",
+     "@value": "Bleiisotopenanalyse ARSL 31B von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)",
      "@language": "de"
     },
     {
-     "@value": "Lead isotope analysis 15 of Spearhead, unspecified (no. ARSL 31B, Arslantepe)",
+     "@value": "Lead isotope analysis ARSL 31B of Spearhead, unspecified (no. ARSL 31B, Arslantepe)",
      "@language": "en"
     }
    ],
@@ -47,7 +47,7 @@
    ],
    "dcterms:identifier": [
     {
-     "@value": "15"
+     "@value": "ARSL 31B"
     }
    ],
    "crm:P14_carried_out_by": [
@@ -151,11 +151,11 @@
    ],
    "rdfs:label": [
     {
-     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (15)",
+     "@value": "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (ARSL 31B)",
      "@language": "de"
     },
     {
-     "@value": "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (15)",
+     "@value": "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (ARSL 31B)",
      "@language": "en"
     }
    ]

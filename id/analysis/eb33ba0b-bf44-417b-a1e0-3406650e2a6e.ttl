@@ -1,4 +1,4 @@
-# Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)
+# Chemical analysis ARSL 2 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)
 # https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e · LOD-AM (https://lod-am.net/) · CC BY 4.0
 
 @prefix : <https://lod-am.net/id/>.
@@ -16,10 +16,10 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_>.
 
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e> a afp:AFP_0002680, crm:E7_Activity;
-    rdfs:label "Chemische Analyse 140 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)"@de, "Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)"@en;
+    rdfs:label "Chemische Analyse ARSL 2 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)"@de, "Chemical analysis ARSL 2 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)"@en;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ag>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/as>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/au>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/bi>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/co>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/fe>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ni>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/p>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/pb>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sb>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/se>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sn>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/te>, <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/zn>;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample>;
-    dcterms:identifier "140";
+    dcterms:identifier "ARSL 2";
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745>.
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sampling> a crmsci:S2_Sample_Taking;
     crmsci:O3_sampled_from <https://lod-am.net/id/find/3d0ebeb1-ab09-42ee-a975-f65638719cea>;
@@ -81,4 +81,4 @@
     qudt:numericValue 0.022;
     qudt:unit unit:PERCENT.
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample> a afm:AFM_0001099, crmsci:S13_Sample;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (140)"@de, "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (140)"@en.
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (ARSL 2)"@de, "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (ARSL 2)"@en.
