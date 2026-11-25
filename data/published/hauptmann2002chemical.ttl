@@ -23,8 +23,8 @@
 
 <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 165 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/207, Arslantepe)"@de,
-        "Chemical analysis 165 of Casting residue, sprue, slag (no. TR-8/207, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/207 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/207, Arslantepe)"@de,
+        "Chemical analysis TR-8/207 of Casting residue, sprue, slag (no. TR-8/207, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/ag>,
         <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/as>,
         <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/au>,
@@ -40,7 +40,7 @@
         <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/te>,
         <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/sample> ;
-    dcterms:identifier "165" ;
+    dcterms:identifier "TR-8/207" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/sampling> a crmsci:S2_Sample_Taking ;
@@ -49,8 +49,8 @@
 
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 161 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de,
-        "Chemical analysis 161 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 19 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de,
+        "Chemical analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/ag>,
         <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/as>,
         <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/au>,
@@ -66,7 +66,7 @@
         <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/te>,
         <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample> ;
-    dcterms:identifier "161" ;
+    dcterms:identifier "ARSL 19" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sampling> a crmsci:S2_Sample_Taking ;
@@ -75,8 +75,8 @@
 
 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 149 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de,
-        "Chemical analysis 149 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 28 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de,
+        "Chemical analysis ARSL 28 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/ag>,
         <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/as>,
         <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/au>,
@@ -92,7 +92,7 @@
         <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/te>,
         <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sample> ;
-    dcterms:identifier "149" ;
+    dcterms:identifier "ARSL 28" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sampling> a crmsci:S2_Sample_Taking ;
@@ -101,8 +101,8 @@
 
 <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 88 von Schwert, unbestimmt (Nr. TR-8/8, Arslantepe)"@de,
-        "Chemical analysis 88 of Sword, unspecified (no. TR-8/8, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/8 von Schwert, unbestimmt (Nr. TR-8/8, Arslantepe)"@de,
+        "Chemical analysis TR-8/8 of Sword, unspecified (no. TR-8/8, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/ag>,
         <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/as>,
         <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/au>,
@@ -118,7 +118,7 @@
         <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/te>,
         <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/sample> ;
-    dcterms:identifier "88" ;
+    dcterms:identifier "TR-8/8" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/sampling> a crmsci:S2_Sample_Taking ;
@@ -127,13 +127,13 @@
 
 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 19 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)"@de,
-        "Lead isotope analysis 19 of Bracelet, unspecified (no. ARSL 53, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 53 von Armring, unbestimmt (Nr. ARSL 53, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 53 of Bracelet, unspecified (no. ARSL 53, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb204_pb206>,
         <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb207_pb206>,
         <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/sample> ;
-    dcterms:identifier "19" ;
+    dcterms:identifier "ARSL 53" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -143,13 +143,13 @@
 
 <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 28 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de,
-        "Lead isotope analysis 28 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse TR-8/9 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de,
+        "Lead isotope analysis TR-8/9 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/pb204_pb206>,
         <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/pb207_pb206>,
         <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/sample> ;
-    dcterms:identifier "28" ;
+    dcterms:identifier "TR-8/9" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -159,8 +159,8 @@
 
 <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 831 von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe)"@de,
-        "Chemical analysis 831 of Spearhead, unspecified (no. TR-8/31, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/31 von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe)"@de,
+        "Chemical analysis TR-8/31 of Spearhead, unspecified (no. TR-8/31, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/ag>,
         <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/as>,
         <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/au>,
@@ -176,7 +176,7 @@
         <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/te>,
         <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/sample> ;
-    dcterms:identifier "831" ;
+    dcterms:identifier "TR-8/31" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/sampling> a crmsci:S2_Sample_Taking ;
@@ -185,8 +185,8 @@
 
 <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 146 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/206, Arslantepe)"@de,
-        "Chemical analysis 146 of Casting residue, sprue, slag (no. TR-8/206, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/206 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/206, Arslantepe)"@de,
+        "Chemical analysis TR-8/206 of Casting residue, sprue, slag (no. TR-8/206, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/ag>,
         <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/as>,
         <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/au>,
@@ -202,7 +202,7 @@
         <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/te>,
         <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/sample> ;
-    dcterms:identifier "146" ;
+    dcterms:identifier "TR-8/206" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/sampling> a crmsci:S2_Sample_Taking ;
@@ -211,13 +211,13 @@
 
 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 17 von Armring, unbestimmt (Nr. ARSL 40, Arslantepe)"@de,
-        "Lead isotope analysis 17 of Bracelet, unspecified (no. ARSL 40, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 40 von Armring, unbestimmt (Nr. ARSL 40, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 40 of Bracelet, unspecified (no. ARSL 40, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb204_pb206>,
         <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb207_pb206>,
         <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/sample> ;
-    dcterms:identifier "17" ;
+    dcterms:identifier "ARSL 40" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -227,8 +227,8 @@
 
 <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 172 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de,
-        "Chemical analysis 172 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 65 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de,
+        "Chemical analysis ARSL 65 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/ag>,
         <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/as>,
         <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/au>,
@@ -244,7 +244,7 @@
         <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/te>,
         <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/sample> ;
-    dcterms:identifier "172" ;
+    dcterms:identifier "ARSL 65" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/sampling> a crmsci:S2_Sample_Taking ;
@@ -253,8 +253,8 @@
 
 <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 168 von Lanzenspitze, unbestimmt (Nr. ARSL 32, Arslantepe)"@de,
-        "Chemical analysis 168 of Spearhead, unspecified (no. ARSL 32, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 32 von Lanzenspitze, unbestimmt (Nr. ARSL 32, Arslantepe)"@de,
+        "Chemical analysis ARSL 32 of Spearhead, unspecified (no. ARSL 32, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/ag>,
         <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/as>,
         <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/au>,
@@ -270,7 +270,7 @@
         <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/te>,
         <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/sample> ;
-    dcterms:identifier "168" ;
+    dcterms:identifier "ARSL 32" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/sampling> a crmsci:S2_Sample_Taking ;
@@ -279,8 +279,8 @@
 
 <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 158 von Pfriem (Nr. ARSL 14, Arslantepe)"@de,
-        "Chemical analysis 158 of Awl (no. ARSL 14, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 14 von Pfriem (Nr. ARSL 14, Arslantepe)"@de,
+        "Chemical analysis ARSL 14 of Awl (no. ARSL 14, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/ag>,
         <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/as>,
         <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/au>,
@@ -296,7 +296,7 @@
         <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/te>,
         <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/sample> ;
-    dcterms:identifier "158" ;
+    dcterms:identifier "ARSL 14" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/sampling> a crmsci:S2_Sample_Taking ;
@@ -305,8 +305,8 @@
 
 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 154 von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)"@de,
-        "Chemical analysis 154 of Flat chisel, wedge (no. ARSL 24, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 24 von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe)"@de,
+        "Chemical analysis ARSL 24 of Flat chisel, wedge (no. ARSL 24, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/ag>,
         <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/as>,
         <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/au>,
@@ -322,7 +322,7 @@
         <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/te>,
         <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sample> ;
-    dcterms:identifier "154" ;
+    dcterms:identifier "ARSL 24" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sampling> a crmsci:S2_Sample_Taking ;
@@ -331,13 +331,13 @@
 
 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 27 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de,
-        "Lead isotope analysis 27 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse TR-8/4 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de,
+        "Lead isotope analysis TR-8/4 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb204_pb206>,
         <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb207_pb206>,
         <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/sample> ;
-    dcterms:identifier "27" ;
+    dcterms:identifier "TR-8/4" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -347,8 +347,8 @@
 
 <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 167 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de,
-        "Chemical analysis 167 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 34 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de,
+        "Chemical analysis ARSL 34 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/ag>,
         <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/as>,
         <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/au>,
@@ -364,7 +364,7 @@
         <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/te>,
         <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/sample> ;
-    dcterms:identifier "167" ;
+    dcterms:identifier "ARSL 34" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/sampling> a crmsci:S2_Sample_Taking ;
@@ -373,13 +373,13 @@
 
 <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 15 von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)"@de,
-        "Lead isotope analysis 15 of Spearhead, unspecified (no. ARSL 31B, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 31B von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 31B of Spearhead, unspecified (no. ARSL 31B, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/pb204_pb206>,
         <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/pb207_pb206>,
         <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/sample> ;
-    dcterms:identifier "15" ;
+    dcterms:identifier "ARSL 31B" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -389,8 +389,8 @@
 
 <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 179 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)"@de,
-        "Chemical analysis 179 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 18 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)"@de,
+        "Chemical analysis ARSL 18 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/ag>,
         <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/as>,
         <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/au>,
@@ -406,7 +406,7 @@
         <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/te>,
         <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/sample> ;
-    dcterms:identifier "179" ;
+    dcterms:identifier "ARSL 18" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/sampling> a crmsci:S2_Sample_Taking ;
@@ -415,13 +415,13 @@
 
 <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 10 von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe)"@de,
-        "Lead isotope analysis 10 of Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 21 von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 21 of Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/pb204_pb206>,
         <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/pb207_pb206>,
         <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/sample> ;
-    dcterms:identifier "10" ;
+    dcterms:identifier "ARSL 21" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -431,8 +431,8 @@
 
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 89 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de,
-        "Chemical analysis 89 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/9 von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe)"@de,
+        "Chemical analysis TR-8/9 of Spearhead, unspecified (no. TR-8/9, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/ag>,
         <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/as>,
         <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/au>,
@@ -448,7 +448,7 @@
         <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/te>,
         <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample> ;
-    dcterms:identifier "89" ;
+    dcterms:identifier "TR-8/9" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sampling> a crmsci:S2_Sample_Taking ;
@@ -457,13 +457,13 @@
 
 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 8 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de,
-        "Lead isotope analysis 8 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 19 von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 19 of Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb204_pb206>,
         <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb207_pb206>,
         <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/sample> ;
-    dcterms:identifier "8" ;
+    dcterms:identifier "ARSL 19" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -473,13 +473,13 @@
 
 <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 5 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de,
-        "Lead isotope analysis 5 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 16 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 16 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/pb204_pb206>,
         <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/pb207_pb206>,
         <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/sample> ;
-    dcterms:identifier "5" ;
+    dcterms:identifier "ARSL 16" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -489,13 +489,13 @@
 
 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 11 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)"@de,
-        "Lead isotope analysis 11 of Maykop fork (no. ARSL 23, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 23 von Majkop-Gabel (Nr. ARSL 23, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 23 of Maykop fork (no. ARSL 23, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb204_pb206>,
         <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb207_pb206>,
         <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/sample> ;
-    dcterms:identifier "11" ;
+    dcterms:identifier "ARSL 23" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -505,8 +505,8 @@
 
 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 148 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe)"@de,
-        "Chemical analysis 148 of Casting residue, sprue, slag (no. TR-8/202, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/202 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe)"@de,
+        "Chemical analysis TR-8/202 of Casting residue, sprue, slag (no. TR-8/202, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/ag>,
         <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/as>,
         <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/au>,
@@ -522,7 +522,7 @@
         <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/te>,
         <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sample> ;
-    dcterms:identifier "148" ;
+    dcterms:identifier "TR-8/202" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sampling> a crmsci:S2_Sample_Taking ;
@@ -531,13 +531,13 @@
 
 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 12 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de,
-        "Lead isotope analysis 12 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 28 von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 28 of Spearhead, unspecified (no. ARSL 28, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb204_pb206>,
         <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb207_pb206>,
         <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sample> ;
-    dcterms:identifier "12" ;
+    dcterms:identifier "ARSL 28" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -547,8 +547,8 @@
 
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 144 von Schale (Nr. ARSL 47, Arslantepe)"@de,
-        "Chemical analysis 144 of Bowl (no. ARSL 47, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 47 von Schale (Nr. ARSL 47, Arslantepe)"@de,
+        "Chemical analysis ARSL 47 of Bowl (no. ARSL 47, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/ag>,
         <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/as>,
         <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/au>,
@@ -564,7 +564,7 @@
         <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/te>,
         <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample> ;
-    dcterms:identifier "144" ;
+    dcterms:identifier "ARSL 47" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sampling> a crmsci:S2_Sample_Taking ;
@@ -573,8 +573,8 @@
 
 <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 160 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 3, Arslantepe)"@de,
-        "Chemical analysis 160 of Pin, special or unspecified form (no. ARSL 3, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 3 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 3, Arslantepe)"@de,
+        "Chemical analysis ARSL 3 of Pin, special or unspecified form (no. ARSL 3, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/ag>,
         <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/as>,
         <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/au>,
@@ -590,7 +590,7 @@
         <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/te>,
         <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/sample> ;
-    dcterms:identifier "160" ;
+    dcterms:identifier "ARSL 3" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/sampling> a crmsci:S2_Sample_Taking ;
@@ -599,8 +599,8 @@
 
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 828 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de,
-        "Chemical analysis 828 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/28 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de,
+        "Chemical analysis TR-8/28 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/ag>,
         <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/as>,
         <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/au>,
@@ -616,7 +616,7 @@
         <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/te>,
         <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sample> ;
-    dcterms:identifier "828" ;
+    dcterms:identifier "TR-8/28" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sampling> a crmsci:S2_Sample_Taking ;
@@ -625,13 +625,13 @@
 
 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 23 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de,
-        "Lead isotope analysis 23 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 65 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 65 of Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb204_pb206>,
         <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb207_pb206>,
         <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/sample> ;
-    dcterms:identifier "23" ;
+    dcterms:identifier "ARSL 65" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -641,13 +641,13 @@
 
 <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 9 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)"@de,
-        "Lead isotope analysis 9 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 20 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 20 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/pb204_pb206>,
         <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/pb207_pb206>,
         <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/sample> ;
-    dcterms:identifier "9" ;
+    dcterms:identifier "ARSL 20" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -657,8 +657,8 @@
 
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 162 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de,
-        "Chemical analysis 162 of Socketed chisel (no. ARSL 13, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 13 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de,
+        "Chemical analysis ARSL 13 of Socketed chisel (no. ARSL 13, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/ag>,
         <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/as>,
         <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/au>,
@@ -674,7 +674,7 @@
         <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/te>,
         <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sample> ;
-    dcterms:identifier "162" ;
+    dcterms:identifier "ARSL 13" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sampling> a crmsci:S2_Sample_Taking ;
@@ -683,8 +683,8 @@
 
 <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 142 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/211, Arslantepe)"@de,
-        "Chemical analysis 142 of Casting residue, sprue, slag (no. TR-8/211, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/211 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/211, Arslantepe)"@de,
+        "Chemical analysis TR-8/211 of Casting residue, sprue, slag (no. TR-8/211, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/ag>,
         <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/as>,
         <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/au>,
@@ -700,7 +700,7 @@
         <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/te>,
         <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/sample> ;
-    dcterms:identifier "142" ;
+    dcterms:identifier "TR-8/211" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/sampling> a crmsci:S2_Sample_Taking ;
@@ -709,8 +709,8 @@
 
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 178 von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe)"@de,
-        "Chemical analysis 178 of Sword, unspecified (no. ARSL 35, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 35 von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe)"@de,
+        "Chemical analysis ARSL 35 of Sword, unspecified (no. ARSL 35, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/ag>,
         <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/as>,
         <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/au>,
@@ -726,7 +726,7 @@
         <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/te>,
         <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sample> ;
-    dcterms:identifier "178" ;
+    dcterms:identifier "ARSL 35" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sampling> a crmsci:S2_Sample_Taking ;
@@ -735,13 +735,13 @@
 
 <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 3 von Pfriem (Nr. ARSL 14, Arslantepe)"@de,
-        "Lead isotope analysis 3 of Awl (no. ARSL 14, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 14 von Pfriem (Nr. ARSL 14, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 14 of Awl (no. ARSL 14, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/pb204_pb206>,
         <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/pb207_pb206>,
         <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/sample> ;
-    dcterms:identifier "3" ;
+    dcterms:identifier "ARSL 14" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -751,13 +751,13 @@
 
 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 14 von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de,
-        "Lead isotope analysis 14 of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 31A von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 31A of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb204_pb206>,
         <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb207_pb206>,
         <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/sample> ;
-    dcterms:identifier "14" ;
+    dcterms:identifier "ARSL 31A" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -767,8 +767,8 @@
 
 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 174 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)"@de,
-        "Chemical analysis 174 of Sword, unspecified (no. ARSL 15, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 15 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)"@de,
+        "Chemical analysis ARSL 15 of Sword, unspecified (no. ARSL 15, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/ag>,
         <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/as>,
         <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/au>,
@@ -784,7 +784,7 @@
         <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/te>,
         <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sample> ;
-    dcterms:identifier "174" ;
+    dcterms:identifier "ARSL 15" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sampling> a crmsci:S2_Sample_Taking ;
@@ -793,13 +793,13 @@
 
 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 6 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)"@de,
-        "Lead isotope analysis 6 of Vessel, unspecified (no. ARSL 17, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 17 von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 17 of Vessel, unspecified (no. ARSL 17, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb204_pb206>,
         <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb207_pb206>,
         <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/sample> ;
-    dcterms:identifier "6" ;
+    dcterms:identifier "ARSL 17" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -809,13 +809,13 @@
 
 <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 24 von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe)"@de,
-        "Lead isotope analysis 24 of Spearhead, unspecified (no. TR-8/18, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse TR-8/18 von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe)"@de,
+        "Lead isotope analysis TR-8/18 of Spearhead, unspecified (no. TR-8/18, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/pb204_pb206>,
         <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/pb207_pb206>,
         <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/sample> ;
-    dcterms:identifier "24" ;
+    dcterms:identifier "TR-8/18" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -825,13 +825,13 @@
 
 <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 25 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de,
-        "Lead isotope analysis 25 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse TR-8/28 von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe)"@de,
+        "Lead isotope analysis TR-8/28 of Sword, unspecified (no. TR-8/28, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb204_pb206>,
         <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb207_pb206>,
         <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sample> ;
-    dcterms:identifier "25" ;
+    dcterms:identifier "TR-8/28" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -841,8 +841,8 @@
 
 <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 153 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/210, Arslantepe)"@de,
-        "Chemical analysis 153 of Casting residue, sprue, slag (no. TR-8/210, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/210 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/210, Arslantepe)"@de,
+        "Chemical analysis TR-8/210 of Casting residue, sprue, slag (no. TR-8/210, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/ag>,
         <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/as>,
         <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/au>,
@@ -858,7 +858,7 @@
         <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/te>,
         <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/sample> ;
-    dcterms:identifier "153" ;
+    dcterms:identifier "TR-8/210" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/sampling> a crmsci:S2_Sample_Taking ;
@@ -867,13 +867,13 @@
 
 <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 4 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)"@de,
-        "Lead isotope analysis 4 of Sword, unspecified (no. ARSL 15, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 15 von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 15 of Sword, unspecified (no. ARSL 15, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb204_pb206>,
         <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb207_pb206>,
         <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sample> ;
-    dcterms:identifier "4" ;
+    dcterms:identifier "ARSL 15" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -883,13 +883,13 @@
 
 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 21 von Ring, unbestimmt (Nr. ARSL 63, Arslantepe)"@de,
-        "Lead isotope analysis 21 of Ring, unspecified (no. ARSL 63, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 63 von Ring, unbestimmt (Nr. ARSL 63, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 63 of Ring, unspecified (no. ARSL 63, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb204_pb206>,
         <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb207_pb206>,
         <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample> ;
-    dcterms:identifier "21" ;
+    dcterms:identifier "ARSL 63" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -899,8 +899,8 @@
 
 <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 143 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/204, Arslantepe)"@de,
-        "Chemical analysis 143 of Casting residue, sprue, slag (no. TR-8/204, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/204 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/204, Arslantepe)"@de,
+        "Chemical analysis TR-8/204 of Casting residue, sprue, slag (no. TR-8/204, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/ag>,
         <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/as>,
         <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/au>,
@@ -916,7 +916,7 @@
         <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/te>,
         <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/sample> ;
-    dcterms:identifier "143" ;
+    dcterms:identifier "TR-8/204" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/sampling> a crmsci:S2_Sample_Taking ;
@@ -925,8 +925,8 @@
 
 <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 818 von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe)"@de,
-        "Chemical analysis 818 of Spearhead, unspecified (no. TR-8/18, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/18 von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe)"@de,
+        "Chemical analysis TR-8/18 of Spearhead, unspecified (no. TR-8/18, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/ag>,
         <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/as>,
         <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/au>,
@@ -942,7 +942,7 @@
         <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/te>,
         <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/sample> ;
-    dcterms:identifier "818" ;
+    dcterms:identifier "TR-8/18" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/sampling> a crmsci:S2_Sample_Taking ;
@@ -951,8 +951,8 @@
 
 <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 180 von Becher (Nr. ARSL 58, Arslantepe)"@de,
-        "Chemical analysis 180 of Beaker (no. ARSL 58, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 58 von Becher (Nr. ARSL 58, Arslantepe)"@de,
+        "Chemical analysis ARSL 58 of Beaker (no. ARSL 58, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/ag>,
         <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/as>,
         <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/au>,
@@ -968,7 +968,7 @@
         <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/te>,
         <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/sample> ;
-    dcterms:identifier "180" ;
+    dcterms:identifier "ARSL 58" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/sampling> a crmsci:S2_Sample_Taking ;
@@ -977,8 +977,8 @@
 
 <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 151 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 6, Arslantepe)"@de,
-        "Chemical analysis 151 of Pin, special or unspecified form (no. ARSL 6, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 6 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 6, Arslantepe)"@de,
+        "Chemical analysis ARSL 6 of Pin, special or unspecified form (no. ARSL 6, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/ag>,
         <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/as>,
         <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/au>,
@@ -994,7 +994,7 @@
         <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/te>,
         <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/sample> ;
-    dcterms:identifier "151" ;
+    dcterms:identifier "ARSL 6" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/sampling> a crmsci:S2_Sample_Taking ;
@@ -1003,8 +1003,8 @@
 
 <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 84 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de,
-        "Chemical analysis 84 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/4 von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe)"@de,
+        "Chemical analysis TR-8/4 of Sword, unspecified (no. TR-8/4, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/ag>,
         <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/as>,
         <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/au>,
@@ -1020,7 +1020,7 @@
         <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/te>,
         <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/sample> ;
-    dcterms:identifier "84" ;
+    dcterms:identifier "TR-8/4" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/sampling> a crmsci:S2_Sample_Taking ;
@@ -1029,8 +1029,8 @@
 
 <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 166 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/116, Arslantepe)"@de,
-        "Chemical analysis 166 of Casting residue, sprue, slag (no. TR-8/116, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/116 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/116, Arslantepe)"@de,
+        "Chemical analysis TR-8/116 of Casting residue, sprue, slag (no. TR-8/116, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/ag>,
         <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/as>,
         <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/au>,
@@ -1046,7 +1046,7 @@
         <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/te>,
         <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/sample> ;
-    dcterms:identifier "166" ;
+    dcterms:identifier "TR-8/116" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/sampling> a crmsci:S2_Sample_Taking ;
@@ -1055,8 +1055,8 @@
 
 <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 147 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe)"@de,
-        "Chemical analysis 147 of Casting residue, sprue, slag (no. TR-8/200, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/200 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe)"@de,
+        "Chemical analysis TR-8/200 of Casting residue, sprue, slag (no. TR-8/200, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/ag>,
         <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/as>,
         <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/au>,
@@ -1072,7 +1072,7 @@
         <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/te>,
         <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/sample> ;
-    dcterms:identifier "147" ;
+    dcterms:identifier "TR-8/200" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/sampling> a crmsci:S2_Sample_Taking ;
@@ -1081,8 +1081,8 @@
 
 <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 176 von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)"@de,
-        "Chemical analysis 176 of Spearhead, unspecified (no. ARSL 31B, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 31B von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)"@de,
+        "Chemical analysis ARSL 31B of Spearhead, unspecified (no. ARSL 31B, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/ag>,
         <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/as>,
         <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/au>,
@@ -1098,7 +1098,7 @@
         <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/te>,
         <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/sample> ;
-    dcterms:identifier "176" ;
+    dcterms:identifier "ARSL 31B" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/sampling> a crmsci:S2_Sample_Taking ;
@@ -1107,13 +1107,13 @@
 
 <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 13 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)"@de,
-        "Lead isotope analysis 13 of Spearhead, unspecified (no. ARSL 29, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 29 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 29 of Spearhead, unspecified (no. ARSL 29, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/pb204_pb206>,
         <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/pb207_pb206>,
         <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/sample> ;
-    dcterms:identifier "13" ;
+    dcterms:identifier "ARSL 29" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1123,13 +1123,13 @@
 
 <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 2 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de,
-        "Lead isotope analysis 2 of Socketed chisel (no. ARSL 13, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 13 von Tüllenmeißel (Nr. ARSL 13, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 13 of Socketed chisel (no. ARSL 13, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb204_pb206>,
         <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb207_pb206>,
         <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sample> ;
-    dcterms:identifier "2" ;
+    dcterms:identifier "ARSL 13" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1139,8 +1139,8 @@
 
 <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 159 von Lanzenspitze, unbestimmt (Nr. ARSL 26, Arslantepe)"@de,
-        "Chemical analysis 159 of Spearhead, unspecified (no. ARSL 26, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 26 von Lanzenspitze, unbestimmt (Nr. ARSL 26, Arslantepe)"@de,
+        "Chemical analysis ARSL 26 of Spearhead, unspecified (no. ARSL 26, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/ag>,
         <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/as>,
         <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/au>,
@@ -1156,7 +1156,7 @@
         <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/te>,
         <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/sample> ;
-    dcterms:identifier "159" ;
+    dcterms:identifier "ARSL 26" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/sampling> a crmsci:S2_Sample_Taking ;
@@ -1165,8 +1165,8 @@
 
 <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 821 von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe)"@de,
-        "Chemical analysis 821 of Spearhead, unspecified (no. TR-8/21, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/21 von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe)"@de,
+        "Chemical analysis TR-8/21 of Spearhead, unspecified (no. TR-8/21, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/ag>,
         <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/as>,
         <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/au>,
@@ -1182,7 +1182,7 @@
         <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/te>,
         <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/sample> ;
-    dcterms:identifier "821" ;
+    dcterms:identifier "TR-8/21" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/sampling> a crmsci:S2_Sample_Taking ;
@@ -1191,13 +1191,13 @@
 
 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 16 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de,
-        "Lead isotope analysis 16 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 34 von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 34 of Spearhead, unspecified (no. ARSL 34, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb204_pb206>,
         <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb207_pb206>,
         <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/sample> ;
-    dcterms:identifier "16" ;
+    dcterms:identifier "ARSL 34" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1207,8 +1207,8 @@
 
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 152 von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe)"@de,
-        "Chemical analysis 152 of Flat chisel, wedge (no. ARSL 25, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 25 von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe)"@de,
+        "Chemical analysis ARSL 25 of Flat chisel, wedge (no. ARSL 25, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/ag>,
         <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/as>,
         <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/au>,
@@ -1224,7 +1224,7 @@
         <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/te>,
         <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sample> ;
-    dcterms:identifier "152" ;
+    dcterms:identifier "ARSL 25" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sampling> a crmsci:S2_Sample_Taking ;
@@ -1233,8 +1233,8 @@
 
 <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 150 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/205, Arslantepe)"@de,
-        "Chemical analysis 150 of Casting residue, sprue, slag (no. TR-8/205, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/205 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/205, Arslantepe)"@de,
+        "Chemical analysis TR-8/205 of Casting residue, sprue, slag (no. TR-8/205, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/ag>,
         <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/as>,
         <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/au>,
@@ -1250,7 +1250,7 @@
         <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/te>,
         <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/sample> ;
-    dcterms:identifier "150" ;
+    dcterms:identifier "TR-8/205" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/sampling> a crmsci:S2_Sample_Taking ;
@@ -1259,8 +1259,8 @@
 
 <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 164 von Lanzenspitze, unbestimmt (Nr. ARSL 27, Arslantepe)"@de,
-        "Chemical analysis 164 of Spearhead, unspecified (no. ARSL 27, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 27 von Lanzenspitze, unbestimmt (Nr. ARSL 27, Arslantepe)"@de,
+        "Chemical analysis ARSL 27 of Spearhead, unspecified (no. ARSL 27, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/ag>,
         <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/as>,
         <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/au>,
@@ -1276,7 +1276,7 @@
         <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/te>,
         <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/sample> ;
-    dcterms:identifier "164" ;
+    dcterms:identifier "ARSL 27" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/sampling> a crmsci:S2_Sample_Taking ;
@@ -1285,8 +1285,8 @@
 
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 810 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)"@de,
-        "Chemical analysis 810 of Pendant, unspecified (no. TR-8/10, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/10 von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe)"@de,
+        "Chemical analysis TR-8/10 of Pendant, unspecified (no. TR-8/10, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/ag>,
         <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/as>,
         <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/au>,
@@ -1302,7 +1302,7 @@
         <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/te>,
         <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sample> ;
-    dcterms:identifier "810" ;
+    dcterms:identifier "TR-8/10" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sampling> a crmsci:S2_Sample_Taking ;
@@ -1311,13 +1311,13 @@
 
 <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 26 von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe)"@de,
-        "Lead isotope analysis 26 of Spearhead, unspecified (no. TR-8/31, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse TR-8/31 von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe)"@de,
+        "Lead isotope analysis TR-8/31 of Spearhead, unspecified (no. TR-8/31, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/pb204_pb206>,
         <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/pb207_pb206>,
         <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/sample> ;
-    dcterms:identifier "26" ;
+    dcterms:identifier "TR-8/31" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1327,8 +1327,8 @@
 
 <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 163 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)"@de,
-        "Chemical analysis 163 of Spearhead, unspecified (no. ARSL 29, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 29 von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe)"@de,
+        "Chemical analysis ARSL 29 of Spearhead, unspecified (no. ARSL 29, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/ag>,
         <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/as>,
         <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/au>,
@@ -1344,7 +1344,7 @@
         <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/te>,
         <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/sample> ;
-    dcterms:identifier "163" ;
+    dcterms:identifier "ARSL 29" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/sampling> a crmsci:S2_Sample_Taking ;
@@ -1353,13 +1353,13 @@
 
 <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 22 von Armring, unbestimmt (Nr. ARSL 64, Arslantepe)"@de,
-        "Lead isotope analysis 22 of Bracelet, unspecified (no. ARSL 64, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 64 von Armring, unbestimmt (Nr. ARSL 64, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 64 of Bracelet, unspecified (no. ARSL 64, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/pb204_pb206>,
         <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/pb207_pb206>,
         <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/sample> ;
-    dcterms:identifier "22" ;
+    dcterms:identifier "ARSL 64" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1369,8 +1369,8 @@
 
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 157 von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe)"@de,
-        "Chemical analysis 157 of Spearhead, unspecified (no. ARSL 33, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 33 von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe)"@de,
+        "Chemical analysis ARSL 33 of Spearhead, unspecified (no. ARSL 33, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/ag>,
         <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/as>,
         <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/au>,
@@ -1386,7 +1386,7 @@
         <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/te>,
         <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sample> ;
-    dcterms:identifier "157" ;
+    dcterms:identifier "ARSL 33" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sampling> a crmsci:S2_Sample_Taking ;
@@ -1395,8 +1395,8 @@
 
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 177 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de,
-        "Chemical analysis 177 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 16 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe)"@de,
+        "Chemical analysis ARSL 16 of Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/ag>,
         <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/as>,
         <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/au>,
@@ -1412,7 +1412,7 @@
         <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/te>,
         <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sample> ;
-    dcterms:identifier "177" ;
+    dcterms:identifier "ARSL 16" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sampling> a crmsci:S2_Sample_Taking ;
@@ -1421,8 +1421,8 @@
 
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 145 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe)"@de,
-        "Chemical analysis 145 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 5 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe)"@de,
+        "Chemical analysis ARSL 5 of Pin, special or unspecified form (no. ARSL 5, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/ag>,
         <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/as>,
         <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/au>,
@@ -1438,7 +1438,7 @@
         <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/te>,
         <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sample> ;
-    dcterms:identifier "145" ;
+    dcterms:identifier "ARSL 5" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sampling> a crmsci:S2_Sample_Taking ;
@@ -1447,8 +1447,8 @@
 
 <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 173 von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de,
-        "Chemical analysis 173 of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 31A von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe)"@de,
+        "Chemical analysis ARSL 31A of Spearhead, unspecified (no. ARSL 31A, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/ag>,
         <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/as>,
         <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/au>,
@@ -1464,7 +1464,7 @@
         <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/te>,
         <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/sample> ;
-    dcterms:identifier "173" ;
+    dcterms:identifier "ARSL 31A" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/sampling> a crmsci:S2_Sample_Taking ;
@@ -1473,8 +1473,8 @@
 
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 169 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe)"@de,
-        "Chemical analysis 169 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/203 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe)"@de,
+        "Chemical analysis TR-8/203 of Casting residue, sprue, slag (no. TR-8/203, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/ag>,
         <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/as>,
         <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/au>,
@@ -1490,7 +1490,7 @@
         <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/te>,
         <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sample> ;
-    dcterms:identifier "169" ;
+    dcterms:identifier "TR-8/203" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sampling> a crmsci:S2_Sample_Taking ;
@@ -1499,13 +1499,13 @@
 
 <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 1 von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe)"@de,
-        "Lead isotope analysis 1 of Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 12 von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 12 of Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/pb204_pb206>,
         <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/pb207_pb206>,
         <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/sample> ;
-    dcterms:identifier "1" ;
+    dcterms:identifier "ARSL 12" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1515,8 +1515,8 @@
 
 <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 175 von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe)"@de,
-        "Chemical analysis 175 of Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 21 von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe)"@de,
+        "Chemical analysis ARSL 21 of Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/ag>,
         <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/as>,
         <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/au>,
@@ -1532,7 +1532,7 @@
         <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/te>,
         <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/sample> ;
-    dcterms:identifier "175" ;
+    dcterms:identifier "ARSL 21" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/sampling> a crmsci:S2_Sample_Taking ;
@@ -1541,8 +1541,8 @@
 
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 156 von Pfriem (Nr. ARSL 22, Arslantepe)"@de,
-        "Chemical analysis 156 of Awl (no. ARSL 22, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 22 von Pfriem (Nr. ARSL 22, Arslantepe)"@de,
+        "Chemical analysis ARSL 22 of Awl (no. ARSL 22, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/ag>,
         <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/as>,
         <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/au>,
@@ -1558,7 +1558,7 @@
         <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/te>,
         <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sample> ;
-    dcterms:identifier "156" ;
+    dcterms:identifier "ARSL 22" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sampling> a crmsci:S2_Sample_Taking ;
@@ -1567,8 +1567,8 @@
 
 <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 155 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)"@de,
-        "Chemical analysis 155 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 20 von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe)"@de,
+        "Chemical analysis ARSL 20 of Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/ag>,
         <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/as>,
         <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/au>,
@@ -1584,7 +1584,7 @@
         <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/te>,
         <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/sample> ;
-    dcterms:identifier "155" ;
+    dcterms:identifier "ARSL 20" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/sampling> a crmsci:S2_Sample_Taking ;
@@ -1593,8 +1593,8 @@
 
 <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 139 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/208, Arslantepe)"@de,
-        "Chemical analysis 139 of Casting residue, sprue, slag (no. TR-8/208, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/208 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/208, Arslantepe)"@de,
+        "Chemical analysis TR-8/208 of Casting residue, sprue, slag (no. TR-8/208, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/ag>,
         <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/as>,
         <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/au>,
@@ -1610,7 +1610,7 @@
         <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/te>,
         <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/sample> ;
-    dcterms:identifier "139" ;
+    dcterms:identifier "TR-8/208" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/sampling> a crmsci:S2_Sample_Taking ;
@@ -1619,13 +1619,13 @@
 
 <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 7 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)"@de,
-        "Lead isotope analysis 7 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 18 von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 18 of Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/pb204_pb206>,
         <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/pb207_pb206>,
         <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/sample> ;
-    dcterms:identifier "7" ;
+    dcterms:identifier "ARSL 18" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1635,13 +1635,13 @@
 
 <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 20 von Ring, unbestimmt (Nr. ARSL 55, Arslantepe)"@de,
-        "Lead isotope analysis 20 of Ring, unspecified (no. ARSL 55, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 55 von Ring, unbestimmt (Nr. ARSL 55, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 55 of Ring, unspecified (no. ARSL 55, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/pb204_pb206>,
         <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/pb207_pb206>,
         <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/sample> ;
-    dcterms:identifier "20" ;
+    dcterms:identifier "ARSL 55" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1651,8 +1651,8 @@
 
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 140 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)"@de,
-        "Chemical analysis 140 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 2 von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe)"@de,
+        "Chemical analysis ARSL 2 of Pin, special or unspecified form (no. ARSL 2, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/ag>,
         <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/as>,
         <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/au>,
@@ -1668,7 +1668,7 @@
         <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/te>,
         <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample> ;
-    dcterms:identifier "140" ;
+    dcterms:identifier "ARSL 2" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sampling> a crmsci:S2_Sample_Taking ;
@@ -1677,13 +1677,13 @@
 
 <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8> a afp:AFP_0001427,
         crm:E7_Activity ;
-    rdfs:label "Bleiisotopenanalyse 18 von Ring, unbestimmt (Nr. ARSL 46, Arslantepe)"@de,
-        "Lead isotope analysis 18 of Ring, unspecified (no. ARSL 46, Arslantepe)"@en ;
+    rdfs:label "Bleiisotopenanalyse ARSL 46 von Ring, unbestimmt (Nr. ARSL 46, Arslantepe)"@de,
+        "Lead isotope analysis ARSL 46 of Ring, unspecified (no. ARSL 46, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/pb204_pb206>,
         <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/pb207_pb206>,
         <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/pb208_pb206> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/sample> ;
-    dcterms:identifier "18" ;
+    dcterms:identifier "ARSL 46" ;
     crm:P14_carried_out_by <https://lod-am.net/id/lab/74524672-34d8-47bd-a09b-08dc6557b079> ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
@@ -1693,8 +1693,8 @@
 
 <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 141 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/201, Arslantepe)"@de,
-        "Chemical analysis 141 of Casting residue, sprue, slag (no. TR-8/201, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse TR-8/201 von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/201, Arslantepe)"@de,
+        "Chemical analysis TR-8/201 of Casting residue, sprue, slag (no. TR-8/201, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/ag>,
         <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/as>,
         <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/au>,
@@ -1710,7 +1710,7 @@
         <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/te>,
         <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/sample> ;
-    dcterms:identifier "141" ;
+    dcterms:identifier "TR-8/201" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/sampling> a crmsci:S2_Sample_Taking ;
@@ -1719,8 +1719,8 @@
 
 <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 171 von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe)"@de,
-        "Chemical analysis 171 of Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 12 von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe)"@de,
+        "Chemical analysis ARSL 12 of Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/ag>,
         <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/as>,
         <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/au>,
@@ -1736,7 +1736,7 @@
         <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/te>,
         <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/sample> ;
-    dcterms:identifier "171" ;
+    dcterms:identifier "ARSL 12" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/sampling> a crmsci:S2_Sample_Taking ;
@@ -1745,8 +1745,8 @@
 
 <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d> a afp:AFP_0002680,
         crm:E7_Activity ;
-    rdfs:label "Chemische Analyse 170 von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe)"@de,
-        "Chemical analysis 170 of Spearhead, unspecified (no. ARSL 30, Arslantepe)"@en ;
+    rdfs:label "Chemische Analyse ARSL 30 von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe)"@de,
+        "Chemical analysis ARSL 30 of Spearhead, unspecified (no. ARSL 30, Arslantepe)"@en ;
     afx:AFX_0000395 <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/ag>,
         <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/as>,
         <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/au>,
@@ -1762,7 +1762,7 @@
         <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/te>,
         <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/zn> ;
     afx:AFX_0000399 <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/sample> ;
-    dcterms:identifier "170" ;
+    dcterms:identifier "ARSL 30" ;
     crm:P70i_is_documented_in <https://doi.org/10.3406/paleo.2002.4745> .
 
 <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/sampling> a crmsci:S2_Sample_Taking ;
@@ -6649,393 +6649,393 @@
 
 <https://lod-am.net/id/analysis/01de3d13-6299-473f-9cb1-aee0b7e8abe8/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/207, Arslantepe) (165)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/207, Arslantepe) (165)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/207, Arslantepe) (TR-8/207)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/207, Arslantepe) (TR-8/207)"@en .
 
 <https://lod-am.net/id/analysis/03a924e6-44ad-47e8-aa09-10ab3821cdaf/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (161)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (161)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (ARSL 19)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (ARSL 19)"@en .
 
 <https://lod-am.net/id/analysis/059aa4a8-4e34-478d-a2ca-457a39a55326/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (149)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (149)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (ARSL 28)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (ARSL 28)"@en .
 
 <https://lod-am.net/id/analysis/0a4d21ee-092d-449e-8d93-b7c3431ca348/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/8, Arslantepe) (88)"@de,
-        "Sample from Sword, unspecified (no. TR-8/8, Arslantepe) (88)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/8, Arslantepe) (TR-8/8)"@de,
+        "Sample from Sword, unspecified (no. TR-8/8, Arslantepe) (TR-8/8)"@en .
 
 <https://lod-am.net/id/analysis/0ad0b513-bda9-46c0-b4a4-1e0de577d3b4/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (19)"@de,
-        "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (19)"@en .
+    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 53, Arslantepe) (ARSL 53)"@de,
+        "Sample from Bracelet, unspecified (no. ARSL 53, Arslantepe) (ARSL 53)"@en .
 
 <https://lod-am.net/id/analysis/0af8087b-d6d0-42f3-b5c4-e682fd1f38e4/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (28)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (28)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (TR-8/9)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (TR-8/9)"@en .
 
 <https://lod-am.net/id/analysis/0f01d87e-d13e-4dd5-82ef-71bab4835c7f/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe) (831)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/31, Arslantepe) (831)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe) (TR-8/31)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/31, Arslantepe) (TR-8/31)"@en .
 
 <https://lod-am.net/id/analysis/13f4e579-2605-4ac7-bd0d-1cc53acbbb49/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/206, Arslantepe) (146)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/206, Arslantepe) (146)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/206, Arslantepe) (TR-8/206)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/206, Arslantepe) (TR-8/206)"@en .
 
 <https://lod-am.net/id/analysis/18ffe50c-2e68-4a24-b8bd-7eb154500a8b/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 40, Arslantepe) (17)"@de,
-        "Sample from Bracelet, unspecified (no. ARSL 40, Arslantepe) (17)"@en .
+    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 40, Arslantepe) (ARSL 40)"@de,
+        "Sample from Bracelet, unspecified (no. ARSL 40, Arslantepe) (ARSL 40)"@en .
 
 <https://lod-am.net/id/analysis/1f6dccd8-80be-474c-a8d6-7f684419cbf0/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (172)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (172)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (ARSL 65)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (ARSL 65)"@en .
 
 <https://lod-am.net/id/analysis/20c1801a-5046-4e61-ba56-a637e9f3807d/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 32, Arslantepe) (168)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 32, Arslantepe) (168)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 32, Arslantepe) (ARSL 32)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 32, Arslantepe) (ARSL 32)"@en .
 
 <https://lod-am.net/id/analysis/21078063-5607-4648-a917-2286ed7333bb/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (158)"@de,
-        "Sample from Awl (no. ARSL 14, Arslantepe) (158)"@en .
+    rdfs:label "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (ARSL 14)"@de,
+        "Sample from Awl (no. ARSL 14, Arslantepe) (ARSL 14)"@en .
 
 <https://lod-am.net/id/analysis/22a0edd5-47ac-44cf-98e7-7bf358b830e3/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe) (154)"@de,
-        "Sample from Flat chisel, wedge (no. ARSL 24, Arslantepe) (154)"@en .
+    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 24, Arslantepe) (ARSL 24)"@de,
+        "Sample from Flat chisel, wedge (no. ARSL 24, Arslantepe) (ARSL 24)"@en .
 
 <https://lod-am.net/id/analysis/267b046f-0dd4-425c-97c5-c8ad66d9da9a/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (27)"@de,
-        "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (27)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (TR-8/4)"@de,
+        "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (TR-8/4)"@en .
 
 <https://lod-am.net/id/analysis/2c658f12-ea03-4ec1-9545-7297d846f04f/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (167)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (167)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (ARSL 34)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (ARSL 34)"@en .
 
 <https://lod-am.net/id/analysis/324245c9-da2b-419f-aa22-f6ccdd865cf2/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (15)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (15)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (ARSL 31B)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (ARSL 31B)"@en .
 
 <https://lod-am.net/id/analysis/32d5f0b3-e8e4-422b-92cc-4f06983a2b78/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (179)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (179)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (ARSL 18)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (ARSL 18)"@en .
 
 <https://lod-am.net/id/analysis/36047110-6bf3-4ce3-9a8b-3bea6d860ee3/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe) (10)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe) (10)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe) (ARSL 21)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe) (ARSL 21)"@en .
 
 <https://lod-am.net/id/analysis/3607d552-14c6-46a5-832e-b711a3171b21/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (89)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (89)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/9, Arslantepe) (TR-8/9)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/9, Arslantepe) (TR-8/9)"@en .
 
 <https://lod-am.net/id/analysis/373499d0-1deb-4efa-ad1d-7a836235017a/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (8)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (8)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 19, Arslantepe) (ARSL 19)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 19, Arslantepe) (ARSL 19)"@en .
 
 <https://lod-am.net/id/analysis/38c1eb32-da90-4583-a6c2-22a3b3eab1df/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (5)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (5)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (ARSL 16)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (ARSL 16)"@en .
 
 <https://lod-am.net/id/analysis/445d98ae-762d-4643-9a12-e6e63805e6cb/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (11)"@de,
-        "Sample from Maykop fork (no. ARSL 23, Arslantepe) (11)"@en .
+    rdfs:label "Probe von Majkop-Gabel (Nr. ARSL 23, Arslantepe) (ARSL 23)"@de,
+        "Sample from Maykop fork (no. ARSL 23, Arslantepe) (ARSL 23)"@en .
 
 <https://lod-am.net/id/analysis/463dab0d-aeb8-4bed-a159-eb57ca6526d0/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe) (148)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/202, Arslantepe) (148)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/202, Arslantepe) (TR-8/202)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/202, Arslantepe) (TR-8/202)"@en .
 
 <https://lod-am.net/id/analysis/4b4b9455-2618-4610-9f6b-a6eb1d84f5c6/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (12)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (12)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 28, Arslantepe) (ARSL 28)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 28, Arslantepe) (ARSL 28)"@en .
 
 <https://lod-am.net/id/analysis/53054c18-2928-42c3-b289-0bf8ea7e3f34/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schale (Nr. ARSL 47, Arslantepe) (144)"@de,
-        "Sample from Bowl (no. ARSL 47, Arslantepe) (144)"@en .
+    rdfs:label "Probe von Schale (Nr. ARSL 47, Arslantepe) (ARSL 47)"@de,
+        "Sample from Bowl (no. ARSL 47, Arslantepe) (ARSL 47)"@en .
 
 <https://lod-am.net/id/analysis/582ac3de-325f-40d2-a202-2e67685e2b33/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 3, Arslantepe) (160)"@de,
-        "Sample from Pin, special or unspecified form (no. ARSL 3, Arslantepe) (160)"@en .
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 3, Arslantepe) (ARSL 3)"@de,
+        "Sample from Pin, special or unspecified form (no. ARSL 3, Arslantepe) (ARSL 3)"@en .
 
 <https://lod-am.net/id/analysis/593362f2-0a71-46f2-aed8-febe346669bd/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (828)"@de,
-        "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (828)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (TR-8/28)"@de,
+        "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (TR-8/28)"@en .
 
 <https://lod-am.net/id/analysis/63ea8da2-0012-4465-be8f-082e732e2c25/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (23)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (23)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 65, Arslantepe) (ARSL 65)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 65, Arslantepe) (ARSL 65)"@en .
 
 <https://lod-am.net/id/analysis/646b2514-a0b3-4f5d-b1c2-006179290796/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (9)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (9)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (ARSL 20)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (ARSL 20)"@en .
 
 <https://lod-am.net/id/analysis/64c24c93-aca3-4754-9d43-52375bc62db1/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (162)"@de,
-        "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (162)"@en .
+    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (ARSL 13)"@de,
+        "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (ARSL 13)"@en .
 
 <https://lod-am.net/id/analysis/64db9ce9-4b5a-45ec-bc3e-ea1edcb64645/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/211, Arslantepe) (142)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/211, Arslantepe) (142)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/211, Arslantepe) (TR-8/211)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/211, Arslantepe) (TR-8/211)"@en .
 
 <https://lod-am.net/id/analysis/667c6f40-57b7-46ec-85c2-c003b7ad3a4b/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe) (178)"@de,
-        "Sample from Sword, unspecified (no. ARSL 35, Arslantepe) (178)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 35, Arslantepe) (ARSL 35)"@de,
+        "Sample from Sword, unspecified (no. ARSL 35, Arslantepe) (ARSL 35)"@en .
 
 <https://lod-am.net/id/analysis/6bd907f1-5182-4a61-a8d5-9cbaf9a104a2/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (3)"@de,
-        "Sample from Awl (no. ARSL 14, Arslantepe) (3)"@en .
+    rdfs:label "Probe von Pfriem (Nr. ARSL 14, Arslantepe) (ARSL 14)"@de,
+        "Sample from Awl (no. ARSL 14, Arslantepe) (ARSL 14)"@en .
 
 <https://lod-am.net/id/analysis/6bf46093-d970-404e-800e-af3b28b1af12/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (14)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (14)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (ARSL 31A)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (ARSL 31A)"@en .
 
 <https://lod-am.net/id/analysis/6e5b383b-432d-4ce6-9df5-e7406b25db13/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (174)"@de,
-        "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (174)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (ARSL 15)"@de,
+        "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (ARSL 15)"@en .
 
 <https://lod-am.net/id/analysis/6ed3e529-7e81-40ed-be87-52d49ac48542/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (6)"@de,
-        "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (6)"@en .
+    rdfs:label "Probe von Gefäß, unbestimmt (Nr. ARSL 17, Arslantepe) (ARSL 17)"@de,
+        "Sample from Vessel, unspecified (no. ARSL 17, Arslantepe) (ARSL 17)"@en .
 
 <https://lod-am.net/id/analysis/70a5e5a8-15db-4f0d-8fa5-bbf33af51c94/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe) (24)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/18, Arslantepe) (24)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe) (TR-8/18)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/18, Arslantepe) (TR-8/18)"@en .
 
 <https://lod-am.net/id/analysis/73346c59-7fbd-43a6-a8d4-a6dcf8b1f2b5/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (25)"@de,
-        "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (25)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/28, Arslantepe) (TR-8/28)"@de,
+        "Sample from Sword, unspecified (no. TR-8/28, Arslantepe) (TR-8/28)"@en .
 
 <https://lod-am.net/id/analysis/758a1d49-0eca-4696-a041-8e088d92480d/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/210, Arslantepe) (153)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/210, Arslantepe) (153)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/210, Arslantepe) (TR-8/210)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/210, Arslantepe) (TR-8/210)"@en .
 
 <https://lod-am.net/id/analysis/7a3f9cad-a60e-498b-8031-9de2f0845bdc/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (4)"@de,
-        "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (4)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. ARSL 15, Arslantepe) (ARSL 15)"@de,
+        "Sample from Sword, unspecified (no. ARSL 15, Arslantepe) (ARSL 15)"@en .
 
 <https://lod-am.net/id/analysis/7c66fb2f-5ff1-49e3-9fbd-61e1a214b7cd/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 63, Arslantepe) (21)"@de,
-        "Sample from Ring, unspecified (no. ARSL 63, Arslantepe) (21)"@en .
+    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 63, Arslantepe) (ARSL 63)"@de,
+        "Sample from Ring, unspecified (no. ARSL 63, Arslantepe) (ARSL 63)"@en .
 
 <https://lod-am.net/id/analysis/7f47077c-d11b-4434-a6d5-aa7bd6527478/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/204, Arslantepe) (143)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/204, Arslantepe) (143)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/204, Arslantepe) (TR-8/204)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/204, Arslantepe) (TR-8/204)"@en .
 
 <https://lod-am.net/id/analysis/8a82c6de-5b63-4493-835b-090f81609161/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe) (818)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/18, Arslantepe) (818)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/18, Arslantepe) (TR-8/18)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/18, Arslantepe) (TR-8/18)"@en .
 
 <https://lod-am.net/id/analysis/8c130027-1522-4d19-991b-d3905690b8b1/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Becher (Nr. ARSL 58, Arslantepe) (180)"@de,
-        "Sample from Beaker (no. ARSL 58, Arslantepe) (180)"@en .
+    rdfs:label "Probe von Becher (Nr. ARSL 58, Arslantepe) (ARSL 58)"@de,
+        "Sample from Beaker (no. ARSL 58, Arslantepe) (ARSL 58)"@en .
 
 <https://lod-am.net/id/analysis/8c6b5935-1ff7-45a1-8e85-6c5629f6b2ce/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 6, Arslantepe) (151)"@de,
-        "Sample from Pin, special or unspecified form (no. ARSL 6, Arslantepe) (151)"@en .
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 6, Arslantepe) (ARSL 6)"@de,
+        "Sample from Pin, special or unspecified form (no. ARSL 6, Arslantepe) (ARSL 6)"@en .
 
 <https://lod-am.net/id/analysis/9064f3e1-3e18-48ba-a9f0-13be09d7ecb4/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (84)"@de,
-        "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (84)"@en .
+    rdfs:label "Probe von Schwert, unbestimmt (Nr. TR-8/4, Arslantepe) (TR-8/4)"@de,
+        "Sample from Sword, unspecified (no. TR-8/4, Arslantepe) (TR-8/4)"@en .
 
 <https://lod-am.net/id/analysis/90b01161-b48e-49f1-9dfc-45f04baa4fc1/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/116, Arslantepe) (166)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/116, Arslantepe) (166)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/116, Arslantepe) (TR-8/116)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/116, Arslantepe) (TR-8/116)"@en .
 
 <https://lod-am.net/id/analysis/918dd4ef-2e36-4054-a770-f064d1b079c8/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe) (147)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/200, Arslantepe) (147)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/200, Arslantepe) (TR-8/200)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/200, Arslantepe) (TR-8/200)"@en .
 
 <https://lod-am.net/id/analysis/91c18514-41f2-4466-b256-85a96077ea2e/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (176)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (176)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe) (ARSL 31B)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 31B, Arslantepe) (ARSL 31B)"@en .
 
 <https://lod-am.net/id/analysis/91dd1767-55c9-4ab7-89a4-9c8ec961afe2/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (13)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (13)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (ARSL 29)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (ARSL 29)"@en .
 
 <https://lod-am.net/id/analysis/95f1920b-e408-4a83-9e17-020025b66c0a/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (2)"@de,
-        "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (2)"@en .
+    rdfs:label "Probe von Tüllenmeißel (Nr. ARSL 13, Arslantepe) (ARSL 13)"@de,
+        "Sample from Socketed chisel (no. ARSL 13, Arslantepe) (ARSL 13)"@en .
 
 <https://lod-am.net/id/analysis/9fa29900-74b4-432a-a46c-ff27988d0449/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 26, Arslantepe) (159)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 26, Arslantepe) (159)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 26, Arslantepe) (ARSL 26)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 26, Arslantepe) (ARSL 26)"@en .
 
 <https://lod-am.net/id/analysis/9fe3ecbf-d19d-4ccf-8ddc-695d7e175d38/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe) (821)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/21, Arslantepe) (821)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/21, Arslantepe) (TR-8/21)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/21, Arslantepe) (TR-8/21)"@en .
 
 <https://lod-am.net/id/analysis/a26247f3-3198-4434-88e4-7110cf75e9f9/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (16)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (16)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 34, Arslantepe) (ARSL 34)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 34, Arslantepe) (ARSL 34)"@en .
 
 <https://lod-am.net/id/analysis/a920794b-40b3-4c5e-b835-ebc454864f0d/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe) (152)"@de,
-        "Sample from Flat chisel, wedge (no. ARSL 25, Arslantepe) (152)"@en .
+    rdfs:label "Probe von Flachmeißel, Keil (Nr. ARSL 25, Arslantepe) (ARSL 25)"@de,
+        "Sample from Flat chisel, wedge (no. ARSL 25, Arslantepe) (ARSL 25)"@en .
 
 <https://lod-am.net/id/analysis/a9d7be1a-a05a-4cd1-bd03-f3f453801a47/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/205, Arslantepe) (150)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/205, Arslantepe) (150)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/205, Arslantepe) (TR-8/205)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/205, Arslantepe) (TR-8/205)"@en .
 
 <https://lod-am.net/id/analysis/aba832e5-b6f6-4f04-9da5-8ff7beccf611/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 27, Arslantepe) (164)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 27, Arslantepe) (164)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 27, Arslantepe) (ARSL 27)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 27, Arslantepe) (ARSL 27)"@en .
 
 <https://lod-am.net/id/analysis/ac884993-dea4-456d-bc32-acf092423084/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (810)"@de,
-        "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (810)"@en .
+    rdfs:label "Probe von Anhänger, unbestimmt (Nr. TR-8/10, Arslantepe) (TR-8/10)"@de,
+        "Sample from Pendant, unspecified (no. TR-8/10, Arslantepe) (TR-8/10)"@en .
 
 <https://lod-am.net/id/analysis/adaa570f-e786-4b88-b905-5f5fe4fef47b/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe) (26)"@de,
-        "Sample from Spearhead, unspecified (no. TR-8/31, Arslantepe) (26)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. TR-8/31, Arslantepe) (TR-8/31)"@de,
+        "Sample from Spearhead, unspecified (no. TR-8/31, Arslantepe) (TR-8/31)"@en .
 
 <https://lod-am.net/id/analysis/aee5c0e1-e564-4921-b3cd-ba4fc4b8ad29/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (163)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (163)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 29, Arslantepe) (ARSL 29)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 29, Arslantepe) (ARSL 29)"@en .
 
 <https://lod-am.net/id/analysis/af6ab4fd-22d7-4745-ad1f-09232d43306f/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 64, Arslantepe) (22)"@de,
-        "Sample from Bracelet, unspecified (no. ARSL 64, Arslantepe) (22)"@en .
+    rdfs:label "Probe von Armring, unbestimmt (Nr. ARSL 64, Arslantepe) (ARSL 64)"@de,
+        "Sample from Bracelet, unspecified (no. ARSL 64, Arslantepe) (ARSL 64)"@en .
 
 <https://lod-am.net/id/analysis/b04f558b-1e56-48b2-9d5b-a69ccb983a4e/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe) (157)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 33, Arslantepe) (157)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 33, Arslantepe) (ARSL 33)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 33, Arslantepe) (ARSL 33)"@en .
 
 <https://lod-am.net/id/analysis/b53e78e1-c79b-4502-96ed-115c4f54ac64/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (177)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (177)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 16, Arslantepe) (ARSL 16)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 16, Arslantepe) (ARSL 16)"@en .
 
 <https://lod-am.net/id/analysis/b69c92e2-9373-485d-9bfd-e0717c21f15a/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe) (145)"@de,
-        "Sample from Pin, special or unspecified form (no. ARSL 5, Arslantepe) (145)"@en .
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 5, Arslantepe) (ARSL 5)"@de,
+        "Sample from Pin, special or unspecified form (no. ARSL 5, Arslantepe) (ARSL 5)"@en .
 
 <https://lod-am.net/id/analysis/b8efcd0c-c3d6-4ffc-afd4-ec1576e87d17/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (173)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (173)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 31A, Arslantepe) (ARSL 31A)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 31A, Arslantepe) (ARSL 31A)"@en .
 
 <https://lod-am.net/id/analysis/bb8ac61b-1508-44c0-90c3-da80275f97e0/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe) (169)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/203, Arslantepe) (169)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/203, Arslantepe) (TR-8/203)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/203, Arslantepe) (TR-8/203)"@en .
 
 <https://lod-am.net/id/analysis/c4d2ef3c-e1f2-4435-8144-ae198e8ea956/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe) (1)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe) (1)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe) (ARSL 12)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe) (ARSL 12)"@en .
 
 <https://lod-am.net/id/analysis/cc2985cd-cb3c-46c1-9858-126ce3cb2d59/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe) (175)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe) (175)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 21, Arslantepe) (ARSL 21)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 21, Arslantepe) (ARSL 21)"@en .
 
 <https://lod-am.net/id/analysis/d21a044e-73bd-4fb8-bd6b-7daf8a3bc437/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (156)"@de,
-        "Sample from Awl (no. ARSL 22, Arslantepe) (156)"@en .
+    rdfs:label "Probe von Pfriem (Nr. ARSL 22, Arslantepe) (ARSL 22)"@de,
+        "Sample from Awl (no. ARSL 22, Arslantepe) (ARSL 22)"@en .
 
 <https://lod-am.net/id/analysis/d7925926-8c7b-40e8-8561-3f86b26f76ba/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (155)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (155)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 20, Arslantepe) (ARSL 20)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 20, Arslantepe) (ARSL 20)"@en .
 
 <https://lod-am.net/id/analysis/dea90f1b-1443-4a76-96f5-c94cf0750d7c/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/208, Arslantepe) (139)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/208, Arslantepe) (139)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/208, Arslantepe) (TR-8/208)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/208, Arslantepe) (TR-8/208)"@en .
 
 <https://lod-am.net/id/analysis/e343cdfa-0ade-4b80-9a30-94dc9a1ae4d7/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (7)"@de,
-        "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (7)"@en .
+    rdfs:label "Probe von Flachdolch oder Dolch, unbestimmt (Nr. ARSL 18, Arslantepe) (ARSL 18)"@de,
+        "Sample from Flat dagger or dagger, unspecified (no. ARSL 18, Arslantepe) (ARSL 18)"@en .
 
 <https://lod-am.net/id/analysis/e63aae6f-26fc-43eb-8ed9-eff30f217c8c/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 55, Arslantepe) (20)"@de,
-        "Sample from Ring, unspecified (no. ARSL 55, Arslantepe) (20)"@en .
+    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 55, Arslantepe) (ARSL 55)"@de,
+        "Sample from Ring, unspecified (no. ARSL 55, Arslantepe) (ARSL 55)"@en .
 
 <https://lod-am.net/id/analysis/eb33ba0b-bf44-417b-a1e0-3406650e2a6e/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (140)"@de,
-        "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (140)"@en .
+    rdfs:label "Probe von Nadel, Sonderform, Form unbestimmt (Nr. ARSL 2, Arslantepe) (ARSL 2)"@de,
+        "Sample from Pin, special or unspecified form (no. ARSL 2, Arslantepe) (ARSL 2)"@en .
 
 <https://lod-am.net/id/analysis/f05c2fb3-da4a-4cec-8901-72f31287dbc8/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 46, Arslantepe) (18)"@de,
-        "Sample from Ring, unspecified (no. ARSL 46, Arslantepe) (18)"@en .
+    rdfs:label "Probe von Ring, unbestimmt (Nr. ARSL 46, Arslantepe) (ARSL 46)"@de,
+        "Sample from Ring, unspecified (no. ARSL 46, Arslantepe) (ARSL 46)"@en .
 
 <https://lod-am.net/id/analysis/f9f93bb7-e008-4e4b-ba90-6ee4d104d70e/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/201, Arslantepe) (141)"@de,
-        "Sample from Casting residue, sprue, slag (no. TR-8/201, Arslantepe) (141)"@en .
+    rdfs:label "Probe von Gussrückstand, Gusszapfen, Schlacke (Nr. TR-8/201, Arslantepe) (TR-8/201)"@de,
+        "Sample from Casting residue, sprue, slag (no. TR-8/201, Arslantepe) (TR-8/201)"@en .
 
 <https://lod-am.net/id/analysis/fad1e5eb-9989-41a4-9c3d-6f99be03bbf7/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe) (171)"@de,
-        "Sample from Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe) (171)"@en .
+    rdfs:label "Probe von Schaftlochaxt, einschneidig (Nr. ARSL 12, Arslantepe) (ARSL 12)"@de,
+        "Sample from Single-bladed shaft-hole axe (no. ARSL 12, Arslantepe) (ARSL 12)"@en .
 
 <https://lod-am.net/id/analysis/fd422b8a-f9f4-4487-a703-722dfc948f0d/sample> a afm:AFM_0001099,
         crmsci:S13_Sample ;
-    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe) (170)"@de,
-        "Sample from Spearhead, unspecified (no. ARSL 30, Arslantepe) (170)"@en .
+    rdfs:label "Probe von Lanzenspitze, unbestimmt (Nr. ARSL 30, Arslantepe) (ARSL 30)"@de,
+        "Sample from Spearhead, unspecified (no. ARSL 30, Arslantepe) (ARSL 30)"@en .
 
 <https://lod-am.net/id/find/30871380-ff3b-494f-9984-70c2c3baf857> a crm:E22_Human-Made_Object ;
     rdfs:label "Lanzenspitze, unbestimmt (Nr. ARSL 31B, Arslantepe)"@de,
