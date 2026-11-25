@@ -84,7 +84,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="mainNav">
 					<ul class="navbar-nav me-auto">
-					{%- for entry in collections.all | eleventyNavigation %}
+					{%- for entry in collections.navPages | eleventyNavigation %}
 						{%- if entry.key == "Data" %}
 						{#- Data: dropdown with the overview and the kinds of records that exist (website#14) #}
 						<li class="nav-item dropdown">

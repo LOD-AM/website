@@ -93,14 +93,20 @@ function readTsv(file) {
 	return readFileSync(file, "utf8").split("\n").filter((l) => l && !l.startsWith("#")).map((l) => l.split("\t"));
 }
 
-const quads = [];
+const quads = [], seenQuads = new Set();
 const datasets = [];
 for (const sub of ["published", "vocab"]) {
 	const dir = join("data", sub);
 	if (!existsSync(dir)) continue;
 	for (const f of readdirSync(dir).filter((f) => f.endsWith(".ttl")).sort()) {
 		const q = new Parser().parse(readFileSync(join(dir, f), "utf8"));
-		quads.push(...q);
+		// Each triple once: a record in several releases (a type, a site, or a find whose analysis
+		// another publication reports) has its triples in each of those files. (The released files
+		// have no blank nodes, so equal terms are equal triples.)
+		for (const x of q) {
+			const k = [x.subject.value, x.predicate.value, x.object.termType, x.object.value, x.object.language || "", x.object.datatype?.value || ""].join("\u0000");
+			if (!seenQuads.has(k)) { seenQuads.add(k); quads.push(x); }
+		}
 		if (sub === "published") datasets.push({ key: f.replace(/\.ttl$/, ""), file: `/data/${f}`, source: join(dir, f), triples: q.length });
 	}
 }
@@ -109,11 +115,16 @@ const elements = new Map(readTsv("data/vocab/chebi.tsv").map(([id, label, symbol
 const wikidata = new Map(readTsv("data/vocab/wikidata.tsv").map(([id, label]) => [NS.wd + id, label]));
 
 const out = new Map(), inc = new Map();
+// Each value once per subject and predicate (same value and language). The keys of the values
+// already added sit in a Set beside the list, so a node with many incoming links (a class, a
+// type, a site) costs no list scan per triple.
+const seenValues = new WeakMap();
 function add(m, a, p, b) {
 	if (!m.has(a)) m.set(a, new Map());
 	const pm = m.get(a);
-	if (!pm.has(p)) pm.set(p, []);
-	if (!pm.get(p).some((x) => x.value === b.value && x.language === b.language)) pm.get(p).push(b);
+	if (!pm.has(p)) { const list = []; pm.set(p, list); seenValues.set(list, new Set()); }
+	const list = pm.get(p), seen = seenValues.get(list), k = `${b.language ?? ""}\u0000${b.value}`;
+	if (!seen.has(k)) { seen.add(k); list.push(b); }
 }
 for (const q of quads) {
 	const o = q.object.termType === "Literal"
@@ -150,7 +161,10 @@ function kindOf(iri) {
 	return parts.length === 2 && KINDS[parts[0]] ? parts[0] : null;
 }
 const pathOf = (iri) => "/id/" + iri.slice(ID.length) + "/";
-const isPublication = (iri) => types(iri).includes(P("crm", "E31_Document")) && objs(iri, P("dcterms", "title")).length > 0;
+// A publication record: a document with a title and a citation key. The book that contains a chapter
+// (<pub>/book, a helper node of the chapter's record) has no citation key and no page of its own.
+const isDocument = (iri) => types(iri).includes(P("crm", "E31_Document")) && objs(iri, P("dcterms", "title")).length > 0;
+const isPublication = (iri) => isDocument(iri) && objs(iri, P("dcterms", "identifier")).length > 0;
 const pubKey = (iri) => first(iri, P("dcterms", "identifier")) || iri.split("/").pop();
 
 // First author: the creator whose family name starts the citation key (dcterms:creator has
@@ -172,6 +186,7 @@ function citation(pub) {
 function link(iri) {
 	if (kindOf(iri) && out.has(iri)) return { href: pathOf(iri), text: labelOf(iri) || iri.slice(ID.length) };
 	if (isPublication(iri)) return { href: `/data/publications/${pubKey(iri)}/`, text: `${citation(iri)}: ${first(iri, P("dcterms", "title"))}`, short: citation(iri) };
+	if (isDocument(iri)) return { text: first(iri, P("dcterms", "title")) };   // e.g. the book of a chapter
 	if (iri.startsWith(ID) && labelOf(iri)) return { text: labelOf(iri), title: curie(iri) };  // local concept (knowledge-graph vocab)
 	let m;
 	if ((m = iri.match(/^http:\/\/vocab\.getty\.edu\/aat\/(\d+)$/))) return { href: iri, text: aatLabels[m[1]] ? `${aatLabels[m[1]]} (AAT)` : `AAT ${m[1]}`, short: aatLabels[m[1]], external: true };
@@ -462,7 +477,19 @@ function makeView(iri, kind) {
 // --- Per-record files and citation (planning#13) -------------------------------------------
 // A record's own triples: the record and its helper nodes, whose IRIs continue the record's IRI
 // (<record>/sample, <record>/as, <record>/time_span, ...). Same data as its page.
-const ownQuads = (iri) => quads.filter((q) => q.subject.value === iri || q.subject.value.startsWith(iri + "/"));
+// Indexed once by every "/"-prefix of the subject, in the order of the files, so a record's quads
+// come out exactly as a filter over all quads would give them (two lookups per record page).
+const quadsUnder = new Map();
+for (const q of quads) {
+	const s = q.subject.value;
+	for (let i = s.length; i > 0; i = s.lastIndexOf("/", i - 1)) {
+		const key = s.slice(0, i);
+		if (!quadsUnder.has(key)) quadsUnder.set(key, []);
+		quadsUnder.get(key).push(q);
+		if (i <= ID.length) break;   // nothing below the base IRI is a record
+	}
+}
+const ownQuads = (iri) => quadsUnder.get(iri) || [];
 function usedPrefixes(qs) {
 	const terms = qs.flatMap((q) => [q.subject, q.predicate, q.object]).filter((t) => t.termType === "NamedNode").map((t) => t.value);
 	const pre = { "": ID };
@@ -663,7 +690,7 @@ const publications = [...out.keys()].filter(isPublication).map((iri) => {
 		iri, key: pubKey(iri), path: `/data/publications/${pubKey(iri)}/`,
 		citation: citation(iri), title: first(iri, P("dcterms", "title")),
 		authors: authorsOf(iri).map((a) => link(a.iri)), year: first(iri, P("fabio", "hasPublicationYear")),
-		journal: journal ? link(journal) : null, volume: first(iri, P("prism", "volume")), pages,
+		journal: journal ? link(journal) : null, inBook: journal ? types(journal).includes(P("fabio", "Book")) : false, volume: first(iri, P("prism", "volume")), pages,
 		doi: first(iri, P("prism", "doi")), classes: types(iri).map(link),
 		summary: [citation(iri), journal ? labelOf(journal) || link(journal).text : null, pages ? `pp. ${pages}` : null].filter(Boolean),
 		finds: sortLinks(docs.filter((x) => kindOf(x) === "find").map(link)),

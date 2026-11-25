@@ -15,7 +15,7 @@ eleventyComputed:
   <dl class="entity-facts">
     <dt>Authors</dt><dd>{% for v in pub.authors %}{% include "lodam/value.njk" %}{% if not loop.last %}, {% endif %}{% endfor %}</dd>
     {% if pub.year %}<dt>Year</dt><dd>{{ pub.year }}</dd>{% endif %}
-    {% if pub.journal %}<dt>Journal</dt><dd>{% set v = pub.journal %}{% include "lodam/value.njk" %}{% if pub.volume %}, vol. {{ pub.volume }}{% endif %}</dd>{% endif %}
+    {% if pub.journal %}<dt>{{ "In" if pub.inBook else "Journal" }}</dt><dd>{% set v = pub.journal %}{% include "lodam/value.njk" %}{% if pub.volume %}, vol. {{ pub.volume }}{% endif %}</dd>{% endif %}
     {% if pub.pages %}<dt>Pages</dt><dd>{{ pub.pages }}</dd>{% endif %}
     {% if pub.doi %}<dt>DOI</dt><dd><a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a></dd>{% endif %}
   </dl>

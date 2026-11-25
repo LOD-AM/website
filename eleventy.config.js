@@ -58,6 +58,10 @@ export default async function(eleventyConfig) {
     preAttributes: { tabindex: 0 }
   });
   eleventyConfig.addPlugin(pluginNavigation);
+  // The navbar runs the navigation filter on every page. Given only the few pages with
+  // eleventyNavigation front matter (the plugin ignores all others), it no longer grows with the
+  // number of record pages.
+  eleventyConfig.addCollection("navPages", (api) => api.getAllSorted().filter((item) => item.data.eleventyNavigation));
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
