@@ -129,7 +129,7 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - Never write `{%` or `{{` in files under `css/`, not even in comments: CSS that
   gets included through Nunjucks (e.g. `prism-diff.css` in `post.njk`) breaks the build.
 
-## Where to resume (state 2026-11-22)
+## Where to resume (state 2026-11-26)
 - **Data releases are automatic** (website#21, 2026-11-22): each release that goes live in the triplestore
   arrives as a "Data release" PR from the branch `data-release` (`data-release.yml`, `scripts/data_release.mjs`;
   `data/README.md`). The owner merges; the PR's own checks wait for approval (bot author), the build the
@@ -145,7 +145,9 @@ icon carries meaning). External fetches (link previews, Crossref) are cached in
 - nginx config: `docs/nginx/lod-am.conf` (owner copies it to the server; `docs/deployment.md`). It adds content
   negotiation for record IRIs (303 to `.ttl` / `.jsonld` / the page), relative redirects (live, nginx redirects to
   `http://lod-am.net:8080/…`) and the JSON-LD type (website#19). Check live with `scripts/check_conneg.sh` (only reads).
-- Open Dependabot PRs and 9 pre-existing `npm audit` findings (e.g. `zod`).
+- `npm audit` (2026-11-26): 5 high, all in YASGUI's chain (`query-string`, `decode-uri-component`; no fix
+  upstream; the editor parses no URL, `populateFromUrl` is off). The other 9 were fixed (`npm audit fix`,
+  `@11ty/eleventy-img` 6 → 7 with a byte-identical build). Dependabot covers npm and GitHub Actions.
 - **Query editor and site search** (planning#22, #17; live since 2026-11-23, website#57): `/query/` sends queries to the
   public endpoint `triple.lod-am.net` on "Run" only; `privacy.md` section 4 covers it (text approved by the owner on
   website#57). Its storage period relies on the capped Fuseki log (LOD-AM/triplestore#22).
