@@ -17,9 +17,12 @@ updates:
     allow:
       - dependency-type: all
 
-#  - package-ecosystem: github-actions
-#    directory: ".github/workflows/"
-#    schedule:
-#      interval: monthly
-#    cooldown:
-#      default-days: 7
+  # Actions are pinned by commit SHA (with the version as a comment); Dependabot updates both
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    labels:
+      - "dependency-updates"
